@@ -1,0 +1,169 @@
+import { Metadata } from 'next'
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
+import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Next Trip Anywhere Travel Agency',
+  description:
+    'Get in touch with Next Trip Anywhere. Call 1-833-874-1019 or fill out our form for expert travel planning assistance.',
+}
+
+export default function ContactPage() {
+  return (
+    <>
+      <section className="pt-32 pb-20 bg-gradient-to-br from-secondary-50 to-primary-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl font-bold text-navy mb-6">
+              Get in <span className="text-gradient">Touch</span>
+            </h1>
+            <p className="text-xl text-gray-700">
+              We&apos;re here to help you plan the perfect trip. Reach out to our expert team today.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-3xl font-bold text-navy mb-8">Contact Information</h2>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy mb-1">Phone</h3>
+                    <p className="text-gray-700">Main: 1-833-874-1019</p>
+                    <p className="text-gray-700">International: +1-833-874-1019</p>
+                    <p className="text-sm text-gray-500 mt-1">Available 24/7 for emergencies</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-secondary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy mb-1">Email</h3>
+                    <p className="text-gray-700">General: info@nexttripanywhere.com</p>
+                    <p className="text-gray-700">Support: support@nexttripanywhere.com</p>
+                    <p className="text-gray-700">Groups: groups@nexttripanywhere.com</p>
+                    <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-accent-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy mb-1">Office Locations</h3>
+                    <p className="text-gray-700 font-medium">New York (Headquarters)</p>
+                    <p className="text-gray-600 text-sm mb-2">
+                      123 Travel Plaza, Suite 500
+                      <br />
+                      New York, NY 10001
+                    </p>
+
+                    <p className="text-gray-700 font-medium">Miami</p>
+                    <p className="text-gray-600 text-sm mb-2">
+                      456 Ocean Drive, Suite 200
+                      <br />
+                      Miami, FL 33139
+                    </p>
+
+                    <p className="text-gray-700 font-medium">Boston</p>
+                    <p className="text-gray-600 text-sm">
+                      789 Commonwealth Ave
+                      <br />
+                      Boston, MA 02215
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy mb-1">Business Hours</h3>
+                    <p className="text-gray-700">Monday - Friday: 8:00 AM - 8:00 PM EST</p>
+                    <p className="text-gray-700">Saturday: 9:00 AM - 6:00 PM EST</p>
+                    <p className="text-gray-700">Sunday: 10:00 AM - 5:00 PM EST</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      24/7 emergency support for active bookings
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 text-secondary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy mb-1">Live Chat</h3>
+                    <p className="text-gray-700">Available on our website during business hours</p>
+                    <button className="mt-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+                      Start Chat Now →
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="mt-12 p-6 bg-warm-50 rounded-xl">
+                <h3 className="text-lg font-semibold text-navy mb-4">Quick Links</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <a href="/faq" className="text-gray-700 hover:text-primary-600 transition-colors">
+                    FAQs
+                  </a>
+                  <a
+                    href="/terms"
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Terms & Conditions
+                  </a>
+                  <a
+                    href="/privacy"
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/careers"
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Careers
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-3xl font-bold text-navy mb-8">Send Us a Message</h2>
+              <LeadCaptureForm source="contact-page" variant="default" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-warm-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-navy text-center mb-8">Visit Our Offices</h2>
+            <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
+              <p className="text-gray-600">Interactive Map Placeholder</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

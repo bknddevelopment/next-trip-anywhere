@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# GitHub Pages specific
+docs/
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Test coverage
+coverage/
+
+# Public assets
+public/
+
+# Next.js
+next-env.d.ts
+
+# Scripts
+scripts/
