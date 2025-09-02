@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/next-trip-anywhere' : ''
+// Use the correct case-sensitive path for GitHub Pages
+const basePath = isProd ? '/Next-Trip-Anywhere' : ''
 
 const nextConfig = {
   // Only use 'export' for production builds
@@ -38,6 +39,10 @@ const nextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizeCss: true,
+  },
+  // Add environment variables for runtime access
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 }
 

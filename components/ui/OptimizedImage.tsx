@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image, { ImageProps } from 'next/image'
+import { getRuntimeBasePath, normalizePath } from '@/lib/basePath'
 
 interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
   src: string
@@ -9,30 +10,32 @@ interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
 }
 
 /**
- * Image component that handles GitHub Pages deployment correctly
- * Uses Next.js Image in development, fallback to img tag in production if needed
+ * Optimized image component that handles GitHub Pages deployment
+ * Uses centralized base path detection for consistency
  */
 export default function OptimizedImage({ src, alt, ...props }: OptimizedImageProps) {
-  const [imageSrc, setImageSrc] = useState(src)
   const [useFallback, setUseFallback] = useState(false)
+  const [imageSrc, setImageSrc] = useState(src)
 
+  // Update image source on mount to handle runtime base path
   useEffect(() => {
-    // For GitHub Pages in production, add basePath to local images
-    if (typeof window !== 'undefined') {
-      const isGitHubPages = window.location.pathname.startsWith('/next-trip-anywhere')
-
-      // Only process local images (not external URLs)
-      if (isGitHubPages && src.startsWith('/') && !src.startsWith('/next-trip-anywhere')) {
-        setImageSrc(`/next-trip-anywhere${src}`)
+    // For client-side, ensure we have the correct runtime path
+    if (typeof window !== 'undefined' && !src.startsWith('http')) {
+      const runtimePath = normalizePath(src, true)
+      if (runtimePath !== src) {
+        setImageSrc(runtimePath)
       }
     }
   }, [src])
 
   // Fallback to regular img tag if Image component fails
   if (useFallback) {
+    // Use runtime base path detection for fallback
+    const fallbackSrc = typeof window !== 'undefined' ? normalizePath(src, true) : src
+
     return (
       <img
-        src={imageSrc}
+        src={fallbackSrc}
         alt={alt}
         {...(props as any)}
         style={{
