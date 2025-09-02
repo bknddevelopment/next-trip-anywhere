@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import OptimizedImage from '@/components/ui/OptimizedImage'
 import {
   Facebook,
   Twitter,
@@ -14,7 +13,6 @@ import {
   CreditCard,
   Award,
 } from 'lucide-react'
-import { getLogoSrc } from '@/lib/utils/imageHelpers'
 
 const footerLinks = {
   services: [
@@ -55,13 +53,6 @@ const socialLinks = [
 ]
 
 export default function Footer() {
-  const [logoSrc, setLogoSrc] = useState('/NextTripAnywhere.PNG')
-
-  // Set the correct logo src after mount
-  useEffect(() => {
-    setLogoSrc(getLogoSrc())
-  }, [])
-
   return (
     <footer className="bg-navy text-white">
       {/* Trust Badges */}
@@ -91,24 +82,21 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="relative w-10 h-10">
-                <Image
-                  src={logoSrc}
+                <OptimizedImage
+                  src="/NextTripAnywhere.PNG"
                   alt="Next Trip Anywhere"
                   fill
                   className="object-contain brightness-0 invert"
                   unoptimized
                 />
               </div>
-              <div>
-                <h3 className="text-lg font-bold">Next Trip Anywhere</h3>
-                <p className="text-xs text-accent-400">Your East Coast Travel Expert</p>
-              </div>
+              <span className="text-xl font-bold">Next Trip Anywhere</span>
             </div>
-            <p className="text-sm text-gray-300 mb-4">
-              Making dream vacations a reality since 2010. Expert travel planning for flights,
-              cruises, and vacation packages from NYC, Boston, Miami, and DC.
+            <p className="text-gray-300 mb-4">
+              Your trusted East Coast travel agency since 2010. Expert travel planning for flights,
+              cruises, and vacation packages.
             </p>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2">
               <a
                 href="tel:1-833-874-1019"
                 className="flex items-center space-x-2 hover:text-accent-400 transition-colors"
@@ -124,31 +112,18 @@ export default function Footer() {
                 <span>info@nexttripanywhere.com</span>
               </a>
             </div>
-
-            {/* Social Links */}
-            <div className="flex space-x-3 mt-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Links Sections */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-accent-400">Services</h4>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4">Services</h3>
+            <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-accent-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-accent-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -157,11 +132,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-accent-400">Top Destinations</h4>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4">Destinations</h3>
+            <ul className="space-y-2">
               {footerLinks.destinations.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-accent-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-accent-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -170,11 +148,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-accent-400">Company</h4>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-accent-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-accent-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -183,11 +164,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-accent-400">Support</h4>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4">Support</h3>
+            <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-accent-400 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-accent-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -197,32 +181,52 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-12 pt-8 border-t border-navy-600">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-xl font-semibold mb-2">Get Exclusive Travel Deals</h3>
-            <p className="text-sm text-gray-300 mb-4">
-              Subscribe to our newsletter for the best travel deals and insider tips
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <div className="mt-12 pt-8 border-t border-gray-700">
+          <div className="max-w-md mx-auto text-center lg:text-left lg:max-w-none lg:flex lg:items-center lg:justify-between">
+            <div className="mb-4 lg:mb-0">
+              <h3 className="text-xl font-semibold mb-2">Get Exclusive Deals</h3>
+              <p className="text-gray-300">
+                Subscribe to our newsletter for travel tips and special offers
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:mx-0">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 placeholder-gray-400 focus:outline-none focus:border-accent-400 transition-colors"
+                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-gray-600 focus:border-accent-400 focus:outline-none text-white placeholder:text-gray-400"
               />
-              <button
-                type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-              >
+              <button className="px-6 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                 Subscribe
               </button>
-            </form>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-navy-600 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Next Trip Anywhere. All rights reserved.</p>
-          <p className="mt-2">IATA: 12345678 | CLIA: 00012345 | ARC: 12-3456789</p>
+        {/* Social Links & Copyright */}
+        <div className="mt-8 pt-8 border-t border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex space-x-4 mb-4 md:mb-0">
+              {socialLinks.map((social) => {
+                const Icon = social.icon
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/10 rounded-full hover:bg-accent-500 transition-colors"
+                    aria-label={social.name}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                )
+              })}
+            </div>
+            <div className="text-center md:text-right text-sm text-gray-400">
+              <p>&copy; {new Date().getFullYear()} Next Trip Anywhere. All rights reserved.</p>
+              <p className="mt-1">ASTA Member | CLIA Certified | BBB Accredited</p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

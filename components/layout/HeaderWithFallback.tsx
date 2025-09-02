@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import OptimizedImage from '@/components/ui/OptimizedImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react'
 
@@ -30,10 +29,11 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-export default function Header() {
+export default function HeaderWithFallback() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [logoSrc, setLogoSrc] = useState('/NextTripAnywhere.PNG')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +41,16 @@ export default function Header() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Set correct logo src based on environment
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isGitHubPages = window.location.pathname.startsWith('/next-trip-anywhere')
+      setLogoSrc(
+        isGitHubPages ? '/next-trip-anywhere/NextTripAnywhere.PNG' : '/NextTripAnywhere.PNG'
+      )
+    }
   }, [])
 
   return (
@@ -55,16 +65,14 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Using regular img tag for GitHub Pages compatibility */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="relative w-32 h-16">
-              <OptimizedImage
-                src="/NextTripAnywhere.PNG"
+            <div className="relative w-32 h-16 flex items-center">
+              <img
+                src={logoSrc}
                 alt="Next Trip Anywhere"
-                fill
-                className="object-contain"
-                priority
-                unoptimized
+                className="h-full w-auto object-contain"
+                style={{ maxHeight: '64px' }}
               />
             </div>
           </Link>
