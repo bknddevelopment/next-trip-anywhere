@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -11,6 +14,7 @@ import {
   CreditCard,
   Award,
 } from 'lucide-react'
+import { getLogoSrc } from '@/lib/utils/imageHelpers'
 
 const footerLinks = {
   services: [
@@ -51,6 +55,13 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const [logoSrc, setLogoSrc] = useState('/NextTripAnywhere.PNG')
+
+  // Set the correct logo src after mount
+  useEffect(() => {
+    setLogoSrc(getLogoSrc())
+  }, [])
+
   return (
     <footer className="bg-navy text-white">
       {/* Trust Badges */}
@@ -81,10 +92,11 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="relative w-10 h-10">
                 <Image
-                  src="/NextTripAnywhere.PNG"
+                  src={logoSrc}
                   alt="Next Trip Anywhere"
                   fill
                   className="object-contain brightness-0 invert"
+                  unoptimized
                 />
               </div>
               <div>
@@ -96,8 +108,6 @@ export default function Footer() {
               Making dream vacations a reality since 2010. Expert travel planning for flights,
               cruises, and vacation packages from NYC, Boston, Miami, and DC.
             </p>
-
-            {/* Contact Info */}
             <div className="space-y-2 text-sm">
               <a
                 href="tel:1-833-874-1019"
@@ -132,7 +142,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Links Sections */}
           <div>
             <h4 className="font-semibold mb-4 text-accent-400">Services</h4>
             <ul className="space-y-2 text-sm">
@@ -146,7 +156,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Destinations */}
           <div>
             <h4 className="font-semibold mb-4 text-accent-400">Top Destinations</h4>
             <ul className="space-y-2 text-sm">
@@ -160,7 +169,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h4 className="font-semibold mb-4 text-accent-400">Company</h4>
             <ul className="space-y-2 text-sm">
@@ -174,7 +182,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h4 className="font-semibold mb-4 text-accent-400">Support</h4>
             <ul className="space-y-2 text-sm">
@@ -189,7 +196,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
+        {/* Newsletter */}
         <div className="mt-12 pt-8 border-t border-navy-600">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-xl font-semibold mb-2">Get Exclusive Travel Deals</h3>

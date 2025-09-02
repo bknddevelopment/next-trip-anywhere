@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react'
+import { getLogoSrc } from '@/lib/utils/imageHelpers'
 
 const navigation = [
   {
@@ -34,6 +35,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [logoSrc, setLogoSrc] = useState('/NextTripAnywhere.PNG')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +43,11 @@ export default function Header() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Set the correct logo src after mount
+  useEffect(() => {
+    setLogoSrc(getLogoSrc())
   }, [])
 
   return (
@@ -59,11 +66,12 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-32 h-16">
               <Image
-                src="/NextTripAnywhere.PNG"
+                src={logoSrc}
                 alt="Next Trip Anywhere"
                 fill
                 className="object-contain"
                 priority
+                unoptimized
               />
             </div>
           </Link>
@@ -98,13 +106,13 @@ export default function Header() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-xl py-2 min-w-[200px]"
+                      className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
                     >
                       {item.dropdown.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-secondary-50 hover:text-primary-600 transition-colors"
                         >
                           {subItem.name}
                         </Link>
@@ -116,8 +124,9 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons */}
+          {/* CTA Buttons - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
+            {/* Phone Number */}
             <a
               href="tel:1-833-874-1019"
               className="flex items-center space-x-2 text-navy hover:text-primary-500 transition-colors"
@@ -126,22 +135,22 @@ export default function Header() {
               <span className="font-semibold">1-833-874-1019</span>
             </a>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Surprise Me Button */}
+            <button
               className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+              tabIndex={0}
             >
               <Sparkles className="w-4 h-4" />
               <span>Surprise Me!</span>
-            </motion.button>
+            </button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Get Quote Button */}
+            <button
               className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              tabIndex={0}
             >
               Get Quote
-            </motion.button>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -156,39 +165,44 @@ export default function Header() {
             )}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden mt-4 pb-4 border-t border-gray-200"
-            >
-              <nav className="space-y-2 mt-4">
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-white border-t border-gray-100"
+          >
+            <div className="container mx-auto px-4 py-4">
+              <nav className="space-y-4">
                 {navigation.map((item) => (
                   <div key={item.name}>
                     {item.dropdown ? (
-                      <>
-                        <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                          {item.name}
+                      <div>
+                        <button className="w-full flex items-center justify-between py-2 text-left text-navy hover:text-primary-500 transition-colors font-medium">
+                          <span>{item.name}</span>
+                          <ChevronDown className="w-4 h-4" />
+                        </button>
+                        <div className="pl-4 space-y-2">
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              className="block py-1 text-sm text-gray-600 hover:text-primary-500 transition-colors"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
                         </div>
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="block px-6 py-2 text-navy hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-lg"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </>
+                      </div>
                     ) : (
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-navy hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-lg font-medium"
+                        className="block py-2 text-navy hover:text-primary-500 transition-colors font-medium"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -198,28 +212,22 @@ export default function Header() {
                 ))}
               </nav>
 
-              <div className="mt-6 space-y-3 px-3">
+              <div className="mt-6 space-y-3">
                 <a
                   href="tel:1-833-874-1019"
-                  className="flex items-center justify-center space-x-2 text-navy font-semibold py-2"
+                  className="flex items-center justify-center space-x-2 w-full bg-gray-100 text-navy py-3 rounded-lg hover:bg-gray-200 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>1-833-874-1019</span>
+                  <span className="font-semibold">1-833-874-1019</span>
                 </a>
-
-                <button className="w-full bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-full font-semibold shadow-lg flex items-center justify-center space-x-2">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Surprise Me!</span>
-                </button>
-
-                <button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg">
+                <button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Get Quote
                 </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   )
 }
