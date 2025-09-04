@@ -204,6 +204,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script src="/next-trip-anywhere/logo-fix.js" defer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
