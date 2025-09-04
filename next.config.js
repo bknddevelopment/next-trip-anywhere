@@ -6,6 +6,7 @@ const basePath = isProd ? '/next-trip-anywhere' : ''
 const nextConfig = {
   // Only use 'export' for production builds
   ...(isProd && { output: 'export' }),
+  ...(isProd && { distDir: '.next-build' }), // Use different build dir for production
   basePath: basePath,
   assetPrefix: basePath,
   eslint: {

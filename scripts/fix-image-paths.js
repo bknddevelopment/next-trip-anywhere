@@ -10,7 +10,7 @@ const path = require('path');
 const glob = require('glob');
 
 const BASE_PATH = '/next-trip-anywhere';
-const OUT_DIR = path.join(__dirname, '..', 'docs', 'out');
+const OUT_DIR = path.join(__dirname, '..', 'docs');
 
 console.log('Fixing image paths for GitHub Pages deployment...');
 
