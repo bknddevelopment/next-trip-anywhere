@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image, { ImageProps } from 'next/image'
-import { getRuntimeBasePath, normalizePath } from '@/lib/basePath'
+import { normalizePath } from '@/lib/basePath'
 
 interface OptimizedImageProps extends Omit<ImageProps, 'src'> {
   src: string

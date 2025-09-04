@@ -10,8 +10,8 @@ const nextConfig = {
   basePath: basePath,
   assetPrefix: basePath,
   eslint: {
-    // Temporarily ignore during builds
-    ignoreDuringBuilds: true,
+    // Enable ESLint during builds
+    ignoreDuringBuilds: false,
   },
   images: {
     unoptimized: true,
