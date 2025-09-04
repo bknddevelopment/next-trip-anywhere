@@ -4,7 +4,7 @@
  */
 
 // GitHub Pages base path (case-sensitive, matches actual deployment)
-const GITHUB_PAGES_BASE = '/Next-Trip-Anywhere'
+const GITHUB_PAGES_BASE = '/next-trip-anywhere'
 
 /**
  * Detects if we're running on GitHub Pages
@@ -24,9 +24,8 @@ export function isGitHubPages(): boolean {
   // Runtime detection (for client-side)
   if (typeof window !== 'undefined') {
     const pathname = window.location.pathname
-    // Check both cases for maximum compatibility
-    return pathname.startsWith('/Next-Trip-Anywhere') || 
-           pathname.toLowerCase().startsWith('/next-trip-anywhere')
+    // Check for GitHub Pages deployment
+    return pathname.startsWith('/next-trip-anywhere')
   }
 
   return false
@@ -58,13 +57,8 @@ export function normalizePath(path: string, forceRuntime = false): string {
   // Ensure path starts with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
 
-  // Check if path already includes the base (case-insensitive check)
-  const lowerPath = normalizedPath.toLowerCase()
-  if (lowerPath.startsWith('/next-trip-anywhere')) {
-    // If it's lowercase, fix the case
-    if (normalizedPath.startsWith('/next-trip-anywhere')) {
-      return normalizedPath.replace('/next-trip-anywhere', '/Next-Trip-Anywhere')
-    }
+  // Check if path already includes the base
+  if (normalizedPath.startsWith('/next-trip-anywhere')) {
     return normalizedPath
   }
 
@@ -90,14 +84,9 @@ export function getRuntimeBasePath(): string {
 
   const pathname = window.location.pathname
   
-  // Check for GitHub Pages deployment (case-sensitive first)
-  if (pathname.startsWith('/Next-Trip-Anywhere')) {
-    return '/Next-Trip-Anywhere'
-  }
-  
-  // Also check lowercase variant and return the correct case
-  if (pathname.toLowerCase().startsWith('/next-trip-anywhere')) {
-    return '/Next-Trip-Anywhere'
+  // Check for GitHub Pages deployment
+  if (pathname.startsWith('/next-trip-anywhere')) {
+    return '/next-trip-anywhere'
   }
 
   return ''
@@ -115,9 +104,8 @@ export function needsBasePath(path: string): boolean {
     return false
   }
   
-  // Already has base path (case-insensitive check)
-  const lowerPath = path.toLowerCase()
-  if (lowerPath.startsWith('/next-trip-anywhere')) {
+  // Already has base path
+  if (path.startsWith('/next-trip-anywhere')) {
     return false
   }
   

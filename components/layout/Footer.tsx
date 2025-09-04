@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import OptimizedImage from '@/components/ui/OptimizedImage'
+import { siteConfig } from '@/config/site'
 import {
   Facebook,
   Twitter,
@@ -83,7 +84,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="relative w-10 h-10">
                 <OptimizedImage
-                  src="/NextTripAnywhere.PNG"
+                  src={siteConfig.logoPath}
                   alt="Next Trip Anywhere"
                   fill
                   className="object-contain brightness-0 invert"

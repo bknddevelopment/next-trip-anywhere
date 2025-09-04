@@ -5,6 +5,7 @@ import Link from 'next/link'
 import OptimizedImage from '@/components/ui/OptimizedImage'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 const navigation = [
   {
@@ -59,7 +60,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-32 h-16">
               <OptimizedImage
-                src="/NextTripAnywhere.PNG"
+                src={siteConfig.logoPath}
                 alt="Next Trip Anywhere"
                 fill
                 className="object-contain"
