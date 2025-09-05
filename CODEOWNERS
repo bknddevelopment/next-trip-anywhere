@@ -1,0 +1,40 @@
+# CODEOWNERS file for Next Trip Anywhere
+# These owners will be requested for review when someone opens a pull request
+
+# Global owners - will be requested for review for any file change
+* @charwinvanryckdegroot
+
+# Frontend Application Code
+/app/ @charwinvanryckdegroot
+/components/ @charwinvanryckdegroot
+/hooks/ @charwinvanryckdegroot
+/lib/ @charwinvanryckdegroot
+/public/ @charwinvanryckdegroot
+
+# Configuration Files
+/.github/ @charwinvanryckdegroot
+/docker* @charwinvanryckdegroot
+/nginx/ @charwinvanryckdegroot
+*.config.* @charwinvanryckdegroot
+.env* @charwinvanryckdegroot
+package*.json @charwinvanryckdegroot
+
+# Testing
+/__tests__/ @charwinvanryckdegroot
+/e2e/ @charwinvanryckdegroot
+/test-utils/ @charwinvanryckdegroot
+*.test.* @charwinvanryckdegroot
+*.spec.* @charwinvanryckdegroot
+
+# Documentation
+*.md @charwinvanryckdegroot
+/docs/ @charwinvanryckdegroot
+
+# Scripts and Build
+/scripts/ @charwinvanryckdegroot
+*.sh @charwinvanryckdegroot
+
+# Infrastructure
+/monitoring/ @charwinvanryckdegroot
+/terraform/ @charwinvanryckdegroot
+/k8s/ @charwinvanryckdegroot
