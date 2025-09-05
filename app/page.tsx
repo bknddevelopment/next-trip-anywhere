@@ -1,9 +1,23 @@
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import HeroSection from '@/components/home/HeroSection'
-// import SearchSection from '@/components/home/SearchSection';
-import DestinationCards from '@/components/home/DestinationCards'
-import WhyChooseUs from '@/components/home/WhyChooseUs'
-import CTASection from '@/components/home/CTASection'
 import { Metadata } from 'next'
+
+// Lazy load heavy components
+const DestinationCards = dynamic(() => import('@/components/home/DestinationCards'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
+  ssr: true,
+})
+
+const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />,
+  ssr: true,
+})
+
+const CTASection = dynamic(() => import('@/components/home/CTASection'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />,
+  ssr: true,
+})
 
 export const metadata: Metadata = {
   title: 'East Coast Travel Agency | Save up to 40% on Flights, Cruises & Vacations',
@@ -197,8 +211,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <SearchSection /> */}
-      <DestinationCards />
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />}>
+        <DestinationCards />
+      </Suspense>
 
       {/* Statistics Section */}
       <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50">
@@ -231,7 +246,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <WhyChooseUs />
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />}>
+        <WhyChooseUs />
+      </Suspense>
 
       {/* SEO Content Section */}
       <section className="py-12 bg-white">
@@ -319,7 +336,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />}>
+        <CTASection />
+      </Suspense>
     </>
   )
 }

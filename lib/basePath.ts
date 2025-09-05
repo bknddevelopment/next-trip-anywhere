@@ -83,7 +83,7 @@ export function getRuntimeBasePath(): string {
   }
 
   const pathname = window.location.pathname
-  
+
   // Check for GitHub Pages deployment
   if (pathname.startsWith('/next-trip-anywhere')) {
     return '/next-trip-anywhere'
@@ -97,18 +97,20 @@ export function getRuntimeBasePath(): string {
  * @param path - The path to check
  */
 export function needsBasePath(path: string): boolean {
-  if (!path) return false
-  
+  if (!path) {
+    return false
+  }
+
   // External URLs don't need base path
   if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('//')) {
     return false
   }
-  
+
   // Already has base path
   if (path.startsWith('/next-trip-anywhere')) {
     return false
   }
-  
+
   // Check if we're in an environment that needs base path
   return isGitHubPages()
 }
