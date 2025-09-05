@@ -10,11 +10,12 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.ts'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
         'node_modules/',
         'dist/',
         'out/',
+        'docs/',
         '.next/',
         '*.config.*',
         'scripts/',
@@ -24,10 +25,24 @@ export default defineConfig({
         '**/*.spec.ts',
         '**/*.test.tsx',
         '**/*.test.ts',
+        '**/__tests__/**',
+        'test-utils/**',
+        'e2e/**',
+        '**/*.stories.tsx',
       ],
+      thresholds: {
+        global: {
+          branches: 70,
+          functions: 70,
+          lines: 70,
+          statements: 70,
+        },
+      },
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['node_modules', 'dist', '.next', 'out'],
+    exclude: ['node_modules', 'dist', '.next', 'out', 'docs'],
+    testTimeout: 10000,
+    hookTimeout: 10000,
   },
   resolve: {
     alias: {
