@@ -1,0 +1,113 @@
+# Dependabot configuration for automated dependency updates
+version: 2
+
+updates:
+  # NPM dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    target-branch: "develop"
+    labels:
+      - "dependencies"
+      - "npm"
+      - "automated"
+    assignees:
+      - "charwinvanryckdegroot"
+    reviewers:
+      - "charwinvanryckdegroot"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    pull-request-branch-name:
+      separator: "-"
+    allow:
+      # Only allow updates to direct dependencies
+      - dependency-type: "direct"
+    ignore:
+      # Major version updates for critical packages
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+    groups:
+      # Group ESLint updates together
+      eslint:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+      # Group testing library updates
+      testing:
+        patterns:
+          - "@testing-library/*"
+          - "vitest*"
+          - "@vitest/*"
+          - "playwright*"
+          - "@playwright/*"
+      # Group React ecosystem updates
+      react-ecosystem:
+        patterns:
+          - "react-*"
+          - "@hookform/*"
+          - "@tanstack/*"
+      # Group build tools
+      build-tools:
+        patterns:
+          - "webpack*"
+          - "postcss*"
+          - "tailwind*"
+          - "autoprefixer"
+    
+  # Docker base images
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "04:00"
+      timezone: "UTC"
+    target-branch: "develop"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "automated"
+    assignees:
+      - "charwinvanryckdegroot"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "04:00"
+      timezone: "UTC"
+    target-branch: "develop"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "automated"
+    assignees:
+      - "charwinvanryckdegroot"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    groups:
+      # Group all GitHub Actions updates
+      github-actions:
+        patterns:
+          - "*"
+
+# Security updates configuration
+# Dependabot will automatically create PRs for security updates
+# regardless of the schedule, with the highest priority
