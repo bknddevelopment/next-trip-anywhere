@@ -94,8 +94,8 @@ export default function Footer() {
               <span className="text-xl font-bold">Next Trip Anywhere</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Your trusted East Coast travel agency since 2010. Expert travel planning for flights,
-              cruises, and vacation packages.
+              America's trusted nationwide travel agency since 2010. Expert travel planning for
+              flights, cruises, and vacation packages coast to coast.
             </p>
             <div className="space-y-2">
               <a

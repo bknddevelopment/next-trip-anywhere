@@ -43,9 +43,9 @@ const features = [
   },
   {
     icon: MapPin,
-    title: 'Local Expertise',
+    title: 'Nationwide Coverage',
     description:
-      'East Coast specialists with insider knowledge of departures from NYC, Boston, Miami, and DC.',
+      'Local experts across America with insider knowledge of all major US airports and departure cities.',
     color: 'text-secondary-500',
     bgColor: 'bg-secondary-50',
   },

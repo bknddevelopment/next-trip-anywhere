@@ -3,7 +3,7 @@
 <div align="center">
   <img src="public/logo.png" alt="Next Trip Anywhere Logo" width="200" />
   
-  **Your East Coast Travel Expert | Flights, Cruises & Vacation Packages**
+  **America's Premier Travel Agency | Coast-to-Coast Travel Services**
   
   [![Next.js](https://img.shields.io/badge/Next.js-15.0-black?logo=next.js)](https://nextjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -36,7 +36,7 @@
 
 ## 🎯 Overview
 
-Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, with a focus on East Coast destinations (NYC, Boston, Miami, Washington DC).
+Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, serving travelers nationwide from all major US cities coast to coast.
 
 ### 🎨 Key Highlights
 
@@ -56,7 +56,7 @@ Next Trip Anywhere is a modern, high-performance travel agency platform built wi
 - **Flight Booking**: Search and compare flights from major carriers
 - **Cruise Packages**: Caribbean, Mediterranean, and Alaska cruise options
 - **Vacation Packages**: All-inclusive resort and tour packages
-- **Location-Based Search**: Specialized deals from NYC, Boston, Miami, and DC
+- **Nationwide Coverage**: Specialized deals from all major US cities including NYC, LA, Chicago, Miami, Seattle, Denver, Atlanta, and more
 
 ### 💻 Technical Features
 
@@ -227,7 +227,13 @@ next-trip-anywhere/
 │   │   ├── nyc/           # NYC departures
 │   │   ├── boston/        # Boston departures
 │   │   ├── miami/         # Miami departures
-│   │   └── dc/            # DC departures
+│   │   ├── dc/            # DC departures
+│   │   ├── la/            # LA departures
+│   │   ├── chicago/       # Chicago departures
+│   │   ├── seattle/       # Seattle departures
+│   │   ├── denver/        # Denver departures
+│   │   ├── atlanta/       # Atlanta departures
+│   │   └── dallas/        # Dallas departures
 │   ├── about/              # About us page
 │   └── contact/            # Contact page
 │

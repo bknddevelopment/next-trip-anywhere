@@ -112,18 +112,23 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://nexttripanywhere.com'),
   title: {
-    default: 'Next Trip Anywhere - East Coast Travel Agency | Flights, Cruises & Vacation Packages',
+    default:
+      "Next Trip Anywhere - America's Premier Travel Agency | Coast-to-Coast Travel Services",
     template: '%s | Next Trip Anywhere', // Used for dynamic page titles
   },
   description:
-    'Plan your perfect getaway with Next Trip Anywhere. Expert travel planning for flights, cruises, and vacation packages from NYC, Boston, Miami, and DC. Get personalized deals today!',
+    'Plan your perfect getaway with Next Trip Anywhere. Expert travel planning for flights, cruises, and vacation packages from all major US cities nationwide. Get personalized deals today!',
   keywords: [
     'travel agency',
     'flights',
     'cruises',
     'vacation packages',
-    'East Coast travel',
+    'nationwide travel',
+    'coast to coast travel',
     'NYC travel',
+    'LA travel',
+    'Chicago travel',
+    'Seattle travel',
     'Boston travel',
     'Miami travel',
     'DC travel',
@@ -137,7 +142,7 @@ export const metadata: Metadata = {
     telephone: false, // Prevents auto-linking of phone numbers
   },
   openGraph: {
-    title: 'Next Trip Anywhere - Your East Coast Travel Expert',
+    title: "Next Trip Anywhere - America's Premier Travel Agency",
     description:
       'Plan your perfect getaway with Next Trip Anywhere. Expert travel planning for flights, cruises, and vacation packages.',
     url: 'https://nexttripanywhere.com',
@@ -155,9 +160,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image', // Large preview card with image
-    title: 'Next Trip Anywhere - East Coast Travel Agency',
+    title: 'Next Trip Anywhere - Nationwide Travel Agency',
     description:
-      'Expert travel planning for flights, cruises, and vacation packages from NYC, Boston, Miami, and DC.',
+      'Expert travel planning for flights, cruises, and vacation packages from all major US cities nationwide.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -205,12 +210,32 @@ const jsonLdOrganization = {
   url: 'https://nexttripanywhere.com',
   logo: 'https://nexttripanywhere.com/logo.png',
   description:
-    'East Coast premier travel agency specializing in flights, cruises, and vacation packages from NYC, Boston, Miami, and Washington DC.',
+    "America's premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide.",
   foundingDate: '2015',
   areaServed: [
     {
+      '@type': 'Country',
+      name: 'United States',
+    },
+    {
       '@type': 'City',
       name: 'New York City',
+    },
+    {
+      '@type': 'City',
+      name: 'Los Angeles',
+    },
+    {
+      '@type': 'City',
+      name: 'Chicago',
+    },
+    {
+      '@type': 'City',
+      name: 'Miami',
+    },
+    {
+      '@type': 'City',
+      name: 'Seattle',
     },
     {
       '@type': 'City',
@@ -218,7 +243,15 @@ const jsonLdOrganization = {
     },
     {
       '@type': 'City',
-      name: 'Miami',
+      name: 'Denver',
+    },
+    {
+      '@type': 'City',
+      name: 'Atlanta',
+    },
+    {
+      '@type': 'City',
+      name: 'Dallas',
     },
     {
       '@type': 'City',

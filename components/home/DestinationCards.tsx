@@ -112,7 +112,7 @@ export default function DestinationCards() {
             Popular <span className="text-gradient">Destinations</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Handpicked destinations with exclusive deals for East Coast travelers
+            Handpicked destinations with exclusive deals for travelers nationwide
           </p>
         </div>
 

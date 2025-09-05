@@ -5,13 +5,13 @@ import FlightDeals from '@/components/services/FlightDeals'
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
 
 export const metadata: Metadata = {
-  title: 'Cheap Flights from East Coast | Save 40% on Airfare | Next Trip Anywhere',
+  title: 'Cheap Flights Nationwide | Save 40% on Airfare | Next Trip Anywhere',
   description:
-    'Book cheap flights from NYC, Boston, Miami & DC. Exclusive unpublished fares, 24/7 support, price match guarantee. Expert agents find deals you can&apos;t get online. Free quote!',
+    'Book cheap flights from all major US cities. Exclusive unpublished fares, 24/7 support, price match guarantee. Expert agents find deals you can&apos;t get online. Free quote!',
   keywords:
-    'cheap flights, flights from NYC, Boston flights, Miami flights, DC flights, discount airfare, flight deals, cheap tickets, airline tickets, East Coast flights',
+    'cheap flights, flights from NYC, flights from LA, Chicago flights, Seattle flights, Boston flights, Miami flights, DC flights, discount airfare, flight deals, cheap tickets, airline tickets, nationwide flights',
   openGraph: {
-    title: 'Save up to 40% on Flights from East Coast Cities',
+    title: 'Save up to 40% on Flights from All US Cities',
     description:
       'Expert travel agents with exclusive airline partnerships. Better prices than online. Free consultation.',
     url: 'https://nexttripanywhere.com/flights',
@@ -39,8 +39,19 @@ const flightServiceJsonLd = {
     name: 'Next Trip Anywhere',
   },
   description:
-    'Expert flight booking services with exclusive access to unpublished fares and bulk discounts from all major East Coast airports.',
-  areaServed: ['New York City', 'Boston', 'Miami', 'Washington DC'],
+    'Expert flight booking services with exclusive access to unpublished fares and bulk discounts from all major US airports nationwide.',
+  areaServed: [
+    'New York City',
+    'Los Angeles',
+    'Chicago',
+    'Miami',
+    'Seattle',
+    'Boston',
+    'Washington DC',
+    'Denver',
+    'Atlanta',
+    'Dallas',
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Flight Deals',
@@ -53,7 +64,7 @@ const flightServiceJsonLd = {
       {
         '@type': 'Offer',
         name: 'International Flights',
-        description: 'Exclusive international flight deals from East Coast',
+        description: 'Exclusive international flight deals from all US cities',
       },
       {
         '@type': 'Offer',
@@ -83,10 +94,10 @@ const flightFAQJsonLd = {
     },
     {
       '@type': 'Question',
-      name: 'Which airlines do you work with from East Coast airports?',
+      name: 'Which airlines do you work with from US airports nationwide?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We work with all major carriers including American, Delta, United, JetBlue, Southwest, and international airlines. We have particularly strong partnerships with airlines that hub at JFK, Logan, MIA, and Dulles.',
+        text: 'We work with all major carriers including American, Delta, United, JetBlue, Southwest, Alaska Airlines, and international airlines. We have strong partnerships with airlines that hub at major airports nationwide including JFK, LAX, ORD, ATL, DEN, SEA, and more.',
       },
     },
     {

@@ -75,7 +75,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
-            Expert travel planning from the East Coast&apos;s trusted travel agency. Flights,
+            Expert travel planning from America&apos;s trusted nationwide travel agency. Flights,
             cruises, and unforgettable vacation packages tailored just for you.
           </p>
 

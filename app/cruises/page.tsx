@@ -5,13 +5,13 @@ import CruiseDeals from '@/components/services/CruiseDeals'
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
 
 export const metadata: Metadata = {
-  title: 'East Coast Cruise Deals | Caribbean Cruises from $299 | Next Trip Anywhere',
+  title: 'Cruise Deals from All US Ports | Caribbean Cruises from $299 | Next Trip Anywhere',
   description:
-    'Book cruises from Miami, NYC, Baltimore & Boston. Free upgrades, onboard credits, exclusive group rates. Caribbean, Bahamas, Bermuda cruises. CLIA certified agents. Save up to 50%!',
+    'Book cruises from all major US ports - Miami, NYC, LA, Seattle, and more. Free upgrades, onboard credits, exclusive group rates. Caribbean, Bahamas, Alaska cruises. CLIA certified agents. Save up to 50%!',
   keywords:
-    'cruise deals, Caribbean cruises, cruises from Miami, PortMiami cruises, NYC cruises, Baltimore cruises, cheap cruises, cruise packages, Royal Caribbean, Carnival, Norwegian',
+    'cruise deals, Caribbean cruises, Alaska cruises, cruises from Miami, cruises from LA, cruises from Seattle, NYC cruises, cheap cruises, cruise packages, Royal Caribbean, Carnival, Norwegian',
   openGraph: {
-    title: 'Cruise Deals from East Coast Ports | Save up to 50%',
+    title: 'Cruise Deals from All US Ports | Save up to 50%',
     description:
       'Expert cruise specialists with free cabin upgrades and onboard credits. Book your dream cruise today!',
     url: 'https://nexttripanywhere.com/cruises',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: 'https://nexttripanywhere.com/images/cruise-hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'Cruise Deals from East Coast Ports',
+        alt: 'Cruise Deals from All US Ports',
       },
     ],
   },
@@ -39,13 +39,18 @@ const cruiseServiceJsonLd = {
     name: 'Next Trip Anywhere',
   },
   description:
-    'Expert cruise booking with exclusive rates, free upgrades, and onboard credits from all major East Coast ports.',
+    'Expert cruise booking with exclusive rates, free upgrades, and onboard credits from all major US ports nationwide.',
   areaServed: [
     'PortMiami',
     'Port Everglades',
     'Manhattan Cruise Terminal',
     'Port of Baltimore',
     'Black Falcon Terminal Boston',
+    'Port of Los Angeles',
+    'Port of San Francisco',
+    'Port of Seattle',
+    'Port of New Orleans',
+    'Port of Galveston',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -70,12 +75,12 @@ const cruiseServiceJsonLd = {
       {
         '@type': 'Offer',
         name: 'Bermuda Cruises',
-        description: 'Seasonal cruises from NYC and Boston',
+        description: 'Seasonal cruises from Northeast ports',
       },
       {
         '@type': 'Offer',
         name: 'European Cruises',
-        description: 'Mediterranean and Northern Europe cruises',
+        description: 'Mediterranean, Northern Europe, and Alaska cruises',
       },
     ],
   },
@@ -95,10 +100,10 @@ const cruiseFAQJsonLd = {
     },
     {
       '@type': 'Question',
-      name: 'Which cruise lines depart from East Coast ports?',
+      name: 'Which cruise lines depart from US ports nationwide?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Major cruise lines from East Coast include Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Miami has the most options as the cruise capital, followed by Fort Lauderdale, NYC, and Baltimore.',
+        text: 'Major cruise lines operate from all US ports including Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Popular departure ports include Miami, Fort Lauderdale, Los Angeles, Seattle, New York, Baltimore, New Orleans, and Galveston.',
       },
     },
     {
@@ -320,15 +325,15 @@ export default function CruisesPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="prose prose-lg max-w-4xl mx-auto">
-            <h2>East Coast Cruise Experts Since 2010</h2>
+            <h2>America\'s Cruise Experts Since 2010</h2>
             <p>
-              Next Trip Anywhere is your premier East Coast cruise specialist, with expertise in all
-              major departure ports from Miami to Boston. As certified cruise counselors with every
-              major cruise line, we provide exclusive perks and savings you simply can&apos;t get
-              when booking directly.
+              Next Trip Anywhere is your premier nationwide cruise specialist, with expertise in all
+              major departure ports from Miami to Seattle, Los Angeles to New York. As certified
+              cruise counselors with every major cruise line, we provide exclusive perks and savings
+              you simply can&apos;t get when booking directly.
             </p>
 
-            <h3>Major East Coast Cruise Ports We Serve</h3>
+            <h3>Major US Cruise Ports We Serve Nationwide</h3>
             <ul>
               <li>
                 <strong>PortMiami:</strong> The cruise capital of the world with year-round
@@ -353,6 +358,24 @@ export default function CruisesPage() {
               <li>
                 <strong>Black Falcon Terminal (Boston):</strong> Seasonal Bermuda and Canada/New
                 England cruises
+              </li>
+              <li>
+                <strong>Port of Los Angeles (San Pedro):</strong> Gateway to Pacific Coast and
+                Mexico cruises
+              </li>
+              <li>
+                <strong>Port of San Francisco:</strong> Alaska, Hawaii, and Pacific Coast departures
+              </li>
+              <li>
+                <strong>Port of Seattle:</strong> Premier Alaska cruise destination and Pacific
+                tours
+              </li>
+              <li>
+                <strong>Port of New Orleans:</strong> Western Caribbean and Mississippi River
+                cruises
+              </li>
+              <li>
+                <strong>Port of Galveston:</strong> Texas departures to Western Caribbean and Mexico
               </li>
             </ul>
 
@@ -385,8 +408,10 @@ export default function CruisesPage() {
               </li>
             </ul>
 
-            <h3>Popular Cruise Destinations from East Coast</h3>
-            <p>East Coast cruisers enjoy easy access to these incredible destinations:</p>
+            <h3>Popular Cruise Destinations from US Ports</h3>
+            <p>
+              US travelers enjoy easy access to these incredible destinations from ports nationwide:
+            </p>
             <ul>
               <li>
                 <strong>Caribbean:</strong> Eastern, Western, and Southern routes to tropical
@@ -405,15 +430,24 @@ export default function CruisesPage() {
                 <strong>Transatlantic:</strong> Cross the Atlantic in style from NYC or Miami
               </li>
               <li>
-                <strong>Mediterranean:</strong> Sail from East Coast to explore Europe
+                <strong>Alaska:</strong> Scenic glacier cruises from Seattle and San Francisco
+              </li>
+              <li>
+                <strong>Hawaii:</strong> Island hopping from West Coast ports
+              </li>
+              <li>
+                <strong>Mexican Riviera:</strong> Pacific Coast departures to Cabo and Mazatlan
+              </li>
+              <li>
+                <strong>Mediterranean:</strong> Transatlantic departures from East Coast ports
               </li>
             </ul>
 
             <h3>Book Your Dream Cruise Today</h3>
             <p>
               Don&apos;t miss out on exclusive perks and savings. Our cruise specialists are
-              standing by to help you plan the perfect cruise vacation from your preferred East
-              Coast port. With our price match guarantee and exclusive amenities, you&apos;ll get
+              standing by to help you plan the perfect cruise vacation from your preferred US port
+              nationwide. With our price match guarantee and exclusive amenities, you&apos;ll get
               more value than booking anywhere else. Contact us today for a free, no-obligation
               cruise consultation.
             </p>
