@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: next-trip-config
+  namespace: production
+  labels:
+    app: next-trip
+    environment: production
+data:
+  api-url: "https://api.next-trip-anywhere.com"
+  sentry-dsn: ""  # Add your Sentry DSN here
+  ga-measurement-id: ""  # Add your Google Analytics ID here
+  node-env: "production"
+  next-telemetry-disabled: "1"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: next-trip-secrets
+  namespace: production
+  labels:
+    app: next-trip
+    environment: production
+type: Opaque
+stringData:
+  database-url: ""  # Add your database connection string
+  redis-url: "redis://redis-service:6379"
+  session-secret: ""  # Generate a secure random string
+  jwt-secret: ""  # Generate a secure random string
+  encryption-key: ""  # Generate a secure random string
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ghcr-secret
+  namespace: production
+  labels:
+    app: next-trip
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: ""  # Base64 encoded Docker config for GitHub Container Registry

@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+      args:
+        - NODE_ENV=development
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:3000}
+        - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
+    container_name: next-trip-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot reloading in development
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:3000}
+      - NEXT_PUBLIC_SENTRY_DSN=${NEXT_PUBLIC_SENTRY_DSN}
+      - NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379}
+    depends_on:
+      - redis
+    networks:
+      - next-trip-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis for caching and session storage
+  redis:
+    image: redis:7-alpine
+    container_name: next-trip-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - next-trip-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-defaultpassword}
+
+  # PostgreSQL Database (optional - uncomment if needed)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: next-trip-db
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_DB=${POSTGRES_DB:-nexttrip}
+  #     - POSTGRES_USER=${POSTGRES_USER:-nexttrip}
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   networks:
+  #     - next-trip-network
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nexttrip}"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+  # Nginx Reverse Proxy (for production-like setup)
+  nginx:
+    image: nginx:alpine
+    container_name: next-trip-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - nginx-cache:/var/cache/nginx
+    depends_on:
+      - app
+    networks:
+      - next-trip-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  next-trip-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
+  nginx-cache:
+    driver: local
