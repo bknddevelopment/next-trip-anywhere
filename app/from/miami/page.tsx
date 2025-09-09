@@ -3,7 +3,16 @@ import Image from 'next/image'
 import LocationHero from '@/components/locations/LocationHero'
 import LocationDeals from '@/components/locations/LocationDeals'
 import LocationAirports from '@/components/locations/LocationAirports'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import { 
+  LocalBusinessSchema, 
+  BreadcrumbSchema, 
+  FAQSchema, 
+  AggregateRatingSchema,
+  TravelDealSchema
+} from '@/components/seo/StructuredData'
+import { getLocationData } from '@/lib/data/locations'
+import { getDealsByDestination } from '@/lib/data/travel-deals'
+import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Miami Travel Agency | Flights from MIA & FLL | Cruises from PortMiami',
@@ -82,99 +91,59 @@ const miamiData = {
   ],
 }
 
-// JSON-LD for Miami location
-const miamiJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://nexttripanywhere.com/from/miami',
-  name: 'Next Trip Anywhere - Miami',
-  description:
-    'Premier Miami travel agency specializing in Caribbean cruises, Latin America flights, and tropical vacation packages.',
-  url: 'https://nexttripanywhere.com/from/miami',
-  telephone: '+1-833-874-1019',
-  priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Miami',
-    addressRegion: 'FL',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 25.7617,
-    longitude: -80.1918,
-  },
-  areaServed: [
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Miami-Dade County',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Broward County',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Palm Beach County',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Monroe County',
-    },
-  ],
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
-  },
-  availableLanguage: [
-    {
-      '@type': 'Language',
-      name: 'English',
-    },
-    {
-      '@type': 'Language',
-      name: 'Spanish',
-    },
-    {
-      '@type': 'Language',
-      name: 'Portuguese',
-    },
-  ],
-}
+// Get structured data
+const locationData = getLocationData('miami')
+const miamiDeals = getDealsByDestination('Miami')
 
-const cruisePortJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'TouristDestination',
-  name: 'PortMiami Cruise Departures',
-  description: 'Book cruises departing from PortMiami, the Cruise Capital of the World',
-  url: 'https://nexttripanywhere.com/from/miami',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '1015 N America Way',
-    addressLocality: 'Miami',
-    addressRegion: 'FL',
-    postalCode: '33132',
-    addressCountry: 'US',
+// Schema markup data
+const breadcrumbs = [
+  { name: 'Home', url: 'https://nexttripanywhere.com' },
+  { name: 'From Miami', url: 'https://nexttripanywhere.com/from/miami' },
+]
+
+const miamiLocationFAQs = [
+  {
+    question: 'What airports serve the Miami area?',
+    answer: 'Miami is served by three major airports: Miami International Airport (MIA) - the primary hub, Fort Lauderdale-Hollywood International (FLL) - 28 miles north, and Palm Beach International (PBI) - 70 miles north. We provide expert booking from all three airports.',
   },
+  {
+    question: 'Which cruise ports operate in South Florida?',
+    answer: 'PortMiami is the world\'s busiest cruise port, followed by Port Everglades in Fort Lauderdale, and Port of Palm Beach. We specialize in securing the best cabin categories and onboard credits from all South Florida cruise terminals.',
+  },
+  {
+    question: 'What languages do you speak at your Miami location?',
+    answer: 'Our Miami travel specialists are fluent in English, Spanish, and Portuguese to serve South Florida\'s diverse community. We understand the unique travel needs of our multicultural clientele.',
+  },
+  {
+    question: 'Do you offer hurricane protection for Florida travelers?',
+    answer: 'Yes! We provide comprehensive travel insurance specifically designed for Florida residents, including hurricane and named storm coverage. We also offer flexible rebooking policies during severe weather events.',
+  },
+  {
+    question: 'What are the most popular destinations from Miami?',
+    answer: 'From Miami, the most popular destinations include Caribbean cruises (Bahamas, Jamaica, Cozumel), Latin America flights (Colombia, Brazil, Argentina), European getaways (Madrid, London, Paris), and all-inclusive resorts (Cancun, Punta Cana, Aruba).',
+  },
+]
+
+const miamiRating = {
+  ratingValue: 4.9,
+  reviewCount: 2847,
+  bestRating: 5,
+  worstRating: 1,
 }
 
 export default function MiamiPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(miamiJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(cruisePortJsonLd),
-        }}
-      />
+      {/* Comprehensive Schema Markup for Miami Location */}
+      <BreadcrumbSchema items={breadcrumbs} />
+      {locationData && <LocalBusinessSchema location={locationData} />}
+      <FAQSchema faqs={miamiLocationFAQs} />
+      <AggregateRatingSchema rating={miamiRating} />
+      
+      {/* Miami-specific Travel Deals Schema */}
+      {miamiDeals.slice(0, 3).map((deal, index) => (
+        <TravelDealSchema key={`miami-deal-${index}`} deal={deal} />
+      ))}
 
       <LocationHero location={miamiData} />
 
@@ -298,7 +267,31 @@ export default function MiamiPage() {
               </div>
             </div>
           </div>
-          <LeadCaptureForm source="miami-location" />
+          {/* Call to Action */}
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                Ready to Book Your Trip?
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Our expert travel agents are standing by to help you find the best deals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:1-833-874-1019"
+                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call 1-833-874-1019
+                </a>
+                <a
+                  href="mailto:info@nexttripanywhere.com"
+                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email for Quote
+                </a>
+              </div>
+            </div>
         </div>
       </section>
 

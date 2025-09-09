@@ -2,7 +2,11 @@ import { Metadata } from 'next'
 import FlightHero from '@/components/services/FlightHero'
 import FlightSearch from '@/components/services/FlightSearch'
 import FlightDeals from '@/components/services/FlightDeals'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import FAQSection, { flightsFAQs } from '@/components/faq/FAQSection'
+import Breadcrumbs from '@/components/ui/Breadcrumbs'
+import { FlashSaleUrgency } from '@/components/marketing/UrgencyBanner'
+import { TrustBadges } from '@/components/ui/TrustSignals'
+import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Cheap Flights Nationwide | Save 40% on Airfare | Next Trip Anywhere',
@@ -80,6 +84,10 @@ const flightServiceJsonLd = {
   },
 }
 
+const breadcrumbItems = [
+  { label: 'Flights', href: '/flights', current: true }
+]
+
 const flightFAQJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -112,6 +120,7 @@ const flightFAQJsonLd = {
 }
 
 export default function FlightsPage() {
+
   return (
     <>
       <script
@@ -126,23 +135,43 @@ export default function FlightsPage() {
           __html: JSON.stringify(flightFAQJsonLd),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumbItems.map((item, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: item.label,
+              item: `https://nexttripanywhere.com${item.href}`,
+            })),
+          }),
+        }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
+      </div>
 
       <FlightHero />
 
-      {/* Urgency Banner */}
-      <section className="bg-gradient-to-r from-red-600 to-orange-600 text-white py-3">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-lg font-semibold animate-pulse">
-            ⚡ FLASH SALE: Extra $50 OFF International Flights - Expires Tonight!
-          </p>
-        </div>
-      </section>
+      {/* Enhanced Urgency Banner */}
+      <FlashSaleUrgency />
 
       <FlightSearch />
 
-      {/* Trust Building */}
+      {/* Enhanced Trust Building */}
       <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Travelers Choose Us for Flights</h2>
+            <TrustBadges />
+          </div>
           <div className="grid md:grid-cols-4 gap-6 text-center">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="text-3xl font-bold text-blue-600 mb-2">40%</div>
@@ -166,83 +195,33 @@ export default function FlightsPage() {
 
       <FlightDeals />
 
-      {/* Lead Capture with Benefits */}
+
+      {/* Newsletter Signup with Lead Magnet */}
       <section className="py-16 bg-warm-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              LIMITED TIME: Free Seat Selection on All Bookings
-            </div>
-            <h2 className="text-3xl font-bold text-navy mb-4">
-              Get Exclusive Flight Deals Not Available Online
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Our flight experts have access to unpublished fares and can often beat any price you
-              find online. Plus, we handle all the details so you can relax.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-8">
-              <div className="flex items-start gap-3">
-                <svg
-                  className="w-6 h-6 text-green-500 flex-shrink-0 mt-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <div className="text-left">
-                  <div className="font-semibold">Unpublished Fares</div>
-                  <div className="text-sm text-gray-600">
-                    Access to airline inventory not shown online
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg
-                  className="w-6 h-6 text-green-500 flex-shrink-0 mt-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <div className="text-left">
-                  <div className="font-semibold">Price Protection</div>
-                  <div className="text-sm text-gray-600">
-                    We rebook if prices drop after purchase
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg
-                  className="w-6 h-6 text-green-500 flex-shrink-0 mt-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <div className="text-left">
-                  <div className="font-semibold">Expert Routing</div>
-                  <div className="text-sm text-gray-600">
-                    Find better connections & shorter layovers
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-2xl mx-auto">
+            <InlineNewsletterSignup
+              title="Get Flight Deals & Travel Tips"
+              subtitle="Join our newsletter for travel insights and destination information"
+              leadMagnet={{
+                title: "Flight Booking Guide",
+                description: "FREE guide with helpful tips for booking flights",
+                downloadUrl: "/downloads/flight-booking-guide.pdf",
+                type: 'pdf'
+              }}
+            />
           </div>
-          <LeadCaptureForm source="flights-page" />
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection
+        title="Flight Booking FAQ"
+        subtitle="Get answers to common questions about booking flights with Next Trip Anywhere"
+        faqs={flightsFAQs}
+        categories={['Savings', 'Pricing', 'Changes', 'Locations']}
+        className="bg-white"
+      />
 
       {/* SEO Content */}
       <section className="py-12 bg-white">

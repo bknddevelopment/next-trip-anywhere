@@ -1,157 +1,16 @@
 import { Metadata } from 'next'
+import { Phone, Mail } from 'lucide-react'
 import LocationHero from '@/components/locations/LocationHero'
 import LocationDeals from '@/components/locations/LocationDeals'
 import LocationAirports from '@/components/locations/LocationAirports'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import { getLocationData } from '@/lib/location-data'
+import { generateLocationMetadata, generateLocationJsonLd } from '@/lib/location-page-generator'
 
-export const metadata: Metadata = {
-  title: 'Washington DC Travel Agency | Flights from DCA, IAD & BWI | Capital Region Travel',
-  description:
-    'Book flights from Reagan National, Dulles, and BWI airports. Expert DC travel agency serving Washington, Northern Virginia, and Maryland. Government travel specialists.',
-  keywords:
-    'Washington DC travel agency, flights from DCA, Dulles airport, BWI flights, DC vacation packages, government travel, Capital Region travel, Northern Virginia travel agency, Maryland travel',
-  openGraph: {
-    title: 'Washington DC Travel Agency - Capital Region Travel Experts',
-    description:
-      'Your trusted DC Metro travel experts. Best deals on flights from DCA, Dulles, and BWI. Serving government employees and the Capital Region.',
-    url: 'https://nexttripanywhere.com/from/dc',
-    images: [
-      {
-        url: '/images/dc-travel.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Washington DC Travel Agency - Next Trip Anywhere',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'DC Travel Agency | Government & Corporate Travel Specialists',
-    description:
-      'Expert travel planning for the Capital Region. Best deals from Reagan National, Dulles, and BWI.',
-  },
-  alternates: {
-    canonical: 'https://nexttripanywhere.com/from/dc',
-  },
-}
-
-const dcData = {
-  city: 'Washington DC',
-  shortName: 'DC',
-  airports: [
-    {
-      code: 'DCA',
-      name: 'Ronald Reagan Washington National',
-      distance: '4 miles from Downtown DC',
-    },
-    {
-      code: 'IAD',
-      name: 'Washington Dulles International',
-      distance: '26 miles from DC (Virginia)',
-    },
-    {
-      code: 'BWI',
-      name: 'Baltimore/Washington International',
-      distance: '32 miles from DC (Maryland)',
-    },
-  ],
-  cruisePorts: [
-    { name: 'Port of Baltimore', location: 'Baltimore, MD (45 min from DC)' },
-    { name: 'Norfolk Cruise Terminal', location: 'Norfolk, VA (3 hours from DC)' },
-  ],
-  popularDestinations: [
-    'Orlando',
-    'Miami',
-    'Los Angeles',
-    'San Francisco',
-    'London',
-    'Paris',
-    'Frankfurt',
-    'Tokyo',
-    'Dubai',
-  ],
-  localAreas: [
-    'Arlington',
-    'Alexandria',
-    'Bethesda',
-    'Silver Spring',
-    'Rockville',
-    'Fairfax',
-    'Falls Church',
-    'Tysons',
-    'Reston',
-    'Columbia',
-    'Annapolis',
-  ],
-}
+const dcData = getLocationData('dc')!
+export const metadata: Metadata = generateLocationMetadata(dcData)
 
 // JSON-LD for DC location
-const dcJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://nexttripanywhere.com/from/dc',
-  name: 'Next Trip Anywhere - Washington DC',
-  description:
-    'Premier travel agency serving Washington DC, Northern Virginia, and Maryland with expertise in government and corporate travel.',
-  url: 'https://nexttripanywhere.com/from/dc',
-  telephone: '+1-833-874-1019',
-  priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Washington',
-    addressRegion: 'DC',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 38.9072,
-    longitude: -77.0369,
-  },
-  areaServed: [
-    {
-      '@type': 'City',
-      name: 'Washington DC',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Northern Virginia',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Montgomery County, MD',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Prince George&apos;s County, MD',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Fairfax County, VA',
-    },
-    {
-      '@type': 'AdministrativeArea',
-      name: 'Arlington County, VA',
-    },
-  ],
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
-  },
-  hasCredential: [
-    {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'GSA Schedule Contractor',
-      credentialCategory: 'Government Approved',
-    },
-    {
-      '@type': 'EducationalOccupationalCredential',
-      name: 'TSA PreCheck Enrollment Provider',
-      credentialCategory: 'Federal Program',
-    },
-  ],
-}
+const dcJsonLd = generateLocationJsonLd(dcData)
 
 const governmentTravelJsonLd = {
   '@context': 'https://schema.org',
@@ -285,7 +144,31 @@ export default function DCPage() {
               </div>
             </div>
           </div>
-          <LeadCaptureForm source="dc-location" />
+          {/* Call to Action */}
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                Ready to Book Your Trip?
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Our expert travel agents are standing by to help you find the best deals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:1-833-874-1019"
+                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call 1-833-874-1019
+                </a>
+                <a
+                  href="mailto:info@nexttripanywhere.com"
+                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email for Quote
+                </a>
+              </div>
+            </div>
         </div>
       </section>
 

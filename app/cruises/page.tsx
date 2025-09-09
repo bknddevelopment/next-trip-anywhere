@@ -2,7 +2,18 @@ import { Metadata } from 'next'
 import CruiseHero from '@/components/services/CruiseHero'
 import CruiseSearch from '@/components/services/CruiseSearch'
 import CruiseDeals from '@/components/services/CruiseDeals'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import { 
+  ServiceSchema, 
+  BreadcrumbSchema, 
+  FAQSchema, 
+  CruiseSchema,
+  AggregateRatingSchema,
+  TravelDealSchema,
+  EventSchema
+} from '@/components/seo/StructuredData'
+import { FEATURED_CRUISES } from '@/lib/data/cruises'
+import { getDealsByCategory, getUpcomingEvents } from '@/lib/data/travel-deals'
+import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Cruise Deals from All US Ports | Caribbean Cruises from $299 | Next Trip Anywhere',
@@ -29,109 +40,72 @@ export const metadata: Metadata = {
   },
 }
 
-// Cruise Service JSON-LD
-const cruiseServiceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Cruise Booking Services',
-  provider: {
-    '@type': 'TravelAgency',
-    name: 'Next Trip Anywhere',
-  },
-  description:
-    'Expert cruise booking with exclusive rates, free upgrades, and onboard credits from all major US ports nationwide.',
-  areaServed: [
-    'PortMiami',
-    'Port Everglades',
-    'Manhattan Cruise Terminal',
-    'Port of Baltimore',
-    'Black Falcon Terminal Boston',
-    'Port of Los Angeles',
-    'Port of San Francisco',
-    'Port of Seattle',
-    'Port of New Orleans',
-    'Port of Galveston',
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Cruise Packages',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: 'Caribbean Cruises',
-        description: '3-7 day cruises to Caribbean islands',
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          price: '299',
-          priceCurrency: 'USD',
-          valueAddedTaxIncluded: false,
-        },
-      },
-      {
-        '@type': 'Offer',
-        name: 'Bahamas Cruises',
-        description: 'Short cruises to Nassau and private islands',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Bermuda Cruises',
-        description: 'Seasonal cruises from Northeast ports',
-      },
-      {
-        '@type': 'Offer',
-        name: 'European Cruises',
-        description: 'Mediterranean, Northern Europe, and Alaska cruises',
-      },
-    ],
-  },
-}
+// Get data for schema markup
+const featuredCruise = FEATURED_CRUISES[0] // Featured cruise for schema
+const cruiseDeals = getDealsByCategory('cruises')
+const cruiseEvents = getUpcomingEvents().filter(event => 
+  event.name.toLowerCase().includes('cruise')
+)
 
-const cruiseFAQJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What cruise perks can travel agents provide?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'As certified cruise specialists, we can provide free cabin upgrades, onboard credits ($50-$500), complimentary specialty dining, free beverage packages, prepaid gratuities, and exclusive group rates that save you 20-50% off published prices.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Which cruise lines depart from US ports nationwide?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Major cruise lines operate from all US ports including Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Popular departure ports include Miami, Fort Lauderdale, Los Angeles, Seattle, New York, Baltimore, New Orleans, and Galveston.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'When is the best time to book a cruise for the best price?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Wave Season (January-March) offers the best promotions, but we have access to exclusive group rates year-round. Last-minute cruises (30-60 days out) can offer deep discounts. We monitor prices and rebook if rates drop.',
-      },
-    },
-  ],
+// Breadcrumb data
+const breadcrumbs = [
+  { name: 'Home', url: 'https://nexttripanywhere.com' },
+  { name: 'Cruises', url: 'https://nexttripanywhere.com/cruises' },
+]
+
+// FAQ data
+const cruiseFAQs = [
+  {
+    question: 'What cruise perks can travel agents provide?',
+    answer: 'As certified cruise specialists, we can provide free cabin upgrades, onboard credits ($50-$500), complimentary specialty dining, free beverage packages, prepaid gratuities, and exclusive group rates that save you 20-50% off published prices.',
+  },
+  {
+    question: 'Which cruise lines depart from US ports nationwide?',
+    answer: 'Major cruise lines operate from all US ports including Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Popular departure ports include Miami, Fort Lauderdale, Los Angeles, Seattle, New York, Baltimore, New Orleans, and Galveston.',
+  },
+  {
+    question: 'When is the best time to book a cruise for the best price?',
+    answer: 'Wave Season (January-March) offers the best promotions, but we have access to exclusive group rates year-round. Last-minute cruises (30-60 days out) can offer deep discounts. We monitor prices and rebook if rates drop.',
+  },
+  {
+    question: 'Do I need travel insurance for my cruise?',
+    answer: 'While not required, we strongly recommend comprehensive travel insurance for cruise vacations. It protects against trip cancellation, medical emergencies, and cruise line bankruptcy. We offer competitive rates through multiple providers.',
+  },
+  {
+    question: 'Can you help with cruise cabin selection?',
+    answer: 'Absolutely! Our cruise experts know which cabins to recommend and which to avoid. We consider factors like noise levels, proximity to elevators, deck plans, and views to ensure you get the best possible cabin for your budget.',
+  },
+]
+
+// Aggregate rating data
+const cruiseRatingData = {
+  ratingValue: 4.9,
+  reviewCount: 1847,
+  bestRating: 5,
+  worstRating: 1,
 }
 
 export default function CruisesPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(cruiseServiceJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(cruiseFAQJsonLd),
-        }}
-      />
+      {/* Comprehensive Schema Markup */}
+      <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceSchema service="cruises" />
+      <FAQSchema faqs={cruiseFAQs} />
+      <AggregateRatingSchema rating={cruiseRatingData} />
+      
+      {/* Featured Cruise Schema */}
+      {featuredCruise && <CruiseSchema cruise={featuredCruise} />}
+      
+      {/* Cruise Deals Schema */}
+      {cruiseDeals.slice(0, 3).map((deal, index) => (
+        <TravelDealSchema key={`cruise-deal-${index}`} deal={deal} />
+      ))}
+      
+      {/* Cruise Events Schema */}
+      {cruiseEvents.slice(0, 2).map((event, index) => (
+        <EventSchema key={`cruise-event-${index}`} event={event} />
+      ))}
 
       <CruiseHero />
 
@@ -317,7 +291,31 @@ export default function CruisesPage() {
               </div>
             </div>
           </div>
-          <LeadCaptureForm source="cruises-page" />
+          {/* Call to Action */}
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                Ready to Book Your Trip?
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Our expert travel agents are standing by to help you find the best deals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:1-833-874-1019"
+                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call 1-833-874-1019
+                </a>
+                <a
+                  href="mailto:info@nexttripanywhere.com"
+                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email for Quote
+                </a>
+              </div>
+            </div>
         </div>
       </section>
 

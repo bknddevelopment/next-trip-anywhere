@@ -71,7 +71,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold text-navy mb-2">Industry Certified</h3>
               <p className="text-gray-600">
-                ASTA member, CLIA certified, and IATA accredited since 2010
+                ASTA member and CLIA certified since 2010
               </p>
             </div>
 

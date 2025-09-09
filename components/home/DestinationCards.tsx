@@ -9,8 +9,7 @@ const destinations = [
   {
     id: 1,
     name: 'Cancun, Mexico',
-    image: 'https://images.unsplash.com/photo-1510097467424-192d713fd8b2?w=800&q=80',
-    price: 'From $599',
+    image: 'https://images.unsplash.com/photo-1510097467424-192d713fd8b2?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     duration: '5 Days',
     groupSize: '2-4 People',
@@ -20,8 +19,7 @@ const destinations = [
   {
     id: 2,
     name: 'Paris, France',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80',
-    price: 'From $1,299',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
     rating: 4.9,
     duration: '7 Days',
     groupSize: '2-6 People',
@@ -31,8 +29,7 @@ const destinations = [
   {
     id: 3,
     name: 'Bali, Indonesia',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
-    price: 'From $999',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
     rating: 4.7,
     duration: '8 Days',
     groupSize: '2-8 People',
@@ -42,8 +39,7 @@ const destinations = [
   {
     id: 4,
     name: 'Dubai, UAE',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
-    price: 'From $1,499',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     duration: '6 Days',
     groupSize: '2-4 People',
@@ -53,8 +49,7 @@ const destinations = [
   {
     id: 5,
     name: 'Santorini, Greece',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80',
-    price: 'From $1,199',
+    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80',
     rating: 4.9,
     duration: '5 Days',
     groupSize: '2 People',
@@ -64,8 +59,7 @@ const destinations = [
   {
     id: 6,
     name: 'Tokyo, Japan',
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
-    price: 'From $1,799',
+    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     duration: '7 Days',
     groupSize: '2-6 People',
@@ -130,17 +124,25 @@ export default function DestinationCards() {
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
                 {/* Image Container */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden bg-gray-200">
                   {visibleCards.has(index) && (
-                    <Image
-                      src={destination.image}
-                      alt={destination.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                      quality={75}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    <>
+                      <Image
+                        src={destination.image}
+                        alt={destination.name}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        quality={75}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
+                      {/* Fallback gradient if image fails */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-secondary-500 opacity-20" />
+                    </>
                   )}
                   {destination.featured && (
                     <div className="absolute top-4 left-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -177,14 +179,14 @@ export default function DestinationCards() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-2xl font-bold text-primary-500">{destination.price}</p>
-                      <p className="text-xs text-gray-500">per person</p>
+                      <p className="text-lg font-semibold text-primary-500">Get Quote</p>
+                      <p className="text-xs text-gray-500">Best rates guaranteed</p>
                     </div>
                     <Link
-                      href={`/destinations/${destination.name.toLowerCase().replace(/[, ]/g, '-')}`}
+                      href={`/contact?destination=${encodeURIComponent(destination.name)}`}
                       className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                     >
-                      View Details
+                      Inquire Now
                     </Link>
                   </div>
                 </div>

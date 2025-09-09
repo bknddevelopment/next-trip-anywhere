@@ -1,0 +1,80 @@
+import { MetadataRoute } from 'next'
+
+/**
+ * Dynamic robots.txt configuration
+ * Optimized for search engine crawling
+ */
+export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://nexttripanywhere.com'
+
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/backend/',
+          '/*.json$',
+          '/*?*',  // Block URL parameters to avoid duplicate content
+          '/checkout/',
+          '/cart/',
+          '/account/',
+        ],
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/backend/',
+        ],
+        crawlDelay: 0,
+      },
+      {
+        userAgent: 'Googlebot-Image',
+        allow: '/',
+        disallow: [],
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/backend/',
+        ],
+        crawlDelay: 0,
+      },
+      // Block unwanted bots
+      {
+        userAgent: 'AhrefsBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'SemrushBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'DotBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'MJ12bot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'PetalBot',
+        disallow: '/',
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
+  }
+}

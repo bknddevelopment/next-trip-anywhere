@@ -2,9 +2,33 @@
 
 import { motion } from 'framer-motion'
 import { Phone, MessageCircle, Mail, ArrowRight } from 'lucide-react'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import { useABTest, AB_EVENTS } from '@/lib/ab-testing'
 
 export default function CTASection() {
+  const { config, trackConversion, isLoading } = useABTest('homepage-hero-cta')
+  
+  // Default values if A/B test is not active
+  const primaryCtaText = config.primaryCtaText || 'Start Planning My Trip'
+  const primaryCtaColor = config.primaryCtaColor || 'bg-gradient-to-r from-primary-500 to-primary-600'
+  const secondaryCtaText = config.secondaryCtaText || 'Surprise Me with Deals!'
+  const secondaryCtaColor = config.secondaryCtaColor || 'bg-gradient-to-r from-accent-500 to-accent-600'
+
+  const handlePhoneClick = () => {
+    trackConversion(AB_EVENTS.PHONE_CLICK)
+  }
+
+  const handleEmailClick = () => {
+    trackConversion(AB_EVENTS.EMAIL_CLICK)
+  }
+
+  const handleChatClick = () => {
+    trackConversion(AB_EVENTS.CTA_CLICK, undefined, { type: 'chat' })
+  }
+
+  if (isLoading) {
+    return <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />
+  }
+
   return (
     <section className="py-20 bg-gradient-to-br from-primary-50 via-warm-50 to-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,8 +47,8 @@ export default function CTASection() {
 
             <p className="text-lg text-gray-700 mb-8">
               Don&apos;t wait for tomorrow to plan your dream vacation. Our travel experts are
-              standing by to create your perfect itinerary with exclusive deals you won&apos;t find
-              anywhere else.
+              standing by to create your perfect itinerary with personalized service and 
+              competitive rates.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -43,8 +67,8 @@ export default function CTASection() {
                   <ArrowRight className="w-6 h-6 text-accent-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-navy">Exclusive Deals</h4>
-                  <p className="text-sm text-gray-600">Save up to 40% on packages</p>
+                  <h4 className="font-semibold text-navy">Competitive Rates</h4>
+                  <p className="text-sm text-gray-600">Access to special pricing</p>
                 </div>
               </div>
 
@@ -53,8 +77,8 @@ export default function CTASection() {
                   <ArrowRight className="w-6 h-6 text-secondary-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-navy">Price Match Guarantee</h4>
-                  <p className="text-sm text-gray-600">Find it cheaper? We&apos;ll beat it!</p>
+                  <h4 className="font-semibold text-navy">Best Price Guarantee</h4>
+                  <p className="text-sm text-gray-600">We work to find competitive rates</p>
                 </div>
               </div>
             </div>
@@ -85,14 +109,71 @@ export default function CTASection() {
             </div>
           </motion.div>
 
-          {/* Right Content - Lead Form */}
+          {/* Right Content - Call to Action */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="bg-white rounded-3xl p-8 shadow-xl"
           >
-            <LeadCaptureForm source="homepage-cta" />
+            <div className="text-center">
+              <h3 className="text-3xl font-bold text-navy mb-4">
+                Start Planning Your Dream Vacation Today!
+              </h3>
+              <p className="text-lg text-gray-700 mb-8">
+                Our expert travel agents are ready to help you find the perfect getaway with personalized service.
+              </p>
+              
+              <div className="space-y-4">
+                <a
+                  href="tel:1-833-874-1019"
+                  onClick={handlePhoneClick}
+                  className={`block w-full ${primaryCtaColor} text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+                >
+                  <Phone className="inline-block w-5 h-5 mr-2" />
+                  Call Now: 1-833-874-1019
+                </a>
+                
+                <a
+                  href="mailto:info@nexttripanywhere.com"
+                  onClick={handleEmailClick}
+                  className="block w-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <Mail className="inline-block w-5 h-5 mr-2" />
+                  Email Us for a Quote
+                </a>
+                
+                <div className="relative">
+                  <div className={`absolute inset-0 ${secondaryCtaColor} rounded-lg blur-sm`}></div>
+                  <button 
+                    onClick={handleChatClick}
+                    className={`relative block w-full ${secondaryCtaColor} text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+                  >
+                    <MessageCircle className="inline-block w-5 h-5 mr-2" />
+                    {secondaryCtaText}
+                  </button>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <p className="text-sm text-gray-600 mb-4">Why Choose Next Trip Anywhere?</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-green-500">✓</span>
+                    <span>Best Price Guarantee</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-green-500">✓</span>
+                    <span>24/7 Support</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-green-500">✓</span>
+                    <span>Expert Travel Agents</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
 

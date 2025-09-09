@@ -12,64 +12,57 @@ interface LocationDealsProps {
   location: LocationData
 }
 
-const getDealsForLocation = (city: string) => {
-  // In a real app, this would fetch location-specific deals
-  const baseDeals = [
+const getServicesForLocation = (city: string) => {
+  const services = [
     {
       type: 'Flight',
-      route: `${city} to Miami`,
-      price: 'From $149',
-      savings: 'Save $100',
-      dates: 'Jan - Mar 2025',
-      airline: 'American Airlines',
-    },
-    {
-      type: 'Cruise',
-      route: '7-Night Caribbean',
-      price: 'From $599',
-      savings: 'Save $300',
-      dates: 'Multiple Dates',
-      airline: 'Royal Caribbean',
-    },
-    {
-      type: 'Package',
-      route: 'Cancun All-Inclusive',
-      price: 'From $799',
-      savings: 'Save $400',
-      dates: 'Feb - Apr 2025',
-      airline: 'Flight + Resort',
-    },
-    {
-      type: 'Flight',
-      route: `${city} to Las Vegas`,
-      price: 'From $198',
-      savings: 'Save $150',
+      route: `${city} to Popular Destinations`,
+      description: 'Best rates on flights nationwide',
       dates: 'Year Round',
-      airline: 'Southwest Airlines',
-    },
-    {
-      type: 'Package',
-      route: 'Orlando Theme Parks',
-      price: 'From $999',
-      savings: 'Save $500',
-      dates: 'Spring Break 2025',
-      airline: 'Flight + Hotel + Tickets',
+      provider: 'All Major Airlines',
     },
     {
       type: 'Cruise',
-      route: '5-Night Bahamas',
-      price: 'From $449',
-      savings: 'Save $200',
-      dates: 'Weekly Departures',
-      airline: 'Carnival Cruise Line',
+      route: 'Caribbean Cruises',
+      description: 'Expert cruise planning and booking',
+      dates: 'Multiple Dates',
+      provider: 'All Cruise Lines',
+    },
+    {
+      type: 'Package',
+      route: 'Vacation Packages',
+      description: 'Customized travel packages',
+      dates: 'Flexible Dates',
+      provider: 'Flight + Hotel Combos',
+    },
+    {
+      type: 'Flight',
+      route: `${city} to International`,
+      description: 'Competitive international fares',
+      dates: 'Year Round',
+      provider: 'International Airlines',
+    },
+    {
+      type: 'Package',
+      route: 'Theme Park Packages',
+      description: 'Family-friendly vacation planning',
+      dates: 'All Seasons',
+      provider: 'Flight + Hotel + Tickets',
+    },
+    {
+      type: 'Cruise',
+      route: 'Alaska & European Cruises',
+      description: 'Premium cruise experiences',
+      dates: 'Seasonal Departures',
+      provider: 'Luxury Cruise Lines',
     },
   ]
 
-  return baseDeals
+  return services
 }
 
 export default function LocationDeals({ location }: LocationDealsProps) {
-  const deals = getDealsForLocation(location.shortName)
+  const services = getServicesForLocation(location.shortName)
 
   return (
     <section className="py-16 bg-gradient-to-b from-white to-warm-50">
@@ -82,15 +75,15 @@ export default function LocationDeals({ location }: LocationDealsProps) {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-navy mb-4">
-            Exclusive Deals from <span className="text-gradient">{location.city}</span>
+            Travel Services from <span className="text-gradient">{location.city}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Special rates negotiated for {location.shortName} travelers
+            Expert travel planning for {location.city} travelers
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {deals.map((deal, index) => (
+          {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -102,29 +95,29 @@ export default function LocationDeals({ location }: LocationDealsProps) {
               <div className="flex justify-between items-start mb-4">
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    deal.type === 'Flight'
+                    service.type === 'Flight'
                       ? 'bg-primary-100 text-primary-700'
-                      : deal.type === 'Cruise'
+                      : service.type === 'Cruise'
                         ? 'bg-secondary-100 text-secondary-700'
                         : 'bg-accent-100 text-accent-700'
                   }`}
                 >
-                  {deal.type}
+                  {service.type}
                 </span>
-                <span className="text-accent-600 font-bold">{deal.savings}</span>
+                <span className="text-green-600 font-bold">Best Price</span>
               </div>
 
-              <h3 className="text-lg font-bold text-navy mb-2">{deal.route}</h3>
-              <p className="text-sm text-gray-600 mb-4">{deal.airline}</p>
+              <h3 className="text-lg font-bold text-navy mb-2">{service.route}</h3>
+              <p className="text-sm text-gray-600 mb-4">{service.provider}</p>
 
               <div className="space-y-2 mb-4">
                 <div className="flex items-center text-sm text-gray-600">
                   <TrendingDown className="w-4 h-4 mr-2 text-accent-500" />
-                  <span className="text-xl font-bold text-primary-500">{deal.price}</span>
+                  <span className="text-sm text-primary-500">{service.description}</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Calendar className="w-4 h-4 mr-2 text-secondary-500" />
-                  {deal.dates}
+                  {service.dates}
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <MapPin className="w-4 h-4 mr-2 text-primary-500" />
@@ -137,7 +130,7 @@ export default function LocationDeals({ location }: LocationDealsProps) {
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
               >
-                Book This Deal
+                Get Quote
               </motion.button>
             </motion.div>
           ))}
@@ -151,11 +144,10 @@ export default function LocationDeals({ location }: LocationDealsProps) {
           className="mt-12 text-center"
         >
           <p className="text-gray-600 mb-4">
-            These are just a sample of our {location.shortName} deals. Contact us for personalized
-            offers.
+            Need help planning your trip from {location.city}? Our travel experts are here to help.
           </p>
           <button className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-            See All {location.city} Deals
+            Contact Our {location.city} Experts
           </button>
         </motion.div>
       </div>

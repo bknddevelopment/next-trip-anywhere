@@ -2,7 +2,17 @@ import { Metadata } from 'next'
 import PackageHero from '@/components/services/PackageHero'
 import PackageCategories from '@/components/services/PackageCategories'
 import PackageDeals from '@/components/services/PackageDeals'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
+import {
+  ServiceSchema,
+  BreadcrumbSchema,
+  FAQSchema,
+  TripSchema,
+  TourSchema,
+  ProductSchema,
+  AggregateRatingSchema
+} from '@/components/seo/StructuredData'
+import { VACATION_PACKAGES, getFeaturedPackages } from '@/lib/data/vacation-packages'
+import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'All-Inclusive Vacation Packages from $599 | East Coast Departures',
@@ -29,98 +39,104 @@ export const metadata: Metadata = {
   },
 }
 
-// Package Service JSON-LD
-const packageServiceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'All-Inclusive Vacation Packages',
-  provider: {
-    '@type': 'TravelAgency',
-    name: 'Next Trip Anywhere',
+// Get package data for schema markup
+const featuredPackages = getFeaturedPackages()
+const samplePackage = VACATION_PACKAGES.length > 0 ? VACATION_PACKAGES[0] : null
+const tourPackage = VACATION_PACKAGES.length > 1 ? VACATION_PACKAGES[1] : null
+
+// Schema markup data
+const breadcrumbs = [
+  { name: 'Home', url: 'https://nexttripanywhere.com' },
+  { name: 'Vacation Packages', url: 'https://nexttripanywhere.com/packages' },
+]
+
+const packageFAQs = [
+  {
+    question: 'What is included in an all-inclusive vacation package?',
+    answer: 'Our all-inclusive packages typically include round-trip flights, airport transfers, hotel accommodations, all meals and drinks (including alcohol at most resorts), entertainment, activities, and gratuities. Some packages also include spa credits, excursions, and water sports.',
   },
-  description:
-    'Complete vacation packages including flights, hotels, meals, and activities from East Coast cities.',
-  serviceType: 'Vacation Package Booking',
-  areaServed: ['New York', 'Boston', 'Miami', 'Washington DC'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Vacation Package Types',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: 'Caribbean All-Inclusive',
-        description: 'Beach resorts in Jamaica, Mexico, Dominican Republic',
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          price: '599',
-          priceCurrency: 'USD',
-        },
-      },
-      {
-        '@type': 'Offer',
-        name: 'European Tours',
-        description: 'Guided tours of Italy, France, Spain, Greece',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Disney Packages',
-        description: 'Disney World and Disneyland vacation packages',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Honeymoon Packages',
-        description: 'Romantic getaways to tropical destinations',
-      },
-    ],
+  {
+    question: 'How much can I save by booking a package vs. separately?',
+    answer: 'Vacation packages typically save 20-50% compared to booking components separately. We have exclusive contracts with resorts and airlines that provide bulk discounts not available to individuals. Plus, many resorts offer free nights and upgrades only available through packages.',
   },
+  {
+    question: 'Can you customize vacation packages?',
+    answer: 'Absolutely! While we offer pre-designed packages, we specialize in creating custom vacations. We can adjust length of stay, upgrade rooms, add excursions, arrange special celebrations, and accommodate dietary restrictions or accessibility needs.',
+  },
+  {
+    question: 'Do vacation packages include travel insurance?',
+    answer: 'Travel insurance is available as an add-on to all packages and we highly recommend it. Our insurance options cover trip cancellation, medical emergencies, baggage protection, and travel delays. We offer competitive rates from multiple providers.',
+  },
+  {
+    question: 'What payment options are available for vacation packages?',
+    answer: 'We offer flexible payment options including full payment upfront, monthly payment plans, and low deposits to hold your vacation. Most packages can be secured with just $99 per person deposit, with final payment due 45-60 days before departure.',
+  },
+]
+
+const packageRating = {
+  ratingValue: 4.8,
+  reviewCount: 3247,
+  bestRating: 5,
+  worstRating: 1,
 }
 
-const packageFAQJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is included in an all-inclusive vacation package?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Our all-inclusive packages typically include round-trip flights, airport transfers, hotel accommodations, all meals and drinks (including alcohol at most resorts), entertainment, activities, and gratuities. Some packages also include spa credits, excursions, and water sports.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much can I save by booking a package vs. separately?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vacation packages typically save 20-50% compared to booking components separately. We have exclusive contracts with resorts and airlines that provide bulk discounts not available to individuals. Plus, many resorts offer free nights and upgrades only available through packages.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can you customize vacation packages?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Absolutely! While we offer pre-designed packages, we specialize in creating custom vacations. We can adjust length of stay, upgrade rooms, add excursions, arrange special celebrations, and accommodate dietary restrictions or accessibility needs.',
-      },
-    },
-  ],
-}
+// Transform vacation package to Trip schema data
+const transformPackageToTrip = (pkg: any) => ({
+  name: pkg.name,
+  description: pkg.description,
+  destination: pkg.destination,
+  duration: pkg.duration,
+  price: pkg.price,
+  currency: pkg.currency,
+  includes: pkg.includes,
+  itinerary: pkg.itinerary,
+  image: pkg.image,
+})
+
+// Transform vacation package to Tour schema data
+const transformPackageToTour = (pkg: any) => ({
+  name: pkg.name,
+  description: pkg.description,
+  provider: 'Next Trip Anywhere',
+  duration: `${pkg.duration} days`,
+  language: ['en', 'es'],
+  price: pkg.price,
+  currency: pkg.currency,
+  includes: pkg.includes,
+  meetingPoint: 'Departure airport',
+  image: pkg.image,
+})
 
 export default function PackagesPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(packageServiceJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(packageFAQJsonLd),
-        }}
-      />
+      {/* Comprehensive Schema Markup */}
+      <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceSchema service="packages" />
+      <FAQSchema faqs={packageFAQs} />
+      <AggregateRatingSchema rating={packageRating} />
+      
+      {/* Featured Package Schemas */}
+      {samplePackage && <TripSchema trip={transformPackageToTrip(samplePackage)} />}
+      {tourPackage && <TourSchema tour={transformPackageToTour(tourPackage)} />}
+      
+      {/* Individual Package Product Schemas */}
+      {featuredPackages.slice(0, 3).map((pkg, index) => (
+        <ProductSchema
+          key={`package-${index}`}
+          product={{
+            name: pkg.name,
+            description: pkg.description,
+            price: pkg.price,
+            priceCurrency: pkg.currency || 'USD',
+            availability: pkg.availability === 'InStock' ? 'InStock' : pkg.availability === 'OutOfStock' ? 'OutOfStock' : 'PreOrder',
+            validFrom: pkg.validFrom,
+            validThrough: pkg.validUntil,
+            destination: pkg.destination,
+            image: pkg.image,
+          }}
+        />
+      ))}
 
       <PackageHero />
 
@@ -148,10 +164,10 @@ export default function PackagesPage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-xl font-bold text-navy mb-2">Save 20-50%</h3>
+              <h3 className="text-xl font-bold text-navy mb-2">Competitive Packages</h3>
               <p className="text-gray-600">
-                Bundling flights, hotels, and extras saves hundreds compared to booking separately.
-                Our bulk buying power means huge discounts.
+                Bundling flights, hotels, and extras often provides savings compared to booking separately.
+                Our industry connections help find competitive rates.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -181,12 +197,12 @@ export default function PackagesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8">
             <div className="inline-block bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              EXCLUSIVE: Free Room Upgrade + $200 Resort Credit
+              PROFESSIONAL: Expert Travel Planning Available
             </div>
             <h2 className="text-3xl font-bold text-navy mb-4">Your Dream Vacation Awaits</h2>
             <p className="text-lg text-gray-600 mb-6">
-              From romantic honeymoons to family adventures, we create perfect vacation packages
-              that save you money and eliminate stress. Let our experts handle every detail.
+              From romantic honeymoons to family adventures, we create vacation packages
+              designed to provide value and eliminate stress. Let our experts handle every detail.
             </p>
 
             {/* Package Benefits */}
@@ -280,7 +296,31 @@ export default function PackagesPage() {
               </div>
             </div>
           </div>
-          <LeadCaptureForm source="packages-page" />
+          {/* Call to Action */}
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                Ready to Book Your Trip?
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Our expert travel agents are standing by to help you find the best deals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:1-833-874-1019"
+                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call 1-833-874-1019
+                </a>
+                <a
+                  href="mailto:info@nexttripanywhere.com"
+                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email for Quote
+                </a>
+              </div>
+            </div>
         </div>
       </section>
 
@@ -401,12 +441,12 @@ export default function PackagesPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-navy">15,000+</div>
-              <div className="text-sm text-gray-600">Happy Customers</div>
+              <div className="text-2xl font-bold text-navy">Expert</div>
+              <div className="text-sm text-gray-600">Travel Planning</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-navy">$1.2M</div>
-              <div className="text-sm text-gray-600">Saved Last Year</div>
+              <div className="text-2xl font-bold text-navy">Best</div>
+              <div className="text-sm text-gray-600">Price Guarantee</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-navy">100%</div>

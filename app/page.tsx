@@ -2,21 +2,21 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import HeroSection from '@/components/home/HeroSection'
 import { Metadata } from 'next'
+import ExitIntentPopup from '@/components/marketing/ExitIntentPopup'
+import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
+import { DetailedTrustSection } from '@/components/ui/TrustSignals'
 
-// Lazy load heavy components
+// Lazy load heavy components with optimized settings
 const DestinationCards = dynamic(() => import('@/components/home/DestinationCards'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
-  ssr: true,
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />
 })
 
 const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />,
-  ssr: true,
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />
 })
 
 const CTASection = dynamic(() => import('@/components/home/CTASection'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />,
-  ssr: true,
+  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />
 })
 
 export const metadata: Metadata = {
@@ -98,10 +98,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'How much can I save booking with Next Trip Anywhere?',
+      name: 'How can Next Trip Anywhere help me save on travel?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our customers typically save 20-40% compared to booking directly. We have exclusive partnerships with airlines, cruise lines, and hotels that allow us to offer rates not available to the public.',
+        text: 'We leverage our industry connections and expertise to find competitive rates and add value through personalized service. Our travel agents work to find the best options within your budget and handle all the details.',
       },
     },
     {
@@ -163,8 +163,8 @@ export default function HomePage() {
 
       <HeroSection />
 
-      {/* Trust Indicators Bar */}
-      <section className="bg-navy text-white py-4">
+      {/* Trust Indicators Bar with semantic HTML */}
+      <section className="bg-navy text-white py-4" aria-label="Trust Indicators">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm">
             <span className="flex items-center gap-2">
@@ -175,7 +175,7 @@ export default function HomePage() {
                   clipRule="evenodd"
                 />
               </svg>
-              IATA Certified
+              15+ Years Experience
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -185,7 +185,7 @@ export default function HomePage() {
                   clipRule="evenodd"
                 />
               </svg>
-              BBB A+ Rating
+              Licensed & Bonded
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -215,32 +215,32 @@ export default function HomePage() {
         <DestinationCards />
       </Suspense>
 
-      {/* Statistics Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50">
+      {/* Services Section with structured data */}
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50" aria-label="Company Services">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-navy mb-12">
-            American Travelers Trust Next Trip Anywhere
+            Professional Travel Services Nationwide
           </h2>
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">250K+</div>
-              <div className="text-gray-700">Happy Travelers</div>
-              <div className="text-sm text-gray-500 mt-1">Since 2010</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">Expert</div>
+              <div className="text-gray-700">Travel Planning</div>
+              <div className="text-sm text-gray-500 mt-1">Personalized Service</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">$2.5M+</div>
-              <div className="text-gray-700">Saved for Clients</div>
-              <div className="text-sm text-gray-500 mt-1">Last Year Alone</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-gray-700">Support</div>
+              <div className="text-sm text-gray-500 mt-1">Always Available</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">100%</div>
-              <div className="text-gray-700">Satisfaction Guarantee</div>
-              <div className="text-sm text-gray-500 mt-1">Price Match Promise</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">Best</div>
+              <div className="text-gray-700">Price Guarantee</div>
+              <div className="text-sm text-gray-500 mt-1">Competitive Rates</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">15 Years</div>
-              <div className="text-gray-700">Industry Experience</div>
-              <div className="text-sm text-gray-500 mt-1">Established 2010</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">All</div>
+              <div className="text-gray-700">Major Cities</div>
+              <div className="text-sm text-gray-500 mt-1">Nationwide Service</div>
             </div>
           </div>
         </div>
@@ -250,10 +250,10 @@ export default function HomePage() {
         <WhyChooseUs />
       </Suspense>
 
-      {/* SEO Content Section */}
-      <section className="py-12 bg-white">
+      {/* SEO Content Section with semantic markup */}
+      <article className="py-12 bg-white" aria-label="About Next Trip Anywhere">
         <div className="container mx-auto px-4">
-          <div className="prose prose-lg max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-4xl mx-auto" itemScope itemType="https://schema.org/Article">
             <h2>Your Trusted Nationwide Travel Agency</h2>
             <p>
               Next Trip Anywhere is America&apos;s premier full-service travel agency, specializing
@@ -309,17 +309,17 @@ export default function HomePage() {
               </li>
             </ul>
 
-            <h3>Save More with Exclusive Travel Deals</h3>
+            <h3>Professional Travel Services</h3>
             <p>
-              Our strong relationships with travel suppliers mean significant savings for you. We
+              Our relationships with travel suppliers and industry expertise provide value for you. We
               offer:
             </p>
             <ul>
-              <li>Unpublished airline fares up to 40% off regular prices</li>
-              <li>Free cabin upgrades and onboard credits for cruises</li>
-              <li>Complimentary resort upgrades and added amenities</li>
-              <li>Group rates for families and special occasions</li>
-              <li>Last-minute deals on unsold inventory</li>
+              <li>Access to competitive airline fares and special rates</li>
+              <li>Help securing cabin upgrades and cruise amenities when available</li>
+              <li>Assistance with resort upgrades and added amenities</li>
+              <li>Group booking coordination for families and special occasions</li>
+              <li>Last-minute travel planning and availability search</li>
             </ul>
 
             <h3>Full-Service Travel Agency Benefits</h3>
@@ -356,11 +356,36 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+      </article>
+
+
+      {/* Newsletter Signup */}
+      <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto">
+            <InlineNewsletterSignup
+              title="Stay Updated on Travel Opportunities"
+              subtitle="Join our newsletter for travel tips and destination insights"
+              leadMagnet={{
+                title: "Travel Planning Guide",
+                description: "FREE guide with helpful tips for planning your next vacation",
+                downloadUrl: "/downloads/travel-planning-guide.pdf",
+                type: 'pdf'
+              }}
+            />
+          </div>
+        </div>
       </section>
+
+      {/* Detailed Trust Section */}
+      <DetailedTrustSection />
 
       <Suspense fallback={<div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />}>
         <CTASection />
       </Suspense>
+
+      {/* Exit Intent Popup */}
+      <ExitIntentPopup />
     </>
   )
 }

@@ -3,13 +3,12 @@
 import { useState, useEffect, Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { ChevronDown, Sparkles } from 'lucide-react'
-import Image from 'next/image'
-
-// Remove Motion imports since we're using CSS animations instead
+import PerformantImage from '@/components/ui/PerformantImage'
 
 // Lazy load the video component
 const OptimizedVideo = dynamic(() => import('@/components/ui/OptimizedVideo'), {
   loading: () => <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy/60" />,
+  ssr: false, // Disable SSR for video to improve initial load
 })
 
 const heroVideos = [
@@ -42,17 +41,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Optimized Video Background */}
+      {/* Optimized Video Background with Performance Improvements */}
       <div className="absolute inset-0 z-0">
         <Suspense
           fallback={
-            <Image
+            <PerformantImage
               src={heroVideos[currentVideo]?.poster || ''}
               alt="Hero background"
               fill
               className="object-cover"
               priority
               quality={60}
+              preload
             />
           }
         >
@@ -66,10 +66,10 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
       </div>
 
-      {/* Content */}
+      {/* Content with optimized rendering */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="motion-safe:animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-display">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-display will-change-transform">
             Your Next Adventure
             <span className="block text-3xl md:text-5xl mt-2 text-accent-400">Starts Here</span>
           </h1>

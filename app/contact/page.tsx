@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Next Trip Anywhere Travel Agency',
@@ -144,10 +143,79 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Call to Action */}
             <div>
-              <h2 className="text-3xl font-bold text-navy mb-8">Send Us a Message</h2>
-              <LeadCaptureForm source="contact-page" variant="default" />
+              <h2 className="text-3xl font-bold text-navy mb-8">Ready to Book Your Trip?</h2>
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-semibold text-navy mb-3">
+                      Speak with a Travel Expert Today
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      Our experienced agents are ready to help you find the perfect vacation at the best price.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <a
+                      href="tel:1-833-874-1019"
+                      className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+                    >
+                      <Phone className="inline-block w-5 h-5 mr-2" />
+                      Call 1-833-874-1019
+                    </a>
+                    
+                    <a
+                      href="mailto:info@nexttripanywhere.com"
+                      className="block w-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+                    >
+                      <Mail className="inline-block w-5 h-5 mr-2" />
+                      Email for a Quote
+                    </a>
+                    
+                    <button className="block w-full bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                      <MessageCircle className="inline-block w-5 h-5 mr-2" />
+                      Start Live Chat
+                    </button>
+                  </div>
+                  
+                  <div className="border-t pt-6">
+                    <h4 className="font-semibold text-navy mb-3">Why Book With Us?</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-center">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Best Price Guarantee - We'll beat any quote
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Expert Travel Agents with 20+ years experience
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-500 mr-2">✓</span>
+                        24/7 Support during your trip
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Exclusive deals not available online
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Free cancellation on most bookings
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-warm-50 rounded-lg p-4 text-center">
+                    <p className="text-sm text-gray-600">
+                      <strong>Office Hours:</strong> Mon-Fri 8AM-8PM EST | Sat 9AM-6PM | Sun 10AM-5PM
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Emergency support available 24/7 for active bookings
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

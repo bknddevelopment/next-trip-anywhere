@@ -14,11 +14,7 @@ interface LayoutShift extends PerformanceEntry {
   hadRecentInput: boolean
 }
 
-declare global {
-  interface Window {
-    gtag?: (command: 'event', action: string, parameters: Record<string, unknown>) => void
-  }
-}
+// Type declarations are in ErrorBoundary.tsx
 
 /**
  * Performance monitoring component that tracks Core Web Vitals and sends analytics

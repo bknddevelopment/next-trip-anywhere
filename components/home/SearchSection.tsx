@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Plane, Ship, Package, Hotel, Calendar, Users, MapPin, Search } from 'lucide-react'
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm'
 
 const searchTabs = [
   { id: 'flights', name: 'Flights', icon: Plane },
@@ -14,11 +13,11 @@ const searchTabs = [
 
 export default function SearchSection() {
   const [activeTab, setActiveTab] = useState('flights')
-  const [showLeadForm, setShowLeadForm] = useState(false)
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    setShowLeadForm(true)
+    // Redirect to contact page or trigger contact modal
+    window.location.href = '/contact'
   }
 
   return (
@@ -40,14 +39,13 @@ export default function SearchSection() {
           </p>
         </motion.div>
 
-        {!showLeadForm ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
-          >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto"
+        >
             {/* Search Tabs */}
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {searchTabs.map((tab) => (
@@ -282,23 +280,8 @@ export default function SearchSection() {
                   <span>Search & Get Personalized Quote</span>
                 </motion.button>
               </form>
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <LeadCaptureForm source={`search-${activeTab}`} />
-            <button
-              onClick={() => setShowLeadForm(false)}
-              className="mt-4 text-sm text-gray-600 hover:text-primary-500 transition-colors mx-auto block"
-            >
-              ← Back to search
-            </button>
-          </motion.div>
-        )}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
