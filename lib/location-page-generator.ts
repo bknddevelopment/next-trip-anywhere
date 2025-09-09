@@ -49,8 +49,6 @@ export function generateLocationMetadata(location: LocationData): Metadata {
 }
 
 export function generateLocationJsonLd(location: LocationData) {
-  const mainAirport = location.airports.find(a => a.code === location.shortName) || location.airports[0]
-  
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
