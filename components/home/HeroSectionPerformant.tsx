@@ -3,6 +3,7 @@
 import { useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronDown, Sparkles } from 'lucide-react'
+import { normalizePath } from '@/lib/basePath'
 
 // Optimized hero section focused on performance
 export default function HeroSectionPerformant() {
@@ -19,21 +20,21 @@ export default function HeroSectionPerformant() {
       <div className="absolute inset-0 z-0">
         {/* Base gradient for immediate paint */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
-        
+
         {/* Optimized hero image with Next.js Image component */}
         <picture className="absolute inset-0">
           <source
-            srcSet="/images/ocean-hero-mobile.webp"
+            srcSet={normalizePath('/images/ocean-hero-mobile.webp')}
             type="image/webp"
             media="(max-width: 768px)"
           />
           <source
-            srcSet="/images/ocean-hero-optimized.webp"
+            srcSet={normalizePath('/images/ocean-hero-optimized.webp')}
             type="image/webp"
             media="(min-width: 769px)"
           />
           <Image
-            src="/images/ocean-hero-optimized.jpg"
+            src={normalizePath('/images/ocean-hero-optimized.jpg')}
             alt="Tropical ocean paradise"
             fill
             className="object-cover"
@@ -44,7 +45,7 @@ export default function HeroSectionPerformant() {
             blurDataURL="data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACQAQCdASoUABQAPt1usFOqKSWiMAgBABsS4gBOmUAP0NP/AP0A/QD9AA=="
           />
         </picture>
-        
+
         {/* Gradient overlays for text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
@@ -72,7 +73,7 @@ export default function HeroSectionPerformant() {
               Start Planning My Trip
             </button>
 
-            <button 
+            <button
               className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2"
               aria-label="Get surprise travel deals"
             >
@@ -84,19 +85,27 @@ export default function HeroSectionPerformant() {
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center space-x-2">
-              <span className="text-accent-400" aria-hidden="true">✓</span>
+              <span className="text-accent-400" aria-hidden="true">
+                ✓
+              </span>
               <span>15+ Years Experience</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-accent-400" aria-hidden="true">✓</span>
+              <span className="text-accent-400" aria-hidden="true">
+                ✓
+              </span>
               <span>50,000+ Happy Travelers</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-accent-400" aria-hidden="true">✓</span>
+              <span className="text-accent-400" aria-hidden="true">
+                ✓
+              </span>
               <span>24/7 Support</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-accent-400" aria-hidden="true">✓</span>
+              <span className="text-accent-400" aria-hidden="true">
+                ✓
+              </span>
               <span>Best Price Guarantee</span>
             </div>
           </div>
@@ -104,9 +113,9 @@ export default function HeroSectionPerformant() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 motion-safe:animate-fade-in-delayed">
-          <button 
-            onClick={scrollToSearch} 
-            className="animate-bounce" 
+          <button
+            onClick={scrollToSearch}
+            className="animate-bounce"
             aria-label="Scroll to search section"
           >
             <ChevronDown className="w-8 h-8 text-white" aria-hidden="true" />
