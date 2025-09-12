@@ -359,7 +359,8 @@ const jsonLdOrganization = {
         '@type': 'Rating',
         ratingValue: '5',
       },
-      reviewBody: 'Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.',
+      reviewBody:
+        'Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.',
       datePublished: '2024-01-10',
     },
     {
@@ -372,7 +373,8 @@ const jsonLdOrganization = {
         '@type': 'Rating',
         ratingValue: '5',
       },
-      reviewBody: 'Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.',
+      reviewBody:
+        'Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.',
       datePublished: '2024-01-08',
     },
   ],
@@ -391,7 +393,8 @@ const jsonLdOrganization = {
         itemOffered: {
           '@type': 'Service',
           name: 'Flight Booking Services',
-          description: 'Domestic and international flight reservations with exclusive unpublished fares',
+          description:
+            'Domestic and international flight reservations with exclusive unpublished fares',
           category: 'Flight Booking',
         },
         priceSpecification: {
@@ -549,7 +552,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   if (typeof window !== 'undefined') {
     initFontOptimizations()
   }
-  
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -559,23 +562,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://cdn.coverr.co" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
-        {/* Logo fix script for GitHub Pages deployment */}
-        <script src="/next-trip-anywhere/logo-fix.js" defer />
-        
+
         {/* Google Search Console verification and structured data */}
         <SearchConsole />
 
         {/* Critical CSS for above-the-fold content */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             /* Critical CSS for initial render */
             body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
             .hero-section { min-height: 100vh; position: relative; }
             .animate-fade-in { animation: fadeIn 0.5s ease-in; }
             @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-          `
-        }} />
+          `,
+          }}
+        />
 
         {/* Structured data for SEO */}
         <script
@@ -601,7 +603,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <CoreWebVitalsMonitor />
         <PerformanceInit />
-        
+
         {/* Resource hints for optimal loading */}
         <ResourceHints />
 
@@ -641,7 +643,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           }}
         />
-        
+
         {/* GDPR Cookie Consent */}
         <CookieConsent />
       </body>
