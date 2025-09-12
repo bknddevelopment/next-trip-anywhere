@@ -9,15 +9,15 @@ import { DetailedTrustSection } from '@/components/ui/TrustSignals'
 
 // Lazy load heavy components with optimized settings
 const DestinationCards = dynamic(() => import('@/components/home/DestinationCards'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
 })
 
 const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />,
 })
 
 const CTASection = dynamic(() => import('@/components/home/CTASection'), {
-  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />
+  loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />,
 })
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   keywords:
     'nationwide travel agency, cheap flights from all US cities, cruise deals, vacation packages, travel deals, best travel agency, discount cruises, all-inclusive vacations, flight deals, travel agent near me, coast to coast travel',
   openGraph: {
-    title: 'Next Trip Anywhere - #1 Rated Nationwide Travel Agency',
+    title: 'Next Trip Anywhere - Nationwide Travel Agency',
     description:
       'Save up to 40% on your next vacation! Expert travel planning with exclusive deals from coast to coast. Free consultation available.',
     type: 'website',
@@ -217,7 +217,10 @@ export default function HomePage() {
       </Suspense>
 
       {/* Services Section with structured data */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50" aria-label="Company Services">
+      <section
+        className="py-16 bg-gradient-to-r from-blue-50 to-teal-50"
+        aria-label="Company Services"
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-navy mb-12">
             Professional Travel Services Nationwide
@@ -254,7 +257,11 @@ export default function HomePage() {
       {/* SEO Content Section with semantic markup */}
       <article className="py-12 bg-white" aria-label="About Next Trip Anywhere">
         <div className="container mx-auto px-4">
-          <div className="prose prose-lg max-w-4xl mx-auto" itemScope itemType="https://schema.org/Article">
+          <div
+            className="prose prose-lg max-w-4xl mx-auto"
+            itemScope
+            itemType="https://schema.org/Article"
+          >
             <h2>Your Trusted Nationwide Travel Agency</h2>
             <p>
               Next Trip Anywhere is America&apos;s premier full-service travel agency, specializing
@@ -312,8 +319,8 @@ export default function HomePage() {
 
             <h3>Professional Travel Services</h3>
             <p>
-              Our relationships with travel suppliers and industry expertise provide value for you. We
-              offer:
+              Our relationships with travel suppliers and industry expertise provide value for you.
+              We offer:
             </p>
             <ul>
               <li>Access to competitive airline fares and special rates</li>
@@ -359,7 +366,6 @@ export default function HomePage() {
         </div>
       </article>
 
-
       {/* Newsletter Signup */}
       <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -368,10 +374,10 @@ export default function HomePage() {
               title="Stay Updated on Travel Opportunities"
               subtitle="Join our newsletter for travel tips and destination insights"
               leadMagnet={{
-                title: "Travel Planning Guide",
-                description: "FREE guide with helpful tips for planning your next vacation",
-                downloadUrl: "/downloads/travel-planning-guide.pdf",
-                type: 'pdf'
+                title: 'Travel Planning Guide',
+                description: 'FREE guide with helpful tips for planning your next vacation',
+                downloadUrl: '/downloads/travel-planning-guide.pdf',
+                type: 'pdf',
               }}
             />
           </div>

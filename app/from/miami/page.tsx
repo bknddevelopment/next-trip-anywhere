@@ -3,12 +3,12 @@ import Image from 'next/image'
 import LocationHero from '@/components/locations/LocationHero'
 import LocationDeals from '@/components/locations/LocationDeals'
 import LocationAirports from '@/components/locations/LocationAirports'
-import { 
-  LocalBusinessSchema, 
-  BreadcrumbSchema, 
-  FAQSchema, 
+import {
+  LocalBusinessSchema,
+  BreadcrumbSchema,
+  FAQSchema,
   AggregateRatingSchema,
-  TravelDealSchema
+  TravelDealSchema,
 } from '@/components/seo/StructuredData'
 import { getLocationData } from '@/lib/data/locations'
 import { getDealsByDestination } from '@/lib/data/travel-deals'
@@ -104,23 +104,28 @@ const breadcrumbs = [
 const miamiLocationFAQs = [
   {
     question: 'What airports serve the Miami area?',
-    answer: 'Miami is served by three major airports: Miami International Airport (MIA) - the primary hub, Fort Lauderdale-Hollywood International (FLL) - 28 miles north, and Palm Beach International (PBI) - 70 miles north. We provide expert booking from all three airports.',
+    answer:
+      'Miami is served by three major airports: Miami International Airport (MIA) - the primary hub, Fort Lauderdale-Hollywood International (FLL) - 28 miles north, and Palm Beach International (PBI) - 70 miles north. We provide expert booking from all three airports.',
   },
   {
     question: 'Which cruise ports operate in South Florida?',
-    answer: 'PortMiami is the world\'s busiest cruise port, followed by Port Everglades in Fort Lauderdale, and Port of Palm Beach. We specialize in securing the best cabin categories and onboard credits from all South Florida cruise terminals.',
+    answer:
+      "PortMiami is the world's busiest cruise port, followed by Port Everglades in Fort Lauderdale, and Port of Palm Beach. We specialize in securing the best cabin categories and onboard credits from all South Florida cruise terminals.",
   },
   {
     question: 'What languages do you speak at your Miami location?',
-    answer: 'Our Miami travel specialists are fluent in English, Spanish, and Portuguese to serve South Florida\'s diverse community. We understand the unique travel needs of our multicultural clientele.',
+    answer:
+      "Our Miami travel specialists are fluent in English, Spanish, and Portuguese to serve South Florida's diverse community. We understand the unique travel needs of our multicultural clientele.",
   },
   {
     question: 'Do you offer hurricane protection for Florida travelers?',
-    answer: 'Yes! We provide comprehensive travel insurance specifically designed for Florida residents, including hurricane and named storm coverage. We also offer flexible rebooking policies during severe weather events.',
+    answer:
+      'Yes! We provide comprehensive travel insurance specifically designed for Florida residents, including hurricane and named storm coverage. We also offer flexible rebooking policies during severe weather events.',
   },
   {
     question: 'What are the most popular destinations from Miami?',
-    answer: 'From Miami, the most popular destinations include Caribbean cruises (Bahamas, Jamaica, Cozumel), Latin America flights (Colombia, Brazil, Argentina), European getaways (Madrid, London, Paris), and all-inclusive resorts (Cancun, Punta Cana, Aruba).',
+    answer:
+      'From Miami, the most popular destinations include Caribbean cruises (Bahamas, Jamaica, Cozumel), Latin America flights (Colombia, Brazil, Argentina), European getaways (Madrid, London, Paris), and all-inclusive resorts (Cancun, Punta Cana, Aruba).',
   },
 ]
 
@@ -139,7 +144,7 @@ export default function MiamiPage() {
       {locationData && <LocalBusinessSchema location={locationData} />}
       <FAQSchema faqs={miamiLocationFAQs} />
       <AggregateRatingSchema rating={miamiRating} />
-      
+
       {/* Miami-specific Travel Deals Schema */}
       {miamiDeals.slice(0, 3).map((deal, index) => (
         <TravelDealSchema key={`miami-deal-${index}`} deal={deal} />
@@ -178,8 +183,8 @@ export default function MiamiPage() {
               <div className="text-sm opacity-90">Español & Português</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">#1</div>
-              <div className="text-sm opacity-90">Rated Miami Travel Agency</div>
+              <div className="text-4xl font-bold mb-2">Top</div>
+              <div className="text-sm opacity-90">Miami Travel Agency</div>
             </div>
           </div>
           <div className="mt-12 text-center">
@@ -268,30 +273,28 @@ export default function MiamiPage() {
             </div>
           </div>
           {/* Call to Action */}
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-navy mb-4">
-                Ready to Book Your Trip?
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Our expert travel agents are standing by to help you find the best deals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="tel:1-833-874-1019"
-                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 1-833-874-1019
-                </a>
-                <a
-                  href="mailto:info@nexttripanywhere.com"
-                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Email for Quote
-                </a>
-              </div>
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-navy mb-4">Ready to Book Your Trip?</h3>
+            <p className="text-gray-700 mb-6">
+              Our expert travel agents are standing by to help you find the best deals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:1-833-874-1019"
+                className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call 1-833-874-1019
+              </a>
+              <a
+                href="mailto:info@nexttripanywhere.com"
+                className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                Email for Quote
+              </a>
             </div>
+          </div>
         </div>
       </section>
 

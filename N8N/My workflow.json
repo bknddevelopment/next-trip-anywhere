@@ -1,0 +1,245 @@
+{
+  "name": "Travel Quote Form Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "travel-quote-form",
+        "formTitle": "Get Your Free Trip Quote",
+        "formDescription": "Start planning your dream vacation today! Fill out this form and we'll send you a personalized quote within 24-48 hours.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Full Name",
+              "fieldType": "text",
+              "requiredField": true,
+              "placeholder": "John Doe"
+            },
+            {
+              "fieldLabel": "Email Address",
+              "fieldType": "email",
+              "requiredField": true,
+              "placeholder": "john@example.com"
+            },
+            {
+              "fieldLabel": "Phone Number",
+              "fieldType": "text",
+              "requiredField": false,
+              "placeholder": "(555) 123-4567"
+            },
+            {
+              "fieldLabel": "Departure City",
+              "fieldType": "dropdown",
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  { "option": "Atlanta" },
+                  { "option": "Austin" },
+                  { "option": "Boston" },
+                  { "option": "Chicago" },
+                  { "option": "Dallas" },
+                  { "option": "Denver" },
+                  { "option": "Houston" },
+                  { "option": "Los Angeles" },
+                  { "option": "Miami" },
+                  { "option": "New York City" },
+                  { "option": "Philadelphia" },
+                  { "option": "Phoenix" },
+                  { "option": "San Diego" },
+                  { "option": "San Francisco" },
+                  { "option": "Seattle" },
+                  { "option": "Washington DC" }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Departure Date",
+              "fieldType": "date",
+              "requiredField": true,
+              "formatDate": "yyyy-MM-dd"
+            },
+            {
+              "fieldLabel": "Return Date",
+              "fieldType": "date",
+              "requiredField": false,
+              "formatDate": "yyyy-MM-dd"
+            },
+            {
+              "fieldLabel": "Flexible Dates?",
+              "fieldType": "dropdown",
+              "requiredField": false,
+              "fieldOptions": {
+                "values": [{ "option": "Yes, I'm flexible" }, { "option": "No, dates are fixed" }]
+              }
+            },
+            {
+              "fieldLabel": "Number of Adults",
+              "fieldType": "number",
+              "requiredField": true,
+              "placeholder": "2"
+            },
+            {
+              "fieldLabel": "Number of Children",
+              "fieldType": "number",
+              "requiredField": false,
+              "placeholder": "0"
+            },
+            {
+              "fieldLabel": "Trip Type",
+              "fieldType": "dropdown",
+              "multiselect": true,
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  { "option": "Flights" },
+                  { "option": "Hotels" },
+                  { "option": "Cruises" },
+                  { "option": "Vacation Packages" },
+                  { "option": "Car Rentals" }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Destination Preferences",
+              "fieldType": "text",
+              "requiredField": true,
+              "placeholder": "e.g., Europe, Caribbean, Asia"
+            },
+            {
+              "fieldLabel": "Budget Range (per person)",
+              "fieldType": "dropdown",
+              "requiredField": true,
+              "fieldOptions": {
+                "values": [
+                  { "option": "Under $1,000" },
+                  { "option": "$1,000 - $2,500" },
+                  { "option": "$2,500 - $5,000" },
+                  { "option": "$5,000+" },
+                  { "option": "Not sure yet" }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Special Requests or Comments",
+              "fieldType": "textarea",
+              "requiredField": false,
+              "placeholder": "Tell us about your dream trip! Any special requirements, celebrations, or preferences?"
+            }
+          ]
+        },
+        "responseMode": "responseNode",
+        "options": {
+          "submitButtonLabel": "Get My Free Quote →"
+        }
+      },
+      "id": "1b573e25-bbb7-4baf-9d59-f1ce8454f78d",
+      "name": "Travel Quote Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.1,
+      "position": [260, 300],
+      "webhookId": "3f7a50f6-521f-4529-ad7e-d8f0efbea5f1"
+    },
+    {
+      "parameters": {
+        "sendTo": "your-email@example.com",
+        "subject": "=New Travel Quote Request from {{ $('Travel Quote Form').item.json['Full Name'] }}",
+        "emailType": "html",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .header { background: #2c3e50; color: white; padding: 20px; text-align: center; }\n        .content { padding: 20px; background: #f4f4f4; }\n        .field { margin: 10px 0; padding: 10px; background: white; border-left: 3px solid #3498db; }\n        .field-label { font-weight: bold; color: #2c3e50; }\n        .footer { padding: 20px; text-align: center; background: #ecf0f1; }\n    </style>\n</head>\n<body>\n    <div class=\"header\">\n        <h2>New Travel Quote Request</h2>\n    </div>\n    <div class=\"content\">\n        <p>You have received a new travel quote request. Here are the details:</p>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Name:</span> {{ $('Travel Quote Form').item.json['Full Name'] }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Email:</span> <a href=\"mailto:{{ $('Travel Quote Form').item.json['Email Address'] }}\">{{ $('Travel Quote Form').item.json['Email Address'] }}</a>\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Phone:</span> {{ $('Travel Quote Form').item.json['Phone Number'] || 'Not provided' }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Departure City:</span> {{ $('Travel Quote Form').item.json['Departure City'] }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Departure Date:</span> {{ $('Travel Quote Form').item.json['Departure Date'] }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Return Date:</span> {{ $('Travel Quote Form').item.json['Return Date'] || 'Not specified' }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Flexible Dates:</span> {{ $('Travel Quote Form').item.json['Flexible Dates?'] || 'Not specified' }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Number of Adults:</span> {{ $('Travel Quote Form').item.json['Number of Adults'] }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Number of Children:</span> {{ $('Travel Quote Form').item.json['Number of Children'] || '0' }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Trip Type:</span> {{ $('Travel Quote Form').item.json['Trip Type'].join(', ') }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Destination:</span> {{ $('Travel Quote Form').item.json['Destination Preferences'] }}\n        </div>\n        \n        <div class=\"field\">\n            <span class=\"field-label\">Budget:</span> {{ $('Travel Quote Form').item.json['Budget Range (per person)'] }}\n        </div>\n        \n        <div class=\"field\" style=\"background: #fff3cd; border-left-color: #ffc107;\">\n            <span class=\"field-label\">Special Requests:</span><br>\n            {{ $('Travel Quote Form').item.json['Special Requests or Comments'] || 'None' }}\n        </div>\n    </div>\n    <div class=\"footer\">\n        <p>Submitted on: {{ $now.format('MMMM Do YYYY, h:mm:ss a') }}</p>\n        <p><a href=\"mailto:{{ $('Travel Quote Form').item.json['Email Address'] }}\" style=\"background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;\">Reply to Customer</a></p>\n    </div>\n</body>\n</html>",
+        "options": {
+          "replyTo": "={{ $('Travel Quote Form').item.json['Email Address'] }}"
+        }
+      },
+      "id": "8b4a2d3e-9c5f-4e6b-a7d8-f2e9b1c3d4e5",
+      "name": "Send Notification Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [520, 220],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Travel Quote Form').item.json['Email Address'] }}",
+        "subject": "Thank You for Your Travel Quote Request - Next Trip Anywhere",
+        "emailType": "html",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n    <style>\n        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }\n        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }\n        .header h1 { margin: 0; font-size: 28px; }\n        .content { padding: 30px 20px; max-width: 600px; margin: 0 auto; }\n        .greeting { font-size: 20px; color: #2c3e50; margin-bottom: 20px; }\n        .section { margin: 25px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; }\n        .section h3 { color: #667eea; margin-top: 0; }\n        .highlight { background: #e8f4fd; padding: 15px; border-left: 4px solid #3498db; margin: 20px 0; }\n        .cta-button { display: inline-block; background: #667eea; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; margin: 20px 0; }\n        .footer { background: #2c3e50; color: white; padding: 30px; text-align: center; margin-top: 40px; }\n        .social-links { margin: 15px 0; }\n        .social-links a { color: white; text-decoration: none; margin: 0 10px; }\n    </style>\n</head>\n<body>\n    <div class=\"header\">\n        <h1>✈️ Next Trip Anywhere</h1>\n        <p>Your Gateway to Unforgettable Adventures</p>\n    </div>\n    \n    <div class=\"content\">\n        <div class=\"greeting\">\n            Hello {{ $('Travel Quote Form').item.json['Full Name'] }}! 👋\n        </div>\n        \n        <p>Thank you for choosing Next Trip Anywhere for your travel planning needs! We're thrilled to help you create your perfect getaway.</p>\n        \n        <div class=\"section\">\n            <h3>📋 Your Request Summary</h3>\n            <p><strong>Destination:</strong> {{ $('Travel Quote Form').item.json['Destination Preferences'] }}</p>\n            <p><strong>Departure:</strong> From {{ $('Travel Quote Form').item.json['Departure City'] }} on {{ $('Travel Quote Form').item.json['Departure Date'] }}</p>\n            <p><strong>Travelers:</strong> {{ $('Travel Quote Form').item.json['Number of Adults'] }} Adult(s) {{ $('Travel Quote Form').item.json['Number of Children'] ? ', ' + $('Travel Quote Form').item.json['Number of Children'] + ' Child(ren)' : '' }}</p>\n            <p><strong>Trip Type:</strong> {{ $('Travel Quote Form').item.json['Trip Type'].join(', ') }}</p>\n            <p><strong>Budget:</strong> {{ $('Travel Quote Form').item.json['Budget Range (per person)'] }} per person</p>\n        </div>\n        \n        <div class=\"highlight\">\n            <h3>✨ What Happens Next?</h3>\n            <ul style=\"margin: 10px 0; padding-left: 20px;\">\n                <li>Our travel experts are reviewing your request</li>\n                <li>We'll craft a personalized quote based on your preferences</li>\n                <li>You'll receive your custom travel package within 24-48 hours</li>\n                <li>No obligation - review at your leisure!</li>\n            </ul>\n        </div>\n        \n        <div style=\"text-align: center;\">\n            <a href=\"https://nexttripanywhere.com\" class=\"cta-button\">Explore More Destinations</a>\n        </div>\n        \n        <div class=\"section\" style=\"background: #fff3cd; border: 1px solid #ffc107;\">\n            <h3>💡 Travel Tip of the Day</h3>\n            <p>Did you know? Booking your trip 3-4 months in advance often yields the best deals on flights and accommodations!</p>\n        </div>\n        \n        <p><strong>Questions?</strong> We're here to help!</p>\n        <p>📧 Email: info@nexttripanywhere.com<br>\n        📞 Phone: 1-800-TRIP-NOW<br>\n        💬 Live Chat: Visit our website</p>\n    </div>\n    \n    <div class=\"footer\">\n        <h3>Stay Connected</h3>\n        <div class=\"social-links\">\n            <a href=\"#\">Facebook</a> |\n            <a href=\"#\">Instagram</a> |\n            <a href=\"#\">Twitter</a> |\n            <a href=\"#\">LinkedIn</a>\n        </div>\n        <p style=\"margin-top: 20px; font-size: 14px;\">© 2025 Next Trip Anywhere. All rights reserved.</p>\n        <p style=\"font-size: 12px; opacity: 0.8;\">You received this email because you submitted a travel quote request at nexttripanywhere.com</p>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "id": "6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
+      "name": "Send Auto-Response Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [520, 380],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "=Thank you {{ $('Travel Quote Form').item.json['Full Name'] }}! Your travel quote request has been received. Check your email for confirmation and next steps.",
+        "options": {}
+      },
+      "id": "2v3w4x5y-6z7a-8b9c-0d1e-2f3g4h5i6j7k",
+      "name": "Form Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Travel Quote Form": {
+      "main": [
+        [
+          {
+            "node": "Send Notification Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Auto-Response Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Notification Email": {
+      "main": [
+        [
+          {
+            "node": "Form Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Auto-Response Email": {
+      "main": [
+        [
+          {
+            "node": "Form Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2a3b4c5d-6e7f-8g9h-0i1j-2k3l4m5n6o7p",
+  "meta": {
+    "instanceId": "ead8fd6fdf4320c6baab21912f0415ffa96b01b0639f80bf93995b97e952fd1a"
+  },
+  "tags": []
+}
