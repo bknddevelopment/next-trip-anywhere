@@ -9,7 +9,9 @@ const destinations = [
   {
     id: 1,
     name: 'Cancun, Mexico',
-    image: '/images/mexico-destination.jpg',
+    image: process.env.NEXT_PUBLIC_BASE_PATH
+      ? `${process.env.NEXT_PUBLIC_BASE_PATH}/images/mexico-destination.jpg`
+      : '/images/mexico-destination.jpg',
     rating: 4.8,
     duration: '5 Days',
     groupSize: '2-4 People',
@@ -19,7 +21,9 @@ const destinations = [
   {
     id: 2,
     name: 'Paris, France',
-    image: '/images/paris-destination.jpg',
+    image: process.env.NEXT_PUBLIC_BASE_PATH
+      ? `${process.env.NEXT_PUBLIC_BASE_PATH}/images/paris-destination.jpg`
+      : '/images/paris-destination.jpg',
     rating: 4.9,
     duration: '7 Days',
     groupSize: '2-6 People',
@@ -29,7 +33,8 @@ const destinations = [
   {
     id: 3,
     name: 'Bali, Indonesia',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
     rating: 4.7,
     duration: '8 Days',
     groupSize: '2-8 People',
@@ -39,7 +44,8 @@ const destinations = [
   {
     id: 4,
     name: 'Dubai, UAE',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     duration: '6 Days',
     groupSize: '2-4 People',
@@ -49,7 +55,8 @@ const destinations = [
   {
     id: 5,
     name: 'Santorini, Greece',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80',
     rating: 4.9,
     duration: '5 Days',
     groupSize: '2 People',
@@ -59,7 +66,8 @@ const destinations = [
   {
     id: 6,
     name: 'Tokyo, Japan',
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     duration: '7 Days',
     groupSize: '2-6 People',
@@ -136,8 +144,8 @@ export default function DestinationCards() {
                         quality={75}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
+                          const target = e.target as HTMLImageElement
+                          target.style.display = 'none'
                         }}
                       />
                       {/* Fallback gradient if image fails */}
