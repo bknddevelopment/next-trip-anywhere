@@ -10,7 +10,9 @@ const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATIO
  */
 export default function SearchConsole() {
   useEffect(() => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {
+      return
+    }
 
     // Submit sitemap to Google Search Console programmatically
     const submitSitemap = async () => {
@@ -18,7 +20,7 @@ export default function SearchConsole() {
         // This would typically be done through Google Search Console API
         // For now, we'll log the sitemap URL
         const sitemapUrl = `${window.location.origin}/sitemap.xml`
-        console.log('Sitemap URL for Google Search Console:', sitemapUrl)
+        console.info('Sitemap URL for Google Search Console:', sitemapUrl)
         
         // Track sitemap submission
         if (window.dataLayer) {
@@ -40,7 +42,7 @@ export default function SearchConsole() {
       if ('web-vital' in window) {
         const vitals = ['CLS', 'FID', 'FCP', 'LCP', 'TTFB', 'INP']
         vitals.forEach(vital => {
-          const value = (window as any)[`web-vital-${vital}`]
+          const value = (window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number | undefined
           if (value) {
             // Track Core Web Vitals for Search Console reporting
             if (window.dataLayer) {
@@ -180,10 +182,16 @@ function getCWVRating(metric: string, value: number): 'good' | 'needs-improvemen
   }
 
   const threshold = thresholds[metric]
-  if (!threshold) return 'good'
+  if (!threshold) {
+    return 'good'
+  }
 
-  if (value <= threshold.good) return 'good'
-  if (value <= threshold.poor) return 'needs-improvement'
+  if (value <= threshold.good) {
+    return 'good'
+  }
+  if (value <= threshold.poor) {
+    return 'needs-improvement'
+  }
   return 'poor'
 }
 
@@ -191,7 +199,9 @@ function getCWVRating(metric: string, value: number): 'good' | 'needs-improvemen
  * Setup search performance tracking
  */
 function setupSearchPerformanceTracking() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   // Track search queries from URL parameters
   const urlParams = new URLSearchParams(window.location.search)
@@ -249,9 +259,11 @@ function setupSearchPerformanceTracking() {
  */
 export function trackSearchConsoleEvent(
   eventType: 'search_query' | 'search_result_click' | 'crawl_error' | 'mobile_usability',
-  data: Record<string, any>
+  data: Record<string, unknown>
 ) {
-  if (typeof window === 'undefined' || !window.dataLayer) return
+  if (typeof window === 'undefined' || !window.dataLayer) {
+    return
+  }
 
   window.dataLayer.push({
     event: `search_console_${eventType}`,
@@ -266,7 +278,9 @@ export function trackSearchConsoleEvent(
  * Monitor and report mobile usability issues
  */
 export function initMobileUsabilityTracking() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   const checkMobileUsability = () => {
     const issues: string[] = []

@@ -6,7 +6,7 @@ import Script from 'next/script'
 // Global declarations are already in ErrorBoundary.tsx
 declare global {
   interface Window {
-    dataLayer?: any[]
+    dataLayer?: unknown[]
     GTM_ID?: string
   }
 }
@@ -79,11 +79,17 @@ export default function GoogleTagManager() {
  * Get device type for analytics
  */
 function getDeviceType(): string {
-  if (typeof window === 'undefined') return 'unknown'
+  if (typeof window === 'undefined') {
+    return 'unknown'
+  }
   
   const width = window.innerWidth
-  if (width >= 1024) return 'desktop'
-  if (width >= 768) return 'tablet'
+  if (width >= 1024) {
+    return 'desktop'
+  }
+  if (width >= 768) {
+    return 'tablet'
+  }
   return 'mobile'
 }
 
@@ -91,24 +97,42 @@ function getDeviceType(): string {
  * Get page type based on current URL
  */
 function getPageType(): string {
-  if (typeof window === 'undefined') return 'unknown'
+  if (typeof window === 'undefined') {
+    return 'unknown'
+  }
   
   const path = window.location.pathname
-  if (path === '/') return 'homepage'
-  if (path.startsWith('/flights')) return 'flights'
-  if (path.startsWith('/cruises')) return 'cruises'
-  if (path.startsWith('/packages')) return 'packages'
-  if (path.startsWith('/from/')) return 'location'
-  if (path === '/contact') return 'contact'
-  if (path === '/about') return 'about'
+  if (path === '/') {
+    return 'homepage'
+  }
+  if (path.startsWith('/flights')) {
+    return 'flights'
+  }
+  if (path.startsWith('/cruises')) {
+    return 'cruises'
+  }
+  if (path.startsWith('/packages')) {
+    return 'packages'
+  }
+  if (path.startsWith('/from/')) {
+    return 'location'
+  }
+  if (path === '/contact') {
+    return 'contact'
+  }
+  if (path === '/about') {
+    return 'about'
+  }
   return 'other'
 }
 
 /**
  * Enhanced dataLayer push function with type safety
  */
-export function pushToDataLayer(data: Record<string, any>) {
-  if (typeof window === 'undefined' || !window.dataLayer) return
+export function pushToDataLayer(data: Record<string, unknown>) {
+  if (typeof window === 'undefined' || !window.dataLayer) {
+    return
+  }
   
   window.dataLayer.push({
     ...data,
@@ -137,7 +161,7 @@ export function trackEcommerceEvent(
       price: number
       quantity?: number
     }>
-    [key: string]: any
+    [key: string]: unknown
   }
 ) {
   pushToDataLayer({
@@ -172,7 +196,7 @@ export function trackGTMConversion(
 export function trackFormEvent(
   action: 'start' | 'progress' | 'submit' | 'error',
   formName: string,
-  additionalData?: Record<string, any>
+  additionalData?: Record<string, unknown>
 ) {
   pushToDataLayer({
     event: 'form_interaction',

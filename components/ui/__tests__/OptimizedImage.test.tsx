@@ -1,15 +1,25 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import OptimizedImage from '../OptimizedImage'
 
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
-  default: vi.fn(({ src, alt, onError, ...props }) => {
+  default: vi.fn(({ src, alt, onError, priority, fill, placeholder, blurDataURL, quality, ...props }) => {
     // Store the mock function for testing
     if ((global as any).mockImageOnError) {
       ;(global as any).mockImageOnError = onError
     }
-    return <img src={src} alt={alt} {...props} data-testid="next-image" />
+    // Filter out Next.js specific props that shouldn't be passed to DOM
+    const imgProps: any = { ...props, src, alt, 'data-testid': 'next-image' }
+    
+    // Add these as data attributes for testing if needed
+    if (priority) imgProps['data-priority'] = 'true'
+    if (fill) imgProps['data-fill'] = 'true'
+    if (placeholder) imgProps['placeholder'] = placeholder
+    if (blurDataURL) imgProps['blurDataURL'] = blurDataURL
+    if (quality) imgProps['quality'] = quality
+    
+    return <img {...imgProps} />
   }),
 }))
 
@@ -116,7 +126,9 @@ describe('OptimizedImage Component', () => {
       const onError = lastCall[0].onError
 
       // Trigger the error handler
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         // Should now render a regular img tag instead
@@ -139,7 +151,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         const fallbackImage = screen.getByAltText('Fill Image')
@@ -159,7 +173,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         const fallbackImage = screen.getByAltText('Cover Image')
@@ -178,7 +194,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         const fallbackImage = screen.getByAltText('Styled Image')
@@ -196,7 +214,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         const fallbackImage = screen.getByAltText('Logo')
@@ -286,7 +306,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       await waitFor(() => {
         const fallbackImage = screen.getByAltText('Fallback Alt Text')
@@ -312,7 +334,9 @@ describe('OptimizedImage Component', () => {
       const NextImageMock = (await import('next/image')).default as any
       const lastCall = NextImageMock.mock.calls[NextImageMock.mock.calls.length - 1]
       const onError = lastCall[0].onError
-      onError()
+      act(() => {
+        onError()
+      })
 
       expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Image failed to load'))
       expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('/error-image.jpg'))

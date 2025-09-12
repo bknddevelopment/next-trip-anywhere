@@ -40,6 +40,8 @@ import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import CoreWebVitalsMonitor from '@/components/CoreWebVitalsMonitor'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import PerformanceInit from '@/components/common/PerformanceInit'
+import ResourceHints from '@/components/common/ResourceHints'
 import { initFontOptimizations } from '@/lib/fontOptimization'
 import GoogleTagManager from '@/components/analytics/GoogleTagManager'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
@@ -598,6 +600,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Performance monitoring for Core Web Vitals */}
         <PerformanceMonitor />
         <CoreWebVitalsMonitor />
+        <PerformanceInit />
+        
+        {/* Resource hints for optimal loading */}
+        <ResourceHints />
 
         {/* Analytics and Tracking */}
         <GoogleTagManager />

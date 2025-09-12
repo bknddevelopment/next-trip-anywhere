@@ -1,69 +1,177 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useCallback, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { ChevronDown, Sparkles } from 'lucide-react'
 import PerformantImage from '@/components/ui/PerformantImage'
 
-// Lazy load the video component
+// Lazy load the video component with proper error boundary
 const OptimizedVideo = dynamic(() => import('@/components/ui/OptimizedVideo'), {
-  loading: () => <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy/60" />,
-  ssr: false, // Disable SSR for video to improve initial load
+  loading: () => (
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+    </div>
+  ),
+  ssr: false, // Disable SSR for video to prevent hydration issues
 })
+
+// Using the beautiful Ocean.png as our primary hero image
+const OCEAN_HERO_IMAGE = '/images/ocean-hero.png'
 
 const heroVideos = [
   {
     url: 'https://cdn.coverr.co/videos/coverr-aerial-view-of-tropical-beach-5570/1080p.mp4',
-    poster: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=80',
+    poster: OCEAN_HERO_IMAGE, // Using Ocean.png as primary poster
+    fallbackPoster: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80',
     title: 'Caribbean Paradise',
   },
   {
     url: 'https://cdn.coverr.co/videos/coverr-flying-over-new-york-city-5823/1080p.mp4',
-    poster: 'https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=1920&q=80',
+    poster: OCEAN_HERO_IMAGE, // Using Ocean.png as primary poster
+    fallbackPoster: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=1920&q=80',
     title: 'City Adventures',
   },
 ]
 
+// Default fallback image - using Ocean.png as primary
+const DEFAULT_FALLBACK = OCEAN_HERO_IMAGE
+
 export default function HeroSection() {
   const [currentVideo, setCurrentVideo] = useState(0)
+  const [isVideoLoading, setIsVideoLoading] = useState(true)
+  const [hasVideoError, setHasVideoError] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const rotationIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const videoLoadTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // Handle client-side mounting
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideo((prev) => (prev + 1) % heroVideos.length)
-    }, 10000)
-    return () => clearInterval(interval)
+    setIsMounted(true)
+    return () => {
+      if (rotationIntervalRef.current) {
+        clearInterval(rotationIntervalRef.current)
+      }
+      if (videoLoadTimeoutRef.current) {
+        clearTimeout(videoLoadTimeoutRef.current)
+      }
+    }
   }, [])
 
-  const scrollToSearch = () => {
+  // Video rotation with pause during loading
+  useEffect(() => {
+    if (!isMounted) {
+      return
+    }
+
+    // Clear existing interval
+    if (rotationIntervalRef.current) {
+      clearInterval(rotationIntervalRef.current)
+    }
+
+    // Only rotate if video is loaded successfully
+    if (!isVideoLoading && !hasVideoError) {
+      rotationIntervalRef.current = setInterval(() => {
+        setCurrentVideo((prev) => (prev + 1) % heroVideos.length)
+        setIsVideoLoading(true) // Reset loading state for new video
+        setHasVideoError(false)
+      }, 15000) // Increased to 15 seconds for better viewing
+    }
+
+    return () => {
+      if (rotationIntervalRef.current) {
+        clearInterval(rotationIntervalRef.current)
+      }
+    }
+  }, [isMounted, isVideoLoading, hasVideoError])
+
+  // Handle video load timeout
+  const handleVideoLoadStart = useCallback(() => {
+    setIsVideoLoading(true)
+    setHasVideoError(false)
+    
+    // Set a timeout for video loading
+    if (videoLoadTimeoutRef.current) {
+      clearTimeout(videoLoadTimeoutRef.current)
+    }
+    
+    videoLoadTimeoutRef.current = setTimeout(() => {
+      if (isVideoLoading) {
+        console.warn('Video load timeout, falling back to poster')
+        setHasVideoError(true)
+        setIsVideoLoading(false)
+      }
+    }, 10000) // 10 second timeout
+  }, [isVideoLoading])
+
+  const handleVideoLoadComplete = useCallback(() => {
+    setIsVideoLoading(false)
+    if (videoLoadTimeoutRef.current) {
+      clearTimeout(videoLoadTimeoutRef.current)
+    }
+  }, [])
+
+  const scrollToSearch = useCallback(() => {
     const searchSection = document.getElementById('search-section')
-    searchSection?.scrollIntoView({ behavior: 'smooth' })
-  }
+    if (searchSection) {
+      searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
+
+  // Get current media with fallbacks
+  const currentMedia = heroVideos[currentVideo] || heroVideos[0]
+  const posterImage = hasVideoError ? 
+    (currentMedia.fallbackPoster || currentMedia.poster || DEFAULT_FALLBACK) : 
+    (currentMedia.poster || DEFAULT_FALLBACK)
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Optimized Video Background with Performance Improvements */}
+      {/* Background with multiple fallback layers */}
       <div className="absolute inset-0 z-0">
-        <Suspense
-          fallback={
-            <PerformantImage
-              src={heroVideos[currentVideo]?.poster || ''}
-              alt="Hero background"
-              fill
-              className="object-cover"
-              priority
-              quality={60}
-              preload
-            />
-          }
-        >
-          <OptimizedVideo
-            src={heroVideos[currentVideo]?.url || ''}
-            poster={heroVideos[currentVideo]?.poster || ''}
-            className="absolute inset-0 w-full h-full"
-            priority={true}
+        {/* Base gradient background - always visible */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
+        
+        {/* Fallback poster image - always rendered */}
+        <div className="absolute inset-0">
+          <PerformantImage
+            src={posterImage}
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+            quality={85}
+            preload
+            fallbackSrc={DEFAULT_FALLBACK}
           />
-        </Suspense>
+        </div>
+
+        {/* Video layer - only render when mounted to avoid hydration issues */}
+        {isMounted && (
+          <Suspense
+            fallback={
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+              </div>
+            }
+          >
+            <div className="absolute inset-0">
+              <OptimizedVideo
+                key={`video-${currentVideo}`} // Force remount on video change
+                src={currentMedia.url}
+                poster={posterImage}
+                className="absolute inset-0 w-full h-full"
+                priority={true}
+                onLoadStart={handleVideoLoadStart}
+                onLoadComplete={handleVideoLoadComplete}
+              />
+            </div>
+          </Suspense>
+        )}
+        
+        {/* Overlay gradient - always on top */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+        
+        {/* Additional overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30" />
       </div>
 
       {/* Content with optimized rendering */}

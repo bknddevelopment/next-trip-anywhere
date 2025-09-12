@@ -135,7 +135,9 @@ export default function CookieConsent() {
   }
 
   const updatePreference = (key: keyof CookiePreferences, value: boolean) => {
-    if (key === 'necessary') return // Can't change necessary cookies
+    if (key === 'necessary') {
+      return // Can't change necessary cookies
+    }
     
     setPreferences(prev => ({
       ...prev,
@@ -143,7 +145,9 @@ export default function CookieConsent() {
     }))
   }
 
-  if (!showBanner) return null
+  if (!showBanner) {
+    return null
+  }
 
   return (
     <>

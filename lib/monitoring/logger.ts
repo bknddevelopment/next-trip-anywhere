@@ -108,7 +108,7 @@ class Logger {
     }
 
     const formatted = this.formatMessage('DEBUG', message, context)
-    console.debug(formatted)
+    console.info(formatted)
   }
 
   /**
@@ -189,7 +189,7 @@ class Logger {
   /**
    * Audit logging for important actions
    */
-  public audit(action: string, userId: string, details?: Record<string, any>): void {
+  public audit(action: string, userId: string, details?: Record<string, unknown>): void {
     const context: LogContext = {
       userId,
       action,

@@ -78,7 +78,7 @@ describe('EnvironmentConfig', () => {
 
   describe('environment helpers', () => {
     it('should correctly identify development environment', async () => {
-      process.env.NODE_ENV = 'development'
+      (process.env as any).NODE_ENV = 'development'
 
       vi.resetModules()
       const envModule = await import('../env')
@@ -90,7 +90,7 @@ describe('EnvironmentConfig', () => {
     })
 
     it('should correctly identify production environment', async () => {
-      process.env.NODE_ENV = 'production'
+      (process.env as any).NODE_ENV = 'production'
 
       vi.resetModules()
       const envModule = await import('../env')
@@ -102,7 +102,7 @@ describe('EnvironmentConfig', () => {
     })
 
     it('should correctly identify test environment', async () => {
-      process.env.NODE_ENV = 'test'
+      (process.env as any).NODE_ENV = 'test'
 
       vi.resetModules()
       const envModule = await import('../env')
@@ -116,7 +116,7 @@ describe('EnvironmentConfig', () => {
 
   describe('validate method', () => {
     it('should not throw in development with missing vars', async () => {
-      process.env.NODE_ENV = 'development'
+      (process.env as any).NODE_ENV = 'development'
 
       vi.resetModules()
       const envModule = await import('../env')
@@ -126,9 +126,15 @@ describe('EnvironmentConfig', () => {
     })
 
     it('should log warning in production for recommended variables', async () => {
-      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      const originalWarn = console.warn
+      const mockWarn = vi.fn()
+      ;(console as any).warn = mockWarn
 
-      process.env.NODE_ENV = 'production'
+      // Ensure process.env exists before setting NODE_ENV
+      if (!process.env) {
+        process.env = {} as NodeJS.ProcessEnv
+      }
+      (process.env as any).NODE_ENV = 'production'
 
       vi.resetModules()
       const envModule = await import('../env')
@@ -136,9 +142,9 @@ describe('EnvironmentConfig', () => {
 
       newEnv.validate()
 
-      expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('NEXT_PUBLIC_FORMSPREE_ID'))
+      expect(mockWarn).toHaveBeenCalledWith(expect.stringContaining('NEXT_PUBLIC_FORMSPREE_ID'))
 
-      consoleSpy.mockRestore()
+      ;(console as any).warn = originalWarn
     })
   })
 

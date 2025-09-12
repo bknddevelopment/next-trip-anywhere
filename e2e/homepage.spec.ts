@@ -154,7 +154,7 @@ test.describe('Homepage Performance', () => {
         new PerformanceObserver((entryList) => {
           const entries = entryList.getEntries()
           const lastEntry = entries[entries.length - 1]
-          resolve(lastEntry.renderTime || lastEntry.loadTime)
+          resolve((lastEntry as any).renderTime || (lastEntry as any).loadTime)
         }).observe({ type: 'largest-contentful-paint', buffered: true })
       })
     })

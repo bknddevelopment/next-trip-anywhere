@@ -11,7 +11,7 @@ import {
   ProductSchema,
   AggregateRatingSchema
 } from '@/components/seo/StructuredData'
-import { VACATION_PACKAGES, getFeaturedPackages } from '@/lib/data/vacation-packages'
+import { VACATION_PACKAGES, getFeaturedPackages, VacationPackage } from '@/lib/data/vacation-packages'
 import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -81,7 +81,7 @@ const packageRating = {
 }
 
 // Transform vacation package to Trip schema data
-const transformPackageToTrip = (pkg: any) => ({
+const transformPackageToTrip = (pkg: VacationPackage) => ({
   name: pkg.name,
   description: pkg.description,
   destination: pkg.destination,
@@ -94,7 +94,7 @@ const transformPackageToTrip = (pkg: any) => ({
 })
 
 // Transform vacation package to Tour schema data
-const transformPackageToTour = (pkg: any) => ({
+const transformPackageToTour = (pkg: VacationPackage) => ({
   name: pkg.name,
   description: pkg.description,
   provider: 'Next Trip Anywhere',

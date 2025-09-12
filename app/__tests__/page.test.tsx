@@ -24,7 +24,7 @@ vi.mock('@/components/home/CTASection', () => ({
 }))
 
 vi.mock('@/components/forms/LeadCaptureForm', () => ({
-  default: ({ variant }: any) => (
+  default: ({ variant }: { variant?: string }) => (
     <div data-testid="lead-capture-form" data-variant={variant}>
       Lead Capture Form
     </div>

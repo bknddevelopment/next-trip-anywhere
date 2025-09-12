@@ -91,6 +91,6 @@ export default ErrorBoundary
 // Extend window interface for gtag
 declare global {
   interface Window {
-    gtag?: (command: string, ...args: any[]) => void
+    gtag?: (command: string, ...args: Array<string | number | Record<string, unknown>>) => void
   }
 }

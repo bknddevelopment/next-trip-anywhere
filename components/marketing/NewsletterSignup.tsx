@@ -92,7 +92,7 @@ export default function NewsletterSignup({
           onClose?.()
         }, 3000)
       }
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.')
     } finally {
       setIsSubmitting(false)
@@ -113,7 +113,9 @@ export default function NewsletterSignup({
   }
 
   const getTitle = () => {
-    if (title) return title
+    if (title) {
+      return title
+    }
     
     switch (variant) {
       case 'popup':
@@ -128,7 +130,9 @@ export default function NewsletterSignup({
   }
 
   const getSubtitle = () => {
-    if (subtitle) return subtitle
+    if (subtitle) {
+      return subtitle
+    }
     
     return "Get insider deals, travel tips, and exclusive offers delivered straight to your inbox"
   }

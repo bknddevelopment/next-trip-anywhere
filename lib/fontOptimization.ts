@@ -6,7 +6,9 @@
  * Preconnect to font origins to reduce connection time
  */
 export function preconnectFontOrigins() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   const fontOrigins = [
     'https://fonts.googleapis.com',
@@ -33,7 +35,9 @@ export function preconnectFontOrigins() {
  * Load fonts with optimal settings to prevent layout shift
  */
 export function optimizeFontLoading() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   // Set font-display: swap for all @font-face rules
   const style = document.createElement('style')
@@ -82,7 +86,9 @@ export function subsetCriticalFonts() {
  * Initialize all font optimizations
  */
 export function initFontOptimizations() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   // Run immediately
   preconnectFontOrigins()

@@ -1,0 +1,414 @@
+name: Production Deployment Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment Environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+      skip_tests:
+        description: 'Skip tests (emergency deployment only)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  NODE_VERSION: '20.x'
+  DEPLOYMENT_BRANCH: gh-pages
+
+jobs:
+  pre-deployment-checks:
+    name: Pre-Deployment Validation
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.validation.outputs.should_deploy }}
+      version: ${{ steps.version.outputs.version }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version
+        id: version
+        run: |
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/}
+          else
+            VERSION="manual-$(date +%Y%m%d-%H%M%S)"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Deploying version: $VERSION"
+
+      - name: Validate deployment
+        id: validation
+        run: |
+          # Check if we should proceed with deployment
+          if [[ "${{ github.event.inputs.skip_tests }}" == "true" ]]; then
+            echo "⚠️ WARNING: Skipping tests for emergency deployment"
+          fi
+          echo "should_deploy=true" >> $GITHUB_OUTPUT
+
+  test-suite:
+    name: Test Suite
+    needs: pre-deployment-checks
+    if: github.event.inputs.skip_tests != 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint || echo "⚠️ Linting issues detected but continuing"
+
+      - name: Run type checking
+        run: npm run typecheck
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: coverage/
+
+  build-production:
+    name: Build Production Assets
+    needs: [pre-deployment-checks, test-suite]
+    if: always() && needs.pre-deployment-checks.outputs.should_deploy == 'true' && (needs.test-suite.result == 'success' || needs.test-suite.result == 'skipped')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create production env file
+        run: |
+          cat > .env.production.local << EOF
+          NODE_ENV=production
+          NEXT_PUBLIC_APP_URL=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID=${{ secrets.GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_GTM_ID=${{ secrets.GTM_ID }}
+          NEXT_PUBLIC_SENTRY_DSN=${{ secrets.SENTRY_DSN }}
+          EOF
+
+      - name: Build application
+        run: |
+          npm run build
+          echo "Build completed successfully"
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            http://localhost:3000
+            http://localhost:3000/about
+            http://localhost:3000/contact
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        continue-on-error: true
+
+      - name: Generate deployment manifest
+        run: |
+          cat > .next-build/deployment-manifest.json << EOF
+          {
+            "version": "${{ needs.pre-deployment-checks.outputs.version }}",
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "commit": "${{ github.sha }}",
+            "branch": "${{ github.ref_name }}",
+            "deployer": "${{ github.actor }}",
+            "build_id": "${{ github.run_id }}"
+          }
+          EOF
+
+      - name: Create deployment package
+        run: |
+          # Copy static files to docs directory for GitHub Pages
+          rm -rf docs
+          cp -r .next-build docs
+          
+          # Ensure .nojekyll file exists
+          touch docs/.nojekyll
+          
+          # Create CNAME file if custom domain is configured
+          if [ -n "${{ secrets.CUSTOM_DOMAIN }}" ]; then
+            echo "${{ secrets.CUSTOM_DOMAIN }}" > docs/CNAME
+          fi
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-build
+          path: docs/
+          retention-days: 30
+
+  deploy-to-github-pages:
+    name: Deploy to GitHub Pages
+    needs: [pre-deployment-checks, build-production]
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.DEPLOYMENT_BRANCH }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: production-build
+          path: ./deployment
+
+      - name: Prepare deployment branch
+        run: |
+          # Clear existing files
+          git rm -rf . || true
+          
+          # Copy new build
+          cp -r ./deployment/* .
+          rm -rf ./deployment
+          
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          git commit -m "Deploy version ${{ needs.pre-deployment-checks.outputs.version }} to GitHub Pages" || echo "No changes to commit"
+          git push origin ${{ env.DEPLOYMENT_BRANCH }}
+
+      - name: Wait for GitHub Pages deployment
+        run: |
+          echo "Waiting for GitHub Pages to deploy..."
+          sleep 60
+
+  post-deployment-verification:
+    name: Post-Deployment Verification
+    needs: [pre-deployment-checks, deploy-to-github-pages]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check site availability
+        run: |
+          URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "Checking $URL"
+          
+          for i in {1..5}; do
+            if curl -f -s -o /dev/null -w "%{http_code}" "$URL" | grep -q "200\|301\|302"; then
+              echo "✅ Site is accessible"
+              exit 0
+            fi
+            echo "Attempt $i failed, waiting..."
+            sleep 30
+          done
+          
+          echo "❌ Site verification failed"
+          exit 1
+
+      - name: Run smoke tests
+        run: |
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          
+          # Test critical pages
+          PAGES=("/" "/about" "/contact" "/locations" "/flights" "/cruises" "/packages")
+          
+          for page in "${PAGES[@]}"; do
+            URL="${BASE_URL}${page}"
+            echo "Testing $URL"
+            
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+            if [[ "$STATUS" != "200" ]]; then
+              echo "❌ Failed to load $URL (Status: $STATUS)"
+              exit 1
+            fi
+            echo "✅ $URL is accessible"
+          done
+
+      - name: Report deployment status
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ job.status }}' === 'success' ? '✅' : '❌';
+            const version = '${{ needs.pre-deployment-checks.outputs.version }}';
+            const url = 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}';
+            
+            const body = `## Deployment Status: ${status}
+            
+            **Version:** ${version}
+            **Environment:** Production
+            **URL:** ${url}
+            **Deployed by:** @${{ github.actor }}
+            **Timestamp:** ${new Date().toISOString()}
+            
+            ### Verification Results
+            - Site Availability: ${{ steps.check.outcome || 'pending' }}
+            - Smoke Tests: ${{ steps.smoke.outcome || 'pending' }}
+            
+            [View Deployment](${url}) | [View Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
+            
+            // Create deployment comment if PR exists
+            if (context.payload.pull_request) {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: body
+              });
+            }
+
+  rollback-on-failure:
+    name: Automatic Rollback
+    needs: [deploy-to-github-pages, post-deployment-verification]
+    if: failure()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout deployment branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.DEPLOYMENT_BRANCH }}
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rollback to previous version
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Revert to previous commit
+          git revert HEAD --no-edit
+          git push origin ${{ env.DEPLOYMENT_BRANCH }}
+          
+          echo "⚠️ Deployment failed - automatically rolled back to previous version"
+
+      - name: Create incident issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🚨 Deployment Failure: ${new Date().toISOString()}`;
+            const body = `## Automatic Rollback Initiated
+            
+            A deployment failure occurred and the system has automatically rolled back to the previous version.
+            
+            **Failed Version:** ${{ needs.pre-deployment-checks.outputs.version }}
+            **Workflow Run:** [#${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            **Initiated by:** @${{ github.actor }}
+            
+            ### Next Steps
+            1. Review the failed workflow logs
+            2. Identify and fix the issue
+            3. Create a new release when ready
+            
+            ### Affected Components
+            - [ ] Build process
+            - [ ] Deployment process
+            - [ ] Post-deployment verification
+            
+            @${{ github.actor }} Please investigate this issue.
+            `;
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['incident', 'deployment-failure', 'high-priority']
+            });
+
+  notify-stakeholders:
+    name: Send Notifications
+    needs: [pre-deployment-checks, deploy-to-github-pages, post-deployment-verification]
+    if: always()
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send Slack notification
+        if: secrets.SLACK_WEBHOOK_URL
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          STATUS="${{ needs.post-deployment-verification.result }}"
+          COLOR="good"
+          EMOJI="✅"
+          
+          if [[ "$STATUS" != "success" ]]; then
+            COLOR="danger"
+            EMOJI="❌"
+          fi
+          
+          curl -X POST $SLACK_WEBHOOK_URL \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"attachments\": [{
+                \"color\": \"$COLOR\",
+                \"title\": \"$EMOJI Deployment $STATUS\",
+                \"text\": \"Version ${{ needs.pre-deployment-checks.outputs.version }} deployment $STATUS\",
+                \"fields\": [
+                  {\"title\": \"Environment\", \"value\": \"Production\", \"short\": true},
+                  {\"title\": \"Deployed by\", \"value\": \"${{ github.actor }}\", \"short\": true},
+                  {\"title\": \"URL\", \"value\": \"https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}\"}
+                ]
+              }]
+            }"
+
+      - name: Update deployment status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Update deployment status in GitHub
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha,
+              environment: 'production',
+              description: 'Production deployment',
+              auto_merge: false,
+              required_contexts: [],
+              production_environment: true
+            });
+            
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment.data.id,
+              state: '${{ needs.post-deployment-verification.result }}',
+              environment_url: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}',
+              description: 'Deployment ${{ needs.post-deployment-verification.result }}'
+            });

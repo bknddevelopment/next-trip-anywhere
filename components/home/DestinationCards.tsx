@@ -9,7 +9,7 @@ const destinations = [
   {
     id: 1,
     name: 'Cancun, Mexico',
-    image: 'https://images.unsplash.com/photo-1510097467424-192d713fd8b2?auto=format&fit=crop&w=800&q=80',
+    image: '/images/mexico-destination.jpg',
     rating: 4.8,
     duration: '5 Days',
     groupSize: '2-4 People',
@@ -19,7 +19,7 @@ const destinations = [
   {
     id: 2,
     name: 'Paris, France',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
+    image: '/images/paris-destination.jpg',
     rating: 4.9,
     duration: '7 Days',
     groupSize: '2-6 People',

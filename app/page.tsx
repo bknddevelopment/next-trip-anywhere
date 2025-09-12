@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
-import HeroSection from '@/components/home/HeroSection'
+// Using the performant hero section with optimized images
+import HeroSectionPerformant from '@/components/home/HeroSectionPerformant'
 import { Metadata } from 'next'
 import ExitIntentPopup from '@/components/marketing/ExitIntentPopup'
 import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
@@ -161,7 +162,7 @@ export default function HomePage() {
         }}
       />
 
-      <HeroSection />
+      <HeroSectionPerformant />
 
       {/* Trust Indicators Bar with semantic HTML */}
       <section className="bg-navy text-white py-4" aria-label="Trust Indicators">

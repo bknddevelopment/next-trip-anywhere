@@ -50,15 +50,25 @@ export function useDebounce<T>(value: T, delay: number): T {
  * Hook for throttling function calls
  */
 export function useThrottle<T extends (...args: any[]) => any>(callback: T, delay: number): T {
-  const lastRun = useRef(Date.now())
+  const lastRun = useRef(0)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const lastArgs = useRef<any[]>([])
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   return useCallback(
     ((...args) => {
       const now = Date.now()
       const timeSinceLastRun = now - lastRun.current
+      lastArgs.current = args
 
-      if (timeSinceLastRun >= delay) {
+      if (timeSinceLastRun >= delay || lastRun.current === 0) {
         lastRun.current = now
         return callback(...args)
       } else {
@@ -69,7 +79,7 @@ export function useThrottle<T extends (...args: any[]) => any>(callback: T, dela
 
         timeoutRef.current = setTimeout(() => {
           lastRun.current = Date.now()
-          callback(...args)
+          callback(...lastArgs.current)
         }, delay - timeSinceLastRun)
       }
     }) as T,

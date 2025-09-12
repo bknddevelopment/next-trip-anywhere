@@ -158,7 +158,9 @@ class ABTestingFramework {
    * Get or create a persistent user ID
    */
   private getUserId(): string {
-    if (typeof window === 'undefined') return 'server-side'
+    if (typeof window === 'undefined') {
+      return 'server-side'
+    }
     
     let userId = localStorage.getItem('ab_user_id')
     if (!userId) {
@@ -172,7 +174,9 @@ class ABTestingFramework {
    * Load existing test assignments from localStorage
    */
   private loadAssignments(): void {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {
+      return
+    }
     
     const saved = localStorage.getItem('ab_assignments')
     if (saved) {
@@ -188,7 +192,9 @@ class ABTestingFramework {
    * Save test assignments to localStorage
    */
   private saveAssignments(): void {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {
+      return
+    }
     localStorage.setItem('ab_assignments', JSON.stringify(this.assignments))
   }
 
@@ -197,12 +203,18 @@ class ABTestingFramework {
    */
   private shouldIncludeUser(test: ABTest): boolean {
     // Check if test is active
-    if (!test.isActive) return false
+    if (!test.isActive) {
+      return false
+    }
 
     // Check date range
     const now = new Date()
-    if (now < test.startDate) return false
-    if (test.endDate && now > test.endDate) return false
+    if (now < test.startDate) {
+      return false
+    }
+    if (test.endDate && now > test.endDate) {
+      return false
+    }
 
     // Check URL targeting
     if (typeof window !== 'undefined') {
@@ -301,7 +313,9 @@ class ABTestingFramework {
    */
   trackConversion(testId: string, event: string, value?: number, metadata?: Record<string, any>): void {
     const variant = this.getVariant(testId)
-    if (!variant) return
+    if (!variant) {
+      return
+    }
 
     this.trackEvent(testId, variant.id, event, value, metadata)
   }
@@ -329,7 +343,7 @@ class ABTestingFramework {
     }
 
     // Log to console for development
-    console.log('AB Test Event:', eventData)
+    // console.log('AB Test Event:', eventData)
 
     // Store in localStorage for debugging
     if (typeof window !== 'undefined') {

@@ -5,7 +5,14 @@ import { abTesting } from '@/lib/ab-testing'
 
 export default function ABTestingDemo() {
   const [activeTests, setActiveTests] = useState<Record<string, string>>({})
-  const [events, setEvents] = useState<any[]>([])
+  const [events, setEvents] = useState<Array<{
+    testId: string
+    variantId: string
+    event: string
+    value?: number
+    timestamp: string
+    metadata?: Record<string, unknown>
+  }>>([])
 
   useEffect(() => {
     // Get active test assignments

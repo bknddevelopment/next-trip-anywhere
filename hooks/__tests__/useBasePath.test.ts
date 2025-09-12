@@ -6,12 +6,12 @@ describe('useBasePath', () => {
   const originalNodeEnv = process.env.NODE_ENV
 
   afterEach(() => {
-    process.env.NODE_ENV = originalNodeEnv
+    (process.env as any).NODE_ENV = originalNodeEnv
   })
 
   describe('in development environment', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'development'
+      (process.env as any).NODE_ENV = 'development'
     })
 
     it('should return empty base path', () => {
@@ -40,7 +40,7 @@ describe('useBasePath', () => {
 
   describe('in production environment', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'production'
+      (process.env as any).NODE_ENV = 'production'
     })
 
     it('should return base path for GitHub Pages', () => {
@@ -88,7 +88,7 @@ describe('useBasePath', () => {
 
   describe('in test environment', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'test'
+      (process.env as any).NODE_ENV = 'test'
     })
 
     it('should return empty base path', () => {

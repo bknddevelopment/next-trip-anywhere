@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Thermometer, Snowflake, Sun, Leaf, Flower } from 'lucide-react'
+import { Calendar, MapPin, Snowflake, Sun, Leaf, Flower } from 'lucide-react'
 
 interface SeasonalHighlight {
   season: string

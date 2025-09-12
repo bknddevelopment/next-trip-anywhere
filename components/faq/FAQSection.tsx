@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+import { ChevronDown, HelpCircle } from 'lucide-react'
 
 export interface FAQItem {
   id: string

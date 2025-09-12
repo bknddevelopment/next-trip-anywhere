@@ -6,7 +6,6 @@ import {
   MapPin, 
   Calendar, 
   Users, 
-  CreditCard, 
   User, 
   Mail, 
   Phone, 
@@ -17,9 +16,33 @@ import {
 } from 'lucide-react'
 import ProgressIndicator, { Step } from '@/components/ui/ProgressIndicator'
 
+interface BookingFormData {
+  // Step 1: Trip Details
+  from: string
+  to: string
+  departureDate: string
+  returnDate: string
+  tripType: string
+  
+  // Step 2: Travelers
+  adults: number
+  children: number
+  infants: number
+  travelClass: string
+  specialRequests: string
+  
+  // Step 3: Contact
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  preferredContact: string
+  marketingConsent: boolean
+}
+
 interface BookingFormProps {
   bookingType?: 'flight' | 'cruise' | 'package'
-  onSubmit?: (data: any) => void
+  onSubmit?: (data: BookingFormData) => void
   className?: string
 }
 
@@ -42,7 +65,6 @@ const steps: Step[] = [
 ]
 
 export default function OptimizedBookingForm({ 
-  bookingType = 'flight', 
   onSubmit,
   className = '' 
 }: BookingFormProps) {
@@ -74,7 +96,7 @@ export default function OptimizedBookingForm({
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const updateFormData = (field: string, value: any) => {
+  const updateFormData = (field: keyof BookingFormData, value: string | number | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }))
     // Clear error when user starts typing
     if (errors[field]) {
@@ -86,23 +108,39 @@ export default function OptimizedBookingForm({
     const newErrors: Record<string, string> = {}
 
     if (step === 1) {
-      if (!formData.from) newErrors.from = 'Please select departure city'
-      if (!formData.to) newErrors.to = 'Please select destination'
-      if (!formData.departureDate) newErrors.departureDate = 'Please select departure date'
+      if (!formData.from) {
+        newErrors.from = 'Please select departure city'
+      }
+      if (!formData.to) {
+        newErrors.to = 'Please select destination'
+      }
+      if (!formData.departureDate) {
+        newErrors.departureDate = 'Please select departure date'
+      }
       if (formData.tripType === 'roundtrip' && !formData.returnDate) {
         newErrors.returnDate = 'Please select return date'
       }
     }
 
     if (step === 2) {
-      if (formData.adults < 1) newErrors.adults = 'At least 1 adult required'
+      if (formData.adults < 1) {
+        newErrors.adults = 'At least 1 adult required'
+      }
     }
 
     if (step === 3) {
-      if (!formData.firstName) newErrors.firstName = 'First name is required'
-      if (!formData.lastName) newErrors.lastName = 'Last name is required'
-      if (!formData.email) newErrors.email = 'Email is required'
-      if (!formData.phone) newErrors.phone = 'Phone number is required'
+      if (!formData.firstName) {
+        newErrors.firstName = 'First name is required'
+      }
+      if (!formData.lastName) {
+        newErrors.lastName = 'Last name is required'
+      }
+      if (!formData.email) {
+        newErrors.email = 'Email is required'
+      }
+      if (!formData.phone) {
+        newErrors.phone = 'Phone number is required'
+      }
     }
 
     setErrors(newErrors)
@@ -120,7 +158,9 @@ export default function OptimizedBookingForm({
   }
 
   const handleSubmit = async () => {
-    if (!validateStep(currentStep)) return
+    if (!validateStep(currentStep)) {
+      return
+    }
 
     setIsSubmitting(true)
     try {

@@ -182,7 +182,7 @@ function reportMetric(name: string, value: number) {
   // Log in development
   if (process.env.NODE_ENV === 'development') {
     const color = getMetricColor(name, value)
-    console.log(
+    console.info(
       `%c[${name}]`,
       `color: ${color}; font-weight: bold`,
       `${roundedValue}ms`,
@@ -212,10 +212,10 @@ function reportLongTask(duration: number) {
 /**
  * Report JavaScript errors
  */
-function reportError(error: any) {
+function reportError(error: unknown) {
   if (window.gtag) {
     window.gtag('event', 'exception', {
-      description: error.message || 'Unknown error',
+      description: (error as Error).message || 'Unknown error',
       fatal: false,
     })
   }

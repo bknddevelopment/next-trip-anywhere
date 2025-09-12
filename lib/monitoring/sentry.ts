@@ -11,12 +11,12 @@ export function initSentry() {
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN
 
   if (!SENTRY_DSN) {
-    console.log('Sentry DSN not configured, skipping initialization')
+    console.info('Sentry DSN not configured, skipping initialization')
     return
   }
 
   // Sentry initialization will be enabled when @sentry/nextjs is installed
-  console.log('Sentry stub initialized - install @sentry/nextjs to enable error tracking')
+  console.info('Sentry stub initialized - install @sentry/nextjs to enable error tracking')
 }
 
 /**
@@ -33,7 +33,7 @@ export function captureError(error: Error, context?: Record<string, unknown>) {
 export function trackEvent(name: string, data?: Record<string, unknown>) {
   // Stub: Will track events when Sentry is installed
   if (process.env.NODE_ENV === 'development') {
-    console.debug('Event tracked (Sentry stub):', name, data)
+    console.info('Event tracked (Sentry stub):', name, data)
   }
 }
 
@@ -43,7 +43,7 @@ export function trackEvent(name: string, data?: Record<string, unknown>) {
 export function setUserContext(user: { id: string; email?: string; username?: string }) {
   // Stub: Will set user context when Sentry is installed
   if (process.env.NODE_ENV === 'development') {
-    console.debug('User context set (Sentry stub):', user)
+    console.info('User context set (Sentry stub):', user)
   }
 }
 
@@ -53,7 +53,7 @@ export function setUserContext(user: { id: string; email?: string; username?: st
 export function clearUserContext() {
   // Stub: Will clear user context when Sentry is installed
   if (process.env.NODE_ENV === 'development') {
-    console.debug('User context cleared (Sentry stub)')
+    console.info('User context cleared (Sentry stub)')
   }
 }
 
@@ -65,7 +65,7 @@ export function startTransaction(name: string, op: string = 'navigation') {
   return {
     finish: () => {
       if (process.env.NODE_ENV === 'development') {
-        console.debug('Transaction finished (Sentry stub):', name, op)
+        console.info('Transaction finished (Sentry stub):', name, op)
       }
     },
   }
@@ -79,7 +79,7 @@ export function addPerformanceMark(name: string, data?: Record<string, unknown>)
     performance.mark(name)
 
     if (process.env.NODE_ENV === 'development') {
-      console.debug('Performance mark added (Sentry stub):', name, data)
+      console.info('Performance mark added (Sentry stub):', name, data)
     }
   }
 }

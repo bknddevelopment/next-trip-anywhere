@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Phone, Mail, Send, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, Send, Clock } from 'lucide-react'
 import { useFormAnalytics, useInteractionAnalytics } from '@/hooks/useAnalytics'
 import { trackConversion } from '@/lib/analytics'
 import toast from 'react-hot-toast'
@@ -13,7 +13,7 @@ import toast from 'react-hot-toast'
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().regex(/^[\+]?[1-9][\d]{0,15}$/, 'Please enter a valid phone number').optional(),
+  phone: z.string().regex(/^[+]?[1-9][\d]{0,15}$/, 'Please enter a valid phone number').optional(),
   tripType: z.enum(['flight', 'cruise', 'package', 'other'], {
     required_error: 'Please select a trip type',
   }),
@@ -63,7 +63,7 @@ export default function ContactFormWithAnalytics() {
   })
 
   // Watch form values for progress tracking
-  const watchedValues = watch()
+  watch()
   const filledFieldsCount = Object.keys(dirtyFields).length
 
   // Track form start when user begins typing
@@ -115,7 +115,7 @@ export default function ContactFormWithAnalytics() {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const result = await response.json()
+      await response.json()
 
       // Track successful form submission
       trackFormSubmit({

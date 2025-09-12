@@ -33,7 +33,7 @@ export const PERFORMANCE_BUDGETS = {
 /**
  * Debounce function for expensive operations
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -45,7 +45,9 @@ export function debounce<T extends (...args: any[]) => any>(
       func(...args)
     }
     
-    if (timeout) clearTimeout(timeout)
+    if (timeout) {
+      clearTimeout(timeout)
+    }
     timeout = setTimeout(later, wait)
   }
 }
@@ -53,7 +55,7 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Throttle function for rate-limiting
  */
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
@@ -76,7 +78,7 @@ export function requestIdleCallback(
   options?: { timeout?: number }
 ): number {
   if ('requestIdleCallback' in window) {
-    return (window as any).requestIdleCallback(callback, options)
+    return (window as unknown as IdleCallbackWindow).requestIdleCallback(callback, options)
   }
   
   // Fallback to setTimeout
@@ -88,7 +90,7 @@ export function requestIdleCallback(
  */
 export function cancelIdleCallback(id: number): void {
   if ('cancelIdleCallback' in window) {
-    (window as any).cancelIdleCallback(id)
+    (window as unknown as IdleCallbackWindow).cancelIdleCallback(id)
   } else {
     clearTimeout(id)
   }
@@ -97,8 +99,15 @@ export function cancelIdleCallback(id: number): void {
 /**
  * Optimize scroll performance
  */
+interface IdleCallbackWindow {
+  requestIdleCallback: (callback: () => void, options?: { timeout?: number }) => number
+  cancelIdleCallback: (id: number) => void
+}
+
 export function optimizeScrollPerformance(): void {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
   
   // Use passive event listeners for better scroll performance
   let supportsPassive = false
@@ -140,11 +149,11 @@ export function optimizeScrollPerformance(): void {
  */
 export class VirtualScroller {
   private container: HTMLElement
-  private items: any[]
+  private items: unknown[]
   private itemHeight: number
   private visibleItems: number
   
-  constructor(container: HTMLElement, items: any[], itemHeight: number) {
+  constructor(container: HTMLElement, items: unknown[], itemHeight: number) {
     this.container = container
     this.items = items
     this.itemHeight = itemHeight
@@ -188,7 +197,7 @@ export class VirtualScroller {
  */
 export const lazyLoad = {
   // Lazy load components
-  component: (importFn: () => Promise<any>) => {
+  component: (importFn: () => Promise<unknown>) => {
     return typeof window !== 'undefined' 
       ? importFn()
       : Promise.resolve({ default: () => null })
@@ -226,14 +235,14 @@ export const memoryManager = {
   // Clear unused objects from memory
   clearUnused: () => {
     if (typeof window !== 'undefined' && 'gc' in window) {
-      (window as any).gc()
+      (window as GCWindow).gc()
     }
   },
   
   // Monitor memory usage
   getMemoryUsage: () => {
-    if (typeof window !== 'undefined' && (window.performance as any).memory) {
-      const memory = (window.performance as any).memory
+    if (typeof window !== 'undefined' && (window.performance as PerformanceWithMemory).memory) {
+      const memory = (window.performance as PerformanceWithMemory).memory
       return {
         used: memory.usedJSHeapSize,
         total: memory.jsHeapSizeLimit,
@@ -254,8 +263,26 @@ export const memoryManager = {
 /**
  * Initialize all performance optimizations
  */
+interface GCWindow extends Window {
+  gc: () => void
+}
+
+interface PerformanceWithMemory extends Performance {
+  memory: {
+    usedJSHeapSize: number
+    jsHeapSizeLimit: number
+  }
+}
+
+interface LCPEntry extends PerformanceEntry {
+  renderTime: number
+  loadTime: number
+}
+
 export function initPerformanceOptimizations(): void {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
   
   // Optimize scroll performance
   optimizeScrollPerformance()
@@ -288,7 +315,7 @@ export function initPerformanceOptimizations(): void {
       for (const entry of list.getEntries()) {
         // Check against budgets
         if (entry.entryType === 'largest-contentful-paint') {
-          const lcp = (entry as any).renderTime || (entry as any).loadTime
+          const lcp = (entry as LCPEntry).renderTime || (entry as LCPEntry).loadTime
           if (lcp > PERFORMANCE_BUDGETS.LCP) {
             console.warn(`LCP budget exceeded: ${lcp}ms (budget: ${PERFORMANCE_BUDGETS.LCP}ms)`)
           }

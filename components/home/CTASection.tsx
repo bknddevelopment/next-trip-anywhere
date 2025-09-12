@@ -8,7 +8,6 @@ export default function CTASection() {
   const { config, trackConversion, isLoading } = useABTest('homepage-hero-cta')
   
   // Default values if A/B test is not active
-  const primaryCtaText = config.primaryCtaText || 'Start Planning My Trip'
   const primaryCtaColor = config.primaryCtaColor || 'bg-gradient-to-r from-primary-500 to-primary-600'
   const secondaryCtaText = config.secondaryCtaText || 'Surprise Me with Deals!'
   const secondaryCtaColor = config.secondaryCtaColor || 'bg-gradient-to-r from-accent-500 to-accent-600'

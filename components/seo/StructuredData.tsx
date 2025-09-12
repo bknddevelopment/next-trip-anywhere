@@ -9,7 +9,6 @@ import {
   generateWebSiteSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
-  generateLocalBusinessSchema,
   generateServiceSchema,
   generateProductSchema,
   generateArticleSchema,
@@ -97,7 +96,9 @@ export default function StructuredData({ type, data, multiple }: StructuredDataP
 
   const schema = multiple ? generateSchemaGraph(multiple) : generateSchema()
 
-  if (!schema) return null
+  if (!schema) {
+    return null
+  }
 
   return (
     <script

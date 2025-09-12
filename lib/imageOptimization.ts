@@ -61,7 +61,9 @@ export function getImageSizes(layout: 'full' | 'container' | 'half' | 'third' = 
  * Preload critical images
  */
 export function preloadCriticalImages(images: string[]) {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
   
   images.forEach(src => {
     const link = document.createElement('link')
@@ -85,7 +87,9 @@ export function preloadCriticalImages(images: string[]) {
  * Lazy load images with native loading API
  */
 export function setupLazyLoading() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
   
   // Check for native lazy loading support
   if ('loading' in HTMLImageElement.prototype) {
@@ -160,7 +164,9 @@ export async function convertToWebP(imageUrl: string, quality = 0.85): Promise<s
  * Initialize all image optimizations
  */
 export function initImageOptimizations() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
   
   // Setup lazy loading
   if (document.readyState === 'loading') {

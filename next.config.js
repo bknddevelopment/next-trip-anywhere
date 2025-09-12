@@ -27,8 +27,8 @@ const nextConfig = {
   },
 
   eslint: {
-    // Temporarily disable ESLint during builds to check other issues
-    ignoreDuringBuilds: true,
+    // ESLint enabled during builds
+    ignoreDuringBuilds: false,
   },
 
   images: {
@@ -78,61 +78,9 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion', '@tanstack/react-query'],
   },
   
-  // Headers configuration for performance and SEO
-  headers: async () => [
-    {
-      source: '/:path*',
-      headers: [
-        {
-          key: 'X-DNS-Prefetch-Control',
-          value: 'on',
-        },
-        {
-          key: 'X-XSS-Protection',
-          value: '1; mode=block',
-        },
-        {
-          key: 'X-Frame-Options',
-          value: 'SAMEORIGIN',
-        },
-        {
-          key: 'X-Content-Type-Options',
-          value: 'nosniff',
-        },
-        {
-          key: 'Referrer-Policy',
-          value: 'origin-when-cross-origin',
-        },
-      ],
-    },
-    {
-      source: '/:all*(woff|woff2|ttf|eot)',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-    {
-      source: '/:all*(jpg|jpeg|gif|png|svg|ico|webp|avif)',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-    {
-      source: '/:all*(js|css)',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-  ],
+  // NOTE: Headers configuration is not compatible with static export (output: 'export')
+  // If you need headers, use a Node.js server deployment instead
+  // Security headers can be configured at the hosting provider level (e.g., Vercel, Netlify, GitHub Pages)
 
   // Add environment variables for runtime access
   env: {
@@ -218,9 +166,5 @@ const nextConfig = {
     return config
   },
 }
-
-// Note: Headers don't work with static export (output: 'export')
-// If you need headers, remove the output: 'export' config
-// and use a Node.js server deployment instead
 
 module.exports = nextConfig

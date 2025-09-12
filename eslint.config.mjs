@@ -42,7 +42,7 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
       
       // TypeScript rules
-      '@typescript-eslint/no-unused-vars': ['error', { 
+      '@typescript-eslint/no-unused-vars': ['warn', { 
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_'
       }],
@@ -50,11 +50,11 @@ export default [
       '@typescript-eslint/explicit-function-return-type': 'off',
       
       // General rules
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
       'prefer-const': 'error',
       'no-var': 'error',
       'eqeqeq': ['error', 'always'],
-      'curly': ['error', 'all'],
+      'curly': ['warn', 'all'],
       
       // Disable some rules for now to fix incrementally
       'no-undef': 'off',

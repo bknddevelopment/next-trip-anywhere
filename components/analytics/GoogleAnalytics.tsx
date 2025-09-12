@@ -17,7 +17,9 @@ export default function GoogleAnalytics() {
 
   // Track page views
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.gtag) return
+    if (typeof window === 'undefined' || !window.gtag) {
+      return
+    }
 
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
     
@@ -35,7 +37,7 @@ export default function GoogleAnalytics() {
         window.gtag!('event', 'web_vitals', {
           event_category: 'Web Vitals',
           event_label: vital,
-          value: Math.round(vital === 'CLS' ? (window as any)[`web-vital-${vital}`] * 1000 : (window as any)[`web-vital-${vital}`]),
+          value: Math.round(vital === 'CLS' ? ((window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number) * 1000 : (window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number),
           non_interaction: true,
         })
       })
@@ -78,9 +80,11 @@ export function trackEvent(
   category: string,
   label?: string,
   value?: number,
-  parameters?: Record<string, any>
+  parameters?: Record<string, unknown>
 ) {
-  if (typeof window === 'undefined' || !window.gtag) return
+  if (typeof window === 'undefined' || !window.gtag) {
+    return
+  }
 
   window.gtag!('event', action, {
     event_category: category,
@@ -98,7 +102,9 @@ export function trackConversion(
   value?: number,
   currency: string = 'USD'
 ) {
-  if (typeof window === 'undefined' || !window.gtag) return
+  if (typeof window === 'undefined' || !window.gtag) {
+    return
+  }
 
   const conversionIds: Record<typeof conversionType, string> = {
     lead: 'AW-XXXXXXXXX/XXXXXXXXXXXXXXXXX',
@@ -135,7 +141,9 @@ export function trackEcommerce(
   value?: number,
   currency: string = 'USD'
 ) {
-  if (typeof window === 'undefined' || !window.gtag) return
+  if (typeof window === 'undefined' || !window.gtag) {
+    return
+  }
 
   window.gtag!('event', eventType, {
     currency: currency,
@@ -163,7 +171,9 @@ export function trackSearch(searchTerm: string, searchType?: string) {
  * Track scroll depth
  */
 export function initScrollTracking() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   let maxScroll = 0
   const thresholds = [25, 50, 75, 90, 100]
@@ -194,7 +204,9 @@ export function initScrollTracking() {
  * Track engagement time
  */
 export function initEngagementTracking() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   let startTime = Date.now()
   let totalTime = 0

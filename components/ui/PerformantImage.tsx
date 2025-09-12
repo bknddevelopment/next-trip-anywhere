@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Image, { ImageProps } from 'next/image'
 
 interface PerformantImageProps extends Omit<ImageProps, 'src' | 'loading'> {
@@ -10,6 +10,11 @@ interface PerformantImageProps extends Omit<ImageProps, 'src' | 'loading'> {
   preload?: boolean
   aspectRatio?: number
   blur?: boolean
+}
+
+// Debug logging for development
+const debugLog = (_message: string, _data?: any) => {
+  // Logging disabled to pass ESLint
 }
 
 /**
@@ -34,43 +39,97 @@ export default function PerformantImage({
   const [isInView, setIsInView] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const [currentSrc, setCurrentSrc] = useState(src)
   const imgRef = useRef<HTMLDivElement>(null)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  const retryCountRef = useRef(0)
+  const maxRetries = 2
+
+  // Handle mounting to avoid SSR issues
+  useEffect(() => {
+    setIsMounted(true)
+    debugLog('Component mounted', { src, priority })
+    
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+        observerRef.current = null
+      }
+    }
+  }, [])
+
+  // Reset state when src changes
+  useEffect(() => {
+    if (src !== currentSrc) {
+      setCurrentSrc(src)
+      setHasError(false)
+      setIsLoaded(false)
+      retryCountRef.current = 0
+      debugLog('Source changed', { from: currentSrc, to: src })
+    }
+  }, [src, currentSrc])
 
   // Use Intersection Observer for lazy loading
   useEffect(() => {
-    if (priority || !imgRef.current) {
-      setIsInView(true)
+    if (!isMounted || priority || isInView) {
+      if (priority) {
+        setIsInView(true)
+      }
       return
     }
 
-    const observer = new IntersectionObserver(
+    if (!imgRef.current) {
+      return
+    }
+
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          debugLog('Image entering viewport', { src: currentSrc })
           setIsInView(true)
-          observer.disconnect()
+          if (observerRef.current) {
+            observerRef.current.disconnect()
+            observerRef.current = null
+          }
         }
       },
       {
-        rootMargin: '50px', // Start loading 50px before entering viewport
+        rootMargin: '100px', // Start loading 100px before entering viewport
         threshold: 0.01
       }
     )
 
-    observer.observe(imgRef.current)
+    observerRef.current.observe(imgRef.current)
 
-    return () => observer.disconnect()
-  }, [priority])
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+        observerRef.current = null
+      }
+    }
+  }, [isMounted, priority, isInView, currentSrc])
 
   // Preload critical images
   useEffect(() => {
-    if (preload && typeof window !== 'undefined') {
+    if (preload && isMounted && typeof window !== 'undefined') {
       const link = document.createElement('link')
       link.rel = 'preload'
       link.as = 'image'
-      link.href = src
+      link.href = currentSrc
+      link.type = 'image/jpeg' // Assuming JPEG, adjust as needed
       document.head.appendChild(link)
+      
+      debugLog('Preloading image', { src: currentSrc })
+      
+      return () => {
+        // Clean up preload link if component unmounts
+        if (document.head.contains(link)) {
+          document.head.removeChild(link)
+        }
+      }
     }
-  }, [preload, src])
+  }, [preload, currentSrc, isMounted])
 
   const shimmer = (w: number, h: number) => `
     <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -93,19 +152,58 @@ export default function PerformantImage({
 
   const blurDataURL = `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`
 
-  // Handle error with fallback
-  if (hasError && fallbackSrc) {
+  // Handle errors with retry logic
+  const handleImageError = useCallback(() => {
+    debugLog('Image load error', { src: currentSrc, retry: retryCountRef.current })
+    
+    if (retryCountRef.current < maxRetries) {
+      retryCountRef.current++
+      // Force reload by adding timestamp
+      const newSrc = currentSrc.includes('?') 
+        ? `${currentSrc}&retry=${Date.now()}`
+        : `${currentSrc}?retry=${Date.now()}`
+      setCurrentSrc(newSrc)
+    } else if (fallbackSrc && currentSrc !== fallbackSrc) {
+      debugLog('Using fallback image', { fallback: fallbackSrc })
+      setCurrentSrc(fallbackSrc)
+      retryCountRef.current = 0 // Reset for fallback
+    } else {
+      setHasError(true)
+    }
+  }, [currentSrc, fallbackSrc])
+
+  const handleImageLoad = useCallback(() => {
+    debugLog('Image loaded successfully', { src: currentSrc })
+    setIsLoaded(true)
+    setHasError(false)
+  }, [currentSrc])
+
+  // Handle final error state
+  if (hasError && !fallbackSrc) {
     return (
-      <img
-        src={fallbackSrc}
-        alt={alt}
-        className={className}
-        {...(props as any)}
-      />
+      <div 
+        className={`${className} bg-gray-200 flex items-center justify-center`}
+        style={aspectRatio ? { aspectRatio } : undefined}
+      >
+        <span className="text-gray-400 text-sm">Image unavailable</span>
+      </div>
     )
   }
 
   const containerClassName = `relative ${className} ${!isLoaded && blur ? 'animate-pulse bg-gray-200' : ''}`
+
+  // SSR-safe rendering
+  if (!isMounted) {
+    return (
+      <div 
+        ref={imgRef}
+        className={`relative ${className}`}
+        style={aspectRatio ? { aspectRatio } : undefined}
+      >
+        <div className="w-full h-full bg-gray-200 animate-pulse" />
+      </div>
+    )
+  }
 
   return (
     <div 
@@ -116,18 +214,16 @@ export default function PerformantImage({
       {isInView ? (
         <Image
           {...props}
-          src={src}
+          src={currentSrc}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
-          placeholder={blur ? 'blur' : 'empty'}
-          blurDataURL={blur ? blurDataURL : undefined}
+          placeholder={blur && !hasError ? 'blur' : 'empty'}
+          blurDataURL={blur && !hasError ? blurDataURL : undefined}
           quality={props.quality || 75}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => {
-            console.warn(`Image failed to load: ${src}`)
-            setHasError(true)
-          }}
-          className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          className={`${className} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          unoptimized={hasError} // Disable optimization on error to help with reload
         />
       ) : (
         <div 

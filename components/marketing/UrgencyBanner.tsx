@@ -118,7 +118,9 @@ export default function UrgencyBanner({
   const config = getBannerConfig()
   const Icon = config.icon
 
-  if (!isVisible) return null
+  if (!isVisible) {
+    return null
+  }
 
   return (
     <AnimatePresence>

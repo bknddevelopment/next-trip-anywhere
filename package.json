@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rm -rf docs && cp -r out docs && node scripts/fix-image-paths.js",
+    "build": "next build && rm -rf docs && cp -r .next-build docs && node scripts/fix-image-paths.js",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint",
@@ -31,7 +31,6 @@
     "react-gtm-module": "^2.0.11",
     "react-hook-form": "^7.62.0",
     "react-hot-toast": "^2.5.0",
-    "sharp": "^0.33.2",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^12.0.0",
@@ -66,6 +65,7 @@
     "lint-staged": "^16.1.5",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "sharp": "^0.34.3",
     "typescript": "^5.7.3",
     "vitest": "^3.2.4",
     "webpack-bundle-analyzer": "^4.10.2"
