@@ -30,7 +30,8 @@
  * - Must match the repository name on GitHub
  */
 export const getBasePath = () => {
-  return process.env.NODE_ENV === 'production' ? '/next-trip-anywhere' : ''
+  // No base path needed when using custom domain
+  return ''
 }
 
 /**

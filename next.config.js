@@ -5,22 +5,23 @@ const { BundleAnalyzerPlugin } =
     : { BundleAnalyzerPlugin: false }
 
 const isProd = process.env.NODE_ENV === 'production'
-// Use the correct case-sensitive path for GitHub Pages
-const basePath = isProd ? '/next-trip-anywhere' : ''
+// No basePath needed when using custom domain
+const basePath = ''
 
 const nextConfig = {
   // Only use 'export' for production builds
   ...(isProd && { output: 'export' }),
   ...(isProd && { distDir: '.next-build' }), // Use different build dir for production
-  basePath: basePath,
-  assetPrefix: basePath,
+  // Remove basePath and assetPrefix for custom domain
+  // basePath: basePath,
+  // assetPrefix: basePath,
 
   // React strict mode for better error detection
   reactStrictMode: true,
 
   // Optimize production builds
   productionBrowserSourceMaps: false,
-  
+
   // Performance optimizations
   compiler: {
     removeConsole: isProd ? { exclude: ['error', 'warn'] } : false,
@@ -77,7 +78,7 @@ const nextConfig = {
     scrollRestoration: true,
     optimizePackageImports: ['lucide-react', 'framer-motion', '@tanstack/react-query'],
   },
-  
+
   // NOTE: Headers configuration is not compatible with static export (output: 'export')
   // If you need headers, use a Node.js server deployment instead
   // Security headers can be configured at the hosting provider level (e.g., Vercel, Netlify, GitHub Pages)

@@ -3,31 +3,15 @@
  * Handles both build-time and runtime path detection
  */
 
-// GitHub Pages base path (case-sensitive, matches actual deployment)
-const GITHUB_PAGES_BASE = '/next-trip-anywhere'
+// No base path needed when using custom domain
+const GITHUB_PAGES_BASE = ''
 
 /**
  * Detects if we're running on GitHub Pages
  * Works both at build time (via NODE_ENV) and runtime (via window.location)
  */
 export function isGitHubPages(): boolean {
-  // Check environment variable first (most reliable)
-  if (process.env.NEXT_PUBLIC_BASE_PATH) {
-    return true
-  }
-
-  // Build-time detection
-  if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
-    return true
-  }
-
-  // Runtime detection (for client-side)
-  if (typeof window !== 'undefined') {
-    const pathname = window.location.pathname
-    // Check for GitHub Pages deployment
-    return pathname.startsWith('/next-trip-anywhere')
-  }
-
+  // Custom domain doesn't need special path handling
   return false
 }
 
@@ -35,12 +19,8 @@ export function isGitHubPages(): boolean {
  * Gets the base path for the current environment
  */
 export function getBasePath(): string {
-  // Use environment variable if available (most reliable)
-  if (process.env.NEXT_PUBLIC_BASE_PATH) {
-    return process.env.NEXT_PUBLIC_BASE_PATH
-  }
-
-  return isGitHubPages() ? GITHUB_PAGES_BASE : ''
+  // No base path needed with custom domain
+  return ''
 }
 
 /**
@@ -57,10 +37,7 @@ export function normalizePath(path: string, forceRuntime = false): string {
   // Ensure path starts with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
 
-  // Check if path already includes the base
-  if (normalizedPath.startsWith('/next-trip-anywhere')) {
-    return normalizedPath
-  }
+  // No base path to check with custom domain
 
   // Runtime detection for client-side
   if (forceRuntime && typeof window !== 'undefined') {
@@ -84,10 +61,7 @@ export function getRuntimeBasePath(): string {
 
   const pathname = window.location.pathname
 
-  // Check for GitHub Pages deployment
-  if (pathname.startsWith('/next-trip-anywhere')) {
-    return '/next-trip-anywhere'
-  }
+  // No special path handling for custom domain
 
   return ''
 }
@@ -106,10 +80,7 @@ export function needsBasePath(path: string): boolean {
     return false
   }
 
-  // Already has base path
-  if (path.startsWith('/next-trip-anywhere')) {
-    return false
-  }
+  // No base path to check with custom domain
 
   // Check if we're in an environment that needs base path
   return isGitHubPages()
