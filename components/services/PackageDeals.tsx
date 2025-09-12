@@ -133,13 +133,16 @@ export default function PackageDeals() {
                     <p className="text-2xl font-bold text-primary-500">{pkg.price}</p>
                     <p className="text-xs text-gray-500">per person</p>
                   </div>
-                  <motion.button
+                  <motion.a
+                    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                    className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Book Now
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
             </motion.div>
@@ -157,13 +160,16 @@ export default function PackageDeals() {
             Can&apos;t find what you&apos;re looking for? We create custom packages for any
             destination!
           </p>
-          <motion.button
+          <motion.a
+            href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Create My Custom Package
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

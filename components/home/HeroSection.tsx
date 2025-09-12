@@ -88,12 +88,12 @@ export default function HeroSection() {
   const handleVideoLoadStart = useCallback(() => {
     setIsVideoLoading(true)
     setHasVideoError(false)
-    
+
     // Set a timeout for video loading
     if (videoLoadTimeoutRef.current) {
       clearTimeout(videoLoadTimeoutRef.current)
     }
-    
+
     videoLoadTimeoutRef.current = setTimeout(() => {
       if (isVideoLoading) {
         console.warn('Video load timeout, falling back to poster')
@@ -119,9 +119,9 @@ export default function HeroSection() {
 
   // Get current media with fallbacks
   const currentMedia = heroVideos[currentVideo] || heroVideos[0]
-  const posterImage = hasVideoError ? 
-    (currentMedia.fallbackPoster || currentMedia.poster || DEFAULT_FALLBACK) : 
-    (currentMedia.poster || DEFAULT_FALLBACK)
+  const posterImage = hasVideoError
+    ? currentMedia.fallbackPoster || currentMedia.poster || DEFAULT_FALLBACK
+    : currentMedia.poster || DEFAULT_FALLBACK
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
@@ -129,7 +129,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* Base gradient background - always visible */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
-        
+
         {/* Fallback poster image - always rendered */}
         <div className="absolute inset-0">
           <PerformantImage
@@ -166,10 +166,10 @@ export default function HeroSection() {
             </div>
           </Suspense>
         )}
-        
+
         {/* Overlay gradient - always on top */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
-        
+
         {/* Additional overlay for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30" />
       </div>
@@ -188,17 +188,24 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button
-              onClick={scrollToSearch}
-              className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
             >
               Start Planning My Trip
-            </button>
+            </a>
 
-            <button className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2">
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 items-center justify-center space-x-2"
+            >
               <Sparkles className="w-5 h-5" />
               <span>Surprise Me with Deals!</span>
-            </button>
+            </a>
           </div>
 
           {/* Trust Indicators */}

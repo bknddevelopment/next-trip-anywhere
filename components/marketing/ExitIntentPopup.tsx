@@ -10,28 +10,28 @@ interface ExitIntentPopupProps {
   offerText?: string
   ctaText?: string
   onClose?: () => void
-  onSubmit?: (email: string, phone?: string) => void
+  onSubmit?: (_email: string, _phone?: string) => void
 }
 
 export default function ExitIntentPopup({
   title = "Wait! Don't Miss Out on Exclusive Travel Deals!",
-  subtitle = "Get instant access to unpublished rates and save up to 40% on your next vacation",
-  offerText = "Limited Time: Free consultation + Best Price Guarantee",
-  ctaText = "Get My Exclusive Deals",
+  subtitle = 'Get instant access to unpublished rates and save up to 40% on your next vacation',
+  offerText = 'Limited Time: Free consultation + Best Price Guarantee',
+  ctaText = 'Get My Exclusive Deals',
   onClose,
   onSubmit,
 }: ExitIntentPopupProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [_isSubmitted, _setIsSubmitted] = useState(false)
   const [hasTriggered, setHasTriggered] = useState(false)
 
   useEffect(() => {
     let exitTimer: NodeJS.Timeout
-    
+
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasTriggered && !isSubmitted) {
+      if (e.clientY <= 0 && !hasTriggered && !_isSubmitted) {
         setHasTriggered(true)
         exitTimer = setTimeout(() => {
           setIsVisible(true)
@@ -40,7 +40,7 @@ export default function ExitIntentPopup({
     }
 
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (!hasTriggered && !isSubmitted) {
+      if (!hasTriggered && !_isSubmitted) {
         setHasTriggered(true)
         setIsVisible(true)
         e.preventDefault()
@@ -50,7 +50,7 @@ export default function ExitIntentPopup({
 
     // Also trigger after user spends time on site (fallback)
     const timeoutTimer = setTimeout(() => {
-      if (!hasTriggered && !isSubmitted) {
+      if (!hasTriggered && !_isSubmitted) {
         setHasTriggered(true)
         setIsVisible(true)
       }
@@ -65,7 +65,7 @@ export default function ExitIntentPopup({
       clearTimeout(exitTimer)
       clearTimeout(timeoutTimer)
     }
-  }, [hasTriggered, isSubmitted])
+  }, [hasTriggered, _isSubmitted])
 
   const handleClose = () => {
     setIsVisible(false)
@@ -74,15 +74,9 @@ export default function ExitIntentPopup({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
-      setIsSubmitted(true)
-      onSubmit?.(email, phone)
-      
-      // Show success message then close
-      setTimeout(() => {
-        setIsVisible(false)
-      }, 2000)
-    }
+    // Redirect to n8n form
+    window.open('https://nextripanywhere.app.n8n.cloud/form/travel-quote-form', '_blank')
+    handleClose()
   }
 
   const handleCallNow = () => {
@@ -90,7 +84,7 @@ export default function ExitIntentPopup({
     handleClose()
   }
 
-  if (isSubmitted) {
+  if (_isSubmitted) {
     return (
       <AnimatePresence>
         {isVisible && (
@@ -111,7 +105,8 @@ export default function ExitIntentPopup({
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
               <p className="text-gray-600">
-                Your exclusive deals are on the way! Our travel experts will contact you within 24 hours.
+                Your exclusive deals are on the way! Our travel experts will contact you within 24
+                hours.
               </p>
             </motion.div>
           </motion.div>
@@ -164,7 +159,10 @@ export default function ExitIntentPopup({
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="popup-email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="popup-email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email Address *
                 </label>
                 <input
@@ -179,7 +177,10 @@ export default function ExitIntentPopup({
               </div>
 
               <div>
-                <label htmlFor="popup-phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="popup-phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Phone Number (Optional)
                 </label>
                 <input

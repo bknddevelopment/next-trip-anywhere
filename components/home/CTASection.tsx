@@ -6,11 +6,13 @@ import { useABTest, AB_EVENTS } from '@/lib/ab-testing'
 
 export default function CTASection() {
   const { config, trackConversion, isLoading } = useABTest('homepage-hero-cta')
-  
+
   // Default values if A/B test is not active
-  const primaryCtaColor = config.primaryCtaColor || 'bg-gradient-to-r from-primary-500 to-primary-600'
+  const primaryCtaColor =
+    config.primaryCtaColor || 'bg-gradient-to-r from-primary-500 to-primary-600'
   const secondaryCtaText = config.secondaryCtaText || 'Surprise Me with Deals!'
-  const secondaryCtaColor = config.secondaryCtaColor || 'bg-gradient-to-r from-accent-500 to-accent-600'
+  const secondaryCtaColor =
+    config.secondaryCtaColor || 'bg-gradient-to-r from-accent-500 to-accent-600'
 
   const handlePhoneClick = () => {
     trackConversion(AB_EVENTS.PHONE_CLICK)
@@ -18,10 +20,6 @@ export default function CTASection() {
 
   const handleEmailClick = () => {
     trackConversion(AB_EVENTS.EMAIL_CLICK)
-  }
-
-  const handleChatClick = () => {
-    trackConversion(AB_EVENTS.CTA_CLICK, undefined, { type: 'chat' })
   }
 
   if (isLoading) {
@@ -46,8 +44,8 @@ export default function CTASection() {
 
             <p className="text-lg text-gray-700 mb-8">
               Don&apos;t wait for tomorrow to plan your dream vacation. Our travel experts are
-              standing by to create your perfect itinerary with personalized service and 
-              competitive rates.
+              standing by to create your perfect itinerary with personalized service and competitive
+              rates.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -100,10 +98,15 @@ export default function CTASection() {
                   <Mail className="w-5 h-5" />
                   <span className="font-medium">info@nexttripanywhere.com</span>
                 </a>
-                <button className="flex items-center space-x-3 text-gray-700 hover:text-primary-500 transition-colors">
+                <a
+                  href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 text-gray-700 hover:text-primary-500 transition-colors"
+                >
                   <MessageCircle className="w-5 h-5" />
                   <span className="font-medium">Live Chat Available</span>
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -121,9 +124,10 @@ export default function CTASection() {
                 Start Planning Your Dream Vacation Today!
               </h3>
               <p className="text-lg text-gray-700 mb-8">
-                Our expert travel agents are ready to help you find the perfect getaway with personalized service.
+                Our expert travel agents are ready to help you find the perfect getaway with
+                personalized service.
               </p>
-              
+
               <div className="space-y-4">
                 <a
                   href="tel:1-833-874-1019"
@@ -133,7 +137,7 @@ export default function CTASection() {
                   <Phone className="inline-block w-5 h-5 mr-2" />
                   Call Now: 1-833-874-1019
                 </a>
-                
+
                 <a
                   href="mailto:info@nexttripanywhere.com"
                   onClick={handleEmailClick}
@@ -142,19 +146,21 @@ export default function CTASection() {
                   <Mail className="inline-block w-5 h-5 mr-2" />
                   Email Us for a Quote
                 </a>
-                
+
                 <div className="relative">
                   <div className={`absolute inset-0 ${secondaryCtaColor} rounded-lg blur-sm`}></div>
-                  <button 
-                    onClick={handleChatClick}
-                    className={`relative block w-full ${secondaryCtaColor} text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+                  <a
+                    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative block w-full ${secondaryCtaColor} text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center`}
                   >
                     <MessageCircle className="inline-block w-5 h-5 mr-2" />
                     {secondaryCtaText}
-                  </button>
+                  </a>
                 </div>
               </div>
-              
+
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <p className="text-sm text-gray-600 mb-4">Why Choose Next Trip Anywhere?</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">

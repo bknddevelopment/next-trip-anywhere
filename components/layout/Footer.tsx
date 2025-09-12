@@ -196,9 +196,14 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-gray-600 focus:border-accent-400 focus:outline-none text-white placeholder:text-gray-400"
               />
-              <button className="px-6 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                Subscribe
-              </button>
+              <a
+                href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-center"
+              >
+                Get Started
+              </a>
             </div>
           </div>
         </div>

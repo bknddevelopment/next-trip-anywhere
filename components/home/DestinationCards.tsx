@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Star, MapPin, Calendar, Users } from 'lucide-react'
 
 const destinations = [
@@ -190,12 +189,14 @@ export default function DestinationCards() {
                       <p className="text-lg font-semibold text-primary-500">Get Quote</p>
                       <p className="text-xs text-gray-500">Best rates guaranteed</p>
                     </div>
-                    <Link
-                      href={`/contact?destination=${encodeURIComponent(destination.name)}`}
+                    <a
+                      href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                     >
                       Inquire Now
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -204,12 +205,14 @@ export default function DestinationCards() {
         </div>
 
         <div className="text-center mt-12 animate-fade-in">
-          <Link
-            href="/destinations"
+          <a
+            href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Explore All Destinations
-          </Link>
+          </a>
         </div>
       </div>
     </section>

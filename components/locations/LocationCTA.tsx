@@ -8,7 +8,10 @@ interface LocationCTAProps {
   urgencyMessage?: string
 }
 
-export default function LocationCTA({ city, urgencyMessage = "LIMITED TIME: Save up to $500 on departures" }: LocationCTAProps) {
+export default function LocationCTA({
+  city,
+  urgencyMessage = 'LIMITED TIME: Save up to $500 on departures',
+}: LocationCTAProps) {
   return (
     <section className="py-16 bg-warm-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,8 +31,9 @@ export default function LocationCTA({ city, urgencyMessage = "LIMITED TIME: Save
               Ready to Explore from <span className="text-gradient">{city}</span>?
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Join thousands of satisfied {city} travelers who trust us with their dream vacations. 
-              Our local experts are standing by to help you find the perfect trip at the perfect price.
+              Join thousands of satisfied {city} travelers who trust us with their dream vacations.
+              Our local experts are standing by to help you find the perfect trip at the perfect
+              price.
             </p>
           </div>
 
@@ -37,7 +41,7 @@ export default function LocationCTA({ city, urgencyMessage = "LIMITED TIME: Save
             <h3 className="text-2xl font-bold text-navy text-center mb-6">
               Multiple Ways to Connect with Our {city} Experts
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <motion.a
                 href="tel:1-833-874-1019"
@@ -65,41 +69,60 @@ export default function LocationCTA({ city, urgencyMessage = "LIMITED TIME: Save
                 </div>
               </motion.a>
 
-              <motion.button
+              <motion.a
+                href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center bg-gradient-to-r from-accent-600 to-accent-700 text-white font-semibold py-4 px-6 rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5 mr-3" />
                 <div className="text-left">
-                  <div className="text-lg">Live Chat</div>
-                  <div className="text-sm opacity-90">Available 24/7</div>
+                  <div className="text-lg">Get Quote</div>
+                  <div className="text-sm opacity-90">Quick & Easy</div>
                 </div>
-              </motion.button>
+              </motion.a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-6">
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>No Booking Fees</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Price Match Guarantee</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>24/7 Travel Support</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span>Licensed & Bonded</span>
               </div>
