@@ -1,13 +1,14 @@
 /**
- * Site configuration for GitHub Pages deployment
+ * Site configuration for custom domain deployment
  */
 
 const isProd = process.env.NODE_ENV === 'production'
-export const BASE_PATH = isProd ? '/next-trip-anywhere' : ''
+// No base path needed for custom domain (nexttripanywhere.com)
+export const BASE_PATH = ''
 
 export const siteConfig = {
   basePath: BASE_PATH,
-  logoPath: `${BASE_PATH}/NextTripAnywhere.PNG`,
+  logoPath: '/NextTripAnywhere.PNG', // Direct path without base path
   name: 'Next Trip Anywhere',
-  url: isProd ? 'https://bknddevelopment.github.io/next-trip-anywhere' : 'http://localhost:3000',
+  url: isProd ? 'https://nexttripanywhere.com' : 'http://localhost:3000',
 }

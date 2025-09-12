@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rm -rf docs && cp -r .next-build docs && cp public/CNAME docs/CNAME && node scripts/fix-image-paths.js",
+    "build": "next build && rm -rf docs && cp -r .next-build docs && cp -r public/* docs/ && node scripts/fix-image-paths.js",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint",
