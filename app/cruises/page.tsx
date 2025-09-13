@@ -2,14 +2,14 @@ import { Metadata } from 'next'
 import CruiseHero from '@/components/services/CruiseHero'
 import CruiseSearch from '@/components/services/CruiseSearch'
 import CruiseDeals from '@/components/services/CruiseDeals'
-import { 
-  ServiceSchema, 
-  BreadcrumbSchema, 
-  FAQSchema, 
+import {
+  ServiceSchema,
+  BreadcrumbSchema,
+  FAQSchema,
   CruiseSchema,
   AggregateRatingSchema,
   TravelDealSchema,
-  EventSchema
+  EventSchema,
 } from '@/components/seo/StructuredData'
 import { FEATURED_CRUISES } from '@/lib/data/cruises'
 import { getDealsByCategory, getUpcomingEvents } from '@/lib/data/travel-deals'
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 // Get data for schema markup
 const featuredCruise = FEATURED_CRUISES[0] // Featured cruise for schema
 const cruiseDeals = getDealsByCategory('cruises')
-const cruiseEvents = getUpcomingEvents().filter(event => 
+const cruiseEvents = getUpcomingEvents().filter((event) =>
   event.name.toLowerCase().includes('cruise')
 )
 
@@ -57,23 +57,28 @@ const breadcrumbs = [
 const cruiseFAQs = [
   {
     question: 'What cruise perks can travel agents provide?',
-    answer: 'As certified cruise specialists, we can provide free cabin upgrades, onboard credits ($50-$500), complimentary specialty dining, free beverage packages, prepaid gratuities, and exclusive group rates that save you 20-50% off published prices.',
+    answer:
+      'As certified cruise specialists, we can provide free cabin upgrades, onboard credits ($50-$500), complimentary specialty dining, free beverage packages, prepaid gratuities, and exclusive group rates that save you 20-50% off published prices.',
   },
   {
     question: 'Which cruise lines depart from US ports nationwide?',
-    answer: 'Major cruise lines operate from all US ports including Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Popular departure ports include Miami, Fort Lauderdale, Los Angeles, Seattle, New York, Baltimore, New Orleans, and Galveston.',
+    answer:
+      'Major cruise lines operate from all US ports including Royal Caribbean, Carnival, Norwegian, MSC, Disney, Celebrity, and Princess. Popular departure ports include Miami, Fort Lauderdale, Los Angeles, Seattle, New York, Baltimore, New Orleans, and Galveston.',
   },
   {
-    question: 'When is the best time to book a cruise for the best price?',
-    answer: 'Wave Season (January-March) offers the best promotions, but we have access to exclusive group rates year-round. Last-minute cruises (30-60 days out) can offer deep discounts. We monitor prices and rebook if rates drop.',
+    question: 'When is the best time to book a cruise for great deals?',
+    answer:
+      'Wave Season (January-March) offers the best promotions, but we have access to exclusive group rates year-round. Last-minute cruises (30-60 days out) can offer deep discounts. We monitor prices and rebook if rates drop.',
   },
   {
     question: 'Do I need travel insurance for my cruise?',
-    answer: 'While not required, we strongly recommend comprehensive travel insurance for cruise vacations. It protects against trip cancellation, medical emergencies, and cruise line bankruptcy. We offer competitive rates through multiple providers.',
+    answer:
+      'While not required, we strongly recommend comprehensive travel insurance for cruise vacations. It protects against trip cancellation, medical emergencies, and cruise line bankruptcy. We offer competitive rates through multiple providers.',
   },
   {
     question: 'Can you help with cruise cabin selection?',
-    answer: 'Absolutely! Our cruise experts know which cabins to recommend and which to avoid. We consider factors like noise levels, proximity to elevators, deck plans, and views to ensure you get the best possible cabin for your budget.',
+    answer:
+      'Absolutely! Our cruise experts know which cabins to recommend and which to avoid. We consider factors like noise levels, proximity to elevators, deck plans, and views to ensure you get the best possible cabin for your budget.',
   },
 ]
 
@@ -93,15 +98,15 @@ export default function CruisesPage() {
       <ServiceSchema service="cruises" />
       <FAQSchema faqs={cruiseFAQs} />
       <AggregateRatingSchema rating={cruiseRatingData} />
-      
+
       {/* Featured Cruise Schema */}
       {featuredCruise && <CruiseSchema cruise={featuredCruise} />}
-      
+
       {/* Cruise Deals Schema */}
       {cruiseDeals.slice(0, 3).map((deal, index) => (
         <TravelDealSchema key={`cruise-deal-${index}`} deal={deal} />
       ))}
-      
+
       {/* Cruise Events Schema */}
       {cruiseEvents.slice(0, 2).map((event, index) => (
         <EventSchema key={`cruise-event-${index}`} event={event} />
@@ -292,30 +297,28 @@ export default function CruisesPage() {
             </div>
           </div>
           {/* Call to Action */}
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-navy mb-4">
-                Ready to Book Your Trip?
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Our expert travel agents are standing by to help you find the best deals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="tel:1-833-874-1019"
-                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 1-833-874-1019
-                </a>
-                <a
-                  href="mailto:info@nexttripanywhere.com"
-                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Email for Quote
-                </a>
-              </div>
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-navy mb-4">Ready to Book Your Trip?</h3>
+            <p className="text-gray-700 mb-6">
+              Our expert travel agents are standing by to help you find the best deals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:1-833-874-1019"
+                className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call 1-833-874-1019
+              </a>
+              <a
+                href="mailto:info@nexttripanywhere.com"
+                className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                Email for Quote
+              </a>
             </div>
+          </div>
         </div>
       </section>
 
@@ -445,9 +448,9 @@ export default function CruisesPage() {
             <p>
               Don&apos;t miss out on exclusive perks and savings. Our cruise specialists are
               standing by to help you plan the perfect cruise vacation from your preferred US port
-              nationwide. With our price match guarantee and exclusive amenities, you&apos;ll get
-              more value than booking anywhere else. Contact us today for a free, no-obligation
-              cruise consultation.
+              nationwide. With our exclusive deals and special amenities, you&apos;ll get more value
+              than booking anywhere else. Contact us today for a free, no-obligation cruise
+              consultation.
             </p>
           </div>
         </div>

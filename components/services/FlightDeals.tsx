@@ -57,7 +57,8 @@ export default function FlightDeals() {
             Popular <span className="text-gradient">Flight Routes</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Expert travel planning for your next adventure. We find the best flights and handle all the details.
+            Expert travel planning for your next adventure. We find the best flights and handle all
+            the details.
           </p>
         </motion.div>
 
@@ -92,7 +93,7 @@ export default function FlightDeals() {
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <TrendingDown className="w-4 h-4 mr-2 text-accent-500" />
-                    Best price guaranteed
+                    Exclusive rates available
                   </div>
                 </div>
 
@@ -117,8 +118,8 @@ export default function FlightDeals() {
         >
           <h3 className="text-2xl font-bold mb-4">Planning a Different Route?</h3>
           <p className="mb-6 max-w-2xl mx-auto">
-            We specialize in finding the best flights to any destination. Our travel experts have access to 
-            special fares and can help plan your perfect trip from anywhere to anywhere.
+            We specialize in finding the best flights to any destination. Our travel experts have
+            access to special fares and can help plan your perfect trip from anywhere to anywhere.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

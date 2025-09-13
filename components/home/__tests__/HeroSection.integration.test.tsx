@@ -17,29 +17,33 @@ vi.mock('next/dynamic', () => ({
         React.useEffect(() => {
           setMounted(true)
         }, [])
-        
+
         if (!mounted) {
           return options?.loading ? React.createElement(options.loading) : null
         }
-        
-        return React.createElement(React.Suspense, {
-          fallback: options?.loading ? React.createElement(options.loading) : null
-        }, React.createElement(Component, props))
+
+        return React.createElement(
+          React.Suspense,
+          {
+            fallback: options?.loading ? React.createElement(options.loading) : null,
+          },
+          React.createElement(Component, props)
+        )
       }
     }
     return Component
-  }
+  },
 }))
 
 // Mock OptimizedVideo component
 vi.mock('@/components/ui/OptimizedVideo', () => ({
   __esModule: true,
-  default: function MockOptimizedVideo({ 
-    src, 
-    poster, 
-    onLoadStart, 
+  default: function MockOptimizedVideo({
+    src,
+    poster,
+    onLoadStart,
     onLoadComplete,
-    className 
+    className,
   }: any) {
     React.useEffect(() => {
       onLoadStart?.()
@@ -49,35 +53,30 @@ vi.mock('@/components/ui/OptimizedVideo', () => ({
       }, 100)
       return () => clearTimeout(timer)
     }, [onLoadStart, onLoadComplete])
-    
+
     return (
-      <div 
-        data-testid="optimized-video" 
-        data-src={src}
-        data-poster={poster}
-        className={className}
-      >
+      <div data-testid="optimized-video" data-src={src} data-poster={poster} className={className}>
         Video Component
       </div>
     )
-  }
+  },
 }))
 
 // Mock PerformantImage component
 vi.mock('@/components/ui/PerformantImage', () => ({
   __esModule: true,
-  default: function MockPerformantImage({ 
-    src, 
-    alt, 
+  default: function MockPerformantImage({
+    src,
+    alt,
     fallbackSrc,
     className,
     priority,
     preload,
     quality,
-    fill
+    fill,
   }: any) {
     return (
-      <img 
+      <img
         data-testid="performant-image"
         src={src || fallbackSrc}
         alt={alt}
@@ -88,7 +87,7 @@ vi.mock('@/components/ui/PerformantImage', () => ({
         data-fill={fill}
       />
     )
-  }
+  },
 }))
 
 describe('HeroSection Integration Tests', () => {
@@ -102,7 +101,7 @@ describe('HeroSection Integration Tests', () => {
       root: null,
       rootMargin: '',
       thresholds: [],
-      takeRecords: vi.fn()
+      takeRecords: vi.fn(),
     }))
   })
 
@@ -113,7 +112,7 @@ describe('HeroSection Integration Tests', () => {
 
   it('displays hero content correctly', () => {
     render(<HeroSection />)
-    
+
     expect(screen.getByText('Your Next Adventure')).toBeInTheDocument()
     expect(screen.getByText('Starts Here')).toBeInTheDocument()
     expect(screen.getByText(/Expert travel planning/)).toBeInTheDocument()
@@ -121,10 +120,10 @@ describe('HeroSection Integration Tests', () => {
 
   it('renders fallback poster image initially', () => {
     render(<HeroSection />)
-    
+
     const images = screen.getAllByTestId('performant-image')
     expect(images.length).toBeGreaterThan(0)
-    
+
     // Check that at least one image has proper attributes
     const posterImage = images[0]
     expect(posterImage).toHaveAttribute('data-priority', 'true')
@@ -132,75 +131,78 @@ describe('HeroSection Integration Tests', () => {
 
   it('loads video component after mounting', async () => {
     render(<HeroSection />)
-    
+
     // Wait for dynamic import and mounting
-    await waitFor(() => {
-      const video = screen.queryByTestId('optimized-video')
-      expect(video).toBeInTheDocument()
-    }, { timeout: 3000 })
+    await waitFor(
+      () => {
+        const video = screen.queryByTestId('optimized-video')
+        expect(video).toBeInTheDocument()
+      },
+      { timeout: 3000 }
+    )
   })
 
   it('handles video rotation correctly', async () => {
     vi.useFakeTimers()
-    
+
     render(<HeroSection />)
-    
+
     // Wait for initial mount
     await waitFor(() => {
       const video = screen.queryByTestId('optimized-video')
       expect(video).toBeInTheDocument()
     })
-    
+
     const initialVideo = screen.getByTestId('optimized-video')
     const initialSrc = initialVideo.getAttribute('data-src')
-    
+
     // Fast-forward time to trigger video rotation
     vi.advanceTimersByTime(15000)
-    
+
     await waitFor(() => {
       const updatedVideo = screen.getByTestId('optimized-video')
       const updatedSrc = updatedVideo.getAttribute('data-src')
       expect(updatedSrc).not.toBe(initialSrc)
     })
-    
+
     vi.useRealTimers()
   })
 
   it('handles scroll to search functionality', () => {
     const mockScrollIntoView = vi.fn()
-    
+
     // Create mock search section
     const searchSection = document.createElement('div')
     searchSection.id = 'search-section'
     searchSection.scrollIntoView = mockScrollIntoView
     document.body.appendChild(searchSection)
-    
+
     render(<HeroSection />)
-    
+
     const startPlanningButton = screen.getByText('Start Planning My Trip')
     fireEvent.click(startPlanningButton)
-    
+
     expect(mockScrollIntoView).toHaveBeenCalledWith({
       behavior: 'smooth',
-      block: 'start'
+      block: 'start',
     })
-    
+
     // Cleanup
     document.body.removeChild(searchSection)
   })
 
   it('displays trust indicators', () => {
     render(<HeroSection />)
-    
+
     expect(screen.getByText('15+ Years Experience')).toBeInTheDocument()
     expect(screen.getByText('50,000+ Happy Travelers')).toBeInTheDocument()
     expect(screen.getByText('24/7 Support')).toBeInTheDocument()
-    expect(screen.getByText('Best Price Guarantee')).toBeInTheDocument()
+    expect(screen.getByText('Exclusive Travel Deals')).toBeInTheDocument()
   })
 
   it('renders gradient overlays for text contrast', () => {
     const { container } = render(<HeroSection />)
-    
+
     // Check for gradient overlay divs
     const gradientOverlays = container.querySelectorAll('[class*="bg-gradient"]')
     expect(gradientOverlays.length).toBeGreaterThan(0)
@@ -210,10 +212,7 @@ describe('HeroSection Integration Tests', () => {
     // Mock OptimizedVideo to simulate error
     vi.mock('@/components/ui/OptimizedVideo', () => ({
       __esModule: true,
-      default: function MockOptimizedVideoWithError({ 
-        onLoadStart, 
-        onLoadComplete 
-      }: any) {
+      default: function MockOptimizedVideoWithError({ onLoadStart, onLoadComplete }: any) {
         React.useEffect(() => {
           onLoadStart?.()
           // Simulate error
@@ -221,13 +220,13 @@ describe('HeroSection Integration Tests', () => {
             onLoadComplete?.()
           }, 100)
         }, [onLoadStart, onLoadComplete])
-        
+
         return <div data-testid="video-error">Error Loading Video</div>
-      }
+      },
     }))
-    
+
     render(<HeroSection />)
-    
+
     // Should still show poster image as fallback
     const images = screen.getAllByTestId('performant-image')
     expect(images.length).toBeGreaterThan(0)
@@ -236,15 +235,15 @@ describe('HeroSection Integration Tests', () => {
   it('cleans up intervals and timeouts on unmount', () => {
     const clearIntervalSpy = vi.spyOn(global, 'clearInterval')
     const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout')
-    
+
     const { unmount } = render(<HeroSection />)
-    
+
     unmount()
-    
+
     // Should clean up any intervals/timeouts
     expect(clearIntervalSpy).toHaveBeenCalled()
     expect(clearTimeoutSpy).toHaveBeenCalled()
-    
+
     clearIntervalSpy.mockRestore()
     clearTimeoutSpy.mockRestore()
   })

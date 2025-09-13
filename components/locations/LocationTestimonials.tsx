@@ -50,16 +50,14 @@ export default function LocationTestimonials({ testimonials, city }: LocationTes
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 relative"
             >
               <Quote className="w-8 h-8 text-primary-200 absolute top-4 right-4" />
-              
+
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
 
-              <p className="text-gray-700 mb-6 italic leading-relaxed">
-                "{testimonial.quote}"
-              </p>
+              <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
 
               <div className="border-t pt-4">
                 <p className="font-semibold text-navy">{testimonial.name}</p>
@@ -76,13 +74,11 @@ export default function LocationTestimonials({ testimonials, city }: LocationTes
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-gray-600 mb-4">
-            Ready to plan your next adventure from {city}?
-          </p>
+          <p className="text-gray-600 mb-4">Ready to plan your next adventure from {city}?</p>
           <div className="flex justify-center space-x-8 text-sm text-gray-500">
             <div>Licensed & Bonded</div>
             <div>24/7 Support</div>
-            <div>Best Price Guarantee</div>
+            <div>Exclusive Travel Deals</div>
           </div>
         </motion.div>
       </div>

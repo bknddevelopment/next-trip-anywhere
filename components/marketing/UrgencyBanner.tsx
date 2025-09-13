@@ -25,7 +25,7 @@ export default function UrgencyBanner({
   maxBookings = 12,
   discount = 25,
   onClose,
-  className = ''
+  className = '',
 }: UrgencyBannerProps) {
   const [timeLeft, setTimeLeft] = useState<{
     hours: number
@@ -52,7 +52,7 @@ export default function UrgencyBanner({
           setTimeLeft({
             hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
             minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-            seconds: Math.floor((difference % (1000 * 60)) / 1000)
+            seconds: Math.floor((difference % (1000 * 60)) / 1000),
           })
         } else {
           setTimeLeft({ hours: 0, minutes: 0, seconds: 0 })
@@ -77,16 +77,18 @@ export default function UrgencyBanner({
           icon: Clock,
           bgColor: 'bg-gradient-to-r from-red-500 to-red-600',
           title: title || `${discount}% Off Limited Time Flash Sale!`,
-          description: description || 'Book now to secure these exclusive savings before they expire.',
-          showTimer: true
+          description:
+            description || 'Book now to secure these exclusive savings before they expire.',
+          showTimer: true,
         }
       case 'limited-seats':
         return {
           icon: Users,
           bgColor: 'bg-gradient-to-r from-orange-500 to-orange-600',
           title: title || 'Only Limited Spots Remaining!',
-          description: description || `${maxBookings - currentBookings} seats left at this special rate.`,
-          showSeats: true
+          description:
+            description || `${maxBookings - currentBookings} seats left at this special rate.`,
+          showSeats: true,
         }
       case 'price-drop':
         return {
@@ -94,7 +96,7 @@ export default function UrgencyBanner({
           bgColor: 'bg-gradient-to-r from-green-500 to-green-600',
           title: title || `Prices Just Dropped ${discount}%!`,
           description: description || 'We found better rates and passed the savings to you.',
-          showTimer: false
+          showTimer: false,
         }
       case 'booking-deadline':
         return {
@@ -102,7 +104,7 @@ export default function UrgencyBanner({
           bgColor: 'bg-gradient-to-r from-purple-500 to-purple-600',
           title: title || 'Booking Deadline Approaching!',
           description: description || 'Secure your preferred dates before availability closes.',
-          showTimer: true
+          showTimer: true,
         }
       default:
         return {
@@ -110,7 +112,7 @@ export default function UrgencyBanner({
           bgColor: 'bg-gradient-to-r from-blue-500 to-blue-600',
           title: title || 'Special Offer Available!',
           description: description || 'Limited time opportunity - book now!',
-          showTimer: false
+          showTimer: false,
         }
     }
   }
@@ -134,14 +136,14 @@ export default function UrgencyBanner({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4 flex-1">
               <motion.div
-                animate={{ 
+                animate={{
                   scale: [1, 1.1, 1],
-                  rotate: type === 'limited-time' ? [0, 5, -5, 0] : 0
+                  rotate: type === 'limited-time' ? [0, 5, -5, 0] : 0,
                 }}
-                transition={{ 
-                  repeat: Infinity, 
+                transition={{
+                  repeat: Infinity,
                   duration: 2,
-                  ease: "easeInOut"
+                  ease: 'easeInOut',
                 }}
                 className="flex-shrink-0"
               >
@@ -156,26 +158,25 @@ export default function UrgencyBanner({
                   </div>
 
                   {/* Timer */}
-                  {config.showTimer && (timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0) && (
-                    <div className="flex items-center space-x-2 bg-white/20 rounded-lg px-3 py-1 mt-2 md:mt-0">
-                      <Clock className="w-4 h-4" />
-                      <div className="flex space-x-1 font-mono font-bold">
-                        <span>{String(timeLeft.hours).padStart(2, '0')}</span>
-                        <span>:</span>
-                        <span>{String(timeLeft.minutes).padStart(2, '0')}</span>
-                        <span>:</span>
-                        <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
+                  {config.showTimer &&
+                    (timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0) && (
+                      <div className="flex items-center space-x-2 bg-white/20 rounded-lg px-3 py-1 mt-2 md:mt-0">
+                        <Clock className="w-4 h-4" />
+                        <div className="flex space-x-1 font-mono font-bold">
+                          <span>{String(timeLeft.hours).padStart(2, '0')}</span>
+                          <span>:</span>
+                          <span>{String(timeLeft.minutes).padStart(2, '0')}</span>
+                          <span>:</span>
+                          <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
                   {/* Seats Counter */}
                   {config.showSeats && (
                     <div className="flex items-center space-x-2 bg-white/20 rounded-lg px-3 py-1 mt-2 md:mt-0">
                       <Users className="w-4 h-4" />
-                      <span className="font-bold">
-                        {maxBookings - currentBookings} left
-                      </span>
+                      <span className="font-bold">{maxBookings - currentBookings} left</span>
                     </div>
                   )}
 
@@ -210,12 +211,12 @@ export default function UrgencyBanner({
               x: [0, 100, 0],
               y: [0, 20, 0],
               scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3]
+              opacity: [0.3, 0.6, 0.3],
             }}
             transition={{
               duration: 8,
               repeat: Infinity,
-              ease: "linear"
+              ease: 'linear',
             }}
           />
           <motion.div
@@ -224,12 +225,12 @@ export default function UrgencyBanner({
               x: [0, -80, 0],
               y: [0, -15, 0],
               scale: [1, 1.1, 1],
-              opacity: [0.2, 0.5, 0.2]
+              opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
               duration: 6,
               repeat: Infinity,
-              ease: "linear"
+              ease: 'linear',
             }}
           />
         </div>
@@ -261,8 +262,8 @@ export const LimitedSeatsUrgency = () => (
 export const PriceDropUrgency = () => (
   <UrgencyBanner
     type="price-drop"
-    title="💰 Price Match Victory!"
-    description="We found better rates and automatically applied your savings."
+    title="💰 Exclusive Deal Alert!"
+    description="We found special insider rates and automatically applied your savings."
     discount={20}
   />
 )

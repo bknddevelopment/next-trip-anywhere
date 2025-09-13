@@ -74,8 +74,10 @@ export default function CTASection() {
                   <ArrowRight className="w-6 h-6 text-secondary-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-navy">Best Price Guarantee</h4>
-                  <p className="text-sm text-gray-600">We work to find competitive rates</p>
+                  <h4 className="font-semibold text-navy">Exclusive Travel Deals</h4>
+                  <p className="text-sm text-gray-600">
+                    Access to insider rates you won't find online
+                  </p>
                 </div>
               </div>
             </div>
@@ -166,7 +168,7 @@ export default function CTASection() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-green-500">✓</span>
-                    <span>Best Price Guarantee</span>
+                    <span>Exclusive Travel Deals</span>
                   </div>
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-green-500">✓</span>

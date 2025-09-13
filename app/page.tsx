@@ -23,7 +23,7 @@ const CTASection = dynamic(() => import('@/components/home/CTASection'), {
 export const metadata: Metadata = {
   title: "America's Premier Travel Agency | Save up to 40% on Flights, Cruises & Vacations",
   description:
-    'Award-winning nationwide travel agency offering exclusive deals on flights, cruises & vacation packages from all major US cities. 24/7 support, price match guarantee. Book now & save!',
+    'Award-winning nationwide travel agency offering exclusive deals on flights, cruises & vacation packages from all major US cities. 24/7 support, expert travel planning. Book now & save!',
   keywords:
     'nationwide travel agency, cheap flights from all US cities, cruise deals, vacation packages, travel deals, best travel agency, discount cruises, all-inclusive vacations, flight deals, travel agent near me, coast to coast travel',
   openGraph: {
@@ -196,7 +196,7 @@ export default function HomePage() {
                   clipRule="evenodd"
                 />
               </svg>
-              100% Price Match
+              100% Satisfaction
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -237,9 +237,9 @@ export default function HomePage() {
               <div className="text-sm text-gray-500 mt-1">Always Available</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">Best</div>
-              <div className="text-gray-700">Price Guarantee</div>
-              <div className="text-sm text-gray-500 mt-1">Competitive Rates</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">Exclusive</div>
+              <div className="text-gray-700">Travel Deals</div>
+              <div className="text-sm text-gray-500 mt-1">Insider Access</div>
             </div>
             <div>
               <div className="text-5xl font-bold text-blue-600 mb-2">All</div>

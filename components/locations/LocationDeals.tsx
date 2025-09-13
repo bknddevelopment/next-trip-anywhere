@@ -104,7 +104,7 @@ export default function LocationDeals({ location }: LocationDealsProps) {
                 >
                   {service.type}
                 </span>
-                <span className="text-green-600 font-bold">Best Price</span>
+                <span className="text-green-600 font-bold">Great Deal</span>
               </div>
 
               <h3 className="text-lg font-bold text-navy mb-2">{service.route}</h3>

@@ -11,7 +11,7 @@ import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
 export const metadata: Metadata = {
   title: 'Cheap Flights Nationwide | Save 40% on Airfare | Next Trip Anywhere',
   description:
-    'Book cheap flights from all major US cities. Exclusive unpublished fares, 24/7 support, price match guarantee. Expert agents find deals you can&apos;t get online. Free quote!',
+    'Book cheap flights from all major US cities. Exclusive unpublished fares, 24/7 support, insider deals. Expert agents find deals you can&apos;t get online. Free quote!',
   keywords:
     'cheap flights, flights from NYC, flights from LA, Chicago flights, Seattle flights, Boston flights, Miami flights, DC flights, discount airfare, flight deals, cheap tickets, airline tickets, nationwide flights',
   openGraph: {
@@ -84,9 +84,7 @@ const flightServiceJsonLd = {
   },
 }
 
-const breadcrumbItems = [
-  { label: 'Flights', href: '/flights', current: true }
-]
+const breadcrumbItems = [{ label: 'Flights', href: '/flights', current: true }]
 
 const flightFAQJsonLd = {
   '@context': 'https://schema.org',
@@ -120,7 +118,6 @@ const flightFAQJsonLd = {
 }
 
 export default function FlightsPage() {
-
   return (
     <>
       <script
@@ -169,7 +166,9 @@ export default function FlightsPage() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Travelers Choose Us for Flights</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Why Travelers Choose Us for Flights
+            </h2>
             <TrustBadges />
           </div>
           <div className="grid md:grid-cols-4 gap-6 text-center">
@@ -187,14 +186,13 @@ export default function FlightsPage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
-              <div className="text-gray-700">Price Match</div>
+              <div className="text-gray-700">Satisfaction</div>
             </div>
           </div>
         </div>
       </section>
 
       <FlightDeals />
-
 
       {/* Newsletter Signup with Lead Magnet */}
       <section className="py-16 bg-warm-50">
@@ -204,10 +202,10 @@ export default function FlightsPage() {
               title="Get Flight Deals & Travel Tips"
               subtitle="Join our newsletter for travel insights and destination information"
               leadMagnet={{
-                title: "Flight Booking Guide",
-                description: "FREE guide with helpful tips for booking flights",
-                downloadUrl: "/downloads/flight-booking-guide.pdf",
-                type: 'pdf'
+                title: 'Flight Booking Guide',
+                description: 'FREE guide with helpful tips for booking flights',
+                downloadUrl: '/downloads/flight-booking-guide.pdf',
+                type: 'pdf',
               }}
             />
           </div>
@@ -289,7 +287,7 @@ export default function FlightsPage() {
 
             <h3>Book with Confidence</h3>
             <p>
-              Every flight booking with Next Trip Anywhere includes our price match guarantee, 24/7
+              Every flight booking with Next Trip Anywhere includes our satisfaction guarantee, 24/7
               support, and expert assistance with any changes or issues. Let us handle the
               complexities of flight booking while you enjoy the savings and peace of mind.
             </p>

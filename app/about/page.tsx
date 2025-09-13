@@ -70,9 +70,7 @@ export default function AboutPage() {
                 <Award className="w-8 h-8 text-primary-600" />
               </div>
               <h3 className="text-xl font-semibold text-navy mb-2">Industry Certified</h3>
-              <p className="text-gray-600">
-                ASTA member and CLIA certified since 2010
-              </p>
+              <p className="text-gray-600">ASTA member and CLIA certified since 2010</p>
             </div>
 
             <div className="text-center">
@@ -113,9 +111,10 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-accent-400 mb-3">Best Prices</h3>
+                <h3 className="text-xl font-semibold text-accent-400 mb-3">Exceptional Value</h3>
                 <p className="text-gray-300">
-                  We guarantee the best prices on all travel bookings with our price match promise
+                  We leverage our industry connections to provide exceptional value and exclusive
+                  deals
                 </p>
               </div>
 

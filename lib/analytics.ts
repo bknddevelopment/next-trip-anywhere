@@ -47,22 +47,24 @@ class Analytics {
 
   constructor() {
     this.sessionId = uuidv4()
-    
+
     if (typeof window !== 'undefined') {
       this.init()
     }
   }
 
   private init() {
-    if (this.initialized) return
-    
+    if (this.initialized) {
+      return
+    }
+
     // Check if user has analytics consent
     const cookiePreferences = localStorage.getItem('nexttrip_cookie_preferences')
     if (cookiePreferences) {
       try {
         const prefs = JSON.parse(cookiePreferences)
         if (!prefs.analytics) {
-          console.log('Analytics disabled by user preference')
+          // Analytics disabled by user preference
           return
         }
       } catch (error) {
@@ -76,10 +78,10 @@ class Analytics {
 
     // Initialize scroll tracking
     this.initScrollTracking()
-    
+
     // Initialize engagement tracking
     this.initEngagementTracking()
-    
+
     // Track page load performance
     this.trackPagePerformance()
 
@@ -90,7 +92,9 @@ class Analytics {
    * Track page views with enhanced data
    */
   trackPageView(page?: string) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     const pageData = {
       event: 'page_view',
@@ -113,7 +117,9 @@ class Analytics {
    * Track custom events
    */
   trackEvent(eventData: AnalyticsEvent) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     const enrichedEvent = {
       ...eventData,
@@ -141,7 +147,9 @@ class Analytics {
    * Track conversions with enhanced e-commerce data
    */
   trackConversion(conversionData: ConversionData) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     const conversionEvent = {
       event: 'conversion',
@@ -182,11 +190,13 @@ class Analytics {
    * Track form interactions
    */
   trackFormInteraction(
-    formName: string, 
+    formName: string,
     action: 'view' | 'start' | 'progress' | 'submit' | 'error' | 'abandon',
     fieldData?: Record<string, any>
   ) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     this.trackEvent({
       event: 'form_interaction',
@@ -198,7 +208,7 @@ class Analytics {
         form_action: action,
         form_fields: fieldData ? Object.keys(fieldData).length : undefined,
         ...fieldData,
-      }
+      },
     })
   }
 
@@ -206,7 +216,9 @@ class Analytics {
    * Track search events
    */
   trackSearch(searchTerm: string, searchType: string, resultsCount?: number) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     this.trackEvent({
       event: 'search',
@@ -218,7 +230,7 @@ class Analytics {
         search_term: searchTerm,
         search_type: searchType,
         results_count: resultsCount,
-      }
+      },
     })
   }
 
@@ -226,7 +238,9 @@ class Analytics {
    * Track user engagement metrics
    */
   trackEngagement(engagementType: string, engagementValue?: number) {
-    if (!this.initialized) return
+    if (!this.initialized) {
+      return
+    }
 
     this.trackEvent({
       event: 'engagement',
@@ -235,7 +249,7 @@ class Analytics {
       value: engagementValue,
       custom_parameters: {
         engagement_time_msec: Date.now() - this.pageViewStartTime,
-      }
+      },
     })
   }
 
@@ -243,7 +257,9 @@ class Analytics {
    * Track scroll depth
    */
   private initScrollTracking() {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {
+      return
+    }
 
     let maxScroll = 0
     const thresholds = [10, 25, 50, 75, 90, 100]
@@ -257,7 +273,7 @@ class Analytics {
       if (scrollPercent > maxScroll) {
         maxScroll = scrollPercent
 
-        thresholds.forEach(threshold => {
+        thresholds.forEach((threshold) => {
           if (scrollPercent >= threshold && !tracked.has(threshold)) {
             tracked.add(threshold)
             this.trackEngagement('scroll_depth', threshold)
@@ -273,7 +289,9 @@ class Analytics {
    * Track engagement time
    */
   private initEngagementTracking() {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {
+      return
+    }
 
     let startTime = Date.now()
     let totalEngagedTime = 0
@@ -291,7 +309,8 @@ class Analytics {
 
     // Check for inactivity
     const checkInactivity = () => {
-      if (Date.now() - lastActivity > 30000) { // 30 seconds
+      if (Date.now() - lastActivity > 30000) {
+        // 30 seconds
         if (isEngaged) {
           totalEngagedTime += Date.now() - startTime
           isEngaged = false
@@ -304,7 +323,7 @@ class Analytics {
       if (isEngaged) {
         totalEngagedTime += Date.now() - startTime
       }
-      
+
       const engagementSeconds = Math.round(totalEngagedTime / 1000)
       if (engagementSeconds > 0) {
         this.trackEngagement('page_engagement_time', engagementSeconds)
@@ -312,7 +331,7 @@ class Analytics {
     }
 
     // Event listeners
-    ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+    ;['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach((event) => {
       document.addEventListener(event, trackActivity, { passive: true })
     })
 
@@ -341,14 +360,18 @@ class Analytics {
    * Track page performance metrics
    */
   private trackPagePerformance() {
-    if (typeof window === 'undefined' || !('performance' in window)) return
+    if (typeof window === 'undefined' || !('performance' in window)) {
+      return
+    }
 
     // Wait for the page to fully load
     window.addEventListener('load', () => {
       setTimeout(() => {
-        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
+        const navigation = performance.getEntriesByType(
+          'navigation'
+        )[0] as PerformanceNavigationTiming
         const paint = performance.getEntriesByType('paint')
-        
+
         if (navigation) {
           this.trackEvent({
             event: 'page_performance',
@@ -356,14 +379,16 @@ class Analytics {
             action: 'page_load_timing',
             custom_parameters: {
               page_load_time: Math.round(navigation.loadEventEnd - navigation.fetchStart),
-              dom_content_loaded: Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart),
+              dom_content_loaded: Math.round(
+                navigation.domContentLoadedEventEnd - navigation.fetchStart
+              ),
               first_byte: Math.round(navigation.responseStart - navigation.fetchStart),
-            }
+            },
           })
         }
 
         // First Paint and First Contentful Paint
-        paint.forEach(entry => {
+        paint.forEach((entry) => {
           this.trackEvent({
             event: 'web_vitals',
             category: 'Performance',
@@ -374,7 +399,7 @@ class Analytics {
 
         // Core Web Vitals (if available)
         if ('web-vital' in window) {
-          ['LCP', 'FID', 'CLS', 'FCP', 'TTFB', 'INP'].forEach(vital => {
+          ;['LCP', 'FID', 'CLS', 'FCP', 'TTFB', 'INP'].forEach((vital) => {
             if ((window as any)[`web-vital-${vital}`]) {
               this.trackEvent({
                 event: 'web_vitals',
@@ -393,16 +418,32 @@ class Analytics {
    * Get page type from URL
    */
   private getPageType(): string {
-    if (typeof window === 'undefined') return 'unknown'
-    
+    if (typeof window === 'undefined') {
+      return 'unknown'
+    }
+
     const path = window.location.pathname
-    if (path === '/') return 'homepage'
-    if (path.startsWith('/flights')) return 'flights'
-    if (path.startsWith('/cruises')) return 'cruises'
-    if (path.startsWith('/packages')) return 'packages'
-    if (path.startsWith('/from/')) return 'location_page'
-    if (path === '/contact') return 'contact'
-    if (path === '/about') return 'about'
+    if (path === '/') {
+      return 'homepage'
+    }
+    if (path.startsWith('/flights')) {
+      return 'flights'
+    }
+    if (path.startsWith('/cruises')) {
+      return 'cruises'
+    }
+    if (path.startsWith('/packages')) {
+      return 'packages'
+    }
+    if (path.startsWith('/from/')) {
+      return 'location_page'
+    }
+    if (path === '/contact') {
+      return 'contact'
+    }
+    if (path === '/about') {
+      return 'about'
+    }
     return 'other'
   }
 
@@ -410,7 +451,9 @@ class Analytics {
    * Get traffic source information
    */
   private getTrafficSource(): Record<string, string> {
-    if (typeof window === 'undefined') return {}
+    if (typeof window === 'undefined') {
+      return {}
+    }
 
     const urlParams = new URLSearchParams(window.location.search)
     const referrer = document.referrer
@@ -431,7 +474,9 @@ class Analytics {
    * Get device information
    */
   private getDeviceInfo(): Record<string, any> {
-    if (typeof window === 'undefined') return {}
+    if (typeof window === 'undefined') {
+      return {}
+    }
 
     return {
       screen_resolution: `${screen.width}x${screen.height}`,
@@ -447,11 +492,17 @@ class Analytics {
    * Get device type
    */
   private getDeviceType(): string {
-    if (typeof window === 'undefined') return 'unknown'
-    
+    if (typeof window === 'undefined') {
+      return 'unknown'
+    }
+
     const width = window.innerWidth
-    if (width >= 1024) return 'desktop'
-    if (width >= 768) return 'tablet'
+    if (width >= 1024) {
+      return 'desktop'
+    }
+    if (width >= 768) {
+      return 'tablet'
+    }
     return 'mobile'
   }
 
@@ -459,7 +510,7 @@ class Analytics {
    * Calculate total value of items
    */
   private calculateItemsValue(items: EcommerceItem[]): number {
-    return items.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0)
+    return items.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0)
   }
 
   /**
@@ -469,9 +520,9 @@ class Analytics {
     const sensitive = ['password', 'ssn', 'credit_card', 'card_number', 'cvv', 'social_security']
     const sanitized: Record<string, any> = {}
 
-    Object.keys(formData).forEach(key => {
+    Object.keys(formData).forEach((key) => {
       const lowerKey = key.toLowerCase()
-      if (sensitive.some(s => lowerKey.includes(s))) {
+      if (sensitive.some((s) => lowerKey.includes(s))) {
         sanitized[key] = '[REDACTED]'
       } else {
         sanitized[key] = formData[key]
@@ -485,7 +536,9 @@ class Analytics {
    * Track conversion goals in GA4
    */
   private trackConversionGoals(type: string, value?: number) {
-    if (typeof window === 'undefined' || !window.gtag) return
+    if (typeof window === 'undefined' || !window.gtag) {
+      return
+    }
 
     const conversionActions = {
       lead: 'generate_lead',
@@ -497,7 +550,7 @@ class Analytics {
     }
 
     const action = conversionActions[type as keyof typeof conversionActions] || 'conversion'
-    
+
     window.gtag('event', action, {
       currency: 'USD',
       value: value || 0,
@@ -520,10 +573,14 @@ export const analytics = new Analytics()
 // Export utility functions
 export const trackPageView = (page?: string) => analytics.trackPageView(page)
 export const trackEvent = (eventData: AnalyticsEvent) => analytics.trackEvent(eventData)
-export const trackConversion = (conversionData: ConversionData) => analytics.trackConversion(conversionData)
-export const trackFormInteraction = (formName: string, action: 'view' | 'start' | 'progress' | 'submit' | 'error' | 'abandon', fieldData?: Record<string, any>) => 
-  analytics.trackFormInteraction(formName, action, fieldData)
-export const trackSearch = (searchTerm: string, searchType: string, resultsCount?: number) => 
+export const trackConversion = (conversionData: ConversionData) =>
+  analytics.trackConversion(conversionData)
+export const trackFormInteraction = (
+  formName: string,
+  action: 'view' | 'start' | 'progress' | 'submit' | 'error' | 'abandon',
+  fieldData?: Record<string, any>
+) => analytics.trackFormInteraction(formName, action, fieldData)
+export const trackSearch = (searchTerm: string, searchType: string, resultsCount?: number) =>
   analytics.trackSearch(searchTerm, searchType, resultsCount)
-export const trackEngagement = (engagementType: string, engagementValue?: number) => 
+export const trackEngagement = (engagementType: string, engagementValue?: number) =>
   analytics.trackEngagement(engagementType, engagementValue)

@@ -111,7 +111,7 @@ export default function HeroSectionPerformant() {
               <span className="text-accent-400" aria-hidden="true">
                 ✓
               </span>
-              <span>Best Price Guarantee</span>
+              <span>Exclusive Travel Deals</span>
             </div>
           </div>
         </div>

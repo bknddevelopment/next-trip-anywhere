@@ -224,7 +224,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-accent-400">✓</span>
-              <span>Best Price Guarantee</span>
+              <span>Exclusive Travel Deals</span>
             </div>
           </div>
         </div>

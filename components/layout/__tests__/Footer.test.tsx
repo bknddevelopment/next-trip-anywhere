@@ -44,7 +44,7 @@ describe('Footer Component', () => {
       render(<Footer />)
 
       expect(screen.getByText('100% Secure Booking')).toBeInTheDocument()
-      expect(screen.getByText('Best Price Guarantee')).toBeInTheDocument()
+      expect(screen.getByText('Exclusive Travel Deals')).toBeInTheDocument()
       expect(screen.getByText('ASTA Member Since 2010')).toBeInTheDocument()
     })
 

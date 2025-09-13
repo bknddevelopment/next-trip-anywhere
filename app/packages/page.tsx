@@ -9,9 +9,13 @@ import {
   TripSchema,
   TourSchema,
   ProductSchema,
-  AggregateRatingSchema
+  AggregateRatingSchema,
 } from '@/components/seo/StructuredData'
-import { VACATION_PACKAGES, getFeaturedPackages, VacationPackage } from '@/lib/data/vacation-packages'
+import {
+  VACATION_PACKAGES,
+  getFeaturedPackages,
+  VacationPackage,
+} from '@/lib/data/vacation-packages'
 import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -53,23 +57,28 @@ const breadcrumbs = [
 const packageFAQs = [
   {
     question: 'What is included in an all-inclusive vacation package?',
-    answer: 'Our all-inclusive packages typically include round-trip flights, airport transfers, hotel accommodations, all meals and drinks (including alcohol at most resorts), entertainment, activities, and gratuities. Some packages also include spa credits, excursions, and water sports.',
+    answer:
+      'Our all-inclusive packages typically include round-trip flights, airport transfers, hotel accommodations, all meals and drinks (including alcohol at most resorts), entertainment, activities, and gratuities. Some packages also include spa credits, excursions, and water sports.',
   },
   {
     question: 'How much can I save by booking a package vs. separately?',
-    answer: 'Vacation packages typically save 20-50% compared to booking components separately. We have exclusive contracts with resorts and airlines that provide bulk discounts not available to individuals. Plus, many resorts offer free nights and upgrades only available through packages.',
+    answer:
+      'Vacation packages typically save 20-50% compared to booking components separately. We have exclusive contracts with resorts and airlines that provide bulk discounts not available to individuals. Plus, many resorts offer free nights and upgrades only available through packages.',
   },
   {
     question: 'Can you customize vacation packages?',
-    answer: 'Absolutely! While we offer pre-designed packages, we specialize in creating custom vacations. We can adjust length of stay, upgrade rooms, add excursions, arrange special celebrations, and accommodate dietary restrictions or accessibility needs.',
+    answer:
+      'Absolutely! While we offer pre-designed packages, we specialize in creating custom vacations. We can adjust length of stay, upgrade rooms, add excursions, arrange special celebrations, and accommodate dietary restrictions or accessibility needs.',
   },
   {
     question: 'Do vacation packages include travel insurance?',
-    answer: 'Travel insurance is available as an add-on to all packages and we highly recommend it. Our insurance options cover trip cancellation, medical emergencies, baggage protection, and travel delays. We offer competitive rates from multiple providers.',
+    answer:
+      'Travel insurance is available as an add-on to all packages and we highly recommend it. Our insurance options cover trip cancellation, medical emergencies, baggage protection, and travel delays. We offer competitive rates from multiple providers.',
   },
   {
     question: 'What payment options are available for vacation packages?',
-    answer: 'We offer flexible payment options including full payment upfront, monthly payment plans, and low deposits to hold your vacation. Most packages can be secured with just $99 per person deposit, with final payment due 45-60 days before departure.',
+    answer:
+      'We offer flexible payment options including full payment upfront, monthly payment plans, and low deposits to hold your vacation. Most packages can be secured with just $99 per person deposit, with final payment due 45-60 days before departure.',
   },
 ]
 
@@ -115,11 +124,11 @@ export default function PackagesPage() {
       <ServiceSchema service="packages" />
       <FAQSchema faqs={packageFAQs} />
       <AggregateRatingSchema rating={packageRating} />
-      
+
       {/* Featured Package Schemas */}
       {samplePackage && <TripSchema trip={transformPackageToTrip(samplePackage)} />}
       {tourPackage && <TourSchema tour={transformPackageToTour(tourPackage)} />}
-      
+
       {/* Individual Package Product Schemas */}
       {featuredPackages.slice(0, 3).map((pkg, index) => (
         <ProductSchema
@@ -129,7 +138,12 @@ export default function PackagesPage() {
             description: pkg.description,
             price: pkg.price,
             priceCurrency: pkg.currency || 'USD',
-            availability: pkg.availability === 'InStock' ? 'InStock' : pkg.availability === 'OutOfStock' ? 'OutOfStock' : 'PreOrder',
+            availability:
+              pkg.availability === 'InStock'
+                ? 'InStock'
+                : pkg.availability === 'OutOfStock'
+                  ? 'OutOfStock'
+                  : 'PreOrder',
             validFrom: pkg.validFrom,
             validThrough: pkg.validUntil,
             destination: pkg.destination,
@@ -166,8 +180,8 @@ export default function PackagesPage() {
               <div className="text-4xl mb-4">💰</div>
               <h3 className="text-xl font-bold text-navy mb-2">Competitive Packages</h3>
               <p className="text-gray-600">
-                Bundling flights, hotels, and extras often provides savings compared to booking separately.
-                Our industry connections help find competitive rates.
+                Bundling flights, hotels, and extras often provides savings compared to booking
+                separately. Our industry connections help find competitive rates.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -201,8 +215,8 @@ export default function PackagesPage() {
             </div>
             <h2 className="text-3xl font-bold text-navy mb-4">Your Dream Vacation Awaits</h2>
             <p className="text-lg text-gray-600 mb-6">
-              From romantic honeymoons to family adventures, we create vacation packages
-              designed to provide value and eliminate stress. Let our experts handle every detail.
+              From romantic honeymoons to family adventures, we create vacation packages designed to
+              provide value and eliminate stress. Let our experts handle every detail.
             </p>
 
             {/* Package Benefits */}
@@ -297,30 +311,28 @@ export default function PackagesPage() {
             </div>
           </div>
           {/* Call to Action */}
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-navy mb-4">
-                Ready to Book Your Trip?
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Our expert travel agents are standing by to help you find the best deals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="tel:1-833-874-1019"
-                  className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 1-833-874-1019
-                </a>
-                <a
-                  href="mailto:info@nexttripanywhere.com"
-                  className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Email for Quote
-                </a>
-              </div>
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-navy mb-4">Ready to Book Your Trip?</h3>
+            <p className="text-gray-700 mb-6">
+              Our expert travel agents are standing by to help you find the best deals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:1-833-874-1019"
+                className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call 1-833-874-1019
+              </a>
+              <a
+                href="mailto:info@nexttripanywhere.com"
+                className="inline-flex items-center justify-center bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary-700 transition-colors"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                Email for Quote
+              </a>
             </div>
+          </div>
         </div>
       </section>
 
@@ -445,8 +457,8 @@ export default function PackagesPage() {
               <div className="text-sm text-gray-600">Travel Planning</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-navy">Best</div>
-              <div className="text-sm text-gray-600">Price Guarantee</div>
+              <div className="text-2xl font-bold text-navy">Exclusive</div>
+              <div className="text-sm text-gray-600">Travel Deals</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-navy">100%</div>

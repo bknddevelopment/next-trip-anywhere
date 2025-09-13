@@ -153,10 +153,11 @@ export default function ContactPage() {
                       Speak with a Travel Expert Today
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Our experienced agents are ready to help you find the perfect vacation at the best price.
+                      Our experienced agents are ready to help you find the perfect vacation with
+                      exclusive deals.
                     </p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <a
                       href="tel:1-833-874-1019"
@@ -165,7 +166,7 @@ export default function ContactPage() {
                       <Phone className="inline-block w-5 h-5 mr-2" />
                       Call 1-833-874-1019
                     </a>
-                    
+
                     <a
                       href="mailto:info@nexttripanywhere.com"
                       className="block w-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
@@ -173,19 +174,19 @@ export default function ContactPage() {
                       <Mail className="inline-block w-5 h-5 mr-2" />
                       Email for a Quote
                     </a>
-                    
+
                     <button className="block w-full bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                       <MessageCircle className="inline-block w-5 h-5 mr-2" />
                       Start Live Chat
                     </button>
                   </div>
-                  
+
                   <div className="border-t pt-6">
                     <h4 className="font-semibold text-navy mb-3">Why Book With Us?</h4>
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-center">
                         <span className="text-green-500 mr-2">✓</span>
-                        Best Price Guarantee - We'll beat any quote
+                        Exclusive Travel Deals - Access insider rates
                       </li>
                       <li className="flex items-center">
                         <span className="text-green-500 mr-2">✓</span>
@@ -205,10 +206,11 @@ export default function ContactPage() {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-warm-50 rounded-lg p-4 text-center">
                     <p className="text-sm text-gray-600">
-                      <strong>Office Hours:</strong> Mon-Fri 8AM-8PM EST | Sat 9AM-6PM | Sun 10AM-5PM
+                      <strong>Office Hours:</strong> Mon-Fri 8AM-8PM EST | Sat 9AM-6PM | Sun
+                      10AM-5PM
                     </p>
                     <p className="text-xs text-gray-500 mt-1">
                       Emergency support available 24/7 for active bookings

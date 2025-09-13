@@ -42,7 +42,7 @@ const DEFAULT_OG_IMAGE = {
   url: `${DEFAULT_SITE_URL}/og-image.jpg`,
   width: 1200,
   height: 630,
-  alt: 'Next Trip Anywhere - America\'s Premier Travel Agency',
+  alt: "Next Trip Anywhere - America's Premier Travel Agency",
 }
 
 /**
@@ -62,14 +62,14 @@ export function generateMetadata(config: SEOConfig): Metadata {
 
   // Ensure title is under 60 characters for optimal SERP display
   const optimizedTitle = title.length > 60 ? `${title.substring(0, 57)}...` : title
-  
+
   // Ensure description is between 120-160 characters for optimal SERP display
-  const optimizedDescription = 
-    description.length > 160 
+  const optimizedDescription =
+    description.length > 160
       ? `${description.substring(0, 157)}...`
-      : description.length < 120 
-      ? `${description} | Expert travel planning from all major US cities.`
-      : description
+      : description.length < 120
+        ? `${description} | Expert travel planning from all major US cities.`
+        : description
 
   return {
     title: optimizedTitle,
@@ -93,7 +93,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
       card: 'summary_large_image',
       title: twitter.title || openGraph.title || optimizedTitle,
       description: twitter.description || openGraph.description || optimizedDescription,
-      images: twitter.images || openGraph.images?.map(img => img.url) || [DEFAULT_OG_IMAGE.url],
+      images: twitter.images || openGraph.images?.map((img) => img.url) || [DEFAULT_OG_IMAGE.url],
       creator: '@nexttripanywhere',
       site: '@nexttripanywhere',
     },
@@ -135,7 +135,7 @@ export function generateLocationMetadata(
 ): Metadata {
   const location = state ? `${city}, ${state}` : city
   const airportList = airports ? ` (${airports.join(', ')})` : ''
-  
+
   return generateMetadata({
     title: `Travel from ${location} | Local Travel Agency${airportList} | ${DEFAULT_SITE_NAME}`,
     description: `Book flights, cruises, and vacation packages from ${location}. Expert travel agents with exclusive deals. Local service, nationwide destinations. Call for free quote!`,
@@ -144,14 +144,14 @@ export function generateLocationMetadata(
       `flights from ${city}`,
       `${city} vacation packages`,
       `cruises from ${city}`,
-      ...airports?.map(a => `${a} airport deals`) || [],
+      ...(airports?.map((a) => `${a} airport deals`) || []),
       'travel agent near me',
       'local travel agency',
     ],
     canonical: `${DEFAULT_SITE_URL}/from/${city.toLowerCase().replace(/\s+/g, '-')}`,
     openGraph: {
       title: `${location} Travel Agency - Exclusive Deals & Expert Service`,
-      description: `Your local ${city} travel experts. Best prices on flights, cruises, and packages. Personal service from experienced agents.`,
+      description: `Your local ${city} travel experts. Exclusive deals on flights, cruises, and packages. Personal service from experienced agents.`,
     },
   })
 }
@@ -166,7 +166,8 @@ export function generateServiceMetadata(
   const configs: Record<typeof service, SEOConfig> = {
     flights: {
       title: `Cheap Flights Nationwide | Save up to 40% | ${DEFAULT_SITE_NAME}`,
-      description: 'Book cheap flights from all major US cities. Exclusive unpublished fares, 24/7 support, price match guarantee. Expert agents find deals you can\'t get online.',
+      description:
+        "Book cheap flights from all major US cities. Exclusive unpublished fares, 24/7 support, insider rates. Expert agents find deals you can't get online.",
       keywords: [
         'cheap flights',
         'discount airfare',
@@ -181,7 +182,8 @@ export function generateServiceMetadata(
     },
     cruises: {
       title: `Cruise Deals & Packages | Caribbean, Alaska, Europe | ${DEFAULT_SITE_NAME}`,
-      description: 'Exclusive cruise deals from all US ports. Caribbean, Alaska, Mediterranean cruises at guaranteed lowest prices. Free upgrades, onboard credits, and perks.',
+      description:
+        'Exclusive cruise deals from all US ports. Caribbean, Alaska, Mediterranean cruises at exceptional rates. Free upgrades, onboard credits, and perks.',
       keywords: [
         'cruise deals',
         'Caribbean cruises',
@@ -196,7 +198,8 @@ export function generateServiceMetadata(
     },
     packages: {
       title: `All-Inclusive Vacation Packages | Beach, City & Adventure | ${DEFAULT_SITE_NAME}`,
-      description: 'Complete vacation packages with flights, hotels, and activities. All-inclusive resorts, guided tours, custom itineraries. Save up to 50% booking as a package.',
+      description:
+        'Complete vacation packages with flights, hotels, and activities. All-inclusive resorts, guided tours, custom itineraries. Save up to 50% booking as a package.',
       keywords: [
         'vacation packages',
         'all inclusive resorts',

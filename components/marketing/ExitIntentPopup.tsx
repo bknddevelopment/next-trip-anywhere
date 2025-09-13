@@ -15,7 +15,7 @@ interface ExitIntentPopupProps {
 export default function ExitIntentPopup({
   title = "Wait! Don't Miss Out on Exclusive Travel Deals!",
   subtitle = 'Get instant access to unpublished rates and save up to 40% on your next vacation',
-  offerText = 'Limited Time: Free consultation + Best Price Guarantee',
+  offerText = 'Limited Time: Free consultation + Exclusive Travel Deals',
   ctaText = 'Get Your Free Travel Quote',
   onClose,
 }: ExitIntentPopupProps) {

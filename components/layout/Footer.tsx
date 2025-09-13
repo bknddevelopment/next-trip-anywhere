@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-2">
               <CreditCard className="w-5 h-5 text-accent-400" />
-              <span>Best Price Guarantee</span>
+              <span>Exclusive Travel Deals</span>
             </div>
             <div className="flex items-center space-x-2">
               <Award className="w-5 h-5 text-accent-400" />

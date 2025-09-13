@@ -77,7 +77,7 @@ const TrustIndicators = memo(() => (
       { icon: '✓', text: '15+ Years Experience' },
       { icon: '✓', text: '50,000+ Happy Travelers' },
       { icon: '✓', text: '24/7 Support' },
-      { icon: '✓', text: 'Best Price Guarantee' },
+      { icon: '✓', text: 'Exclusive Travel Deals' },
     ].map((item, index) => (
       <div key={index} className="flex items-center space-x-2">
         <span className="text-accent-400">{item.icon}</span>

@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { Shield, DollarSign, HeadphonesIcon, Award, Users, MapPin, Sparkles } from 'lucide-react'
+import { Shield, DollarSign, HeadphonesIcon, Award, Users, MapPin } from 'lucide-react'
 
 const features = [
   {
@@ -14,8 +14,8 @@ const features = [
   },
   {
     icon: DollarSign,
-    title: 'Best Price Guarantee',
-    description: 'Find a lower price? We&apos;ll match it and give you an additional 5% off.',
+    title: 'Exclusive Travel Deals',
+    description: 'Access insider rates and special offers you won&apos;t find anywhere else.',
     color: 'text-accent-500',
     bgColor: 'bg-accent-50',
   },
@@ -111,18 +111,6 @@ function WhyChooseUs() {
               <StatCard key={stat.label} stat={stat} index={index} />
             ))}
           </div>
-        </div>
-
-        {/* Special Offer Banner */}
-        <div className="mt-16 bg-gradient-to-r from-accent-500 to-accent-600 rounded-3xl p-8 md:p-12 text-white text-center animate-fade-in">
-          <Sparkles className="w-12 h-12 mx-auto mb-4" />
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">First-Time Traveler Special</h3>
-          <p className="text-lg mb-6 max-w-2xl mx-auto">
-            New customers get an extra $100 off their first booking plus free travel insurance!
-          </p>
-          <button className="bg-white text-accent-600 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
-            Claim Your Discount
-          </button>
         </div>
       </div>
     </section>
