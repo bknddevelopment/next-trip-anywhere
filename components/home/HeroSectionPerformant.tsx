@@ -65,21 +65,26 @@ export default function HeroSectionPerformant() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button
-              onClick={scrollToSearch}
-              className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
               aria-label="Start planning your trip"
             >
               Start Planning My Trip
-            </button>
+            </a>
 
-            <button
-              className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2"
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 items-center justify-center space-x-2"
               aria-label="Get surprise travel deals"
             >
               <Sparkles className="w-5 h-5" aria-hidden="true" />
               <span>Surprise Me with Deals!</span>
-            </button>
+            </a>
           </div>
 
           {/* Trust Indicators */}

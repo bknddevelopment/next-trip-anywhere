@@ -6,13 +6,12 @@ import { ChevronDown, Sparkles } from 'lucide-react'
 import PerformantImage from '@/components/ui/PerformantImage'
 
 // Enhanced video component with lazy loading
-const OptimizedVideoEnhanced = dynamic(
-  () => import('@/components/ui/OptimizedVideoEnhanced'),
-  {
-    loading: () => <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />,
-    ssr: false,
-  }
-)
+const OptimizedVideoEnhanced = dynamic(() => import('@/components/ui/OptimizedVideoEnhanced'), {
+  loading: () => (
+    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+  ),
+  ssr: false,
+})
 
 // Optimized video sources with WebM support
 const heroVideos = [
@@ -22,8 +21,10 @@ const heroVideos = [
       mp4: 'https://cdn.coverr.co/videos/coverr-aerial-view-of-tropical-beach-5570/720p.mp4', // Reduced to 720p
     },
     poster: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1920&q=75&fm=webp', // WebP format
-    thumbnail: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=50&q=10&blur=20&fm=webp', // Ultra-low quality
-    fallbackPoster: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=75&fm=webp',
+    thumbnail:
+      'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=50&q=10&blur=20&fm=webp', // Ultra-low quality
+    fallbackPoster:
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=75&fm=webp',
     title: 'Caribbean Paradise',
   },
   {
@@ -32,30 +33,40 @@ const heroVideos = [
       mp4: 'https://cdn.coverr.co/videos/coverr-flying-over-new-york-city-5823/720p.mp4',
     },
     poster: 'https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=1920&q=75&fm=webp',
-    thumbnail: 'https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=50&q=10&blur=20&fm=webp',
-    fallbackPoster: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=1920&q=75&fm=webp',
+    thumbnail:
+      'https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=50&q=10&blur=20&fm=webp',
+    fallbackPoster:
+      'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=1920&q=75&fm=webp',
     title: 'City Adventures',
   },
 ]
 
-const DEFAULT_FALLBACK = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=75&fm=webp'
+const DEFAULT_FALLBACK =
+  'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=75&fm=webp'
 
 // Memoized button components to prevent re-renders
-const ScrollButton = memo(({ onClick }: { onClick: () => void }) => (
-  <button
-    onClick={onClick}
-    className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 will-change-transform"
+const PlanningButton = memo(() => (
+  <a
+    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 will-change-transform"
   >
     Start Planning My Trip
-  </button>
+  </a>
 ))
-ScrollButton.displayName = 'ScrollButton'
+PlanningButton.displayName = 'PlanningButton'
 
 const SurpriseButton = memo(() => (
-  <button className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2 will-change-transform">
+  <a
+    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 items-center justify-center space-x-2 will-change-transform"
+  >
     <Sparkles className="w-5 h-5" />
     <span>Surprise Me with Deals!</span>
-  </button>
+  </a>
 ))
 SurpriseButton.displayName = 'SurpriseButton'
 
@@ -90,11 +101,11 @@ export default function HeroSectionOptimized() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     setReduceMotion(mediaQuery.matches)
-    
+
     const handleChange = (e: MediaQueryListEvent) => {
       setReduceMotion(e.matches)
     }
-    
+
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [])
@@ -102,22 +113,22 @@ export default function HeroSectionOptimized() {
   // Handle client-side mounting
   useEffect(() => {
     setIsMounted(true)
-    
+
     // Preconnect to CDNs
     const cdns = ['https://cdn.coverr.co', 'https://images.unsplash.com']
-    cdns.forEach(cdn => {
+    cdns.forEach((cdn) => {
       const link = document.createElement('link')
       link.rel = 'preconnect'
       link.href = cdn
       link.crossOrigin = 'anonymous'
       document.head.appendChild(link)
-      
+
       const dnsLink = document.createElement('link')
       dnsLink.rel = 'dns-prefetch'
       dnsLink.href = cdn
       document.head.appendChild(dnsLink)
     })
-    
+
     return () => {
       if (rotationIntervalRef.current) {
         clearInterval(rotationIntervalRef.current)
@@ -169,11 +180,11 @@ export default function HeroSectionOptimized() {
   const handleVideoLoadStart = useCallback(() => {
     setIsVideoLoading(true)
     setHasVideoError(false)
-    
+
     if (videoLoadTimeoutRef.current) {
       clearTimeout(videoLoadTimeoutRef.current)
     }
-    
+
     // Increased timeout for slower connections
     videoLoadTimeoutRef.current = setTimeout(() => {
       if (isVideoLoading) {
@@ -203,7 +214,7 @@ export default function HeroSectionOptimized() {
       <div className="absolute inset-0 z-0">
         {/* Base gradient - always visible, GPU accelerated */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 will-change-transform" />
-        
+
         {/* Thumbnail for instant display (ultra-low quality) */}
         {currentMedia.thumbnail && (
           <div className="absolute inset-0">
@@ -219,7 +230,7 @@ export default function HeroSectionOptimized() {
             />
           </div>
         )}
-        
+
         {/* High-quality poster image */}
         <div className="absolute inset-0">
           <PerformantImage
@@ -250,7 +261,7 @@ export default function HeroSectionOptimized() {
             />
           </div>
         )}
-        
+
         {/* Overlay gradients - GPU accelerated */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 will-change-transform" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30 will-change-transform" />
@@ -262,9 +273,7 @@ export default function HeroSectionOptimized() {
           {/* Title with will-change for smooth animations */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-display will-change-transform transform-gpu">
             Your Next Adventure
-            <span className="block text-3xl md:text-5xl mt-2 text-accent-400">
-              Starts Here
-            </span>
+            <span className="block text-3xl md:text-5xl mt-2 text-accent-400">Starts Here</span>
           </h1>
 
           {/* Description */}
@@ -275,7 +284,7 @@ export default function HeroSectionOptimized() {
 
           {/* CTA Buttons - Memoized components */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <ScrollButton onClick={scrollToSearch} />
+            <PlanningButton />
             <SurpriseButton />
           </div>
 
@@ -284,11 +293,13 @@ export default function HeroSectionOptimized() {
         </div>
 
         {/* Scroll Indicator with reduced motion support */}
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${
-          !reduceMotion ? 'motion-safe:animate-fade-in-delayed' : ''
-        }`}>
-          <button 
-            onClick={scrollToSearch} 
+        <div
+          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${
+            !reduceMotion ? 'motion-safe:animate-fade-in-delayed' : ''
+          }`}
+        >
+          <button
+            onClick={scrollToSearch}
             className={`${!reduceMotion ? 'animate-bounce' : ''}`}
             aria-label="Scroll to search"
           >

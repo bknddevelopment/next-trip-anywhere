@@ -10,28 +10,23 @@ interface ExitIntentPopupProps {
   offerText?: string
   ctaText?: string
   onClose?: () => void
-  onSubmit?: (_email: string, _phone?: string) => void
 }
 
 export default function ExitIntentPopup({
   title = "Wait! Don't Miss Out on Exclusive Travel Deals!",
   subtitle = 'Get instant access to unpublished rates and save up to 40% on your next vacation',
   offerText = 'Limited Time: Free consultation + Best Price Guarantee',
-  ctaText = 'Get My Exclusive Deals',
+  ctaText = 'Get Your Free Travel Quote',
   onClose,
-  onSubmit,
 }: ExitIntentPopupProps) {
   const [isVisible, setIsVisible] = useState(false)
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [_isSubmitted, _setIsSubmitted] = useState(false)
   const [hasTriggered, setHasTriggered] = useState(false)
 
   useEffect(() => {
     let exitTimer: NodeJS.Timeout
 
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasTriggered && !_isSubmitted) {
+      if (e.clientY <= 0 && !hasTriggered) {
         setHasTriggered(true)
         exitTimer = setTimeout(() => {
           setIsVisible(true)
@@ -40,7 +35,7 @@ export default function ExitIntentPopup({
     }
 
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (!hasTriggered && !_isSubmitted) {
+      if (!hasTriggered) {
         setHasTriggered(true)
         setIsVisible(true)
         e.preventDefault()
@@ -50,7 +45,7 @@ export default function ExitIntentPopup({
 
     // Also trigger after user spends time on site (fallback)
     const timeoutTimer = setTimeout(() => {
-      if (!hasTriggered && !_isSubmitted) {
+      if (!hasTriggered) {
         setHasTriggered(true)
         setIsVisible(true)
       }
@@ -65,15 +60,14 @@ export default function ExitIntentPopup({
       clearTimeout(exitTimer)
       clearTimeout(timeoutTimer)
     }
-  }, [hasTriggered, _isSubmitted])
+  }, [hasTriggered])
 
   const handleClose = () => {
     setIsVisible(false)
     onClose?.()
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleGetQuote = () => {
     // Redirect to n8n form
     window.open('https://nextripanywhere.app.n8n.cloud/form/travel-quote-form', '_blank')
     handleClose()
@@ -82,37 +76,6 @@ export default function ExitIntentPopup({
   const handleCallNow = () => {
     window.location.href = 'tel:1-833-874-1019'
     handleClose()
-  }
-
-  if (_isSubmitted) {
-    return (
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-2xl"
-            >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Gift className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-              <p className="text-gray-600">
-                Your exclusive deals are on the way! Our travel experts will contact you within 24
-                hours.
-              </p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    )
   }
 
   return (
@@ -156,61 +119,23 @@ export default function ExitIntentPopup({
               </div>
             </div>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="popup-email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Email Address *
-                </label>
-                <input
-                  id="popup-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col space-y-3">
+              <button
+                onClick={handleGetQuote}
+                className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg"
+              >
+                {ctaText}
+              </button>
 
-              <div>
-                <label
-                  htmlFor="popup-phone"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Phone Number (Optional)
-                </label>
-                <input
-                  id="popup-phone"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-
-              <div className="flex flex-col space-y-3">
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  {ctaText}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handleCallNow}
-                  className="w-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Or Call Now: 1-833-874-1019</span>
-                </button>
-              </div>
-            </form>
+              <button
+                onClick={handleCallNow}
+                className="w-full bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Or Call Now: 1-833-874-1019</span>
+              </button>
+            </div>
 
             {/* Trust Indicators */}
             <div className="mt-6 pt-6 border-t border-gray-200">

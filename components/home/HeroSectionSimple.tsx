@@ -18,7 +18,7 @@ export default function HeroSectionSimple() {
       <div className="absolute inset-0 z-0">
         {/* Base gradient background - fallback */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
-        
+
         {/* Ocean Image */}
         <div className="absolute inset-0">
           <Image
@@ -31,7 +31,7 @@ export default function HeroSectionSimple() {
             sizes="100vw"
           />
         </div>
-        
+
         {/* Overlay gradients for text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
@@ -51,17 +51,24 @@ export default function HeroSectionSimple() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button
-              onClick={scrollToSearch}
-              className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300"
             >
               Start Planning My Trip
-            </button>
+            </a>
 
-            <button className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2">
+            <a
+              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 items-center justify-center space-x-2"
+            >
               <Sparkles className="w-5 h-5" />
               <span>Surprise Me with Deals!</span>
-            </button>
+            </a>
           </div>
 
           {/* Trust Indicators */}
