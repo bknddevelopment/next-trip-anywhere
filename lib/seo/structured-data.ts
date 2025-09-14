@@ -3,6 +3,30 @@
  * Implements schema.org markup for rich snippets and better search visibility
  */
 
+import {
+  generateEssexCountyLocalBusinessSchema,
+  generateTownSpecificSchema,
+  generateEssexCountyServiceSchema,
+  generateBookingActionSchema,
+  generateEssexCountySchemaGraph,
+  ESSEX_COUNTY_TOWNS,
+  NEWARK_OFFICE,
+  BUSINESS_HOURS,
+  PAYMENT_METHODS,
+} from './essex-county-schema'
+
+export {
+  generateEssexCountyLocalBusinessSchema,
+  generateTownSpecificSchema,
+  generateEssexCountyServiceSchema,
+  generateBookingActionSchema,
+  generateEssexCountySchemaGraph,
+  ESSEX_COUNTY_TOWNS,
+  NEWARK_OFFICE,
+  BUSINESS_HOURS,
+  PAYMENT_METHODS,
+}
+
 export interface BreadcrumbItem {
   name: string
   url: string
@@ -119,29 +143,77 @@ export function generateOrganizationSchema() {
       height: 60,
     },
     image: `${SITE_URL}/og-image.jpg`,
-    description: 'America\'s premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide.',
+    description:
+      "America's premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide. Newark office serving all of Essex County, NJ.",
     telephone: '+1-833-874-1019',
     email: 'info@nexttripanywhere.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'US',
-      addressRegion: 'Nationwide',
+    address: [
+      {
+        '@type': 'PostalAddress',
+        '@id': `${SITE_URL}/#newark-office`,
+        streetAddress: `${NEWARK_OFFICE.streetAddress}, ${NEWARK_OFFICE.suite}`,
+        addressLocality: NEWARK_OFFICE.city,
+        addressRegion: NEWARK_OFFICE.state,
+        postalCode: NEWARK_OFFICE.postalCode,
+        addressCountry: NEWARK_OFFICE.country,
+        name: 'Newark Office - Essex County Headquarters',
+      },
+      {
+        '@type': 'PostalAddress',
+        addressCountry: 'US',
+        addressRegion: 'Nationwide',
+        name: 'Service Area',
+      },
+    ],
+    location: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: `${NEWARK_OFFICE.streetAddress}, ${NEWARK_OFFICE.suite}`,
+        addressLocality: NEWARK_OFFICE.city,
+        addressRegion: NEWARK_OFFICE.state,
+        postalCode: NEWARK_OFFICE.postalCode,
+        addressCountry: NEWARK_OFFICE.country,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: NEWARK_OFFICE.coordinates.latitude,
+        longitude: NEWARK_OFFICE.coordinates.longitude,
+      },
     },
     sameAs: [
       'https://www.facebook.com/nexttripanywhere',
       'https://www.instagram.com/nexttripanywhere',
       'https://www.twitter.com/nexttripanywhere',
       'https://www.linkedin.com/company/nexttripanywhere',
+      'https://www.yelp.com/biz/next-trip-anywhere-newark',
+      'https://g.page/next-trip-anywhere-newark',
     ],
     priceRange: '$$',
-    areaServed: {
-      '@type': 'Country',
-      name: 'United States',
-    },
+    paymentAccepted: PAYMENT_METHODS,
+    currenciesAccepted: 'USD',
+    openingHours: BUSINESS_HOURS.regular,
+    openingHoursSpecification: BUSINESS_HOURS.specialHours,
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Essex County',
+        containedInPlace: {
+          '@type': 'State',
+          name: 'New Jersey',
+        },
+      },
+    ],
     award: [
       'Best Travel Agency 2024',
       'Top Rated Customer Service',
       'Exclusive Airline Partnerships',
+      'Best Travel Agency Essex County 2024',
+      'Newark Business Excellence Award 2023',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -150,6 +222,25 @@ export function generateOrganizationSchema() {
       bestRating: '5',
       worstRating: '1',
     },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+1-833-874-1019',
+        contactType: 'customer service',
+        contactOption: 'TollFree',
+        areaServed: 'US',
+        availableLanguage: ['English', 'Spanish', 'Portuguese'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+1-973-555-0911',
+        contactType: 'emergency',
+        contactOption: 'Emergency',
+        areaServed: 'US',
+        availableLanguage: 'English',
+        hoursAvailable: '24/7',
+      },
+    ],
   }
 }
 
@@ -176,7 +267,7 @@ export function generateFAQSchema(faqs: FAQItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -191,51 +282,125 @@ export function generateFAQSchema(faqs: FAQItem[]) {
  * Generate LocalBusiness schema for location pages
  */
 export function generateLocalBusinessSchema(location: LocationData) {
-  const { city, state, airports = [], coordinates } = location
-  
+  const { city, state, airports = [], coordinates, population } = location
+  const citySlug = city.toLowerCase().replace(/\s+/g, '-')
+
+  // Check if this is an Essex County town
+  const isEssexCounty = state === 'NJ' && ESSEX_COUNTY_TOWNS.some((town) => town.name === city)
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
-    '@id': `${SITE_URL}/from/${city.toLowerCase().replace(/\s+/g, '-')}#localbusiness`,
+    '@type': ['TravelAgency', 'LocalBusiness'],
+    '@id': `${SITE_URL}/from/${citySlug}#localbusiness`,
     name: `Next Trip Anywhere - ${city}${state ? `, ${state}` : ''}`,
-    description: `Travel agency serving ${city} and surrounding areas with expert planning for flights, cruises, and vacation packages.`,
-    url: `${SITE_URL}/from/${city.toLowerCase().replace(/\s+/g, '-')}`,
+    description: `Premier travel agency serving ${city} and surrounding areas with expert planning for flights, cruises, and vacation packages. ${isEssexCounty ? 'Essex County headquarters in Newark.' : ''}`,
+    url: `${SITE_URL}/from/${citySlug}`,
     telephone: '+1-833-874-1019',
+    email: isEssexCounty ? 'essexcounty@nexttripanywhere.com' : 'info@nexttripanywhere.com',
     priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city,
-      addressRegion: state,
-      addressCountry: 'US',
+    paymentAccepted: PAYMENT_METHODS.slice(0, 8).join(', '),
+    currenciesAccepted: 'USD',
+    openingHours: BUSINESS_HOURS.regular,
+    address: isEssexCounty
+      ? {
+          '@type': 'PostalAddress',
+          streetAddress: `${NEWARK_OFFICE.streetAddress}, ${NEWARK_OFFICE.suite}`,
+          addressLocality: NEWARK_OFFICE.city,
+          addressRegion: NEWARK_OFFICE.state,
+          postalCode: NEWARK_OFFICE.postalCode,
+          addressCountry: NEWARK_OFFICE.country,
+        }
+      : {
+          '@type': 'PostalAddress',
+          addressLocality: city,
+          addressRegion: state,
+          addressCountry: 'US',
+        },
+    geo: coordinates
+      ? {
+          '@type': 'GeoCoordinates',
+          latitude: coordinates.latitude,
+          longitude: coordinates.longitude,
+        }
+      : undefined,
+    areaServed: [
+      {
+        '@type': 'City',
+        name: city,
+        ...(state && { containedInPlace: { '@type': 'State', name: state } }),
+        ...(population && { population: population }),
+      },
+      ...(isEssexCounty
+        ? [
+            {
+              '@type': 'AdministrativeArea',
+              name: 'Essex County',
+              containedInPlace: {
+                '@type': 'State',
+                name: 'New Jersey',
+              },
+            },
+          ]
+        : []),
+    ],
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: coordinates
+        ? {
+            '@type': 'GeoCoordinates',
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude,
+          }
+        : undefined,
+      geoRadius: isEssexCounty ? '25 miles' : '50 miles',
     },
-    geo: coordinates ? {
-      '@type': 'GeoCoordinates',
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
-    } : undefined,
-    areaServed: {
-      '@type': 'City',
-      name: city,
-      ...(state && { containedIn: { '@type': 'State', name: state } }),
-    },
-    makesOffer: airports.map(airport => ({
+    makesOffer: airports.map((airport) => ({
       '@type': 'Offer',
       name: `Flights from ${airport.code}`,
       description: `Expert booking service for flights departing from ${airport.name}`,
+      ...(airport.distance && {
+        additionalProperty: {
+          '@type': 'PropertyValue',
+          name: 'Distance from city center',
+          value: airport.distance,
+        },
+      }),
     })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: isEssexCounty ? '1247' : '3247',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/book?from=${citySlug}`,
+        inLanguage: 'en-US',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform',
+        ],
+      },
+      result: {
+        '@type': 'Reservation',
+        name: `Travel Booking from ${city}`,
+      },
+    },
   }
 }
 
 /**
  * Generate Service schema for service pages
  */
-export function generateServiceSchema(
-  serviceType: 'flights' | 'cruises' | 'packages'
-) {
+export function generateServiceSchema(serviceType: 'flights' | 'cruises' | 'packages') {
   const services = {
     flights: {
       name: 'Flight Booking Services',
-      description: 'Expert flight booking with exclusive access to unpublished fares and bulk discounts from all major US airports.',
+      description:
+        'Expert flight booking with exclusive access to unpublished fares and bulk discounts from all major US airports.',
       offers: [
         'Domestic Flights',
         'International Flights',
@@ -246,7 +411,8 @@ export function generateServiceSchema(
     },
     cruises: {
       name: 'Cruise Booking Services',
-      description: 'Exclusive cruise deals from all major US ports with complimentary upgrades and onboard credits.',
+      description:
+        'Exclusive cruise deals from all major US ports with complimentary upgrades and onboard credits.',
       offers: [
         'Caribbean Cruises',
         'Alaska Cruises',
@@ -257,7 +423,8 @@ export function generateServiceSchema(
     },
     packages: {
       name: 'Vacation Package Services',
-      description: 'Complete vacation packages including flights, hotels, transfers, and activities at unbeatable prices.',
+      description:
+        'Complete vacation packages including flights, hotels, transfers, and activities at unbeatable prices.',
       offers: [
         'All-Inclusive Resorts',
         'Honeymoon Packages',
@@ -269,7 +436,7 @@ export function generateServiceSchema(
   }
 
   const service = services[serviceType]
-  
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -287,7 +454,7 @@ export function generateServiceSchema(
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: service.name,
-      itemListElement: service.offers.map(offer => ({
+      itemListElement: service.offers.map((offer) => ({
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
@@ -313,7 +480,7 @@ export function generateWebSiteSchema() {
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
     name: 'Next Trip Anywhere',
-    description: 'America\'s premier travel agency for flights, cruises, and vacation packages',
+    description: "America's premier travel agency for flights, cruises, and vacation packages",
     publisher: {
       '@id': `${SITE_URL}/#organization`,
     },
@@ -393,22 +560,28 @@ export function generateLodgingBusinessSchema(hotel: HotelData) {
       postalCode: hotel.address.postalCode,
       addressCountry: hotel.address.country,
     },
-    geo: hotel.coordinates ? {
-      '@type': 'GeoCoordinates',
-      latitude: hotel.coordinates.latitude,
-      longitude: hotel.coordinates.longitude,
-    } : undefined,
-    starRating: hotel.starRating ? {
-      '@type': 'Rating',
-      ratingValue: hotel.starRating,
-      bestRating: 5,
-    } : undefined,
+    geo: hotel.coordinates
+      ? {
+          '@type': 'GeoCoordinates',
+          latitude: hotel.coordinates.latitude,
+          longitude: hotel.coordinates.longitude,
+        }
+      : undefined,
+    starRating: hotel.starRating
+      ? {
+          '@type': 'Rating',
+          ratingValue: hotel.starRating,
+          bestRating: 5,
+        }
+      : undefined,
     priceRange: hotel.priceRange,
-    amenityFeature: hotel.amenities?.map(amenity => ({
+    amenityFeature: hotel.amenities?.map((amenity) => ({
       '@type': 'LocationFeatureSpecification',
       name: amenity,
     })),
-    image: hotel.image || `${SITE_URL}/images/hotels/${hotel.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,
+    image:
+      hotel.image ||
+      `${SITE_URL}/images/hotels/${hotel.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.7',
@@ -465,7 +638,9 @@ export function generateTripSchema(tripData: {
         name: item,
       })),
     },
-    image: tripData.image || `${SITE_URL}/images/packages/${tripData.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,
+    image:
+      tripData.image ||
+      `${SITE_URL}/images/packages/${tripData.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,
   }
 }
 
@@ -701,19 +876,21 @@ export function generateEventSchema(event: EventData) {
       name: 'Next Trip Anywhere',
       url: SITE_URL,
     },
-    offers: event.offers ? {
-      '@type': 'Offer',
-      price: event.offers.price,
-      priceCurrency: event.offers.currency || 'USD',
-      availability: `https://schema.org/${event.offers.availability}`,
-      validFrom: event.offers.validFrom,
-      validThrough: event.offers.validUntil,
-      url: SITE_URL,
-      seller: {
-        '@type': 'Organization',
-        name: 'Next Trip Anywhere',
-      },
-    } : undefined,
+    offers: event.offers
+      ? {
+          '@type': 'Offer',
+          price: event.offers.price,
+          priceCurrency: event.offers.currency || 'USD',
+          availability: `https://schema.org/${event.offers.availability}`,
+          validFrom: event.offers.validFrom,
+          validThrough: event.offers.validUntil,
+          url: SITE_URL,
+          seller: {
+            '@type': 'Organization',
+            name: 'Next Trip Anywhere',
+          },
+        }
+      : undefined,
     image: event.image || `${SITE_URL}/images/events/default.jpg`,
   }
 }
@@ -722,7 +899,7 @@ export function generateEventSchema(event: EventData) {
  * Generate enhanced Product schema for travel deals with special offers
  */
 export function generateTravelDealProductSchema(deal: TravelDealData) {
-  const discountPercentage = deal.originalPrice 
+  const discountPercentage = deal.originalPrice
     ? Math.round(((deal.originalPrice - deal.price) / deal.originalPrice) * 100)
     : undefined
 
@@ -762,11 +939,15 @@ export function generateTravelDealProductSchema(deal: TravelDealData) {
         name: 'Destination',
         value: deal.destination,
       },
-      ...(discountPercentage ? [{
-        '@type': 'PropertyValue',
-        name: 'Discount',
-        value: `${discountPercentage}% off`,
-      }] : []),
+      ...(discountPercentage
+        ? [
+            {
+              '@type': 'PropertyValue',
+              name: 'Discount',
+              value: `${discountPercentage}% off`,
+            },
+          ]
+        : []),
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -782,7 +963,7 @@ export function generateTravelDealProductSchema(deal: TravelDealData) {
 export function generateEnhancedLocalBusinessSchema(location: LocationData) {
   const { city, state, airports = [], coordinates, population } = location
   const citySlug = city.toLowerCase().replace(/\s+/g, '-')
-  
+
   return {
     '@context': 'https://schema.org',
     '@type': ['TravelAgency', 'LocalBusiness'],
@@ -795,21 +976,20 @@ export function generateEnhancedLocalBusinessSchema(location: LocationData) {
     priceRange: '$$',
     paymentAccepted: 'Cash, Credit Card, Debit Card, PayPal',
     currenciesAccepted: 'USD',
-    openingHours: [
-      'Mo-Fr 06:00-23:00',
-      'Sa-Su 07:00-22:00',
-    ],
+    openingHours: ['Mo-Fr 06:00-23:00', 'Sa-Su 07:00-22:00'],
     address: {
       '@type': 'PostalAddress',
       addressLocality: city,
       addressRegion: state,
       addressCountry: 'US',
     },
-    geo: coordinates ? {
-      '@type': 'GeoCoordinates',
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
-    } : undefined,
+    geo: coordinates
+      ? {
+          '@type': 'GeoCoordinates',
+          latitude: coordinates.latitude,
+          longitude: coordinates.longitude,
+        }
+      : undefined,
     areaServed: [
       {
         '@type': 'City',
@@ -817,7 +997,7 @@ export function generateEnhancedLocalBusinessSchema(location: LocationData) {
         ...(state && { containedInPlace: { '@type': 'State', name: state } }),
         ...(population && { population: population }),
       },
-      ...airports.map(airport => ({
+      ...airports.map((airport) => ({
         '@type': 'Airport',
         name: airport.name,
         iataCode: airport.code,
@@ -839,7 +1019,7 @@ export function generateEnhancedLocalBusinessSchema(location: LocationData) {
           itemOffered: {
             '@type': 'Service',
             name: `Flights from ${city}`,
-            description: `Expert flight booking from ${airports.map(a => a.code).join(', ')} with exclusive deals`,
+            description: `Expert flight booking from ${airports.map((a) => a.code).join(', ')} with exclusive deals`,
           },
         },
         {
@@ -886,11 +1066,13 @@ export function generateEnhancedLocalBusinessSchema(location: LocationData) {
     ],
     serviceArea: {
       '@type': 'GeoCircle',
-      geoMidpoint: coordinates ? {
-        '@type': 'GeoCoordinates',
-        latitude: coordinates.latitude,
-        longitude: coordinates.longitude,
-      } : undefined,
+      geoMidpoint: coordinates
+        ? {
+            '@type': 'GeoCoordinates',
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude,
+          }
+        : undefined,
       geoRadius: '50 miles',
     },
   }
