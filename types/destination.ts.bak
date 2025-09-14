@@ -1,0 +1,351 @@
+/**
+ * Type definitions for Destination API
+ * Comprehensive types for destinations, regions, and related entities
+ */
+
+/**
+ * Destination region/continent
+ */
+export type DestinationRegion =
+  | 'north-america'
+  | 'south-america'
+  | 'europe'
+  | 'asia'
+  | 'africa'
+  | 'oceania'
+  | 'caribbean'
+  | 'middle-east'
+
+/**
+ * Destination category/type
+ */
+export type DestinationCategory =
+  | 'beach'
+  | 'city'
+  | 'mountain'
+  | 'adventure'
+  | 'cultural'
+  | 'island'
+  | 'desert'
+  | 'forest'
+  | 'luxury'
+  | 'budget'
+
+/**
+ * Season/best time to visit
+ */
+export type TravelSeason =
+  | 'spring'
+  | 'summer'
+  | 'autumn'
+  | 'winter'
+  | 'year-round'
+
+/**
+ * Price range indicators
+ */
+export type PriceRange = '$' | '$$' | '$$$' | '$$$$'
+
+/**
+ * Activity types available at destination
+ */
+export interface DestinationActivity {
+  name: string
+  category: 'adventure' | 'relaxation' | 'cultural' | 'dining' | 'shopping' | 'nightlife'
+  description?: string
+  priceRange?: PriceRange
+  duration?: string // e.g., "2-3 hours", "Full day"
+  bookingRequired?: boolean
+}
+
+/**
+ * Climate information for a destination
+ */
+export interface ClimateInfo {
+  averageTemperature: {
+    summer: { min: number; max: number; unit: 'C' | 'F' }
+    winter: { min: number; max: number; unit: 'C' | 'F' }
+  }
+  rainySeasons?: string[]
+  bestMonths: number[] // 1-12 representing months
+  humidity?: 'low' | 'moderate' | 'high'
+}
+
+/**
+ * Travel requirements and visa information
+ */
+export interface TravelRequirements {
+  visaRequired: boolean
+  visaOnArrival?: boolean
+  vaccinationsRequired?: string[]
+  currency: string
+  languages: string[]
+  timezone: string
+  electricityVoltage?: string
+  plugType?: string
+}
+
+/**
+ * Transportation options within destination
+ */
+export interface TransportationOptions {
+  publicTransport: boolean
+  uberAvailable: boolean
+  rentalCars: boolean
+  walkable: boolean
+  bikeRentals?: boolean
+  localTransportTypes?: string[] // e.g., "tuk-tuk", "gondola", "metro"
+}
+
+/**
+ * Main Destination interface
+ */
+export interface Destination {
+  id: string
+  slug: string // URL-friendly identifier
+  name: string
+  country: string
+  region: DestinationRegion
+  categories: DestinationCategory[]
+  description: string
+  shortDescription: string // For cards/lists
+
+  // Location details
+  coordinates: {
+    latitude: number
+    longitude: number
+  }
+  nearestAirports: Array<{
+    code: string
+    name: string
+    distance: string
+  }>
+
+  // Media
+  images: {
+    hero: string
+    thumbnail: string
+    gallery?: string[]
+  }
+
+  // Travel information
+  bestTimeToVisit: TravelSeason[]
+  averageStayDuration: string // e.g., "3-5 days"
+  priceRange: PriceRange
+  climate: ClimateInfo
+  travelRequirements: TravelRequirements
+  transportation: TransportationOptions
+
+  // Activities and attractions
+  topAttractions: string[]
+  activities: DestinationActivity[]
+
+  // SEO and metadata
+  seoTitle?: string
+  seoDescription?: string
+  keywords?: string[]
+
+  // Analytics and popularity
+  viewCount: number
+  bookingCount: number
+  rating?: number // 1-5
+  reviewCount?: number
+
+  // Dates
+  createdAt: string
+  updatedAt: string
+  lastModified?: string
+
+  // Status
+  published: boolean
+  featured: boolean
+
+  // Related content
+  relatedDestinations?: string[] // IDs of related destinations
+  packages?: string[] // IDs of vacation packages
+}
+
+/**
+ * Simplified destination for lists/cards
+ */
+export interface DestinationSummary {
+  id: string
+  slug: string
+  name: string
+  country: string
+  region: DestinationRegion
+  shortDescription: string
+  thumbnail: string
+  priceRange: PriceRange
+  rating?: number
+  featured: boolean
+  categories: DestinationCategory[]
+}
+
+/**
+ * Region information
+ */
+export interface Region {
+  id: DestinationRegion
+  name: string
+  description: string
+  destinationCount: number
+  popularDestinations: string[] // Destination IDs
+  image?: string
+}
+
+/**
+ * Search result item
+ */
+export interface DestinationSearchResult {
+  id: string
+  slug: string
+  name: string
+  country: string
+  region: DestinationRegion
+  matchType: 'exact' | 'partial' | 'fuzzy'
+  score: number // Relevance score 0-100
+  highlight?: {
+    name?: string
+    country?: string
+    description?: string
+  }
+}
+
+/**
+ * API Response types
+ */
+
+// Pagination metadata
+export interface PaginationMeta {
+  total: number
+  page: number
+  limit: number
+  totalPages: number
+  hasNextPage: boolean
+  hasPrevPage: boolean
+}
+
+// Base API response
+export interface ApiResponse<T> {
+  success: boolean
+  data?: T
+  error?: {
+    code: string
+    message: string
+    details?: Record<string, any>
+  }
+  meta?: Record<string, any>
+}
+
+// Paginated response
+export interface PaginatedResponse<T> extends ApiResponse<T[]> {
+  pagination: PaginationMeta
+}
+
+// Destinations list response
+export interface DestinationsListResponse extends PaginatedResponse<DestinationSummary> {
+  filters?: {
+    regions: DestinationRegion[]
+    categories: DestinationCategory[]
+    priceRanges: PriceRange[]
+  }
+}
+
+// Single destination response
+export interface DestinationResponse extends ApiResponse<Destination> {}
+
+// Regions response
+export interface RegionsResponse extends ApiResponse<Region[]> {}
+
+// Popular destinations response
+export interface PopularDestinationsResponse extends ApiResponse<DestinationSummary[]> {
+  meta?: {
+    period?: string // e.g., "last_30_days"
+    basedOn?: 'views' | 'bookings' | 'both'
+  }
+}
+
+// Search response
+export interface SearchResponse extends ApiResponse<DestinationSearchResult[]> {
+  meta?: {
+    query: string
+    totalResults: number
+    searchTime: number // milliseconds
+  }
+}
+
+/**
+ * API Request types
+ */
+
+// List destinations query parameters
+export interface ListDestinationsQuery {
+  page?: number
+  limit?: number
+  region?: DestinationRegion | DestinationRegion[]
+  category?: DestinationCategory | DestinationCategory[]
+  priceRange?: PriceRange | PriceRange[]
+  featured?: boolean
+  search?: string
+  sortBy?: 'name' | 'popularity' | 'rating' | 'price' | 'created'
+  sortOrder?: 'asc' | 'desc'
+}
+
+// Search query parameters
+export interface SearchDestinationsQuery {
+  q: string // Query string
+  limit?: number
+  region?: DestinationRegion
+  fuzzy?: boolean // Enable fuzzy matching
+}
+
+// Popular destinations query parameters
+export interface PopularDestinationsQuery {
+  limit?: number
+  period?: 'week' | 'month' | 'year' | 'all'
+  basedOn?: 'views' | 'bookings' | 'both'
+  region?: DestinationRegion
+}
+
+/**
+ * Error codes for API responses
+ */
+export enum ApiErrorCode {
+  // Client errors
+  BAD_REQUEST = 'BAD_REQUEST',
+  INVALID_PARAMETERS = 'INVALID_PARAMETERS',
+  NOT_FOUND = 'NOT_FOUND',
+  RATE_LIMIT_EXCEEDED = 'RATE_LIMIT_EXCEEDED',
+
+  // Server errors
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+  DATABASE_ERROR = 'DATABASE_ERROR',
+  CACHE_ERROR = 'CACHE_ERROR',
+
+  // Validation errors
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  INVALID_REGION = 'INVALID_REGION',
+  INVALID_CATEGORY = 'INVALID_CATEGORY',
+  INVALID_SORT_FIELD = 'INVALID_SORT_FIELD',
+}
+
+/**
+ * Cache configuration
+ */
+export interface CacheConfig {
+  ttl: number // Time to live in seconds
+  staleWhileRevalidate?: number // Serve stale content while revalidating
+  tags?: string[] // Cache tags for invalidation
+}
+
+/**
+ * Rate limit configuration
+ */
+export interface RateLimitConfig {
+  windowMs: number // Time window in milliseconds
+  maxRequests: number // Maximum requests per window
+  message?: string // Custom error message
+  skipSuccessfulRequests?: boolean
+  skipFailedRequests?: boolean
+}

@@ -1,0 +1,672 @@
+[
+  {
+    "id": "dest_001_paris",
+    "slug": "paris-france",
+    "status": "active",
+    "name": "Paris",
+    "alternativeNames": ["City of Light", "La Ville Lumière"],
+    "type": ["city", "cultural", "romantic"],
+    "country": "France",
+    "countryCode": "FR",
+    "region": "Île-de-France",
+    "subRegion": "Paris Metropolitan Area",
+    "continent": "Europe",
+    "coordinates": {
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "altitude": 35
+    },
+    "timezone": "Europe/Paris",
+    "shortDescription": "The romantic capital of France, famous for the Eiffel Tower, world-class art museums, and exquisite cuisine.",
+    "description": "Paris, the capital of France, is one of the most iconic cities in the world. Known as the 'City of Light', Paris enchants visitors with its timeless beauty, from the magnificent Eiffel Tower to the artistic treasures of the Louvre. Stroll along the Champs-Élysées, explore charming neighborhoods like Montmartre, and indulge in world-renowned French cuisine at sidewalk cafés and Michelin-starred restaurants.",
+    "highlights": [
+      "Eiffel Tower and Trocadéro Gardens",
+      "Louvre Museum and Mona Lisa",
+      "Notre-Dame Cathedral (under restoration)",
+      "Arc de Triomphe and Champs-Élysées",
+      "Montmartre and Sacré-Cœur",
+      "Seine River cruises",
+      "Versailles Palace (day trip)"
+    ],
+    "uniqueSellingPoints": [
+      "World's most visited city",
+      "Over 130 museums",
+      "Michelin-starred dining capital",
+      "Fashion and luxury shopping hub",
+      "Romantic atmosphere perfect for couples"
+    ],
+    "bestTimeToVisit": {
+      "months": [4, 5, 6, 9, 10],
+      "description": "Spring (April-June) and Fall (September-October) offer mild weather and fewer crowds",
+      "events": ["Paris Fashion Week", "Fête de la Musique", "Nuit Blanche"]
+    },
+    "avoidMonths": {
+      "months": [8],
+      "reasons": ["Peak tourist season", "Many locals on vacation", "Higher prices"]
+    },
+    "recommendedDuration": {
+      "min": 3,
+      "max": 7,
+      "ideal": 5
+    },
+    "budgetLevels": {
+      "budget": {
+        "accommodation": { "min": 50, "max": 100, "currency": "EUR", "period": "daily" },
+        "meals": { "min": 20, "max": 40, "currency": "EUR", "period": "daily" },
+        "transportation": { "min": 5, "max": 15, "currency": "EUR", "period": "daily" },
+        "activities": { "min": 10, "max": 30, "currency": "EUR", "period": "daily" },
+        "miscellaneous": { "min": 10, "max": 20, "currency": "EUR", "period": "daily" },
+        "total": { "min": 95, "max": 205, "currency": "EUR", "period": "daily" }
+      },
+      "mid_range": {
+        "accommodation": { "min": 100, "max": 250, "currency": "EUR", "period": "daily" },
+        "meals": { "min": 40, "max": 80, "currency": "EUR", "period": "daily" },
+        "transportation": { "min": 15, "max": 30, "currency": "EUR", "period": "daily" },
+        "activities": { "min": 30, "max": 60, "currency": "EUR", "period": "daily" },
+        "miscellaneous": { "min": 20, "max": 40, "currency": "EUR", "period": "daily" },
+        "total": { "min": 205, "max": 460, "currency": "EUR", "period": "daily" }
+      },
+      "luxury": {
+        "accommodation": { "min": 250, "max": 800, "currency": "EUR", "period": "daily" },
+        "meals": { "min": 80, "max": 200, "currency": "EUR", "period": "daily" },
+        "transportation": { "min": 30, "max": 100, "currency": "EUR", "period": "daily" },
+        "activities": { "min": 60, "max": 150, "currency": "EUR", "period": "daily" },
+        "miscellaneous": { "min": 40, "max": 100, "currency": "EUR", "period": "daily" },
+        "total": { "min": 460, "max": 1350, "currency": "EUR", "period": "daily" }
+      }
+    },
+    "climate": "temperate",
+    "weatherByMonth": [
+      {
+        "season": "spring",
+        "temperatureRange": { "min": 11, "max": 20, "average": 15 },
+        "precipitation": 25,
+        "humidity": 70,
+        "description": "Mild and pleasant with occasional rain",
+        "packingTips": ["Light jacket", "Umbrella", "Comfortable walking shoes"]
+      }
+    ],
+    "nearestAirports": [
+      {
+        "code": "CDG",
+        "name": "Charles de Gaulle Airport",
+        "distance": 25,
+        "transportOptions": ["RER B train", "Taxi", "Airport shuttle", "Uber"],
+        "averageTransferTime": 45
+      },
+      {
+        "code": "ORY",
+        "name": "Orly Airport",
+        "distance": 13,
+        "transportOptions": ["Orlyval + RER", "Taxi", "Airport bus", "Uber"],
+        "averageTransferTime": 30
+      }
+    ],
+    "localTransportation": [
+      {
+        "type": "metro",
+        "name": "Paris Métro",
+        "description": "Extensive subway system with 16 lines covering the city",
+        "averageCost": { "min": 1.9, "max": 2.1, "currency": "EUR" },
+        "availability": "5:30 AM - 1:15 AM (2:15 AM Fri-Sat)",
+        "bookingRequired": false
+      },
+      {
+        "type": "bus",
+        "description": "Comprehensive bus network complementing the metro",
+        "averageCost": { "min": 1.9, "max": 2.1, "currency": "EUR" },
+        "availability": "7:00 AM - 12:30 AM",
+        "bookingRequired": false
+      }
+    ],
+    "visaRequirements": {
+      "required": true,
+      "type": "Schengen Visa",
+      "duration": 90,
+      "cost": 80,
+      "processTime": "15-30 days",
+      "description": "US citizens can stay visa-free for up to 90 days. Other nationalities may require a Schengen visa.",
+      "exemptCountries": ["USA", "Canada", "Australia", "Japan", "South Korea"],
+      "url": "https://france-visas.gouv.fr"
+    },
+    "images": [
+      {
+        "id": "img_paris_001",
+        "url": "/images/destinations/paris/eiffel-tower.jpg",
+        "thumbnailUrl": "/images/destinations/paris/eiffel-tower-thumb.jpg",
+        "alt": "Eiffel Tower at sunset",
+        "caption": "The iconic Eiffel Tower illuminated at dusk",
+        "credit": "Photo by Next Trip Anywhere",
+        "isPrimary": true,
+        "order": 1,
+        "tags": ["landmark", "sunset", "iconic"]
+      }
+    ],
+    "attractions": [],
+    "activities": [],
+    "languages": ["French"],
+    "currency": {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "exchangeRateToUSD": 1.09,
+      "acceptedPaymentMethods": ["Cash", "Credit Cards", "Debit Cards", "Apple Pay", "Google Pay"],
+      "atmAvailability": "Widely available throughout the city",
+      "tippingCulture": "Service included, but small tips appreciated (5-10%)"
+    },
+    "electricityInfo": {
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "E"],
+      "adapterNeeded": true,
+      "description": "European standard plugs, US visitors need adapter"
+    },
+    "healthAndSafety": {
+      "vaccinations": [],
+      "healthRisks": [],
+      "emergencyNumbers": {
+        "police": "17",
+        "medical": "15",
+        "fire": "18",
+        "tourist": "3975"
+      },
+      "safetyRating": 4,
+      "safetyNotes": ["Be aware of pickpockets in tourist areas", "Keep valuables secure"],
+      "travelInsuranceRecommended": true
+    },
+    "culturalNotes": [
+      "Greet with 'Bonjour' when entering shops",
+      "Dinner is typically late (8-9 PM)",
+      "Many museums closed on Mondays"
+    ],
+    "etiquetteTips": [
+      "Always say 'Bonjour' before asking for help",
+      "Keep voice levels moderate in public",
+      "Dress well - Parisians value style"
+    ],
+    "localCuisine": [
+      "Croissants and pain au chocolat",
+      "French onion soup",
+      "Escargots",
+      "Steak frites",
+      "Crème brûlée",
+      "Macarons"
+    ],
+    "nearbyDestinations": ["dest_002_versailles", "dest_003_loire_valley"],
+    "similarDestinations": ["dest_004_rome", "dest_005_london", "dest_006_barcelona"],
+    "seo": {
+      "metaTitle": "Paris Travel Guide 2024 | Best Time to Visit, Things to Do & Tips",
+      "metaDescription": "Discover Paris with our comprehensive travel guide. Find the best time to visit, top attractions, budget tips, and insider advice for your perfect Paris vacation.",
+      "keywords": [
+        "Paris travel",
+        "Paris tourism",
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Paris vacation",
+        "France travel"
+      ],
+      "canonicalUrl": "https://nexttripanywhere.com/destinations/paris-france"
+    },
+    "tags": ["romantic", "culture", "art", "gastronomy", "fashion", "history", "architecture"],
+    "popularityScore": 95,
+    "featured": true,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-12-15T14:30:00Z",
+    "publishedAt": "2024-01-20T09:00:00Z",
+    "lastReviewedAt": "2024-12-01T10:00:00Z",
+    "viewCount": 15420,
+    "bookingCount": 342,
+    "averageRating": 4.8,
+    "reviewCount": 1247
+  },
+  {
+    "id": "dest_002_bali",
+    "slug": "bali-indonesia",
+    "status": "active",
+    "name": "Bali",
+    "alternativeNames": ["Island of the Gods", "Pulau Dewata"],
+    "type": ["island", "beach", "cultural", "adventure"],
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Lesser Sunda Islands",
+    "subRegion": "Bali Province",
+    "continent": "Asia",
+    "coordinates": {
+      "latitude": -8.3405,
+      "longitude": 115.092,
+      "altitude": 0
+    },
+    "timezone": "Asia/Makassar",
+    "shortDescription": "Tropical paradise known for stunning beaches, ancient temples, rice terraces, and vibrant Hindu culture.",
+    "description": "Bali, the famed 'Island of the Gods', offers an enchanting blend of natural beauty and cultural richness. From the artistic hub of Ubud with its emerald rice terraces to the surf beaches of Seminyak and spiritual temples like Tanah Lot, Bali provides diverse experiences. Visitors can enjoy world-class surfing, yoga retreats, traditional dance performances, and some of Asia's best dining scenes, all while immersed in the island's unique Hindu culture.",
+    "highlights": [
+      "Tegallalang Rice Terraces",
+      "Tanah Lot Temple at sunset",
+      "Ubud Monkey Forest Sanctuary",
+      "Beach clubs in Seminyak",
+      "Mount Batur sunrise trek",
+      "Traditional Kecak fire dance",
+      "Surfing in Uluwatu",
+      "Water temples of Tirta Empul"
+    ],
+    "uniqueSellingPoints": [
+      "Year-round tropical climate",
+      "World-class surf breaks",
+      "Affordable luxury accommodations",
+      "Rich Hindu culture and ceremonies",
+      "Wellness and yoga retreat capital"
+    ],
+    "bestTimeToVisit": {
+      "months": [4, 5, 6, 7, 8, 9],
+      "description": "Dry season (April-September) offers sunny days and minimal rainfall",
+      "events": ["Bali Arts Festival", "Galungan Festival", "Nyepi Day"]
+    },
+    "avoidMonths": {
+      "months": [1, 2],
+      "reasons": ["Peak rainy season", "High humidity", "Potential flooding"]
+    },
+    "recommendedDuration": {
+      "min": 5,
+      "max": 14,
+      "ideal": 10
+    },
+    "budgetLevels": {
+      "budget": {
+        "accommodation": { "min": 15, "max": 40, "currency": "USD", "period": "daily" },
+        "meals": { "min": 5, "max": 15, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 5, "max": 10, "currency": "USD", "period": "daily" },
+        "activities": { "min": 10, "max": 20, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 5, "max": 10, "currency": "USD", "period": "daily" },
+        "total": { "min": 40, "max": 95, "currency": "USD", "period": "daily" }
+      },
+      "mid_range": {
+        "accommodation": { "min": 40, "max": 150, "currency": "USD", "period": "daily" },
+        "meals": { "min": 15, "max": 40, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 10, "max": 30, "currency": "USD", "period": "daily" },
+        "activities": { "min": 20, "max": 50, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 10, "max": 20, "currency": "USD", "period": "daily" },
+        "total": { "min": 95, "max": 290, "currency": "USD", "period": "daily" }
+      },
+      "luxury": {
+        "accommodation": { "min": 150, "max": 600, "currency": "USD", "period": "daily" },
+        "meals": { "min": 40, "max": 100, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 30, "max": 80, "currency": "USD", "period": "daily" },
+        "activities": { "min": 50, "max": 150, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 20, "max": 50, "currency": "USD", "period": "daily" },
+        "total": { "min": 290, "max": 980, "currency": "USD", "period": "daily" }
+      }
+    },
+    "climate": "tropical",
+    "weatherByMonth": [
+      {
+        "season": "year_round",
+        "temperatureRange": { "min": 23, "max": 31, "average": 27 },
+        "precipitation": 100,
+        "humidity": 85,
+        "description": "Hot and humid year-round with distinct wet and dry seasons",
+        "packingTips": [
+          "Light breathable clothing",
+          "Sunscreen",
+          "Rain jacket",
+          "Mosquito repellent"
+        ]
+      }
+    ],
+    "nearestAirports": [
+      {
+        "code": "DPS",
+        "name": "Ngurah Rai International Airport",
+        "distance": 13,
+        "transportOptions": ["Taxi", "Private transfer", "Ride-sharing apps"],
+        "averageTransferTime": 30,
+        "coordinates": {
+          "latitude": -8.7467,
+          "longitude": 115.1667
+        }
+      }
+    ],
+    "localTransportation": [
+      {
+        "type": "taxi",
+        "name": "Blue Bird Taxi",
+        "description": "Reliable metered taxis available throughout tourist areas",
+        "averageCost": { "min": 3, "max": 15, "currency": "USD" },
+        "availability": "24/7",
+        "bookingRequired": false
+      },
+      {
+        "type": "rental_car",
+        "name": "Scooter Rental",
+        "description": "Most popular way to explore the island independently",
+        "averageCost": { "min": 5, "max": 8, "currency": "USD", "period": "daily" },
+        "availability": "Widely available",
+        "bookingRequired": false
+      }
+    ],
+    "visaRequirements": {
+      "required": true,
+      "type": "Visa on Arrival",
+      "duration": 30,
+      "cost": 35,
+      "processTime": "Immediate",
+      "description": "Most nationalities can get visa on arrival for 30 days, extendable once",
+      "exemptCountries": ["ASEAN countries"],
+      "url": "https://www.imigrasi.go.id"
+    },
+    "images": [
+      {
+        "id": "img_bali_001",
+        "url": "/images/destinations/bali/rice-terraces.jpg",
+        "thumbnailUrl": "/images/destinations/bali/rice-terraces-thumb.jpg",
+        "alt": "Tegallalang Rice Terraces",
+        "caption": "The iconic stepped rice terraces of Tegallalang",
+        "credit": "Photo by Next Trip Anywhere",
+        "isPrimary": true,
+        "order": 1,
+        "tags": ["nature", "culture", "iconic"]
+      }
+    ],
+    "attractions": [],
+    "activities": [],
+    "languages": ["Indonesian", "Balinese", "English"],
+    "currency": {
+      "code": "IDR",
+      "name": "Indonesian Rupiah",
+      "symbol": "Rp",
+      "exchangeRateToUSD": 0.000065,
+      "acceptedPaymentMethods": ["Cash", "Credit Cards (major establishments)", "Digital payments"],
+      "atmAvailability": "Available in all tourist areas",
+      "tippingCulture": "Not mandatory but appreciated (5-10%)"
+    },
+    "electricityInfo": {
+      "voltage": 230,
+      "frequency": 50,
+      "plugTypes": ["C", "F"],
+      "adapterNeeded": true,
+      "description": "European-style plugs, US visitors need adapter"
+    },
+    "healthAndSafety": {
+      "vaccinations": ["Hepatitis A", "Typhoid"],
+      "healthRisks": ["Dengue fever", "Traveler's diarrhea"],
+      "emergencyNumbers": {
+        "police": "110",
+        "medical": "118",
+        "fire": "113",
+        "tourist": "0361-224111"
+      },
+      "safetyRating": 4,
+      "safetyNotes": [
+        "Watch for strong ocean currents",
+        "Secure belongings on scooters",
+        "Drink only bottled water"
+      ],
+      "travelInsuranceRecommended": true
+    },
+    "culturalNotes": [
+      "Dress modestly when visiting temples",
+      "Don't touch people's heads",
+      "Use right hand for giving/receiving"
+    ],
+    "etiquetteTips": [
+      "Remove shoes before entering homes",
+      "Don't point with your index finger",
+      "Respect religious ceremonies"
+    ],
+    "localCuisine": [
+      "Nasi Goreng",
+      "Babi Guling (suckling pig)",
+      "Sate Lilit",
+      "Gado-gado",
+      "Bebek Betutu"
+    ],
+    "nearbyDestinations": ["dest_003_lombok", "dest_004_java"],
+    "similarDestinations": ["dest_005_phuket", "dest_006_maldives"],
+    "seo": {
+      "metaTitle": "Bali Travel Guide 2024 | Beaches, Temples, Culture & Adventure",
+      "metaDescription": "Plan your perfect Bali vacation with our complete guide. Discover the best beaches, temples, rice terraces, and cultural experiences in the Island of the Gods.",
+      "keywords": [
+        "Bali travel",
+        "Bali beaches",
+        "Ubud",
+        "Seminyak",
+        "Bali temples",
+        "Indonesia travel"
+      ],
+      "canonicalUrl": "https://nexttripanywhere.com/destinations/bali-indonesia"
+    },
+    "tags": ["beach", "culture", "surfing", "yoga", "temples", "tropical", "adventure", "wellness"],
+    "popularityScore": 88,
+    "featured": true,
+    "createdAt": "2024-01-18T11:00:00Z",
+    "updatedAt": "2024-12-10T15:45:00Z",
+    "publishedAt": "2024-01-25T10:00:00Z",
+    "lastReviewedAt": "2024-11-28T09:00:00Z",
+    "viewCount": 12850,
+    "bookingCount": 289,
+    "averageRating": 4.7,
+    "reviewCount": 982
+  },
+  {
+    "id": "dest_003_tokyo",
+    "slug": "tokyo-japan",
+    "status": "active",
+    "name": "Tokyo",
+    "alternativeNames": ["東京", "Edo"],
+    "type": ["city", "cultural", "adventure"],
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Kantō",
+    "subRegion": "Tokyo Metropolis",
+    "continent": "Asia",
+    "coordinates": {
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "altitude": 40
+    },
+    "timezone": "Asia/Tokyo",
+    "shortDescription": "Ultra-modern metropolis blending cutting-edge technology with traditional Japanese culture and cuisine.",
+    "description": "Tokyo, Japan's bustling capital, is a city where ancient traditions meet futuristic innovation. From serene temples and gardens to neon-lit skyscrapers and anime culture, Tokyo offers endless discoveries. Experience world-class dining from street food to Michelin stars, shop in trendy Harajuku, explore historic Asakusa, and immerse yourself in the organized chaos of Shibuya crossing. Each neighborhood has its own character, making Tokyo a city of many cities.",
+    "highlights": [
+      "Senso-ji Temple in Asakusa",
+      "Shibuya Crossing experience",
+      "Tsukiji Outer Market",
+      "Tokyo Skytree views",
+      "Meiji Shrine and Harajuku",
+      "Robot Restaurant show",
+      "Cherry blossoms in Ueno Park",
+      "Day trip to Mount Fuji"
+    ],
+    "uniqueSellingPoints": [
+      "Most Michelin-starred city in the world",
+      "Safest major city globally",
+      "Incredible public transportation",
+      "24/7 convenience stores",
+      "Unique blend of tradition and technology"
+    ],
+    "bestTimeToVisit": {
+      "months": [3, 4, 5, 10, 11],
+      "description": "Spring (March-May) for cherry blossoms, Fall (October-November) for autumn colors",
+      "events": ["Cherry Blossom Season", "Golden Week", "Autumn Leaves"]
+    },
+    "avoidMonths": {
+      "months": [6, 7, 8],
+      "reasons": ["Hot and humid summer", "Rainy season in June", "Crowded during Obon"]
+    },
+    "recommendedDuration": {
+      "min": 4,
+      "max": 10,
+      "ideal": 7
+    },
+    "budgetLevels": {
+      "budget": {
+        "accommodation": { "min": 30, "max": 80, "currency": "USD", "period": "daily" },
+        "meals": { "min": 15, "max": 30, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 8, "max": 15, "currency": "USD", "period": "daily" },
+        "activities": { "min": 10, "max": 25, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 5, "max": 15, "currency": "USD", "period": "daily" },
+        "total": { "min": 68, "max": 165, "currency": "USD", "period": "daily" }
+      },
+      "mid_range": {
+        "accommodation": { "min": 80, "max": 200, "currency": "USD", "period": "daily" },
+        "meals": { "min": 30, "max": 70, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 15, "max": 25, "currency": "USD", "period": "daily" },
+        "activities": { "min": 25, "max": 60, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 15, "max": 30, "currency": "USD", "period": "daily" },
+        "total": { "min": 165, "max": 385, "currency": "USD", "period": "daily" }
+      },
+      "luxury": {
+        "accommodation": { "min": 200, "max": 800, "currency": "USD", "period": "daily" },
+        "meals": { "min": 70, "max": 200, "currency": "USD", "period": "daily" },
+        "transportation": { "min": 25, "max": 100, "currency": "USD", "period": "daily" },
+        "activities": { "min": 60, "max": 200, "currency": "USD", "period": "daily" },
+        "miscellaneous": { "min": 30, "max": 100, "currency": "USD", "period": "daily" },
+        "total": { "min": 385, "max": 1400, "currency": "USD", "period": "daily" }
+      }
+    },
+    "climate": "temperate",
+    "weatherByMonth": [
+      {
+        "season": "spring",
+        "temperatureRange": { "min": 10, "max": 20, "average": 15 },
+        "precipitation": 120,
+        "humidity": 60,
+        "description": "Mild temperatures with cherry blossom season",
+        "packingTips": ["Light jacket", "Comfortable walking shoes", "Umbrella"]
+      }
+    ],
+    "nearestAirports": [
+      {
+        "code": "NRT",
+        "name": "Narita International Airport",
+        "distance": 60,
+        "transportOptions": ["Narita Express", "Keisei Skyliner", "Airport bus", "Taxi"],
+        "averageTransferTime": 60
+      },
+      {
+        "code": "HND",
+        "name": "Haneda Airport",
+        "distance": 20,
+        "transportOptions": ["Tokyo Monorail", "Keikyu Line", "Airport bus", "Taxi"],
+        "averageTransferTime": 30
+      }
+    ],
+    "localTransportation": [
+      {
+        "type": "metro",
+        "name": "Tokyo Metro & JR Lines",
+        "description": "World's most extensive urban rail network",
+        "averageCost": { "min": 1.5, "max": 3, "currency": "USD" },
+        "availability": "5:00 AM - 12:00 AM",
+        "bookingRequired": false
+      }
+    ],
+    "visaRequirements": {
+      "required": false,
+      "type": "Visa exemption",
+      "duration": 90,
+      "cost": 0,
+      "processTime": "N/A",
+      "description": "US citizens and many other nationalities can visit visa-free for up to 90 days",
+      "exemptCountries": ["USA", "Canada", "UK", "EU countries", "Australia"],
+      "url": "https://www.mofa.go.jp"
+    },
+    "images": [
+      {
+        "id": "img_tokyo_001",
+        "url": "/images/destinations/tokyo/shibuya-crossing.jpg",
+        "thumbnailUrl": "/images/destinations/tokyo/shibuya-crossing-thumb.jpg",
+        "alt": "Shibuya Crossing at night",
+        "caption": "The world's busiest pedestrian crossing illuminated at night",
+        "credit": "Photo by Next Trip Anywhere",
+        "isPrimary": true,
+        "order": 1,
+        "tags": ["cityscape", "night", "iconic"]
+      }
+    ],
+    "attractions": [],
+    "activities": [],
+    "languages": ["Japanese", "English (limited)"],
+    "currency": {
+      "code": "JPY",
+      "name": "Japanese Yen",
+      "symbol": "¥",
+      "exchangeRateToUSD": 0.0067,
+      "acceptedPaymentMethods": ["Cash (preferred)", "Credit Cards", "IC Cards (Suica/Pasmo)"],
+      "atmAvailability": "7-Eleven and post office ATMs accept foreign cards",
+      "tippingCulture": "No tipping - considered rude"
+    },
+    "electricityInfo": {
+      "voltage": 100,
+      "frequency": 50,
+      "plugTypes": ["A", "B"],
+      "adapterNeeded": false,
+      "description": "Same plugs as US but lower voltage"
+    },
+    "healthAndSafety": {
+      "vaccinations": [],
+      "healthRisks": [],
+      "emergencyNumbers": {
+        "police": "110",
+        "medical": "119",
+        "fire": "119",
+        "tourist": "050-3816-2787"
+      },
+      "safetyRating": 5,
+      "safetyNotes": ["Extremely safe city", "Low crime rate", "Clean and organized"],
+      "travelInsuranceRecommended": true
+    },
+    "culturalNotes": [
+      "Remove shoes when entering homes and some restaurants",
+      "Don't eat while walking",
+      "Bow as greeting instead of handshakes"
+    ],
+    "etiquetteTips": [
+      "Be quiet on trains",
+      "Don't tip service staff",
+      "Stand on the left side of escalators"
+    ],
+    "localCuisine": [
+      "Sushi and Sashimi",
+      "Ramen",
+      "Tempura",
+      "Yakitori",
+      "Wagyu Beef",
+      "Matcha desserts"
+    ],
+    "nearbyDestinations": ["dest_004_kyoto", "dest_005_osaka", "dest_006_mount_fuji"],
+    "similarDestinations": ["dest_007_seoul", "dest_008_singapore", "dest_009_hong_kong"],
+    "seo": {
+      "metaTitle": "Tokyo Travel Guide 2024 | Top Attractions, Food & Culture Tips",
+      "metaDescription": "Explore Tokyo with our expert guide. Discover the best attractions, restaurants, neighborhoods, and insider tips for an unforgettable Japan adventure.",
+      "keywords": [
+        "Tokyo travel",
+        "Japan tourism",
+        "Shibuya",
+        "Harajuku",
+        "Tokyo attractions",
+        "Japanese culture"
+      ],
+      "canonicalUrl": "https://nexttripanywhere.com/destinations/tokyo-japan"
+    },
+    "tags": [
+      "metropolis",
+      "technology",
+      "culture",
+      "food",
+      "shopping",
+      "temples",
+      "nightlife",
+      "safe"
+    ],
+    "popularityScore": 92,
+    "featured": true,
+    "createdAt": "2024-01-20T09:30:00Z",
+    "updatedAt": "2024-12-12T11:15:00Z",
+    "publishedAt": "2024-01-28T08:00:00Z",
+    "lastReviewedAt": "2024-12-05T10:00:00Z",
+    "viewCount": 18930,
+    "bookingCount": 412,
+    "averageRating": 4.9,
+    "reviewCount": 1523
+  }
+]

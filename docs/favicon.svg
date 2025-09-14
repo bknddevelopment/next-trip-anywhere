@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="4" fill="#ffffff"/>
+  
+  <!-- Suitcase -->
+  <path d="M10 14h12v10h-12z" fill="#f5925c" stroke="#fff" stroke-width="0.5"/>
+  <rect x="14" y="12" width="4" height="3" fill="none" stroke="#f5925c" stroke-width="1.5"/>
+  
+  <!-- Globe -->
+  <circle cx="16" cy="17" r="5" fill="#4ba3cc" stroke="#fff" stroke-width="0.5"/>
+  <ellipse cx="16" cy="17" rx="2" ry="5" fill="none" stroke="#7FBF4D" stroke-width="0.8"/>
+  <path d="M11 17h10" stroke="#7FBF4D" stroke-width="0.8"/>
+  
+  <!-- Airplane -->
+  <path d="M20 10 L24 13 L21 13 L20 15 L19 14 L18 15 L17 13 L14 13 L18 10 Z" fill="#4ba3cc" stroke="#fff" stroke-width="0.3"/>
+  
+  <!-- Ship -->
+  <path d="M22 22 L26 22 L25 20 L23 20 Z" fill="#4ba3cc" stroke="#fff" stroke-width="0.3"/>
+  <path d="M22 23 L26 23" stroke="#4ba3cc" stroke-width="0.8"/>
+</svg>
