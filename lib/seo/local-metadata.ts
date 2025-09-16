@@ -771,4 +771,28 @@ export const ESSEX_COUNTY_TOWNS: Record<string, TownInfo> = {
       averageIncome: '$80,000-$120,000',
     },
   },
+  orange: {
+    name: 'Orange',
+    slug: 'orange',
+    county: 'Essex',
+    state: 'New Jersey',
+    stateAbbr: 'NJ',
+    population: 34447,
+    zipCodes: ['07050', '07051', '07052'],
+    nearbyAirports: [
+      'Newark Liberty International Airport (EWR)',
+      'LaGuardia Airport (LGA)',
+      'John F. Kennedy International Airport (JFK)',
+    ],
+    landmarks: [
+      'Orange Public Library',
+      'Orange Music Studio',
+      'Central Park',
+      'Orange Train Station',
+    ],
+    demographics: {
+      focus: 'family travel and group packages',
+      averageIncome: '$40,000-$60,000',
+    },
+  },
 }

@@ -21,13 +21,14 @@ export const ESSEX_COUNTY_TOWNS = [
   { name: 'Belleville', coordinates: { lat: 40.7937, lng: -74.1501 }, population: 38222 },
   { name: 'East Orange', coordinates: { lat: 40.7673, lng: -74.2049 }, population: 69612 },
   { name: 'Irvington', coordinates: { lat: 40.7324, lng: -74.2349 }, population: 61176 },
-  { name: 'Glen Ridge', coordinates: { lat: 40.8053, lng: -74.2038 }, population: 7802 },
+  { name: 'Orange', coordinates: { lat: 40.7707, lng: -74.2324 }, population: 34447 },
+  { name: 'Glen Ridge', coordinates: { lat: 40.8053, lng: -74.2038 }, population: 7852 },
   { name: 'Caldwell', coordinates: { lat: 40.8398, lng: -74.2765 }, population: 9027 },
-  { name: 'North Caldwell', coordinates: { lat: 40.8642, lng: -74.2582 }, population: 7061 },
+  { name: 'North Caldwell', coordinates: { lat: 40.8642, lng: -74.2582 }, population: 7375 },
   { name: 'West Caldwell', coordinates: { lat: 40.8489, lng: -74.2968 }, population: 11223 },
-  { name: 'Essex Fells', coordinates: { lat: 40.8245, lng: -74.2843 }, population: 2308 },
-  { name: 'Roseland', coordinates: { lat: 40.8206, lng: -74.2938 }, population: 6510 },
-  { name: 'Fairfield', coordinates: { lat: 40.8834, lng: -74.3062 }, population: 7872 },
+  { name: 'Essex Fells', coordinates: { lat: 40.8245, lng: -74.2843 }, population: 2288 },
+  { name: 'Roseland', coordinates: { lat: 40.8206, lng: -74.2938 }, population: 6290 },
+  { name: 'Fairfield', coordinates: { lat: 40.8834, lng: -74.3062 }, population: 7615 },
 ]
 
 // Newark office information

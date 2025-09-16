@@ -1,25 +1,52 @@
-# Robots.txt for Next Trip Anywhere
-# https://nexttripanywhere.com
-
-# Allow all robots
-User-agent: *
+User-Agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
+Disallow: /_next/
+Disallow: /backend/
+Disallow: /*.json$
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /test/
+Disallow: /test-ab/
+Crawl-delay: 1
 
-# Sitemap location
+User-Agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /backend/
+Disallow: /test/
+Disallow: /test-ab/
+
+User-Agent: Googlebot-Image
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /backend/
+Disallow: /test/
+Disallow: /test-ab/
+
+User-Agent: AhrefsBot
+Disallow: /
+
+User-Agent: SemrushBot
+Disallow: /
+
+User-Agent: DotBot
+Disallow: /
+
+User-Agent: MJ12bot
+Disallow: /
+
+User-Agent: PetalBot
+Disallow: /
+
+Host: https://nexttripanywhere.com
 Sitemap: https://nexttripanywhere.com/sitemap.xml
-
-# Crawl delay (in seconds) - be nice to servers
-Crawl-delay: 1
-
-# Google specific
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Bing specific
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
