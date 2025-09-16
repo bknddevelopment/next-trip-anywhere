@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { essexCountyCities } from '@/lib/data/essex-county-cities'
 import { essexCountyServices } from '@/lib/data/essex-county-services'
+import { blogPosts } from '@/lib/data/blog-posts'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -112,46 +113,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   })
 
-  // Blog pages
-  const blogPages = [
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    // Essex County specific blog posts
-    {
-      url: `${baseUrl}/blog/top-10-destinations-essex-county-families`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    },
-    {
-      url: `${baseUrl}/blog/newark-airport-travel-tips-local-experts`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    },
-    {
-      url: `${baseUrl}/blog/essex-county-school-break-travel-guide-2025`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    },
-    {
-      url: `${baseUrl}/blog/best-time-book-flights-newark-airport`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    },
-    {
-      url: `${baseUrl}/blog/essex-county-corporate-travel-solutions`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    },
-  ]
+  // Blog main page
+  const blogMainPage = {
+    url: `${baseUrl}/blog`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }
+
+  // Generate blog post pages dynamically from blog-posts data
+  const blogPostPages = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.updatedAt || post.publishedAt || currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.65,
+  }))
 
   // Destination pages
   const destinations = [
@@ -227,7 +203,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...essexCityPages,
     ...essexServiceHubPages,
     ...essexCityServicePages,
-    ...blogPages,
+    blogMainPage,
+    ...blogPostPages,
     ...destinationPages,
     ...companyPages,
     ...legalPages,
