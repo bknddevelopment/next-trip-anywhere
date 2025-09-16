@@ -18,7 +18,7 @@ export default function ImageDebug() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const logoPath = normalizePath('/NextTripAnywhere.PNG', true)
+      const logoPath = normalizePath('/images/NextTripAnywhere.PNG', true)
       setRuntimeInfo({
         pathname: window.location.pathname,
         basePath: getBasePath(),
@@ -53,19 +53,19 @@ export default function ImageDebug() {
           <span className="text-orange-600">{runtimeInfo.logoPath}</span>
         </div>
       </div>
-      
+
       <div className="mt-3 pt-3 border-t">
         <div className="text-gray-600 mb-1">Test Image:</div>
         <div className="w-24 h-12 relative bg-gray-100 rounded">
           <OptimizedImage
-            src="/NextTripAnywhere.PNG"
+            src="/images/NextTripAnywhere.PNG"
             alt="Debug Test"
             fill
             className="object-contain"
           />
         </div>
       </div>
-      
+
       <div className="mt-2 text-[10px] text-gray-500">
         {process.env.NODE_ENV === 'production' ? '🚀 Production' : '🔧 Development'}
       </div>
