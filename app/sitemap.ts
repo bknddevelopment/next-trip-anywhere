@@ -113,6 +113,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   })
 
+  // Travel-from city service pages (travel-from-[city]/[service])
+  const travelFromServicePages: MetadataRoute.Sitemap = []
+  essexCountyCities.forEach((city) => {
+    essexCountyServices.forEach((service) => {
+      travelFromServicePages.push({
+        url: `${baseUrl}/travel-from-${city.id}/${service.id}`,
+        lastModified: currentDate,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      })
+    })
+  })
+
   // Blog main page
   const blogMainPage = {
     url: `${baseUrl}/blog`,
@@ -203,6 +216,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...essexCityPages,
     ...essexServiceHubPages,
     ...essexCityServicePages,
+    ...travelFromServicePages,
     blogMainPage,
     ...blogPostPages,
     ...destinationPages,

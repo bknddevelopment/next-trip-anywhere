@@ -1,423 +1,427 @@
-# TODO - Next Trip Anywhere Rebuild Plan
+# Essex County SEO Expansion - TODO List
 
-## Project Rebuild Overview
+## Overview
 
-**Timeline:** 4 weeks  
-**Goal:** Complete rebuild maintaining GitHub Pages compatibility while improving code quality, performance, and maintainability  
-**Status:** Planning Phase  
-**Last Updated:** 2025-09-01
+Expanding from 94 service pages to 350+ pages covering all Essex County municipalities and services.
 
----
-
-## Phase 1: Foundation & Infrastructure (Week 1)
-
-**Target Completion:** Week 1 (Days 1-7)
-
-### Priority: Critical
-
-- [ ] Set up new project structure with proper separation of concerns
-  - Context: Current structure mixes concerns and lacks clear organization
-  - Dependencies: None
-  - Acceptance: Clear folder structure with src/, features/, shared/
-- [ ] Implement proper TypeScript configuration with strict mode
-  - Context: Need type safety across the application
-  - Dependencies: Project structure
-  - Acceptance: tsconfig.json with strict mode, no any types
-- [ ] Set up ESLint and Prettier with consistent rules
-  - Context: Ensure code quality and consistency
-  - Dependencies: TypeScript configuration
-  - Acceptance: All files pass linting, consistent formatting
-
-- [ ] Configure testing infrastructure (Jest/Vitest + React Testing Library)
-  - Context: No current test coverage
-  - Dependencies: Project structure
-  - Acceptance: Test runner configured, sample tests passing
-
-- [ ] Set up Husky and lint-staged for pre-commit hooks
-  - Context: Prevent bad code from being committed
-  - Dependencies: ESLint, Prettier, Testing
-  - Acceptance: Pre-commit hooks running on all commits
-
-### Priority: High
-
-- [ ] Create environment configuration system (.env files)
-  - Context: Need proper environment management
-  - Dependencies: None
-  - Acceptance: env.example, proper typing for env vars
-
-- [ ] Set up error boundary components
-  - Context: Improve error handling and user experience
-  - Dependencies: React setup
-  - Acceptance: Global and route-level error boundaries
-
-- [ ] Implement logging system (client and build time)
-  - Context: Better debugging and monitoring
-  - Dependencies: None
-  - Acceptance: Structured logging with levels
+**Timeline:** 6 weeks
+**Goal:** Complete Essex County SEO coverage with all services and cities
+**Status:** Phase 1 Starting
+**Last Updated:** 2025-09-16
 
 ---
 
-## Phase 2: Core Refactoring (Week 1-2)
+## PHASE 1: Complete Service Coverage (Week 1-2) 🚀
 
-**Target Completion:** Week 2 (Days 8-14)
+### Priority: CRITICAL - 99 Missing Pages
 
-### Priority: Critical
+#### 1.1 Generate Missing Service Pages for 11 Cities
 
-- [ ] Refactor component architecture to atomic design
-  - Context: Current components are not reusable
-  - Dependencies: Phase 1 complete
-  - Acceptance: atoms/, molecules/, organisms/, templates/
+- [ ] **Belleville** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Create shared UI component library with shadcn/ui
-  - Context: Inconsistent UI components
-  - Dependencies: Component architecture
-  - Acceptance: Button, Card, Form, Modal components
+- [ ] **Bloomfield** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Implement proper state management (Zustand/Context)
-  - Context: No centralized state management
-  - Dependencies: None
-  - Acceptance: Global store, typed actions/selectors
+- [ ] **Essex Fells** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Refactor routing with proper lazy loading
-  - Context: All routes load eagerly
-  - Dependencies: None
-  - Acceptance: Route-based code splitting implemented
+- [ ] **Fairfield** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-### Priority: High
+- [ ] **Glen Ridge** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Create custom hooks for common patterns
-  - Context: Repeated logic across components
-  - Dependencies: Component refactoring
-  - Acceptance: useApi, useForm, useDebounce hooks
+- [ ] **Livingston** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Implement proper form handling with React Hook Form + Zod
-  - Context: Forms lack validation and error handling
-  - Dependencies: UI components
-  - Acceptance: All forms use RHF with Zod schemas
+- [ ] **North Caldwell** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Refactor data fetching with React Query/SWR
-  - Context: No caching or optimistic updates
-  - Dependencies: API structure
-  - Acceptance: All API calls use React Query
+- [ ] **Nutley** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-### Priority: Medium
+- [ ] **Roseland** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Create layout system with consistent spacing
-  - Context: Inconsistent layouts across pages
-  - Dependencies: UI components
-  - Acceptance: Layout components with design tokens
+- [ ] **Verona** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
-- [ ] Implement theme system with CSS variables
-  - Context: Hard-coded colors and styles
-  - Dependencies: None
-  - Acceptance: Theme provider with light/dark mode
+- [ ] **West Caldwell** (9 services)
+  - [ ] airport-transfers
+  - [ ] corporate-travel
+  - [ ] cruise-transfers
+  - [ ] wedding-transportation
+  - [ ] special-events
+  - [ ] wine-tours-day-trips
+  - [ ] medical-appointments
+  - [ ] school-transportation
+  - [ ] group-travel
 
----
+#### 1.2 Update Data Files
 
-## Phase 3: Performance Optimization (Week 2)
+- [ ] Update `/data/essex-services.ts` with new service types
+- [ ] Ensure all cities have complete service arrays
+- [ ] Add service descriptions and meta data
 
-**Target Completion:** Week 2 (Days 11-14)
+#### 1.3 Validation
 
-### Priority: Critical
-
-- [ ] Implement image optimization with next/image
-  - Context: Large unoptimized images
-  - Dependencies: None
-  - Acceptance: All images use next/image with proper sizing
-
-- [ ] Set up proper code splitting and dynamic imports
-  - Context: Large bundle sizes
-  - Dependencies: Routing refactor
-  - Acceptance: Bundle size < 200KB initial load
-
-- [ ] Implement proper caching strategies
-  - Context: No caching currently
-  - Dependencies: React Query setup
-  - Acceptance: API responses cached, stale-while-revalidate
-
-### Priority: High
-
-- [ ] Add loading states and skeletons
-  - Context: No loading feedback
-  - Dependencies: UI components
-  - Acceptance: All async operations show loading states
-
-- [ ] Optimize CSS with PurgeCSS/PostCSS
-  - Context: Unused CSS in bundles
-  - Dependencies: None
-  - Acceptance: CSS bundle < 50KB
-
-- [ ] Implement virtual scrolling for lists
-  - Context: Long lists cause performance issues
-  - Dependencies: None
-  - Acceptance: Lists with >50 items use virtual scrolling
-
-### Priority: Medium
-
-- [ ] Add performance monitoring (Web Vitals)
-  - Context: No performance tracking
-  - Dependencies: None
-  - Acceptance: CLS < 0.1, FID < 100ms, LCP < 2.5s
-
-- [ ] Implement service worker for offline support
-  - Context: No offline functionality
-  - Dependencies: None
-  - Acceptance: Basic offline page, asset caching
-
----
-
-## Phase 4: Feature Enhancement (Week 3)
-
-**Target Completion:** Week 3 (Days 15-21)
-
-### Priority: High
-
-- [ ] Build advanced search with filters and sorting
-  - Context: Basic search functionality
-  - Dependencies: API integration
-  - Acceptance: Multi-field search with faceted filters
-
-- [ ] Create interactive booking flow
-  - Context: Static booking information
-  - Dependencies: Form handling, state management
-  - Acceptance: Multi-step booking with validation
-
-- [ ] Implement user preferences system
-  - Context: No personalization
-  - Dependencies: State management
-  - Acceptance: Saved searches, favorite destinations
-
-- [ ] Add comparison feature for travel packages
-  - Context: Can't compare options
-  - Dependencies: UI components
-  - Acceptance: Side-by-side comparison view
-
-### Priority: Medium
-
-- [ ] Create travel calculator/budget planner
-  - Context: No budget tools
-  - Dependencies: Form components
-  - Acceptance: Interactive budget calculator
-
-- [ ] Build interactive map for destinations
-  - Context: Static destination display
-  - Dependencies: None
-  - Acceptance: Map with clickable markers
-
-- [ ] Implement testimonials/reviews section
-  - Context: No social proof
-  - Dependencies: UI components
-  - Acceptance: Review cards with ratings
-
-### Priority: Low
-
-- [ ] Add weather widget for destinations
-  - Context: Nice-to-have feature
-  - Dependencies: API integration
-  - Acceptance: Current weather display
-
-- [ ] Create travel blog/guides section
-  - Context: Content marketing opportunity
-  - Dependencies: CMS integration
-  - Acceptance: Blog listing and detail pages
+- [ ] Run SEO validation script
+- [ ] Check all URLs resolve correctly
+- [ ] Verify sitemap includes all new pages
+- [ ] Test build process with new pages
 
 ---
 
-## Phase 5: Testing & Quality (Week 3-4)
+## PHASE 2: Schema & Technical SEO (Week 2)
 
-**Target Completion:** Week 4 (Days 22-28)
+### Priority: HIGH - Rich Snippets & Local Pack
 
-### Priority: Critical
+#### 2.1 LocalBusiness Schema Implementation
 
-- [ ] Write unit tests for utilities and hooks (80% coverage)
-  - Context: No test coverage
-  - Dependencies: Testing setup
-  - Acceptance: 80% coverage on utils/hooks
+- [ ] Add TransportationService schema to all service pages
+- [ ] Include serviceArea for each city
+- [ ] Add priceRange indicators
+- [ ] Implement aggregateRating schema
+- [ ] Add opening hours
+- [ ] Include geo coordinates for each city
 
-- [ ] Add integration tests for critical user flows
-  - Context: No integration testing
-  - Dependencies: Testing setup
-  - Acceptance: Booking, search, navigation tested
+#### 2.2 Breadcrumb Navigation
 
-- [ ] Implement E2E tests with Playwright/Cypress
-  - Context: No E2E testing
-  - Dependencies: None
-  - Acceptance: Happy path E2E tests passing
+- [ ] Implement breadcrumb component
+- [ ] Add BreadcrumbList schema
+- [ ] Update all service pages with breadcrumbs
+- [ ] Style breadcrumbs for mobile/desktop
 
-- [ ] Perform accessibility audit and fixes
-  - Context: Unknown accessibility status
-  - Dependencies: None
-  - Acceptance: WCAG 2.1 AA compliance
+#### 2.3 FAQ Schema
 
-### Priority: High
+- [ ] Create FAQ data structure
+- [ ] Add 5-7 FAQs per service type
+- [ ] Implement FAQPage schema
+- [ ] Add to all service pages
 
-- [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
-  - Context: Only tested in Chrome
-  - Dependencies: None
-  - Acceptance: All browsers supported
+#### 2.4 Review Schema
 
-- [ ] Mobile responsiveness testing and fixes
-  - Context: Some mobile issues
-  - Dependencies: None
-  - Acceptance: Works on all viewports 320px+
-
-- [ ] Performance testing and optimization
-  - Context: No performance benchmarks
-  - Dependencies: None
-  - Acceptance: Lighthouse score > 90
-
-### Priority: Medium
-
-- [ ] Security audit (dependencies, XSS, CSP)
-  - Context: Security not assessed
-  - Dependencies: None
-  - Acceptance: No critical vulnerabilities
-
-- [ ] SEO audit and improvements
-  - Context: Basic SEO only
-  - Dependencies: None
-  - Acceptance: All pages have proper meta tags
+- [ ] Design review display component
+- [ ] Add Review schema markup
+- [ ] Create review collection strategy
+- [ ] Implement on high-traffic pages first
 
 ---
 
-## Phase 6: Documentation & Deployment (Week 4)
+## PHASE 3: New Service Types (Week 3)
 
-**Target Completion:** Week 4 (Days 26-28)
+### Priority: MEDIUM - Market Expansion
 
-### Priority: Critical
+#### 3.1 Group Travel Services (All 22 cities)
 
-- [ ] Create comprehensive README with setup instructions
-  - Context: Missing documentation
-  - Dependencies: None
-  - Acceptance: Complete setup and usage guide
+- [ ] Create group-travel page template
+- [ ] Generate for all cities
+- [ ] Focus on: Corporate groups, Family reunions, Tour groups
+- [ ] Add group size pricing tiers
 
-- [ ] Document component library with Storybook
-  - Context: No component documentation
-  - Dependencies: Component refactor
-  - Acceptance: All components in Storybook
+#### 3.2 Luxury/VIP Transportation (Target: Affluent cities)
 
-- [ ] Write API documentation
-  - Context: No API docs
-  - Dependencies: API structure
-  - Acceptance: OpenAPI/Swagger docs
+- [ ] Create luxury-travel template
+- [ ] Priority cities: Millburn, Short Hills, Montclair, West Orange
+- [ ] Include: Executive sedans, Luxury SUVs, Limousines
+- [ ] Add premium service features
 
-- [ ] Create deployment guide for GitHub Pages
-  - Context: Deployment process unclear
-  - Dependencies: None
-  - Acceptance: Step-by-step deployment guide
+#### 3.3 Senior Transportation Services
 
-### Priority: High
+- [ ] Create senior-travel template
+- [ ] Focus on: Medical appointments, Social events, Shopping trips
+- [ ] Add accessibility information
+- [ ] Include companion travel options
 
-- [ ] Set up CI/CD pipeline with GitHub Actions
-  - Context: Manual deployment
-  - Dependencies: Testing
-  - Acceptance: Automated test, build, deploy
+#### 3.4 Student Travel Programs
 
-- [ ] Configure monitoring and error tracking
-  - Context: No production monitoring
-  - Dependencies: None
-  - Acceptance: Error tracking configured
-
-- [ ] Create maintenance documentation
-  - Context: No maintenance guide
-  - Dependencies: None
-  - Acceptance: Update procedures documented
-
-### Priority: Medium
-
-- [ ] Write contributing guidelines
-  - Context: No contribution process
-  - Dependencies: None
-  - Acceptance: CONTRIBUTING.md created
-
-- [ ] Create architecture decision records (ADRs)
-  - Context: Decisions not documented
-  - Dependencies: None
-  - Acceptance: Key decisions documented
+- [ ] Create student-travel template
+- [ ] Target: Seton Hall, Montclair State, Essex County College
+- [ ] Include: Spring break packages, Study abroad connections
+- [ ] Add student discount information
 
 ---
 
-## Ongoing Tasks (Throughout)
+## PHASE 4: Route-Specific Landing Pages (Week 4)
 
-### Code Quality
+### Priority: HIGH - High-Traffic Routes
 
-- [ ] Regular code reviews
-- [ ] Refactor technical debt
-- [ ] Update dependencies
-- [ ] Security patches
+#### 4.1 Newark Airport Routes (22 pages)
 
-### Performance
+- [ ] Create template: "Newark Airport to [City]"
+- [ ] Generate for all 22 cities
+- [ ] Include: Travel times, Pricing, Tips
+- [ ] Add real-time traffic widgets
 
-- [ ] Monitor bundle sizes
-- [ ] Check Core Web Vitals
-- [ ] Optimize images
-- [ ] Review caching strategies
+#### 4.2 NYC Commuter Services (22 pages)
 
-### Documentation
+- [ ] Create template: "[City] to NYC Transportation"
+- [ ] Focus on: Penn Station, Port Authority, Wall Street
+- [ ] Include commuter packages
+- [ ] Add schedule information
 
-- [ ] Update README as needed
-- [ ] Document new features
-- [ ] Maintain changelog
-- [ ] Update API docs
+#### 4.3 Event Transportation
 
----
-
-## Post-Launch Tasks
-
-### Priority: High
-
-- [ ] Set up analytics (GA4, Hotjar)
-- [ ] Implement A/B testing framework
-- [ ] Create backup and recovery procedures
-- [ ] Set up uptime monitoring
-
-### Priority: Medium
-
-- [ ] Plan feature roadmap
-- [ ] User feedback collection system
-- [ ] Performance baseline establishment
-- [ ] SEO monitoring setup
-
-### Priority: Low
-
-- [ ] Create marketing site
-- [ ] Build admin dashboard
-- [ ] Implement newsletter system
-- [ ] Add multi-language support
+- [ ] MetLife Stadium from each city (22 pages)
+- [ ] Prudential Center from each city (22 pages)
+- [ ] Broadway shows package pages (10 pages)
+- [ ] Include event calendars
 
 ---
 
-## Notes
+## PHASE 5: Local Content & Blog Expansion (Week 5)
 
-### Quick Wins (Can be done anytime)
+### Priority: MEDIUM - Authority Building
 
-- Fix TypeScript errors
-- Add missing alt texts
-- Improve error messages
-- Add loading animations
-- Fix console warnings
+#### 5.1 Local Area Guides
 
-### Technical Debt to Address
+- [ ] "Ultimate Transportation Guide for [City]" (22 articles)
+- [ ] "Best Day Trips from [City]" (22 articles)
+- [ ] Seasonal travel guides (4 articles)
+- [ ] Holiday travel tips (6 articles)
 
-- Remove unused dependencies
-- Consolidate duplicate code
-- Fix inconsistent naming
-- Remove commented code
-- Update deprecated APIs
+#### 5.2 Neighborhood Pages (Larger cities only)
 
-### Dependencies to Update
+- [ ] Newark neighborhoods (5 pages)
+- [ ] Montclair neighborhoods (4 pages)
+- [ ] West Orange neighborhoods (3 pages)
+- [ ] Maplewood neighborhoods (3 pages)
 
-- React 19 (when stable)
-- Next.js (latest)
-- All dev dependencies
-- Security vulnerabilities
+#### 5.3 Comparison & Resource Pages
+
+- [ ] Service comparison tool
+- [ ] Pricing calculator
+- [ ] Travel time estimator
+- [ ] Group size optimizer
 
 ---
 
-**Remember:**
+## PHASE 6: NAP & Citations (Week 6)
 
-- Maintain GitHub Pages compatibility throughout
-- Test deployment after each phase
-- Keep existing features functional during rebuild
-- Document all breaking changes
-- Prioritize user experience and performance
+### Priority: HIGH - Local Trust Signals
+
+#### 6.1 NAP Consistency
+
+- [ ] Standardize business name format
+- [ ] Consistent address format
+- [ ] Local phone number setup
+- [ ] Add to all pages footer
+
+#### 6.2 Google My Business
+
+- [ ] Claim/verify listing
+- [ ] Add all service categories
+- [ ] Upload photos
+- [ ] Enable messaging
+- [ ] Set up Google Posts schedule
+
+#### 6.3 Directory Citations
+
+- [ ] Yelp listing
+- [ ] Yellow Pages
+- [ ] Bing Places
+- [ ] Apple Maps
+- [ ] TripAdvisor
+- [ ] Industry-specific directories (10+)
+
+#### 6.4 Local Partnerships
+
+- [ ] Chamber of Commerce listings
+- [ ] Local business associations
+- [ ] Hotel partnerships
+- [ ] Event venue partnerships
+
+---
+
+## Success Metrics
+
+### Traffic Goals
+
+- [ ] 50% increase in organic traffic within 3 months
+- [ ] 100% increase within 6 months
+- [ ] Top 3 rankings for "[service] Essex County"
+
+### Technical Goals
+
+- [ ] 100% of pages with rich snippets
+- [ ] All pages <2.5s load time
+- [ ] Mobile score 95+ on all pages
+- [ ] Zero crawl errors
+
+### Conversion Goals
+
+- [ ] 30% increase in form submissions
+- [ ] 25% increase in phone calls
+- [ ] Reduce bounce rate by 20%
+
+---
+
+## Timeline Summary
+
+| Phase   | Duration | Pages Added | Priority | Status      |
+| ------- | -------- | ----------- | -------- | ----------- |
+| Phase 1 | Week 1-2 | 99 pages    | CRITICAL | Not Started |
+| Phase 2 | Week 2   | Schema only | HIGH     | Not Started |
+| Phase 3 | Week 3   | 88 pages    | MEDIUM   | Not Started |
+| Phase 4 | Week 4   | 76 pages    | HIGH     | Not Started |
+| Phase 5 | Week 5   | 65 pages    | MEDIUM   | Not Started |
+| Phase 6 | Week 6   | Citations   | HIGH     | Not Started |
+
+**Total New Pages: 328**
+**Total Project Duration: 6 weeks**
+
+---
+
+## Phase 1 Detailed Implementation Steps
+
+### Week 1: Days 1-3 - Setup & First 5 Cities
+
+**Day 1: Infrastructure Setup**
+
+1. Create service page generator script
+2. Update `/data/essex-services.ts` with all service types
+3. Create reusable service page templates
+4. Set up automated testing for new pages
+
+**Day 2: Belleville & Bloomfield**
+
+1. Generate 9 service pages for Belleville
+2. Generate 9 service pages for Bloomfield
+3. Add city-specific content (landmarks, distances)
+4. Test all page routes
+
+**Day 3: Essex Fells, Fairfield, Glen Ridge**
+
+1. Generate 9 pages for Essex Fells
+2. Generate 9 pages for Fairfield
+3. Generate 9 pages for Glen Ridge
+4. Update sitemap.ts
+
+### Week 1: Days 4-5 - Remaining Cities
+
+**Day 4: Livingston, North Caldwell, Nutley**
+
+1. Generate 9 pages for Livingston
+2. Generate 9 pages for North Caldwell
+3. Generate 9 pages for Nutley
+4. Run SEO validation
+
+**Day 5: Roseland, Verona, West Caldwell**
+
+1. Generate 9 pages for Roseland
+2. Generate 9 pages for Verona
+3. Generate 9 pages for West Caldwell
+4. Complete testing & validation
+
+### Week 1: Days 6-7 - Group Travel & Testing
+
+**Day 6: Add Group Travel Service**
+
+1. Create group-travel template
+2. Add to all 22 cities (22 new pages)
+3. Focus on corporate groups, reunions, tours
+
+**Day 7: Testing & Optimization**
+
+1. Run full SEO validation
+2. Test all 121 new pages
+3. Check sitemap generation
+4. Verify build process
+5. Deploy to staging
+
+---
+
+## Next Immediate Actions
+
+1. **NOW**: Create service page generator script
+2. **TODAY**: Update essex-services.ts with complete service list
+3. **TODAY**: Start generating Belleville pages as pilot
+4. **TOMORROW**: Complete first 5 cities
+5. **THIS WEEK**: Complete all Phase 1 pages
+
+---
+
+_Last Updated: 2025-09-16_
+_Total Pages After Phase 1: 215 (current 94 + new 121)_
+_Current Pages: 94_
