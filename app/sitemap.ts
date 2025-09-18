@@ -163,6 +163,108 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // Cruise line pages (Phase 1)
+  const cruiseLinePages = [
+    {
+      url: `${baseUrl}/cruises/royal-caribbean`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0, // 1.5M searches
+    },
+    {
+      url: `${baseUrl}/cruises/carnival`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0, // 1.22M searches
+    },
+    {
+      url: `${baseUrl}/cruises/norwegian`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 550K searches
+    },
+    {
+      url: `${baseUrl}/cruises/princess`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 550K searches
+    },
+    {
+      url: `${baseUrl}/cruises/celebrity`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // 450K searches
+    },
+  ]
+
+  // Cruise destination pages (Phase 1)
+  const cruiseDestinationPages = [
+    {
+      url: `${baseUrl}/cruises/caribbean`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // Higher priority - 60.5K searches
+    },
+    {
+      url: `${baseUrl}/cruises/alaska`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // Higher priority - 74K searches
+    },
+    {
+      url: `${baseUrl}/cruises/mediterranean`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // 33.1K searches
+    },
+    {
+      url: `${baseUrl}/cruises/european`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // 18.1K searches
+    },
+    {
+      url: `${baseUrl}/cruises/bahamas`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // 22.2K searches
+    },
+    {
+      url: `${baseUrl}/cruises/hawaii`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85, // 18.1K searches
+    },
+  ]
+
+  // General cruise hub pages (Phase 1)
+  const cruiseHubPages = [
+    {
+      url: `${baseUrl}/cruises/deals`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.9, // 90.5K searches
+    },
+    {
+      url: `${baseUrl}/cruises/last-minute`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.9, // 74K searches
+    },
+    {
+      url: `${baseUrl}/cruises/cheap-cruises`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.9, // 74K searches
+    },
+    {
+      url: `${baseUrl}/cruises/2025`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // 74K searches
+    },
+  ]
+
   // Company pages
   const companyPages = [
     {
@@ -220,6 +322,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     blogMainPage,
     ...blogPostPages,
     ...destinationPages,
+    ...cruiseLinePages,
+    ...cruiseDestinationPages,
+    ...cruiseHubPages,
     ...companyPages,
     ...legalPages,
   ]

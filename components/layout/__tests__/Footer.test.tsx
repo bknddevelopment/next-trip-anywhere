@@ -5,9 +5,22 @@ import Footer from '../Footer'
 
 // Mock the OptimizedImage component
 vi.mock('@/components/ui/OptimizedImage', () => ({
-  default: ({ src, alt, className, ...props }: any) => (
-    <img src={src} alt={alt} className={className} {...props} />
-  ),
+  default: ({
+    src,
+    alt,
+    className,
+    fill,
+    priority,
+    placeholder,
+    blurDataURL,
+    quality,
+    unoptimized,
+    loader,
+    onLoad,
+    onLoadingComplete,
+    sizes,
+    ...props
+  }: any) => <img src={src} alt={alt} className={className} {...props} />,
 }))
 
 // Mock the site config

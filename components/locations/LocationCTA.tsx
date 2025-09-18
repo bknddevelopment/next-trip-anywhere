@@ -10,7 +10,7 @@ interface LocationCTAProps {
 
 export default function LocationCTA({
   city,
-  urgencyMessage = 'LIMITED TIME: Save up to $500 on departures',
+  urgencyMessage = 'LIMITED TIME: Exclusive deals on departures',
 }: LocationCTAProps) {
   return (
     <section className="py-16 bg-warm-50">

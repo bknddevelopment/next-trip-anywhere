@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { BlogPostCard } from '@/components/blog/BlogPostCard'
-import { NewsletterSignup } from '@/components/blog/NewsletterSignup'
 import { blogPosts } from '@/lib/data/blog-posts'
 import { BlogCategory } from '@/lib/types/blog'
 
@@ -98,11 +97,6 @@ export default function BlogPage() {
             </button>
           </nav>
         </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="container mx-auto px-4 pb-12">
-        <NewsletterSignup />
       </section>
 
       {/* Popular Tags */}

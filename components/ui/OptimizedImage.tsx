@@ -33,13 +33,28 @@ export default function OptimizedImage({ src, alt, ...props }: OptimizedImagePro
     // Use runtime base path detection for fallback
     const fallbackSrc = typeof window !== 'undefined' ? normalizePath(src, true) : src
 
+    // Filter out Next.js-specific props that shouldn't be passed to regular img tag
+    const {
+      fill,
+      priority,
+      placeholder,
+      blurDataURL,
+      quality,
+      loader,
+      unoptimized,
+      onLoad,
+      onLoadingComplete,
+      sizes,
+      ...imgProps
+    } = props as any
+
     return (
       <img
         src={fallbackSrc}
         alt={alt}
-        {...(props as any)}
+        {...imgProps}
         style={{
-          ...(props.fill
+          ...(fill
             ? {
                 position: 'absolute',
                 height: '100%',

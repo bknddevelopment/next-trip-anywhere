@@ -4,7 +4,6 @@ import { Suspense } from 'react'
 import HeroSectionPerformant from '@/components/home/HeroSectionPerformant'
 import { Metadata } from 'next'
 import ExitIntentPopup from '@/components/marketing/ExitIntentPopup'
-import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
 import { DetailedTrustSection } from '@/components/ui/TrustSignals'
 
 // Lazy load heavy components with optimized settings
@@ -365,24 +364,6 @@ export default function HomePage() {
           </div>
         </div>
       </article>
-
-      {/* Newsletter Signup */}
-      <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <InlineNewsletterSignup
-              title="Stay Updated on Travel Opportunities"
-              subtitle="Join our newsletter for travel tips and destination insights"
-              leadMagnet={{
-                title: 'Travel Planning Guide',
-                description: 'FREE guide with helpful tips for planning your next vacation',
-                downloadUrl: '/downloads/travel-planning-guide.pdf',
-                type: 'pdf',
-              }}
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Detailed Trust Section */}
       <DetailedTrustSection />

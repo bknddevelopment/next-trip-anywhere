@@ -11,8 +11,8 @@ const cruiseDeals = [
     destination: '7-Night Eastern Caribbean',
     departure: 'Miami, FL',
     dates: 'Multiple Dates Available',
-    price: 'From $599',
-    perks: ['$100 Onboard Credit', 'Free Drinks Package'],
+    price: 'Special Group Rate',
+    perks: ['Onboard Credit Included', 'Complimentary Drinks Package'],
     image: 'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=800&q=80',
   },
   {
@@ -21,7 +21,7 @@ const cruiseDeals = [
     destination: '5-Night Bahamas',
     departure: 'Fort Lauderdale, FL',
     dates: 'Feb - Apr 2025',
-    price: 'From $399',
+    price: 'Exceptional Value',
     perks: ['Free WiFi', 'Specialty Dining Credit'],
     image: 'https://images.unsplash.com/photo-1580541631950-7282082b53ce?w=800&q=80',
   },
@@ -31,7 +31,7 @@ const cruiseDeals = [
     destination: '7-Night Bermuda',
     departure: 'New York, NY',
     dates: 'May - Sept 2025',
-    price: 'From $749',
+    price: 'Best Available Rate',
     perks: ['Free at Sea Package', '3rd/4th Guest Free'],
     image: 'https://images.unsplash.com/photo-1517137879134-74be46c6a267?w=800&q=80',
   },
@@ -41,7 +41,7 @@ const cruiseDeals = [
     destination: '10-Night Mediterranean',
     departure: 'Boston, MA',
     dates: 'June - Aug 2025',
-    price: 'From $1,299',
+    price: 'Premium Group Rate',
     perks: ['All Included Package', 'Shore Excursion Credit'],
     image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',
   },
@@ -51,7 +51,7 @@ const cruiseDeals = [
     destination: '4-Night Bahamas',
     departure: 'Port Canaveral, FL',
     dates: 'Year Round',
-    price: 'From $999',
+    price: 'Exclusive Family Rate',
     perks: ['Character Breakfast', 'Kids Sail Free'],
     image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80',
   },
@@ -61,7 +61,7 @@ const cruiseDeals = [
     destination: '14-Night Alaska',
     departure: 'New York, NY',
     dates: 'May - Sept 2025',
-    price: 'From $1,599',
+    price: 'Special Alaska Pricing',
     perks: ['Princess Plus Package', 'Balcony Upgrade'],
     image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
   },
@@ -82,8 +82,8 @@ export default function CruiseDeals() {
             Featured <span className="text-gradient">Cruise Deals</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Exclusive rates and perks for East Coast travelers. All prices are per person, double
-            occupancy.
+            Exclusive rates and perks for East Coast travelers. Contact us for personalized pricing
+            and special group rates.
           </p>
         </motion.div>
 
@@ -136,15 +136,15 @@ export default function CruiseDeals() {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-2xl font-bold text-primary-500">{cruise.price}</p>
-                    <p className="text-xs text-gray-500">per person</p>
+                    <p className="text-lg font-bold text-primary-500">{cruise.price}</p>
+                    <p className="text-sm text-gray-600">Contact for details</p>
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
-                    View Details
+                    Get Quote
                   </motion.button>
                 </div>
               </div>

@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import CruiseHero from '@/components/services/CruiseHero'
-import CruiseSearch from '@/components/services/CruiseSearch'
 import CruiseDeals from '@/components/services/CruiseDeals'
 import {
   ServiceSchema,
@@ -16,13 +15,13 @@ import { getDealsByCategory, getUpcomingEvents } from '@/lib/data/travel-deals'
 import { Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Cruise Deals from All US Ports | Caribbean Cruises from $299 | Next Trip Anywhere',
+  title: 'Cruise Deals from All US Ports | Caribbean Cruises | Next Trip Anywhere',
   description:
-    'Book cruises from all major US ports - Miami, NYC, LA, Seattle, and more. Free upgrades, onboard credits, exclusive group rates. Caribbean, Bahamas, Alaska cruises. CLIA certified agents. Save up to 50%!',
+    'Book cruises from all major US ports - Miami, NYC, LA, Seattle, and more. Complimentary upgrades, onboard credits, exclusive group rates. Caribbean, Bahamas, Alaska cruises. CLIA certified agents with best available rates!',
   keywords:
     'cruise deals, Caribbean cruises, Alaska cruises, cruises from Miami, cruises from LA, cruises from Seattle, NYC cruises, cheap cruises, cruise packages, Royal Caribbean, Carnival, Norwegian',
   openGraph: {
-    title: 'Cruise Deals from All US Ports | Save up to 50%',
+    title: 'Cruise Deals from All US Ports | Exclusive Group Rates',
     description:
       'Expert cruise specialists with free cabin upgrades and onboard credits. Book your dream cruise today!',
     url: 'https://nexttripanywhere.com/cruises',
@@ -58,7 +57,7 @@ const cruiseFAQs = [
   {
     question: 'What cruise perks can travel agents provide?',
     answer:
-      'As certified cruise specialists, we can provide free cabin upgrades, onboard credits ($50-$500), complimentary specialty dining, free beverage packages, prepaid gratuities, and exclusive group rates that save you 20-50% off published prices.',
+      'As certified cruise specialists, we can provide complimentary cabin upgrades, valuable onboard credits, complimentary specialty dining, beverage packages, prepaid gratuities, and exclusive group rates with significant savings off published prices.',
   },
   {
     question: 'Which cruise lines depart from US ports nationwide?',
@@ -120,14 +119,12 @@ export default function CruisesPage() {
           <div className="flex flex-wrap justify-center items-center gap-4 text-center">
             <span className="font-bold text-lg">TODAY ONLY:</span>
             <span className="bg-white/20 px-3 py-1 rounded-full">FREE Balcony Upgrade</span>
-            <span className="bg-white/20 px-3 py-1 rounded-full">$300 Onboard Credit</span>
+            <span className="bg-white/20 px-3 py-1 rounded-full">Generous Onboard Credit</span>
             <span className="bg-white/20 px-3 py-1 rounded-full">Free Beverage Package</span>
             <span className="animate-pulse font-semibold">Call Now: 1-833-874-1019</span>
           </div>
         </div>
       </section>
-
-      <CruiseSearch />
 
       {/* Cruise Line Partners */}
       <section className="py-12 bg-gray-50">
@@ -171,15 +168,14 @@ export default function CruisesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-8">
             <div className="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 animate-bounce">
-              48-HOUR FLASH SALE: Extra $200 OFF Per Cabin
+              LIMITED TIME: Exclusive Savings Per Cabin
             </div>
             <h2 className="text-3xl font-bold text-navy mb-4">
               Get Exclusive Cruise Perks You Can&apos;t Find Online
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              As certified cruise specialists, we secure perks worth $500-$2000 that aren&apos;t
-              available when booking direct. Plus, we handle everything from dining to shore
-              excursions.
+              As certified cruise specialists, we secure valuable perks that aren&apos;t available
+              when booking direct. Plus, we handle everything from dining to shore excursions.
             </p>
 
             {/* Perks Grid */}
@@ -205,7 +201,7 @@ export default function CruisesPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Onboard credits ($50-$500)</span>
+                    <span>Valuable onboard credits included</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -397,7 +393,7 @@ export default function CruisesPage() {
               </li>
               <li>
                 <strong>Added Value:</strong> Onboard credits, beverage packages, and dining that
-                can total $500-$2000 in value
+                provide exceptional value
               </li>
               <li>
                 <strong>Expert Guidance:</strong> We know which cabins to avoid, best dining times,

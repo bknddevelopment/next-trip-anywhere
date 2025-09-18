@@ -6,9 +6,42 @@ import FlightSearch from '../FlightSearch'
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
-    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
+    div: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <div {...props}>{children}</div>,
+    form: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <form {...props}>{children}</form>,
+    button: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <button {...props}>{children}</button>,
   },
   AnimatePresence: ({ children }: any) => children,
 }))
@@ -33,7 +66,7 @@ describe('FlightSearch', () => {
       // Check for input fields
       const fromToInputs = screen.getAllByPlaceholderText(/City or Airport Code/i)
       expect(fromToInputs).toHaveLength(2)
-      
+
       // Check for labels
       expect(screen.getByText('From')).toBeInTheDocument()
       expect(screen.getByText('To')).toBeInTheDocument()
@@ -117,9 +150,11 @@ describe('FlightSearch', () => {
       render(<FlightSearch />)
 
       // Check that passenger select exists with options
-      const passengerSelect = screen.getByText('Passengers & Class').parentElement?.querySelector('select')
+      const passengerSelect = screen
+        .getByText('Passengers & Class')
+        .parentElement?.querySelector('select')
       expect(passengerSelect).toBeInTheDocument()
-      
+
       // Check for options
       const options = passengerSelect?.querySelectorAll('option')
       expect(options?.length).toBeGreaterThan(0)
@@ -160,7 +195,9 @@ describe('FlightSearch', () => {
       render(<FlightSearch />)
 
       // Check direct flights checkbox
-      const directFlightsCheckbox = screen.getByText(/Direct flights only/i).parentElement?.querySelector('input[type="checkbox"]')
+      const directFlightsCheckbox = screen
+        .getByText(/Direct flights only/i)
+        .parentElement?.querySelector('input[type="checkbox"]')
       if (directFlightsCheckbox) {
         await user.click(directFlightsCheckbox)
         expect(directFlightsCheckbox).toBeChecked()
@@ -208,7 +245,9 @@ describe('FlightSearch', () => {
       render(<FlightSearch />)
 
       // Set departure date
-      const dateInputs = document.querySelectorAll('input[type="date"]') as NodeListOf<HTMLInputElement>
+      const dateInputs = document.querySelectorAll(
+        'input[type="date"]'
+      ) as NodeListOf<HTMLInputElement>
       if (dateInputs[0]) {
         await user.clear(dateInputs[0])
         await user.type(dateInputs[0], '2024-12-25')
@@ -222,7 +261,10 @@ describe('FlightSearch', () => {
       render(<FlightSearch />)
 
       // Check for form structure
-      const form = document.querySelector('form') || document.querySelector('[role="form"]') || document.querySelector('div')
+      const form =
+        document.querySelector('form') ||
+        document.querySelector('[role="form"]') ||
+        document.querySelector('div')
       expect(form).toBeInTheDocument()
     })
 
@@ -232,7 +274,7 @@ describe('FlightSearch', () => {
 
       // Tab through form elements
       await user.tab()
-      
+
       // Check that some element has focus
       expect(document.activeElement).not.toBe(document.body)
     })

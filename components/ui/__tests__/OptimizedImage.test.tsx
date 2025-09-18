@@ -4,23 +4,50 @@ import OptimizedImage from '../OptimizedImage'
 
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
-  default: vi.fn(({ src, alt, onError, priority, fill, placeholder, blurDataURL, quality, ...props }) => {
-    // Store the mock function for testing
-    if ((global as any).mockImageOnError) {
-      ;(global as any).mockImageOnError = onError
+  default: vi.fn(
+    ({
+      src,
+      alt,
+      onError,
+      priority,
+      fill,
+      placeholder,
+      blurDataURL,
+      quality,
+      loader,
+      unoptimized,
+      onLoad,
+      onLoadingComplete,
+      sizes,
+      ...props
+    }) => {
+      // Store the mock function for testing
+      if ((global as any).mockImageOnError) {
+        ;(global as any).mockImageOnError = onError
+      }
+      // Filter out Next.js specific props that shouldn't be passed to DOM
+      const imgProps: any = { ...props, src, alt, 'data-testid': 'next-image' }
+
+      // Add these as data attributes for testing if needed (not as boolean attributes)
+      if (priority) {
+        imgProps['data-priority'] = 'true'
+      }
+      if (fill) {
+        imgProps['data-fill'] = 'true'
+      }
+      if (placeholder) {
+        imgProps['data-placeholder'] = placeholder
+      }
+      if (blurDataURL) {
+        imgProps['data-blurdataurl'] = blurDataURL
+      }
+      if (quality) {
+        imgProps['data-quality'] = quality.toString()
+      }
+
+      return <img {...imgProps} />
     }
-    // Filter out Next.js specific props that shouldn't be passed to DOM
-    const imgProps: any = { ...props, src, alt, 'data-testid': 'next-image' }
-    
-    // Add these as data attributes for testing if needed
-    if (priority) imgProps['data-priority'] = 'true'
-    if (fill) imgProps['data-fill'] = 'true'
-    if (placeholder) imgProps['placeholder'] = placeholder
-    if (blurDataURL) imgProps['blurDataURL'] = blurDataURL
-    if (quality) imgProps['quality'] = quality
-    
-    return <img {...imgProps} />
-  }),
+  ),
 }))
 
 // Mock the basePath utility
@@ -270,7 +297,7 @@ describe('OptimizedImage Component', () => {
       render(<OptimizedImage src="/quality-image.jpg" alt="Quality Image" quality={90} />)
 
       const image = screen.getByTestId('next-image')
-      expect(image).toHaveAttribute('quality', '90')
+      expect(image).toHaveAttribute('data-quality', '90')
     })
 
     it('should handle placeholder and blurDataURL props', () => {
@@ -286,8 +313,8 @@ describe('OptimizedImage Component', () => {
       )
 
       const image = screen.getByTestId('next-image')
-      expect(image).toHaveAttribute('placeholder', 'blur')
-      expect(image).toHaveAttribute('blurDataURL', blurDataURL)
+      expect(image).toHaveAttribute('data-placeholder', 'blur')
+      expect(image).toHaveAttribute('data-blurdataurl', blurDataURL)
     })
   })
 

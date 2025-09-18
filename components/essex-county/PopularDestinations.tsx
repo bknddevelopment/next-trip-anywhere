@@ -12,19 +12,19 @@ interface PopularDestinationsProps {
 const PopularDestinations: React.FC<PopularDestinationsProps> = React.memo(({ cityName }) => {
   // Static data to prevent re-computation
   const flightRoutes = [
-    { destination: 'Orlando (MCO)', price: 'from $89' },
-    { destination: 'Fort Lauderdale (FLL)', price: 'from $79' },
-    { destination: 'Los Angeles (LAX)', price: 'from $149' },
-    { destination: 'Las Vegas (LAS)', price: 'from $139' },
-    { destination: 'Miami (MIA)', price: 'from $99' },
+    { destination: 'Orlando (MCO)', availability: 'Daily Flights' },
+    { destination: 'Fort Lauderdale (FLL)', availability: 'Multiple Daily' },
+    { destination: 'Los Angeles (LAX)', availability: 'Non-stop Available' },
+    { destination: 'Las Vegas (LAS)', availability: 'Direct Flights' },
+    { destination: 'Miami (MIA)', availability: 'Frequent Service' },
   ]
 
   const cruises = [
-    { name: 'Caribbean (7 days)', price: 'from $599' },
-    { name: 'Bermuda (5 days)', price: 'from $449' },
-    { name: 'Bahamas (3 days)', price: 'from $299' },
-    { name: 'Alaska (7 days)', price: 'from $799' },
-    { name: 'Mediterranean (10 days)', price: 'from $1,299' },
+    { name: 'Caribbean (7 days)', offer: 'Group Rates Available' },
+    { name: 'Bermuda (5 days)', offer: 'Special Promotions' },
+    { name: 'Bahamas (3 days)', offer: 'Last Minute Deals' },
+    { name: 'Alaska (7 days)', offer: 'Premium Packages' },
+    { name: 'Mediterranean (10 days)', offer: 'All-Inclusive Options' },
   ]
 
   return (
@@ -43,7 +43,7 @@ const PopularDestinations: React.FC<PopularDestinationsProps> = React.memo(({ ci
                   {flightRoutes.map((route, idx) => (
                     <li key={idx} className="flex justify-between">
                       <span>{route.destination}</span>
-                      <span className="text-blue-600 font-medium">{route.price}</span>
+                      <span className="text-blue-600 font-medium">{route.availability}</span>
                     </li>
                   ))}
                 </ul>
@@ -55,7 +55,7 @@ const PopularDestinations: React.FC<PopularDestinationsProps> = React.memo(({ ci
                   {cruises.map((cruise, idx) => (
                     <li key={idx} className="flex justify-between">
                       <span>{cruise.name}</span>
-                      <span className="text-blue-600 font-medium">{cruise.price}</span>
+                      <span className="text-blue-600 font-medium">{cruise.offer}</span>
                     </li>
                   ))}
                 </ul>

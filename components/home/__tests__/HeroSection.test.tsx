@@ -13,10 +13,41 @@ vi.mock('next/dynamic', () => ({
 
 // Mock next/image
 vi.mock('next/image', () => ({
-  default: vi.fn(({ src, alt, ...props }) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={alt} {...props} />
-  )),
+  default: vi.fn(
+    ({
+      src,
+      alt,
+      fill,
+      priority,
+      placeholder,
+      blurDataURL,
+      quality,
+      unoptimized,
+      loader,
+      onLoad,
+      onLoadingComplete,
+      sizes,
+      ...props
+    }) => <img src={src} alt={alt} {...props} />
+  ),
+}))
+
+// Mock PerformantImage component
+vi.mock('@/components/ui/PerformantImage', () => ({
+  default: vi.fn(
+    ({
+      src,
+      alt,
+      className,
+      fill,
+      priority,
+      placeholder,
+      blurDataURL,
+      quality,
+      unoptimized,
+      ...props
+    }) => <img src={src} alt={alt} className={className} {...props} />
+  ),
 }))
 
 describe('HeroSection', () => {
@@ -39,8 +70,8 @@ describe('HeroSection', () => {
     // Check for subheading
     expect(screen.getByText(/Expert travel planning/i)).toBeInTheDocument()
 
-    // Check for CTA button
-    expect(screen.getByRole('button', { name: /Start Planning My Trip/i })).toBeInTheDocument()
+    // Check for CTA link (styled as button)
+    expect(screen.getByRole('link', { name: /Start Planning My Trip/i })).toBeInTheDocument()
 
     // Check for scroll indicator
     expect(screen.getByLabelText(/Scroll to search/i)).toBeInTheDocument()
@@ -82,7 +113,10 @@ describe('HeroSection', () => {
     const scrollButton = screen.getByLabelText(/Scroll to search/i)
     fireEvent.click(scrollButton)
 
-    expect(searchSection.scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' })
+    expect(searchSection.scrollIntoView).toHaveBeenCalledWith({
+      behavior: 'smooth',
+      block: 'start',
+    })
 
     // Cleanup
     document.body.removeChild(searchSection)
@@ -129,7 +163,9 @@ describe('HeroSection', () => {
     unmount()
 
     // Either clearInterval or clearTimeout should be called for cleanup
-    expect(clearIntervalSpy.mock.calls.length + clearTimeoutSpy.mock.calls.length).toBeGreaterThan(0)
+    expect(clearIntervalSpy.mock.calls.length + clearTimeoutSpy.mock.calls.length).toBeGreaterThan(
+      0
+    )
 
     clearIntervalSpy.mockRestore()
     clearTimeoutSpy.mockRestore()
@@ -142,9 +178,9 @@ describe('HeroSection', () => {
     const h1 = screen.getByRole('heading', { level: 1 })
     expect(h1).toBeInTheDocument()
 
-    // Check for button accessibility
-    const ctaButton = screen.getByRole('button', { name: /Start Planning My Trip/i })
-    expect(ctaButton).toBeInTheDocument()
+    // Check for link accessibility (CTA is a link, not a button)
+    const ctaLink = screen.getByRole('link', { name: /Start Planning My Trip/i })
+    expect(ctaLink).toBeInTheDocument()
 
     // Check for aria-label on scroll button
     const scrollButton = screen.getByLabelText(/Scroll to search/i)

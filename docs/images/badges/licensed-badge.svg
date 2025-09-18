@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="licensedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7FBF4D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5A9030;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Main circle background -->
+  <circle cx="60" cy="60" r="55" fill="url(#licensedGradient)" filter="url(#shadow)"/>
+
+  <!-- Shield icon -->
+  <path d="M60 25 L75 35 L75 55 C75 65 70 75 60 80 C50 75 45 65 45 55 L45 35 Z"
+        fill="white" stroke="#4A7030" stroke-width="2"/>
+
+  <!-- Checkmark inside shield -->
+  <path d="M52 50 L57 55 L68 44" fill="none" stroke="#4A7030" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Text -->
+  <text x="60" y="95" font-family="Arial, sans-serif" font-size="11" font-weight="bold"
+        text-anchor="middle" fill="white">LICENSED</text>
+  <text x="60" y="108" font-family="Arial, sans-serif" font-size="10"
+        text-anchor="middle" fill="#E8F5E8">& BONDED</text>
+</svg>

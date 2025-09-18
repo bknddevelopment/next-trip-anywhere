@@ -6,7 +6,6 @@ import { BlogPostJsonLd } from '@/components/blog/BlogPostJsonLd'
 import { AuthorProfile } from '@/components/blog/AuthorProfile'
 import { SocialShare } from '@/components/blog/SocialShare'
 import { RelatedPosts } from '@/components/blog/RelatedPosts'
-import { NewsletterSignup } from '@/components/blog/NewsletterSignup'
 import { blogPosts, getPostBySlug, getRelatedPosts } from '@/lib/data/blog-posts'
 import { formatDate } from '@/lib/utils'
 
@@ -242,9 +241,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             </aside>
           </div>
-
-          {/* Newsletter */}
-          <NewsletterSignup />
 
           {/* Related Posts */}
           <RelatedPosts posts={relatedPosts} />

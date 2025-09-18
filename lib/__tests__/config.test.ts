@@ -9,22 +9,22 @@ describe('config utilities', () => {
   })
 
   afterEach(() => {
-    (process.env as any).NODE_ENV = originalNodeEnv
+    ;(process.env as any).NODE_ENV = originalNodeEnv
   })
 
   describe('getBasePath', () => {
     it('should return empty string in development', () => {
-      (process.env as any).NODE_ENV = 'development'
+      ;(process.env as any).NODE_ENV = 'development'
       expect(getBasePath()).toBe('')
     })
 
-    it('should return base path in production', () => {
-      (process.env as any).NODE_ENV = 'production'
-      expect(getBasePath()).toBe('/next-trip-anywhere')
+    it('should return empty string in production (custom domain)', () => {
+      ;(process.env as any).NODE_ENV = 'production'
+      expect(getBasePath()).toBe('') // Custom domain, no base path needed
     })
 
     it('should return empty string in test environment', () => {
-      (process.env as any).NODE_ENV = 'test'
+      ;(process.env as any).NODE_ENV = 'test'
       expect(getBasePath()).toBe('')
     })
   })
@@ -32,7 +32,7 @@ describe('config utilities', () => {
   describe('getAssetPath', () => {
     describe('in development', () => {
       beforeEach(() => {
-        (process.env as any).NODE_ENV = 'development'
+        ;(process.env as any).NODE_ENV = 'development'
       })
 
       it('should handle path with leading slash', () => {
@@ -54,34 +54,34 @@ describe('config utilities', () => {
 
     describe('in production', () => {
       beforeEach(() => {
-        (process.env as any).NODE_ENV = 'production'
+        ;(process.env as any).NODE_ENV = 'production'
       })
 
-      it('should prepend base path with leading slash', () => {
-        expect(getAssetPath('/images/logo.png')).toBe('/next-trip-anywhere/images/logo.png')
+      it('should return path as-is with custom domain', () => {
+        expect(getAssetPath('/images/logo.png')).toBe('/images/logo.png') // Custom domain
       })
 
-      it('should prepend base path and add leading slash', () => {
-        expect(getAssetPath('images/logo.png')).toBe('/next-trip-anywhere/images/logo.png')
+      it('should add leading slash with custom domain', () => {
+        expect(getAssetPath('images/logo.png')).toBe('/images/logo.png') // Custom domain
       })
 
       it('should handle empty string', () => {
-        expect(getAssetPath('')).toBe('/next-trip-anywhere/')
+        expect(getAssetPath('')).toBe('/') // Custom domain
       })
 
       it('should handle root path', () => {
-        expect(getAssetPath('/')).toBe('/next-trip-anywhere/')
+        expect(getAssetPath('/')).toBe('/') // Custom domain
       })
 
       it('should handle complex paths', () => {
-        expect(getAssetPath('/api/v1/users/123')).toBe('/next-trip-anywhere/api/v1/users/123')
+        expect(getAssetPath('/api/v1/users/123')).toBe('/api/v1/users/123') // Custom domain
       })
     })
   })
 
   describe('config object', () => {
     it('should have correct values in development', async () => {
-      (process.env as any).NODE_ENV = 'development'
+      ;(process.env as any).NODE_ENV = 'development'
       // Need to re-import to get new values
       vi.resetModules()
       const configModule = await import('../config')
@@ -92,18 +92,18 @@ describe('config utilities', () => {
     })
 
     it('should have correct values in production', async () => {
-      (process.env as any).NODE_ENV = 'production'
+      ;(process.env as any).NODE_ENV = 'production'
       // Need to re-import to get new values
       vi.resetModules()
       const configModule = await import('../config')
       const { config: prodConfig } = configModule
 
-      expect(prodConfig.basePath).toBe('/next-trip-anywhere')
+      expect(prodConfig.basePath).toBe('') // Custom domain
       expect(prodConfig.isProd).toBe(true)
     })
 
     it('should have correct values in test', async () => {
-      (process.env as any).NODE_ENV = 'test'
+      ;(process.env as any).NODE_ENV = 'test'
       // Need to re-import to get new values
       vi.resetModules()
       const configModule = await import('../config')

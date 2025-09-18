@@ -6,7 +6,6 @@ import FAQSection, { flightsFAQs } from '@/components/faq/FAQSection'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import { FlashSaleUrgency } from '@/components/marketing/UrgencyBanner'
 import { TrustBadges } from '@/components/ui/TrustSignals'
-import { InlineNewsletterSignup } from '@/components/marketing/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Cheap Flights Nationwide | Save 40% on Airfare | Next Trip Anywhere',
@@ -193,24 +192,6 @@ export default function FlightsPage() {
       </section>
 
       <FlightDeals />
-
-      {/* Newsletter Signup with Lead Magnet */}
-      <section className="py-16 bg-warm-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <InlineNewsletterSignup
-              title="Get Flight Deals & Travel Tips"
-              subtitle="Join our newsletter for travel insights and destination information"
-              leadMagnet={{
-                title: 'Flight Booking Guide',
-                description: 'FREE guide with helpful tips for booking flights',
-                downloadUrl: '/downloads/flight-booking-guide.pdf',
-                type: 'pdf',
-              }}
-            />
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <FAQSection

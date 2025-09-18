@@ -10,8 +10,8 @@ const packageDeals = [
     title: 'All-Inclusive Beach Paradise',
     image: 'https://images.unsplash.com/photo-1510097467424-192d713fd8b2?w=800&q=80',
     duration: '5 Days / 4 Nights',
-    price: 'From $799',
-    savings: 'Save $400',
+    offer: 'Limited Time Offer',
+    badge: 'Popular Choice',
     includes: [
       'Round-trip flights',
       'All-inclusive resort',
@@ -24,8 +24,8 @@ const packageDeals = [
     title: 'Disney Magic Package',
     image: 'https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=800&q=80',
     duration: '6 Days / 5 Nights',
-    price: 'From $1,299',
-    savings: 'Save $500',
+    offer: 'Special Group Rates',
+    badge: 'Family Favorite',
     includes: ['Flights from NYC/BOS', 'Disney Resort hotel', 'Park tickets', 'Meal plan'],
   },
   {
@@ -33,17 +33,17 @@ const packageDeals = [
     title: 'Vegas VIP Experience',
     image: 'https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?w=800&q=80',
     duration: '4 Days / 3 Nights',
-    price: 'From $599',
-    savings: 'Save $250',
-    includes: ['Round-trip flights', 'Strip hotel', 'Show tickets', '$100 casino credit'],
+    offer: 'Exclusive Deal',
+    badge: 'Best Value',
+    includes: ['Round-trip flights', 'Strip hotel', 'Show tickets', 'Resort credit included'],
   },
   {
     destination: 'Hawaii',
     title: 'Maui Paradise Escape',
     image: 'https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800&q=80',
     duration: '7 Days / 6 Nights',
-    price: 'From $1,799',
-    savings: 'Save $600',
+    offer: 'Premium Package',
+    badge: 'Top Rated',
     includes: ['Flights from East Coast', 'Ocean view room', 'Car rental', 'Luau dinner'],
   },
   {
@@ -51,8 +51,8 @@ const packageDeals = [
     title: 'European Romance',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80',
     duration: '9 Days / 8 Nights',
-    price: 'From $2,299',
-    savings: 'Save $800',
+    offer: 'All-Inclusive',
+    badge: 'Luxury Experience',
     includes: ['International flights', '4-star hotels', 'Train between cities', 'Breakfast daily'],
   },
   {
@@ -60,8 +60,8 @@ const packageDeals = [
     title: 'Luxury Beach Retreat',
     image: 'https://images.unsplash.com/photo-1516370873344-fb7c61054fa9?w=800&q=80',
     duration: '5 Days / 4 Nights',
-    price: 'From $1,499',
-    savings: 'Save $500',
+    offer: 'Premium Getaway',
+    badge: 'Honeymoon Special',
     includes: ['Direct flights', 'Beachfront suite', 'All meals', 'Water sports'],
   },
 ]
@@ -98,7 +98,7 @@ export default function PackageDeals() {
               <div className="relative h-48">
                 <Image src={pkg.image} alt={pkg.destination} fill className="object-cover" />
                 <div className="absolute top-4 left-4 bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {pkg.savings}
+                  {pkg.badge}
                 </div>
               </div>
 
@@ -130,8 +130,8 @@ export default function PackageDeals() {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-2xl font-bold text-primary-500">{pkg.price}</p>
-                    <p className="text-xs text-gray-500">per person</p>
+                    <p className="text-lg font-bold text-primary-500">{pkg.offer}</p>
+                    <p className="text-sm text-gray-600">Get personalized quote</p>
                   </div>
                   <motion.a
                     href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
@@ -141,7 +141,7 @@ export default function PackageDeals() {
                     whileTap={{ scale: 0.95 }}
                     className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
-                    Book Now
+                    Get Quote
                   </motion.a>
                 </div>
               </div>

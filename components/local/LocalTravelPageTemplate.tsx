@@ -77,12 +77,12 @@ export default function LocalTravelPageTemplate({
   ]
 
   const popularDestinations = [
-    { name: 'Cancun', price: 799, image: '/images/destinations/cancun-beach.jpg' },
-    { name: 'Paris', price: 1299, image: '/images/destinations/paris-eiffel.jpg' },
-    { name: 'Dubai', price: 1599, image: '/images/destinations/dubai-skyline.jpg' },
-    { name: 'Hawaii', price: 999, image: '/images/destinations/hawaii-beach.jpg' },
-    { name: 'Italy', price: 1399, image: '/images/destinations/italy-coast.jpg' },
-    { name: 'Japan', price: 1799, image: '/images/destinations/japan-temple.jpg' },
+    { name: 'Cancun', tag: 'All-Inclusive', image: '/images/destinations/cancun-beach.jpg' },
+    { name: 'Paris', tag: 'Romance Package', image: '/images/destinations/paris-eiffel.jpg' },
+    { name: 'Dubai', tag: 'Luxury Experience', image: '/images/destinations/dubai-skyline.jpg' },
+    { name: 'Hawaii', tag: 'Island Paradise', image: '/images/destinations/hawaii-beach.jpg' },
+    { name: 'Italy', tag: 'Cultural Journey', image: '/images/destinations/italy-coast.jpg' },
+    { name: 'Japan', tag: 'Adventure Tour', image: '/images/destinations/japan-temple.jpg' },
   ]
 
   return (
@@ -276,7 +276,7 @@ export default function LocalTravelPageTemplate({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-2xl font-bold">{dest.name}</h3>
-                    <p className="text-lg">From ${dest.price}/person</p>
+                    <p className="text-lg">{dest.tag}</p>
                   </div>
                 </div>
               </div>

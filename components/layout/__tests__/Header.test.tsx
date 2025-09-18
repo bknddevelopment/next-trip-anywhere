@@ -5,9 +5,22 @@ import Header from '../Header'
 
 // Mock the OptimizedImage component
 vi.mock('@/components/ui/OptimizedImage', () => ({
-  default: ({ src, alt, className, ...props }: any) => (
-    <img src={src} alt={alt} className={className} {...props} />
-  ),
+  default: ({
+    src,
+    alt,
+    className,
+    fill,
+    priority,
+    placeholder,
+    blurDataURL,
+    quality,
+    unoptimized,
+    loader,
+    onLoad,
+    onLoadingComplete,
+    sizes,
+    ...props
+  }: any) => <img src={src} alt={alt} className={className} {...props} />,
 }))
 
 // Mock the site config
@@ -20,9 +33,42 @@ vi.mock('@/config/site', () => ({
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
   motion: {
-    header: ({ children, ...props }: any) => <header {...props}>{children}</header>,
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
+    header: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <header {...props}>{children}</header>,
+    div: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <div {...props}>{children}</div>,
+    button: ({
+      children,
+      whileHover,
+      whileTap,
+      whileInView,
+      initial,
+      animate,
+      exit,
+      transition,
+      viewport,
+      ...props
+    }: any) => <button {...props}>{children}</button>,
   },
   AnimatePresence: ({ children }: any) => children,
 }))

@@ -26,19 +26,6 @@ Each version follows this pattern:
 
 ## [Unreleased] - Work in Progress 🚧
 
-### Added
-
-- Comprehensive documentation suite
-  - README.md with complete setup guide
-  - ARCHITECTURE.md with system design
-  - API_DOCUMENTATION.md with endpoint details
-  - CHANGELOG.md (this file!)
-  - DEPLOYMENT.md with deployment instructions
-- Testing infrastructure with Vitest
-- Environment configuration system
-- Performance monitoring components
-- Error boundary for better error handling
-
 ### Planned
 
 - Complete test coverage (target: 80%)
@@ -48,6 +35,120 @@ Each version follows this pattern:
 - Service worker for offline support
 - Advanced search functionality
 - User preference system
+
+---
+
+## [2.0.0] - 2025-09-18
+
+### 🎉 Major Release: Essex County SEO Expansion
+
+This release represents a massive expansion of our local SEO presence with 220+ new pages, improved sitemap generation, and critical bug fixes.
+
+### Added
+
+#### 📍 Local SEO Pages (220+ New Pages)
+
+- **Essex County Municipality Pages**: Complete coverage of 22 municipalities
+  - Belleville, Bloomfield, Caldwell, Cedar Grove, East Orange
+  - Essex Fells, Fairfield, Glen Ridge, Irvington, Livingston
+  - Maplewood, Millburn, Montclair, Newark, North Caldwell
+  - Nutley, Orange, Roseland, South Orange, Verona
+  - West Caldwell, West Orange
+
+- **Service-Specific Pages**: 10 services per municipality
+  - Airport Transfers
+  - Corporate Travel
+  - Cruise Transfers
+  - Group Travel
+  - Medical Appointments
+  - School Transportation
+  - Special Events
+  - Wedding Transportation
+  - Wine Tours & Day Trips
+
+- **Travel-From Pages**: Mirror structure for better search coverage
+  - Pattern: `/travel-from-[city]/[service]`
+  - Complete service offerings from each location
+
+#### 📝 Blog Content
+
+- New blog posts with local focus:
+  - "Best Time to Book Flights from Newark Airport"
+  - "Coolcations: Beat the Heat Fall Destinations from Newark Airport"
+  - "Essex County Corporate Travel Solutions"
+  - "Essex County School Break Travel Guide 2025"
+  - "Newark Airport Travel Tips from Local Experts"
+  - "Top 10 Destinations for Essex County Families"
+
+#### 🔧 Technical Improvements
+
+- **Dynamic Sitemap Generation**: Automatic inclusion of all pages
+- **Structured Data**: JSON-LD schema for local business
+- **SEO Metadata**: Dynamic generation for all pages
+- **Performance Monitoring**: Resource hints and optimization components
+- **Error Boundaries**: Better error handling and recovery
+
+### Changed
+
+#### Infrastructure Updates
+
+- **Sitemap Generation**: Migrated from static to dynamic generation
+  - Old: Manual sitemap.xml in public folder (23 URLs)
+  - New: Dynamic app/sitemap.ts (222+ URLs)
+- **Build Process**: Optimized for larger page count
+  - Successfully generates 237 static pages
+  - Improved build performance despite larger scope
+- **SEO Configuration**: Enhanced metadata generation
+  - Dynamic title and description for all pages
+  - Location-specific keywords and content
+
+### Fixed
+
+#### Critical Fixes
+
+- ✅ **Sitemap Issues**:
+  - Removed duplicate static sitemap from public folder
+  - Fixed dynamic sitemap to include all 222+ pages
+  - Resolved sitemap generation for blog and location pages
+
+- ✅ **Build Errors**:
+  - Fixed static export configuration
+  - Resolved path issues in production
+  - Fixed image path resolution for GitHub Pages
+
+- ✅ **SEO Problems**:
+  - Added missing meta descriptions
+  - Fixed canonical URL generation
+  - Improved structured data implementation
+
+### Security
+
+#### Identified Issues (To Be Addressed)
+
+- ⚠️ **Critical**: Exposed .env.example file in repository
+- ⚠️ **Critical**: Unprotected API routes need authentication
+- ℹ️ **Info**: Missing security headers (CSP, HSTS)
+- ℹ️ **Info**: Form validation improvements needed
+
+### Performance
+
+#### Current Metrics
+
+- **Build Size**:
+  - Total JS: ~900KB (needs optimization)
+  - Largest chunks: 200-250KB each
+- **Page Generation**: 237 pages in ~45 seconds
+- **Static HTML**: All pages pre-rendered
+
+### Known Issues
+
+- **ESLint Warnings**: 400+ unused variable warnings in generated pages
+- **Bundle Size**: JavaScript bundles exceed recommended size
+- **Missing Assets**:
+  - OG images not configured
+  - Google/Bing verification codes needed
+- **Theme Violations**: 85 design token inconsistencies
+- **TypeScript**: Some type definitions need improvement
 
 ---
 
@@ -204,11 +305,12 @@ This version represents a complete rebuild of the Next Trip Anywhere website wit
 
 ## Version History Summary
 
-| Version | Date       | Description                      |
-| ------- | ---------- | -------------------------------- |
-| 1.0.0   | 2025-09-01 | Complete rebuild with Next.js 15 |
-| 0.5.0   | 2024-12-15 | GitHub Pages deployment          |
-| 0.1.0   | 2024-11-01 | Initial release                  |
+| Version | Date       | Description                             |
+| ------- | ---------- | --------------------------------------- |
+| 2.0.0   | 2025-09-18 | Essex County SEO expansion (220+ pages) |
+| 1.0.0   | 2025-09-01 | Complete rebuild with Next.js 15        |
+| 0.5.0   | 2024-12-15 | GitHub Pages deployment                 |
+| 0.1.0   | 2024-11-01 | Initial release                         |
 
 ---
 
@@ -341,11 +443,12 @@ Example:
 
 ### Currently Supported Versions
 
-| Version | Status         | Support Until |
-| ------- | -------------- | ------------- |
-| 1.0.x   | ✅ Active      | December 2026 |
-| 0.5.x   | ⚠️ Maintenance | March 2025    |
-| 0.1.x   | ❌ End of Life | -             |
+| Version | Status         | Support Until  |
+| ------- | -------------- | -------------- |
+| 2.0.x   | ✅ Active      | September 2026 |
+| 1.0.x   | ⚠️ Maintenance | March 2026     |
+| 0.5.x   | ❌ End of Life | -              |
+| 0.1.x   | ❌ End of Life | -              |
 
 ### Getting Help
 
@@ -395,7 +498,8 @@ Thank you to all our contributors! [See full list](https://github.com/bknddevelo
 
 **Remember**: Every change is an improvement, and every version makes the website better for our users! 🚀
 
-[Unreleased]: https://github.com/bknddevelopment/next-trip-anywhere/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/bknddevelopment/next-trip-anywhere/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/bknddevelopment/next-trip-anywhere/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/bknddevelopment/next-trip-anywhere/releases/tag/v1.0.0
 [0.5.0]: https://github.com/bknddevelopment/next-trip-anywhere/releases/tag/v0.5.0
 [0.1.0]: https://github.com/bknddevelopment/next-trip-anywhere/releases/tag/v0.1.0

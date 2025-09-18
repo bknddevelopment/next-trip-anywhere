@@ -13,14 +13,17 @@ import toast from 'react-hot-toast'
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().regex(/^[+]?[1-9][\d]{0,15}$/, 'Please enter a valid phone number').optional(),
+  phone: z
+    .string()
+    .regex(/^[+]?[1-9][\d]{0,15}$/, 'Please enter a valid phone number')
+    .optional(),
   tripType: z.enum(['flight', 'cruise', 'package', 'other'], {
     required_error: 'Please select a trip type',
   }),
   destination: z.string().min(2, 'Please enter a destination'),
   departureDate: z.string().min(1, 'Please select a departure date'),
   travelers: z.string().min(1, 'Please enter number of travelers'),
-  budget: z.enum(['under-1000', '1000-3000', '3000-5000', '5000-10000', 'over-10000']).optional(),
+  travelStyle: z.enum(['budget', 'comfort', 'premium', 'luxury']).optional(),
   message: z.string().min(10, 'Please provide more details about your trip'),
   contactPreference: z.enum(['email', 'phone', 'either']).optional().default('either'),
   newsletter: z.boolean().default(false),
@@ -34,16 +37,11 @@ type ContactFormData = z.infer<typeof contactFormSchema>
 export default function ContactFormWithAnalytics() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasStarted, setHasStarted] = useState(false)
-  
+
   // Analytics hooks
-  const {
-    trackFormStart,
-    trackFormProgress,
-    trackFormSubmit,
-    trackFormError,
-    trackFormAbandon,
-  } = useFormAnalytics('contact_form')
-  
+  const { trackFormStart, trackFormProgress, trackFormSubmit, trackFormError, trackFormAbandon } =
+    useFormAnalytics('contact_form')
+
   const { trackPhoneCall, trackEmailClick } = useInteractionAnalytics()
 
   // React Hook Form setup
@@ -59,7 +57,7 @@ export default function ContactFormWithAnalytics() {
     defaultValues: {
       contactPreference: 'either',
       newsletter: false,
-    }
+    },
   })
 
   // Watch form values for progress tracking
@@ -122,31 +120,29 @@ export default function ContactFormWithAnalytics() {
         trip_type: data.tripType,
         destination: data.destination,
         travelers_count: parseInt(data.travelers),
-        budget_range: data.budget || 'not_specified',
+        travel_style: data.travelStyle || 'not_specified',
         contact_preference: data.contactPreference,
         newsletter_signup: data.newsletter,
-        estimated_value: getBudgetValue(data.budget),
       })
 
       // Track as conversion
       trackConversion({
         type: 'form_submit',
-        value: getBudgetValue(data.budget),
+        value: 0,
         form_data: {
           trip_type: data.tripType,
           destination: data.destination,
-          budget_range: data.budget,
+          travel_style: data.travelStyle,
           travelers: data.travelers,
-        }
+        },
       })
 
-      toast.success('Thank you! We\'ll contact you soon with personalized travel options.')
+      toast.success("Thank you! We'll contact you soon with personalized travel options.")
       reset()
       setHasStarted(false)
-      
     } catch (error) {
       console.error('Form submission error:', error)
-      
+
       // Track form error
       trackFormError({
         error_type: 'submission_failed',
@@ -172,7 +168,9 @@ export default function ContactFormWithAnalytics() {
     <div className="bg-white rounded-2xl shadow-xl p-8">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Get Your Personalized Quote</h2>
-        <p className="text-gray-600">Tell us about your dream trip and we'll create the perfect itinerary for you</p>
+        <p className="text-gray-600">
+          Tell us about your dream trip and we'll create the perfect itinerary for you
+        </p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -191,9 +189,7 @@ export default function ContactFormWithAnalytics() {
               }`}
               placeholder="Enter your full name"
             />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-            )}
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
           </div>
 
           <div>
@@ -209,9 +205,7 @@ export default function ContactFormWithAnalytics() {
               }`}
               placeholder="your@email.com"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-            )}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
         </div>
 
@@ -230,9 +224,7 @@ export default function ContactFormWithAnalytics() {
               }`}
               placeholder="+1 (555) 123-4567"
             />
-            {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-            )}
+            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
           </div>
 
           <div>
@@ -297,7 +289,7 @@ export default function ContactFormWithAnalytics() {
           </div>
         </div>
 
-        {/* Travelers and Budget */}
+        {/* Travelers and Travel Style */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="travelers" className="block text-sm font-medium text-gray-700 mb-2">
@@ -323,20 +315,19 @@ export default function ContactFormWithAnalytics() {
           </div>
 
           <div>
-            <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-              Budget Range (per person)
+            <label htmlFor="travelStyle" className="block text-sm font-medium text-gray-700 mb-2">
+              Travel Style Preference
             </label>
             <select
-              {...register('budget')}
-              id="budget"
+              {...register('travelStyle')}
+              id="travelStyle"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
             >
-              <option value="">Select budget range</option>
-              <option value="under-1000">Under $1,000</option>
-              <option value="1000-3000">$1,000 - $3,000</option>
-              <option value="3000-5000">$3,000 - $5,000</option>
-              <option value="5000-10000">$5,000 - $10,000</option>
-              <option value="over-10000">Over $10,000</option>
+              <option value="">Select travel style</option>
+              <option value="budget">Budget-Conscious</option>
+              <option value="comfort">Comfort & Value</option>
+              <option value="premium">Premium Experience</option>
+              <option value="luxury">Luxury & Exclusive</option>
             </select>
           </div>
         </div>
@@ -355,9 +346,7 @@ export default function ContactFormWithAnalytics() {
             }`}
             placeholder="Share your preferences, special occasions, activities you enjoy, or any other details that will help us plan your perfect trip..."
           />
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
-          )}
+          {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
         </div>
 
         {/* Contact Preference */}
@@ -442,19 +431,4 @@ export default function ContactFormWithAnalytics() {
       </div>
     </div>
   )
-}
-
-/**
- * Helper function to convert budget range to numeric value for analytics
- */
-function getBudgetValue(budget?: string): number {
-  const budgetMap: Record<string, number> = {
-    'under-1000': 750,
-    '1000-3000': 2000,
-    '3000-5000': 4000,
-    '5000-10000': 7500,
-    'over-10000': 12000,
-  }
-  
-  return budget ? budgetMap[budget] || 0 : 0
 }

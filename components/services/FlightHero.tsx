@@ -35,8 +35,8 @@ export default function FlightHero() {
 
             <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg p-4 shadow-md">
               <Shield className="w-8 h-8 text-primary-500 mx-auto mb-2" />
-              <h3 className="font-semibold text-navy">Price Protection</h3>
-              <p className="text-sm text-gray-600">Free rebooking if prices drop</p>
+              <h3 className="font-semibold text-navy">Travel Protection</h3>
+              <p className="text-sm text-gray-600">Comprehensive travel insurance</p>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg p-4 shadow-md">
