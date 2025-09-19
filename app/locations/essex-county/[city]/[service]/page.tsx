@@ -38,6 +38,15 @@ const ContactSection = dynamic(() => import('@/components/essex-county/ContactSe
   loading: () => <div className="h-64 bg-white animate-pulse" />,
 })
 
+// Comprehensive Newark Airport Transfer component
+const NewarkAirportTransfer = dynamic(
+  () => import('@/components/essex-county/NewarkAirportTransfer'),
+  {
+    loading: () => <div className="min-h-screen bg-gray-50 animate-pulse" />,
+    ssr: true,
+  }
+)
+
 // Generate static params for all city/service combinations
 export async function generateStaticParams() {
   return generateAllCombinations()
@@ -223,6 +232,21 @@ export default async function OptimizedServicePage({ params }: PageParams) {
   const city = getCityBySlug(resolvedParams.city)!
   const service = getServiceBySlug(resolvedParams.service)!
   const serviceContent = getServiceContent(resolvedParams.service as ServiceSlug, city.name)
+
+  // Use comprehensive Newark Airport component for airport transfers
+  if (resolvedParams.service === 'airport-transfers') {
+    return (
+      <>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <main className="min-h-screen">
+          <Suspense fallback={<div className="min-h-screen bg-gray-50 animate-pulse" />}>
+            <NewarkAirportTransfer cityName={city.name} citySlug={city.slug} />
+          </Suspense>
+        </main>
+      </>
+    )
+  }
 
   // Generate schema for SEO
   const localBusinessSchema = generateTownSpecificSchema(city.name)
