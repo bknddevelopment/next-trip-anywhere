@@ -197,3 +197,81 @@ npm run test:watch
 ### E2E Testing
 
 Currently uses Vitest for unit/integration tests. Playwright configured but not actively used.
+
+## Blog System Architecture
+
+### Blog Post Structure
+
+Blog posts are managed in `lib/data/blog-posts.ts` with the following key components:
+
+- Authors are defined as objects with full profiles (name, role, bio, avatar, social)
+- Blog posts include comprehensive SEO metadata (metaTitle, metaDescription, keywords)
+- Dynamic rendering via `app/blog/[slug]/page.tsx`
+- Automatic sitemap inclusion through `app/sitemap.ts`
+
+### Adding Blog Posts with Authors
+
+1. First add author to the `authors` record if new:
+
+```typescript
+'author-id': {
+  id: 'author-id',
+  name: 'Author Name',
+  role: 'Title',
+  bio: 'Bio text',
+  avatar: '/images/authors/placeholder.svg',
+  social: { linkedin: 'url', email: 'email' }
+}
+```
+
+2. Add blog post entry referencing the author:
+
+```typescript
+{
+  slug: 'url-slug',
+  title: 'Title',
+  author: authors['author-id'], // Must reference author object
+  category: 'deals', // or other category
+  seo: { metaTitle: '60 chars', metaDescription: '160 chars' }
+}
+```
+
+### Image Management for Blog Posts
+
+- Blog images go in `public/images/` directory
+- Reference as `/images/filename.ext` in featuredImage field
+- Blog page responsive image sizing controlled in `app/blog/[slug]/page.tsx`
+- Use descriptive alt text for accessibility
+
+## Build System Nuances
+
+### GitHub Actions Deployment
+
+The site auto-deploys on push to main via `.github/workflows/deploy.yml`:
+
+1. Builds to `.next-build/` (not `.next/`)
+2. Copies to `docs/` for GitHub Pages
+3. Fixes image paths via `scripts/fix-image-paths.js`
+4. Deploys from `docs/` folder
+
+### Local vs Production Image Handling
+
+- Development: Next.js Image optimization works normally
+- Production: Uses `OptimizedImage` component due to static export
+- Image paths must use leading slash: `/images/...`
+- Never use relative paths like `../images/...`
+
+## Essex County SEO Strategy
+
+The site generates 220+ pages for local SEO:
+
+- 22 Essex County municipalities × 10+ services each
+- URL patterns: `/locations/essex-county/[city]/[service]`
+- Alternative: `/travel-from-[city]/[service]`
+- All pages auto-included in sitemap via `generateStaticParams()`
+
+## Test Execution Notes
+
+- E2E tests with Playwright are configured but may fail - focus on Vitest unit tests
+- Run specific test: `npm test -- ComponentName.test.tsx`
+- Some tests have warnings about navigation not implemented (jsdom limitation)
