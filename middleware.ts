@@ -19,15 +19,15 @@ export function middleware(request: NextRequest) {
   // Content Security Policy
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "img-src 'self' data: https: blob:",
     "font-src 'self' https://fonts.gstatic.com",
-    "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com",
+    "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com https://formspree.io",
     "media-src 'self' https://cdn.coverr.co",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    "form-action 'self' https://formspree.io",
     "frame-ancestors 'none'",
     "upgrade-insecure-requests",
   ].join('; ')
@@ -68,8 +68,6 @@ export function middleware(request: NextRequest) {
   // Early hints for critical resources (103 Early Hints)
   if (pathname === '/') {
     response.headers.set('Link', [
-      '</fonts/inter-var.woff2>; rel=preload; as=font; type=font/woff2; crossorigin',
-      '</fonts/montserrat-700.woff2>; rel=preload; as=font; type=font/woff2; crossorigin',
       '<https://fonts.googleapis.com>; rel=preconnect',
       '<https://fonts.gstatic.com>; rel=preconnect; crossorigin',
       '<https://images.unsplash.com>; rel=preconnect; crossorigin',

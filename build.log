@@ -1,0 +1,1838 @@
+
+> next-trip-anywhere@2.0.0 build
+> next build && rm -rf docs && cp -r .next-build docs && cp -r public/* docs/ && node scripts/fix-image-paths.js
+
+   ▲ Next.js 15.5.3
+   - Environments: .env.production
+   - Experiments (use with caution):
+     ✓ optimizeCss
+     ✓ scrollRestoration
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.8s
+   Linting and checking validity of types ...
+
+ ⚠ The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config
+
+./app/cruises/alaska/page.tsx
+11:10  Warning: 'Suspense' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+16:7  Warning: 'OptimizedImage' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+83:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/cruises/bahamas/page.tsx
+7:3  Warning: 'Clock' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+9:3  Warning: 'Check' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/caribbean/page.tsx
+11:10  Warning: 'Suspense' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+16:7  Warning: 'OptimizedImage' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+83:7  Warning: 'ItineraryCard' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+83:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/cruises/caribbean-cruises/page.tsx
+66:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/cruises/carnival/page.tsx
+4:49  Warning: 'Anchor' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/deals/page.tsx
+10:10  Warning: 'Suspense' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/european/page.tsx
+4:17  Warning: 'MapPin' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+4:25  Warning: 'Clock' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/hawaii/page.tsx
+7:3  Warning: 'Clock' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+12:3  Warning: 'Palmtree' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/mediterranean/page.tsx
+4:25  Warning: 'Clock' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+4:67  Warning: 'Users' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/royal-caribbean/deals/page.tsx
+33:7  Warning: 'royalCaribbean' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+36:7  Warning: 'limitedTimeDeals' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/cruises/royal-caribbean/page.tsx
+4:23  Warning: 'MapPin' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+37:7  Warning: 'largestShips' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/locations/essex-county/[city]/[service]/page-current-backup.tsx
+114:49  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+114:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+151:9  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+152:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+153:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/locations/essex-county/[city]/[service]/page-optimized.tsx
+25:10  Warning: 'generateResourceHints' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+134:49  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+134:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+173:9  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+174:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+175:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/locations/essex-county/[city]/[service]/page.tsx
+129:49  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+129:63  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+166:9  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+167:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+168:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/locations/essex-county/[city]/page.tsx
+110:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/travel-from-belleville/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-belleville/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-bloomfield/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-caldwell/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-cedar-grove/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-east-orange/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-essex-fells/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-fairfield/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-glen-ridge/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-irvington/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-livingston/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-maplewood/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-millburn/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-montclair/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-newark/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-north-caldwell/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-nutley/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-orange/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-roseland/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-south-orange/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-verona/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-caldwell/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/corporate-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/cruise-transfers/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/group-travel/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/medical-appointments/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/school-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/special-events/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/wedding-transportation/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./app/travel-from-west-orange/wine-tours-day-trips/page.tsx
+8:10  Warning: 'generateServiceMetadata' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/blog/AuthorProfile.tsx
+2:8  Warning: 'Link' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/blog/NewsletterSignup.tsx
+21:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./components/destinations/DestinationPageTemplate.tsx
+20:3  Warning: 'Info' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+100:51  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+320:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/destinations/DestinationsGrid.tsx
+10:20  Warning: 'useEffect' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+36:3  Warning: 'perPage' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+50:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/essex-county/ContactSection.tsx
+9:9  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+10:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/essex-county/ServiceDetails.tsx
+9:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+10:9  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+11:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/essex-county/ServicePageTemplateOptimized.tsx
+111:51  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/home/__tests__/HeroSection.integration.test.tsx
+10:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+10:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+15:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+47:6  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+77:6  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+229:86  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/home/__tests__/HeroSection.test.tsx
+20:7  Warning: 'fill' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+21:7  Warning: 'priority' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+22:7  Warning: 'placeholder' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+23:7  Warning: 'blurDataURL' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+24:7  Warning: 'quality' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+25:7  Warning: 'unoptimized' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+26:7  Warning: 'loader' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+27:7  Warning: 'onLoad' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+28:7  Warning: 'onLoadingComplete' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+29:7  Warning: 'sizes' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+42:7  Warning: 'fill' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+43:7  Warning: 'priority' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+44:7  Warning: 'placeholder' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+45:7  Warning: 'blurDataURL' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+46:7  Warning: 'quality' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+47:7  Warning: 'unoptimized' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/layout/__tests__/Footer.test.tsx
+12:5  Warning: 'fill' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+13:5  Warning: 'priority' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+14:5  Warning: 'placeholder' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+15:5  Warning: 'blurDataURL' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+16:5  Warning: 'quality' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+17:5  Warning: 'unoptimized' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+18:5  Warning: 'loader' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+19:5  Warning: 'onLoad' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+20:5  Warning: 'onLoadingComplete' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+21:5  Warning: 'sizes' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+23:6  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/layout/__tests__/Header.test.tsx
+12:5  Warning: 'fill' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+13:5  Warning: 'priority' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+14:5  Warning: 'placeholder' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+15:5  Warning: 'blurDataURL' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+16:5  Warning: 'quality' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+17:5  Warning: 'unoptimized' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+18:5  Warning: 'loader' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+19:5  Warning: 'onLoad' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+20:5  Warning: 'onLoadingComplete' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+21:5  Warning: 'sizes' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+23:6  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+38:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+39:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+40:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+41:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+42:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+43:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+44:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+45:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+47:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+50:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+51:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+52:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+53:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+54:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+55:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+56:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+57:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+59:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+62:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+63:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+64:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+65:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+66:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+67:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+68:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+69:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+71:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+73:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/local/LocalTravelPageTemplate.tsx
+21:3  Warning: 'Globe' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+23:3  Warning: 'Calendar' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/marketing/UrgencyBanner.tsx
+42:20  Warning: Assignments to the 'expiryTime' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./components/performance/PerformanceMonitor.tsx
+67:7  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+
+./components/seo/StructuredData.tsx
+37:10  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+38:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+133:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+137:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+149:61  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+153:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+157:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+174:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/services/OptimizedServicePageTemplate.tsx
+10:8  Warning: 'Image' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/services/__tests__/FlightSearch.test.tsx
+11:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+12:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+13:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+14:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+15:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+16:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+17:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+18:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+20:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+23:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+24:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+25:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+26:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+27:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+28:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+29:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+30:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+32:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+35:7  Warning: 'whileHover' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+36:7  Warning: 'whileTap' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+37:7  Warning: 'whileInView' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+38:7  Warning: 'initial' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+39:7  Warning: 'animate' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+40:7  Warning: 'exit' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+41:7  Warning: 'transition' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+42:7  Warning: 'viewport' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+44:8  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+46:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+51:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+52:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+53:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+54:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/services/sections/LocalLandmarks.tsx
+2:29  Warning: 'Star' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/ui/OptimizedImage.tsx
+39:7  Warning: 'priority' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+40:7  Warning: 'placeholder' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+41:7  Warning: 'blurDataURL' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+42:7  Warning: 'quality' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+43:7  Warning: 'loader' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+44:7  Warning: 'unoptimized' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+45:7  Warning: 'onLoad' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+46:7  Warning: 'onLoadingComplete' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+47:7  Warning: 'sizes' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+49:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/ui/OptimizedImageNext.tsx
+197:29  Warning: 'result' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+252:38  Warning: Expected { after 'if' condition.  curly
+
+./components/ui/OptimizedVideo.tsx
+16:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+54:6  Warning: React Hook useEffect has missing dependencies: 'priority' and 'src'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+175:29  Warning: Expected { after 'if' condition.  curly
+176:32  Warning: Expected { after 'if' condition.  curly
+177:27  Warning: Expected { after 'if' condition.  curly
+
+./components/ui/OptimizedVideoEnhanced.tsx
+21:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+37:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+50:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+103:58  Warning: Expected { after 'if' condition.  curly
+130:68  Warning: Expected { after 'if' condition.  curly
+
+./components/ui/PerformantImage.tsx
+16:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+60:6  Warning: React Hook useEffect has missing dependencies: 'priority' and 'src'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/ProgressIndicator.tsx
+26:17  Warning: 'isUpcoming' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./components/ui/TrustSignals.tsx
+10:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/ui/__tests__/OptimizedImage.test.tsx
+17:7  Warning: 'loader' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+18:7  Warning: 'unoptimized' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+19:7  Warning: 'onLoad' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+20:7  Warning: 'onLoadingComplete' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+21:7  Warning: 'sizes' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+25:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+26:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+29:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+70:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+151:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+178:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+200:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+221:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+241:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+333:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+361:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/__tests__/config.test.ts
+12:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+17:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+22:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+27:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+35:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+57:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+84:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+95:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+106:24  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/__tests__/env.test.ts
+81:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+93:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+105:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+119:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+131:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+137:23  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+147:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/ab-testing.ts
+23:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+38:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+306:52  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+314:92  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+331:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+406:55  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+416:85  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+434:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/analytics.ts
+14:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+36:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+166:51  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+195:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+403:28  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+408:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+476:43  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+519:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+519:75  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+521:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+563:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+581:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/api/destinations-client.ts
+15:3  Warning: 'ApiResponse' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+39:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+118:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+211:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+322:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/api/middleware.ts
+14:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+22:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+27:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+216:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+231:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+234:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+283:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+286:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+336:16  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+350:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+353:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+388:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+390:48  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+413:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+413:65  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+414:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+417:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+436:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+449:28  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+465:62  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+472:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+473:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+477:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+495:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/basePath.ts
+7:7  Warning: 'GITHUB_PAGES_BASE' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+62:9  Warning: 'pathname' is assigned a value but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/data/destinations/repository.ts
+133:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+142:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+151:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+300:90  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/data/destinations.ts
+12:3  Warning: 'PriceRange' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/monitoring/analytics.ts
+8:31  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+66:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+66:45  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+67:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+68:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+70:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+71:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+132:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+133:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+152:7  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+175:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+176:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+186:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+202:60  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+217:86  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+232:87  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+247:82  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/performance/optimization.tsx
+33:7  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+195:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+195:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+215:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+215:56  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/performance/web-vitals.ts
+51:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+58:5  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+140:12  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+157:12  Warning: 'e' is defined but never used.  @typescript-eslint/no-unused-vars
+191:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+193:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+194:34  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/performance-monitor.ts
+75:13  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+81:13  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+87:13  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+93:13  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+99:13  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+142:7  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+154:5  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+162:7  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+174:9  Warning: Unexpected console statement. Only these console methods are allowed: warn, error, info.  no-console
+192:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+196:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+197:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/seo/destination-structured-data.ts
+263:17  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/seo/essex-county-schema.ts
+663:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/seo/essex-county-services.ts
+350:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/seo/structured-data.ts
+1084:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/services/destination-service.ts
+14:3  Warning: 'Season' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./lib/templates/essex-county-content.ts
+41:43  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+1680:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+1680:39  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+1688:21  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+1706:3  Warning: 'cityData' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+1706:14  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./lib/types/destination.ts
+110:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/513) ...
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+   Generating static pages (128/513) 
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+   Generating static pages (256/513) 
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+   Generating static pages (384/513) 
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+Google Site Verification meta tag not configured
+ ✓ Generating static pages (513/513)
+   Finalizing page optimization ...
+   Collecting build traces ...
+ ⚠ Statically exporting a Next.js application via `next export` disables API routes and middleware.
+This command is meant for static-only hosts, and is not necessary to make your application static.
+Pages in your application without server-side data dependencies will be automatically statically exported by `next build`, including pages powered by `getStaticProps`.
+Learn more: https://nextjs.org/docs/messages/api-routes-static-export
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                                 Size  First Load JS
+┌ ○ /                                                    8.97 kB         177 kB
+├ ○ /_not-found                                          1.01 kB         169 kB
+├ ○ /about                                                 167 B         168 kB
+├ ○ /blog                                                1.22 kB         169 kB
+├ ● /blog/[slug]                                         1.74 kB         170 kB
+├   ├ /blog/best-time-book-flights-newark-airport
+├   ├ /blog/essex-county-school-break-travel-guide-2025
+├   ├ /blog/top-10-destinations-essex-county-families
+├   └ [+3 more paths]
+├ ○ /blog/sitemap.xml                                      125 B         168 kB
+├ ○ /contact                                               124 B         168 kB
+├ ○ /cruises                                              2.4 kB         170 kB
+├ ○ /cruises/2025                                          125 B         168 kB
+├ ○ /cruises/alaska                                        125 B         168 kB
+├ ○ /cruises/alaska-cruises                                122 B         168 kB
+├ ○ /cruises/bahamas                                       125 B         168 kB
+├ ○ /cruises/caribbean                                     125 B         168 kB
+├ ○ /cruises/caribbean-cruises                             125 B         168 kB
+├ ○ /cruises/carnival                                      123 B         168 kB
+├ ○ /cruises/celebrity                                     125 B         168 kB
+├ ○ /cruises/cheap-cruises                                 125 B         168 kB
+├ ○ /cruises/deals                                         125 B         168 kB
+├ ○ /cruises/european                                      125 B         168 kB
+├ ○ /cruises/hawaii                                        125 B         168 kB
+├ ○ /cruises/last-minute                                   125 B         168 kB
+├ ○ /cruises/mediterranean                                 125 B         168 kB
+├ ○ /cruises/norwegian                                     125 B         168 kB
+├ ○ /cruises/norwegian/deals                               124 B         168 kB
+├ ○ /cruises/princess                                      125 B         168 kB
+├ ○ /cruises/princess/deals                                125 B         168 kB
+├ ○ /cruises/royal-caribbean                               125 B         168 kB
+├ ○ /cruises/royal-caribbean/deals                         125 B         168 kB
+├ ○ /cruises/royal-caribbean/ships                         125 B         168 kB
+├ ○ /destinations                                        2.31 kB         170 kB
+├ ● /destinations/[slug]                                 3.36 kB         171 kB
+├   ├ /destinations/paris-france
+├   ├ /destinations/santorini-greece
+├   ├ /destinations/tokyo-japan
+├   └ [+7 more paths]
+├ ○ /essex-county                                          125 B         168 kB
+├ ○ /flights                                             6.08 kB         174 kB
+├ ○ /from/atlanta                                          125 B         168 kB
+├ ○ /from/austin                                           125 B         168 kB
+├ ○ /from/boston                                           125 B         168 kB
+├ ○ /from/chicago                                          125 B         168 kB
+├ ○ /from/dallas                                           125 B         168 kB
+├ ○ /from/dc                                               174 B         168 kB
+├ ○ /from/denver                                           125 B         168 kB
+├ ○ /from/houston                                          124 B         168 kB
+├ ○ /from/losangeles                                       125 B         168 kB
+├ ○ /from/miami                                            187 B         168 kB
+├ ○ /from/nyc                                              124 B         168 kB
+├ ○ /from/philadelphia                                     125 B         168 kB
+├ ○ /from/phoenix                                          125 B         168 kB
+├ ○ /from/sandiego                                         124 B         168 kB
+├ ○ /from/sanfrancisco                                     125 B         168 kB
+├ ○ /from/seattle                                          125 B         168 kB
+├ ○ /locations                                             125 B         168 kB
+├ ● /locations/essex-county/[city]                         125 B         168 kB
+├   ├ /locations/essex-county/newark
+├   ├ /locations/essex-county/orange
+├   ├ /locations/essex-county/montclair
+├   └ [+19 more paths]
+├ ● /locations/essex-county/[city]/[service]               125 B         168 kB
+├   ├ /locations/essex-county/newark/group-travel
+├   ├ /locations/essex-county/newark/airport-transfers
+├   ├ /locations/essex-county/newark/corporate-travel
+├   └ [+195 more paths]
+├ ○ /locations/essex-county/sitemap.xml                    124 B         168 kB
+├ ○ /packages                                            3.98 kB         172 kB
+├ ○ /robots.txt                                            125 B         168 kB
+├ ○ /services                                              177 B         168 kB
+├ ○ /sitemap.xml                                           125 B         168 kB
+├ ○ /test                                                  125 B         168 kB
+├ ○ /test-ab                                             1.26 kB         169 kB
+├ ○ /travel-from-belleville                                124 B         168 kB
+├ ○ /travel-from-belleville/airport-transfers              125 B         168 kB
+├ ○ /travel-from-belleville/corporate-travel               124 B         168 kB
+├ ○ /travel-from-belleville/cruise-transfers               124 B         168 kB
+├ ○ /travel-from-belleville/group-travel                   125 B         168 kB
+├ ○ /travel-from-belleville/medical-appointments           125 B         168 kB
+├ ○ /travel-from-belleville/school-transportation          125 B         168 kB
+├ ○ /travel-from-belleville/special-events                 125 B         168 kB
+├ ○ /travel-from-belleville/wedding-transportation         125 B         168 kB
+├ ○ /travel-from-belleville/wine-tours-day-trips           125 B         168 kB
+├ ○ /travel-from-bloomfield                                125 B         168 kB
+├ ○ /travel-from-bloomfield/airport-transfers              125 B         168 kB
+├ ○ /travel-from-bloomfield/corporate-travel               125 B         168 kB
+├ ○ /travel-from-bloomfield/cruise-transfers               125 B         168 kB
+├ ○ /travel-from-bloomfield/group-travel                   125 B         168 kB
+├ ○ /travel-from-bloomfield/medical-appointments           125 B         168 kB
+├ ○ /travel-from-bloomfield/school-transportation          125 B         168 kB
+├ ○ /travel-from-bloomfield/special-events                 123 B         168 kB
+├ ○ /travel-from-bloomfield/wedding-transportation         125 B         168 kB
+├ ○ /travel-from-bloomfield/wine-tours-day-trips           125 B         168 kB
+├ ○ /travel-from-caldwell                                  125 B         168 kB
+├ ○ /travel-from-caldwell/airport-transfers                125 B         168 kB
+├ ○ /travel-from-caldwell/corporate-travel                 124 B         168 kB
+├ ○ /travel-from-caldwell/cruise-transfers                 124 B         168 kB
+├ ○ /travel-from-caldwell/group-travel                     124 B         168 kB
+├ ○ /travel-from-caldwell/medical-appointments             125 B         168 kB
+├ ○ /travel-from-caldwell/school-transportation            125 B         168 kB
+├ ○ /travel-from-caldwell/special-events                   125 B         168 kB
+├ ○ /travel-from-caldwell/wedding-transportation           125 B         168 kB
+├ ○ /travel-from-caldwell/wine-tours-day-trips             125 B         168 kB
+├ ○ /travel-from-cedar-grove                               124 B         168 kB
+├ ○ /travel-from-cedar-grove/airport-transfers             125 B         168 kB
+├ ○ /travel-from-cedar-grove/corporate-travel              124 B         168 kB
+├ ○ /travel-from-cedar-grove/cruise-transfers              125 B         168 kB
+├ ○ /travel-from-cedar-grove/group-travel                  125 B         168 kB
+├ ○ /travel-from-cedar-grove/medical-appointments          124 B         168 kB
+├ ○ /travel-from-cedar-grove/school-transportation         125 B         168 kB
+├ ○ /travel-from-cedar-grove/special-events                125 B         168 kB
+├ ○ /travel-from-cedar-grove/wedding-transportation        125 B         168 kB
+├ ○ /travel-from-cedar-grove/wine-tours-day-trips          123 B         168 kB
+├ ○ /travel-from-east-orange                               125 B         168 kB
+├ ○ /travel-from-east-orange/airport-transfers             125 B         168 kB
+├ ○ /travel-from-east-orange/corporate-travel              124 B         168 kB
+├ ○ /travel-from-east-orange/cruise-transfers              125 B         168 kB
+├ ○ /travel-from-east-orange/group-travel                  125 B         168 kB
+├ ○ /travel-from-east-orange/medical-appointments          125 B         168 kB
+├ ○ /travel-from-east-orange/school-transportation         125 B         168 kB
+├ ○ /travel-from-east-orange/special-events                125 B         168 kB
+├ ○ /travel-from-east-orange/wedding-transportation        125 B         168 kB
+├ ○ /travel-from-east-orange/wine-tours-day-trips          125 B         168 kB
+├ ○ /travel-from-essex-fells                               125 B         168 kB
+├ ○ /travel-from-essex-fells/airport-transfers             125 B         168 kB
+├ ○ /travel-from-essex-fells/corporate-travel              124 B         168 kB
+├ ○ /travel-from-essex-fells/cruise-transfers              125 B         168 kB
+├ ○ /travel-from-essex-fells/group-travel                  125 B         168 kB
+├ ○ /travel-from-essex-fells/medical-appointments          125 B         168 kB
+├ ○ /travel-from-essex-fells/school-transportation         125 B         168 kB
+├ ○ /travel-from-essex-fells/special-events                125 B         168 kB
+├ ○ /travel-from-essex-fells/wedding-transportation        123 B         168 kB
+├ ○ /travel-from-essex-fells/wine-tours-day-trips          125 B         168 kB
+├ ○ /travel-from-fairfield                                 125 B         168 kB
+├ ○ /travel-from-fairfield/airport-transfers               125 B         168 kB
+├ ○ /travel-from-fairfield/corporate-travel                125 B         168 kB
+├ ○ /travel-from-fairfield/cruise-transfers                124 B         168 kB
+├ ○ /travel-from-fairfield/group-travel                    125 B         168 kB
+├ ○ /travel-from-fairfield/medical-appointments            124 B         168 kB
+├ ○ /travel-from-fairfield/school-transportation           125 B         168 kB
+├ ○ /travel-from-fairfield/special-events                  125 B         168 kB
+├ ○ /travel-from-fairfield/wedding-transportation          125 B         168 kB
+├ ○ /travel-from-fairfield/wine-tours-day-trips            125 B         168 kB
+├ ○ /travel-from-glen-ridge                                125 B         168 kB
+├ ○ /travel-from-glen-ridge/airport-transfers              125 B         168 kB
+├ ○ /travel-from-glen-ridge/corporate-travel               125 B         168 kB
+├ ○ /travel-from-glen-ridge/cruise-transfers               125 B         168 kB
+├ ○ /travel-from-glen-ridge/group-travel                   125 B         168 kB
+├ ○ /travel-from-glen-ridge/medical-appointments           125 B         168 kB
+├ ○ /travel-from-glen-ridge/school-transportation          125 B         168 kB
+├ ○ /travel-from-glen-ridge/special-events                 125 B         168 kB
+├ ○ /travel-from-glen-ridge/wedding-transportation         124 B         168 kB
+├ ○ /travel-from-glen-ridge/wine-tours-day-trips           125 B         168 kB
+├ ○ /travel-from-irvington                                 125 B         168 kB
+├ ○ /travel-from-irvington/airport-transfers               125 B         168 kB
+├ ○ /travel-from-irvington/corporate-travel                125 B         168 kB
+├ ○ /travel-from-irvington/cruise-transfers                124 B         168 kB
+├ ○ /travel-from-irvington/group-travel                    125 B         168 kB
+├ ○ /travel-from-irvington/medical-appointments            125 B         168 kB
+├ ○ /travel-from-irvington/school-transportation           125 B         168 kB
+├ ○ /travel-from-irvington/special-events                  125 B         168 kB
+├ ○ /travel-from-irvington/wedding-transportation          125 B         168 kB
+├ ○ /travel-from-irvington/wine-tours-day-trips            125 B         168 kB
+├ ○ /travel-from-livingston                                125 B         168 kB
+├ ○ /travel-from-livingston/airport-transfers              125 B         168 kB
+├ ○ /travel-from-livingston/corporate-travel               125 B         168 kB
+├ ○ /travel-from-livingston/cruise-transfers               124 B         168 kB
+├ ○ /travel-from-livingston/group-travel                   124 B         168 kB
+├ ○ /travel-from-livingston/medical-appointments           125 B         168 kB
+├ ○ /travel-from-livingston/school-transportation          125 B         168 kB
+├ ○ /travel-from-livingston/special-events                 124 B         168 kB
+├ ○ /travel-from-livingston/wedding-transportation         125 B         168 kB
+├ ○ /travel-from-livingston/wine-tours-day-trips           125 B         168 kB
+├ ○ /travel-from-maplewood                                 124 B         168 kB
+├ ○ /travel-from-maplewood/airport-transfers               125 B         168 kB
+├ ○ /travel-from-maplewood/corporate-travel                125 B         168 kB
+├ ○ /travel-from-maplewood/cruise-transfers                124 B         168 kB
+├ ○ /travel-from-maplewood/group-travel                    125 B         168 kB
+├ ○ /travel-from-maplewood/medical-appointments            125 B         168 kB
+├ ○ /travel-from-maplewood/school-transportation           125 B         168 kB
+├ ○ /travel-from-maplewood/special-events                  124 B         168 kB
+├ ○ /travel-from-maplewood/wedding-transportation          125 B         168 kB
+├ ○ /travel-from-maplewood/wine-tours-day-trips            125 B         168 kB
+├ ○ /travel-from-millburn                                  125 B         168 kB
+├ ○ /travel-from-millburn/airport-transfers                124 B         168 kB
+├ ○ /travel-from-millburn/corporate-travel                 124 B         168 kB
+├ ○ /travel-from-millburn/cruise-transfers                 125 B         168 kB
+├ ○ /travel-from-millburn/group-travel                     124 B         168 kB
+├ ○ /travel-from-millburn/medical-appointments             125 B         168 kB
+├ ○ /travel-from-millburn/school-transportation            124 B         168 kB
+├ ○ /travel-from-millburn/special-events                   124 B         168 kB
+├ ○ /travel-from-millburn/wedding-transportation           124 B         168 kB
+├ ○ /travel-from-millburn/wine-tours-day-trips             124 B         168 kB
+├ ○ /travel-from-montclair                                 125 B         168 kB
+├ ○ /travel-from-montclair/airport-transfers               125 B         168 kB
+├ ○ /travel-from-montclair/corporate-travel                125 B         168 kB
+├ ○ /travel-from-montclair/cruise-transfers                125 B         168 kB
+├ ○ /travel-from-montclair/group-travel                    125 B         168 kB
+├ ○ /travel-from-montclair/medical-appointments            125 B         168 kB
+├ ○ /travel-from-montclair/school-transportation           125 B         168 kB
+├ ○ /travel-from-montclair/special-events                  124 B         168 kB
+├ ○ /travel-from-montclair/wedding-transportation          125 B         168 kB
+├ ○ /travel-from-montclair/wine-tours-day-trips            125 B         168 kB
+├ ○ /travel-from-newark                                    125 B         168 kB
+├ ○ /travel-from-newark/airport-transfers                  125 B         168 kB
+├ ○ /travel-from-newark/corporate-travel                   124 B         168 kB
+├ ○ /travel-from-newark/cruise-transfers                   124 B         168 kB
+├ ○ /travel-from-newark/group-travel                       125 B         168 kB
+├ ○ /travel-from-newark/medical-appointments               125 B         168 kB
+├ ○ /travel-from-newark/school-transportation              125 B         168 kB
+├ ○ /travel-from-newark/special-events                     125 B         168 kB
+├ ○ /travel-from-newark/wedding-transportation             124 B         168 kB
+├ ○ /travel-from-newark/wine-tours-day-trips               125 B         168 kB
+├ ○ /travel-from-north-caldwell                            125 B         168 kB
+├ ○ /travel-from-north-caldwell/airport-transfers          125 B         168 kB
+├ ○ /travel-from-north-caldwell/corporate-travel           125 B         168 kB
+├ ○ /travel-from-north-caldwell/cruise-transfers           123 B         168 kB
+├ ○ /travel-from-north-caldwell/group-travel               125 B         168 kB
+├ ○ /travel-from-north-caldwell/medical-appointments       125 B         168 kB
+├ ○ /travel-from-north-caldwell/school-transportation      125 B         168 kB
+├ ○ /travel-from-north-caldwell/special-events             125 B         168 kB
+├ ○ /travel-from-north-caldwell/wedding-transportation     125 B         168 kB
+├ ○ /travel-from-north-caldwell/wine-tours-day-trips       125 B         168 kB
+├ ○ /travel-from-nutley                                    124 B         168 kB
+├ ○ /travel-from-nutley/airport-transfers                  125 B         168 kB
+├ ○ /travel-from-nutley/corporate-travel                   125 B         168 kB
+├ ○ /travel-from-nutley/cruise-transfers                   125 B         168 kB
+├ ○ /travel-from-nutley/group-travel                       125 B         168 kB
+├ ○ /travel-from-nutley/medical-appointments               125 B         168 kB
+├ ○ /travel-from-nutley/school-transportation              124 B         168 kB
+├ ○ /travel-from-nutley/special-events                     124 B         168 kB
+├ ○ /travel-from-nutley/wedding-transportation             125 B         168 kB
+├ ○ /travel-from-nutley/wine-tours-day-trips               125 B         168 kB
+├ ○ /travel-from-orange                                    125 B         168 kB
+├ ○ /travel-from-orange/airport-transfers                  125 B         168 kB
+├ ○ /travel-from-orange/corporate-travel                   125 B         168 kB
+├ ○ /travel-from-orange/cruise-transfers                   124 B         168 kB
+├ ○ /travel-from-orange/group-travel                       125 B         168 kB
+├ ○ /travel-from-orange/medical-appointments               125 B         168 kB
+├ ○ /travel-from-orange/school-transportation              125 B         168 kB
+├ ○ /travel-from-orange/special-events                     125 B         168 kB
+├ ○ /travel-from-orange/wedding-transportation             125 B         168 kB
+├ ○ /travel-from-orange/wine-tours-day-trips               125 B         168 kB
+├ ○ /travel-from-roseland                                  125 B         168 kB
+├ ○ /travel-from-roseland/airport-transfers                123 B         168 kB
+├ ○ /travel-from-roseland/corporate-travel                 125 B         168 kB
+├ ○ /travel-from-roseland/cruise-transfers                 125 B         168 kB
+├ ○ /travel-from-roseland/group-travel                     124 B         168 kB
+├ ○ /travel-from-roseland/medical-appointments             124 B         168 kB
+├ ○ /travel-from-roseland/school-transportation            125 B         168 kB
+├ ○ /travel-from-roseland/special-events                   125 B         168 kB
+├ ○ /travel-from-roseland/wedding-transportation           124 B         168 kB
+├ ○ /travel-from-roseland/wine-tours-day-trips             125 B         168 kB
+├ ○ /travel-from-south-orange                              125 B         168 kB
+├ ○ /travel-from-south-orange/airport-transfers            125 B         168 kB
+├ ○ /travel-from-south-orange/corporate-travel             125 B         168 kB
+├ ○ /travel-from-south-orange/cruise-transfers             125 B         168 kB
+├ ○ /travel-from-south-orange/group-travel                 125 B         168 kB
+├ ○ /travel-from-south-orange/medical-appointments         125 B         168 kB
+├ ○ /travel-from-south-orange/school-transportation        124 B         168 kB
+├ ○ /travel-from-south-orange/special-events               125 B         168 kB
+├ ○ /travel-from-south-orange/wedding-transportation       125 B         168 kB
+├ ○ /travel-from-south-orange/wine-tours-day-trips         125 B         168 kB
+├ ○ /travel-from-verona                                    124 B         168 kB
+├ ○ /travel-from-verona/airport-transfers                  125 B         168 kB
+├ ○ /travel-from-verona/corporate-travel                   125 B         168 kB
+├ ○ /travel-from-verona/cruise-transfers                   125 B         168 kB
+├ ○ /travel-from-verona/group-travel                       125 B         168 kB
+├ ○ /travel-from-verona/medical-appointments               125 B         168 kB
+├ ○ /travel-from-verona/school-transportation              125 B         168 kB
+├ ○ /travel-from-verona/special-events                     124 B         168 kB
+├ ○ /travel-from-verona/wedding-transportation             125 B         168 kB
+├ ○ /travel-from-verona/wine-tours-day-trips               124 B         168 kB
+├ ○ /travel-from-west-caldwell                             125 B         168 kB
+├ ○ /travel-from-west-caldwell/airport-transfers           124 B         168 kB
+├ ○ /travel-from-west-caldwell/corporate-travel            125 B         168 kB
+├ ○ /travel-from-west-caldwell/cruise-transfers            125 B         168 kB
+├ ○ /travel-from-west-caldwell/group-travel                125 B         168 kB
+├ ○ /travel-from-west-caldwell/medical-appointments        125 B         168 kB
+├ ○ /travel-from-west-caldwell/school-transportation       125 B         168 kB
+├ ○ /travel-from-west-caldwell/special-events              125 B         168 kB
+├ ○ /travel-from-west-caldwell/wedding-transportation      125 B         168 kB
+├ ○ /travel-from-west-caldwell/wine-tours-day-trips        125 B         168 kB
+├ ○ /travel-from-west-orange                               125 B         168 kB
+├ ○ /travel-from-west-orange/airport-transfers             125 B         168 kB
+├ ○ /travel-from-west-orange/corporate-travel              124 B         168 kB
+├ ○ /travel-from-west-orange/cruise-transfers              125 B         168 kB
+├ ○ /travel-from-west-orange/group-travel                  125 B         168 kB
+├ ○ /travel-from-west-orange/medical-appointments          124 B         168 kB
+├ ○ /travel-from-west-orange/school-transportation         125 B         168 kB
+├ ○ /travel-from-west-orange/special-events                125 B         168 kB
+├ ○ /travel-from-west-orange/wedding-transportation        125 B         168 kB
+└ ○ /travel-from-west-orange/wine-tours-day-trips          125 B         168 kB
++ First Load JS shared by all                             168 kB
+  ├ chunks/1255-70c5e64ca0b98b6e.js                      45.8 kB
+  ├ chunks/28ed62d0-0b9dcd4999c175ed.js                  54.2 kB
+  ├ chunks/commons-24c4d8294e642623.js                   65.9 kB
+  └ other shared chunks (total)                          1.93 kB
+
+
+ƒ Middleware                                             34.5 kB
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+Verifying image paths for custom domain deployment...
+Image path verification complete! Checked 510 files, fixed 0 issues.

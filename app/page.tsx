@@ -19,6 +19,10 @@ const CTASection = dynamic(() => import('@/components/home/CTASection'), {
   loading: () => <div className="animate-pulse bg-gray-200 h-48 rounded-lg m-4" />,
 })
 
+const TrustedAgencySection = dynamic(() => import('@/components/home/TrustedAgencySection'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
+})
+
 export const metadata: Metadata = {
   title: "America's Premier Travel Agency | Save up to 40% on Flights, Cruises & Vacations",
   description:
@@ -253,117 +257,10 @@ export default function HomePage() {
         <WhyChooseUs />
       </Suspense>
 
-      {/* SEO Content Section with semantic markup */}
-      <article className="py-12 bg-white" aria-label="About Next Trip Anywhere">
-        <div className="container mx-auto px-4">
-          <div
-            className="prose prose-lg max-w-4xl mx-auto"
-            itemScope
-            itemType="https://schema.org/Article"
-          >
-            <h2>Your Trusted Nationwide Travel Agency</h2>
-            <p>
-              Next Trip Anywhere is America&apos;s premier full-service travel agency, specializing
-              in creating unforgettable vacations from major cities nationwide including New York
-              City, Los Angeles, Chicago, Miami, Boston, Washington DC, Seattle, Denver, Atlanta,
-              Dallas, Phoenix, and Las Vegas. With over 15 years of experience and exclusive
-              partnerships with major airlines, cruise lines, and resorts, we deliver exceptional
-              value and personalized service that online booking sites can&apos;t match.
-            </p>
-
-            <h3>Expert Travel Planning from Major US Cities Nationwide</h3>
-            <p>
-              Our team of certified travel advisors specializes in departures from major cities
-              nationwide, including East Coast, West Coast, Midwest, and Southern hubs:
-            </p>
-            <ul>
-              <li>
-                <strong>New York City:</strong> Flights from JFK, LaGuardia, and Newark; cruises
-                from Manhattan and Brooklyn terminals
-              </li>
-              <li>
-                <strong>Boston:</strong> Logan Airport departures and Black Falcon cruise terminal
-                sailings
-              </li>
-              <li>
-                <strong>Miami:</strong> Miami International and Fort Lauderdale airports; PortMiami
-                Caribbean cruises
-              </li>
-              <li>
-                <strong>Washington DC:</strong> Reagan National, Dulles, and BWI airports; Baltimore
-                cruise port
-              </li>
-              <li>
-                <strong>Los Angeles:</strong> LAX departures and San Pedro cruise terminals
-              </li>
-              <li>
-                <strong>San Francisco:</strong> SFO airport and Port of San Francisco cruises
-              </li>
-              <li>
-                <strong>Seattle:</strong> Sea-Tac airport and Port of Seattle cruise departures
-              </li>
-              <li>
-                <strong>Chicago:</strong> O'Hare and Midway airports serving the Midwest
-              </li>
-              <li>
-                <strong>Denver:</strong> Gateway to the Mountain West and Southwest
-              </li>
-              <li>
-                <strong>Atlanta:</strong> Hartsfield-Jackson, the South's major hub
-              </li>
-              <li>
-                <strong>Dallas:</strong> DFW and Love Field serving Texas and the Southwest
-              </li>
-            </ul>
-
-            <h3>Professional Travel Services</h3>
-            <p>
-              Our relationships with travel suppliers and industry expertise provide value for you.
-              We offer:
-            </p>
-            <ul>
-              <li>Access to competitive airline fares and special rates</li>
-              <li>Help securing cabin upgrades and cruise amenities when available</li>
-              <li>Assistance with resort upgrades and added amenities</li>
-              <li>Group booking coordination for families and special occasions</li>
-              <li>Last-minute travel planning and availability search</li>
-            </ul>
-
-            <h3>Full-Service Travel Agency Benefits</h3>
-            <p>
-              Unlike online booking sites, we provide comprehensive support throughout your journey:
-            </p>
-            <ul>
-              <li>
-                <strong>Personalized Planning:</strong> Custom itineraries based on your preferences
-                and budget
-              </li>
-              <li>
-                <strong>Price Protection:</strong> We monitor prices and rebook if rates drop
-              </li>
-              <li>
-                <strong>24/7 Support:</strong> Emergency assistance whenever you need it
-              </li>
-              <li>
-                <strong>Change Management:</strong> We handle cancellations and modifications
-              </li>
-              <li>
-                <strong>Travel Insurance:</strong> Comprehensive coverage options to protect your
-                investment
-              </li>
-            </ul>
-
-            <h3>Start Planning Your Next Adventure</h3>
-            <p>
-              Whether you&apos;re dreaming of a Caribbean cruise, European adventure, all-inclusive
-              resort stay, or domestic getaway, Next Trip Anywhere makes it happen. Our nationwide
-              travel experts are ready to turn your travel dreams into reality while saving you time
-              and money. Contact us today for a free consultation and discover why we&apos;re
-              America&apos;s most trusted travel agency.
-            </p>
-          </div>
-        </div>
-      </article>
+      {/* Enhanced Visual SEO Content Section */}
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-96 m-4" />}>
+        <TrustedAgencySection />
+      </Suspense>
 
       {/* Detailed Trust Section */}
       <DetailedTrustSection />
