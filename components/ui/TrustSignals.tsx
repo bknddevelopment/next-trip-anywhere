@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Award, Users, Clock, CheckCircle, Star, Lock, Phone } from 'lucide-react'
-import Image from 'next/image'
+import OptimizedImage from '@/components/ui/OptimizedImage'
 
 interface TrustSignal {
   id: string
@@ -150,7 +150,7 @@ export default function TrustSignals({
       >
         {signal.image ? (
           <div className="flex-shrink-0">
-            <Image
+            <OptimizedImage
               src={signal.image}
               alt={signal.title}
               width={variant === 'badges' ? 48 : 32}
