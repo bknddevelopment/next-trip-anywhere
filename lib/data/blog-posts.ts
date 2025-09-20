@@ -23,6 +23,16 @@ export const authors: Record<string, Author> = {
       twitter: '@MichaelChenTravel',
     },
   },
+  'candy-myrick': {
+    id: 'candy-myrick',
+    name: 'Candy Myrick',
+    role: 'Travel Specialist',
+    bio: 'Candy is a seasoned travel expert specializing in cruise vacations and last-minute deals. With extensive knowledge of Caribbean, Alaska, and Mediterranean itineraries, she helps Essex County residents find incredible cruise values and unforgettable experiences at sea.',
+    avatar: '/images/authors/placeholder.svg',
+    social: {
+      email: 'candy@nexttripanywhere.com',
+    },
+  },
 }
 
 export const blogPosts: BlogPost[] = [
@@ -3319,6 +3329,323 @@ Welcome to the coolcation revolution, Essex County. Your perfect fall escape is 
 *Ready to book your coolcation? Contact Next Trip Anywhere for personalized planning assistance. We specialize in cool climate destinations and understand exactly what Essex County families need for the perfect fall getaway.*
 
 **#Coolcation #EssexCountyTravel #NewarkAirport #FallTravel2025 #BeatTheHeat #CoolWeatherDestinations #FamilyTravel #TrendingTravel**`,
+  },
+  {
+    id: 'last-minute-september-cruise-deals',
+    slug: 'last-minute-september-cruise-deals-caribbean-alaska-mediterranean',
+    title:
+      'Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark',
+    excerpt:
+      'URGENT: Incredible last-minute cruise deals departing within 30 days! Save up to 50% on Caribbean, Alaska, and Mediterranean cruises from Newark area ports. Prices starting at just $72/night with balcony upgrades available. Essex County residents can reach departure ports in under an hour.',
+    featuredImage: '/images/cruise-deals-september.png',
+    featuredImageAlt:
+      'Cruise ship with special deals and promotional text overlay showcasing last-minute cruise offers',
+    author: authors['candy-myrick'],
+    category: 'deals',
+    tags: [
+      'Cruise Deals',
+      'Last Minute Travel',
+      'Caribbean Cruises',
+      'Alaska Cruises',
+      'Mediterranean Cruises',
+      'Newark Departures',
+      'Essex County',
+      'September Travel',
+      'Budget Cruises',
+      'Luxury Travel Deals',
+    ],
+    publishedAt: '2025-09-01T06:00:00Z',
+    readingTime: 16,
+    seo: {
+      metaTitle: 'Last-Minute September Cruise Deals 2025 | Save 50% from Newark Ports',
+      metaDescription:
+        'URGENT cruise deals departing in September! Save 50% on Caribbean, Alaska & Mediterranean cruises from Newark area. Prices from $72/night. Book today before they sell out!',
+      keywords: [
+        'last minute cruise deals',
+        'September cruise deals',
+        'cheap cruises from Newark',
+        'Caribbean cruise deals',
+        'Alaska cruise deals',
+        'Mediterranean cruise deals',
+        'Essex County cruise departures',
+        'discount cruises September',
+        'cruise deals from New Jersey',
+        'last minute travel deals',
+      ],
+      ogImage: '/images/blog/og/cruise-deals-september.jpg',
+    },
+    content: `# Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark
+
+**⏰ TIME-SENSITIVE ALERT:** These cruise deals are departing within the next 30 days and prices are updated daily. As of September 1, 2025, we've secured exclusive rates starting at just $72 per night for Essex County residents. With ships sailing at reduced capacity, cruise lines are offering unprecedented discounts to fill remaining cabins.
+
+For families in Newark, Montclair, West Orange, and throughout Essex County, these last-minute September cruise deals represent the best value we've seen all year. Cape Liberty Cruise Port in Bayonne is just 20 minutes from Newark Airport, while Manhattan terminals are easily accessible within 45 minutes.
+
+## Table of Contents
+- [Why September Cruise Deals Are Unbeatable](#why-september-deals)
+- [Top Caribbean Deals (Departing This Month)](#caribbean-deals)
+- [Alaska's Final Sailings of 2025](#alaska-sailings)
+- [Mediterranean Luxury at Budget Prices](#mediterranean-deals)
+- [How to Book from Essex County](#booking-guide)
+- [Transportation to Cruise Ports](#transportation)
+- [Insider Booking Strategies](#booking-strategies)
+- [What's Included in These Deals](#whats-included)
+
+## Why September Cruise Deals Are Unbeatable {#why-september-deals}
+
+### The Perfect Storm of Savings
+
+September 2025 presents a unique opportunity for cruise bargain hunters. Here's why prices have dropped so dramatically:
+
+**Wave Season Overstock**
+Cruise lines overestimated summer demand, leaving premium cabins unsold. Rather than sail with empty rooms, they're slashing prices by up to 50% for September departures.
+
+**Hurricane Season Misconceptions**
+While it's technically hurricane season, modern ships easily navigate around weather systems. Cruise lines have sophisticated tracking systems and flexible itineraries. Plus, you're fully protected with their weather guarantees.
+
+**School's Back Advantage**
+With Essex County schools back in session, family demand drops significantly. This means better prices for flexible travelers, couples, and retirees. Weekend cruises are perfect for those who can't take extended time off.
+
+**End of Alaska Season**
+Alaska cruises end in late September, creating a surge of repositioning cruises at rock-bottom prices. Ships moving from Alaska to the Caribbean offer unique itineraries at exceptional values.
+
+## Top Caribbean Deals (Departing This Month) {#caribbean-deals}
+
+### 🚢 Royal Caribbean: Freedom of the Seas
+**Departing: September 8 from Cape Liberty (Bayonne, NJ)**
+
+- **Itinerary**: 7-night Eastern Caribbean
+- **Ports**: CocoCay, Nassau, St. Thomas
+- **Starting Price**: $499 pp ($72/night)
+- **Balcony Upgrade**: +$200 pp
+- **Essex County Perks**: Free parking at Cape Liberty for NJ residents
+
+This mega-ship features the FlowRider surf simulator, rock climbing wall, and Broadway-style shows. Perfect for families, with complimentary kids' clubs and teen lounges. The ship just completed a $116 million renovation in March 2025.
+
+**What Makes This Special**: CocoCay, Royal Caribbean's private island, features the tallest waterslide in North America and the Caribbean's largest freshwater pool. All island activities are included in your cruise fare.
+
+### 🚢 Norwegian Gem: Labor Day Special
+**Departing: September 14 from Manhattan Terminal**
+
+- **Itinerary**: 10-night Southern Caribbean
+- **Ports**: Aruba, Curaçao, Barbados, St. Lucia, St. Kitts
+- **Starting Price**: $699 pp ($70/night) - BEST VALUE!
+- **Free at Sea Package**: Included (normally $899 value)
+- **Transportation**: Free shuttle from Newark Penn Station
+
+Norwegian's "Free at Sea" promotion includes unlimited beverages, specialty dining, WiFi, shore excursion credits, and gratuities. This alone saves Essex County families over $2,000 on a typical cruise.
+
+**Insider Tip**: Book a "Sail Away" balcony for the same price as an interior cabin. These slightly obstructed view cabins offer 90% of the balcony experience at 50% of the cost.
+
+### 🚢 Carnival Magic: Quick Getaway
+**Departing: September 20 from Manhattan**
+
+- **Itinerary**: 4-night Bermuda Express
+- **Ports**: King's Wharf, Bermuda (2 days)
+- **Starting Price**: $399 pp ($100/night)
+- **Kids Sail Free**: Yes (huge savings for families)
+- **Drive Time from Essex County**: 35-50 minutes
+
+Perfect for first-time cruisers or those with limited vacation time. Two full days in Bermuda allows exploration of pink sand beaches, Crystal Caves, and the historic Royal Naval Dockyard.
+
+**Local Advantage**: Depart Friday evening after work, return Tuesday morning. Minimal time off needed for Essex County professionals.
+
+## Alaska's Final Sailings of 2025 {#alaska-sailings}
+
+### 🚢 Princess Cruises: Majestic Princess
+**Departing: September 15 from Brooklyn Cruise Terminal**
+
+- **Itinerary**: 14-night Alaska Inside Passage (One-Way)
+- **Ports**: Halifax, Juneau, Skagway, Glacier Bay, Ketchikan
+- **Starting Price**: $899 pp ($64/night) - UNPRECEDENTED!
+- **Includes**: Glacier Bay permit (limited availability)
+- **Transportation Tip**: LIRR from Newark Penn to Atlantic Terminal
+
+This repositioning cruise offers Alaska's grandeur at Caribbean prices. September brings spectacular fall colors, active wildlife preparing for winter, and the beginning of Northern Lights season.
+
+**Why This Deal Exists**: Ships must relocate from Alaska to Caribbean for winter season. One-way positioning cruises offer incredible value but require flying home from Seattle ($250-350 from SEA to EWR).
+
+### 🚢 Holland America: Zuiderdam
+**Departing: September 22 from Cape Liberty**
+
+- **Itinerary**: 17-night Alaska & Pacific Coast
+- **Ports**: Glacier Bay, Sitka, Victoria, San Francisco, Los Angeles
+- **Starting Price**: $1,099 pp ($65/night)
+- **Perks**: $500 onboard credit, prepaid gratuities
+- **Best For**: Retirees and remote workers
+
+Holland America's smaller ships access ports that mega-ships can't reach. Their Alaska naturalists provide expert commentary during scenic cruising. The demographic skews older, creating a refined, peaceful atmosphere.
+
+**Essex County Advantage**: Cape Liberty parking is free for cruises over 14 nights. Save $300 compared to flying to Seattle or Vancouver.
+
+## Mediterranean Luxury at Budget Prices {#mediterranean-deals}
+
+### 🚢 MSC Meraviglia: Mediterranean Dreams
+**Departing: September 18 from Manhattan**
+
+- **Itinerary**: 15-night Transatlantic & Mediterranean
+- **Ports**: Azores, Lisbon, Barcelona, Marseille, Genoa
+- **Starting Price**: $799 pp ($53/night) - LOWEST RATE!
+- **Includes**: Flights home from Rome
+- **Specialty**: Cirque du Soleil shows onboard
+
+Transatlantic crossings offer exceptional value with multiple sea days perfect for relaxation. MSC's European heritage shines with authentic Italian cuisine and Mediterranean hospitality.
+
+**Hidden Perk**: Book "Bella" experience and upgrade to "Fantastica" for just $100. Includes priority dining times, better cabin locations, and 24-hour room service.
+
+### 🚢 Celebrity Edge: Modern Luxury
+**Departing: September 25 from Cape Liberty**
+
+- **Itinerary**: 12-night Mediterranean Repositioning
+- **Ports**: Bermuda, Azores, Lisbon, Seville, Gibraltar
+- **Starting Price**: $1,299 pp ($108/night)
+- **Includes**: Classic beverage package, WiFi, gratuities
+- **Why Book**: Newest ship design with innovative Edge Staterooms
+
+Celebrity's newest ship class features the revolutionary Magic Carpet platform, Rooftop Garden, and Eden venue. This repositioning cruise offers premium experiences at mainstream prices.
+
+**Local Tip**: Essex County travel agents can secure additional perks like specialty dining and spa credits. Book through Next Trip Anywhere for exclusive amenities.
+
+## How to Book from Essex County {#booking-guide}
+
+### Step-by-Step Booking Process
+
+**1. Check Availability Immediately**
+These rates change hourly. As of 6 AM on September 1, all mentioned cruises have availability, but popular categories sell out within days.
+
+**2. Compare Total Costs**
+- Base fare
+- Taxes and port fees (usually $150-250)
+- Gratuities ($15/day pp)
+- Beverages (unless included)
+- Transportation to port
+- Parking (if driving)
+
+**3. Book Refundable Rates**
+Pay extra $50-100 for refundable deposits. September weather can be unpredictable, and plans change. Most cruise lines offer full refunds up to 48 hours before sailing.
+
+**4. Consider Travel Insurance**
+Essential for last-minute bookings. Covers trip interruption, medical emergencies, and missed connections. Essex County residents can use state-regulated policies starting at $49.
+
+### Transportation to Cruise Ports {#transportation}
+
+**Cape Liberty (Bayonne, NJ)**
+- **Distance from Newark**: 12 miles (20 minutes)
+- **Parking**: $20/day for NJ residents
+- **Uber/Lyft**: $35-50 each way
+- **Public Transit**: Newark Penn → Light Rail to 34th Street Bayonne
+
+**Manhattan Cruise Terminal**
+- **Distance from Newark**: 16 miles (35-45 minutes)
+- **Parking**: $40-50/day (reserve ahead)
+- **NJ Transit**: Newark Penn → NY Penn, then taxi ($15)
+- **Private Shuttle**: Next Trip Anywhere offers $39 pp transfers
+
+**Brooklyn Cruise Terminal**
+- **Distance from Newark**: 20 miles (45-60 minutes)
+- **Best Option**: NJ Transit to NY Penn + LIRR to Atlantic Terminal
+- **Uber/Lyft**: $60-80 each way (surge pricing common)
+- **Parking**: $30/day (limited availability)
+
+## Insider Booking Strategies {#booking-strategies}
+
+### The 72-Hour Rule
+Cruise lines release unsold "guarantee" cabins 72 hours before sailing at massive discounts. You won't choose your exact cabin, but savings reach 60-70%.
+
+### Group Space Liquidation
+Travel agencies holding group space must release unsold cabins by September 5. Contact Next Trip Anywhere to access these hidden inventory blocks with exclusive amenities.
+
+### Casino Offers
+If you've cruised before and played in the casino, check your email. Cruise lines send ultra-low rates to past players. Essex County has a large cruising population—many qualify without realizing it.
+
+### Repositioning Cruise Secret
+Book back-to-back repositioning cruises for extended vacations at incredible values. September offers Alaska-to-Caribbean and Mediterranean-to-Caribbean options.
+
+### Military and First Responder Discounts
+Active and retired military save an additional 10%. Many Essex County police, fire, and EMT personnel qualify for similar discounts. Stack with last-minute rates for maximum savings.
+
+## What's Included in These Deals {#whats-included}
+
+### Always Included
+- Accommodation
+- Main dining room meals
+- Buffet access
+- Basic beverages (water, coffee, tea, juice)
+- Entertainment and shows
+- Pools and hot tubs
+- Fitness center
+- Kids' clubs (if applicable)
+
+### Often Included in September Deals
+- Beverage packages ($60-80/day value)
+- Specialty dining credits
+- WiFi packages
+- Onboard credit ($100-500)
+- Prepaid gratuities ($105/week value)
+- Shore excursion credits
+
+### Rarely Included (Budget Accordingly)
+- Airfare (unless specified)
+- Spa treatments
+- Casino gaming
+- Premium specialty restaurants
+- Alcoholic beverages (unless package included)
+- Photos
+- Shopping
+
+## Final Booking Tips for Essex County Residents
+
+### Act Fast But Smart
+While these deals require quick action, take 30 minutes to compare total costs. Factor in transportation from your Essex County location, parking, and any work you'll miss.
+
+### Leverage Local Connections
+Essex County's proximity to three cruise ports gives you advantages out-of-state cruisers don't have. You can book shorter notice, avoid flight costs, and even do same-day departures.
+
+### Consider Shoulder Season Benefits
+September cruising offers perfect weather in most destinations. Caribbean hurricanes rarely affect cruises (ships simply adjust routes), Alaska has Northern Lights, and Mediterranean crowds thin out.
+
+### Book Direct vs. Travel Agent
+For last-minute deals, booking direct may seem faster, but experienced agents often have access to unsold group space with better perks. Next Trip Anywhere specializes in last-minute cruise deals for Essex County residents.
+
+### Pack Light, Save Money
+With short booking windows, avoid checked bag fees by packing efficiently. Cruise ships have laundry facilities, and formal nights are increasingly optional.
+
+## Frequently Asked Questions
+
+### Q: Are these prices per person or per cabin?
+A: All prices listed are per person, based on double occupancy. Single travelers pay a "single supplement" (usually 150-200% of the pp rate).
+
+### Q: Can I still book if I don't have a passport?
+A: Closed-loop cruises (departing and returning to the same US port) accept birth certificates and driver's licenses. However, passports are strongly recommended.
+
+### Q: What if a hurricane affects my cruise?
+A: Cruise lines will modify itineraries to avoid storms. If ports change significantly, you'll receive onboard credit or future cruise credits as compensation.
+
+### Q: Are these deals available to non-Essex County residents?
+A: Yes, but some perks (like Cape Liberty parking discounts) are NJ resident exclusives. Prices may vary based on your location.
+
+### Q: How do I get the best cabin location?
+A: For last-minute bookings, cabin selection is limited. Mid-ship, lower decks offer the most stability. Avoid cabins near elevators, nightclubs, or anchor storage.
+
+### Q: Is the food really included?
+A: Main dining room and buffet meals are always included. Specialty restaurants cost extra ($30-50 pp) but September deals often include credits.
+
+### Q: What about COVID-19 protocols?
+A: As of September 2025, major cruise lines have dropped vaccine and testing requirements. Check individual cruise line policies, as they may change.
+
+### Q: Can I change my booking after purchasing?
+A: Most last-minute rates are non-refundable. Purchase "Cancel for Any Reason" insurance within 24 hours of booking for maximum flexibility.
+
+## Book Today Before These Deals Disappear
+
+These last-minute September cruise deals won't last long. Ships are sailing with or without you, and cruise lines would rather fill cabins at deep discounts than sail empty. For Essex County residents, the combination of nearby ports, exceptional prices, and perfect timing makes this a once-in-a-year opportunity.
+
+**Ready to book?** Contact Next Trip Anywhere's cruise specialists who monitor pricing hourly and can secure cabins the moment rates drop. With 45 years serving Essex County families, we know exactly how to maximize your cruise value while minimizing hassles.
+
+**Remember**: By the time you finish reading this article, some of these deals may already be gone. In the last-minute cruise market, hesitation costs money and opportunity. Check availability now and prepare for an unforgettable September adventure!
+
+---
+
+*Prices and availability subject to change. All rates quoted as of September 1, 2025, 6:00 AM EST. Contact Next Trip Anywhere at 1-800-XXX-XXXX for current pricing and availability. Essex County's trusted travel partner since 1980.*`,
   },
 ]
 

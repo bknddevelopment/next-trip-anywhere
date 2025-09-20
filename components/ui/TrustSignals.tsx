@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Shield, Award, Users, Clock, CheckCircle, Star, Lock, Phone } from 'lucide-react'
 import OptimizedImage from '@/components/ui/OptimizedImage'
 
@@ -138,10 +137,7 @@ export default function TrustSignals({
     const Icon = signal.icon || CheckCircle
 
     const content = (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
+      <div
         className={`
           flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300
           ${variant === 'badges' ? 'flex-col text-center space-x-0 space-y-2' : ''}
@@ -193,7 +189,7 @@ export default function TrustSignals({
             <div className="text-sm text-gray-600">{signal.description}</div>
           )}
         </div>
-      </motion.div>
+      </div>
     )
 
     return signal.link ? (
@@ -245,13 +241,7 @@ export default function TrustSignals({
                   .map((signal, index) => {
                     const Icon = signal.icon || Users
                     return (
-                      <motion.div
-                        key={signal.id}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="text-center"
-                      >
+                      <div key={signal.id} className="text-center">
                         <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                           <Icon className="w-8 h-8 text-white" />
                         </div>
@@ -262,7 +252,7 @@ export default function TrustSignals({
                         {signal.description && (
                           <div className="text-sm text-gray-600 mt-1">{signal.description}</div>
                         )}
-                      </motion.div>
+                      </div>
                     )
                   })}
               </div>
@@ -276,17 +266,11 @@ export default function TrustSignals({
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 {securityBadges.map((badge, index) => (
-                  <motion.div
-                    key={badge.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-lg p-3 shadow-sm"
-                  >
+                  <div key={badge.id} className="bg-white rounded-lg p-3 shadow-sm">
                     <div className="w-20 h-12 bg-gray-100 rounded flex items-center justify-center">
                       <span className="text-xs text-gray-600 font-medium">{badge.title}</span>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
               <div className="text-center mt-4 text-sm text-gray-600">

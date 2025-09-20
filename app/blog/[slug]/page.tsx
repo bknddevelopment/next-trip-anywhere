@@ -144,12 +144,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </header>
 
       {/* Featured Image */}
-      <div className="relative h-96 md:h-[500px] w-full">
+      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[450px] w-full">
         <Image
           src={post.featuredImage}
           alt={post.featuredImageAlt}
           fill
-          className="object-cover"
+          className="object-contain md:object-cover"
           priority
         />
       </div>
