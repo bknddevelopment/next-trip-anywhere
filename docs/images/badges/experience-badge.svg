@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
   <!-- Background circle with gradient -->
   <defs>
-    <linearGradient id="experienceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="experienceBadgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1E3A5F;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#2B4C7E;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow">
+    <filter id="experienceBadgeShadow">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
     </filter>
   </defs>
 
   <!-- Main circle background -->
-  <circle cx="60" cy="60" r="55" fill="url(#experienceGradient)" filter="url(#shadow)"/>
+  <circle cx="60" cy="60" r="55" fill="url(#experienceBadgeGradient)" filter="url(#experienceBadgeShadow)"/>
 
   <!-- Star icon -->
   <path d="M60 25 L67 42 L85 42 L71 53 L78 70 L60 58 L42 70 L49 53 L35 42 L53 42 Z"

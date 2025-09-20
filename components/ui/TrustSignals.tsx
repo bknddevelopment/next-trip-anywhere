@@ -150,13 +150,24 @@ export default function TrustSignals({
       >
         {signal.image ? (
           <div className="flex-shrink-0">
-            <OptimizedImage
-              src={signal.image}
-              alt={signal.title}
-              width={variant === 'badges' ? 48 : 32}
-              height={variant === 'badges' ? 48 : 32}
-              className="object-contain"
-            />
+            {/* Use direct img tag for SVG files - Next.js Image doesn't handle SVG well in static export */}
+            {signal.image.endsWith('.svg') ? (
+              <img
+                src={signal.image}
+                alt={signal.title}
+                width={variant === 'badges' ? 48 : 32}
+                height={variant === 'badges' ? 48 : 32}
+                className="object-contain"
+              />
+            ) : (
+              <OptimizedImage
+                src={signal.image}
+                alt={signal.title}
+                width={variant === 'badges' ? 48 : 32}
+                height={variant === 'badges' ? 48 : 32}
+                className="object-contain"
+              />
+            )}
           </div>
         ) : (
           <div

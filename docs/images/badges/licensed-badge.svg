@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
   <!-- Background circle with gradient -->
   <defs>
-    <linearGradient id="licensedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="licensedBadgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#7FBF4D;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#5A9030;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow">
+    <filter id="licensedBadgeShadow">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
     </filter>
   </defs>
 
   <!-- Main circle background -->
-  <circle cx="60" cy="60" r="55" fill="url(#licensedGradient)" filter="url(#shadow)"/>
+  <circle cx="60" cy="60" r="55" fill="url(#licensedBadgeGradient)" filter="url(#licensedBadgeShadow)"/>
 
   <!-- Shield icon -->
   <path d="M60 25 L75 35 L75 55 C75 65 70 75 60 80 C50 75 45 65 45 55 L45 35 Z"
