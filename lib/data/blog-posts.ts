@@ -3656,7 +3656,7 @@ These last-minute September cruise deals won't last long. Ships are sailing with
     featuredImage: '/images/europe-entry-rules-ees.jpg',
     featuredImageAlt:
       'European Union border control with new EES biometric scanning equipment and travelers preparing documents',
-    author: authors['sarah-martinez'],
+    author: authors['candy-myrick'],
     category: 'travel-alerts',
     tags: [
       'Europe Travel',
