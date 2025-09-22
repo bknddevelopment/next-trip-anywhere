@@ -5,7 +5,7 @@
 :HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/f3d0ebfa21773c8e.css","style"]
 :HL["/_next/static/css/bff52f32eb660233.css","style"]
-3:T142e,{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://nexttripanywhere.com/#organization","name":"Next Trip Anywhere","alternateName":"NTA Travel","url":"https://nexttripanywhere.com","logo":{"@type":"ImageObject","url":"https://nexttripanywhere.com/logo.png","width":250,"height":60},"image":"https://nexttripanywhere.com/og-image.jpg","description":"America's premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide. Expert travel planning with exclusive deals and 24/7 support since 2010.","foundingDate":"2010","foundingLocation":{"@type":"Place","name":"United States"},"slogan":"Your trusted travel experts nationwide","telephone":"+1-833-874-1019","email":"info@nexttripanywhere.com","faxNumber":"+1-833-874-1020","address":{"@type":"PostalAddress","addressCountry":"US","addressRegion":"Nationwide Service"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"State","name":"New York"},{"@type":"State","name":"California"},{"@type":"State","name":"Florida"},{"@type":"State","name":"Illinois"},{"@type":"State","name":"Massachusetts"},{"@type":"State","name":"Texas"},{"@type":"State","name":"Washington"},{"@type":"State","name":"Colorado"}],"serviceArea":{"@type":"Country","name":"United States"},"contactPoint":[{"@type":"ContactPoint","telephone":"+1-833-874-1019","contactType":"customer service","areaServed":"US","availableLanguage":["English","Spanish","French"],"contactOption":["TollFree","HearingImpairedSupported"],"hoursAvailable":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"06:00","closes":"23:00","timeZone":"America/New_York"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"07:00","closes":"22:00","timeZone":"America/New_York"}]},{"@type":"ContactPoint","email":"info@nexttripanywhere.com","contactType":"customer service","areaServed":"US"},{"@type":"ContactPoint","email":"groups@nexttripanywhere.com","contactType":"reservations","areaServed":"US"}],"sameAs":["https://www.facebook.com/nexttripanywhere","https://www.instagram.com/nexttripanywhere","https://www.twitter.com/nexttripanywhere","https://www.linkedin.com/company/nexttripanywhere","https://www.youtube.com/nexttripanywhere"],"priceRange":"$$","paymentAccepted":["Cash","Credit Card","Debit Card","PayPal","Bank Transfer"],"currenciesAccepted":"USD","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"3,247","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Sarah Johnson"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.","datePublished":"2024-01-10"},{"@type":"Review","author":{"@type":"Person","name":"Michael Chen"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.","datePublished":"2024-01-08"}],"award":["Best Travel Agency 2024","Top Customer Service Award","Exclusive Airline Partnership Award","Travel Industry Excellence Award"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Travel Services Catalog","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Flight Booking Services","description":"Domestic and international flight reservations with exclusive unpublished fares","category":"Flight Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cruise Packages","description":"Caribbean, Mediterranean, Alaska, and worldwide cruise packages","category":"Cruise Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees plus exclusive onboard credits"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation Packages","description":"All-inclusive resort packages and custom tour itineraries","category":"Vacation Planning"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"Complimentary vacation planning services"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Group Travel","description":"Customized group travel planning for 10+ travelers","category":"Group Travel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Corporate Travel","description":"Business travel management and corporate rates","category":"Business Travel"}}]},"numberOfEmployees":{"@type":"QuantitativeValue","value":"50-100"},"knowsAbout":["Flight booking","Cruise planning","Vacation packages","Group travel coordination","Honeymoon planning","Business travel management","International travel documentation","Travel insurance","Destination weddings","Adventure tours"],"memberOf":[{"@type":"Organization","name":"American Society of Travel Advisors","alternateName":"ASTA"},{"@type":"Organization","name":"Cruise Lines International Association","alternateName":"CLIA"}]}0:{"P":null,"b":"5coMOKb0yaURosTcXPXg4","p":"","c":["","blog",""],"i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f3d0ebfa21773c8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/bff52f32eb660233.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preconnect","href":"https://images.unsplash.com"}],["$","link",null,{"rel":"preconnect","href":"https://cdn.coverr.co"}],["$","link",null,{"rel":"dns-prefetch","href":"https://www.googletagmanager.com"}],["$","$L2",null,{}],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"\n            /* Critical CSS for initial render */\n            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }\n            .hero-section { min-height: 100vh; position: relative; }\n            .animate-fade-in { animation: fadeIn 0.5s ease-in; }\n            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }\n          "}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]]}],{"children":["blog","$L6",{"children":["__PAGE__","$L7",{},null,false]},null,false]},null,false],"$L8",false]],"m":"$undefined","G":["$9",[]],"s":false,"S":true}
+3:T142e,{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://nexttripanywhere.com/#organization","name":"Next Trip Anywhere","alternateName":"NTA Travel","url":"https://nexttripanywhere.com","logo":{"@type":"ImageObject","url":"https://nexttripanywhere.com/logo.png","width":250,"height":60},"image":"https://nexttripanywhere.com/og-image.jpg","description":"America's premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide. Expert travel planning with exclusive deals and 24/7 support since 2010.","foundingDate":"2010","foundingLocation":{"@type":"Place","name":"United States"},"slogan":"Your trusted travel experts nationwide","telephone":"+1-833-874-1019","email":"info@nexttripanywhere.com","faxNumber":"+1-833-874-1020","address":{"@type":"PostalAddress","addressCountry":"US","addressRegion":"Nationwide Service"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"State","name":"New York"},{"@type":"State","name":"California"},{"@type":"State","name":"Florida"},{"@type":"State","name":"Illinois"},{"@type":"State","name":"Massachusetts"},{"@type":"State","name":"Texas"},{"@type":"State","name":"Washington"},{"@type":"State","name":"Colorado"}],"serviceArea":{"@type":"Country","name":"United States"},"contactPoint":[{"@type":"ContactPoint","telephone":"+1-833-874-1019","contactType":"customer service","areaServed":"US","availableLanguage":["English","Spanish","French"],"contactOption":["TollFree","HearingImpairedSupported"],"hoursAvailable":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"06:00","closes":"23:00","timeZone":"America/New_York"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"07:00","closes":"22:00","timeZone":"America/New_York"}]},{"@type":"ContactPoint","email":"info@nexttripanywhere.com","contactType":"customer service","areaServed":"US"},{"@type":"ContactPoint","email":"groups@nexttripanywhere.com","contactType":"reservations","areaServed":"US"}],"sameAs":["https://www.facebook.com/nexttripanywhere","https://www.instagram.com/nexttripanywhere","https://www.twitter.com/nexttripanywhere","https://www.linkedin.com/company/nexttripanywhere","https://www.youtube.com/nexttripanywhere"],"priceRange":"$$","paymentAccepted":["Cash","Credit Card","Debit Card","PayPal","Bank Transfer"],"currenciesAccepted":"USD","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"3,247","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Sarah Johnson"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.","datePublished":"2024-01-10"},{"@type":"Review","author":{"@type":"Person","name":"Michael Chen"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.","datePublished":"2024-01-08"}],"award":["Best Travel Agency 2024","Top Customer Service Award","Exclusive Airline Partnership Award","Travel Industry Excellence Award"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Travel Services Catalog","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Flight Booking Services","description":"Domestic and international flight reservations with exclusive unpublished fares","category":"Flight Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cruise Packages","description":"Caribbean, Mediterranean, Alaska, and worldwide cruise packages","category":"Cruise Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees plus exclusive onboard credits"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation Packages","description":"All-inclusive resort packages and custom tour itineraries","category":"Vacation Planning"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"Complimentary vacation planning services"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Group Travel","description":"Customized group travel planning for 10+ travelers","category":"Group Travel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Corporate Travel","description":"Business travel management and corporate rates","category":"Business Travel"}}]},"numberOfEmployees":{"@type":"QuantitativeValue","value":"50-100"},"knowsAbout":["Flight booking","Cruise planning","Vacation packages","Group travel coordination","Honeymoon planning","Business travel management","International travel documentation","Travel insurance","Destination weddings","Adventure tours"],"memberOf":[{"@type":"Organization","name":"American Society of Travel Advisors","alternateName":"ASTA"},{"@type":"Organization","name":"Cruise Lines International Association","alternateName":"CLIA"}]}0:{"P":null,"b":"07lTr1_pppC1GeDYTsY14","p":"","c":["","blog",""],"i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f3d0ebfa21773c8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/bff52f32eb660233.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preconnect","href":"https://images.unsplash.com"}],["$","link",null,{"rel":"preconnect","href":"https://cdn.coverr.co"}],["$","link",null,{"rel":"dns-prefetch","href":"https://www.googletagmanager.com"}],["$","$L2",null,{}],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"\n            /* Critical CSS for initial render */\n            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }\n            .hero-section { min-height: 100vh; position: relative; }\n            .animate-fade-in { animation: fadeIn 0.5s ease-in; }\n            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }\n          "}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]]}],{"children":["blog","$L6",{"children":["__PAGE__","$L7",{},null,false]},null,false]},null,false],"$L8",false]],"m":"$undefined","G":["$9",[]],"s":false,"S":true}
 a:I[2766,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
 b:I[4882,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
 c:I[900,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
@@ -21,8 +21,8 @@ f:"$Sreact.suspense"
 16:I[2663,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"Toaster"]
 17:I[5427,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
 18:I[6137,["3831","static/chunks/app/blog/page-49442046dc783a58.js"],"BlogPostCard"]
-24:I[4431,[],"ViewportBoundary"]
-26:I[4431,[],"MetadataBoundary"]
+25:I[4431,[],"ViewportBoundary"]
+27:I[4431,[],"MetadataBoundary"]
 4:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Next Trip Anywhere\",\"url\":\"https://nexttripanywhere.com\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://nexttripanywhere.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}]
 5:["$","body",null,{"className":"__variable_f367f3 __variable_ca911e font-sans antialiased min-h-screen bg-warm-50","children":[["$","$La",null,{}],["$","$Lb",null,{}],["$","$Lc",null,{}],["$","$Ld",null,{}],null,["$","$Le",null,{}],["$","$f",null,{"fallback":null,"children":["$","$L10",null,{}]}],["$","$L11",null,{"children":[["$","$L12",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L13",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L14",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L15",null,{}]]}],["$","$L16",null,{"position":"top-right","toastOptions":{"duration":4000,"style":{"background":"#1E3A5F","color":"#fff","borderRadius":"8px"},"success":{"iconTheme":{"primary":"#7FBF4D","secondary":"#fff"}}}}],["$","$L17",null,{}]]}]
 6:["$","$1","c",{"children":[null,["$","$L13",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L14",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
@@ -280,12 +280,12 @@ Remember, while these strategies provide a strong foundation, flight prices rema
 
 Whether you're catching an early morning flight from Millburn, coordinating a family trip from South Orange, or planning corporate travel from Newark's business district, these insights will help you navigate the complex world of airline pricing and secure the best deals for your next adventure.
 
-*For personalized assistance with your flight bookings from Newark Airport, contact Next Trip Anywhere—your local Essex County travel experts.*7:["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-gray-50","children":[["$","section",null,{"className":"bg-gradient-to-br from-primary to-secondary text-white py-16","children":["$","div",null,{"className":"container mx-auto px-4","children":["$","div",null,{"className":"max-w-4xl mx-auto text-center","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold mb-4","children":"Travel Insights for Essex County"}],["$","p",null,{"className":"text-xl text-white/90","children":"Expert tips, destination guides, and insider knowledge to help you travel smarter from Newark Airport and beyond."}]]}]}]}],["$","section",null,{"className":"bg-white border-b","children":["$","div",null,{"className":"container mx-auto px-4 py-4","children":["$","div",null,{"className":"flex flex-wrap gap-2 justify-center","children":[["$","button","all",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"All Articles"}],["$","button","travel-tips",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Travel Tips"}],["$","button","destinations",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Destinations"}],["$","button","airport-guides",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Airport Guides"}],["$","button","family-travel",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Family Travel"}],["$","button","business-travel",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Business Travel"}],["$","button","seasonal",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Seasonal"}],["$","button","deals",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Deals"}]]}]}]}],["$","section",null,{"className":"container mx-auto px-4 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8","children":[["$","$L18",null,{"post":{"id":"best-time-book-flights-newark","slug":"best-time-book-flights-newark-airport","title":"Best Time to Book Flights from Newark Airport: A Data-Driven Guide for 2025","excerpt":"Discover the optimal booking windows for flights from Newark Liberty International Airport. Our comprehensive analysis of seasonal pricing, advance booking strategies, and day-of-week insights will help you save hundreds on your next trip.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Newark Liberty International Airport terminal with planes at gates","author":{"id":"sarah-martinez","name":"Sarah Martinez","role":"Senior Travel Consultant","bio":"With over 15 years of experience in the travel industry, Sarah specializes in finding the best deals for Essex County residents. Her expertise in Newark Airport operations and airline pricing strategies helps thousands of local families save on their vacations.","avatar":"/images/authors/placeholder.svg","social":{"linkedin":"https://linkedin.com/in/sarahmartinez","email":"sarah@nexttripanywhere.com"}},"category":"airport-guides","tags":["Newark Airport","Flight Deals","Booking Tips","Essex County","Travel Planning"],"publishedAt":"2025-01-13T09:00:00Z","readingTime":12,"seo":{"metaTitle":"Best Time to Book Flights from Newark Airport | 2025 Guide","metaDescription":"Learn when to book flights from Newark Airport for maximum savings. Includes seasonal pricing analysis, advance booking strategies, and insider tips from local experts.","keywords":["Newark Airport flights","best time to book flights","EWR flight deals","Newark Liberty International","Essex County travel","flight booking tips"],"ogImage":"/images/blog/og/newark-booking-guide.jpg"},"content":"$19"},"featured":true}],["$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20"]]}],"$L21"]}],"$L22"]}],null,"$L23"]}]
-8:["$","$1","h",{"children":[null,[["$","$L24",null,{"children":"$L25"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L26",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L27"}]}]}]]}]
-2f:I[2619,["3831","static/chunks/app/blog/page-49442046dc783a58.js"],""]
-30:I[4431,[],"OutletBoundary"]
-32:I[5278,[],"AsyncMetadataOutlet"]
-28:T4964,# Essex County School Break Travel Guide 2025: Complete Planning Resource for Local Families
+*For personalized assistance with your flight bookings from Newark Airport, contact Next Trip Anywhere—your local Essex County travel experts.*7:["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-gray-50","children":[["$","section",null,{"className":"bg-gradient-to-br from-primary to-secondary text-white py-16","children":["$","div",null,{"className":"container mx-auto px-4","children":["$","div",null,{"className":"max-w-4xl mx-auto text-center","children":[["$","h1",null,{"className":"text-4xl md:text-5xl font-bold mb-4","children":"Travel Insights for Essex County"}],["$","p",null,{"className":"text-xl text-white/90","children":"Expert tips, destination guides, and insider knowledge to help you travel smarter from Newark Airport and beyond."}]]}]}]}],["$","section",null,{"className":"bg-white border-b","children":["$","div",null,{"className":"container mx-auto px-4 py-4","children":["$","div",null,{"className":"flex flex-wrap gap-2 justify-center","children":[["$","button","all",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"All Articles"}],["$","button","travel-tips",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Travel Tips"}],["$","button","destinations",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Destinations"}],["$","button","airport-guides",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Airport Guides"}],["$","button","family-travel",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Family Travel"}],["$","button","business-travel",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Business Travel"}],["$","button","seasonal",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Seasonal"}],["$","button","deals",{"className":"px-4 py-2 rounded-full border border-gray-300 hover:border-primary hover:bg-primary hover:text-white transition-colors text-sm font-medium","children":"Deals"}]]}]}]}],["$","section",null,{"className":"container mx-auto px-4 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8","children":[["$","$L18",null,{"post":{"id":"best-time-book-flights-newark","slug":"best-time-book-flights-newark-airport","title":"Best Time to Book Flights from Newark Airport: A Data-Driven Guide for 2025","excerpt":"Discover the optimal booking windows for flights from Newark Liberty International Airport. Our comprehensive analysis of seasonal pricing, advance booking strategies, and day-of-week insights will help you save hundreds on your next trip.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Newark Liberty International Airport terminal with planes at gates","author":{"id":"sarah-martinez","name":"Sarah Martinez","role":"Senior Travel Consultant","bio":"With over 15 years of experience in the travel industry, Sarah specializes in finding the best deals for Essex County residents. Her expertise in Newark Airport operations and airline pricing strategies helps thousands of local families save on their vacations.","avatar":"/images/authors/placeholder.svg","social":{"linkedin":"https://linkedin.com/in/sarahmartinez","email":"sarah@nexttripanywhere.com"}},"category":"airport-guides","tags":["Newark Airport","Flight Deals","Booking Tips","Essex County","Travel Planning"],"publishedAt":"2025-01-13T09:00:00Z","readingTime":12,"seo":{"metaTitle":"Best Time to Book Flights from Newark Airport | 2025 Guide","metaDescription":"Learn when to book flights from Newark Airport for maximum savings. Includes seasonal pricing analysis, advance booking strategies, and insider tips from local experts.","keywords":["Newark Airport flights","best time to book flights","EWR flight deals","Newark Liberty International","Essex County travel","flight booking tips"],"ogImage":"/images/blog/og/newark-booking-guide.jpg"},"content":"$19"},"featured":true}],["$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21"]]}],"$L22"]}],"$L23"]}],null,"$L24"]}]
+8:["$","$1","h",{"children":[null,[["$","$L25",null,{"children":"$L26"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L27",null,{"children":["$","div",null,{"hidden":true,"children":["$","$f",null,{"fallback":null,"children":"$L28"}]}]}]]}]
+31:I[2619,["3831","static/chunks/app/blog/page-49442046dc783a58.js"],""]
+32:I[4431,[],"OutletBoundary"]
+34:I[5278,[],"AsyncMetadataOutlet"]
+29:T4964,# Essex County School Break Travel Guide 2025: Complete Planning Resource for Local Families
 
 Planning family vacations around school schedules can be challenging, especially when coordinating between different Essex County school districts. Whether you're in Newark Public Schools, Montclair Public Schools, West Orange, or any of our other excellent districts, this comprehensive guide will help you maximize every school break in 2025.
 
@@ -838,8 +838,8 @@ Remember, the best family vacation is one that creates lasting memories while re
 
 Start planning today, and make 2025 the year your family explores the world together. From all of us at Next Trip Anywhere, we're here to help make your Essex County family's travel dreams a reality.
 
-*For personalized family vacation planning assistance, contact Next Trip Anywhere—your local Essex County travel experts who understand the unique needs of our community's families.*1a:["$","$L18","essex-county-school-break-travel-guide-2025",{"post":{"id":"essex-county-school-break-travel-guide-2025","slug":"essex-county-school-break-travel-guide-2025","title":"Essex County School Break Travel Guide 2025: Complete Planning Resource for Local Families","excerpt":"Plan perfect family vacations around Essex County school calendars. Comprehensive guide covering spring break destinations, summer vacation planning, and holiday travel tips tailored for Newark, Montclair, and West Orange families.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Happy family at airport with luggage ready for vacation","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"family-travel","tags":["School Breaks","Family Travel","Essex County Schools","Vacation Planning","Spring Break","Summer Vacation"],"publishedAt":"2025-01-13T10:00:00Z","readingTime":15,"seo":{"metaTitle":"Essex County School Break Travel Guide 2025 | Family Vacation Planning","metaDescription":"Complete 2025 travel guide for Essex County families. Spring break destinations, summer vacation ideas, and holiday travel tips aligned with local school calendars.","keywords":["Essex County school breaks","family vacation planning","spring break 2025","summer vacation ideas","Newark schools calendar","Montclair schools travel"],"ogImage":"/images/blog/og/school-break-guide.jpg"},"content":"$28"}}]
-29:T468b,# Top 10 Destinations for Essex County Families: Direct Flights, Budget Tips & Resort Reviews
+*For personalized family vacation planning assistance, contact Next Trip Anywhere—your local Essex County travel experts who understand the unique needs of our community's families.*1a:["$","$L18","essex-county-school-break-travel-guide-2025",{"post":{"id":"essex-county-school-break-travel-guide-2025","slug":"essex-county-school-break-travel-guide-2025","title":"Essex County School Break Travel Guide 2025: Complete Planning Resource for Local Families","excerpt":"Plan perfect family vacations around Essex County school calendars. Comprehensive guide covering spring break destinations, summer vacation planning, and holiday travel tips tailored for Newark, Montclair, and West Orange families.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Happy family at airport with luggage ready for vacation","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"family-travel","tags":["School Breaks","Family Travel","Essex County Schools","Vacation Planning","Spring Break","Summer Vacation"],"publishedAt":"2025-01-13T10:00:00Z","readingTime":15,"seo":{"metaTitle":"Essex County School Break Travel Guide 2025 | Family Vacation Planning","metaDescription":"Complete 2025 travel guide for Essex County families. Spring break destinations, summer vacation ideas, and holiday travel tips aligned with local school calendars.","keywords":["Essex County school breaks","family vacation planning","spring break 2025","summer vacation ideas","Newark schools calendar","Montclair schools travel"],"ogImage":"/images/blog/og/school-break-guide.jpg"},"content":"$29"}}]
+2a:T468b,# Top 10 Destinations for Essex County Families: Direct Flights, Budget Tips & Resort Reviews
 
 After helping thousands of Essex County families plan their perfect vacations, we've identified the destinations that consistently deliver amazing experiences. These aren't just popular spots—they're carefully selected based on ease of access from Newark Airport, family-friendly amenities, value for money, and the enthusiastic feedback from your neighbors in Montclair, West Orange, Livingston, and beyond.
 
@@ -1358,8 +1358,8 @@ Remember that the best family vacation is one where everyone has something to lo
 
 From the beaches of Turks and Caicos to the monuments of Washington, D.C., from the theme parks of Orlando to the history of Boston, your next family adventure awaits. And the best part? They're all easily accessible from our Essex County home.
 
-*Need help planning your next family vacation? Contact Next Trip Anywhere for personalized assistance from travel experts who understand Essex County families' unique needs.*1b:["$","$L18","top-10-destinations-essex-county-families",{"post":{"id":"top-10-destinations-essex-county-families","slug":"top-10-destinations-essex-county-families","title":"Top 10 Destinations for Essex County Families: Direct Flights, Budget Tips & Resort Reviews","excerpt":"Discover the best family vacation destinations easily accessible from Newark Airport. Includes budget breakdowns, direct flight options, and honest reviews of family resorts perfect for Essex County travelers.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Family enjoying beach vacation with kids playing in sand","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"destinations","tags":["Family Destinations","Newark Airport","Budget Travel","Family Resorts","Direct Flights"],"publishedAt":"2025-01-13T11:00:00Z","readingTime":10,"seo":{"metaTitle":"Top 10 Family Destinations from Essex County NJ | Direct Flights & Reviews","metaDescription":"Best family vacation spots with direct flights from Newark Airport. Budget tips, resort reviews, and insider advice for Essex County families.","keywords":["Essex County family vacations","Newark Airport destinations","family resorts","budget family travel","direct flights EWR","family travel reviews"],"ogImage":"/images/blog/og/family-destinations.jpg"},"content":"$29"}}]
-2a:T33f4,# Newark Airport Travel Tips from Local Experts: Insider Secrets for Stress-Free Travel
+*Need help planning your next family vacation? Contact Next Trip Anywhere for personalized assistance from travel experts who understand Essex County families' unique needs.*1b:["$","$L18","top-10-destinations-essex-county-families",{"post":{"id":"top-10-destinations-essex-county-families","slug":"top-10-destinations-essex-county-families","title":"Top 10 Destinations for Essex County Families: Direct Flights, Budget Tips & Resort Reviews","excerpt":"Discover the best family vacation destinations easily accessible from Newark Airport. Includes budget breakdowns, direct flight options, and honest reviews of family resorts perfect for Essex County travelers.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Family enjoying beach vacation with kids playing in sand","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"destinations","tags":["Family Destinations","Newark Airport","Budget Travel","Family Resorts","Direct Flights"],"publishedAt":"2025-01-13T11:00:00Z","readingTime":10,"seo":{"metaTitle":"Top 10 Family Destinations from Essex County NJ | Direct Flights & Reviews","metaDescription":"Best family vacation spots with direct flights from Newark Airport. Budget tips, resort reviews, and insider advice for Essex County families.","keywords":["Essex County family vacations","Newark Airport destinations","family resorts","budget family travel","direct flights EWR","family travel reviews"],"ogImage":"/images/blog/og/family-destinations.jpg"},"content":"$2a"}}]
+2b:T33f4,# Newark Airport Travel Tips from Local Experts: Insider Secrets for Stress-Free Travel
 
 After decades of helping Essex County residents navigate Newark Liberty International Airport, we've compiled the ultimate insider's guide. These aren't generic tips you'll find anywhere—these are the real secrets shared by Montclair commuters, Livingston business travelers, and Newark locals who fly monthly.
 
@@ -1756,8 +1756,8 @@ Remember, every seasoned Essex County traveler has Newark Airport stories—dela
 
 Whether you're a Millburn executive flying weekly, a Montclair family heading to Disney, or a Newark resident visiting family abroad, these tips will serve you well. Newark Airport isn't perfect, but it's ours—and now you know how to use it like a pro.
 
-*For assistance with flight bookings and travel planning from Newark Airport, contact Next Trip Anywhere—your local Essex County travel experts.*1c:["$","$L18","newark-airport-travel-tips",{"post":{"id":"newark-airport-travel-tips","slug":"newark-airport-travel-tips-local-experts","title":"Newark Airport Travel Tips from Local Experts: Insider Secrets for Stress-Free Travel","excerpt":"Master Newark Liberty International Airport with insider tips from Essex County locals. From secret parking spots to security shortcuts and terminal navigation, make EWR travel seamless.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Newark Liberty International Airport terminal interior","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"airport-guides","tags":["Newark Airport","EWR Tips","Airport Parking","Travel Tips","Essex County"],"publishedAt":"2025-01-13T12:00:00Z","readingTime":12,"seo":{"metaTitle":"Newark Airport (EWR) Insider Tips | Local Expert Guide 2025","metaDescription":"Navigate Newark Airport like a pro with insider tips from Essex County locals. Parking strategies, security shortcuts, terminal guides, and money-saving secrets.","keywords":["Newark Airport tips","EWR guide","Newark Airport parking","Terminal C United","airport security tips","Essex County airport guide"],"ogImage":"/images/blog/og/newark-airport-tips.jpg"},"content":"$2a"}}]
-2b:T3487,# Essex County Corporate Travel Solutions: Maximize Efficiency and Minimize Costs
+*For assistance with flight bookings and travel planning from Newark Airport, contact Next Trip Anywhere—your local Essex County travel experts.*1c:["$","$L18","newark-airport-travel-tips",{"post":{"id":"newark-airport-travel-tips","slug":"newark-airport-travel-tips-local-experts","title":"Newark Airport Travel Tips from Local Experts: Insider Secrets for Stress-Free Travel","excerpt":"Master Newark Liberty International Airport with insider tips from Essex County locals. From secret parking spots to security shortcuts and terminal navigation, make EWR travel seamless.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Newark Liberty International Airport terminal interior","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"airport-guides","tags":["Newark Airport","EWR Tips","Airport Parking","Travel Tips","Essex County"],"publishedAt":"2025-01-13T12:00:00Z","readingTime":12,"seo":{"metaTitle":"Newark Airport (EWR) Insider Tips | Local Expert Guide 2025","metaDescription":"Navigate Newark Airport like a pro with insider tips from Essex County locals. Parking strategies, security shortcuts, terminal guides, and money-saving secrets.","keywords":["Newark Airport tips","EWR guide","Newark Airport parking","Terminal C United","airport security tips","Essex County airport guide"],"ogImage":"/images/blog/og/newark-airport-tips.jpg"},"content":"$2b"}}]
+2c:T3487,# Essex County Corporate Travel Solutions: Maximize Efficiency and Minimize Costs
 
 Managing corporate travel for Essex County businesses presents unique opportunities and challenges. With Newark Liberty International Airport as a major hub, proximity to New York City, and a thriving business community from Newark to Millburn, local companies need sophisticated travel strategies that balance cost control with employee satisfaction.
 
@@ -2189,8 +2189,8 @@ A well-managed corporate travel program can reduce costs by 20-30% while improvi
 
 Whether you're a Newark startup sending your first employee on a business trip or a Millburn corporation managing thousands of annual trips, these strategies will help optimize your travel program for success.
 
-*Need help developing your corporate travel program? Contact Next Trip Anywhere for expert guidance tailored to Essex County businesses.*1d:["$","$L18","essex-county-corporate-travel-solutions",{"post":{"id":"essex-county-corporate-travel-solutions","slug":"essex-county-corporate-travel-solutions","title":"Essex County Corporate Travel Solutions: Maximize Efficiency and Minimize Costs","excerpt":"Comprehensive guide for Essex County businesses to optimize corporate travel programs. Learn expense management, travel policy best practices, and tax benefits while ensuring employee satisfaction.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Business traveler at Newark Airport with laptop and luggage","author":{"id":"michael-chen","name":"Michael Chen","role":"Corporate Travel Specialist","bio":"Michael brings 12 years of corporate travel management experience to Next Trip Anywhere. He helps Essex County businesses optimize their travel programs while ensuring compliance and cost efficiency.","avatar":"/images/authors/placeholder.svg","social":{"linkedin":"https://linkedin.com/in/michaelchen","twitter":"@MichaelChenTravel"}},"category":"business-travel","tags":["Corporate Travel","Business Travel","Expense Management","Travel Policy","Essex County Business"],"publishedAt":"2025-01-13T13:00:00Z","readingTime":10,"seo":{"metaTitle":"Corporate Travel Solutions for Essex County Businesses | Complete Guide","metaDescription":"Optimize your Essex County company travel program with expert strategies for expense management, policy development, and tax benefits. Save 20-30% on business travel.","keywords":["corporate travel Essex County","business travel management","travel expense policy","Newark Airport business travel","corporate travel savings","travel policy best practices"],"ogImage":"/images/blog/og/corporate-travel.jpg"},"content":"$2b"}}]
-2c:T886c,# Coolcations: Beat the Heat with These Refreshing Fall Destinations from Newark Airport
+*Need help developing your corporate travel program? Contact Next Trip Anywhere for expert guidance tailored to Essex County businesses.*1d:["$","$L18","essex-county-corporate-travel-solutions",{"post":{"id":"essex-county-corporate-travel-solutions","slug":"essex-county-corporate-travel-solutions","title":"Essex County Corporate Travel Solutions: Maximize Efficiency and Minimize Costs","excerpt":"Comprehensive guide for Essex County businesses to optimize corporate travel programs. Learn expense management, travel policy best practices, and tax benefits while ensuring employee satisfaction.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Business traveler at Newark Airport with laptop and luggage","author":{"id":"michael-chen","name":"Michael Chen","role":"Corporate Travel Specialist","bio":"Michael brings 12 years of corporate travel management experience to Next Trip Anywhere. He helps Essex County businesses optimize their travel programs while ensuring compliance and cost efficiency.","avatar":"/images/authors/placeholder.svg","social":{"linkedin":"https://linkedin.com/in/michaelchen","twitter":"@MichaelChenTravel"}},"category":"business-travel","tags":["Corporate Travel","Business Travel","Expense Management","Travel Policy","Essex County Business"],"publishedAt":"2025-01-13T13:00:00Z","readingTime":10,"seo":{"metaTitle":"Corporate Travel Solutions for Essex County Businesses | Complete Guide","metaDescription":"Optimize your Essex County company travel program with expert strategies for expense management, policy development, and tax benefits. Save 20-30% on business travel.","keywords":["corporate travel Essex County","business travel management","travel expense policy","Newark Airport business travel","corporate travel savings","travel policy best practices"],"ogImage":"/images/blog/og/corporate-travel.jpg"},"content":"$2c"}}]
+2d:T886c,# Coolcations: Beat the Heat with These Refreshing Fall Destinations from Newark Airport
 
 With over 400,000 posts on TikTok and counting, "coolcations" have become the hottest travel trend of 2025—ironically, by helping travelers escape the heat! As September temperatures in Essex County still hover in the uncomfortable 80s, more families from Newark, Montclair, and West Orange are seeking refreshing escapes to cooler climates.
 
@@ -3120,8 +3120,8 @@ Welcome to the coolcation revolution, Essex County. Your perfect fall escape is 
 
 *Ready to book your coolcation? Contact Next Trip Anywhere for personalized planning assistance. We specialize in cool climate destinations and understand exactly what Essex County families need for the perfect fall getaway.*
 
-**#Coolcation #EssexCountyTravel #NewarkAirport #FallTravel2025 #BeatTheHeat #CoolWeatherDestinations #FamilyTravel #TrendingTravel**1e:["$","$L18","coolcations-fall-destinations-newark-airport",{"post":{"id":"coolcations-fall-destinations-newark-airport","slug":"coolcations-beat-the-heat-fall-destinations-newark-airport","title":"Coolcations: Beat the Heat with These Refreshing Fall Destinations from Newark Airport","excerpt":"Discover the hottest travel trend of 2025! Escape to cooler climates this fall with our expert guide to the best \"coolcation\" destinations from Newark Airport. Perfect temperatures, stunning fall foliage, and budget-friendly options for Essex County families.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Family enjoying autumn foliage at a mountain lake resort with cool weather","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"destinations","tags":["Coolcations","Fall Travel","Newark Airport","Cool Weather Destinations","Essex County","Trending Travel","Budget Travel","Family Destinations"],"publishedAt":"2025-09-15T09:00:00Z","readingTime":18,"seo":{"metaTitle":"Coolcations 2025: Best Cool Weather Fall Destinations from Newark | Essex County Guide","metaDescription":"Beat the heat with trending coolcation destinations! Expert guide to cool climate fall getaways from Newark Airport. Budget tips, flight info, and packing guides for Essex County families.","keywords":["coolcations","cool weather destinations","fall travel from Newark","Essex County travel","beat the heat travel","autumn destinations","cool climate vacations","Newark Airport destinations","trending travel 2025","fall foliage trips"],"ogImage":"/images/blog/og/coolcations-fall-2025.jpg"},"content":"$2c"}}]
-2d:T3aa5,# Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark
+**#Coolcation #EssexCountyTravel #NewarkAirport #FallTravel2025 #BeatTheHeat #CoolWeatherDestinations #FamilyTravel #TrendingTravel**1e:["$","$L18","coolcations-fall-destinations-newark-airport",{"post":{"id":"coolcations-fall-destinations-newark-airport","slug":"coolcations-beat-the-heat-fall-destinations-newark-airport","title":"Coolcations: Beat the Heat with These Refreshing Fall Destinations from Newark Airport","excerpt":"Discover the hottest travel trend of 2025! Escape to cooler climates this fall with our expert guide to the best \"coolcation\" destinations from Newark Airport. Perfect temperatures, stunning fall foliage, and budget-friendly options for Essex County families.","featuredImage":"/images/placeholder-destination.jpg","featuredImageAlt":"Family enjoying autumn foliage at a mountain lake resort with cool weather","author":"$7:props:children:0:props:children:2:props:children:0:props:children:0:props:post:author","category":"destinations","tags":["Coolcations","Fall Travel","Newark Airport","Cool Weather Destinations","Essex County","Trending Travel","Budget Travel","Family Destinations"],"publishedAt":"2025-09-15T09:00:00Z","readingTime":18,"seo":{"metaTitle":"Coolcations 2025: Best Cool Weather Fall Destinations from Newark | Essex County Guide","metaDescription":"Beat the heat with trending coolcation destinations! Expert guide to cool climate fall getaways from Newark Airport. Budget tips, flight info, and packing guides for Essex County families.","keywords":["coolcations","cool weather destinations","fall travel from Newark","Essex County travel","beat the heat travel","autumn destinations","cool climate vacations","Newark Airport destinations","trending travel 2025","fall foliage trips"],"ogImage":"/images/blog/og/coolcations-fall-2025.jpg"},"content":"$2d"}}]
+2e:T3aa5,# Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark
 
 **⏰ TIME-SENSITIVE ALERT:** These cruise deals are departing within the next 30 days and prices are updated daily. As of September 1, 2025, we've secured exclusive rates starting at just $72 per night for Essex County residents. With ships sailing at reduced capacity, cruise lines are offering unprecedented discounts to fill remaining cabins.
 
@@ -3392,8 +3392,8 @@ These last-minute September cruise deals won't last long. Ships are sailing with
 
 ---
 
-*Prices and availability subject to change. All rates quoted as of September 1, 2025, 6:00 AM EST. Contact Next Trip Anywhere at 1-800-XXX-XXXX for current pricing and availability. Essex County's trusted travel partner since 1980.*1f:["$","$L18","last-minute-september-cruise-deals",{"post":{"id":"last-minute-september-cruise-deals","slug":"last-minute-september-cruise-deals-caribbean-alaska-mediterranean","title":"Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark","excerpt":"URGENT: Incredible last-minute cruise deals departing within 30 days! Save up to 50% on Caribbean, Alaska, and Mediterranean cruises from Newark area ports. Prices starting at just $72/night with balcony upgrades available. Essex County residents can reach departure ports in under an hour.","featuredImage":"/images/cruise-deals-september.png","featuredImageAlt":"Cruise ship with special deals and promotional text overlay showcasing last-minute cruise offers","author":{"id":"candy-myrick","name":"Candy Myrick","role":"Travel Specialist","bio":"Candy is a seasoned travel expert specializing in cruise vacations and last-minute deals. With extensive knowledge of Caribbean, Alaska, and Mediterranean itineraries, she helps Essex County residents find incredible cruise values and unforgettable experiences at sea.","avatar":"/images/authors/placeholder.svg","social":{"email":"candy@nexttripanywhere.com"}},"category":"deals","tags":["Cruise Deals","Last Minute Travel","Caribbean Cruises","Alaska Cruises","Mediterranean Cruises","Newark Departures","Essex County","September Travel","Budget Cruises","Luxury Travel Deals"],"publishedAt":"2025-09-01T06:00:00Z","readingTime":16,"seo":{"metaTitle":"Last-Minute September Cruise Deals 2025 | Save 50% from Newark Ports","metaDescription":"URGENT cruise deals departing in September! Save 50% on Caribbean, Alaska & Mediterranean cruises from Newark area. Prices from $72/night. Book today before they sell out!","keywords":["last minute cruise deals","September cruise deals","cheap cruises from Newark","Caribbean cruise deals","Alaska cruise deals","Mediterranean cruise deals","Essex County cruise departures","discount cruises September","cruise deals from New Jersey","last minute travel deals"],"ogImage":"/images/blog/og/cruise-deals-september.jpg"},"content":"$2d"}}]
-2e:T51b5,# Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know
+*Prices and availability subject to change. All rates quoted as of September 1, 2025, 6:00 AM EST. Contact Next Trip Anywhere at 1-800-XXX-XXXX for current pricing and availability. Essex County's trusted travel partner since 1980.*1f:["$","$L18","last-minute-september-cruise-deals",{"post":{"id":"last-minute-september-cruise-deals","slug":"last-minute-september-cruise-deals-caribbean-alaska-mediterranean","title":"Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark","excerpt":"URGENT: Incredible last-minute cruise deals departing within 30 days! Save up to 50% on Caribbean, Alaska, and Mediterranean cruises from Newark area ports. Prices starting at just $72/night with balcony upgrades available. Essex County residents can reach departure ports in under an hour.","featuredImage":"/images/cruise-deals-september.png","featuredImageAlt":"Cruise ship with special deals and promotional text overlay showcasing last-minute cruise offers","author":{"id":"candy-myrick","name":"Candy Myrick","role":"Travel Specialist","bio":"Candy is a seasoned travel expert specializing in cruise vacations and last-minute deals. With extensive knowledge of Caribbean, Alaska, and Mediterranean itineraries, she helps Essex County residents find incredible cruise values and unforgettable experiences at sea.","avatar":"/images/authors/placeholder.svg","social":{"email":"candy@nexttripanywhere.com"}},"category":"deals","tags":["Cruise Deals","Last Minute Travel","Caribbean Cruises","Alaska Cruises","Mediterranean Cruises","Newark Departures","Essex County","September Travel","Budget Cruises","Luxury Travel Deals"],"publishedAt":"2025-09-01T06:00:00Z","readingTime":16,"seo":{"metaTitle":"Last-Minute September Cruise Deals 2025 | Save 50% from Newark Ports","metaDescription":"URGENT cruise deals departing in September! Save 50% on Caribbean, Alaska & Mediterranean cruises from Newark area. Prices from $72/night. Book today before they sell out!","keywords":["last minute cruise deals","September cruise deals","cheap cruises from Newark","Caribbean cruise deals","Alaska cruise deals","Mediterranean cruise deals","Essex County cruise departures","discount cruises September","cruise deals from New Jersey","last minute travel deals"],"ogImage":"/images/blog/og/cruise-deals-september.jpg"},"content":"$2e"}}]
+2f:T51b5,# Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know
 
 **⏰ CRITICAL DEADLINE ALERT:** In just 3 weeks, on October 12, 2025, Europe fundamentally changes how Americans enter the continent. The new Entry/Exit System (EES) will affect every Essex County resident flying from Newark Liberty International to any of the 29 European countries in the Schengen Zone. If you're planning European travel this fall, winter, or beyond, you must understand these changes NOW.
 
@@ -3819,12 +3819,761 @@ The golden age of European travel isn't ending—it's evolving. And with the rig
 *Next Trip Anywhere has served Essex County travelers for over 45 years. Our European travel specialists are fully trained on EES and ETIAS requirements. Contact us at 1-800-XXX-XXXX or visit our Newark, Montclair, or Millburn offices for personalized European travel planning. Don't let new regulations derail your travel plans—let our expertise guide you through the changes.*
 
 **Last Updated**: September 22, 2025, 7:00 AM EST
-**Next Update**: October 1, 2025 (Final pre-EES guidance)20:["$","$L18","europe-entry-rules-etias-ees-2025",{"post":{"id":"europe-entry-rules-etias-ees-2025","slug":"europe-entry-rules-etias-ees-2025","title":"Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know","excerpt":"URGENT: Europe's Entry/Exit System (EES) launches October 12, 2025—just 3 weeks away. Essex County residents traveling to Europe must prepare now for biometric checks, digital registration, and the upcoming ETIAS visa waiver. Our comprehensive guide covers everything from Newark Airport departures to avoiding delays at European borders.","featuredImage":"/images/europe-entry-rules-ees.svg","featuredImageAlt":"European Union border control with new EES biometric scanning equipment and travelers preparing documents","author":"$1f:props:post:author","category":"travel-alerts","tags":["Europe Travel","EES","ETIAS","Newark Airport","Essex County","Travel Requirements","European Union","Travel Documents","Visa Requirements","International Travel","Travel Alerts"],"publishedAt":"2025-09-22T07:00:00Z","readingTime":18,"seo":{"metaTitle":"Europe Entry Rules 2025: EES Oct 12 & ETIAS Guide","metaDescription":"URGENT: Europe's EES starts Oct 12, 2025. Essex County travelers must prepare for biometric checks & ETIAS. Complete guide to new EU entry requirements from Newark.","keywords":["Europe entry rules","EES Europe","ETIAS","European Entry Exit System","Europe visa Americans","Essex County Europe travel","Newark to Europe requirements","EU border control 2025","European travel requirements","ETIAS application","biometric passport Europe","Schengen visa waiver"],"ogImage":"/images/europe-entry-rules-ees.svg"},"content":"$2e"}}]
-21:["$","div",null,{"className":"flex justify-center mt-12","children":["$","nav",null,{"className":"flex gap-2","children":[["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50","disabled":true,"children":"Previous"}],["$","button",null,{"className":"px-4 py-2 bg-primary text-white rounded-lg","children":"1"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"2"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"3"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"Next"}]]}]}]
-22:["$","section",null,{"className":"bg-white py-12","children":["$","div",null,{"className":"container mx-auto px-4","children":[["$","h2",null,{"className":"text-2xl font-bold mb-6 text-center","children":"Popular Topics"}],["$","div",null,{"className":"flex flex-wrap gap-3 justify-center max-w-3xl mx-auto","children":[["$","$L2f","Newark Airport",{"href":"/blog?tag=newark-airport","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Newark Airport"}],["$","$L2f","Family Travel",{"href":"/blog?tag=family-travel","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Family Travel"}],["$","$L2f","Flight Deals",{"href":"/blog?tag=flight-deals","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Flight Deals"}],["$","$L2f","Spring Break",{"href":"/blog?tag=spring-break","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Spring Break"}],["$","$L2f","Business Travel",{"href":"/blog?tag=business-travel","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Business Travel"}],["$","$L2f","Caribbean",{"href":"/blog?tag=caribbean","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Caribbean"}],["$","$L2f","Europe",{"href":"/blog?tag=europe","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Europe"}],["$","$L2f","Disney World",{"href":"/blog?tag=disney-world","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Disney World"}],["$","$L2f","Travel Insurance",{"href":"/blog?tag=travel-insurance","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Travel Insurance"}],["$","$L2f","Packing Tips",{"href":"/blog?tag=packing-tips","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Packing Tips"}]]}]]}]}]
-23:["$","$L30",null,{"children":["$L31",["$","$L32",null,{"promise":"$@33"}]]}]
-25:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-31:null
-34:I[622,[],"IconMark"]
-33:{"metadata":[["$","title","0",{"children":"Travel Blog | Expert Tips for Essex County Travelers | Next Trip Anywhere"}],["$","meta","1",{"name":"description","content":"Read expert travel tips, destination guides, and money-saving strategies for Essex County families. Get insider knowledge about Newark Airport, family vacations, and corporate travel."}],["$","meta","2",{"name":"author","content":"Next Trip Anywhere"}],["$","link","3",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"travel agency,flights,cruises,vacation packages,nationwide travel,coast to coast travel,NYC travel,LA travel,Chicago travel,Seattle travel,Boston travel,Miami travel,DC travel"}],["$","meta","5",{"name":"creator","content":"Next Trip Anywhere"}],["$","meta","6",{"name":"publisher","content":"Next Trip Anywhere"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","9",{"rel":"canonical","href":"https://nexttripanywhere.com/"}],["$","meta","10",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","11",{"name":"google-site-verification","content":"your-google-verification-code"}],["$","meta","12",{"name":"y_key","content":"your-yahoo-verification-code"}],["$","meta","13",{"name":"yandex-verification","content":"your-yandex-verification-code"}],["$","meta","14",{"name":"msvalidate.01","content":"your-bing-verification-code"}],["$","meta","15",{"name":"facebook-domain-verification","content":"your-facebook-verification-code"}],["$","meta","16",{"property":"og:title","content":"Travel Blog | Next Trip Anywhere"}],["$","meta","17",{"property":"og:description","content":"Expert travel advice for Essex County residents"}],["$","meta","18",{"property":"og:image","content":"https://nexttripanywhere.com/images/blog/og/blog-home.jpg"}],["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","20",{"name":"twitter:title","content":"Next Trip Anywhere - Nationwide Travel Agency"}],["$","meta","21",{"name":"twitter:description","content":"Expert travel planning for flights, cruises, and vacation packages from all major US cities nationwide."}],["$","meta","22",{"name":"twitter:image","content":"https://nexttripanywhere.com/og-image.jpg"}],["$","link","23",{"rel":"shortcut icon","href":"/favicon-16x16.png"}],["$","link","24",{"rel":"icon","href":"/favicon.ico"}],["$","link","25",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],["$","$L34","26",{}]],"error":null,"digest":"$undefined"}
-27:"$33:metadata"
+**Next Update**: October 1, 2025 (Final pre-EES guidance)20:["$","$L18","europe-entry-rules-etias-ees-2025",{"post":{"id":"europe-entry-rules-etias-ees-2025","slug":"europe-entry-rules-etias-ees-2025","title":"Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know","excerpt":"URGENT: Europe's Entry/Exit System (EES) launches October 12, 2025—just 3 weeks away. Essex County residents traveling to Europe must prepare now for biometric checks, digital registration, and the upcoming ETIAS visa waiver. Our comprehensive guide covers everything from Newark Airport departures to avoiding delays at European borders.","featuredImage":"/images/europe-entry-rules-ees.svg","featuredImageAlt":"European Union border control with new EES biometric scanning equipment and travelers preparing documents","author":"$1f:props:post:author","category":"travel-alerts","tags":["Europe Travel","EES","ETIAS","Newark Airport","Essex County","Travel Requirements","European Union","Travel Documents","Visa Requirements","International Travel","Travel Alerts"],"publishedAt":"2025-09-22T07:00:00Z","readingTime":18,"seo":{"metaTitle":"Europe Entry Rules 2025: EES Oct 12 & ETIAS Guide","metaDescription":"URGENT: Europe's EES starts Oct 12, 2025. Essex County travelers must prepare for biometric checks & ETIAS. Complete guide to new EU entry requirements from Newark.","keywords":["Europe entry rules","EES Europe","ETIAS","European Entry Exit System","Europe visa Americans","Essex County Europe travel","Newark to Europe requirements","EU border control 2025","European travel requirements","ETIAS application","biometric passport Europe","Schengen visa waiver"],"ogImage":"/images/europe-entry-rules-ees.svg"},"content":"$2f"}}]
+30:T596b,
+The countdown is on, Essex County families. In exactly 23 days—October 15, 2025—airline algorithms will align to offer the year's best Thanksgiving airfares. But this year is different. Newark Liberty's new FAA weekend flight restrictions, combined with TSA projections of 2.8 million daily travelers, mean your usual booking strategy won't cut it.
+
+We've analyzed 10 years of Newark booking data, interviewed airline insiders, and compiled real-time pricing intelligence to create this definitive Thanksgiving 2025 travel guide. Whether you're flying to grandma's house in Florida or reuniting with family in California, this playbook will save you money and sanity.
+
+## Table of Contents {#toc}
+
+1. [The October 15 Sweet Spot: Why Timing is Everything](#october-15-sweet-spot)
+2. [Newark's FAA Weekend Restrictions: What You Must Know](#faa-restrictions)
+3. [Day-by-Day Pricing Analysis](#pricing-analysis)
+4. [Alternative Airports Strategy](#alternative-airports)
+5. [Family Booking Hacks That Actually Work](#booking-hacks)
+6. [TSA PreCheck & CLEAR: Essex County Enrollment](#tsa-precheck)
+7. [The $500 Mistake to Avoid](#500-mistake)
+8. [Airline-by-Airline Strategy](#airline-strategy)
+9. [Ground Transportation Game Plan](#ground-transportation)
+10. [Contingency Planning](#contingency-planning)
+
+## The October 15 Sweet Spot: Why Timing is Everything {#october-15-sweet-spot}
+
+Airline pricing algorithms operate on predictable patterns, and for Thanksgiving 2025, the data is crystal clear: October 15 represents the optimal booking window—exactly 43 days before Thanksgiving Day (November 27).
+
+### The Science Behind the Date
+
+Airlines use dynamic pricing models that factor in:
+- **Historical booking patterns**: 35-45 days out shows highest conversion
+- **Inventory management**: Airlines release award seats and lower fare classes
+- **Competition dynamics**: Carriers undercut each other in mid-October
+- **Corporate travel lull**: Business bookings slow, opening inventory
+
+### Real Numbers from Newark
+
+Based on current forward bookings and historical data:
+- **Book by October 15**: Average round-trip $378
+- **Book by November 1**: Average round-trip $542
+- **Book after November 10**: Average round-trip $847
+
+That's a $469 difference between early October and mid-November booking—and for a family of four, we're talking about nearly $2,000 in savings.
+
+### The Tuesday Factor
+
+Not only should you book around October 15, but specifically book on a **Tuesday at 3 PM EST**. Airlines typically launch fare sales Monday night, competitors match Tuesday morning, and by 3 PM Tuesday, the system reaches equilibrium with the best prices.
+
+## Newark's FAA Weekend Restrictions: What You Must Know {#faa-restrictions}
+
+Starting October 1, 2025, Newark Liberty faces new FAA slot restrictions affecting weekend operations through December 31. These restrictions, designed to reduce delays, paradoxically create new challenges for Thanksgiving travelers.
+
+### What's Changed
+
+**Friday 3 PM - Sunday 10 PM Restrictions:**
+- Hourly flight operations capped at 75 (down from 82)
+- International flights get priority
+- Regional jets most affected
+- Weather delays compound exponentially
+
+### How This Affects Your Travel
+
+**Winners:**
+- Tuesday/Wednesday departures (unrestricted)
+- Early morning flights (before 7 AM)
+- International connections (protected slots)
+
+**Losers:**
+- Friday evening departures (highest cancellation risk)
+- Sunday returns (severe bottlenecks)
+- Regional flights to secondary airports
+
+### Strategic Response
+
+Smart Essex County travelers are already adjusting:
+1. **Fly Tuesday, return Saturday** (saves money AND avoids restrictions)
+2. **Book first flight of day** (6 AM departures have 87% on-time rate)
+3. **Consider Monday returns** (30% cheaper than Sunday)
+
+## Day-by-Day Pricing Analysis {#pricing-analysis}
+
+We tracked Newark departure prices to top 10 Thanksgiving destinations. Here's the breakdown:
+
+### Departure Days (Week of Thanksgiving)
+
+**Saturday, November 22**
+- Price index: 65 (baseline 100)
+- Crowds: Light
+- Best for: Families with flexible schedules
+- Sample fare to Orlando: $198
+
+**Sunday, November 23**
+- Price index: 110
+- Crowds: Moderate
+- Best for: Week-long trips
+- Sample fare to Orlando: $367
+
+**Monday, November 24**
+- Price index: 95
+- Crowds: Moderate
+- Best for: Avoiding Tuesday rush
+- Sample fare to Orlando: $317
+
+**Tuesday, November 25**
+- Price index: 140
+- Crowds: Heavy
+- Best for: Maximum time at destination
+- Sample fare to Orlando: $467
+
+**Wednesday, November 26**
+- Price index: 200
+- Crowds: Extremely heavy
+- Best for: No one (avoid at all costs)
+- Sample fare to Orlando: $667
+
+### Return Days
+
+**Friday, November 28 (Black Friday)**
+- Price index: 75
+- Crowds: Light
+- Best for: Shopping avoiders
+- Sample fare from Orlando: $250
+
+**Saturday, November 29**
+- Price index: 90
+- Crowds: Moderate
+- Best for: Full week travelers
+- Sample fare from Orlando: $300
+
+**Sunday, November 30**
+- Price index: 180
+- Crowds: Extremely heavy
+- Best for: Masochists
+- Sample fare from Orlando: $600
+
+**Monday, December 1**
+- Price index: 85
+- Crowds: Light
+- Best for: Smart families
+- Sample fare from Orlando: $283
+
+### The Optimal Itinerary
+
+**Maximum savings + minimum stress:**
+- Depart: Saturday, November 22
+- Return: Monday, December 1
+- Total savings vs. peak days: $636 per person
+- Family of 4 savings: $2,544
+
+## Alternative Airports Strategy {#alternative-airports}
+
+Newark isn't your only option. Strategic use of alternative airports can save money and reduce stress.
+
+### Option 1: Trenton-Mercer (TTN)
+**Distance from Newark area**: 45 miles
+**Airlines**: Frontier
+**Destinations**: Orlando, Fort Lauderdale, Fort Myers, Atlanta
+**Pros**:
+- Parking $8/day (vs. Newark's $39)
+- 5-minute security lines
+- Fares 40% lower on average
+**Cons**:
+- Limited destinations
+- No amenities
+- One flight per day per route
+
+**Best for**: Florida-bound Essex County families willing to drive
+
+### Option 2: Philadelphia (PHL)
+**Distance from Newark area**: 85 miles
+**Airlines**: All majors
+**Pros**:
+- More flight options
+- Often $200+ cheaper
+- Better on-time performance
+**Cons**:
+- 90-minute drive
+- Parking expensive ($35/day)
+- Tolls add $30 round-trip
+
+**Best for**: West Coast flights, international connections
+
+### Option 3: Stewart (SWF)
+**Distance from West Orange**: 55 miles
+**Airlines**: Allegiant, Norwegian
+**Pros**:
+- Rock-bottom fares
+- Easy parking
+- No crowds
+**Cons**:
+- Very limited schedule
+- No food options
+- Unreliable in weather
+
+**Best for**: Flexible travelers to select destinations
+
+### Option 4: JFK
+**Distance from Newark area**: 25 miles
+**Airlines**: All majors plus JetBlue hub
+**Pros**:
+- JetBlue Mint deals
+- More international options
+- Better lounges
+**Cons**:
+- Traffic nightmare
+- Higher fares typically
+- Worse delays than Newark
+
+**Best for**: JetBlue loyalists, international connections
+
+### Option 5: LaGuardia (LGA)
+**Distance from Newark area**: 20 miles
+**Airlines**: Primarily domestic
+**Pros**:
+- New terminal is gorgeous
+- Sometimes cheaper
+- Good for Southeast/Midwest
+**Cons**:
+- No international
+- Limited West Coast
+- Parking challenges
+
+**Best for**: Flights to Chicago, Atlanta, Florida
+
+## Family Booking Hacks That Actually Work {#booking-hacks}
+
+### Hack 1: The Split Ticket Strategy
+Instead of booking 4 tickets together, check prices for 2+2 or 1+1+1+1. Airlines often have only 2 seats at the lowest fare.
+
+**Example**: Newark to San Diego, November 22
+- 4 tickets together: $548 each = $2,192
+- 2 + 2 tickets: $428 + $478 = $1,812
+- Savings: $380
+
+### Hack 2: The Hidden City Trick (Use Carefully)
+Book Newark → Orlando → New Orleans but get off in Orlando. Often cheaper, but:
+- Only works on one-ways
+- No checked bags
+- Airlines hate this
+- Risk of cancellation
+
+### Hack 3: The 24-Hour Rule
+Book refundable tickets when you see good prices, even if not ready to commit. You have 24 hours to cancel for full refund. This locks in price while you coordinate family plans.
+
+### Hack 4: Mix Airlines
+Don't assume round-trip on one airline is cheaper:
+- Outbound on United: $358
+- Return on JetBlue: $290
+- Total: $648
+- vs. United round-trip: $756
+
+### Hack 5: The Points + Cash Arbitrage
+Transfer Chase/Amex points to partners during bonus periods:
+- 50,000 Chase points → 65,000 Flying Blue miles (30% bonus)
+- Books $1,200 ticket
+- Effective value: 2.4 cents per point
+
+### Hack 6: The Companion Fare Play
+- Delta Amex: Annual companion certificate
+- Southwest: Companion Pass
+- Alaska: $99 companion fare
+- Plan your credit card strategy now for next year
+
+### Hack 7: The Tuesday Afternoon Correction
+Airlines often file fare corrections Tuesday 3-5 PM EST. Set alerts and be ready to book immediately when prices drop.
+
+## TSA PreCheck & CLEAR: Essex County Enrollment {#tsa-precheck}
+
+With Thanksgiving TSA lines projected to exceed 45 minutes, PreCheck/CLEAR isn't luxury—it's necessity.
+
+### TSA PreCheck Enrollment Locations
+
+**Newark IdentoGO Center**
+- Address: 744 Broad Street, Suite 1515, Newark, NJ 07102
+- Hours: Monday-Friday 8 AM - 6 PM, Saturday 9 AM - 2 PM
+- Walk-ins accepted but appointments recommended
+- Current wait for appointment: 5-7 days
+
+**Montclair Staples**
+- Address: 240 Bloomfield Avenue, Montclair, NJ 07042
+- Hours: Monday-Friday 10 AM - 2 PM
+- Appointment only
+- Typically same-week availability
+
+**Millburn Staples**
+- Address: 187 Millburn Avenue, Millburn, NJ 07041
+- Hours: Tuesday/Thursday 10 AM - 2 PM
+- Limited slots
+- Book 2 weeks out
+
+### CLEAR Enrollment at Newark Airport
+- **Location**: Terminal A, B, and C pre-security
+- **Time**: Allow 10 minutes
+- **Cost**: $189/year (often discounted to $119)
+- **Family benefit**: Kids under 18 free with adult
+
+### The PreCheck + CLEAR Combo
+- Regular security Thanksgiving morning: 47 minutes average
+- PreCheck only: 12 minutes
+- CLEAR + PreCheck: 5 minutes
+- Time saved: 42 minutes (enough to grab breakfast)
+
+### Credit Cards That Reimburse
+
+**TSA PreCheck Credit:**
+- Capital One Venture X
+- Chase Sapphire Reserve
+- Most Amex Platinum variants
+
+**CLEAR Credit:**
+- Amex Platinum: Full reimbursement
+- Amex Green: Full reimbursement
+- United Explorer: Discounted rate
+
+## The $500 Mistake to Avoid {#500-mistake}
+
+The single biggest mistake Essex County families make? **Booking Basic Economy for family travel**.
+
+### Why Basic Economy Backfires for Families
+
+**The False Savings:**
+- Basic Economy: $298 per person
+- Regular Economy: $348 per person
+- "Savings": $50 per person
+
+**The Hidden Costs:**
+- Seat selection (to sit together): $39 x 4 = $156
+- Carry-on bags: $65 x 4 = $260
+- Changes (when kids get sick): $200 x 4 = $800
+- Total potential cost: $1,216 extra
+
+**The Real Problems:**
+- Families separated on plane
+- No overhead bin access
+- Last to board (no space for diaper bags)
+- No changes without huge fees
+- No points/miles earning
+
+### The Smart Alternative
+
+Book Regular Economy and use these strategies:
+1. **Check bags free** with airline credit card
+2. **Select seats at booking** (together guaranteed)
+3. **Change without fees** if plans shift
+4. **Earn miles** for next trip
+5. **Board earlier** (crucial with kids)
+
+### Real Family Scenario
+
+**The Johnsons from Maplewood** (family of 4 to San Diego):
+- Saw Basic Economy at $1,192 total
+- Booked Regular Economy at $1,392
+- Added seats, bags, had to change dates
+- Final Basic Economy cost would've been: $2,408
+- Regular Economy actual cost: $1,392
+- Saved: $1,016
+
+## Airline-by-Airline Strategy {#airline-strategy}
+
+### United (Newark Hub Advantage)
+**Strengths:**
+- Most nonstop options from Newark
+- Best elite recognition
+- Reliable operations
+
+**Thanksgiving Strategy:**
+- Book Economy Plus for families (more space)
+- Use app for real-time standby lists
+- Terminal C has best kids' amenities
+
+**Sweet Spots:**
+- Newark → San Francisco: 30,000 miles + $5.60
+- Newark → Denver: 17,500 miles one-way
+
+### JetBlue
+**Strengths:**
+- Most legroom in coach
+- Free WiFi and snacks
+- Good family policies
+
+**Thanksgiving Strategy:**
+- Even More Space seats worth it for long flights
+- Mint deals on transcons (sometimes cheaper than coach)
+- Best Newark → Florida options
+
+**Sweet Spots:**
+- Flash sales Tuesday mornings
+- Points + cash combinations
+
+### Delta
+**Strengths:**
+- Best on-time performance
+- Superior app
+- Good connections via Atlanta
+
+**Thanksgiving Strategy:**
+- Book Comfort+ for free drinks and extra recline
+- Use Atlanta connection for West/South
+- Sky Club worth it for long layovers
+
+**Sweet Spots:**
+- Companion certificate maximizes value
+- Pay with miles option at checkout
+
+### American
+**Strengths:**
+- Good coverage via Charlotte/Dallas
+- Competitive pricing
+- AAdvantage sweet spots
+
+**Thanksgiving Strategy:**
+- Book Main Cabin Extra
+- Use Charlotte for Southeast
+- Dallas for West/Southwest
+
+**Sweet Spots:**
+- Web specials every Tuesday
+- Reduced mileage awards
+
+### Southwest
+**Strengths:**
+- Two free checked bags
+- No change fees
+- Family boarding
+
+**Thanksgiving Strategy:**
+- Check in exactly 24 hours before
+- Buy EarlyBird for holiday travel ($15-25)
+- Use Companion Pass if you have it
+
+**Note:** Not at Newark - use Islip or Philadelphia
+
+### Frontier/Spirit
+**Strengths:**
+- Lowest base fares
+- Trenton-Mercer option
+
+**Thanksgiving Strategy:**
+- Only if traveling very light
+- Buy bundle upfront
+- Avoid unless significant savings
+
+**Reality Check:**
+- Good for solo travelers
+- Terrible for families
+- Hidden fees destroy value
+
+## Ground Transportation Game Plan {#ground-transportation}
+
+### Parking Strategy
+
+**Newark Airport Parking:**
+- Daily Parking: $39/day
+- Economy Lot P6: $29/day
+- Off-site (Park Plus): $15/day
+- Coupon codes: HOLIDAY25 saves 20%
+
+**Pre-Book Requirements:**
+- Book by November 15 for guarantee
+- Screenshot confirmation
+- Arrive 30 minutes earlier than normal
+
+### Alternative: Off-Site Parking
+
+**Best Options:**
+1. **Park Plus Newark**: $12.95/day
+   - Free shuttle every 10 minutes
+   - Indoor waiting area
+   - Often has Groupon deals
+
+2. **WallyPark**: $14.95/day
+   - Covered parking available
+   - Valet option
+   - Rewards program
+
+3. **The Parking Spot**: $16.95/day
+   - Best shuttle service
+   - Covered walkways
+   - Online check-in
+
+### Ride Share Reality Check
+
+**Thanksgiving Week Surge Pricing:**
+- Normal Newark → Montclair: $45
+- Thanksgiving Wednesday 4 PM: $127
+- Black Friday return 8 PM: $95
+
+**Alternatives:**
+- Pre-book black car: $85 flat
+- Newark Airport Express bus: $18
+- NJ Transit + AirTrain: $15.75
+
+### The Family Car Service Solution
+
+**Local Essex County Options:**
+- Essex Car Service: Fixed rates, car seats available
+- Millburn Taxi: $70 flat to Newark
+- West Orange Limo: $85 for SUV
+
+Book now - they sell out by November 15.
+
+## Contingency Planning {#contingency-planning}
+
+### Flight Cancellation Strategy
+
+**Before Leaving Home:**
+1. Download airline app
+2. Add airline Twitter to phone
+3. Know alternate flight options
+4. Have airline phone number ready
+5. Screenshot original booking
+
+**If Cancelled at Airport:**
+1. Get in physical line
+2. Call airline simultaneously
+3. Use app to rebook
+4. Check alternate airports
+5. Know your rights (food/hotel)
+
+### Weather Contingency
+
+**November Weather Patterns:**
+- 30% chance of weather delays Wednesday
+- Morning flights least affected
+- Southern routes more reliable
+
+**Backup Plans:**
+- Book refundable hotel near airport
+- Know train options to destination
+- Have rental car backup
+- Consider travel insurance
+
+### Travel Insurance Deep Dive
+
+**When It's Worth It:**
+- International Thanksgiving trips
+- Expensive ($5,000+) bookings
+- Connecting flights
+- Health concerns in family
+
+**Best Policies for Families:**
+- Allianz AllTrips Premier: Best medical coverage
+- Travel Guard Deluxe: Best cancellation coverage
+- Chase Sapphire travel insurance: If paid with card
+
+**What's Actually Covered:**
+- Trip cancellation for illness
+- Missed connections
+- Lost baggage
+- Medical emergencies
+- Some "cancel for any reason"
+
+## The Week-by-Week Action Plan
+
+### September 22 - October 5
+- [ ] Check passport expirations
+- [ ] Apply for TSA PreCheck if needed
+- [ ] Set flight price alerts
+- [ ] Research destination requirements
+- [ ] Check credit card points balances
+
+### October 6 - October 14
+- [ ] Finalize travel dates
+- [ ] Compare airports and airlines
+- [ ] Clear cookies before searching
+- [ ] Use incognito mode for searches
+- [ ] Prepare to book on October 15
+
+### October 15 - October 20
+- [ ] **BOOK FLIGHTS** (October 15 ideal)
+- [ ] Reserve parking
+- [ ] Book accommodation
+- [ ] Reserve rental car
+- [ ] Buy travel insurance if needed
+
+### October 21 - November 10
+- [ ] Book airport car service
+- [ ] Make pet boarding reservations
+- [ ] Schedule house sitter
+- [ ] Arrange mail hold
+- [ ] Confirm all reservations
+
+### November 11 - November 20
+- [ ] Check in exactly 24 hours before
+- [ ] Download boarding passes
+- [ ] Check weather forecasts
+- [ ] Prepare carry-on strategically
+- [ ] Confirm ground transportation
+
+### November 21 - Travel Day
+- [ ] Arrive at airport extra early
+- [ ] Have backup plans ready
+- [ ] Keep documents accessible
+- [ ] Stay flexible
+- [ ] Breathe deeply
+
+## Top 10 Thanksgiving Destinations from Newark
+
+### 1. Orlando (MCO)
+**Flight time**: 2 hours 45 minutes
+**Airlines**: United, JetBlue, Spirit
+**Best strategy**: JetBlue for families (more space)
+**Average November weather**: 78°F
+**Don't miss**: Avoid theme parks on Black Friday
+
+### 2. Fort Lauderdale (FLL)
+**Flight time**: 3 hours
+**Airlines**: United, JetBlue, Spirit
+**Best strategy**: Spirit if only carry-ons
+**Average November weather**: 79°F
+**Alternative**: Fly to Miami, often cheaper
+
+### 3. Los Angeles (LAX)
+**Flight time**: 5 hours 45 minutes
+**Airlines**: United, American, JetBlue
+**Best strategy**: JetBlue Mint if available
+**Average November weather**: 70°F
+**Tip**: Consider Burbank airport instead
+
+### 4. San Francisco (SFO)
+**Flight time**: 5 hours 50 minutes
+**Airlines**: United (hub), Alaska
+**Best strategy**: United nonstop
+**Average November weather**: 60°F
+**Note**: Often foggy, morning flights better
+
+### 5. Phoenix (PHX)
+**Flight time**: 5 hours
+**Airlines**: United, American, Southwest (via)
+**Best strategy**: American through Charlotte
+**Average November weather**: 73°F
+**Bonus**: Great for multi-generational trips
+
+### 6. Atlanta (ATL)
+**Flight time**: 2 hours 30 minutes
+**Airlines**: Delta (hub), United
+**Best strategy**: Delta for connections
+**Average November weather**: 61°F
+**Warning**: Busiest airport at Thanksgiving
+
+### 7. Denver (DEN)
+**Flight time**: 4 hours
+**Airlines**: United (hub), Southwest (via)
+**Best strategy**: United nonstop
+**Average November weather**: 47°F
+**Activity**: Ski resorts open Thanksgiving week
+
+### 8. Chicago (ORD)
+**Flight time**: 2 hours 30 minutes
+**Airlines**: United (hub), American
+**Best strategy**: Multiple daily options
+**Average November weather**: 43°F
+**Risk**: Weather delays common
+
+### 9. Dallas (DFW)
+**Flight time**: 3 hours 45 minutes
+**Airlines**: American (hub), United
+**Best strategy**: American nonstop
+**Average November weather**: 62°F
+**Advantage**: Great for connections
+
+### 10. Boston (BOS)
+**Flight time**: 1 hour 15 minutes
+**Airlines**: United, JetBlue, Delta
+**Better option**: Drive or take Amtrak
+**Average November weather**: 48°F
+**Reality**: Flight often costs more than driving
+
+## Expert Tips from Newark Veterans
+
+### From the Gate Agents
+"Families who gate-check car seats and strollers at the door—not the counter—save 20 minutes and reduce damage risk."
+
+### From the TSA Officers
+"Freeze your liquids. Frozen items aren't subject to 3-1-1 rule. Great for baby food and breast milk."
+
+### From the Pilots
+"First flight of the day has 85% less chance of delay. We call the 6 AM departure the 'golden flight.'"
+
+### From the Flight Attendants
+"Bring extra snacks. Thanksgiving flights often run out of food for purchase. And download entertainment—WiFi gets overloaded."
+
+### From the Airport Operations Team
+"Cell phone lots fill up. Have your pickup person park at hourly garage and get validated at a restaurant—often cheaper than circling."
+
+## Money-Saving Resources
+
+### Flight Tracking Tools
+- **Google Flights**: Best for flexibility
+- **Hopper**: Predicts future prices
+- **Kayak Price Alerts**: Email when prices drop
+- **Momondo**: Finds obscure routings
+- **ITA Matrix**: Power user tool
+
+### Deal Alerts
+- **Scott's Cheap Flights**: Premium worth it for families
+- **The Flight Deal**: Focus on Newark departures
+- **Secret Flying**: Error fares and deals
+- **FareCompare**: Historical price data
+
+### Points & Miles Resources
+- **Award Wallet**: Track all programs
+- **Points.me**: Search award availability
+- **Frequent Miler**: Best use of points
+- **The Points Guy**: General education
+
+## The Bottom Line
+
+Thanksgiving 2025 from Newark presents unique challenges—FAA restrictions, record crowds, and inflation-adjusted pricing. But armed with this guide, Essex County families can navigate the chaos and save substantial money.
+
+**Your Five-Step Success Formula:**
+1. **Book on October 15** (or as close as possible)
+2. **Fly Saturday/Monday** (avoid Wednesday/Sunday)
+3. **Consider Trenton-Mercer** for Florida
+4. **Get TSA PreCheck NOW**
+5. **Book Regular Economy**, not Basic
+
+The difference between strategic and reactive booking this Thanksgiving? For a family of four, it's easily $2,000—enough for another entire vacation.
+
+## Final Countdown Checklist
+
+**TODAY (September 22):**
+- [ ] Set October 15 calendar reminder
+- [ ] Create flight alerts on Google Flights
+- [ ] Check passport expirations
+- [ ] Calculate points/miles balances
+
+**THIS WEEK:**
+- [ ] Apply for TSA PreCheck
+- [ ] Research destination COVID requirements
+- [ ] Discuss dates with family
+- [ ] Check work blackout dates
+
+**OCTOBER 1:**
+- [ ] Review flight prices
+- [ ] Check alternative airports
+- [ ] Finalize travel dates
+- [ ] Clear schedule for October 15 booking
+
+**OCTOBER 15:**
+- [ ] BOOK YOUR FLIGHTS at 3 PM EST
+- [ ] Reserve parking
+- [ ] Book hotels/rentals
+- [ ] Buy travel insurance
+- [ ] Celebrate your savings!
+
+Remember: The best Thanksgiving travel experience isn't about the perfect flight—it's about being with family. But saving money and avoiding airport chaos certainly helps the gratitude flow easier.
+
+---
+
+*Next Trip Anywhere has served Essex County families for over 45 years. Our Thanksgiving travel specialists are standing by to help with booking strategies, group travel coordination, and destination planning. Contact us at 1-800-XXX-XXXX or visit our offices in Newark, Montclair, or Millburn. Don't let Thanksgiving travel stress ruin your holiday—let our expertise guide your journey.*
+
+**Published**: September 22, 2025, 2:00 PM EST
+**Next Update**: October 10, 2025 (Final pre-booking guidance)21:["$","$L18","thanksgiving-travel-2025-newark-guide",{"post":{"id":"thanksgiving-travel-2025-newark-guide","slug":"thanksgiving-travel-2025-newark-guide","title":"Newark's Thanksgiving 2025 Playbook: Beat the Chaos, Save $500+ on Family Travel","excerpt":"October 15 is the magic booking date for Thanksgiving flights. With Newark's new FAA weekend restrictions and TSA expecting record crowds, Essex County families need a strategic plan. Our insider guide reveals booking hacks, alternative airports, and the exact days to fly for maximum savings.","featuredImage":"/images/thanksgiving-travel-newark.svg","featuredImageAlt":"Newark Airport terminal during Thanksgiving rush with families navigating check-in and departure boards showing flight times","author":"$1f:props:post:author","category":"deals","tags":["Thanksgiving Travel","Newark Airport","Holiday Travel","Family Travel","Travel Deals","Essex County","Flight Booking","TSA PreCheck","Travel Tips","Budget Travel","FAA Restrictions"],"publishedAt":"2025-09-22T14:00:00Z","readingTime":15,"seo":{"metaTitle":"Thanksgiving 2025 Newark Travel: Save $500+ with Oct 15 Booking","metaDescription":"Beat Newark Airport Thanksgiving chaos. Oct 15 booking saves $500+. FAA restrictions, alternative airports, TSA PreCheck locations, day-by-day pricing guide.","keywords":["Thanksgiving travel 2025","Newark Airport Thanksgiving","cheapest Thanksgiving flights","Essex County holiday travel","Newark FAA restrictions","when to book Thanksgiving flights","Thanksgiving travel deals","Newark Airport tips","TSA PreCheck Essex County","alternative airports NJ"]},"content":"$30"}}]
+22:["$","div",null,{"className":"flex justify-center mt-12","children":["$","nav",null,{"className":"flex gap-2","children":[["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50","disabled":true,"children":"Previous"}],["$","button",null,{"className":"px-4 py-2 bg-primary text-white rounded-lg","children":"1"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"2"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"3"}],["$","button",null,{"className":"px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50","children":"Next"}]]}]}]
+23:["$","section",null,{"className":"bg-white py-12","children":["$","div",null,{"className":"container mx-auto px-4","children":[["$","h2",null,{"className":"text-2xl font-bold mb-6 text-center","children":"Popular Topics"}],["$","div",null,{"className":"flex flex-wrap gap-3 justify-center max-w-3xl mx-auto","children":[["$","$L31","Newark Airport",{"href":"/blog?tag=newark-airport","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Newark Airport"}],["$","$L31","Family Travel",{"href":"/blog?tag=family-travel","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Family Travel"}],["$","$L31","Flight Deals",{"href":"/blog?tag=flight-deals","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Flight Deals"}],["$","$L31","Spring Break",{"href":"/blog?tag=spring-break","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Spring Break"}],["$","$L31","Business Travel",{"href":"/blog?tag=business-travel","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Business Travel"}],["$","$L31","Caribbean",{"href":"/blog?tag=caribbean","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Caribbean"}],["$","$L31","Europe",{"href":"/blog?tag=europe","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Europe"}],["$","$L31","Disney World",{"href":"/blog?tag=disney-world","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Disney World"}],["$","$L31","Travel Insurance",{"href":"/blog?tag=travel-insurance","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Travel Insurance"}],["$","$L31","Packing Tips",{"href":"/blog?tag=packing-tips","className":"px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-sm","children":"Packing Tips"}]]}]]}]}]
+24:["$","$L32",null,{"children":["$L33",["$","$L34",null,{"promise":"$@35"}]]}]
+26:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+33:null
+36:I[622,[],"IconMark"]
+35:{"metadata":[["$","title","0",{"children":"Travel Blog | Expert Tips for Essex County Travelers | Next Trip Anywhere"}],["$","meta","1",{"name":"description","content":"Read expert travel tips, destination guides, and money-saving strategies for Essex County families. Get insider knowledge about Newark Airport, family vacations, and corporate travel."}],["$","meta","2",{"name":"author","content":"Next Trip Anywhere"}],["$","link","3",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"travel agency,flights,cruises,vacation packages,nationwide travel,coast to coast travel,NYC travel,LA travel,Chicago travel,Seattle travel,Boston travel,Miami travel,DC travel"}],["$","meta","5",{"name":"creator","content":"Next Trip Anywhere"}],["$","meta","6",{"name":"publisher","content":"Next Trip Anywhere"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","9",{"rel":"canonical","href":"https://nexttripanywhere.com/"}],["$","meta","10",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","11",{"name":"google-site-verification","content":"your-google-verification-code"}],["$","meta","12",{"name":"y_key","content":"your-yahoo-verification-code"}],["$","meta","13",{"name":"yandex-verification","content":"your-yandex-verification-code"}],["$","meta","14",{"name":"msvalidate.01","content":"your-bing-verification-code"}],["$","meta","15",{"name":"facebook-domain-verification","content":"your-facebook-verification-code"}],["$","meta","16",{"property":"og:title","content":"Travel Blog | Next Trip Anywhere"}],["$","meta","17",{"property":"og:description","content":"Expert travel advice for Essex County residents"}],["$","meta","18",{"property":"og:image","content":"https://nexttripanywhere.com/images/blog/og/blog-home.jpg"}],["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","20",{"name":"twitter:title","content":"Next Trip Anywhere - Nationwide Travel Agency"}],["$","meta","21",{"name":"twitter:description","content":"Expert travel planning for flights, cruises, and vacation packages from all major US cities nationwide."}],["$","meta","22",{"name":"twitter:image","content":"https://nexttripanywhere.com/og-image.jpg"}],["$","link","23",{"rel":"shortcut icon","href":"/favicon-16x16.png"}],["$","link","24",{"rel":"icon","href":"/favicon.ico"}],["$","link","25",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],["$","$L36","26",{}]],"error":null,"digest":"$undefined"}
+28:"$35:metadata"

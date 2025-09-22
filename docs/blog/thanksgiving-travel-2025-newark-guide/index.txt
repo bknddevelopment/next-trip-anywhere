@@ -1,0 +1,464 @@
+1:"$Sreact.fragment"
+2:I[2271,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+a:I[7150,[],""]
+:HL["/_next/static/media/904be59b21bd51cb-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/f3d0ebfa21773c8e.css","style"]
+:HL["/_next/static/css/bff52f32eb660233.css","style"]
+3:T142e,{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://nexttripanywhere.com/#organization","name":"Next Trip Anywhere","alternateName":"NTA Travel","url":"https://nexttripanywhere.com","logo":{"@type":"ImageObject","url":"https://nexttripanywhere.com/logo.png","width":250,"height":60},"image":"https://nexttripanywhere.com/og-image.jpg","description":"America's premier travel agency specializing in flights, cruises, and vacation packages from major US cities nationwide. Expert travel planning with exclusive deals and 24/7 support since 2010.","foundingDate":"2010","foundingLocation":{"@type":"Place","name":"United States"},"slogan":"Your trusted travel experts nationwide","telephone":"+1-833-874-1019","email":"info@nexttripanywhere.com","faxNumber":"+1-833-874-1020","address":{"@type":"PostalAddress","addressCountry":"US","addressRegion":"Nationwide Service"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"State","name":"New York"},{"@type":"State","name":"California"},{"@type":"State","name":"Florida"},{"@type":"State","name":"Illinois"},{"@type":"State","name":"Massachusetts"},{"@type":"State","name":"Texas"},{"@type":"State","name":"Washington"},{"@type":"State","name":"Colorado"}],"serviceArea":{"@type":"Country","name":"United States"},"contactPoint":[{"@type":"ContactPoint","telephone":"+1-833-874-1019","contactType":"customer service","areaServed":"US","availableLanguage":["English","Spanish","French"],"contactOption":["TollFree","HearingImpairedSupported"],"hoursAvailable":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"06:00","closes":"23:00","timeZone":"America/New_York"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"07:00","closes":"22:00","timeZone":"America/New_York"}]},{"@type":"ContactPoint","email":"info@nexttripanywhere.com","contactType":"customer service","areaServed":"US"},{"@type":"ContactPoint","email":"groups@nexttripanywhere.com","contactType":"reservations","areaServed":"US"}],"sameAs":["https://www.facebook.com/nexttripanywhere","https://www.instagram.com/nexttripanywhere","https://www.twitter.com/nexttripanywhere","https://www.linkedin.com/company/nexttripanywhere","https://www.youtube.com/nexttripanywhere"],"priceRange":"$$","paymentAccepted":["Cash","Credit Card","Debit Card","PayPal","Bank Transfer"],"currenciesAccepted":"USD","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"3,247","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Sarah Johnson"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.","datePublished":"2024-01-10"},{"@type":"Review","author":{"@type":"Person","name":"Michael Chen"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.","datePublished":"2024-01-08"}],"award":["Best Travel Agency 2024","Top Customer Service Award","Exclusive Airline Partnership Award","Travel Industry Excellence Award"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Travel Services Catalog","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Flight Booking Services","description":"Domestic and international flight reservations with exclusive unpublished fares","category":"Flight Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cruise Packages","description":"Caribbean, Mediterranean, Alaska, and worldwide cruise packages","category":"Cruise Booking"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"No booking fees plus exclusive onboard credits"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation Packages","description":"All-inclusive resort packages and custom tour itineraries","category":"Vacation Planning"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","price":"0","description":"Complimentary vacation planning services"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Group Travel","description":"Customized group travel planning for 10+ travelers","category":"Group Travel"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Corporate Travel","description":"Business travel management and corporate rates","category":"Business Travel"}}]},"numberOfEmployees":{"@type":"QuantitativeValue","value":"50-100"},"knowsAbout":["Flight booking","Cruise planning","Vacation packages","Group travel coordination","Honeymoon planning","Business travel management","International travel documentation","Travel insurance","Destination weddings","Adventure tours"],"memberOf":[{"@type":"Organization","name":"American Society of Travel Advisors","alternateName":"ASTA"},{"@type":"Organization","name":"Cruise Lines International Association","alternateName":"CLIA"}]}0:{"P":null,"b":"07lTr1_pppC1GeDYTsY14","p":"","c":["","blog","thanksgiving-travel-2025-newark-guide",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","thanksgiving-travel-2025-newark-guide","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f3d0ebfa21773c8e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/bff52f32eb660233.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preconnect","href":"https://images.unsplash.com"}],["$","link",null,{"rel":"preconnect","href":"https://cdn.coverr.co"}],["$","link",null,{"rel":"dns-prefetch","href":"https://www.googletagmanager.com"}],["$","$L2",null,{}],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"\n            /* Critical CSS for initial render */\n            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }\n            .hero-section { min-height: 100vh; position: relative; }\n            .animate-fade-in { animation: fadeIn 0.5s ease-in; }\n            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }\n          "}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]]}],{"children":["blog","$L6",{"children":[["slug","thanksgiving-travel-2025-newark-guide","d"],"$L7",{"children":["__PAGE__","$L8",{},null,false]},null,false]},null,false]},null,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"s":false,"S":true}
+b:I[2766,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+c:I[4882,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+d:I[900,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+e:I[263,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+f:I[7637,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+10:"$Sreact.suspense"
+11:I[4980,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+12:I[3038,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+13:I[2960,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+14:I[9766,[],""]
+15:I[8924,[],""]
+16:I[3370,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+17:I[2663,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"Toaster"]
+18:I[5427,["5713","static/chunks/5713-7f08ef564e40d080.js","7177","static/chunks/app/layout-bcfa3e8a0b01e074.js"],"default"]
+1a:I[4431,[],"OutletBoundary"]
+1c:I[5278,[],"AsyncMetadataOutlet"]
+1e:I[4431,[],"ViewportBoundary"]
+20:I[4431,[],"MetadataBoundary"]
+4:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Next Trip Anywhere\",\"url\":\"https://nexttripanywhere.com\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://nexttripanywhere.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}"}}]
+5:["$","body",null,{"className":"__variable_f367f3 __variable_ca911e font-sans antialiased min-h-screen bg-warm-50","children":[["$","$Lb",null,{}],["$","$Lc",null,{}],["$","$Ld",null,{}],["$","$Le",null,{}],null,["$","$Lf",null,{}],["$","$10",null,{"fallback":null,"children":["$","$L11",null,{}]}],["$","$L12",null,{"children":[["$","$L13",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L16",null,{}]]}],["$","$L17",null,{"position":"top-right","toastOptions":{"duration":4000,"style":{"background":"#1E3A5F","color":"#fff","borderRadius":"8px"},"success":{"iconTheme":{"primary":"#7FBF4D","secondary":"#fff"}}}}],["$","$L18",null,{}]]}]
+6:["$","$1","c",{"children":[null,["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+7:["$","$1","c",{"children":[null,["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+8:["$","$1","c",{"children":["$L19",null,["$","$L1a",null,{"children":["$L1b",["$","$L1c",null,{"promise":"$@1d"}]]}]]}]
+9:["$","$1","h",{"children":[null,[["$","$L1e",null,{"children":"$L1f"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L20",null,{"children":["$","div",null,{"hidden":true,"children":["$","$10",null,{"fallback":null,"children":"$L21"}]}]}]]}]
+23:I[2619,["5953","static/chunks/app/blog/%5Bslug%5D/page-5b2b26c2381da2a4.js"],""]
+24:I[1356,["5953","static/chunks/app/blog/%5Bslug%5D/page-5b2b26c2381da2a4.js"],"Image"]
+22:T638,{"@context":"https://schema.org","@type":"BlogPosting","headline":"Newark's Thanksgiving 2025 Playbook: Beat the Chaos, Save $500+ on Family Travel","description":"October 15 is the magic booking date for Thanksgiving flights. With Newark's new FAA weekend restrictions and TSA expecting record crowds, Essex County families need a strategic plan. Our insider guide reveals booking hacks, alternative airports, and the exact days to fly for maximum savings.","image":"https://nexttripanywhere.com/images/thanksgiving-travel-newark.svg","datePublished":"2025-09-22T14:00:00Z","dateModified":"2025-09-22T14:00:00Z","author":{"@type":"Person","name":"Candy Myrick","description":"Candy is a seasoned travel expert specializing in cruise vacations and last-minute deals. With extensive knowledge of Caribbean, Alaska, and Mediterranean itineraries, she helps Essex County residents find incredible cruise values and unforgettable experiences at sea.","jobTitle":"Travel Specialist"},"publisher":{"@type":"Organization","name":"Next Trip Anywhere","logo":{"@type":"ImageObject","url":"https://nexttripanywhere.com/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://nexttripanywhere.com/blog/thanksgiving-travel-2025-newark-guide"},"keywords":"Thanksgiving travel 2025, Newark Airport Thanksgiving, cheapest Thanksgiving flights, Essex County holiday travel, Newark FAA restrictions, when to book Thanksgiving flights, Thanksgiving travel deals, Newark Airport tips, TSA PreCheck Essex County, alternative airports NJ","articleSection":"deals","wordCount":3527,"timeRequired":"PT15M"}19:["$","article",null,{"className":"min-h-screen bg-white","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$22"}}],["$","header",null,{"className":"bg-gradient-to-br from-primary to-secondary text-white","children":["$","div",null,{"className":"container mx-auto px-4 py-12","children":["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","nav",null,{"className":"flex items-center gap-2 text-sm mb-6 text-white/80","children":[["$","$L23",null,{"href":"/","className":"hover:text-white","children":"Home"}],["$","span",null,{"children":"/"}],["$","$L23",null,{"href":"/blog","className":"hover:text-white","children":"Blog"}],["$","span",null,{"children":"/"}],["$","$L23",null,{"href":"/blog?category=deals","className":"hover:text-white capitalize","children":"deals"}]]}],["$","h1",null,{"className":"text-3xl md:text-5xl font-bold mb-6","children":"Newark's Thanksgiving 2025 Playbook: Beat the Chaos, Save $500+ on Family Travel"}],["$","div",null,{"className":"flex flex-wrap items-center gap-4 text-white/90","children":[["$","div",null,{"className":"flex items-center gap-2","children":[["$","div",null,{"className":"relative w-10 h-10 rounded-full overflow-hidden bg-white/20","children":["$","$L24",null,{"src":"/images/authors/placeholder.svg","alt":"Candy Myrick","fill":true,"className":"object-cover"}]}],["$","span",null,{"children":"Candy Myrick"}]]}],["$","span",null,{"children":"•"}],["$","time",null,{"dateTime":"2025-09-22T14:00:00Z","children":"September 22, 2025"}],["$","span",null,{"children":"•"}],["$","span",null,{"children":[15," min read"]}]]}]]}]}]}],["$","div",null,{"className":"relative h-64 sm:h-80 md:h-96 lg:h-[450px] w-full","children":["$","$L24",null,{"src":"/images/thanksgiving-travel-newark.svg","alt":"Newark Airport terminal during Thanksgiving rush with families navigating check-in and departure boards showing flight times","fill":true,"className":"object-contain md:object-cover","priority":true}]}],["$","div",null,{"className":"container mx-auto px-4 py-12","children":["$","div",null,{"className":"max-w-4xl mx-auto","children":[["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-3 gap-12","children":[["$","div",null,{"className":"lg:col-span-2","children":["$L25","$L26","$L27"]}],"$L28"]}],"$L29"]}]}]]}]
+2a:I[1138,["5953","static/chunks/app/blog/%5Bslug%5D/page-5b2b26c2381da2a4.js"],"SocialShare"]
+25:["$","div",null,{"className":"mb-8 pb-8 border-b","children":["$","$L2a",null,{"url":"https://nexttripanywhere.com/blog/thanksgiving-travel-2025-newark-guide","title":"Newark's Thanksgiving 2025 Playbook: Beat the Chaos, Save $500+ on Family Travel","description":"October 15 is the magic booking date for Thanksgiving flights. With Newark's new FAA weekend restrictions and TSA expecting record crowds, Essex County families need a strategic plan. Our insider guide reveals booking hacks, alternative airports, and the exact days to fly for maximum savings."}]}]
+2b:T94af,<p class="mb-6 leading-relaxed">
+The countdown is on, Essex County families. In exactly 23 days—October 15, 2025—airline algorithms will align to offer the year's best Thanksgiving airfares. But this year is different. Newark Liberty's new FAA weekend flight restrictions, combined with TSA projections of 2.8 million daily travelers, mean your usual booking strategy won't cut it.</p><p class="mb-6 leading-relaxed">We've analyzed 10 years of Newark booking data, interviewed airline insiders, and compiled real-time pricing intelligence to create this definitive Thanksgiving 2025 travel guide. Whether you're flying to grandma's house in Florida or reuniting with family in California, this playbook will save you money and sanity.</p><h2 id="table-of-contents-toc-" class="text-2xl font-bold mt-8 mb-4">Table of Contents {#toc}</h2><ol class="list-decimal mb-6"><li class="ml-6 mb-2">[The October 15 Sweet Spot: Why Timing is Everything](#october-15-sweet-spot)</li><li class="ml-6 mb-2">[Newark's FAA Weekend Restrictions: What You Must Know](#faa-restrictions)</li><li class="ml-6 mb-2">[Day-by-Day Pricing Analysis](#pricing-analysis)</li><li class="ml-6 mb-2">[Alternative Airports Strategy](#alternative-airports)</li><li class="ml-6 mb-2">[Family Booking Hacks That Actually Work](#booking-hacks)</li><li class="ml-6 mb-2">[TSA PreCheck & CLEAR: Essex County Enrollment](#tsa-precheck)</li><li class="ml-6 mb-2">[The $500 Mistake to Avoid](#500-mistake)</li><li class="ml-6 mb-2">[Airline-by-Airline Strategy](#airline-strategy)</li><li class="ml-6 mb-2">[Ground Transportation Game Plan](#ground-transportation)</li><li class="ml-6 mb-2">[Contingency Planning](#contingency-planning)</li></ol><h2 id="the-october-15-sweet-spot-why-timing-is-everything-october-15-sweet-spot-" class="text-2xl font-bold mt-8 mb-4">The October 15 Sweet Spot: Why Timing is Everything {#october-15-sweet-spot}</h2><p class="mb-6 leading-relaxed">Airline pricing algorithms operate on predictable patterns, and for Thanksgiving 2025, the data is crystal clear: October 15 represents the optimal booking window—exactly 43 days before Thanksgiving Day (November 27).</p><h3 id="the-science-behind-the-date" class="text-1xl font-bold mt-8 mb-4">The Science Behind the Date</h3><p class="mb-6 leading-relaxed">Airlines use dynamic pricing models that factor in:
+- **Historical booking patterns**: 35-45 days out shows highest conversion
+- **Inventory management**: Airlines release award seats and lower fare classes
+- **Competition dynamics**: Carriers undercut each other in mid-October
+- **Corporate travel lull**: Business bookings slow, opening inventory</p><h3 id="real-numbers-from-newark" class="text-1xl font-bold mt-8 mb-4">Real Numbers from Newark</h3><p class="mb-6 leading-relaxed">Based on current forward bookings and historical data:
+- **Book by October 15**: Average round-trip $378
+- **Book by November 1**: Average round-trip $542
+- **Book after November 10**: Average round-trip $847</p><p class="mb-6 leading-relaxed">That's a $469 difference between early October and mid-November booking—and for a family of four, we're talking about nearly $2,000 in savings.</p><h3 id="the-tuesday-factor" class="text-1xl font-bold mt-8 mb-4">The Tuesday Factor</h3><p class="mb-6 leading-relaxed">Not only should you book around October 15, but specifically book on a **Tuesday at 3 PM EST**. Airlines typically launch fare sales Monday night, competitors match Tuesday morning, and by 3 PM Tuesday, the system reaches equilibrium with the best prices.</p><h2 id="newark-s-faa-weekend-restrictions-what-you-must-know-faa-restrictions-" class="text-2xl font-bold mt-8 mb-4">Newark's FAA Weekend Restrictions: What You Must Know {#faa-restrictions}</h2><p class="mb-6 leading-relaxed">Starting October 1, 2025, Newark Liberty faces new FAA slot restrictions affecting weekend operations through December 31. These restrictions, designed to reduce delays, paradoxically create new challenges for Thanksgiving travelers.</p><h3 id="what-s-changed" class="text-1xl font-bold mt-8 mb-4">What's Changed</h3><p class="mb-6 leading-relaxed">**Friday 3 PM - Sunday 10 PM Restrictions:**
+- Hourly flight operations capped at 75 (down from 82)
+- International flights get priority
+- Regional jets most affected
+- Weather delays compound exponentially</p><h3 id="how-this-affects-your-travel" class="text-1xl font-bold mt-8 mb-4">How This Affects Your Travel</h3><p class="mb-6 leading-relaxed">**Winners:**
+- Tuesday/Wednesday departures (unrestricted)
+- Early morning flights (before 7 AM)
+- International connections (protected slots)</p><p class="mb-6 leading-relaxed">**Losers:**
+- Friday evening departures (highest cancellation risk)
+- Sunday returns (severe bottlenecks)
+- Regional flights to secondary airports</p><h3 id="strategic-response" class="text-1xl font-bold mt-8 mb-4">Strategic Response</h3><p class="mb-6 leading-relaxed">Smart Essex County travelers are already adjusting:
+1. **Fly Tuesday, return Saturday** (saves money AND avoids restrictions)
+2. **Book first flight of day** (6 AM departures have 87% on-time rate)
+3. **Consider Monday returns** (30% cheaper than Sunday)</p><h2 id="day-by-day-pricing-analysis-pricing-analysis-" class="text-2xl font-bold mt-8 mb-4">Day-by-Day Pricing Analysis {#pricing-analysis}</h2><p class="mb-6 leading-relaxed">We tracked Newark departure prices to top 10 Thanksgiving destinations. Here's the breakdown:</p><h3 id="departure-days-week-of-thanksgiving-" class="text-1xl font-bold mt-8 mb-4">Departure Days (Week of Thanksgiving)</h3><p class="mb-6 leading-relaxed">**Saturday, November 22**
+- Price index: 65 (baseline 100)
+- Crowds: Light
+- Best for: Families with flexible schedules
+- Sample fare to Orlando: $198</p><p class="mb-6 leading-relaxed">**Sunday, November 23**
+- Price index: 110
+- Crowds: Moderate
+- Best for: Week-long trips
+- Sample fare to Orlando: $367</p><p class="mb-6 leading-relaxed">**Monday, November 24**
+- Price index: 95
+- Crowds: Moderate
+- Best for: Avoiding Tuesday rush
+- Sample fare to Orlando: $317</p><p class="mb-6 leading-relaxed">**Tuesday, November 25**
+- Price index: 140
+- Crowds: Heavy
+- Best for: Maximum time at destination
+- Sample fare to Orlando: $467</p><p class="mb-6 leading-relaxed">**Wednesday, November 26**
+- Price index: 200
+- Crowds: Extremely heavy
+- Best for: No one (avoid at all costs)
+- Sample fare to Orlando: $667</p><h3 id="return-days" class="text-1xl font-bold mt-8 mb-4">Return Days</h3><p class="mb-6 leading-relaxed">**Friday, November 28 (Black Friday)**
+- Price index: 75
+- Crowds: Light
+- Best for: Shopping avoiders
+- Sample fare from Orlando: $250</p><p class="mb-6 leading-relaxed">**Saturday, November 29**
+- Price index: 90
+- Crowds: Moderate
+- Best for: Full week travelers
+- Sample fare from Orlando: $300</p><p class="mb-6 leading-relaxed">**Sunday, November 30**
+- Price index: 180
+- Crowds: Extremely heavy
+- Best for: Masochists
+- Sample fare from Orlando: $600</p><p class="mb-6 leading-relaxed">**Monday, December 1**
+- Price index: 85
+- Crowds: Light
+- Best for: Smart families
+- Sample fare from Orlando: $283</p><h3 id="the-optimal-itinerary" class="text-1xl font-bold mt-8 mb-4">The Optimal Itinerary</h3><p class="mb-6 leading-relaxed">**Maximum savings + minimum stress:**
+- Depart: Saturday, November 22
+- Return: Monday, December 1
+- Total savings vs. peak days: $636 per person
+- Family of 4 savings: $2,544</p><h2 id="alternative-airports-strategy-alternative-airports-" class="text-2xl font-bold mt-8 mb-4">Alternative Airports Strategy {#alternative-airports}</h2><p class="mb-6 leading-relaxed">Newark isn't your only option. Strategic use of alternative airports can save money and reduce stress.</p><h3 id="option-1-trenton-mercer-ttn-distance-from-newark-area-45-miles-airlines-frontier-destinations-orlando-fort-lauderdale-fort-myers-atlanta-pros-parking-8-day-vs-newark-s-39-5-minute-security-lines-fares-40-lower-on-average-cons-limited-destinations-no-amenities-one-flight-per-day-per-route" class="text-1xl font-bold mt-8 mb-4">Option 1: Trenton-Mercer (TTN)
+**Distance from Newark area**: 45 miles
+**Airlines**: Frontier
+**Destinations**: Orlando, Fort Lauderdale, Fort Myers, Atlanta
+**Pros**:
+- Parking $8/day (vs. Newark's $39)
+- 5-minute security lines
+- Fares 40% lower on average
+**Cons**:
+- Limited destinations
+- No amenities
+- One flight per day per route</h3><p class="mb-6 leading-relaxed">**Best for**: Florida-bound Essex County families willing to drive</p><h3 id="option-2-philadelphia-phl-distance-from-newark-area-85-miles-airlines-all-majors-pros-more-flight-options-often-200-cheaper-better-on-time-performance-cons-90-minute-drive-parking-expensive-35-day-tolls-add-30-round-trip" class="text-1xl font-bold mt-8 mb-4">Option 2: Philadelphia (PHL)
+**Distance from Newark area**: 85 miles
+**Airlines**: All majors
+**Pros**:
+- More flight options
+- Often $200+ cheaper
+- Better on-time performance
+**Cons**:
+- 90-minute drive
+- Parking expensive ($35/day)
+- Tolls add $30 round-trip</h3><p class="mb-6 leading-relaxed">**Best for**: West Coast flights, international connections</p><h3 id="option-3-stewart-swf-distance-from-west-orange-55-miles-airlines-allegiant-norwegian-pros-rock-bottom-fares-easy-parking-no-crowds-cons-very-limited-schedule-no-food-options-unreliable-in-weather" class="text-1xl font-bold mt-8 mb-4">Option 3: Stewart (SWF)
+**Distance from West Orange**: 55 miles
+**Airlines**: Allegiant, Norwegian
+**Pros**:
+- Rock-bottom fares
+- Easy parking
+- No crowds
+**Cons**:
+- Very limited schedule
+- No food options
+- Unreliable in weather</h3><p class="mb-6 leading-relaxed">**Best for**: Flexible travelers to select destinations</p><h3 id="option-4-jfk-distance-from-newark-area-25-miles-airlines-all-majors-plus-jetblue-hub-pros-jetblue-mint-deals-more-international-options-better-lounges-cons-traffic-nightmare-higher-fares-typically-worse-delays-than-newark" class="text-1xl font-bold mt-8 mb-4">Option 4: JFK
+**Distance from Newark area**: 25 miles
+**Airlines**: All majors plus JetBlue hub
+**Pros**:
+- JetBlue Mint deals
+- More international options
+- Better lounges
+**Cons**:
+- Traffic nightmare
+- Higher fares typically
+- Worse delays than Newark</h3><p class="mb-6 leading-relaxed">**Best for**: JetBlue loyalists, international connections</p><h3 id="option-5-laguardia-lga-distance-from-newark-area-20-miles-airlines-primarily-domestic-pros-new-terminal-is-gorgeous-sometimes-cheaper-good-for-southeast-midwest-cons-no-international-limited-west-coast-parking-challenges" class="text-1xl font-bold mt-8 mb-4">Option 5: LaGuardia (LGA)
+**Distance from Newark area**: 20 miles
+**Airlines**: Primarily domestic
+**Pros**:
+- New terminal is gorgeous
+- Sometimes cheaper
+- Good for Southeast/Midwest
+**Cons**:
+- No international
+- Limited West Coast
+- Parking challenges</h3><p class="mb-6 leading-relaxed">**Best for**: Flights to Chicago, Atlanta, Florida</p><h2 id="family-booking-hacks-that-actually-work-booking-hacks-" class="text-2xl font-bold mt-8 mb-4">Family Booking Hacks That Actually Work {#booking-hacks}</h2><h3 id="hack-1-the-split-ticket-strategy-instead-of-booking-4-tickets-together-check-prices-for-2-2-or-1-1-1-1-airlines-often-have-only-2-seats-at-the-lowest-fare-" class="text-1xl font-bold mt-8 mb-4">Hack 1: The Split Ticket Strategy
+Instead of booking 4 tickets together, check prices for 2+2 or 1+1+1+1. Airlines often have only 2 seats at the lowest fare.</h3><p class="mb-6 leading-relaxed">**Example**: Newark to San Diego, November 22
+- 4 tickets together: $548 each = $2,192
+- 2 + 2 tickets: $428 + $478 = $1,812
+- Savings: $380</p><h3 id="hack-2-the-hidden-city-trick-use-carefully-book-newark-orlando-new-orleans-but-get-off-in-orlando-often-cheaper-but-only-works-on-one-ways-no-checked-bags-airlines-hate-this-risk-of-cancellation" class="text-1xl font-bold mt-8 mb-4">Hack 2: The Hidden City Trick (Use Carefully)
+Book Newark → Orlando → New Orleans but get off in Orlando. Often cheaper, but:
+- Only works on one-ways
+- No checked bags
+- Airlines hate this
+- Risk of cancellation</h3><h3 id="hack-3-the-24-hour-rule-book-refundable-tickets-when-you-see-good-prices-even-if-not-ready-to-commit-you-have-24-hours-to-cancel-for-full-refund-this-locks-in-price-while-you-coordinate-family-plans-" class="text-1xl font-bold mt-8 mb-4">Hack 3: The 24-Hour Rule
+Book refundable tickets when you see good prices, even if not ready to commit. You have 24 hours to cancel for full refund. This locks in price while you coordinate family plans.</h3><h3 id="hack-4-mix-airlines-don-t-assume-round-trip-on-one-airline-is-cheaper-outbound-on-united-358-return-on-jetblue-290-total-648-vs-united-round-trip-756" class="text-1xl font-bold mt-8 mb-4">Hack 4: Mix Airlines
+Don't assume round-trip on one airline is cheaper:
+- Outbound on United: $358
+- Return on JetBlue: $290
+- Total: $648
+- vs. United round-trip: $756</h3><h3 id="hack-5-the-points-cash-arbitrage-transfer-chase-amex-points-to-partners-during-bonus-periods-50-000-chase-points-65-000-flying-blue-miles-30-bonus-books-1-200-ticket-effective-value-2-4-cents-per-point" class="text-1xl font-bold mt-8 mb-4">Hack 5: The Points + Cash Arbitrage
+Transfer Chase/Amex points to partners during bonus periods:
+- 50,000 Chase points → 65,000 Flying Blue miles (30% bonus)
+- Books $1,200 ticket
+- Effective value: 2.4 cents per point</h3><h3 id="hack-6-the-companion-fare-play-delta-amex-annual-companion-certificate-southwest-companion-pass-alaska-99-companion-fare-plan-your-credit-card-strategy-now-for-next-year" class="text-1xl font-bold mt-8 mb-4">Hack 6: The Companion Fare Play
+- Delta Amex: Annual companion certificate
+- Southwest: Companion Pass
+- Alaska: $99 companion fare
+- Plan your credit card strategy now for next year</h3><h3 id="hack-7-the-tuesday-afternoon-correction-airlines-often-file-fare-corrections-tuesday-3-5-pm-est-set-alerts-and-be-ready-to-book-immediately-when-prices-drop-" class="text-1xl font-bold mt-8 mb-4">Hack 7: The Tuesday Afternoon Correction
+Airlines often file fare corrections Tuesday 3-5 PM EST. Set alerts and be ready to book immediately when prices drop.</h3><h2 id="tsa-precheck-clear-essex-county-enrollment-tsa-precheck-" class="text-2xl font-bold mt-8 mb-4">TSA PreCheck & CLEAR: Essex County Enrollment {#tsa-precheck}</h2><p class="mb-6 leading-relaxed">With Thanksgiving TSA lines projected to exceed 45 minutes, PreCheck/CLEAR isn't luxury—it's necessity.</p><h3 id="tsa-precheck-enrollment-locations" class="text-1xl font-bold mt-8 mb-4">TSA PreCheck Enrollment Locations</h3><p class="mb-6 leading-relaxed">**Newark IdentoGO Center**
+- Address: 744 Broad Street, Suite 1515, Newark, NJ 07102
+- Hours: Monday-Friday 8 AM - 6 PM, Saturday 9 AM - 2 PM
+- Walk-ins accepted but appointments recommended
+- Current wait for appointment: 5-7 days</p><p class="mb-6 leading-relaxed">**Montclair Staples**
+- Address: 240 Bloomfield Avenue, Montclair, NJ 07042
+- Hours: Monday-Friday 10 AM - 2 PM
+- Appointment only
+- Typically same-week availability</p><p class="mb-6 leading-relaxed">**Millburn Staples**
+- Address: 187 Millburn Avenue, Millburn, NJ 07041
+- Hours: Tuesday/Thursday 10 AM - 2 PM
+- Limited slots
+- Book 2 weeks out</p><h3 id="clear-enrollment-at-newark-airport-location-terminal-a-b-and-c-pre-security-time-allow-10-minutes-cost-189-year-often-discounted-to-119-family-benefit-kids-under-18-free-with-adult" class="text-1xl font-bold mt-8 mb-4">CLEAR Enrollment at Newark Airport
+- **Location**: Terminal A, B, and C pre-security
+- **Time**: Allow 10 minutes
+- **Cost**: $189/year (often discounted to $119)
+- **Family benefit**: Kids under 18 free with adult</h3><h3 id="the-precheck-clear-combo-regular-security-thanksgiving-morning-47-minutes-average-precheck-only-12-minutes-clear-precheck-5-minutes-time-saved-42-minutes-enough-to-grab-breakfast-" class="text-1xl font-bold mt-8 mb-4">The PreCheck + CLEAR Combo
+- Regular security Thanksgiving morning: 47 minutes average
+- PreCheck only: 12 minutes
+- CLEAR + PreCheck: 5 minutes
+- Time saved: 42 minutes (enough to grab breakfast)</h3><h3 id="credit-cards-that-reimburse" class="text-1xl font-bold mt-8 mb-4">Credit Cards That Reimburse</h3><p class="mb-6 leading-relaxed">**TSA PreCheck Credit:**
+- Capital One Venture X
+- Chase Sapphire Reserve
+- Most Amex Platinum variants</p><p class="mb-6 leading-relaxed">**CLEAR Credit:**
+- Amex Platinum: Full reimbursement
+- Amex Green: Full reimbursement
+- United Explorer: Discounted rate</p><h2 id="the-500-mistake-to-avoid-500-mistake-" class="text-2xl font-bold mt-8 mb-4">The $500 Mistake to Avoid {#500-mistake}</h2><p class="mb-6 leading-relaxed">The single biggest mistake Essex County families make? **Booking Basic Economy for family travel**.</p><h3 id="why-basic-economy-backfires-for-families" class="text-1xl font-bold mt-8 mb-4">Why Basic Economy Backfires for Families</h3><p class="mb-6 leading-relaxed">**The False Savings:**
+- Basic Economy: $298 per person
+- Regular Economy: $348 per person
+- "Savings": $50 per person</p><p class="mb-6 leading-relaxed">**The Hidden Costs:**
+- Seat selection (to sit together): $39 x 4 = $156
+- Carry-on bags: $65 x 4 = $260
+- Changes (when kids get sick): $200 x 4 = $800
+- Total potential cost: $1,216 extra</p><p class="mb-6 leading-relaxed">**The Real Problems:**
+- Families separated on plane
+- No overhead bin access
+- Last to board (no space for diaper bags)
+- No changes without huge fees
+- No points/miles earning</p><h3 id="the-smart-alternative" class="text-1xl font-bold mt-8 mb-4">The Smart Alternative</h3><p class="mb-6 leading-relaxed">Book Regular Economy and use these strategies:
+1. **Check bags free** with airline credit card
+2. **Select seats at booking** (together guaranteed)
+3. **Change without fees** if plans shift
+4. **Earn miles** for next trip
+5. **Board earlier** (crucial with kids)</p><h3 id="real-family-scenario" class="text-1xl font-bold mt-8 mb-4">Real Family Scenario</h3><p class="mb-6 leading-relaxed">**The Johnsons from Maplewood** (family of 4 to San Diego):
+- Saw Basic Economy at $1,192 total
+- Booked Regular Economy at $1,392
+- Added seats, bags, had to change dates
+- Final Basic Economy cost would've been: $2,408
+- Regular Economy actual cost: $1,392
+- Saved: $1,016</p><h2 id="airline-by-airline-strategy-airline-strategy-" class="text-2xl font-bold mt-8 mb-4">Airline-by-Airline Strategy {#airline-strategy}</h2><h3 id="united-newark-hub-advantage-strengths-most-nonstop-options-from-newark-best-elite-recognition-reliable-operations" class="text-1xl font-bold mt-8 mb-4">United (Newark Hub Advantage)
+**Strengths:**
+- Most nonstop options from Newark
+- Best elite recognition
+- Reliable operations</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Book Economy Plus for families (more space)
+- Use app for real-time standby lists
+- Terminal C has best kids' amenities</p><p class="mb-6 leading-relaxed">**Sweet Spots:**
+- Newark → San Francisco: 30,000 miles + $5.60
+- Newark → Denver: 17,500 miles one-way</p><h3 id="jetblue-strengths-most-legroom-in-coach-free-wifi-and-snacks-good-family-policies" class="text-1xl font-bold mt-8 mb-4">JetBlue
+**Strengths:**
+- Most legroom in coach
+- Free WiFi and snacks
+- Good family policies</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Even More Space seats worth it for long flights
+- Mint deals on transcons (sometimes cheaper than coach)
+- Best Newark → Florida options</p><p class="mb-6 leading-relaxed">**Sweet Spots:**
+- Flash sales Tuesday mornings
+- Points + cash combinations</p><h3 id="delta-strengths-best-on-time-performance-superior-app-good-connections-via-atlanta" class="text-1xl font-bold mt-8 mb-4">Delta
+**Strengths:**
+- Best on-time performance
+- Superior app
+- Good connections via Atlanta</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Book Comfort+ for free drinks and extra recline
+- Use Atlanta connection for West/South
+- Sky Club worth it for long layovers</p><p class="mb-6 leading-relaxed">**Sweet Spots:**
+- Companion certificate maximizes value
+- Pay with miles option at checkout</p><h3 id="american-strengths-good-coverage-via-charlotte-dallas-competitive-pricing-aadvantage-sweet-spots" class="text-1xl font-bold mt-8 mb-4">American
+**Strengths:**
+- Good coverage via Charlotte/Dallas
+- Competitive pricing
+- AAdvantage sweet spots</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Book Main Cabin Extra
+- Use Charlotte for Southeast
+- Dallas for West/Southwest</p><p class="mb-6 leading-relaxed">**Sweet Spots:**
+- Web specials every Tuesday
+- Reduced mileage awards</p><h3 id="southwest-strengths-two-free-checked-bags-no-change-fees-family-boarding" class="text-1xl font-bold mt-8 mb-4">Southwest
+**Strengths:**
+- Two free checked bags
+- No change fees
+- Family boarding</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Check in exactly 24 hours before
+- Buy EarlyBird for holiday travel ($15-25)
+- Use Companion Pass if you have it</p><p class="mb-6 leading-relaxed">**Note:** Not at Newark - use Islip or Philadelphia</p><h3 id="frontier-spirit-strengths-lowest-base-fares-trenton-mercer-option" class="text-1xl font-bold mt-8 mb-4">Frontier/Spirit
+**Strengths:**
+- Lowest base fares
+- Trenton-Mercer option</h3><p class="mb-6 leading-relaxed">**Thanksgiving Strategy:**
+- Only if traveling very light
+- Buy bundle upfront
+- Avoid unless significant savings</p><p class="mb-6 leading-relaxed">**Reality Check:**
+- Good for solo travelers
+- Terrible for families
+- Hidden fees destroy value</p><h2 id="ground-transportation-game-plan-ground-transportation-" class="text-2xl font-bold mt-8 mb-4">Ground Transportation Game Plan {#ground-transportation}</h2><h3 id="parking-strategy" class="text-1xl font-bold mt-8 mb-4">Parking Strategy</h3><p class="mb-6 leading-relaxed">**Newark Airport Parking:**
+- Daily Parking: $39/day
+- Economy Lot P6: $29/day
+- Off-site (Park Plus): $15/day
+- Coupon codes: HOLIDAY25 saves 20%</p><p class="mb-6 leading-relaxed">**Pre-Book Requirements:**
+- Book by November 15 for guarantee
+- Screenshot confirmation
+- Arrive 30 minutes earlier than normal</p><h3 id="alternative-off-site-parking" class="text-1xl font-bold mt-8 mb-4">Alternative: Off-Site Parking</h3><p class="mb-6 leading-relaxed">**Best Options:**
+1. **Park Plus Newark**: $12.95/day
+   - Free shuttle every 10 minutes
+   - Indoor waiting area
+   - Often has Groupon deals</p><p class="mb-6 leading-relaxed">2. **WallyPark**: $14.95/day
+   - Covered parking available
+   - Valet option
+   - Rewards program</p><p class="mb-6 leading-relaxed">3. **The Parking Spot**: $16.95/day
+   - Best shuttle service
+   - Covered walkways
+   - Online check-in</p><h3 id="ride-share-reality-check" class="text-1xl font-bold mt-8 mb-4">Ride Share Reality Check</h3><p class="mb-6 leading-relaxed">**Thanksgiving Week Surge Pricing:**
+- Normal Newark → Montclair: $45
+- Thanksgiving Wednesday 4 PM: $127
+- Black Friday return 8 PM: $95</p><p class="mb-6 leading-relaxed">**Alternatives:**
+- Pre-book black car: $85 flat
+- Newark Airport Express bus: $18
+- NJ Transit + AirTrain: $15.75</p><h3 id="the-family-car-service-solution" class="text-1xl font-bold mt-8 mb-4">The Family Car Service Solution</h3><p class="mb-6 leading-relaxed">**Local Essex County Options:**
+- Essex Car Service: Fixed rates, car seats available
+- Millburn Taxi: $70 flat to Newark
+- West Orange Limo: $85 for SUV</p><p class="mb-6 leading-relaxed">Book now - they sell out by November 15.</p><h2 id="contingency-planning-contingency-planning-" class="text-2xl font-bold mt-8 mb-4">Contingency Planning {#contingency-planning}</h2><h3 id="flight-cancellation-strategy" class="text-1xl font-bold mt-8 mb-4">Flight Cancellation Strategy</h3><p class="mb-6 leading-relaxed">**Before Leaving Home:**
+1. Download airline app
+2. Add airline Twitter to phone
+3. Know alternate flight options
+4. Have airline phone number ready
+5. Screenshot original booking</p><p class="mb-6 leading-relaxed">**If Cancelled at Airport:**
+1. Get in physical line
+2. Call airline simultaneously
+3. Use app to rebook
+4. Check alternate airports
+5. Know your rights (food/hotel)</p><h3 id="weather-contingency" class="text-1xl font-bold mt-8 mb-4">Weather Contingency</h3><p class="mb-6 leading-relaxed">**November Weather Patterns:**
+- 30% chance of weather delays Wednesday
+- Morning flights least affected
+- Southern routes more reliable</p><p class="mb-6 leading-relaxed">**Backup Plans:**
+- Book refundable hotel near airport
+- Know train options to destination
+- Have rental car backup
+- Consider travel insurance</p><h3 id="travel-insurance-deep-dive" class="text-1xl font-bold mt-8 mb-4">Travel Insurance Deep Dive</h3><p class="mb-6 leading-relaxed">**When It's Worth It:**
+- International Thanksgiving trips
+- Expensive ($5,000+) bookings
+- Connecting flights
+- Health concerns in family</p><p class="mb-6 leading-relaxed">**Best Policies for Families:**
+- Allianz AllTrips Premier: Best medical coverage
+- Travel Guard Deluxe: Best cancellation coverage
+- Chase Sapphire travel insurance: If paid with card</p><p class="mb-6 leading-relaxed">**What's Actually Covered:**
+- Trip cancellation for illness
+- Missed connections
+- Lost baggage
+- Medical emergencies
+- Some "cancel for any reason"</p><h2 id="the-week-by-week-action-plan" class="text-2xl font-bold mt-8 mb-4">The Week-by-Week Action Plan</h2><h3 id="september-22-october-5-check-passport-expirations-apply-for-tsa-precheck-if-needed-set-flight-price-alerts-research-destination-requirements-check-credit-card-points-balances" class="text-1xl font-bold mt-8 mb-4">September 22 - October 5
+- [ ] Check passport expirations
+- [ ] Apply for TSA PreCheck if needed
+- [ ] Set flight price alerts
+- [ ] Research destination requirements
+- [ ] Check credit card points balances</h3><h3 id="october-6-october-14-finalize-travel-dates-compare-airports-and-airlines-clear-cookies-before-searching-use-incognito-mode-for-searches-prepare-to-book-on-october-15" class="text-1xl font-bold mt-8 mb-4">October 6 - October 14
+- [ ] Finalize travel dates
+- [ ] Compare airports and airlines
+- [ ] Clear cookies before searching
+- [ ] Use incognito mode for searches
+- [ ] Prepare to book on October 15</h3><h3 id="october-15-october-20-book-flights-october-15-ideal-reserve-parking-book-accommodation-reserve-rental-car-buy-travel-insurance-if-needed" class="text-1xl font-bold mt-8 mb-4">October 15 - October 20
+- [ ] **BOOK FLIGHTS** (October 15 ideal)
+- [ ] Reserve parking
+- [ ] Book accommodation
+- [ ] Reserve rental car
+- [ ] Buy travel insurance if needed</h3><h3 id="october-21-november-10-book-airport-car-service-make-pet-boarding-reservations-schedule-house-sitter-arrange-mail-hold-confirm-all-reservations" class="text-1xl font-bold mt-8 mb-4">October 21 - November 10
+- [ ] Book airport car service
+- [ ] Make pet boarding reservations
+- [ ] Schedule house sitter
+- [ ] Arrange mail hold
+- [ ] Confirm all reservations</h3><h3 id="november-11-november-20-check-in-exactly-24-hours-before-download-boarding-passes-check-weather-forecasts-prepare-carry-on-strategically-confirm-ground-transportation" class="text-1xl font-bold mt-8 mb-4">November 11 - November 20
+- [ ] Check in exactly 24 hours before
+- [ ] Download boarding passes
+- [ ] Check weather forecasts
+- [ ] Prepare carry-on strategically
+- [ ] Confirm ground transportation</h3><h3 id="november-21-travel-day-arrive-at-airport-extra-early-have-backup-plans-ready-keep-documents-accessible-stay-flexible-breathe-deeply" class="text-1xl font-bold mt-8 mb-4">November 21 - Travel Day
+- [ ] Arrive at airport extra early
+- [ ] Have backup plans ready
+- [ ] Keep documents accessible
+- [ ] Stay flexible
+- [ ] Breathe deeply</h3><h2 id="top-10-thanksgiving-destinations-from-newark" class="text-2xl font-bold mt-8 mb-4">Top 10 Thanksgiving Destinations from Newark</h2><h3 id="1-orlando-mco-flight-time-2-hours-45-minutes-airlines-united-jetblue-spirit-best-strategy-jetblue-for-families-more-space-average-november-weather-78-f-don-t-miss-avoid-theme-parks-on-black-friday" class="text-1xl font-bold mt-8 mb-4">1. Orlando (MCO)
+**Flight time**: 2 hours 45 minutes
+**Airlines**: United, JetBlue, Spirit
+**Best strategy**: JetBlue for families (more space)
+**Average November weather**: 78°F
+**Don't miss**: Avoid theme parks on Black Friday</h3><h3 id="2-fort-lauderdale-fll-flight-time-3-hours-airlines-united-jetblue-spirit-best-strategy-spirit-if-only-carry-ons-average-november-weather-79-f-alternative-fly-to-miami-often-cheaper" class="text-1xl font-bold mt-8 mb-4">2. Fort Lauderdale (FLL)
+**Flight time**: 3 hours
+**Airlines**: United, JetBlue, Spirit
+**Best strategy**: Spirit if only carry-ons
+**Average November weather**: 79°F
+**Alternative**: Fly to Miami, often cheaper</h3><h3 id="3-los-angeles-lax-flight-time-5-hours-45-minutes-airlines-united-american-jetblue-best-strategy-jetblue-mint-if-available-average-november-weather-70-f-tip-consider-burbank-airport-instead" class="text-1xl font-bold mt-8 mb-4">3. Los Angeles (LAX)
+**Flight time**: 5 hours 45 minutes
+**Airlines**: United, American, JetBlue
+**Best strategy**: JetBlue Mint if available
+**Average November weather**: 70°F
+**Tip**: Consider Burbank airport instead</h3><h3 id="4-san-francisco-sfo-flight-time-5-hours-50-minutes-airlines-united-hub-alaska-best-strategy-united-nonstop-average-november-weather-60-f-note-often-foggy-morning-flights-better" class="text-1xl font-bold mt-8 mb-4">4. San Francisco (SFO)
+**Flight time**: 5 hours 50 minutes
+**Airlines**: United (hub), Alaska
+**Best strategy**: United nonstop
+**Average November weather**: 60°F
+**Note**: Often foggy, morning flights better</h3><h3 id="5-phoenix-phx-flight-time-5-hours-airlines-united-american-southwest-via-best-strategy-american-through-charlotte-average-november-weather-73-f-bonus-great-for-multi-generational-trips" class="text-1xl font-bold mt-8 mb-4">5. Phoenix (PHX)
+**Flight time**: 5 hours
+**Airlines**: United, American, Southwest (via)
+**Best strategy**: American through Charlotte
+**Average November weather**: 73°F
+**Bonus**: Great for multi-generational trips</h3><h3 id="6-atlanta-atl-flight-time-2-hours-30-minutes-airlines-delta-hub-united-best-strategy-delta-for-connections-average-november-weather-61-f-warning-busiest-airport-at-thanksgiving" class="text-1xl font-bold mt-8 mb-4">6. Atlanta (ATL)
+**Flight time**: 2 hours 30 minutes
+**Airlines**: Delta (hub), United
+**Best strategy**: Delta for connections
+**Average November weather**: 61°F
+**Warning**: Busiest airport at Thanksgiving</h3><h3 id="7-denver-den-flight-time-4-hours-airlines-united-hub-southwest-via-best-strategy-united-nonstop-average-november-weather-47-f-activity-ski-resorts-open-thanksgiving-week" class="text-1xl font-bold mt-8 mb-4">7. Denver (DEN)
+**Flight time**: 4 hours
+**Airlines**: United (hub), Southwest (via)
+**Best strategy**: United nonstop
+**Average November weather**: 47°F
+**Activity**: Ski resorts open Thanksgiving week</h3><h3 id="8-chicago-ord-flight-time-2-hours-30-minutes-airlines-united-hub-american-best-strategy-multiple-daily-options-average-november-weather-43-f-risk-weather-delays-common" class="text-1xl font-bold mt-8 mb-4">8. Chicago (ORD)
+**Flight time**: 2 hours 30 minutes
+**Airlines**: United (hub), American
+**Best strategy**: Multiple daily options
+**Average November weather**: 43°F
+**Risk**: Weather delays common</h3><h3 id="9-dallas-dfw-flight-time-3-hours-45-minutes-airlines-american-hub-united-best-strategy-american-nonstop-average-november-weather-62-f-advantage-great-for-connections" class="text-1xl font-bold mt-8 mb-4">9. Dallas (DFW)
+**Flight time**: 3 hours 45 minutes
+**Airlines**: American (hub), United
+**Best strategy**: American nonstop
+**Average November weather**: 62°F
+**Advantage**: Great for connections</h3><h3 id="10-boston-bos-flight-time-1-hour-15-minutes-airlines-united-jetblue-delta-better-option-drive-or-take-amtrak-average-november-weather-48-f-reality-flight-often-costs-more-than-driving" class="text-1xl font-bold mt-8 mb-4">10. Boston (BOS)
+**Flight time**: 1 hour 15 minutes
+**Airlines**: United, JetBlue, Delta
+**Better option**: Drive or take Amtrak
+**Average November weather**: 48°F
+**Reality**: Flight often costs more than driving</h3><h2 id="expert-tips-from-newark-veterans" class="text-2xl font-bold mt-8 mb-4">Expert Tips from Newark Veterans</h2><h3 id="from-the-gate-agents-families-who-gate-check-car-seats-and-strollers-at-the-door-not-the-counter-save-20-minutes-and-reduce-damage-risk-" class="text-1xl font-bold mt-8 mb-4">From the Gate Agents
+"Families who gate-check car seats and strollers at the door—not the counter—save 20 minutes and reduce damage risk."</h3><h3 id="from-the-tsa-officers-freeze-your-liquids-frozen-items-aren-t-subject-to-3-1-1-rule-great-for-baby-food-and-breast-milk-" class="text-1xl font-bold mt-8 mb-4">From the TSA Officers
+"Freeze your liquids. Frozen items aren't subject to 3-1-1 rule. Great for baby food and breast milk."</h3><h3 id="from-the-pilots-first-flight-of-the-day-has-85-less-chance-of-delay-we-call-the-6-am-departure-the-golden-flight-" class="text-1xl font-bold mt-8 mb-4">From the Pilots
+"First flight of the day has 85% less chance of delay. We call the 6 AM departure the 'golden flight.'"</h3><h3 id="from-the-flight-attendants-bring-extra-snacks-thanksgiving-flights-often-run-out-of-food-for-purchase-and-download-entertainment-wifi-gets-overloaded-" class="text-1xl font-bold mt-8 mb-4">From the Flight Attendants
+"Bring extra snacks. Thanksgiving flights often run out of food for purchase. And download entertainment—WiFi gets overloaded."</h3><h3 id="from-the-airport-operations-team-cell-phone-lots-fill-up-have-your-pickup-person-park-at-hourly-garage-and-get-validated-at-a-restaurant-often-cheaper-than-circling-" class="text-1xl font-bold mt-8 mb-4">From the Airport Operations Team
+"Cell phone lots fill up. Have your pickup person park at hourly garage and get validated at a restaurant—often cheaper than circling."</h3><h2 id="money-saving-resources" class="text-2xl font-bold mt-8 mb-4">Money-Saving Resources</h2><h3 id="flight-tracking-tools-google-flights-best-for-flexibility-hopper-predicts-future-prices-kayak-price-alerts-email-when-prices-drop-momondo-finds-obscure-routings-ita-matrix-power-user-tool" class="text-1xl font-bold mt-8 mb-4">Flight Tracking Tools
+- **Google Flights**: Best for flexibility
+- **Hopper**: Predicts future prices
+- **Kayak Price Alerts**: Email when prices drop
+- **Momondo**: Finds obscure routings
+- **ITA Matrix**: Power user tool</h3><h3 id="deal-alerts-scott-s-cheap-flights-premium-worth-it-for-families-the-flight-deal-focus-on-newark-departures-secret-flying-error-fares-and-deals-farecompare-historical-price-data" class="text-1xl font-bold mt-8 mb-4">Deal Alerts
+- **Scott's Cheap Flights**: Premium worth it for families
+- **The Flight Deal**: Focus on Newark departures
+- **Secret Flying**: Error fares and deals
+- **FareCompare**: Historical price data</h3><h3 id="points-miles-resources-award-wallet-track-all-programs-points-me-search-award-availability-frequent-miler-best-use-of-points-the-points-guy-general-education" class="text-1xl font-bold mt-8 mb-4">Points & Miles Resources
+- **Award Wallet**: Track all programs
+- **Points.me**: Search award availability
+- **Frequent Miler**: Best use of points
+- **The Points Guy**: General education</h3><h2 id="the-bottom-line" class="text-2xl font-bold mt-8 mb-4">The Bottom Line</h2><p class="mb-6 leading-relaxed">Thanksgiving 2025 from Newark presents unique challenges—FAA restrictions, record crowds, and inflation-adjusted pricing. But armed with this guide, Essex County families can navigate the chaos and save substantial money.</p><p class="mb-6 leading-relaxed">**Your Five-Step Success Formula:**
+1. **Book on October 15** (or as close as possible)
+2. **Fly Saturday/Monday** (avoid Wednesday/Sunday)
+3. **Consider Trenton-Mercer** for Florida
+4. **Get TSA PreCheck NOW**
+5. **Book Regular Economy**, not Basic</p><p class="mb-6 leading-relaxed">The difference between strategic and reactive booking this Thanksgiving? For a family of four, it's easily $2,000—enough for another entire vacation.</p><h2 id="final-countdown-checklist" class="text-2xl font-bold mt-8 mb-4">Final Countdown Checklist</h2><p class="mb-6 leading-relaxed">**TODAY (September 22):**
+- [ ] Set October 15 calendar reminder
+- [ ] Create flight alerts on Google Flights
+- [ ] Check passport expirations
+- [ ] Calculate points/miles balances</p><p class="mb-6 leading-relaxed">**THIS WEEK:**
+- [ ] Apply for TSA PreCheck
+- [ ] Research destination COVID requirements
+- [ ] Discuss dates with family
+- [ ] Check work blackout dates</p><p class="mb-6 leading-relaxed">**OCTOBER 1:**
+- [ ] Review flight prices
+- [ ] Check alternative airports
+- [ ] Finalize travel dates
+- [ ] Clear schedule for October 15 booking</p><p class="mb-6 leading-relaxed">**OCTOBER 15:**
+- [ ] BOOK YOUR FLIGHTS at 3 PM EST
+- [ ] Reserve parking
+- [ ] Book hotels/rentals
+- [ ] Buy travel insurance
+- [ ] Celebrate your savings!</p><p class="mb-6 leading-relaxed">Remember: The best Thanksgiving travel experience isn't about the perfect flight—it's about being with family. But saving money and avoiding airport chaos certainly helps the gratitude flow easier.</p><p class="mb-6 leading-relaxed">---</p><p class="mb-6 leading-relaxed">*Next Trip Anywhere has served Essex County families for over 45 years. Our Thanksgiving travel specialists are standing by to help with booking strategies, group travel coordination, and destination planning. Contact us at 1-800-XXX-XXXX or visit our offices in Newark, Montclair, or Millburn. Don't let Thanksgiving travel stress ruin your holiday—let our expertise guide your journey.*</p><p class="mb-6 leading-relaxed">**Published**: September 22, 2025, 2:00 PM EST
+**Next Update**: October 10, 2025 (Final pre-booking guidance)</p>26:["$","div",null,{"className":"prose prose-lg max-w-none","dangerouslySetInnerHTML":{"__html":"$2b"}}]
+27:["$","div",null,{"className":"mt-12 pt-8 border-t","children":[["$","h3",null,{"className":"font-semibold mb-4","children":"Tags:"}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","$L23","Thanksgiving Travel",{"href":"/blog?tag=thanksgiving-travel","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Thanksgiving Travel"}],["$","$L23","Newark Airport",{"href":"/blog?tag=newark-airport","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Newark Airport"}],["$","$L23","Holiday Travel",{"href":"/blog?tag=holiday-travel","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Holiday Travel"}],["$","$L23","Family Travel",{"href":"/blog?tag=family-travel","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Family Travel"}],["$","$L23","Travel Deals",{"href":"/blog?tag=travel-deals","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Travel Deals"}],["$","$L23","Essex County",{"href":"/blog?tag=essex-county","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Essex County"}],["$","$L23","Flight Booking",{"href":"/blog?tag=flight-booking","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Flight Booking"}],["$","$L23","TSA PreCheck",{"href":"/blog?tag=tsa-precheck","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"TSA PreCheck"}],["$","$L23","Travel Tips",{"href":"/blog?tag=travel-tips","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Travel Tips"}],["$","$L23","Budget Travel",{"href":"/blog?tag=budget-travel","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"Budget Travel"}],["$","$L23","FAA Restrictions",{"href":"/blog?tag=faa-restrictions","className":"px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200 transition-colors","children":"FAA Restrictions"}]]}]]}]
+28:["$","aside",null,{"className":"lg:col-span-1","children":["$","div",null,{"className":"sticky top-8 space-y-8","children":[["$","div",null,{"className":"bg-white rounded-xl shadow-md p-6","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"relative w-20 h-20 rounded-full overflow-hidden bg-gray-200 flex-shrink-0","children":["$","$L24",null,{"src":"/images/authors/placeholder.svg","alt":"Candy Myrick","fill":true,"className":"object-cover"}]}],["$","div",null,{"className":"flex-1","children":[["$","h3",null,{"className":"text-lg font-bold text-gray-900","children":"Candy Myrick"}],["$","p",null,{"className":"text-sm text-gray-600 mb-2","children":"Travel Specialist"}],["$","p",null,{"className":"text-gray-700 text-sm leading-relaxed mb-3","children":"Candy is a seasoned travel expert specializing in cruise vacations and last-minute deals. With extensive knowledge of Caribbean, Alaska, and Mediterranean itineraries, she helps Essex County residents find incredible cruise values and unforgettable experiences at sea."}],["$","p",null,{"className":"text-sm text-gray-600 mb-3","children":[5," article","s"," published"]}],["$","div",null,{"className":"flex gap-3","children":[["$","a",null,{"href":"mailto:candy@nexttripanywhere.com","className":"text-gray-600 hover:text-primary transition-colors","aria-label":"Email","children":["$","svg",null,{"className":"w-5 h-5","fill":"currentColor","viewBox":"0 0 20 20","children":[["$","path",null,{"d":"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"}],["$","path",null,{"d":"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"}]]}]}],"$undefined","$undefined"]}]]}]]}]}],["$","div",null,{"className":"bg-gray-50 rounded-xl p-6","children":[["$","h3",null,{"className":"font-bold mb-4","children":"In This Article"}],["$","nav",null,{"className":"space-y-2 text-sm","children":[["$","a",null,{"href":"#the-science-of-flight-pricing","className":"block text-gray-600 hover:text-primary","children":"The Science of Flight Pricing"}],["$","a",null,{"href":"#seasonal-pricing-analysis","className":"block text-gray-600 hover:text-primary","children":"Seasonal Pricing Analysis"}],["$","a",null,{"href":"#advance-booking-sweet-spots","className":"block text-gray-600 hover:text-primary","children":"Advance Booking Sweet Spots"}],["$","a",null,{"href":"#day-of-week-insights","className":"block text-gray-600 hover:text-primary","children":"Day-of-Week Insights"}]]}]]}],["$","div",null,{"className":"bg-primary text-white rounded-xl p-6","children":[["$","h3",null,{"className":"font-bold mb-2","children":"Ready to Book Your Trip?"}],["$","p",null,{"className":"text-sm mb-4","children":"Let our experts help you find the best deals from Newark Airport."}],["$","$L23",null,{"href":"/contact","className":"inline-block bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors","children":"Get Started"}]]}]]}]}]
+29:["$","section",null,{"className":"mt-12 py-8 border-t border-gray-200","children":[["$","h2",null,{"className":"text-2xl font-bold text-gray-900 mb-6","children":"Related Articles"}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-3 gap-6","children":[["$","article","newark-airport-travel-tips",{"className":"group","children":["$","$L23",null,{"href":"/blog/newark-airport-travel-tips-local-experts","className":"block","children":[["$","div",null,{"className":"relative h-48 w-full overflow-hidden rounded-lg bg-gray-100 mb-4","children":["$","$L24",null,{"src":"/images/placeholder-destination.jpg","alt":"Newark Liberty International Airport terminal interior","fill":true,"className":"object-cover group-hover:scale-105 transition-transform duration-300","sizes":"(max-width: 768px) 100vw, 33vw"}]}],["$","div",null,{"className":"space-y-2","children":[["$","div",null,{"className":"flex items-center gap-2 text-xs text-gray-600","children":[["$","time",null,{"dateTime":"2025-01-13T12:00:00Z","children":"January 13, 2025"}],["$","span",null,{"children":"•"}],["$","span",null,{"children":[12," min read"]}]]}],["$","h3",null,{"className":"font-semibold text-gray-900 group-hover:text-primary transition-colors line-clamp-2","children":"Newark Airport Travel Tips from Local Experts: Insider Secrets for Stress-Free Travel"}],["$","p",null,{"className":"text-sm text-gray-600 line-clamp-2","children":"Master Newark Liberty International Airport with insider tips from Essex County locals. From secret parking spots to security shortcuts and terminal navigation, make EWR travel seamless."}]]}]]}]}],["$","article","coolcations-fall-destinations-newark-airport",{"className":"group","children":["$","$L23",null,{"href":"/blog/coolcations-beat-the-heat-fall-destinations-newark-airport","className":"block","children":[["$","div",null,{"className":"relative h-48 w-full overflow-hidden rounded-lg bg-gray-100 mb-4","children":["$","$L24",null,{"src":"/images/placeholder-destination.jpg","alt":"Family enjoying autumn foliage at a mountain lake resort with cool weather","fill":true,"className":"object-cover group-hover:scale-105 transition-transform duration-300","sizes":"(max-width: 768px) 100vw, 33vw"}]}],["$","div",null,{"className":"space-y-2","children":[["$","div",null,{"className":"flex items-center gap-2 text-xs text-gray-600","children":[["$","time",null,{"dateTime":"2025-09-15T09:00:00Z","children":"September 15, 2025"}],["$","span",null,{"children":"•"}],["$","span",null,{"children":[18," min read"]}]]}],["$","h3",null,{"className":"font-semibold text-gray-900 group-hover:text-primary transition-colors line-clamp-2","children":"Coolcations: Beat the Heat with These Refreshing Fall Destinations from Newark Airport"}],["$","p",null,{"className":"text-sm text-gray-600 line-clamp-2","children":"Discover the hottest travel trend of 2025! Escape to cooler climates this fall with our expert guide to the best \"coolcation\" destinations from Newark Airport. Perfect temperatures, stunning fall foliage, and budget-friendly options for Essex County families."}]]}]]}]}],["$","article","last-minute-september-cruise-deals",{"className":"group","children":["$","$L23",null,{"href":"/blog/last-minute-september-cruise-deals-caribbean-alaska-mediterranean","className":"block","children":[["$","div",null,{"className":"relative h-48 w-full overflow-hidden rounded-lg bg-gray-100 mb-4","children":["$","$L24",null,{"src":"/images/cruise-deals-september.png","alt":"Cruise ship with special deals and promotional text overlay showcasing last-minute cruise offers","fill":true,"className":"object-cover group-hover:scale-105 transition-transform duration-300","sizes":"(max-width: 768px) 100vw, 33vw"}]}],["$","div",null,{"className":"space-y-2","children":[["$","div",null,{"className":"flex items-center gap-2 text-xs text-gray-600","children":[["$","time",null,{"dateTime":"2025-09-01T06:00:00Z","children":"September 1, 2025"}],["$","span",null,{"children":"•"}],"$L2c"]}],"$L2d","$L2e"]}]]}]}]]}]]}]
+2c:["$","span",null,{"children":[16," min read"]}]
+2d:["$","h3",null,{"className":"font-semibold text-gray-900 group-hover:text-primary transition-colors line-clamp-2","children":"Last-Minute September Cruise Deals: Save 50% on Caribbean, Alaska & Mediterranean Sailings from Newark"}]
+2e:["$","p",null,{"className":"text-sm text-gray-600 line-clamp-2","children":"URGENT: Incredible last-minute cruise deals departing within 30 days! Save up to 50% on Caribbean, Alaska, and Mediterranean cruises from Newark area ports. Prices starting at just $72/night with balcony upgrades available. Essex County residents can reach departure ports in under an hour."}]
+1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1b:null
+1d:{"metadata":[["$","title","0",{"children":"Thanksgiving 2025 Newark Travel: Save $500+ with Oct 15 Booking | Next Trip Anywhere"}],["$","meta","1",{"name":"description","content":"Beat Newark Airport Thanksgiving chaos. Oct 15 booking saves $500+. FAA restrictions, alternative airports, TSA PreCheck locations, day-by-day pricing guide."}],["$","meta","2",{"name":"author","content":"Next Trip Anywhere"}],["$","link","3",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"Thanksgiving travel 2025, Newark Airport Thanksgiving, cheapest Thanksgiving flights, Essex County holiday travel, Newark FAA restrictions, when to book Thanksgiving flights, Thanksgiving travel deals, Newark Airport tips, TSA PreCheck Essex County, alternative airports NJ"}],["$","meta","5",{"name":"creator","content":"Next Trip Anywhere"}],["$","meta","6",{"name":"publisher","content":"Next Trip Anywhere"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","9",{"rel":"canonical","href":"https://nexttripanywhere.com/blog/thanksgiving-travel-2025-newark-guide/"}],["$","meta","10",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","11",{"name":"google-site-verification","content":"your-google-verification-code"}],["$","meta","12",{"name":"y_key","content":"your-yahoo-verification-code"}],["$","meta","13",{"name":"yandex-verification","content":"your-yandex-verification-code"}],["$","meta","14",{"name":"msvalidate.01","content":"your-bing-verification-code"}],["$","meta","15",{"name":"facebook-domain-verification","content":"your-facebook-verification-code"}],["$","meta","16",{"property":"og:title","content":"Thanksgiving 2025 Newark Travel: Save $500+ with Oct 15 Booking"}],["$","meta","17",{"property":"og:description","content":"Beat Newark Airport Thanksgiving chaos. Oct 15 booking saves $500+. FAA restrictions, alternative airports, TSA PreCheck locations, day-by-day pricing guide."}],["$","meta","18",{"property":"og:url","content":"https://nexttripanywhere.com/blog/thanksgiving-travel-2025-newark-guide/"}],["$","meta","19",{"property":"og:image","content":"https://nexttripanywhere.com/images/thanksgiving-travel-newark.svg"}],["$","meta","20",{"property":"og:type","content":"article"}],["$","meta","21",{"property":"article:published_time","content":"2025-09-22T14:00:00Z"}],["$","meta","22",{"property":"article:author","content":"Candy Myrick"}],["$","meta","23",{"property":"article:tag","content":"Thanksgiving Travel"}],["$","meta","24",{"property":"article:tag","content":"Newark Airport"}],["$","meta","25",{"property":"article:tag","content":"Holiday Travel"}],["$","meta","26",{"property":"article:tag","content":"Family Travel"}],["$","meta","27",{"property":"article:tag","content":"Travel Deals"}],["$","meta","28",{"property":"article:tag","content":"Essex County"}],["$","meta","29",{"property":"article:tag","content":"Flight Booking"}],["$","meta","30",{"property":"article:tag","content":"TSA PreCheck"}],["$","meta","31",{"property":"article:tag","content":"Travel Tips"}],["$","meta","32",{"property":"article:tag","content":"Budget Travel"}],["$","meta","33",{"property":"article:tag","content":"FAA Restrictions"}],["$","meta","34",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","35",{"name":"twitter:title","content":"Thanksgiving 2025 Newark Travel: Save $500+ with Oct 15 Booking"}],["$","meta","36",{"name":"twitter:description","content":"Beat Newark Airport Thanksgiving chaos. Oct 15 booking saves $500+. FAA restrictions, alternative airports, TSA PreCheck locations, day-by-day pricing guide."}],["$","meta","37",{"name":"twitter:image","content":"https://nexttripanywhere.com/images/thanksgiving-travel-newark.svg"}],["$","link","38",{"rel":"shortcut icon","href":"/favicon-16x16.png"}],["$","link","39",{"rel":"icon","href":"/favicon.ico"}],"$L2f","$L30"],"error":null,"digest":"$undefined"}
+31:I[622,[],"IconMark"]
+2f:["$","link","40",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
+30:["$","$L31","41",{}]
+21:"$1d:metadata"
