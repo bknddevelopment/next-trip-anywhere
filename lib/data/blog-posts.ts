@@ -3653,7 +3653,7 @@ These last-minute September cruise deals won't last long. Ships are sailing with
     title: "Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know",
     excerpt:
       "URGENT: Europe's Entry/Exit System (EES) launches October 12, 2025—just 3 weeks away. Essex County residents traveling to Europe must prepare now for biometric checks, digital registration, and the upcoming ETIAS visa waiver. Our comprehensive guide covers everything from Newark Airport departures to avoiding delays at European borders.",
-    featuredImage: '/images/europe-entry-rules-ees.jpg',
+    featuredImage: '/images/europe-entry-rules-ees.svg',
     featuredImageAlt:
       'European Union border control with new EES biometric scanning equipment and travelers preparing documents',
     author: authors['candy-myrick'],
@@ -3691,7 +3691,7 @@ These last-minute September cruise deals won't last long. Ships are sailing with
         'biometric passport Europe',
         'Schengen visa waiver',
       ],
-      ogImage: '/images/blog/og/europe-entry-rules.jpg',
+      ogImage: '/images/europe-entry-rules-ees.svg',
     },
     content: `# Europe's New Entry Rules Start October 12: What Essex County Travelers Must Know
 

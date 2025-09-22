@@ -29,15 +29,21 @@ export async function generateMetadata({
     }
   }
 
+  const canonicalUrl = `https://nexttripanywhere.com/blog/${post.slug}`
+
   return {
     title: post.seo.metaTitle || post.title,
     description: post.seo.metaDescription,
     keywords: post.seo.keywords.join(', '),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.seo.metaTitle || post.title,
       description: post.seo.metaDescription,
       images: [post.seo.ogImage || post.featuredImage],
       type: 'article',
+      url: canonicalUrl,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author.name],
