@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+        .badge-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .badge-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .badge-item img {
+            display: block;
+            margin: 0 auto 10px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Badge Display Test</h1>
+
+    <h2>SVG Badges</h2>
+    <div class="badge-container">
+        <div class="badge-item">
+            <img src="/images/badges/experience-badge.svg" alt="Experience Badge" width="80" height="80">
+            <p>Experience Badge (SVG)</p>
+        </div>
+        <div class="badge-item">
+            <img src="/images/badges/licensed-badge.svg" alt="Licensed Badge" width="80" height="80">
+            <p>Licensed Badge (SVG)</p>
+        </div>
+    </div>
+
+    <script>
+        // Log any image loading errors
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.error('Failed to load image:', this.src);
+                this.style.border = '2px solid red';
+            });
+            img.addEventListener('load', function() {
+                console.log('Successfully loaded:', this.src);
+                this.style.border = '2px solid green';
+            });
+        });
+    </script>
+</body>
+</html>
