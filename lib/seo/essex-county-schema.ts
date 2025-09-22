@@ -31,15 +31,17 @@ export const ESSEX_COUNTY_TOWNS = [
   { name: 'Fairfield', coordinates: { lat: 40.8834, lng: -74.3062 }, population: 7615 },
 ]
 
-// Newark office information
+// Virtual office information - serving Newark and Essex County
 export const NEWARK_OFFICE = {
-  streetAddress: '744 Broad Street',
-  suite: 'Suite 1700',
+  // We're a virtual travel agency serving Essex County
+  streetAddress: 'Virtual Office',
+  suite: '',
   city: 'Newark',
   state: 'NJ',
   postalCode: '07102',
   country: 'US',
   coordinates: {
+    // Newark city center coordinates for service area
     latitude: 40.7357,
     longitude: -74.1724,
   },
@@ -165,7 +167,7 @@ export function generateEssexCountyLocalBusinessSchema() {
     email: NEWARK_OFFICE.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: `${NEWARK_OFFICE.streetAddress}, ${NEWARK_OFFICE.suite}`,
+      streetAddress: 'Online Travel Services',
       addressLocality: NEWARK_OFFICE.city,
       addressRegion: NEWARK_OFFICE.state,
       postalCode: NEWARK_OFFICE.postalCode,
@@ -480,7 +482,7 @@ export function generateTownSpecificSchema(townName: string) {
     email: NEWARK_OFFICE.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: `${NEWARK_OFFICE.streetAddress}, ${NEWARK_OFFICE.suite}`,
+      streetAddress: 'Online Travel Services',
       addressLocality: NEWARK_OFFICE.city,
       addressRegion: NEWARK_OFFICE.state,
       postalCode: NEWARK_OFFICE.postalCode,

@@ -23,14 +23,18 @@ const ContactSection: React.FC<ContactSectionProps> = React.memo(
 
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="font-semibold text-xl mb-4">Newark Office</h3>
-                <address className="not-italic text-gray-700 space-y-2">
-                  <p>744 Broad Street, Suite 1700</p>
-                  <p>Newark, NJ 07102</p>
+                <h3 className="font-semibold text-xl mb-4">Service Area</h3>
+                <div className="text-gray-700 space-y-2">
+                  <p className="font-medium">Serving All of Essex County</p>
+                  <p>Virtual Travel Planning Services</p>
                   <p className="pt-2">
-                    <strong>Serving {city.name}:</strong> {distanceFromOffice} miles from our office
+                    <strong>Currently serving {city.name}</strong>
+                    <br />
+                    <span className="text-sm">
+                      Expert travel planning from the comfort of your home
+                    </span>
                   </p>
-                </address>
+                </div>
               </div>
 
               <div>

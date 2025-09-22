@@ -29,7 +29,7 @@ describe('Essex County Schema Generation', () => {
 
       // Check address
       expect(schema.address).toBeDefined()
-      expect(schema.address.streetAddress).toContain(NEWARK_OFFICE.streetAddress)
+      expect(schema.address.streetAddress).toBe('Online Travel Services')
       expect(schema.address.addressLocality).toBe(NEWARK_OFFICE.city)
       expect(schema.address.addressRegion).toBe(NEWARK_OFFICE.state)
       expect(schema.address.postalCode).toBe(NEWARK_OFFICE.postalCode)
@@ -439,9 +439,9 @@ describe('Essex County Schema Generation', () => {
       })
     })
 
-    it('should have correct Newark office information', () => {
-      expect(NEWARK_OFFICE.streetAddress).toBe('744 Broad Street')
-      expect(NEWARK_OFFICE.suite).toBe('Suite 1700')
+    it('should have correct Newark virtual office information', () => {
+      expect(NEWARK_OFFICE.streetAddress).toBe('Virtual Office')
+      expect(NEWARK_OFFICE.suite).toBe('')
       expect(NEWARK_OFFICE.city).toBe('Newark')
       expect(NEWARK_OFFICE.state).toBe('NJ')
       expect(NEWARK_OFFICE.postalCode).toBe('07102')

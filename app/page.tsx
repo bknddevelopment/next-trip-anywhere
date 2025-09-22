@@ -24,9 +24,9 @@ const TrustedAgencySection = dynamic(() => import('@/components/home/TrustedAgen
 })
 
 export const metadata: Metadata = {
-  title: "America's Premier Travel Agency | Save up to 40% on Flights, Cruises & Vacations",
+  title: 'Book Cheap Flights & Cruises | Save 40% Today | Next Trip Anywhere',
   description:
-    'Award-winning nationwide travel agency offering exclusive deals on flights, cruises & vacation packages from all major US cities. 24/7 support, expert travel planning. Book now & save!',
+    '🔥 LIMITED TIME: Save up to 40% on flights, cruises & vacations. Free booking + 24/7 support. Royal Caribbean from $299. Call 833-874-1019 or book online instantly.',
   keywords:
     'nationwide travel agency, cheap flights from all US cities, cruise deals, vacation packages, travel deals, best travel agency, discount cruises, all-inclusive vacations, flight deals, travel agent near me, coast to coast travel',
   openGraph: {

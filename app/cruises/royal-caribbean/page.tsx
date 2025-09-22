@@ -6,9 +6,9 @@ import { getCruiseLineBySlug, getDealsByCruiseLine } from '@/lib/data/cruise-lin
 import { getNewestShips, getLargestShips } from '@/lib/data/royal-caribbean-ships'
 
 export const metadata: Metadata = {
-  title: "Royal Caribbean Cruises | World's Most Innovative Fleet | Exclusive Rates",
+  title: 'Royal Caribbean Cruises 2026 | Kids Sail FREE + $50 Onboard Credit',
   description:
-    'Book Royal Caribbean cruises with exclusive group rates and complimentary upgrades. Icon of the Seas, Perfect Day at CocoCay, and 27 innovative ships. Kids sail free! Call 833-874-1019 for best available pricing.',
+    '⚓ BOOK NOW: Royal Caribbean from $299/person. Kids sail FREE! Icon of the Seas availability. Perfect Day at CocoCay included. Call 833-874-1019 for instant quotes & exclusive perks.',
   keywords:
     'royal caribbean, royal caribbean cruises, icon of the seas, perfect day at cococay, wonder of the seas, symphony of the seas, caribbean cruises, alaska cruises, cruise deals',
   openGraph: {

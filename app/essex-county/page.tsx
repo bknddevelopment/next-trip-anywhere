@@ -12,9 +12,9 @@ import {
 } from '@/lib/seo/essex-county-schema'
 
 export const metadata: Metadata = {
-  title: 'Travel Agency Essex County NJ | Next Trip Anywhere Newark Office',
+  title: 'Essex County Travel Agent Near You | Same-Day Booking | Free Quotes',
   description:
-    'Premier travel agency serving all of Essex County, NJ. Expert travel planning for Newark, Montclair, West Orange, Livingston and surrounding areas. Call 833-874-1019.',
+    '📍 LOCAL Newark office serving all Essex County. Get instant travel quotes! Exclusive deals for Montclair, West Orange & Livingston residents. Call 833-874-1019 NOW.',
   keywords:
     'travel agency essex county, newark travel agent, montclair vacation planning, west orange travel, livingston travel agency',
   alternates: {
@@ -98,19 +98,23 @@ export default function EssexCountyPage() {
           </div>
         </section>
 
-        {/* Office Information */}
+        {/* Contact Information */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Newark Office Location</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Contact Our Essex County Team
+              </h2>
 
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">Visit Our Office</h3>
-                    <address className="not-italic text-gray-700 space-y-2">
-                      <p>744 Broad Street, Suite 1700</p>
-                      <p>Newark, NJ 07102</p>
+                    <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <div className="text-gray-700 space-y-3">
+                      <p>
+                        <strong>Virtual Travel Planning Services</strong>
+                      </p>
+                      <p>Serving all of Newark and Essex County</p>
                       <p className="pt-2">
                         <strong>Phone:</strong>{' '}
                         <a href="tel:+18338741019" className="text-blue-600 hover:underline">
@@ -126,7 +130,10 @@ export default function EssexCountyPage() {
                           info@nexttripanywhere.com
                         </a>
                       </p>
-                    </address>
+                      <p className="text-sm text-gray-600 pt-2">
+                        Expert travel planning from the comfort of your home
+                      </p>
+                    </div>
                   </div>
 
                   <div>

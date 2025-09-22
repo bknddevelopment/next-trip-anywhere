@@ -20,9 +20,9 @@ import {
 
 // Generate metadata
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Cruise Deals & Discounts | Exclusive Group Rates | Next Trip Anywhere'
+  const title = 'Last Minute Cruise Deals Today | Up to 75% OFF + Free Perks'
   const description =
-    'Exclusive cruise deals with complimentary upgrades, onboard credits, and valuable perks included. Caribbean, Alaska, Mediterranean cruises from all US ports. Call 833-874-1019.'
+    '🚢 TODAY ONLY: Caribbean from $199, Alaska from $399! Free drinks, WiFi & gratuities. Royal Caribbean, Carnival, Norwegian deals. Call 833-874-1019 for instant savings!'
   const canonical = 'https://nexttripanywhere.com/cruises/deals'
 
   return {

@@ -1,7 +1,7 @@
 /**
- * 2025 Cruises Page
+ * 2026 Cruises Page
  * Upcoming year cruise planning with early booking incentives
- * Target: 74K searches/month for "2025 cruises"
+ * Target: 74K searches/month for "2026 cruises"
  */
 
 import { Metadata } from 'next'
@@ -11,23 +11,23 @@ import { get2025Cruises, CruiseDeal } from '@/lib/data/cruise-deals'
 
 // Generate metadata
 export async function generateMetadata(): Promise<Metadata> {
-  const title = '2025 Cruises | Book Early & Save | Best 2025 Cruise Deals'
+  const title = '2026 Cruises | Book Early & Save | Best 2026 Cruise Deals'
   const description =
-    'Plan your 2025 cruise vacation now and save! Early booking discounts, free upgrades, and best cabin selection. Caribbean, Alaska, Mediterranean cruises. Call 833-874-1019.'
+    'Plan your 2026 cruise vacation now and save! Early booking discounts, free upgrades, and best cabin selection. Caribbean, Alaska, Mediterranean cruises. Call 833-874-1019.'
   const canonical = 'https://nexttripanywhere.com/cruises/2025'
 
   return {
     title,
     description,
     keywords: [
-      '2025 cruises',
-      '2025 cruise deals',
-      '2025 Caribbean cruises',
-      '2025 Alaska cruises',
-      '2025 Mediterranean cruises',
-      'cruises in 2025',
-      'best 2025 cruises',
-      '2025 cruise calendar',
+      '2026 cruises',
+      '2026 cruise deals',
+      '2026 Caribbean cruises',
+      '2026 Alaska cruises',
+      '2026 Mediterranean cruises',
+      'cruises in 2026',
+      'best 2026 cruises',
+      '2026 cruise calendar',
       '2025 cruise schedule',
       'early booking cruises 2025',
     ].join(', '),

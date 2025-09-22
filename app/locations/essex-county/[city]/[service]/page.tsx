@@ -360,9 +360,9 @@ export default async function OptimizedServicePage({ params }: PageParams) {
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <p className="text-gray-700 mb-6">
                   Our {service.name.toLowerCase()} services extend throughout {city.name} and
-                  neighboring Essex County communities. With our central Newark office at 744 Broad
-                  Street, we're perfectly positioned to serve all {city.population.toLocaleString()}{' '}
-                  residents of {city.name}.
+                  neighboring Essex County communities. As a virtual travel agency, we're perfectly
+                  positioned to serve all {city.population.toLocaleString()} residents of{' '}
+                  {city.name} with personalized service from the comfort of your home.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

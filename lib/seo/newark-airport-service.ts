@@ -227,7 +227,7 @@ export function getNewarkAirportContent(cityName: string) {
           telephone: '+1-833-874-1019',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: '744 Broad Street',
+            streetAddress: 'Online Travel Services',
             addressLocality: 'Newark',
             addressRegion: 'NJ',
             postalCode: '07102',
