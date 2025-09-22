@@ -42,6 +42,7 @@ export type BlogCategory =
   | 'business-travel'
   | 'seasonal'
   | 'deals'
+  | 'travel-alerts'
 
 export interface BlogListParams {
   category?: BlogCategory
