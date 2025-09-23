@@ -99,21 +99,56 @@ export default function ContactFormWithAnalytics() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
 
+    // Check if n8n webhook URL is configured
+    const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
+    if (!webhookUrl) {
+      console.error('n8n webhook URL not configured')
+      toast.error(
+        'Contact form is not properly configured. Please call us at (833) 874-1019 or email info@nexttripanywhere.com'
+      )
+      trackFormError({
+        error_type: 'configuration_error',
+        error_message: 'n8n webhook URL not configured',
+        fields_completed: filledFieldsCount,
+      })
+      setIsSubmitting(false)
+      return
+    }
+
     try {
-      // Simulate API call
-      const response = await fetch('/api/contact', {
+      // Submit to n8n webhook
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          submittedAt: new Date().toISOString(),
+          sourceUrl: typeof window !== 'undefined' ? window.location.href : 'unknown',
+          userAgent: typeof window !== 'undefined' ? navigator.userAgent : 'unknown',
+        }),
       })
 
+      // n8n webhooks typically return 200 for successful receipt
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
+        // Check if it's a CORS error or network issue
+        if (response.status === 0) {
+          throw new Error('Network error - please check your connection')
+        }
+        throw new Error(`Failed to submit form (${response.status})`)
       }
 
-      await response.json()
+      // n8n may return minimal response or just status
+      try {
+        const contentType = response.headers.get('content-type')
+        if (contentType && contentType.includes('application/json')) {
+          await response.json() // Consume response but don't need to use it
+        }
+      } catch {
+        // It's ok if response is not JSON, n8n may return plain text or empty response
+        // Continue with successful submission handling
+      }
 
       // Track successful form submission
       trackFormSubmit({
@@ -150,7 +185,16 @@ export default function ContactFormWithAnalytics() {
         fields_completed: filledFieldsCount,
       })
 
-      toast.error('Something went wrong. Please try again or call us directly.')
+      // Provide helpful error message with fallback options
+      if (error instanceof Error && error.message.includes('Network error')) {
+        toast.error(
+          'Network connection issue. Please check your internet connection and try again, or call us at (833) 874-1019'
+        )
+      } else {
+        toast.error(
+          'Unable to submit form at this time. Please call us at (833) 874-1019 or email info@nexttripanywhere.com'
+        )
+      }
     } finally {
       setIsSubmitting(false)
     }

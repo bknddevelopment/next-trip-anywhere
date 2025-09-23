@@ -2,14 +2,48 @@ import { MetadataRoute } from 'next'
 import { essexCountyCities } from '@/lib/data/essex-county-cities'
 import { essexCountyServices } from '@/lib/data/essex-county-services'
 import { blogPosts } from '@/lib/data/blog-posts'
+import { cruiseDestinations } from '@/lib/data/cruises'
+import { vacationPackages } from '@/lib/data/vacation-packages'
+import { seoDestinations } from '@/lib/data/seo-destinations'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
 export const revalidate = false
 
 /**
- * Dynamic sitemap generator for better SEO
- * Includes all Essex County pages and service combinations
+ * Dynamic Sitemap Generator
+ *
+ * Automatically generates sitemap.xml with 300+ pages including:
+ * - Core service pages (flights, cruises, packages)
+ * - 220+ Essex County location pages
+ * - 10 cruise hub pages (Phase 1 complete)
+ * - 15 vacation package pages (Phase 1 complete)
+ * - 15 destination guide pages (Phase 1 complete)
+ * - Blog posts from lib/data/blog-posts.ts
+ * - National location pages (major cities)
+ *
+ * Phase 1 SEO Expansion (40 new pages):
+ * - 10 Cruise pages: from-newark, from-bayonne, cape-liberty-port, cheap-deals-nj, etc.
+ * - 15 Package pages: sandals-resorts-deals, luxury-caribbean, spring-break-deals, etc.
+ * - 15 Destination pages: bahamas-from-newark, bermuda-weekend-trips, caribbean-from-nj, etc.
+ *
+ * Priority Assignment:
+ * 1.0  - Homepage, high-volume cruise lines (>1M searches)
+ * 0.95 - HIGH priority cruises (>50K searches)
+ * 0.9  - Core services, Essex County hub, HIGH packages, HIGH destinations
+ * 0.85 - MEDIUM priority content, destination pages
+ * 0.8  - Essex County city pages, service hubs
+ * 0.75 - LOW priority content, city-service combinations
+ * 0.7  - Blog posts, company pages
+ * 0.3  - Legal pages
+ *
+ * Frequency:
+ * - daily: Homepage, deals pages
+ * - weekly: Service pages, high-priority content, SEO destinations
+ * - monthly: Location pages, blog posts
+ * - yearly: Legal pages
+ *
+ * @see https://nexttripanywhere.com/sitemap.xml
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nexttripanywhere.com'
@@ -142,8 +176,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }))
 
-  // Destination pages
-  const destinations = [
+  // Legacy destination pages
+  const legacyDestinations = [
     'paris-france',
     'tokyo-japan',
     'bali-indonesia',
@@ -156,11 +190,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'barbados',
   ]
 
-  const destinationPages = destinations.map((destination) => ({
+  const legacyDestinationPages = legacyDestinations.map((destination) => ({
     url: `${baseUrl}/destinations/${destination}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+  }))
+
+  // SEO-optimized destination pages (Phase 1 - 15 pages)
+  const seoDestinationPages = seoDestinations.map((destination) => ({
+    url: `${baseUrl}/destinations/${destination.slug}`,
+    lastModified: destination.lastUpdated || currentDate,
+    changeFrequency: 'weekly' as const,
+    priority:
+      destination.priority === 'HIGH' ? 0.9 : destination.priority === 'MEDIUM' ? 0.85 : 0.8,
   }))
 
   // Cruise line pages (Phase 1)
@@ -197,14 +240,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Cruise destination pages (Phase 1)
+  // Dynamic cruise destination pages from data file
+  const dynamicCruisePages = cruiseDestinations.map((cruise) => ({
+    url: `${baseUrl}/cruises/${cruise.slug}`,
+    lastModified: cruise.lastUpdated || currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: cruise.priority === 'HIGH' ? 0.95 : cruise.priority === 'MEDIUM' ? 0.85 : 0.75,
+  }))
+
+  // Vacation package pages from data file
+  const packagePages = vacationPackages.map((pkg) => ({
+    url: `${baseUrl}/packages/${pkg.slug}`,
+    lastModified: pkg.lastUpdated || currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: pkg.priority === 'HIGH' ? 0.9 : pkg.priority === 'MEDIUM' ? 0.8 : 0.7,
+  }))
+
+  // Keep existing hardcoded cruise pages for now (these may not have dynamic pages yet)
   const cruiseDestinationPages = [
-    {
-      url: `${baseUrl}/cruises/caribbean`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95, // Higher priority - 60.5K searches
-    },
     {
       url: `${baseUrl}/cruises/alaska`,
       lastModified: currentDate,
@@ -222,12 +275,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.85, // 18.1K searches
-    },
-    {
-      url: `${baseUrl}/cruises/bahamas`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.85, // 22.2K searches
     },
     {
       url: `${baseUrl}/cruises/hawaii`,
@@ -262,6 +309,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9, // 74K searches
+    },
+  ]
+
+  // Additional cruise line sub-pages
+  const cruiseLineSubPages = [
+    {
+      url: `${baseUrl}/cruises/royal-caribbean/deals`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cruises/royal-caribbean/ships`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/cruises/norwegian/deals`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cruises/princess/deals`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cruises/alaska-cruises`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cruises/caribbean-cruises`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
   ]
 
@@ -321,9 +408,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...travelFromServicePages,
     blogMainPage,
     ...blogPostPages,
-    ...destinationPages,
+    ...legacyDestinationPages,
+    ...seoDestinationPages,
     ...cruiseLinePages,
+    ...cruiseLineSubPages,
     ...cruiseDestinationPages,
+    ...dynamicCruisePages,
+    ...packagePages,
     ...cruiseHubPages,
     ...companyPages,
     ...legalPages,

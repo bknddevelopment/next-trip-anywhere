@@ -73,6 +73,31 @@ const cruiseLineSchema = {
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://nexttripanywhere.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Cruises',
+      item: 'https://nexttripanywhere.com/cruises',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Royal Caribbean',
+      item: 'https://nexttripanywhere.com/cruises/royal-caribbean',
+    },
+  ],
+}
+
 export default function RoyalCaribbeanPage() {
   return (
     <>
@@ -82,10 +107,31 @@ export default function RoyalCaribbeanPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [organizationSchema, cruiseLineSchema],
+            '@graph': [organizationSchema, cruiseLineSchema, breadcrumbSchema],
           }),
         }}
       />
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-gray-100 py-3" aria-label="Breadcrumb">
+        <div className="container mx-auto px-4">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li>
+              <Link href="/" className="text-gray-600 hover:text-blue-600">
+                Home
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <Link href="/cruises" className="text-gray-600 hover:text-blue-600">
+                Cruises
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li className="text-blue-600 font-semibold">Royal Caribbean</li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white py-24 overflow-hidden">

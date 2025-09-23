@@ -63,11 +63,15 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
    - Individual pages for each Essex County municipality
    - Service-specific pages for each location
    - Pattern: `/travel-from-[city]/[service]` and `/locations/essex-county/[city]/[service]`
+   - **Phase 1 Expansion**: 40+ new pages targeting high-volume cruise and package keywords
 
-4. **Essex County Data Structure**: Central data files manage locations and services:
+4. **Data Structure**: Central data files manage content and SEO:
    - `lib/data/essex-county-cities.ts` - All Essex County municipalities
    - `lib/data/essex-county-services.ts` - Available travel services
    - `lib/data/blog-posts.ts` - Blog content with SEO metadata
+   - **`lib/data/cruises.ts`** - Cruise destinations with search volume & priority (Phase 1)
+   - **`lib/data/vacation-packages.ts`** - Vacation packages with local targeting (Phase 1)
+   - **`lib/data/destinations.ts`** - Popular destinations (upcoming Phase 2)
 
 ### Critical Files & Patterns
 
@@ -76,11 +80,14 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
 - `app/locations/essex-county/[city]/[service]/page.tsx` - Dynamic Essex County service pages
 - `app/blog/[slug]/page.tsx` - Dynamic blog post pages
 - `app/destinations/[slug]/page.tsx` - Dynamic destination pages
+- **`app/cruises/[destination]/page.tsx`** - Dynamic cruise destination pages (Phase 1)
+- **`app/packages/[type]/page.tsx`** - Dynamic vacation package pages (Phase 1)
 
 #### SEO & Metadata Generation
 
-- `app/sitemap.ts` - Generates complete sitemap.xml
+- `app/sitemap.ts` - Generates complete sitemap.xml (includes 40+ new Phase 1 pages)
 - `lib/utils/generateServiceMetadata.ts` - Generates page metadata
+- **`lib/utils/cruiseSchema.ts`** - Cruise-specific schema generation for rich snippets
 - `config/seo.ts` - Default SEO configuration
 
 #### Component Organization
@@ -88,6 +95,7 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
 - Service components use `generateStaticParams()` for static generation
 - Location pages import from shared data files for consistency
 - All pages include structured data (JSON-LD) for local business schema
+- **Cruise/Package pages use lazy loading for non-critical components**
 
 ### Deployment Pipeline
 
@@ -117,6 +125,88 @@ Custom image loader configured for static export:
 - Unoptimized images in production due to static export limitations
 
 ## Development Workflow
+
+### Phase 1 SEO Expansion (40+ New Pages)
+
+The Phase 1 expansion adds high-priority cruise and vacation package pages targeting keywords with significant search volume:
+
+#### Page Categories & Structure
+
+1. **Cruise Destination Pages** (`/cruises/[destination]`)
+   - Data source: `lib/data/cruises.ts`
+   - Dynamic routing: `app/cruises/[destination]/page.tsx`
+   - Examples: `/cruises/from-newark`, `/cruises/caribbean`, `/cruises/bahamas`
+   - Features: Port info, cruise lines, local tips, FAQs, schema markup
+
+2. **Vacation Package Pages** (`/packages/[type]`)
+   - Data source: `lib/data/vacation-packages.ts`
+   - Dynamic routing: `app/packages/[type]/page.tsx`
+   - Examples: `/packages/all-inclusive-caribbean`, `/packages/family-resorts-from-newark`
+   - Features: Resort listings, inclusions, pricing tiers, local advantages
+
+3. **Cruise Line Hub Pages** (Static)
+   - Royal Caribbean (1.5M searches/month)
+   - Carnival (1.22M searches/month)
+   - Norwegian, Princess, Celebrity
+   - Located in `/app/cruises/[cruise-line]/`
+
+#### Adding New Cruise Destination Pages
+
+```typescript
+// 1. Add to lib/data/cruises.ts
+{
+  slug: 'alaska-cruises',
+  title: 'Alaska Cruises from New Jersey',
+  metaTitle: 'Alaska Cruises 2025 | 60 chars max',
+  metaDescription: '160 chars max with keywords',
+  keywords: ['primary', 'keywords'],
+  searchVolume: 74000,
+  difficulty: 25,
+  priority: 'HIGH', // HIGH > 50K searches, MEDIUM 20-50K, LOW < 20K
+  content: {
+    hero: { headline, subheadline },
+    description: '300+ words minimum',
+    highlights: [], // 5-8 key points
+    portInfo: {}, // Optional: for port-specific pages
+    localTips: [] // Essex County specific advice
+  },
+  faq: [], // 3-5 Q&A pairs
+  lastUpdated: '2025-01-23'
+}
+
+// 2. Build and verify
+npm run build
+// Page automatically generated at /cruises/alaska-cruises
+// Sitemap includes it automatically
+```
+
+#### Adding New Vacation Package Pages
+
+```typescript
+// 1. Add to lib/data/vacation-packages.ts
+{
+  slug: 'luxury-resorts',
+  packageType: 'luxury', // all-inclusive|family|adults-only|luxury|budget|seasonal
+  metaTitle: 'Luxury Caribbean Resorts from Newark',
+  content: {
+    includedFeatures: [], // What's included
+    resorts: [], // Featured properties with ratings
+    startingPrice: 2999,
+    localAdvantages: [] // Newark/Essex County benefits
+  }
+}
+
+// 2. Packages automatically available at /packages/luxury-resorts
+```
+
+#### Content Requirements
+
+- **Word Count**: Minimum 1,500 words per page
+- **Unique Content**: No duplicate content across pages
+- **Local Angle**: Every page must mention Essex County/Newark relevance
+- **Schema Markup**: All pages include appropriate structured data
+- **Internal Linking**: Link to 3-5 related pages
+- **CTAs**: Phone number (833-874-1019) and contact form on every page
 
 ### Adding New Essex County Service Pages
 
@@ -154,14 +244,24 @@ The site heavily focuses on **Essex County, NJ** local SEO with comprehensive co
 
 - 22 municipalities in Essex County
 - 10+ travel services per location
-- 220+ total SEO-optimized pages
+- 220+ total Essex County SEO-optimized pages
+- **Phase 1 Expansion**: 40+ cruise and vacation package pages targeting high-volume keywords
+- **Total Pages**: 260+ dynamically generated pages
 
 ### Recent Major Changes
 
-- Migrated from GitHub Pages subdomain to custom domain (nexttripanywhere.com)
-- Generated 109 new service pages for Essex County municipalities
-- Fixed sitemap generation to include all 222+ pages (was showing only 23)
-- Removed old static sitemap.xml from public folder
+- **Phase 1 SEO Expansion (January 2025)**:
+  - Added dynamic cruise destination pages with schema markup
+  - Created vacation package landing pages with local targeting
+  - Implemented lazy loading for improved performance
+  - Added comprehensive FAQs and local tips sections
+  - Integrated cruise line hub pages for major brands
+
+- Previous Updates:
+  - Migrated from GitHub Pages subdomain to custom domain (nexttripanywhere.com)
+  - Generated 109 new service pages for Essex County municipalities
+  - Fixed sitemap generation to include all pages dynamically
+  - Removed old static sitemap.xml from public folder
 
 ### Performance Targets
 
@@ -254,6 +354,44 @@ The site auto-deploys on push to main via `.github/workflows/deploy.yml`:
 3. Fixes image paths via `scripts/fix-image-paths.js`
 4. Deploys from `docs/` folder
 
+### Build Considerations for 260+ Pages
+
+With the Phase 1 expansion, the build now generates 260+ static pages:
+
+- **Build Time**: ~3-5 minutes for full static export
+- **Memory Usage**: May require increased Node memory for builds
+- **Static Generation**: All pages use `generateStaticParams()` for build-time generation
+- **Dynamic Imports**: Non-critical components use `next/dynamic` for code splitting
+
+If build fails with memory errors:
+
+```bash
+# Increase Node memory allocation
+NODE_OPTIONS="--max-old-space-size=8192" npm run build
+```
+
+### Schema Generation Utilities
+
+The project uses structured data generators for SEO:
+
+- `lib/utils/cruiseSchema.ts` - Generates JSON-LD for cruise pages
+  - TravelAgency schema
+  - FAQPage schema
+  - BreadcrumbList schema
+  - Service schema with local area served
+
+- `lib/utils/packageSchema.ts` - Generates JSON-LD for package pages
+  - Product schema with offers
+  - TravelAgency schema
+  - AggregateRating when applicable
+
+Example usage in pages:
+
+```typescript
+const schemaGraph = generateCruiseSchemaGraph(cruiseData)
+// Render in Script tag with type="application/ld+json"
+```
+
 ### Local vs Production Image Handling
 
 - Development: Next.js Image optimization works normally
@@ -261,14 +399,88 @@ The site auto-deploys on push to main via `.github/workflows/deploy.yml`:
 - Image paths must use leading slash: `/images/...`
 - Never use relative paths like `../images/...`
 
-## Essex County SEO Strategy
+## SEO Strategy & Content Guidelines
 
-The site generates 220+ pages for local SEO:
+### Phase 1 Content Structure
+
+The expansion follows a hub-and-spoke content model:
+
+#### Content Hubs
+
+- `/cruises` - Main cruise hub linking to all cruise pages
+- `/packages` - Vacation packages hub
+- `/destinations` - Destination guides hub
+
+#### Internal Linking Strategy
+
+```typescript
+// Every page should include:
+internalLinks: [
+  '/cruises/from-newark', // Local relevance
+  '/cruises/caribbean', // Related topic
+  '/packages/all-inclusive', // Cross-category
+  '/locations/essex-county', // Local hub
+  '/blog/relevant-post', // Supporting content
+]
+```
+
+#### Content Requirements by Page Type
+
+**Cruise Pages** (1,500-2,000 words):
+
+- Port information with directions from Essex County
+- 3-5 cruise line options with details
+- 5-8 highlights/benefits
+- 3-5 FAQs addressing common concerns
+- Local tips for Essex County residents
+- Starting prices and duration info
+
+**Package Pages** (1,500-2,000 words):
+
+- 4-6 featured resorts with ratings
+- Comprehensive inclusion list
+- Price tiers (budget/mid/luxury)
+- Local advantages for NJ residents
+- Seasonal considerations
+- 3-5 FAQs about packages
+
+**Destination Pages** (2,000+ words):
+
+- Overview and why visit
+- Best time to visit
+- How to get there from Newark
+- Top attractions and activities
+- Where to stay recommendations
+- Local culture and customs
+- Budget breakdown
+
+### Essex County Local SEO
+
+The site generates 220+ pages for Essex County local SEO:
 
 - 22 Essex County municipalities × 10+ services each
 - URL patterns: `/locations/essex-county/[city]/[service]`
 - Alternative: `/travel-from-[city]/[service]`
 - All pages auto-included in sitemap via `generateStaticParams()`
+
+### Keyword Targeting Priority
+
+Pages are prioritized based on search volume and difficulty:
+
+1. **HIGH Priority** (>50K monthly searches)
+   - Target with comprehensive content (2,000+ words)
+   - Update monthly with fresh content
+   - Monitor rankings weekly
+
+2. **MEDIUM Priority** (20-50K searches)
+   - Standard content length (1,500 words)
+   - Update quarterly
+   - Monitor rankings monthly
+
+3. **LOW Priority** (<20K searches)
+   - Minimum viable content (1,000 words)
+   - Update bi-annually
+   - Monitor rankings quarterly
 
 ## Test Execution Notes
 

@@ -1,0 +1,27 @@
+{
+  "totalKeywords": 40,
+  "byCategory": {
+    "primary": 10,
+    "secondary": 10,
+    "longTail": 10,
+    "local": 10
+  },
+  "byPriority": {
+    "high": 20,
+    "medium": 10,
+    "low": 10
+  },
+  "targetPages": [
+    "/cruises/from-newark",
+    "/cruises",
+    "/cruises/cape-liberty-port",
+    "/cruises/deals",
+    "/cruises/cheap-cruises",
+    "/cruises/last-minute",
+    "/cruises/caribbean",
+    "/cruises/royal-caribbean",
+    "/cruises/alaska",
+    "/cruises/mediterranean"
+  ],
+  "generatedAt": "2025-09-23T17:21:00.248Z"
+}

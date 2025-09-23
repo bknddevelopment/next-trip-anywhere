@@ -12,9 +12,9 @@ import {
   AggregateRatingSchema,
 } from '@/components/seo/StructuredData'
 import {
-  VACATION_PACKAGES,
-  getFeaturedPackages,
-  VacationPackage,
+  vacationPackages,
+  getHighPriorityPackages,
+  type VacationPackage,
 } from '@/lib/data/vacation-packages'
 import { Phone, Mail } from 'lucide-react'
 
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
 }
 
 // Get package data for schema markup
-const featuredPackages = getFeaturedPackages()
-const samplePackage = VACATION_PACKAGES.length > 0 ? VACATION_PACKAGES[0] : null
-const tourPackage = VACATION_PACKAGES.length > 1 ? VACATION_PACKAGES[1] : null
+const featuredPackages = getHighPriorityPackages()
+const samplePackage = vacationPackages.length > 0 ? vacationPackages[0] : null
+const tourPackage = vacationPackages.length > 1 ? vacationPackages[1] : null
 
 // Schema markup data
 const breadcrumbs = [
@@ -91,29 +91,29 @@ const packageRating = {
 
 // Transform vacation package to Trip schema data
 const transformPackageToTrip = (pkg: VacationPackage) => ({
-  name: pkg.name,
-  description: pkg.description,
-  destination: pkg.destination,
-  duration: pkg.duration,
-  price: pkg.price,
-  currency: pkg.currency,
-  includes: pkg.includes,
-  itinerary: pkg.itinerary,
-  image: pkg.image,
+  name: pkg.title,
+  description: pkg.content.description,
+  destination: pkg.content.destinations?.[0] || 'Caribbean',
+  duration: parseInt(pkg.content.averageDuration || '7'),
+  price: pkg.content.startingPrice || 999,
+  currency: 'USD',
+  includes: pkg.content.includedFeatures,
+  itinerary: pkg.content.highlights,
+  image: `/images/${pkg.slug}.jpg`,
 })
 
 // Transform vacation package to Tour schema data
 const transformPackageToTour = (pkg: VacationPackage) => ({
-  name: pkg.name,
-  description: pkg.description,
+  name: pkg.title,
+  description: pkg.content.description,
   provider: 'Next Trip Anywhere',
-  duration: `${pkg.duration} days`,
+  duration: pkg.content.averageDuration || '7 days',
   language: ['en', 'es'],
-  price: pkg.price,
-  currency: pkg.currency,
-  includes: pkg.includes,
-  meetingPoint: 'Departure airport',
-  image: pkg.image,
+  price: pkg.content.startingPrice || 999,
+  currency: 'USD',
+  includes: pkg.content.includedFeatures,
+  meetingPoint: 'Newark Airport',
+  image: `/images/${pkg.slug}.jpg`,
 })
 
 export default function PackagesPage() {
@@ -134,20 +134,17 @@ export default function PackagesPage() {
         <ProductSchema
           key={`package-${index}`}
           product={{
-            name: pkg.name,
-            description: pkg.description,
-            price: pkg.price,
-            priceCurrency: pkg.currency || 'USD',
-            availability:
-              pkg.availability === 'InStock'
-                ? 'InStock'
-                : pkg.availability === 'OutOfStock'
-                  ? 'OutOfStock'
-                  : 'PreOrder',
-            validFrom: pkg.validFrom,
-            validThrough: pkg.validUntil,
-            destination: pkg.destination,
-            image: pkg.image,
+            name: pkg.title,
+            description: pkg.content.description,
+            price: pkg.content.startingPrice || 999,
+            priceCurrency: 'USD',
+            availability: 'InStock',
+            validFrom: pkg.lastUpdated,
+            validThrough: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000)
+              .toISOString()
+              .split('T')[0],
+            destination: pkg.content.destinations?.[0] || 'Caribbean',
+            image: `/images/${pkg.slug}.jpg`,
           }}
         />
       ))}

@@ -1,26 +1,32 @@
 /**
- * Web Vitals Monitoring and Performance Tracking
- * Captures and reports Core Web Vitals metrics for performance optimization
+ * Web Vitals Performance Monitoring
+ * Tracks Core Web Vitals and reports performance metrics
  */
 
-import { onCLS, onFCP, onINP, onLCP, onTTFB, Metric } from 'web-vitals'
+import { onCLS, onFCP, onLCP, onTTFB, onINP } from 'web-vitals'
 
-// Performance thresholds based on Google's recommendations
-const THRESHOLDS = {
-  LCP: { good: 2500, needsImprovement: 4000 }, // Largest Contentful Paint
-  INP: { good: 200, needsImprovement: 500 }, // Interaction to Next Paint (replaces FID)
-  CLS: { good: 0.1, needsImprovement: 0.25 }, // Cumulative Layout Shift
-  FCP: { good: 1800, needsImprovement: 3000 }, // First Contentful Paint
-  TTFB: { good: 800, needsImprovement: 1800 }, // Time to First Byte
+export interface WebVitalsMetric {
+  name: string
+  value: number
+  rating: 'good' | 'needs-improvement' | 'poor'
+  delta: number
+  id: string
+  entries: any[]
 }
 
-type MetricRating = 'good' | 'needs-improvement' | 'poor'
+// Thresholds for Core Web Vitals
+const THRESHOLDS = {
+  LCP: { good: 2500, poor: 4000 }, // Largest Contentful Paint
+  FID: { good: 100, poor: 300 }, // First Input Delay
+  CLS: { good: 0.1, poor: 0.25 }, // Cumulative Layout Shift
+  FCP: { good: 1800, poor: 3000 }, // First Contentful Paint
+  TTFB: { good: 800, poor: 1800 }, // Time to First Byte
+  INP: { good: 200, poor: 500 }, // Interaction to Next Paint
+}
 
-/**
- * Determine the rating for a metric based on its value
- */
-function getMetricRating(metricName: string, value: number): MetricRating {
-  const threshold = THRESHOLDS[metricName as keyof typeof THRESHOLDS]
+// Rate a metric value
+function getRating(name: string, value: number): 'good' | 'needs-improvement' | 'poor' {
+  const threshold = THRESHOLDS[name as keyof typeof THRESHOLDS]
   if (!threshold) {
     return 'good'
   }
@@ -28,255 +34,176 @@ function getMetricRating(metricName: string, value: number): MetricRating {
   if (value <= threshold.good) {
     return 'good'
   }
-  if (value <= threshold.needsImprovement) {
-    return 'needs-improvement'
+  if (value > threshold.poor) {
+    return 'poor'
   }
-  return 'poor'
+  return 'needs-improvement'
 }
 
-/**
- * Send metrics to analytics endpoint
- */
-function sendToAnalytics(metric: Metric & { rating: MetricRating }) {
-  const body = {
-    name: metric.name,
-    value: metric.value,
-    rating: metric.rating,
-    delta: metric.delta,
-    id: metric.id,
-    navigationType: metric.navigationType,
-    url: window.location.href,
-    timestamp: Date.now(),
-    userAgent: navigator.userAgent,
-    connectionType: (navigator as any).connection?.effectiveType || 'unknown',
-  }
-
+// Send analytics data to your analytics provider
+function sendToAnalytics(metric: WebVitalsMetric) {
   // Log to console in development
   if (process.env.NODE_ENV === 'development') {
-    const color =
-      metric.rating === 'good' ? 'green' : metric.rating === 'needs-improvement' ? 'orange' : 'red'
-    console.log(
-      `%c[Web Vitals] ${metric.name}: ${metric.value.toFixed(2)}ms (${metric.rating})`,
-      `color: ${color}; font-weight: bold;`
-    )
+    const emoji = metric.rating === 'good' ? '✅' : metric.rating === 'poor' ? '❌' : '⚠️'
+    console.log(`${emoji} ${metric.name}: ${metric.value.toFixed(2)}ms (${metric.rating})`)
   }
 
-  // Send to analytics endpoint (replace with your analytics service)
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', metric.name, {
+  // Send to Google Analytics if available
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', metric.name, {
       value: Math.round(metric.value),
       metric_rating: metric.rating,
-      metric_delta: metric.delta,
+      metric_delta: Math.round(metric.delta),
+      event_category: 'Web Vitals',
       non_interaction: true,
     })
   }
 
-  // Alternative: Send to custom endpoint
+  // Send to custom analytics endpoint
   if (process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT) {
     fetch(process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    }).catch((error) => {
-      console.error('Failed to send metrics:', error)
-    })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        metric: metric.name,
+        value: metric.value,
+        rating: metric.rating,
+        delta: metric.delta,
+        id: metric.id,
+        url: window.location.href,
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch(console.error)
   }
 }
 
-/**
- * Initialize Web Vitals monitoring
- */
+// Initialize Web Vitals tracking
 export function initWebVitals() {
-  // Only run on client side
-  if (typeof window === 'undefined') {
-    return
-  }
-
-  // Capture Core Web Vitals
-  onCLS((metric) => {
-    const rating = getMetricRating('CLS', metric.value)
-    sendToAnalytics({ ...metric, rating })
-  })
-
-  onFCP((metric) => {
-    const rating = getMetricRating('FCP', metric.value)
-    sendToAnalytics({ ...metric, rating })
-  })
-
-  onINP((metric) => {
-    const rating = getMetricRating('INP', metric.value)
-    sendToAnalytics({ ...metric, rating })
-  })
-
+  // Core Web Vitals
   onLCP((metric) => {
-    const rating = getMetricRating('LCP', metric.value)
-    sendToAnalytics({ ...metric, rating })
+    const vitalsMetric = {
+      ...metric,
+      rating: getRating('LCP', metric.value),
+    }
+    sendToAnalytics(vitalsMetric)
+  })
+
+  // FID is deprecated in favor of INP (Interaction to Next Paint)
+  // INP measurement is already included below
+
+  onCLS((metric) => {
+    const vitalsMetric = {
+      ...metric,
+      rating: getRating('CLS', metric.value),
+    }
+    sendToAnalytics(vitalsMetric)
+  })
+
+  // Additional metrics
+  onFCP((metric) => {
+    const vitalsMetric = {
+      ...metric,
+      rating: getRating('FCP', metric.value),
+    }
+    sendToAnalytics(vitalsMetric)
   })
 
   onTTFB((metric) => {
-    const rating = getMetricRating('TTFB', metric.value)
-    sendToAnalytics({ ...metric, rating })
+    const vitalsMetric = {
+      ...metric,
+      rating: getRating('TTFB', metric.value),
+    }
+    sendToAnalytics(vitalsMetric)
+  })
+
+  onINP((metric) => {
+    const vitalsMetric = {
+      ...metric,
+      rating: getRating('INP', metric.value),
+    }
+    sendToAnalytics(vitalsMetric)
   })
 }
 
-/**
- * Performance observer for custom metrics
- */
-export function observePerformance() {
-  if (typeof window === 'undefined' || !window.PerformanceObserver) {
-    return
-  }
-
-  // Observe long tasks
-  try {
-    const longTaskObserver = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.duration > 50) {
-          console.warn(`[Performance] Long task detected: ${entry.duration.toFixed(2)}ms`)
-        }
-      }
-    })
-    longTaskObserver.observe({ entryTypes: ['longtask'] })
-  } catch (e) {
-    // Long task observer not supported
-  }
-
-  // Observe resource timing
-  try {
-    const resourceObserver = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        const resourceEntry = entry as PerformanceResourceTiming
-        if (resourceEntry.duration > 1000) {
-          console.warn(
-            `[Performance] Slow resource: ${resourceEntry.name} (${resourceEntry.duration.toFixed(2)}ms)`
-          )
-        }
-      }
-    })
-    resourceObserver.observe({ entryTypes: ['resource'] })
-  } catch (e) {
-    // Resource timing observer not supported
+// Performance marks for custom measurements
+export function markPerformance(name: string) {
+  if (typeof window !== 'undefined' && window.performance) {
+    performance.mark(name)
   }
 }
 
-/**
- * Get performance summary for current page
- */
-export function getPerformanceSummary() {
+// Measure between two marks
+export function measurePerformance(name: string, startMark: string, endMark: string) {
+  if (typeof window !== 'undefined' && window.performance) {
+    try {
+      performance.measure(name, startMark, endMark)
+      const measure = performance.getEntriesByName(name)[0]
+      if (measure) {
+        console.log(`⏱ ${name}: ${measure.duration.toFixed(2)}ms`)
+        return measure.duration
+      }
+    } catch (error) {
+      console.error('Performance measurement error:', error)
+    }
+  }
+  return null
+}
+
+// Get current performance metrics
+export function getPerformanceMetrics() {
   if (typeof window === 'undefined' || !window.performance) {
     return null
   }
 
-  const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
+  const navigation = performance.getEntriesByType('navigation')[0] as any
   const paint = performance.getEntriesByType('paint')
 
   return {
     // Navigation timing
-    dns: navigation.domainLookupEnd - navigation.domainLookupStart,
-    tcp: navigation.connectEnd - navigation.connectStart,
-    ttfb: navigation.responseStart - navigation.requestStart,
-    download: navigation.responseEnd - navigation.responseStart,
-    domInteractive: navigation.domInteractive - navigation.fetchStart,
-    domComplete: navigation.domComplete - navigation.fetchStart,
-    loadComplete: navigation.loadEventEnd - navigation.fetchStart,
+    domContentLoaded: navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart,
+    loadComplete: navigation?.loadEventEnd - navigation?.loadEventStart,
+    domInteractive: navigation?.domInteractive,
 
     // Paint timing
-    firstPaint: paint.find((p) => p.name === 'first-paint')?.startTime || 0,
-    firstContentfulPaint: paint.find((p) => p.name === 'first-contentful-paint')?.startTime || 0,
+    firstPaint: paint.find((p) => p.name === 'first-paint')?.startTime,
+    firstContentfulPaint: paint.find((p) => p.name === 'first-contentful-paint')?.startTime,
 
-    // Resource counts
+    // Resource timing
     resources: performance.getEntriesByType('resource').length,
 
-    // Memory usage (if available)
+    // Memory (if available)
     memory: (performance as any).memory
       ? {
-          used: (performance as any).memory.usedJSHeapSize / 1048576, // Convert to MB
-          total: (performance as any).memory.totalJSHeapSize / 1048576,
+          usedJSHeapSize: Math.round((performance as any).memory.usedJSHeapSize / 1048576),
+          totalJSHeapSize: Math.round((performance as any).memory.totalJSHeapSize / 1048576),
+          limit: Math.round((performance as any).memory.jsHeapSizeLimit / 1048576),
         }
       : null,
   }
 }
 
-/**
- * Performance budget monitoring
- */
-export const PERFORMANCE_BUDGETS = {
-  // Time-based budgets (ms)
-  LCP: 2500,
-  INP: 200, // Interaction to Next Paint (replaces FID)
-  CLS: 0.1,
-  TTFB: 800,
+// Optimize long tasks detection
+export function detectLongTasks(callback: (duration: number) => void) {
+  if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
+    return
+  }
 
-  // Size-based budgets (KB)
-  jsBundle: 200,
-  cssBundle: 50,
-  images: 500,
-  fonts: 100,
-  total: 1000,
+  try {
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        // Long task is > 50ms
+        if (entry.duration > 50) {
+          callback(entry.duration)
+        }
+      }
+    })
+
+    observer.observe({ entryTypes: ['longtask'] })
+
+    return observer
+  } catch (error) {
+    console.error('Long task detection not supported:', error)
+  }
 }
-
-/**
- * Check if current page meets performance budgets
- */
-export function checkPerformanceBudgets() {
-  const violations: string[] = []
-
-  if (typeof window === 'undefined' || !window.performance) {
-    return violations
-  }
-
-  // Check resource sizes
-  const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[]
-  let totalSize = 0
-  let jsSize = 0
-  let cssSize = 0
-  let imageSize = 0
-  let fontSize = 0
-
-  resources.forEach((resource) => {
-    const size = resource.encodedBodySize / 1024 // Convert to KB
-    totalSize += size
-
-    if (resource.name.includes('.js')) {
-      jsSize += size
-    } else if (resource.name.includes('.css')) {
-      cssSize += size
-    } else if (/\.(jpg|jpeg|png|gif|webp|svg)/.test(resource.name)) {
-      imageSize += size
-    } else if (/\.(woff|woff2|ttf|otf)/.test(resource.name)) {
-      fontSize += size
-    }
-  })
-
-  // Check against budgets
-  if (jsSize > PERFORMANCE_BUDGETS.jsBundle) {
-    violations.push(
-      `JS bundle size (${jsSize.toFixed(2)}KB) exceeds budget (${PERFORMANCE_BUDGETS.jsBundle}KB)`
-    )
-  }
-  if (cssSize > PERFORMANCE_BUDGETS.cssBundle) {
-    violations.push(
-      `CSS bundle size (${cssSize.toFixed(2)}KB) exceeds budget (${PERFORMANCE_BUDGETS.cssBundle}KB)`
-    )
-  }
-  if (imageSize > PERFORMANCE_BUDGETS.images) {
-    violations.push(
-      `Image size (${imageSize.toFixed(2)}KB) exceeds budget (${PERFORMANCE_BUDGETS.images}KB)`
-    )
-  }
-  if (fontSize > PERFORMANCE_BUDGETS.fonts) {
-    violations.push(
-      `Font size (${fontSize.toFixed(2)}KB) exceeds budget (${PERFORMANCE_BUDGETS.fonts}KB)`
-    )
-  }
-  if (totalSize > PERFORMANCE_BUDGETS.total) {
-    violations.push(
-      `Total size (${totalSize.toFixed(2)}KB) exceeds budget (${PERFORMANCE_BUDGETS.total}KB)`
-    )
-  }
-
-  return violations
-}
-
-// Export types for external use
-export type { Metric, MetricRating }

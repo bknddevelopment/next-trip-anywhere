@@ -6,12 +6,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {
-  initWebVitals,
-  observePerformance,
-  getPerformanceSummary,
-  checkPerformanceBudgets,
-} from '@/lib/performance/web-vitals'
+import { initWebVitals, getPerformanceMetrics } from '@/lib/performance/web-vitals'
 
 interface PerformanceMetrics {
   lcp?: number
@@ -25,7 +20,6 @@ interface PerformanceMetrics {
 export default function PerformanceMonitor() {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({})
   const [showMonitor, setShowMonitor] = useState(false)
-  const [violations, setViolations] = useState<string[]>([])
 
   useEffect(() => {
     // Only show in development
@@ -35,23 +29,6 @@ export default function PerformanceMonitor() {
 
     // Initialize Web Vitals monitoring
     initWebVitals()
-    observePerformance()
-
-    // Check performance budgets
-    const checkBudgets = () => {
-      const budgetViolations = checkPerformanceBudgets()
-      if (budgetViolations.length > 0) {
-        setViolations(budgetViolations)
-        console.warn('[Performance Budget Violations]', budgetViolations)
-      }
-    }
-
-    // Check budgets after page load
-    if (document.readyState === 'complete') {
-      checkBudgets()
-    } else {
-      window.addEventListener('load', checkBudgets)
-    }
 
     // Listen for Web Vitals updates (custom event approach)
     const handleMetricUpdate = (event: CustomEvent) => {
@@ -61,10 +38,10 @@ export default function PerformanceMonitor() {
 
     window.addEventListener('web-vital', handleMetricUpdate as EventListener)
 
-    // Get initial performance summary
-    const summary = getPerformanceSummary()
-    if (summary) {
-      console.log('[Performance Summary]', summary)
+    // Get initial performance metrics
+    const metrics = getPerformanceMetrics()
+    if (metrics) {
+      console.log('[Performance Metrics]', metrics)
     }
 
     // Keyboard shortcut to toggle monitor (Ctrl + Shift + P)
@@ -78,7 +55,6 @@ export default function PerformanceMonitor() {
     return () => {
       window.removeEventListener('web-vital', handleMetricUpdate as EventListener)
       window.removeEventListener('keydown', handleKeyPress)
-      window.removeEventListener('load', checkBudgets)
     }
   }, [])
 
@@ -159,19 +135,6 @@ export default function PerformanceMonitor() {
           description="Interaction to Next Paint"
         />
       </div>
-
-      {violations.length > 0 && (
-        <div className="mt-3 pt-3 border-t border-gray-700">
-          <h4 className="font-bold text-red-400 mb-1">Budget Violations:</h4>
-          <ul className="space-y-0.5">
-            {violations.slice(0, 3).map((violation, i) => (
-              <li key={i} className="text-red-300 text-[10px]">
-                • {violation}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       <div className="mt-3 pt-3 border-t border-gray-700 text-[10px] text-gray-400">
         Press Ctrl+Shift+P to toggle

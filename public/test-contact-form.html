@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form n8n Webhook Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        button:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #bee5eb;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #004085;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>n8n Webhook Contact Form Test</h1>
+
+        <div class="info">
+            <h3>ℹ️ Test Configuration</h3>
+            <p><strong>Webhook URL:</strong> <code id="webhookUrl">Not configured</code></p>
+            <p><strong>Status:</strong> <span id="configStatus">Checking...</span></p>
+        </div>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="tripType">Trip Type *</label>
+                <select id="tripType" name="tripType" required>
+                    <option value="">Select...</option>
+                    <option value="flight">Flights Only</option>
+                    <option value="cruise">Cruise Package</option>
+                    <option value="package">Vacation Package</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination *</label>
+                <input type="text" id="destination" name="destination" required>
+            </div>
+
+            <div class="form-group">
+                <label for="departureDate">Departure Date *</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travelers">Number of Travelers *</label>
+                <select id="travelers" name="travelers" required>
+                    <option value="">Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5+">5+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit Test Form</button>
+        </form>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        // Configuration
+        const WEBHOOK_URL = 'https://n8n.nexttripanywhere.com/webhook/contact-form';
+
+        // Display configuration
+        document.getElementById('webhookUrl').textContent = WEBHOOK_URL || 'Not configured';
+
+        // Check if webhook is reachable
+        async function checkWebhookStatus() {
+            const statusEl = document.getElementById('configStatus');
+
+            try {
+                // Try OPTIONS request first (for CORS preflight)
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'OPTIONS',
+                    mode: 'cors'
+                }).catch(() => null);
+
+                if (response && response.ok) {
+                    statusEl.innerHTML = '<span style="color: green;">✓ Webhook endpoint reachable</span>';
+                } else {
+                    statusEl.innerHTML = '<span style="color: orange;">⚠️ Webhook not configured yet (expected - n8n instance needed)</span>';
+                }
+            } catch (error) {
+                statusEl.innerHTML = '<span style="color: orange;">⚠️ Webhook not configured yet (expected - n8n instance needed)</span>';
+            }
+        }
+
+        checkWebhookStatus();
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('status');
+
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            // Add additional fields
+            data.travelStyle = 'comfort';
+            data.contactPreference = 'either';
+            data.newsletter = false;
+            data.submittedAt = new Date().toISOString();
+            data.sourceUrl = window.location.href;
+            data.userAgent = navigator.userAgent;
+
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    statusDiv.className = 'status success';
+                    statusDiv.style.display = 'block';
+                    statusDiv.innerHTML = `
+                        <strong>✓ Success!</strong><br>
+                        Form submitted successfully. Response status: ${response.status}<br>
+                        <small>In production, this would trigger the n8n workflow.</small>
+                    `;
+                    e.target.reset();
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.style.display = 'block';
+
+                if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                    statusDiv.innerHTML = `
+                        <strong>⚠️ Expected Error</strong><br>
+                        The n8n webhook is not configured yet. This is normal.<br>
+                        <small>Error: ${error.message}</small><br><br>
+                        <strong>To fix this:</strong><br>
+                        1. Set up n8n instance<br>
+                        2. Create webhook workflow<br>
+                        3. Configure CORS headers<br>
+                        4. Update webhook URL in environment variables
+                    `;
+                } else {
+                    statusDiv.innerHTML = `
+                        <strong>✗ Error</strong><br>
+                        ${error.message}<br>
+                        <small>Check console for details.</small>
+                    `;
+                }
+                console.error('Submission error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Test Form';
+            }
+        });
+
+        // Set minimum date to today
+        document.getElementById('departureDate').min = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>
