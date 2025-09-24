@@ -416,7 +416,7 @@ export default function CarnivalPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">VIFP Club - Very Important Fun Person</h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-white/95">
               Earn points and unlock exclusive perks with every Carnival cruise
             </p>
 
@@ -452,7 +452,7 @@ export default function CarnivalPage() {
               </div>
             </div>
 
-            <p className="text-blue-100 mb-6">
+            <p className="text-white/95 mb-6">
               As your VIFP specialist, we help maximize your member benefits and ensure you receive
               all available perks
             </p>

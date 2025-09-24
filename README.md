@@ -36,7 +36,7 @@
 
 ## 🎯 Overview
 
-Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, serving travelers nationwide from all major US cities coast to coast.
+Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, serving travelers nationwide from all major US cities coast to coast. With 264+ SEO-optimized pages and comprehensive schema markup, the platform achieved a 20% organic traffic increase in Phase 1 of its expansion.
 
 ### 🎨 Key Highlights
 
@@ -54,9 +54,9 @@ Next Trip Anywhere is a modern, high-performance travel agency platform built wi
 ### 🏖️ Travel Services
 
 - **Flight Booking**: Search and compare flights from major carriers
-- **Cruise Packages**: 40+ dedicated cruise pages including Caribbean, Mediterranean, Alaska, and departures from Cape Liberty/Newark
+- **Cruise Packages**: 44 dedicated cruise pages including Caribbean, Mediterranean, Alaska, with 20 destination pages and 19 cruise line hubs
 - **Vacation Packages**: All-inclusive resorts, family packages, adults-only escapes, and budget beach vacations
-- **Local Focus**: 260+ pages optimized for Essex County, NJ residents with local departure options
+- **Local Focus**: 264+ pages optimized for Essex County, NJ residents with local departure options
 - **Nationwide Coverage**: Specialized deals from all major US cities including NYC, LA, Chicago, Miami, Seattle, Denver, Atlanta, and more
 
 ### 💻 Technical Features

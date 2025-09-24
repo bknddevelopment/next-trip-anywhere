@@ -116,7 +116,7 @@ export default function PrincessCruisePage() {
               Princess Cruises
               <span className="block text-3xl md:text-4xl mt-4 text-teal-300">Come Back New®</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">{cruiseLine.shortDescription}</p>
+            <p className="text-xl md:text-2xl mb-8 text-white/95">{cruiseLine.shortDescription}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+18338741019"
@@ -519,7 +519,7 @@ export default function PrincessCruisePage() {
       <section className="py-16 bg-gradient-to-r from-blue-900 to-teal-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Come Back New?</h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/95">
             Let our Princess Cruises experts plan your perfect escape
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

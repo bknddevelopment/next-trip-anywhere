@@ -43,7 +43,7 @@ export default function FAQSection({ cruise }: FAQSectionProps) {
                     />
                   </svg>
                 </summary>
-                <p className="text-gray-700 leading-relaxed mt-3">{item.answer}</p>
+                <p className="text-gray-800 leading-relaxed mt-3">{item.answer}</p>
               </details>
             ))}
           </div>

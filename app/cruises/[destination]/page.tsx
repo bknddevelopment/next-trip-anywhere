@@ -100,7 +100,7 @@ const HeroSection = ({ cruise }: { cruise: CruiseDestination }) => (
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           {cruise.content.hero.headline}
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-blue-100">{cruise.content.hero.subheadline}</p>
+        <p className="text-xl md:text-2xl mb-8 text-white/95">{cruise.content.hero.subheadline}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="tel:+18338741019"
@@ -167,19 +167,19 @@ const ContentSection = ({ cruise }: { cruise: CruiseDestination }) => (
               <div className="space-y-4">
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Address</h3>
-                  <p className="text-gray-600">{cruise.content.portInfo.address}</p>
+                  <p className="text-gray-700">{cruise.content.portInfo.address}</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Distance from Essex County</h3>
-                  <p className="text-gray-600">{cruise.content.portInfo.distance}</p>
+                  <p className="text-gray-700">{cruise.content.portInfo.distance}</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Parking Information</h3>
-                  <p className="text-gray-600">{cruise.content.portInfo.parkingInfo}</p>
+                  <p className="text-gray-700">{cruise.content.portInfo.parkingInfo}</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Directions</h3>
-                  <p className="text-gray-600">{cruise.content.portInfo.directions}</p>
+                  <p className="text-gray-700">{cruise.content.portInfo.directions}</p>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default async function CruiseDestinationPage({
                   Home
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-500">/</li>
               <li>
                 <Link
                   href="/cruises"
@@ -298,7 +298,7 @@ export default async function CruiseDestinationPage({
                   Cruises
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-500">/</li>
               <li className="text-gray-700" aria-current="page">
                 {cruise.title}
               </li>

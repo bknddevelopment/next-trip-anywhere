@@ -118,7 +118,7 @@ export default function NorwegianCruisePage() {
                 Freestyle Cruising at Its Best
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">{cruiseLine.shortDescription}</p>
+            <p className="text-xl md:text-2xl mb-8 text-white/95">{cruiseLine.shortDescription}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+18338741019"
@@ -400,7 +400,7 @@ export default function NorwegianCruisePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Experience Freestyle Cruising?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-white/95">
             Let our Norwegian Cruise Line experts help you plan the perfect voyage
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -117,17 +117,17 @@ export default function RoyalCaribbeanPage() {
         <div className="container mx-auto px-4">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <Link href="/" className="text-gray-600 hover:text-blue-600">
+              <Link href="/" className="text-gray-700 hover:text-blue-600">
                 Home
               </Link>
             </li>
-            <li className="text-gray-400">/</li>
+            <li className="text-gray-500">/</li>
             <li>
-              <Link href="/cruises" className="text-gray-600 hover:text-blue-600">
+              <Link href="/cruises" className="text-gray-700 hover:text-blue-600">
                 Cruises
               </Link>
             </li>
-            <li className="text-gray-400">/</li>
+            <li className="text-gray-500">/</li>
             <li className="text-blue-600 font-semibold">Royal Caribbean</li>
           </ol>
         </div>
@@ -145,7 +145,7 @@ export default function RoyalCaribbeanPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Royal Caribbean International
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-blue-100">
+            <p className="text-xl md:text-2xl mb-4 text-white/95">
               The World&apos;s Most Innovative Cruise Line
             </p>
             <p className="text-lg mb-8 text-blue-50 max-w-3xl mx-auto">
@@ -173,19 +173,19 @@ export default function RoyalCaribbeanPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-400">27</div>
-              <div className="text-blue-100">Ships in Fleet</div>
+              <div className="text-white/90">Ships in Fleet</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-400">300+</div>
-              <div className="text-blue-100">Destinations</div>
+              <div className="text-white/90">Destinations</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-400">#1</div>
-              <div className="text-blue-100">Innovation at Sea</div>
+              <div className="text-white/90">Innovation at Sea</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-400">4.8★</div>
-              <div className="text-blue-100">Guest Rating</div>
+              <div className="text-white/90">Guest Rating</div>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function RoyalCaribbeanPage() {
             <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
               Why Book Royal Caribbean with Next Trip Anywhere?
             </h2>
-            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
               As Crown & Anchor preferred partners, we offer exclusive perks and insider access you
               won&apos;t find anywhere else
             </p>
@@ -272,7 +272,7 @@ export default function RoyalCaribbeanPage() {
             <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
               The World&apos;s Most Innovative Ships
             </h2>
-            <p className="text-center text-gray-600 mb-12">
+            <p className="text-center text-gray-700 mb-12">
               From record-breaking Icon Class to revolutionary Oasis Class ships
             </p>
 
@@ -295,27 +295,27 @@ export default function RoyalCaribbeanPage() {
                           {ship.yearBuilt}
                         </span>
                       </div>
-                      <p className="text-gray-600 mb-4">{ship.class}</p>
+                      <p className="text-gray-700 mb-4">{ship.class}</p>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Capacity:</span>
+                          <span className="text-gray-600">Capacity:</span>
                           <span className="font-semibold">
                             {ship.passengerCapacity.toLocaleString()} guests
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Tonnage:</span>
+                          <span className="text-gray-600">Tonnage:</span>
                           <span className="font-semibold">
                             {ship.grossTonnage.toLocaleString()} GT
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Homeports:</span>
+                          <span className="text-gray-600">Homeports:</span>
                           <span className="font-semibold text-right">{ship.homeports[0]}</span>
                         </div>
                       </div>
                       <div className="mt-4 pt-4 border-t">
-                        <div className="text-sm text-gray-600">Key Features:</div>
+                        <div className="text-sm text-gray-700">Key Features:</div>
                         <ul className="text-sm text-gray-700 mt-2 space-y-1">
                           {ship.highlights.slice(0, 3).map((highlight, index) => (
                             <li key={index}>• {highlight}</li>
@@ -378,7 +378,7 @@ export default function RoyalCaribbeanPage() {
             <h2 className="text-3xl font-bold text-center mb-4 text-blue-900">
               Exclusive Royal Caribbean Deals
             </h2>
-            <p className="text-center text-gray-600 mb-12">
+            <p className="text-center text-gray-700 mb-12">
               Limited-time offers available only through Next Trip Anywhere
             </p>
 
@@ -394,10 +394,10 @@ export default function RoyalCaribbeanPage() {
                     </span>
                   )}
                   <h3 className="font-bold text-xl mb-2 text-blue-900">{deal.title}</h3>
-                  <p className="text-gray-600 mb-4">{deal.description}</p>
+                  <p className="text-gray-700 mb-4">{deal.description}</p>
 
                   <div className="bg-green-50 p-4 rounded-lg mb-4">
-                    <div className="text-sm text-gray-600 mb-1">Exclusive Offer</div>
+                    <div className="text-sm text-gray-700 mb-1">Exclusive Offer</div>
                     <div className="text-xl font-bold text-green-600">Best Available Rates</div>
                     <div className="text-sm text-orange-600 font-semibold mt-1">
                       Plus valuable perks included
@@ -405,7 +405,7 @@ export default function RoyalCaribbeanPage() {
                   </div>
 
                   <div className="border-t pt-4">
-                    <div className="text-sm text-gray-600 mb-2">Includes:</div>
+                    <div className="text-sm text-gray-700 mb-2">Includes:</div>
                     <ul className="text-sm text-gray-700 space-y-1 mb-4">
                       {deal.perks.slice(0, 3).map((perk, index) => (
                         <li key={index}>✓ {perk}</li>
@@ -458,7 +458,7 @@ export default function RoyalCaribbeanPage() {
                   className="bg-white rounded-lg p-4 shadow hover:shadow-lg transition-shadow"
                 >
                   <h3 className="font-semibold text-lg mb-2 text-blue-900">{itinerary}</h3>
-                  <div className="text-sm text-gray-600 mb-3">Multiple ships available</div>
+                  <div className="text-sm text-gray-700 mb-3">Multiple ships available</div>
                   <Link
                     href="/cruises/royal-caribbean/deals"
                     className="text-blue-600 hover:text-blue-800 text-sm font-semibold"
@@ -477,7 +477,7 @@ export default function RoyalCaribbeanPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Crown & Anchor Society Benefits</h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-white/95">
               Earn points and unlock exclusive perks with every Royal Caribbean cruise
             </p>
 
@@ -513,7 +513,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             </div>
 
-            <p className="text-blue-100 mb-6">
+            <p className="text-white/90 mb-6">
               As your Crown & Anchor specialist, we help maximize your member benefits and ensure
               you receive all available perks
             </p>

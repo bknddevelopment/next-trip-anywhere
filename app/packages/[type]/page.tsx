@@ -15,6 +15,7 @@ import {
   getPackageBySlug,
   type VacationPackage,
 } from '@/lib/data/vacation-packages'
+import { generatePackageSchemaGraph } from '@/lib/utils/packageSchema'
 
 // Lazy load non-critical components
 const ContactForm = dynamic(() => import('@/components/forms/ContactFormWithAnalytics'), {
@@ -86,7 +87,7 @@ const HeroSection = ({ pkg }: { pkg: VacationPackage }) => (
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           {pkg.content.hero.headline}
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-blue-100">{pkg.content.hero.subheadline}</p>
+        <p className="text-xl md:text-2xl mb-8 text-white/95">{pkg.content.hero.subheadline}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="tel:+18338741019"
@@ -187,13 +188,13 @@ const ContentSection = ({ pkg }: { pkg: VacationPackage }) => (
                 {pkg.content.resorts.map((resort, index) => (
                   <div key={index} className="bg-white rounded-lg shadow-md p-6">
                     <h3 className="text-xl font-semibold text-blue-900 mb-2">{resort.name}</h3>
-                    <p className="text-gray-600 mb-3">{resort.location}</p>
+                    <p className="text-gray-700 mb-3">{resort.location}</p>
                     {resort.rating && (
                       <div className="flex items-center mb-3">
                         <span className="text-yellow-500">
                           {'★'.repeat(Math.floor(resort.rating))}
                         </span>
-                        <span className="ml-2 text-gray-600">({resort.rating}/5)</span>
+                        <span className="ml-2 text-gray-700">({resort.rating}/5)</span>
                       </div>
                     )}
                     <ul className="space-y-2">
@@ -247,7 +248,7 @@ const FAQSection = ({ pkg }: { pkg: VacationPackage }) => {
             {pkg.faq.map((item, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                <p className="text-gray-800 leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -328,94 +329,6 @@ const RelatedPackages = ({ currentSlug }: { currentSlug: string }) => {
   )
 }
 
-// Generate schema markup for the package
-function generatePackageSchema(pkg: VacationPackage) {
-  const schemas = []
-
-  // TravelAgency schema
-  schemas.push({
-    '@type': 'TravelAgency',
-    name: 'Next Trip Anywhere',
-    url: 'https://nexttripanywhere.com',
-    telephone: '+1-833-874-1019',
-    email: 'hello@nexttripanywhere.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Newark',
-      addressRegion: 'NJ',
-      addressCountry: 'US',
-    },
-  })
-
-  // Product schema for the package
-  if (pkg.content.startingPrice) {
-    schemas.push({
-      '@type': 'Product',
-      name: pkg.title,
-      description: pkg.metaDescription,
-      brand: {
-        '@type': 'Brand',
-        name: 'Next Trip Anywhere',
-      },
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'USD',
-        lowPrice: pkg.content.startingPrice,
-        highPrice: pkg.content.startingPrice * 2, // Estimate
-        seller: {
-          '@type': 'TravelAgency',
-          name: 'Next Trip Anywhere',
-        },
-      },
-    })
-  }
-
-  // FAQ schema
-  if (pkg.faq && pkg.faq.length > 0) {
-    schemas.push({
-      '@type': 'FAQPage',
-      mainEntity: pkg.faq.map((item) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
-      })),
-    })
-  }
-
-  // Breadcrumb schema
-  schemas.push({
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://nexttripanywhere.com',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Packages',
-        item: 'https://nexttripanywhere.com/packages',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: pkg.title,
-        item: `https://nexttripanywhere.com/packages/${pkg.slug}`,
-      },
-    ],
-  })
-
-  return {
-    '@context': 'https://schema.org',
-    '@graph': schemas,
-  }
-}
-
 // Main page component
 export default async function VacationPackagePage({
   params,
@@ -429,8 +342,8 @@ export default async function VacationPackagePage({
     notFound()
   }
 
-  // Generate schema markup
-  const schemaData = generatePackageSchema(pkg)
+  // Generate comprehensive schema markup with enhanced rich snippets
+  const schemaData = generatePackageSchemaGraph(pkg)
 
   return (
     <>
@@ -454,13 +367,13 @@ export default async function VacationPackagePage({
                   Home
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-500">/</li>
               <li>
                 <Link href="/packages" className="text-blue-600 hover:text-blue-800">
                   Packages
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-500">/</li>
               <li className="text-gray-700" aria-current="page">
                 {pkg.title}
               </li>

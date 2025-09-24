@@ -22,6 +22,8 @@ import {
   getDestinationBySlug as getSeoDestinationBySlug,
   type SeoDestination,
 } from '@/lib/data/seo-destinations'
+import { generatePortSchemaGraph } from '@/lib/utils/portSchema'
+import { generateFAQSchema } from '@/lib/utils/baseSchema'
 
 // Lazy load contact form
 const ContactForm = dynamic(() => import('@/components/forms/ContactFormWithAnalytics'), {
