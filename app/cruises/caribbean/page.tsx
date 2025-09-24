@@ -11,6 +11,7 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { caribbeanCruise as caribbeanCruiseData } from '@/lib/data/cruise-destinations'
 import { TrustBar, DetailedTrustSection } from '@/components/ui/TrustSignals'
+import { InternalLinks, getRecommendedLinks } from '@/components/seo/InternalLinks'
 
 // Lazy load non-critical components
 const OptimizedImage = dynamic(() => import('@/components/ui/OptimizedImage'), {
@@ -465,6 +466,9 @@ export default function CaribbeanCruisePage() {
             </p>
           </div>
         </section>
+
+        {/* Internal Links for SEO */}
+        <InternalLinks sections={getRecommendedLinks('cruise', '/cruises/caribbean')} />
 
         {/* Trust Section */}
         <DetailedTrustSection />

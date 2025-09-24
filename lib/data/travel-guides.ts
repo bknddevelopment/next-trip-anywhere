@@ -53,6 +53,10 @@ export interface TravelGuide {
   internalLinks: string[]
   /** Last update date */
   lastUpdated: string
+  /** Featured image URL (optional) */
+  featuredImage?: string
+  /** Category for grouping */
+  category: 'planning' | 'documentation' | 'cruise-tips' | 'airport-port' | 'destination'
 }
 
 export const travelGuides: TravelGuide[] = [
@@ -163,6 +167,7 @@ export const travelGuides: TravelGuide[] = [
       '/guides/newark-to-bayonne-port',
     ],
     lastUpdated: '2025-01-24',
+    category: 'cruise-tips',
   },
   {
     slug: 'first-time-cruiser',
@@ -276,6 +281,7 @@ export const travelGuides: TravelGuide[] = [
       '/packages/all-inclusive-caribbean',
     ],
     lastUpdated: '2025-01-24',
+    category: 'cruise-tips',
   },
   {
     slug: 'caribbean-travel-guide',
@@ -389,6 +395,7 @@ export const travelGuides: TravelGuide[] = [
       '/locations/essex-county',
     ],
     lastUpdated: '2025-01-24',
+    category: 'destination',
   },
   {
     slug: 'best-time-cruise-caribbean',
@@ -497,6 +504,7 @@ export const travelGuides: TravelGuide[] = [
       '/packages/all-inclusive-caribbean',
     ],
     lastUpdated: '2025-01-24',
+    category: 'planning',
   },
   {
     slug: 'passport-requirements-nj',
@@ -605,6 +613,7 @@ export const travelGuides: TravelGuide[] = [
       '/locations/essex-county',
     ],
     lastUpdated: '2025-01-24',
+    category: 'documentation',
   },
   {
     slug: 'travel-insurance-guide',
@@ -718,6 +727,7 @@ export const travelGuides: TravelGuide[] = [
       '/packages/all-inclusive-caribbean',
     ],
     lastUpdated: '2025-01-24',
+    category: 'planning',
   },
   {
     slug: 'airport-parking-newark',
@@ -831,5 +841,15 @@ export const travelGuides: TravelGuide[] = [
       '/guides/travel-insurance-guide',
     ],
     lastUpdated: '2025-01-24',
+    category: 'airport-port',
   },
 ]
+
+/**
+ * Helper function to get a travel guide by slug
+ * @param slug - The URL slug of the guide
+ * @returns The travel guide object or undefined if not found
+ */
+export function getTravelGuideBySlug(slug: string): TravelGuide | undefined {
+  return travelGuides.find((guide) => guide.slug === slug)
+}

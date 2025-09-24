@@ -5,6 +5,7 @@ import { blogPosts } from '@/lib/data/blog-posts'
 import { cruiseDestinations } from '@/lib/data/cruises'
 import { vacationPackages } from '@/lib/data/vacation-packages'
 import { seoDestinations } from '@/lib/data/seo-destinations'
+import { travelGuides } from '@/lib/data/travel-guides'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -390,6 +391,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Travel guides hub and individual guide pages
+  const guidesHubPage = {
+    url: `${baseUrl}/guides`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }
+
+  const travelGuidePages = travelGuides.map((guide) => ({
+    url: `${baseUrl}/guides/${guide.slug}`,
+    lastModified: guide.lastUpdated || currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: guide.priority === 'HIGH' ? 0.85 : guide.priority === 'MEDIUM' ? 0.75 : 0.7,
+  }))
+
+  // Tools hub page
+  const toolsPage = {
+    url: `${baseUrl}/tools`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }
+
   // Total pages for verification (used in build logs)
   // Essex County implementation includes:
   // - 20 city pages
@@ -416,6 +440,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...dynamicCruisePages,
     ...packagePages,
     ...cruiseHubPages,
+    guidesHubPage,
+    ...travelGuidePages,
+    toolsPage,
     ...companyPages,
     ...legalPages,
   ]
