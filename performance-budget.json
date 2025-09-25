@@ -1,0 +1,194 @@
+{
+  "description": "Performance Budget for Next Trip Anywhere - 500+ Page Site",
+  "lastUpdated": "2025-01-24",
+  "budgets": [
+    {
+      "path": "/*",
+      "name": "All Pages",
+      "timings": {
+        "firstContentfulPaint": 1500,
+        "largestContentfulPaint": 2500,
+        "firstInputDelay": 100,
+        "cumulativeLayoutShift": 0.1,
+        "timeToInteractive": 3500,
+        "totalBlockingTime": 300,
+        "speedIndex": 3000
+      },
+      "resources": [
+        {
+          "resourceType": "document",
+          "budget": 15
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 50
+        },
+        {
+          "resourceType": "script",
+          "budget": 200
+        },
+        {
+          "resourceType": "image",
+          "budget": 500
+        },
+        {
+          "resourceType": "font",
+          "budget": 100
+        },
+        {
+          "resourceType": "total",
+          "budget": 1000
+        }
+      ],
+      "resourceCounts": [
+        {
+          "resourceType": "script",
+          "budget": 10
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 5
+        },
+        {
+          "resourceType": "image",
+          "budget": 20
+        },
+        {
+          "resourceType": "font",
+          "budget": 5
+        },
+        {
+          "resourceType": "third-party",
+          "budget": 10
+        }
+      ]
+    },
+    {
+      "path": "/",
+      "name": "Homepage",
+      "timings": {
+        "firstContentfulPaint": 1000,
+        "largestContentfulPaint": 2000,
+        "timeToInteractive": 3000
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "budget": 800
+        }
+      ]
+    },
+    {
+      "path": "/cruises/*",
+      "name": "Cruise Pages",
+      "timings": {
+        "largestContentfulPaint": 2500,
+        "timeToInteractive": 4000
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "budget": 1200
+        }
+      ]
+    },
+    {
+      "path": "/locations/essex-county/*",
+      "name": "Essex County Pages",
+      "timings": {
+        "largestContentfulPaint": 2000,
+        "timeToInteractive": 3000
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "budget": 600
+        }
+      ]
+    },
+    {
+      "path": "/blog/*",
+      "name": "Blog Pages",
+      "timings": {
+        "largestContentfulPaint": 2000,
+        "timeToInteractive": 2500
+      },
+      "resources": [
+        {
+          "resourceType": "total",
+          "budget": 500
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "lighthouse": {
+      "performance": {
+        "error": 85,
+        "warn": 90
+      },
+      "accessibility": {
+        "error": 90,
+        "warn": 95
+      },
+      "best-practices": {
+        "error": 85,
+        "warn": 90
+      },
+      "seo": {
+        "error": 90,
+        "warn": 95
+      },
+      "pwa": {
+        "error": 70,
+        "warn": 80
+      }
+    },
+    "webpagetest": {
+      "firstView": {
+        "speedIndex": {
+          "error": 4000,
+          "warn": 3000
+        },
+        "visualComplete": {
+          "error": 5000,
+          "warn": 4000
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "bundleSize": {
+      "main": {
+        "error": 250,
+        "warn": 200
+      },
+      "vendor": {
+        "error": 150,
+        "warn": 100
+      },
+      "commons": {
+        "error": 100,
+        "warn": 75
+      },
+      "total": {
+        "error": 1500,
+        "warn": 1000
+      }
+    },
+    "coverage": {
+      "js": {
+        "unused": {
+          "error": 50,
+          "warn": 35
+        }
+      },
+      "css": {
+        "unused": {
+          "error": 60,
+          "warn": 40
+        }
+      }
+    }
+  }
+}

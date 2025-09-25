@@ -246,13 +246,13 @@ export default function CheapCruisesPage() {
                   Home
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-600">/</li>
               <li>
                 <Link href="/cruises" className="text-blue-600 hover:text-blue-800">
                   Cruises
                 </Link>
               </li>
-              <li className="text-gray-400">/</li>
+              <li className="text-gray-600">/</li>
               <li className="text-gray-700" aria-current="page">
                 Cheap Cruises
               </li>
@@ -268,7 +268,7 @@ export default function CheapCruisesPage() {
                 <ServiceIcon icon="💰" size="text-5xl" />
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Budget-Friendly Cruise Deals</h1>
-              <p className="text-2xl mb-4 text-yellow-300 font-semibold">
+              <p className="text-2xl mb-4 text-yellow-100 font-semibold">
                 Amazing Voyages at Unbeatable Prices
               </p>
               <p className="text-lg mb-8 text-white/90">

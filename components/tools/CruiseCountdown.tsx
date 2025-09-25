@@ -309,7 +309,7 @@ export default function CruiseCountdown() {
           <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg p-8 text-white text-center mb-8">
             {cruiseName && <h3 className="text-2xl font-bold mb-2">{cruiseName}</h3>}
             {(cruiseLine || destination) && (
-              <p className="text-blue-100 mb-4">
+              <p className="text-white opacity-90 mb-4">
                 {cruiseLine && <span>{cruiseLine}</span>}
                 {cruiseLine && destination && <span> • </span>}
                 {destination && <span>{destination}</span>}
@@ -319,23 +319,23 @@ export default function CruiseCountdown() {
             <div className="grid grid-cols-4 gap-4 mb-6">
               <div>
                 <div className="text-4xl md:text-5xl font-bold">{timeLeft.days}</div>
-                <div className="text-sm text-blue-200">Days</div>
+                <div className="text-sm text-white opacity-90">Days</div>
               </div>
               <div>
                 <div className="text-4xl md:text-5xl font-bold">{timeLeft.hours}</div>
-                <div className="text-sm text-blue-200">Hours</div>
+                <div className="text-sm text-white opacity-90">Hours</div>
               </div>
               <div>
                 <div className="text-4xl md:text-5xl font-bold">{timeLeft.minutes}</div>
-                <div className="text-sm text-blue-200">Minutes</div>
+                <div className="text-sm text-white opacity-90">Minutes</div>
               </div>
               <div>
                 <div className="text-4xl md:text-5xl font-bold">{timeLeft.seconds}</div>
-                <div className="text-sm text-blue-200">Seconds</div>
+                <div className="text-sm text-white opacity-90">Seconds</div>
               </div>
             </div>
 
-            <p className="text-lg font-medium text-blue-100">{getMotivationalMessage()}</p>
+            <p className="text-lg font-medium text-white">{getMotivationalMessage()}</p>
           </div>
 
           {/* Milestones */}
@@ -351,7 +351,7 @@ export default function CruiseCountdown() {
                       <div>
                         <div className="font-medium text-gray-900">
                           {milestone.title}
-                          <span className="text-sm text-gray-500 ml-2">
+                          <span className="text-sm text-gray-600 ml-2">
                             ({milestone.daysOut} days before)
                           </span>
                         </div>
@@ -360,7 +360,7 @@ export default function CruiseCountdown() {
                     </div>
                   ))
                 ) : (
-                  <p className="text-gray-500">All milestones completed!</p>
+                  <p className="text-gray-600">All milestones completed!</p>
                 )}
               </div>
             </div>
@@ -371,7 +371,7 @@ export default function CruiseCountdown() {
               <div className="space-y-2">
                 {completedMilestones.length > 0 ? (
                   completedMilestones.slice(0, 5).map((milestone, index) => (
-                    <div key={index} className="flex items-center text-sm text-gray-500">
+                    <div key={index} className="flex items-center text-sm text-gray-600">
                       <svg
                         className="w-4 h-4 text-green-500 mr-2"
                         fill="currentColor"
@@ -387,7 +387,7 @@ export default function CruiseCountdown() {
                     </div>
                   ))
                 ) : (
-                  <p className="text-gray-500">No milestones completed yet</p>
+                  <p className="text-gray-600">No milestones completed yet</p>
                 )}
               </div>
             </div>
@@ -403,7 +403,7 @@ export default function CruiseCountdown() {
                 Share Countdown Link
               </button>
               {shareableLink && (
-                <p className="text-xs text-gray-500 mt-1">Link copied to clipboard!</p>
+                <p className="text-xs text-gray-600 mt-1">Link copied to clipboard!</p>
               )}
             </div>
 

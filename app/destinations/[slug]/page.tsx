@@ -22,6 +22,11 @@ import {
   getDestinationBySlug as getSeoDestinationBySlug,
   type SeoDestination,
 } from '@/lib/data/seo-destinations'
+import {
+  destinationGuides,
+  getGuideBySlug,
+  type DestinationGuide,
+} from '@/lib/data/destinations-deep-dive'
 import { generatePortSchemaGraph } from '@/lib/utils/portSchema'
 import { generateFAQSchema } from '@/lib/utils/baseSchema'
 
@@ -47,8 +52,13 @@ export async function generateStaticParams() {
     slug: destination.slug,
   }))
 
+  // Get deep-dive destinations (Phase 3 - 50 pages)
+  const deepDiveParams = destinationGuides.map((guide) => ({
+    slug: guide.slug,
+  }))
+
   // Combine and return unique slugs
-  const allSlugs = [...legacyParams, ...seoParams]
+  const allSlugs = [...legacyParams, ...seoParams, ...deepDiveParams]
   const uniqueSlugs = Array.from(new Set(allSlugs.map((p) => p.slug))).map((slug) => ({ slug }))
 
   return uniqueSlugs
@@ -65,7 +75,43 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
 
-  // Try SEO destination first (higher priority)
+  // Try deep-dive destination first (highest priority - Phase 3)
+  const deepDiveGuide = getGuideBySlug(slug)
+  if (deepDiveGuide) {
+    const canonical = `https://nexttripanywhere.com/destinations/${slug}`
+    return {
+      title: deepDiveGuide.metaTitle,
+      description: deepDiveGuide.metaDescription,
+      keywords: deepDiveGuide.keywords.join(', '),
+      alternates: {
+        canonical,
+      },
+      openGraph: {
+        title: deepDiveGuide.metaTitle,
+        description: deepDiveGuide.metaDescription,
+        url: canonical,
+        type: 'article',
+        locale: 'en_US',
+        siteName: 'Next Trip Anywhere',
+        images: [
+          {
+            url: deepDiveGuide.featuredImage || `/images/destinations/${slug}-hero.jpg`,
+            width: 1200,
+            height: 630,
+            alt: deepDiveGuide.title,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: deepDiveGuide.metaTitle,
+        description: deepDiveGuide.metaDescription,
+        images: [deepDiveGuide.featuredImage || `/images/destinations/${slug}-hero.jpg`],
+      },
+    }
+  }
+
+  // Try SEO destination next (Phase 1)
   const seoDestination = getSeoDestinationBySlug(slug)
   if (seoDestination) {
     const canonical = `https://nexttripanywhere.com/destinations/${slug}`
@@ -126,13 +172,13 @@ function SeoDestinationPage({ destination }: { destination: SeoDestination }) {
                 Home
               </Link>
             </li>
-            <li className="text-gray-400">/</li>
+            <li className="text-gray-600">/</li>
             <li>
               <Link href="/destinations" className="text-blue-600 hover:text-blue-800">
                 Destinations
               </Link>
             </li>
-            <li className="text-gray-400">/</li>
+            <li className="text-gray-600">/</li>
             <li className="text-gray-700" aria-current="page">
               {destination.title}
             </li>
@@ -147,7 +193,7 @@ function SeoDestinationPage({ destination }: { destination: SeoDestination }) {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {destination.content.hero.headline}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-white">
               {destination.content.hero.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

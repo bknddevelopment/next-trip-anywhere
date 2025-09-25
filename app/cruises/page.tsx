@@ -135,27 +135,27 @@ export default function CruisesPage() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">Royal Caribbean</div>
-              <div className="text-sm text-gray-500">Crown & Anchor Partner</div>
+              <div className="text-sm text-gray-600">Crown & Anchor Partner</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">Carnival</div>
-              <div className="text-sm text-gray-500">VIFP Specialist</div>
+              <div className="text-sm text-gray-600">VIFP Specialist</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">Norwegian</div>
-              <div className="text-sm text-gray-500">Latitudes Expert</div>
+              <div className="text-sm text-gray-600">Latitudes Expert</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">MSC</div>
-              <div className="text-sm text-gray-500">Voyagers Club</div>
+              <div className="text-sm text-gray-600">Voyagers Club</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">Celebrity</div>
-              <div className="text-sm text-gray-500">Captain&apos;s Club</div>
+              <div className="text-sm text-gray-600">Captain&apos;s Club</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-700">Disney</div>
-              <div className="text-sm text-gray-500">Authorized Agent</div>
+              <div className="text-sm text-gray-600">Authorized Agent</div>
             </div>
           </div>
         </div>

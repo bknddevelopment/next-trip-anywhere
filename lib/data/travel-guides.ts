@@ -1,23 +1,32 @@
 /**
- * Travel Guide Data for SEO-Optimized Pages
+ * Travel Guide Data for SEO-Optimized Pages - Phase 3 Expansion
+ * 50 Deep-Dive Destination Articles (2,500+ words each)
  *
  * This file manages all travel guide content for dynamic page generation.
- * Each entry creates a page at /guides/[slug] with full SEO optimization.
+ * Each entry creates a page at /destinations/[slug] with full SEO optimization.
  *
  * Content Requirements:
- * - Minimum 1,500 words per guide
+ * - Minimum 2,500 words per guide
  * - Local angle: Must mention Essex County/Newark relevance
  * - Include 5-7 FAQs targeting long-tail keywords
  * - Add phone CTAs (833-874-1019) throughout
  * - Reading level: Grade 8-10
  *
- * @see app/guides/[slug]/page.tsx for page generation
+ * Phase 3 Categories:
+ * - Caribbean: 15 destinations
+ * - European Ports: 10 destinations
+ * - Alaska Ports: 8 destinations
+ * - Other Popular: 17 destinations
+ *
+ * @see app/destinations/[slug]/page.tsx for page generation
  * @see app/sitemap.ts for sitemap inclusion
  */
 
 export interface TravelGuide {
-  /** URL slug - becomes /guides/[slug] */
+  /** URL slug - becomes /destinations/[slug] */
   slug: string
+  /** Destination name for display */
+  destination: string
   /** Page H1 and breadcrumb title */
   title: string
   /** SEO meta title - max 60 characters */
@@ -28,23 +37,143 @@ export interface TravelGuide {
   keywords: string[]
   /** Monthly search volume for primary keyword */
   searchVolume: number
+  /** Keyword difficulty score */
+  difficulty: number
   /** Priority for sitemap and update frequency */
   priority: 'HIGH' | 'MEDIUM' | 'LOW'
-  /** Main content sections */
+  /** Destination region for categorization */
+  region: 'caribbean' | 'europe' | 'alaska' | 'north-america' | 'pacific' | 'central-america'
+  /** Main content sections - 2,500+ words total */
   content: {
-    /** Introduction with local hook (150-200 words) */
+    /** Introduction with local hook (200 words) */
     introduction: string
-    /** Main content sections */
-    sections: Array<{
+    /** Getting there from Essex County (300 words) */
+    gettingThereFromEssexCounty: {
+      overview: string
+      flightOptions: string[]
+      cruiseOptions: string[]
+      travelTime: string
+      tips: string[]
+    }
+    /** Top Attractions (500 words) */
+    topAttractions: Array<{
       title: string
-      content: string
+      description: string
+      mustSee: boolean
+      duration: string
+      cost: string
     }>
-    /** Essex County specific tips (200-300 words) */
-    localTips: string
-    /** Conclusion with CTA (100-150 words) */
-    conclusion: string
+    /** Shore Excursions for cruise ports (400 words) */
+    shoreExcursions?: {
+      cruiseLine: Array<{
+        name: string
+        description: string
+        duration: string
+        price: string
+      }>
+      independent: Array<{
+        name: string
+        description: string
+        duration: string
+        price: string
+        howToBook: string
+      }>
+      diy: string[]
+    }
+    /** Beaches & Recreation (300 words) */
+    beachesAndRecreation: {
+      beaches: Array<{
+        name: string
+        description: string
+        amenities: string[]
+        bestFor: string
+      }>
+      waterSports: string[]
+      adventureActivities: string[]
+    }
+    /** Shopping & Dining (400 words) */
+    shoppingAndDining: {
+      shoppingAreas: Array<{
+        name: string
+        description: string
+        whatToBuy: string[]
+        priceRange: string
+      }>
+      localCuisine: string[]
+      restaurants: Array<{
+        name: string
+        cuisine: string
+        priceRange: string
+        mustTry: string
+        location: string
+      }>
+    }
+    /** Culture & History (300 words) */
+    cultureAndHistory: {
+      historicalSites: Array<{
+        name: string
+        description: string
+        significance: string
+        visitingHours: string
+        admission: string
+      }>
+      culturalExperiences: string[]
+      localCustoms: string[]
+    }
+    /** Practical Information (300 words) */
+    practicalInformation: {
+      currency: {
+        name: string
+        code: string
+        exchangeRate: string
+        whereToExchange: string[]
+      }
+      transportation: {
+        fromAirport: string[]
+        gettingAround: string[]
+        taxiInfo: string
+        publicTransport: string
+        rentalCars: string
+      }
+      safety: {
+        general: string
+        areas: {
+          safe: string[]
+          caution: string[]
+        }
+        emergencyNumbers: string[]
+        healthPrecautions: string[]
+      }
+      language: {
+        official: string[]
+        phrases: Array<{
+          english: string
+          local: string
+        }>
+      }
+    }
+    /** Best Time to Visit (200 words) */
+    bestTimeToVisit: {
+      overview: string
+      peakSeason: {
+        months: string
+        pros: string[]
+        cons: string[]
+      }
+      offSeason: {
+        months: string
+        pros: string[]
+        cons: string[]
+      }
+      weather: {
+        summer: string
+        winter: string
+        rainyseason?: string
+        hurricaneSeason?: string
+      }
+    }
   }
-  /** FAQ section - 5-7 questions */
+  /** FAQ section - 5-7 questions (300 words) */
   faq: Array<{
     question: string
     answer: string

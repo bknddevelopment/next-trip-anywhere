@@ -6,6 +6,7 @@ import { cruiseDestinations } from '@/lib/data/cruises'
 import { vacationPackages } from '@/lib/data/vacation-packages'
 import { seoDestinations } from '@/lib/data/seo-destinations'
 import { travelGuides } from '@/lib/data/travel-guides'
+import { getGuidesForSitemap } from '@/lib/data/destinations-deep-dive'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -205,6 +206,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
     priority:
       destination.priority === 'HIGH' ? 0.9 : destination.priority === 'MEDIUM' ? 0.85 : 0.8,
+  }))
+
+  // Deep-dive destination guides (Phase 3 - 50 pages)
+  const deepDiveDestinationPages = getGuidesForSitemap().map((guide) => ({
+    ...guide,
+    url: `${baseUrl}${guide.url}`, // getGuidesForSitemap already includes the path
   }))
 
   // Cruise line pages (Phase 1)
@@ -434,6 +441,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPostPages,
     ...legacyDestinationPages,
     ...seoDestinationPages,
+    ...deepDiveDestinationPages,
     ...cruiseLinePages,
     ...cruiseLineSubPages,
     ...cruiseDestinationPages,

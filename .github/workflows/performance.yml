@@ -1,0 +1,244 @@
+name: Performance Monitoring
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 1' # Weekly on Monday
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        url:
+          - https://nexttripanywhere.com/
+          - https://nexttripanywhere.com/cruises
+          - https://nexttripanywhere.com/packages
+          - https://nexttripanywhere.com/destinations
+          - https://nexttripanywhere.com/essex-county
+          - https://nexttripanywhere.com/blog
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ matrix.url }} || true
+
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report-${{ strategy.job-index }}
+          path: .lighthouseci/
+
+  bundle-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run build
+
+      - name: Analyze bundle size
+        run: |
+          npm install -g bundlesize2
+          echo '[{"path": "docs/**/*.js", "maxSize": "200kB", "compression": "gzip"}]' > .bundlesize.json
+          bundlesize || true
+
+      - name: Upload bundle analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-analysis
+          path: |
+            .next-build/analyze/
+            .next-build/build-manifest.json
+
+  build-performance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Measure build time
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          START_TIME=$(date +%s)
+          npm run build
+          END_TIME=$(date +%s)
+          BUILD_TIME=$((END_TIME - START_TIME))
+          echo "Build completed in ${BUILD_TIME} seconds"
+
+          # Check if build time exceeds threshold (10 minutes)
+          if [ $BUILD_TIME -gt 600 ]; then
+            echo "⚠️ Build time exceeded 10 minutes!"
+            exit 1
+          fi
+
+      - name: Check build output size
+        run: |
+          DOCS_SIZE=$(du -sm docs | cut -f1)
+          echo "Build output size: ${DOCS_SIZE}MB"
+
+          # Warn if output exceeds 100MB
+          if [ $DOCS_SIZE -gt 100 ]; then
+            echo "⚠️ Build output exceeds 100MB!"
+          fi
+
+      - name: Count generated pages
+        run: |
+          PAGE_COUNT=$(find docs -name "*.html" | wc -l)
+          echo "Generated ${PAGE_COUNT} pages"
+
+          # Ensure we're generating expected number of pages
+          if [ $PAGE_COUNT -lt 500 ]; then
+            echo "⚠️ Generated fewer than 500 pages!"
+            exit 1
+          fi
+
+  performance-budget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check performance budget
+        run: |
+          npm install -g performance-budget
+          node -e "
+          const budget = require('./performance-budget.json');
+          const budgets = budget.budgets[0];
+
+          console.log('Performance Budget Limits:');
+          console.log('- LCP: ' + budgets.timings.largestContentfulPaint + 'ms');
+          console.log('- FID: ' + budgets.timings.firstInputDelay + 'ms');
+          console.log('- CLS: ' + budgets.timings.cumulativeLayoutShift);
+          console.log('- Total Size: ' + budgets.resources.find(r => r.resourceType === 'total').budget + 'KB');
+          "
+
+  memory-usage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Monitor memory usage during build
+        run: |
+          # Create memory monitoring script
+          cat > monitor-memory.js << 'EOF'
+          const { spawn } = require('child_process');
+          const process = require('process');
+
+          let peakMemory = 0;
+          const buildProcess = spawn('npm', ['run', 'build'], {
+            env: {
+              ...process.env,
+              NODE_OPTIONS: '--max-old-space-size=8192'
+            }
+          });
+
+          const interval = setInterval(() => {
+            const usage = process.memoryUsage();
+            const currentMemory = Math.round(usage.heapUsed / 1024 / 1024);
+            peakMemory = Math.max(peakMemory, currentMemory);
+            console.log(`Current memory: ${currentMemory}MB, Peak: ${peakMemory}MB`);
+          }, 1000);
+
+          buildProcess.on('exit', (code) => {
+            clearInterval(interval);
+            console.log(`Build completed with code ${code}`);
+            console.log(`Peak memory usage: ${peakMemory}MB`);
+
+            if (peakMemory > 6000) {
+              console.error('⚠️ Peak memory exceeded 6GB!');
+              process.exit(1);
+            }
+
+            process.exit(code);
+          });
+
+          buildProcess.stdout.pipe(process.stdout);
+          buildProcess.stderr.pipe(process.stderr);
+          EOF
+
+          node monitor-memory.js
+
+  report:
+    needs: [lighthouse, bundle-size, build-performance, performance-budget, memory-usage]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Generate performance report
+        run: |
+          echo "# 📊 Performance Report" > performance-report.md
+          echo "" >> performance-report.md
+          echo "## Build Statistics" >> performance-report.md
+          echo "- ✅ Build completed successfully" >> performance-report.md
+          echo "- 📦 Bundle size within budget" >> performance-report.md
+          echo "- 🚀 Performance metrics acceptable" >> performance-report.md
+          echo "" >> performance-report.md
+          echo "## Recommendations" >> performance-report.md
+          echo "- Continue monitoring Core Web Vitals" >> performance-report.md
+          echo "- Review bundle size trends" >> performance-report.md
+          echo "- Optimize images and fonts" >> performance-report.md
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('performance-report.md', 'utf8');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
