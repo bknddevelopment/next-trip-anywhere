@@ -21,23 +21,23 @@ interface NewsletterSignupProps {
 
 const defaultLeadMagnets = {
   travelGuide: {
-    title: "Ultimate Travel Planning Guide",
-    description: "FREE 27-page guide with insider secrets to save up to 50% on your next vacation",
-    downloadUrl: "/downloads/ultimate-travel-guide.pdf",
-    type: 'pdf' as const
+    title: 'Ultimate Travel Planning Guide',
+    description: 'FREE 27-page guide with insider secrets to save up to 50% on your next vacation',
+    downloadUrl: '/downloads/ultimate-travel-guide.pdf',
+    type: 'pdf' as const,
   },
   budgetChecklist: {
-    title: "Travel Budget Checklist",
-    description: "Never overspend again! Complete checklist with hidden costs to watch for",
-    downloadUrl: "/downloads/travel-budget-checklist.pdf", 
-    type: 'checklist' as const
+    title: 'Travel Budget Checklist',
+    description: 'Never overspend again! Complete checklist with hidden costs to watch for',
+    downloadUrl: '/downloads/travel-budget-checklist.pdf',
+    type: 'checklist' as const,
   },
   packingGuide: {
-    title: "Smart Packing Guide",
-    description: "Pack like a pro and avoid airline fees with our comprehensive packing strategies",
-    downloadUrl: "/downloads/smart-packing-guide.pdf",
-    type: 'guide' as const
-  }
+    title: 'Smart Packing Guide',
+    description: 'Pack like a pro and avoid airline fees with our comprehensive packing strategies',
+    downloadUrl: '/downloads/smart-packing-guide.pdf',
+    type: 'guide' as const,
+  },
 }
 
 export default function NewsletterSignup({
@@ -47,7 +47,7 @@ export default function NewsletterSignup({
   leadMagnet = defaultLeadMagnets.travelGuide,
   onSubmit,
   onClose,
-  className = ''
+  className = '',
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState('')
   const [preferences, setPreferences] = useState<string[]>([])
@@ -61,64 +61,18 @@ export default function NewsletterSignup({
     { id: 'resorts', label: 'Resort Packages' },
     { id: 'international', label: 'International Travel' },
     { id: 'domestic', label: 'Domestic Destinations' },
-    { id: 'lastminute', label: 'Last-Minute Deals' }
+    { id: 'lastminute', label: 'Last-Minute Deals' },
   ]
 
   const handlePreferenceChange = (prefId: string) => {
-    setPreferences(prev => 
-      prev.includes(prefId) 
-        ? prev.filter(p => p !== prefId)
-        : [...prev, prefId]
+    setPreferences((prev) =>
+      prev.includes(prefId) ? prev.filter((p) => p !== prefId) : [...prev, prefId]
     )
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) {
-      setError('Email address is required')
-      return
-    }
-
-    setIsSubmitting(true)
-    setError('')
-
-    try {
-      if (onSubmit) {
-        await onSubmit(email, preferences)
-      } else {
-        // Default implementation: send to n8n webhook
-        const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email,
-            preferences: preferences.join(', '),
-            source: `marketing-newsletter-${variant}`,
-            type: 'newsletter-signup',
-            leadMagnet: leadMagnet.title,
-            timestamp: new Date().toISOString(),
-          }),
-        })
-
-        if (!response.ok) {
-          throw new Error('Failed to subscribe')
-        }
-      }
-      setIsSuccess(true)
-
-      // Auto-close popup after success
-      if (variant === 'popup') {
-        setTimeout(() => {
-          onClose?.()
-        }, 3000)
-      }
-    } catch {
-      setError('Something went wrong. Please try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
+  const handleSignupClick = () => {
+    // Redirect to n8n form
+    window.location.href = 'https://nextripanywhere.app.n8n.cloud/form/travel-quote-form'
   }
 
   const getVariantStyles = () => {
@@ -138,16 +92,16 @@ export default function NewsletterSignup({
     if (title) {
       return title
     }
-    
+
     switch (variant) {
       case 'popup':
-        return "Get Exclusive Travel Deals!"
+        return 'Get Exclusive Travel Deals!'
       case 'sidebar':
-        return "Stay in the Loop"
+        return 'Stay in the Loop'
       case 'footer':
-        return "Join Our Travel Community"
+        return 'Join Our Travel Community'
       default:
-        return "Unlock Exclusive Travel Savings"
+        return 'Unlock Exclusive Travel Savings'
     }
   }
 
@@ -155,8 +109,8 @@ export default function NewsletterSignup({
     if (subtitle) {
       return subtitle
     }
-    
-    return "Get insider deals, travel tips, and exclusive offers delivered straight to your inbox"
+
+    return 'Get insider deals, travel tips, and exclusive offers delivered straight to your inbox'
   }
 
   if (isSuccess && variant !== 'popup') {
@@ -228,73 +182,25 @@ export default function NewsletterSignup({
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="newsletter-email" className="sr-only">
-                Email Address
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  id="newsletter-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value)
-                    setError('')
-                  }}
-                  placeholder="Enter your email address"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  required
-                />
-              </div>
-              {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-            </div>
-
-            {/* Preferences (only for inline variant) */}
-            {variant === 'inline' && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  What interests you most? (Optional)
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  {preferenceOptions.map(option => (
-                    <label key={option.id} className="flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={preferences.includes(option.id)}
-                        onChange={() => handlePreferenceChange(option.id)}
-                        className="mr-2 text-primary-600"
-                      />
-                      <span className="text-sm text-gray-700">{option.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-            )}
-
+          {/* Sign Up Button */}
+          <div className="space-y-4">
             <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-              className={`w-full font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ${
-                isSubmitting
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-xl'
-              }`}
+              onClick={handleSignupClick}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-xl"
             >
-              {isSubmitting ? (
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  <span>Subscribing...</span>
-                </div>
-              ) : (
-                `Get My Free ${leadMagnet.type === 'pdf' ? 'Guide' : leadMagnet.type === 'checklist' ? 'Checklist' : 'Download'}`
-              )}
+              Get My Free{' '}
+              {leadMagnet.type === 'pdf'
+                ? 'Guide'
+                : leadMagnet.type === 'checklist'
+                  ? 'Checklist'
+                  : 'Download'}
             </motion.button>
-          </form>
+            <p className="text-center text-sm text-gray-500">
+              Click to sign up for exclusive deals and travel tips
+            </p>
+          </div>
 
           {/* Trust Signals */}
           <div className="mt-6 pt-6 border-t border-gray-200">
@@ -325,16 +231,16 @@ export const PopupNewsletterSignup = (props: Partial<NewsletterSignupProps>) => 
 )
 
 export const SidebarNewsletterSignup = (props: Partial<NewsletterSignupProps>) => (
-  <NewsletterSignup 
-    variant="sidebar" 
+  <NewsletterSignup
+    variant="sidebar"
     title="Travel Deals Insider"
     subtitle="Get weekly deals & tips"
-    {...props} 
+    {...props}
   />
 )
 
 export const FooterNewsletterSignup = (props: Partial<NewsletterSignupProps>) => (
-  <NewsletterSignup 
+  <NewsletterSignup
     variant="footer"
     title="Stay Connected"
     subtitle="Exclusive deals for subscribers only"

@@ -2,23 +2,34 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Plane, Ship, Package, Hotel, Calendar, Users, MapPin, Search } from 'lucide-react'
+import { Plane, Ship, Package, Hotel, Search, ArrowRight } from 'lucide-react'
 
 const searchTabs = [
-  { id: 'flights', name: 'Flights', icon: Plane },
-  { id: 'cruises', name: 'Cruises', icon: Ship },
-  { id: 'packages', name: 'Packages', icon: Package },
-  { id: 'hotels', name: 'Hotels', icon: Hotel },
+  { id: 'flights', name: 'Flights', icon: Plane, description: 'Find the best flight deals' },
+  {
+    id: 'cruises',
+    name: 'Cruises',
+    icon: Ship,
+    description: 'Explore amazing cruise destinations',
+  },
+  {
+    id: 'packages',
+    name: 'Packages',
+    icon: Package,
+    description: 'All-inclusive vacation packages',
+  },
+  { id: 'hotels', name: 'Hotels', icon: Hotel, description: 'Book comfortable accommodations' },
 ]
 
 export default function SearchSection() {
   const [activeTab, setActiveTab] = useState('flights')
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleGetQuote = () => {
     // Redirect to n8n form
-    window.open('https://nextripanywhere.app.n8n.cloud/form/travel-quote-form', '_blank')
+    window.location.href = 'https://nextripanywhere.app.n8n.cloud/form/travel-quote-form'
   }
+
+  const currentTab = searchTabs.find((tab) => tab.id === activeTab)
 
   return (
     <section id="search-section" className="py-16 bg-gradient-to-b from-warm-50 to-white">
@@ -64,220 +75,57 @@ export default function SearchSection() {
             ))}
           </div>
 
-          {/* Search Form */}
+          {/* Search CTA Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <form onSubmit={handleSearch}>
-              {activeTab === 'flights' && (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <MapPin className="w-4 h-4 mr-1 text-primary-500" />
-                        From
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="City or Airport"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <MapPin className="w-4 h-4 mr-1 text-primary-500" />
-                        To
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="City or Airport"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 mr-1 text-primary-500" />
-                        Departure
-                      </label>
-                      <input
-                        type="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 mr-1 text-primary-500" />
-                        Return
-                      </label>
-                      <input
-                        type="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Users className="w-4 h-4 mr-1 text-primary-500" />
-                        Travelers
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>1 Adult</option>
-                        <option>2 Adults</option>
-                        <option>3 Adults</option>
-                        <option>4 Adults</option>
-                        <option>5+ Adults</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'cruises' && (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <MapPin className="w-4 h-4 mr-1 text-primary-500" />
-                        Departure Port
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>Any Port</option>
-                        <option>Miami, FL</option>
-                        <option>Fort Lauderdale, FL</option>
-                        <option>New York, NY</option>
-                        <option>Boston, MA</option>
-                        <option>Baltimore, MD</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <MapPin className="w-4 h-4 mr-1 text-primary-500" />
-                        Destination
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>Any Destination</option>
-                        <option>Caribbean</option>
-                        <option>Bahamas</option>
-                        <option>Mexico</option>
-                        <option>Mediterranean</option>
-                        <option>Alaska</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 mr-1 text-primary-500" />
-                        Departure Month
-                      </label>
-                      <input
-                        type="month"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Ship className="w-4 h-4 mr-1 text-primary-500" />
-                        Cruise Length
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>Any Length</option>
-                        <option>3-5 Days</option>
-                        <option>6-8 Days</option>
-                        <option>9-12 Days</option>
-                        <option>13+ Days</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Users className="w-4 h-4 mr-1 text-primary-500" />
-                        Travelers
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>1 Guest</option>
-                        <option>2 Guests</option>
-                        <option>3 Guests</option>
-                        <option>4 Guests</option>
-                        <option>5+ Guests</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'packages' && (
-                <div className="text-center py-8">
-                  <Package className="w-16 h-16 text-primary-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-navy mb-2">Custom Vacation Packages</h3>
-                  <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                    Let our experts create the perfect vacation package tailored to your dreams and
-                    budget.
+            <div className="text-center">
+              {currentTab && (
+                <div className="mb-8">
+                  <currentTab.icon className="w-16 h-16 text-primary-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-navy mb-2">
+                    {currentTab.name === 'Flights' && 'Book Your Next Flight'}
+                    {currentTab.name === 'Cruises' && 'Find Your Dream Cruise'}
+                    {currentTab.name === 'Packages' && 'Discover Perfect Vacation Packages'}
+                    {currentTab.name === 'Hotels' && 'Reserve Your Ideal Hotel'}
+                  </h3>
+                  <p className="text-gray-600 max-w-md mx-auto">
+                    {currentTab.description}. Our travel experts will help you find the best options
+                    and prices for your trip.
                   </p>
                 </div>
               )}
 
-              {activeTab === 'hotels' && (
-                <div className="space-y-4">
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                      <MapPin className="w-4 h-4 mr-1 text-primary-500" />
-                      Destination
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="City, hotel, or attraction"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 mr-1 text-primary-500" />
-                        Check-in
-                      </label>
-                      <input
-                        type="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 mr-1 text-primary-500" />
-                        Check-out
-                      </label>
-                      <input
-                        type="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                        <Users className="w-4 h-4 mr-1 text-primary-500" />
-                        Guests & Rooms
-                      </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                        <option>1 Room, 1 Guest</option>
-                        <option>1 Room, 2 Guests</option>
-                        <option>2 Rooms, 4 Guests</option>
-                        <option>Custom</option>
-                      </select>
-                    </div>
-                  </div>
+              {/* Key Benefits */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary-600 mb-1">20+</div>
+                  <div className="text-sm text-gray-600">Years of Experience</div>
                 </div>
-              )}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary-600 mb-1">24/7</div>
+                  <div className="text-sm text-gray-600">Customer Support</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary-600 mb-1">100%</div>
+                  <div className="text-sm text-gray-600">Best Price Guarantee</div>
+                </div>
+              </div>
 
+              {/* CTA Button */}
               <motion.button
-                type="submit"
+                onClick={handleGetQuote}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full mt-6 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Search className="w-5 h-5" />
-                <span>Search & Get Personalized Quote</span>
+                <span>Get Your Free Personalized Quote</span>
+                <ArrowRight className="w-5 h-5" />
               </motion.button>
-            </form>
+
+              <p className="text-sm text-gray-500 mt-4">
+                Takes only 2 minutes • No obligation • Expert travel planning
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
