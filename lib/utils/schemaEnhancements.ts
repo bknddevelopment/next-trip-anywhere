@@ -91,6 +91,82 @@ export function generateEventSchema(data: {
   }
 }
 
+// Sports Event Schema for Olympics and sporting events
+export function generateSportsEventSchema(data: {
+  name: string
+  description: string
+  startDate: string
+  endDate: string
+  location: {
+    name: string
+    city: string
+    country: string
+  }
+  url: string
+  sport?: string[]
+  performer?: Array<{
+    name: string
+    type: string
+  }>
+  offers?: {
+    minPrice: number
+    maxPrice: number
+    currency: string
+    availability: string
+  }
+}): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    '@id': `${data.url}#sportsevent`,
+    name: data.name,
+    description: data.description,
+    startDate: data.startDate,
+    endDate: data.endDate,
+    location: {
+      '@type': 'Place',
+      name: data.location.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: data.location.city,
+        addressCountry: data.location.country,
+      },
+    },
+    url: data.url,
+    sport: data.sport,
+    performer: data.performer?.map((p) => ({
+      '@type': p.type || 'SportsTeam',
+      name: p.name,
+    })),
+    offers: data.offers
+      ? {
+          '@type': 'AggregateOffer',
+          lowPrice: data.offers.minPrice,
+          highPrice: data.offers.maxPrice,
+          priceCurrency: data.offers.currency,
+          availability: data.offers.availability || 'https://schema.org/InStock',
+          validFrom: new Date().toISOString(),
+          seller: {
+            '@type': 'Organization',
+            name: 'Next Trip Anywhere',
+            url: 'https://nexttripanywhere.com',
+          },
+        }
+      : undefined,
+    organizer: {
+      '@type': 'Organization',
+      name: 'International Olympic Committee',
+      url: 'https://olympics.com',
+    },
+    superEvent: {
+      '@type': 'Event',
+      name: 'Winter Olympics 2026',
+      startDate: '2026-02-06',
+      endDate: '2026-02-22',
+    },
+  }
+}
+
 // Product Schema with AggregateRating for packages
 export function generateProductSchema(data: {
   name: string
