@@ -10,7 +10,6 @@ import { usePathname } from 'next/navigation'
  */
 export default function NotFound() {
   const pathname = usePathname()
-  const [searchTerm, setSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState<string[]>([])
 
   // Popular pages for quick navigation
@@ -58,18 +57,9 @@ export default function NotFound() {
         }
 
         setSuggestions(smartSuggestions.slice(0, 3))
-        setSearchTerm(cleaned)
       }
     }
   }, [pathname])
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (searchTerm) {
-      // In production, implement actual search
-      window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`
-    }
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white px-4 py-16">
@@ -108,28 +98,22 @@ export default function NotFound() {
           </div>
         )}
 
-        {/* Search Box */}
-        <div className="mb-8">
-          <form onSubmit={handleSearch} className="max-w-md mx-auto">
-            <div className="relative">
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search for cruises, destinations, or packages..."
-                className="w-full px-4 py-3 pr-12 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-blue-600 hover:text-blue-800"
-                aria-label="Search"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-            </div>
-          </form>
+        {/* Call to Action */}
+        <div className="mb-8 text-center">
+          <p className="text-lg text-gray-700 mb-4">
+            Let our travel experts help you find exactly what you're looking for.
+          </p>
+          <a
+            href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Get Travel Help
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
 
         {/* Popular Pages */}

@@ -5,11 +5,11 @@ import { Phone, Mail, Star, Clock, Ship, MapPin, Calendar, Tag } from 'lucide-re
 import { getCruiseLineBySlug, getDealsByCruiseLine } from '@/lib/data/cruise-lines'
 
 export const metadata: Metadata = {
-  title: 'Norwegian Cruise Line Deals 2024-2025 | Free at Sea | Best Rates',
+  title: 'Norwegian Cruise Line Deals 2025-2026 | Free at Sea | Best Rates',
   description:
     'Exclusive Norwegian Cruise Line deals with Free at Sea perks. Exceptional rates on Caribbean, Alaska, Europe cruises. Complimentary drinks, WiFi, dining. Limited time offers. Call 833-874-1019.',
   keywords:
-    'Norwegian cruise deals, NCL deals 2024, Free at Sea, Norwegian discounts, last minute cruises, Caribbean cruise deals, Alaska cruise deals, Norwegian promotions, cruise specials',
+    'Norwegian cruise deals, NCL deals 2026, Free at Sea, Norwegian discounts, last minute cruises, Caribbean cruise deals, Alaska cruise deals, Norwegian promotions, cruise specials',
   openGraph: {
     title: 'Norwegian Cruise Line Deals - Exclusive Rates + Free at Sea',
     description:

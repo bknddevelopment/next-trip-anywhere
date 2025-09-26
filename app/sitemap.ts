@@ -6,6 +6,8 @@ import { cruiseDestinations } from '@/lib/data/cruises'
 import { vacationPackages } from '@/lib/data/vacation-packages'
 import { seoDestinations } from '@/lib/data/seo-destinations'
 import { travelGuides } from '@/lib/data/travel-guides'
+import { travelInfoGuides } from '@/lib/data/travel-info-guides'
+import { seasonalDeals } from '@/lib/data/seasonal-deals'
 import { getGuidesForSitemap } from '@/lib/data/destinations-deep-dive'
 
 // Force static generation for sitemap
@@ -292,6 +294,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Interactive Tools and Calculators (Phase 2)
+  const toolPages = [
+    {
+      url: `${baseUrl}/tools`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // High priority for main tools hub
+    },
+    {
+      url: `${baseUrl}/tools/cruise-price-calculator`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // Highest priority tool
+    },
+    {
+      url: `${baseUrl}/tools/packing-checklist`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tools/budget-planner`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tools/itinerary-builder`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tools/cruise-comparison`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // High priority for comparison tool
+    },
+  ]
+
   // General cruise hub pages (Phase 1)
   const cruiseHubPages = [
     {
@@ -398,6 +440,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Seasonal deals hub and individual seasonal pages
+  const seasonalHubPage = {
+    url: `${baseUrl}/deals/seasonal`,
+    lastModified: currentDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  }
+
+  const seasonalDealPages = seasonalDeals.map((deal) => ({
+    url: `${baseUrl}/deals/seasonal/${deal.slug}`,
+    lastModified: new Date(deal.lastUpdated),
+    changeFrequency: 'weekly' as const,
+    priority: deal.priority === 'HIGH' ? 0.9 : deal.priority === 'MEDIUM' ? 0.85 : 0.8,
+  }))
+
   // Travel guides hub and individual guide pages
   const guidesHubPage = {
     url: `${baseUrl}/guides`,
@@ -411,6 +468,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: guide.lastUpdated || currentDate,
     changeFrequency: 'weekly' as const,
     priority: guide.priority === 'HIGH' ? 0.85 : guide.priority === 'MEDIUM' ? 0.75 : 0.7,
+  }))
+
+  // Phase 2 Travel Info Guides (15 comprehensive how-to guides)
+  const travelInfoGuidePages = travelInfoGuides.map((guide) => ({
+    url: `${baseUrl}/travel-guides/${guide.slug}`,
+    lastModified: new Date(guide.lastUpdated),
+    changeFrequency: 'monthly' as const,
+    priority: guide.searchVolume > 5000 ? 0.9 : guide.searchVolume > 2000 ? 0.85 : 0.8,
   }))
 
   // Tools hub page
@@ -442,6 +507,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...legacyDestinationPages,
     ...seoDestinationPages,
     ...deepDiveDestinationPages,
+    ...toolPages,
     ...cruiseLinePages,
     ...cruiseLineSubPages,
     ...cruiseDestinationPages,
@@ -450,6 +516,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cruiseHubPages,
     guidesHubPage,
     ...travelGuidePages,
+    ...travelInfoGuidePages,
+    seasonalHubPage,
+    ...seasonalDealPages,
     toolsPage,
     ...companyPages,
     ...legalPages,

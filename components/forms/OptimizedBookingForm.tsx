@@ -164,8 +164,23 @@ export default function OptimizedBookingForm({
 
     setIsSubmitting(true)
     try {
-      await onSubmit?.(formData)
-      // Success handled by parent component
+      if (onSubmit) {
+        await onSubmit(formData)
+      } else {
+        // Default implementation: redirect to n8n form with data
+        const queryParams = new URLSearchParams({
+          from: formData.from,
+          to: formData.to,
+          departureDate: formData.departureDate,
+          returnDate: formData.returnDate,
+          adults: formData.adults.toString(),
+          children: formData.children.toString(),
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+        })
+        window.open(`https://nextripanywhere.app.n8n.cloud/form/travel-quote-form?${queryParams.toString()}`, '_blank')
+      }
     } catch (error) {
       console.error('Booking submission error:', error)
     } finally {

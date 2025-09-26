@@ -75,7 +75,7 @@ export const vacationPackages: VacationPackage[] = [
   {
     slug: 'all-inclusive-caribbean',
     title: 'All-Inclusive Caribbean Packages from NJ',
-    metaTitle: 'All-Inclusive Caribbean from NJ 2025 | Newark Departures',
+    metaTitle: 'All-Inclusive Caribbean from NJ 2026 | Newark Departures',
     metaDescription:
       'Book all-inclusive Caribbean vacations from New Jersey. Flights from Newark, unlimited food & drinks, beachfront resorts. Essex County travel experts. Save up to 40%!',
     keywords: [
@@ -200,12 +200,12 @@ export const vacationPackages: VacationPackage[] = [
       '/packages/adults-only-escapes',
       '/packages/family-resorts-from-newark',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'family-resorts-from-newark',
     title: 'Family Resort Packages from Newark',
-    metaTitle: 'Family Resorts Caribbean from Newark 2025 | Kids Stay Free',
+    metaTitle: 'Family Resorts Caribbean from Newark 2026 | Kids Stay Free',
     metaDescription:
       'Family-friendly Caribbean resorts from Newark Airport. Kids stay & eat free deals, water parks, supervised kids clubs. Essex County family vacation experts.',
     keywords: [
@@ -339,12 +339,12 @@ export const vacationPackages: VacationPackage[] = [
       '/cruises/bahamas',
       '/packages/spring-break-deals',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'adults-only-escapes',
     title: 'Adults-Only Resort Packages from Newark',
-    metaTitle: 'Adults-Only Resorts from Newark 2025 | Romantic Getaways NJ',
+    metaTitle: 'Adults-Only Resorts from Newark 2026 | Romantic Getaways NJ',
     metaDescription:
       'Luxury adults-only Caribbean resorts from Newark Airport. Couples retreats, honeymoons, romantic escapes. Essex County romance travel specialists. Book now!',
     keywords: [
@@ -479,12 +479,12 @@ export const vacationPackages: VacationPackage[] = [
       '/packages/valentines-romantic',
       '/services/wedding-transportation',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'budget-beach-vacations',
     title: 'Budget Beach Vacations from NJ',
-    metaTitle: 'Cheap Beach Vacations from NJ 2025 | Affordable Caribbean',
+    metaTitle: 'Cheap Beach Vacations from NJ 2026 | Affordable Caribbean',
     metaDescription:
       "Affordable beach vacations from New Jersey. Budget Caribbean packages under $1000, deals from Newark Airport. Essex County's best travel deals. Save 40%!",
     keywords: [
@@ -603,12 +603,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/dominican-republic-deals',
       '/packages/spring-break-deals',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'sandals-resorts-deals',
     title: 'Sandals Resorts Deals from Newark',
-    metaTitle: 'Sandals Resorts from Newark 2025 | All-Inclusive Luxury Deals',
+    metaTitle: 'Sandals Resorts from Newark 2026 | All-Inclusive Luxury Deals',
     metaDescription:
       'Book Sandals all-inclusive resorts from Newark Airport. Luxury Caribbean vacations, overwater bungalows, adults-only. Essex County Sandals specialists. Save $1000+!',
     keywords: [
@@ -661,7 +661,7 @@ export const vacationPackages: VacationPackage[] = [
         'Grenada (1 resort)',
         'Barbados (2 resorts)',
         'Curaçao (1 resort)',
-        'Saint Vincent (Coming 2025)',
+        'Saint Vincent (Coming 2026)',
       ],
       resorts: [
         {
@@ -735,12 +735,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/st-lucia-couples',
       '/services/honeymoon-planning',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'luxury-caribbean',
     title: 'Luxury Caribbean Packages from Newark',
-    metaTitle: 'Luxury Caribbean Vacations from Newark 2025 | 5-Star Resorts NJ',
+    metaTitle: 'Luxury Caribbean Vacations from Newark 2026 | 5-Star Resorts NJ',
     metaDescription:
       "Premium Caribbean packages from Newark Airport. 5-star resorts, private villas, yacht charters. Essex County's luxury travel experts. VIP service included.",
     keywords: [
@@ -876,12 +876,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/st-lucia-couples',
       '/services/luxury-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'spring-break-deals',
     title: 'Spring Break Packages from Newark',
-    metaTitle: 'Spring Break 2025 Newark | Cancun & Caribbean Deals for Students',
+    metaTitle: 'Spring Break 2026 Newark | Cancun & Caribbean Deals for Students',
     metaDescription:
       'Spring Break packages from Newark Airport. Cancun, Bahamas, Dominican Republic deals. Essex County students save on beach vacations. Party packages available!',
     keywords: [
@@ -898,11 +898,11 @@ export const vacationPackages: VacationPackage[] = [
     packageType: 'seasonal',
     content: {
       hero: {
-        headline: 'Spring Break 2025 from Newark',
+        headline: 'Spring Break 2026 from Newark',
         subheadline: 'Unforgettable Beach Escapes for Students & Groups',
       },
       description:
-        "Make Spring Break 2025 legendary with our exclusive packages from Newark Airport! Whether you're a college student seeking party paradise in Cancun, a family wanting quality beach time during school break, or young professionals taking advantage of March deals, we have the perfect Caribbean escape. Essex County students love our group rates, payment plans, and trusted local service.",
+        "Make Spring Break 2026 legendary with our exclusive packages from Newark Airport! Whether you're a college student seeking party paradise in Cancun, a family wanting quality beach time during school break, or young professionals taking advantage of March deals, we have the perfect Caribbean escape. Essex County students love our group rates, payment plans, and trusted local service.",
       highlights: [
         'Group discounts for 5+ travelers',
         'Payment plans available',
@@ -969,7 +969,7 @@ export const vacationPackages: VacationPackage[] = [
           ],
         },
       ],
-      bestTimeToVisit: 'March 1-31, 2025 (Peak weeks: March 7-21)',
+      bestTimeToVisit: 'March 1-31, 2026 (Peak weeks: March 7-21)',
       averageDuration: '5-7 nights',
       startingPrice: 799,
       savingsAmount: 400,
@@ -988,7 +988,7 @@ export const vacationPackages: VacationPackage[] = [
           'Yes, when booked through reputable companies. We provide 24/7 on-site support, verified hotels, safe transportation, and emergency contacts. We also offer supervised packages for younger travelers and parent-approved options.',
       },
       {
-        question: 'When should I book Spring Break 2025?',
+        question: 'When should I book Spring Break 2026?',
         answer:
           'Book by December for best prices and availability. January sees price increases, and popular resorts sell out by early February. Payment plans let you reserve now and pay over time.',
       },
@@ -1010,12 +1010,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/bahamas-from-newark',
       '/services/group-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'memorial-day-getaways',
     title: 'Memorial Day Weekend Getaways from Newark',
-    metaTitle: 'Memorial Day Weekend 2025 from Newark | Caribbean Beach Deals',
+    metaTitle: 'Memorial Day Weekend 2026 from Newark | Caribbean Beach Deals',
     metaDescription:
       "Memorial Day weekend packages from Newark Airport. Caribbean beaches, long weekend cruises, quick escapes. Essex County's best holiday deals. Book now!",
     keywords: [
@@ -1067,7 +1067,7 @@ export const vacationPackages: VacationPackage[] = [
         'Aruba',
         'Barbados',
       ],
-      bestTimeToVisit: 'May 23-27, 2025 (Memorial Day Weekend)',
+      bestTimeToVisit: 'May 23-27, 2026 (Memorial Day Weekend)',
       averageDuration: '3-5 nights',
       startingPrice: 699,
       savingsAmount: 300,
@@ -1108,12 +1108,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/bahamas-from-newark',
       '/packages/labor-day-escapes',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'labor-day-escapes',
     title: 'Labor Day Weekend Escapes from Newark',
-    metaTitle: 'Labor Day Weekend 2025 from Newark | Last Summer Caribbean Deals',
+    metaTitle: 'Labor Day Weekend 2026 from Newark | Last Summer Caribbean Deals',
     metaDescription:
       "Labor Day weekend packages from Newark Airport. Final summer Caribbean escapes, beach resorts, cruises. Essex County's best September deals. Book today!",
     keywords: [
@@ -1165,7 +1165,7 @@ export const vacationPackages: VacationPackage[] = [
         'Aruba (outside hurricane belt)',
         'Curaçao (outside hurricane belt)',
       ],
-      bestTimeToVisit: 'August 29 - September 2, 2025',
+      bestTimeToVisit: 'August 29 - September 2, 2026',
       averageDuration: '3-5 nights',
       startingPrice: 599,
       savingsAmount: 350,
@@ -1206,7 +1206,7 @@ export const vacationPackages: VacationPackage[] = [
       '/packages/family-resorts-from-newark',
       '/packages/thanksgiving-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'thanksgiving-travel',
@@ -1299,7 +1299,7 @@ export const vacationPackages: VacationPackage[] = [
           ],
         },
       ],
-      bestTimeToVisit: 'November 26-30, 2025 (Wednesday-Sunday)',
+      bestTimeToVisit: 'November 27 - December 1, 2025 (Thanksgiving Weekend)',
       averageDuration: '4-7 nights',
       startingPrice: 1299,
       savingsAmount: 500,
@@ -1340,7 +1340,7 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/turks-caicos-luxury',
       '/services/group-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'christmas-caribbean',
@@ -1474,7 +1474,7 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/turks-caicos-luxury',
       '/services/holiday-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'new-years-packages',
@@ -1608,12 +1608,12 @@ export const vacationPackages: VacationPackage[] = [
       '/destinations/aruba-packages',
       '/services/group-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'valentines-romantic',
     title: "Valentine's Romantic Getaways from Newark",
-    metaTitle: 'Valentines Caribbean 2025 from Newark | Romantic Couples Escapes',
+    metaTitle: 'Valentines Caribbean 2026 from Newark | Romantic Couples Escapes',
     metaDescription:
       "Valentine's Day romantic packages from Newark Airport. Couples-only resorts, overwater bungalows, honeymoon suites. Essex County's most romantic escapes!",
     keywords: [
@@ -1696,7 +1696,7 @@ export const vacationPackages: VacationPackage[] = [
           features: ['Adults-only luxury', 'Spa included', 'Romantic pools', 'World-class dining'],
         },
       ],
-      bestTimeToVisit: "February 10-17, 2025 (Valentine's Week)",
+      bestTimeToVisit: "February 10-17, 2026 (Valentine's Week)",
       averageDuration: '4-5 nights',
       startingPrice: 1499,
       savingsAmount: 400,
@@ -1737,12 +1737,12 @@ export const vacationPackages: VacationPackage[] = [
       '/services/honeymoon-planning',
       '/packages/luxury-caribbean',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'easter-family-trips',
     title: 'Easter Caribbean Family Trips from Newark',
-    metaTitle: 'Easter 2025 Caribbean from Newark | Spring Break Family Deals',
+    metaTitle: 'Easter 2026 Caribbean from Newark | Spring Break Family Deals',
     metaDescription:
       'Easter vacation packages from Newark Airport. Family resorts, kids programs, spring break deals. Essex County families love our Caribbean Easter escapes!',
     keywords: [
@@ -1763,7 +1763,7 @@ export const vacationPackages: VacationPackage[] = [
         subheadline: 'Spring Break & Easter Fun in the Sun from Newark',
       },
       description:
-        'Make Easter 2025 extraordinary with a Caribbean family escape! Our packages from Newark Airport offer Essex County families the perfect spring break solution - kids clubs keep children entertained, multiple pools provide endless fun, and special Easter activities create magical memories. While others hunt eggs in chilly New Jersey weather, your family will enjoy egg hunts on the beach and Easter brunch with ocean views.',
+        'Make Easter 2026 extraordinary with a Caribbean family escape! Our packages from Newark Airport offer Essex County families the perfect spring break solution - kids clubs keep children entertained, multiple pools provide endless fun, and special Easter activities create magical memories. While others hunt eggs in chilly New Jersey weather, your family will enjoy egg hunts on the beach and Easter brunch with ocean views.',
       highlights: [
         'Easter egg hunts on the beach',
         'Easter Sunday special meals',
@@ -1825,7 +1825,7 @@ export const vacationPackages: VacationPackage[] = [
           features: ['Kids clubs 4-17', 'Trapeze school', 'All sports included', 'Teen programs'],
         },
       ],
-      bestTimeToVisit: 'April 17-26, 2025 (Easter is April 20)',
+      bestTimeToVisit: 'April 17-26, 2026 (Easter is April 20)',
       averageDuration: '5-7 nights',
       startingPrice: 1099,
       savingsAmount: 400,
@@ -1866,12 +1866,12 @@ export const vacationPackages: VacationPackage[] = [
       '/cruises/family-cruises-nj',
       '/services/family-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'july-4th-beaches',
     title: 'July 4th Beach Packages from Newark',
-    metaTitle: 'July 4th Caribbean 2025 from Newark | Independence Day Beach Deals',
+    metaTitle: 'July 4th Caribbean 2026 from Newark | Independence Day Beach Deals',
     metaDescription:
       "July 4th Caribbean packages from Newark Airport. Beach BBQs, fireworks, family resorts. Celebrate Independence Day in paradise. Essex County's patriotic escapes!",
     keywords: [
@@ -1944,7 +1944,7 @@ export const vacationPackages: VacationPackage[] = [
           features: ['Rock & roll July 4th', 'Multiple venues', 'Family pools', 'Teen zone'],
         },
       ],
-      bestTimeToVisit: 'July 1-7, 2025',
+      bestTimeToVisit: 'July 1-7, 2026',
       averageDuration: '4-7 nights',
       startingPrice: 999,
       savingsAmount: 350,
@@ -1985,7 +1985,7 @@ export const vacationPackages: VacationPackage[] = [
       '/packages/memorial-day-getaways',
       '/services/summer-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
 ]
 

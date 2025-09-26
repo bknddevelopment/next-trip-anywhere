@@ -83,7 +83,7 @@ export const cruiseDestinations: CruiseDestination[] = [
   {
     slug: 'from-newark',
     title: 'Cruises from Newark',
-    metaTitle: 'Newark Cruises 2025 | Departures from Cape Liberty Port',
+    metaTitle: 'Newark Cruises 2026 | Departures from Cape Liberty Port',
     metaDescription:
       'Find the best cruise deals departing from Newark. Cape Liberty cruise port offers convenient access for Essex County residents. Book your dream cruise today!',
     keywords: [
@@ -173,12 +173,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/services/cruise-transfers',
       '/locations/essex-county',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'caribbean',
     title: 'Caribbean Cruises from New Jersey',
-    metaTitle: 'Caribbean Cruises from NJ 2025 | Essex County Departures',
+    metaTitle: 'Caribbean Cruises from NJ 2026 | Essex County Departures',
     metaDescription:
       'Book Caribbean cruises departing from New Jersey. Sail from Cape Liberty to tropical paradises. Expert planning for Essex County residents. Best deals guaranteed!',
     keywords: [
@@ -253,12 +253,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/destinations/caribbean-from-nj',
       '/packages/all-inclusive-caribbean',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'bahamas',
     title: 'Bahamas Cruises from Newark',
-    metaTitle: 'Bahamas Cruise from Newark 2025 | Cape Liberty Departures',
+    metaTitle: 'Bahamas Cruise from Newark 2026 | Cape Liberty Departures',
     metaDescription:
       "Sail to the Bahamas from Newark's Cape Liberty port. Nassau, Freeport & private islands await. Essex County's gateway to paradise. Book your Bahamas cruise today!",
     keywords: [
@@ -333,12 +333,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/destinations/bahamas-from-newark',
       '/packages/family-resorts-from-newark',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'cape-liberty-port',
     title: 'Cape Liberty Cruise Port Guide',
-    metaTitle: 'Cape Liberty Cruise Port Guide 2025 | Complete Essex County Resource',
+    metaTitle: 'Cape Liberty Cruise Port Guide 2026 | Complete Essex County Resource',
     metaDescription:
       'Everything you need to know about Cape Liberty Cruise Port. Parking, directions, hotels, cruise lines, and transportation from Essex County. Your complete port guide.',
     keywords: [
@@ -428,12 +428,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/locations/essex-county/newark/cruise-transfers',
       '/blog/cape-liberty-parking-guide',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'from-bayonne',
     title: 'Cruises from Bayonne NJ',
-    metaTitle: 'Cruises from Bayonne 2025 | Cape Liberty Port Essex County',
+    metaTitle: 'Cruises from Bayonne 2026 | Cape Liberty Port Essex County',
     metaDescription:
       'Cruise from Bayonne NJ Cape Liberty port. Convenient departures for Essex County residents. Caribbean, Bermuda & transatlantic cruises. Book your vacation today!',
     keywords: [
@@ -527,12 +527,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/services/cruise-transfers',
       '/locations/essex-county/newark/cruise-transfers',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'cheap-deals-nj',
     title: 'Cheap Cruise Deals from New Jersey',
-    metaTitle: 'Cheap Cruises from NJ 2025 | Best Deals Under $500 Newark',
+    metaTitle: 'Cheap Cruises from NJ 2026 | Best Deals Under $500 Newark',
     metaDescription:
       "Find cheap cruise deals from New Jersey starting at $299. Last-minute discounts from Cape Liberty. Essex County's best cruise prices. Save up to 70% today!",
     keywords: [
@@ -618,12 +618,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/cruises/caribbean',
       '/cruises/bahamas',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'last-minute-from-newark',
     title: 'Last Minute Cruises from Newark',
-    metaTitle: 'Last Minute Cruises from Newark 2025 | Deals Departing This Week',
+    metaTitle: 'Last Minute Cruises from Newark 2026 | Deals Departing This Week',
     metaDescription:
       "Book last minute cruises from Newark Cape Liberty. Departures within 90 days up to 75% off. Essex County's source for urgent cruise deals. Sail this week!",
     keywords: [
@@ -709,12 +709,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/cruises/caribbean',
       '/services/cruise-transfers',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'family-cruises-nj',
     title: 'Family Cruises from New Jersey',
-    metaTitle: 'Family Cruises from NJ 2025 | Kids Sail Free Cape Liberty',
+    metaTitle: 'Family Cruises from NJ 2026 | Kids Sail Free Cape Liberty',
     metaDescription:
       'Family-friendly cruises from New Jersey. Kids sail free deals, family suites, youth programs. Essex County families love our Cape Liberty departures. Book today!',
     keywords: [
@@ -800,12 +800,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/cruises/caribbean',
       '/services/group-travel',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'seniors-from-essex-county',
     title: 'Senior Cruises from Essex County',
-    metaTitle: 'Senior Cruises from Essex County NJ 2025 | 55+ Deals Cape Liberty',
+    metaTitle: 'Senior Cruises from Essex County NJ 2026 | 55+ Deals Cape Liberty',
     metaDescription:
       'Senior cruise specials from Essex County. 55+ discounts, accessible cabins, mature traveler amenities. Cape Liberty departures perfect for NJ seniors. Book now!',
     keywords: [
@@ -891,12 +891,12 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/packages/luxury-caribbean',
       '/locations/essex-county',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
   {
     slug: 'weekend-getaways',
     title: 'Weekend Cruise Getaways from Newark',
-    metaTitle: 'Weekend Cruises from Newark 2025 | 3-4 Day Quick Escapes NJ',
+    metaTitle: 'Weekend Cruises from Newark 2026 | 3-4 Day Quick Escapes NJ',
     metaDescription:
       'Weekend cruise getaways from Newark Cape Liberty. 3-4 night Bahamas & nowhere cruises. Perfect Essex County escapes. Friday departures, Monday returns!',
     keywords: [
@@ -982,7 +982,7 @@ export const cruiseDestinations: CruiseDestination[] = [
       '/packages/memorial-day-getaways',
       '/packages/labor-day-escapes',
     ],
-    lastUpdated: '2025-01-23',
+    lastUpdated: '2025-09-25',
   },
 ]
 

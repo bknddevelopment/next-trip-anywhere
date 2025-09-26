@@ -4,24 +4,22 @@
  */
 
 import dynamic from 'next/dynamic'
-import { ComponentType, ReactElement } from 'react'
+import React, { ComponentType, ReactElement } from 'react'
 
 // Loading component for lazy-loaded components
-const LoadingSpinner = () => {
-  return (
-    <div className="flex items-center justify-center p-8">
-      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-    </div>
+const LoadingSpinner = (): ReactElement => {
+  return React.createElement('div', { className: 'flex items-center justify-center p-8' },
+    React.createElement('div', { className: 'h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent' })
   )
 }
 
 // Error fallback component
-const ErrorFallback = ({ error }: { error?: Error }) => (
-  <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-800">
-    <p className="font-semibold">Failed to load component</p>
-    {error && <p className="mt-1 text-sm">{error.message}</p>}
-  </div>
-)
+const ErrorFallback = ({ error }: { error?: Error }): ReactElement => {
+  return React.createElement('div', { className: 'rounded-lg border border-red-200 bg-red-50 p-4 text-red-800' },
+    React.createElement('p', { className: 'font-semibold' }, 'Failed to load component'),
+    error && React.createElement('p', { className: 'mt-1 text-sm' }, error.message)
+  )
+}
 
 /**
  * Creates a dynamically imported component with loading and error states

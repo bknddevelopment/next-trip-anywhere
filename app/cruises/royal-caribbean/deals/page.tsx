@@ -5,11 +5,11 @@ import { Phone, Tag, Calendar, Ship, MapPin, Clock, DollarSign, Star } from 'luc
 import { getDealsByCruiseLine, getCruiseLineBySlug } from '@/lib/data/cruise-lines'
 
 export const metadata: Metadata = {
-  title: 'Royal Caribbean Cruise Deals 2024-2025 | Exclusive Rates + Kids Sail Free',
+  title: 'Royal Caribbean Cruise Deals 2025-2026 | Exclusive Rates + Kids Sail Free',
   description:
     'Exclusive Royal Caribbean deals: Best group rates, kids sail free, special pricing for second guest, complimentary upgrades. Icon of the Seas, Perfect Day at CocoCay. Limited time offers - Call 833-874-1019.',
   keywords:
-    'royal caribbean deals, royal caribbean sales, cruise deals 2024, kids sail free, royal caribbean discounts, icon of the seas deals, perfect day cococay deals',
+    'royal caribbean deals, royal caribbean sales, cruise deals 2026, kids sail free, royal caribbean discounts, icon of the seas deals, perfect day cococay deals',
   openGraph: {
     title: 'Royal Caribbean Cruise Deals - Exclusive Group Rates + Perks',
     description:
@@ -53,7 +53,7 @@ const dealsPageSchema = {
 const currentPromotions = [
   {
     title: 'Wave Season Sale',
-    description: 'Book by March 31st',
+    description: 'Book by December 31st',
     savings: 'Exceptional savings',
     icon: '🌊',
   },
@@ -95,7 +95,7 @@ export default function RoyalCaribbeanDealsPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-bounce">
               <Tag className="w-4 h-4" />
-              LIMITED TIME OFFERS - Book by March 31st!
+              LIMITED TIME OFFERS - Book by December 31st!
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Royal Caribbean Cruise Deals
@@ -338,7 +338,7 @@ export default function RoyalCaribbeanDealsPage() {
                   <div className="bg-orange-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
                     1
                   </div>
-                  <h3 className="text-xl font-bold text-blue-900">Wave Season Sale 2024-2025</h3>
+                  <h3 className="text-xl font-bold text-blue-900">Wave Season Sale 2025-2026</h3>
                 </div>
                 <ul className="space-y-3 mb-4">
                   <li className="flex items-start gap-2">
@@ -361,7 +361,7 @@ export default function RoyalCaribbeanDealsPage() {
                   </li>
                 </ul>
                 <p className="text-sm text-gray-600">
-                  Valid on new bookings through March 31, 2024
+                  Valid on new bookings through December 31, 2025
                 </p>
               </div>
 

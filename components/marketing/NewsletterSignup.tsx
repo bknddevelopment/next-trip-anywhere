@@ -83,9 +83,31 @@ export default function NewsletterSignup({
     setError('')
 
     try {
-      await onSubmit?.(email, preferences)
+      if (onSubmit) {
+        await onSubmit(email, preferences)
+      } else {
+        // Default implementation: send to n8n webhook
+        const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            preferences: preferences.join(', '),
+            source: `marketing-newsletter-${variant}`,
+            type: 'newsletter-signup',
+            leadMagnet: leadMagnet.title,
+            timestamp: new Date().toISOString(),
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to subscribe')
+        }
+      }
       setIsSuccess(true)
-      
+
       // Auto-close popup after success
       if (variant === 'popup') {
         setTimeout(() => {

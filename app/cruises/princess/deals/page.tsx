@@ -5,11 +5,11 @@ import { Phone, Mail, Star, Clock, Ship, MapPin, Calendar, Tag, Award } from 'lu
 import { getCruiseLineBySlug, getDealsByCruiseLine } from '@/lib/data/cruise-lines'
 
 export const metadata: Metadata = {
-  title: 'Princess Cruises Deals 2024-2025 | Princess Plus Included | Best Rates',
+  title: 'Princess Cruises Deals 2025-2026 | Princess Plus Included | Best Rates',
   description:
     'Exclusive Princess Cruises deals with Princess Plus included. Exceptional rates on Alaska, Caribbean, Europe cruises. Complimentary drinks, WiFi, gratuities. 3rd & 4th guests sail free. Call 833-874-1019.',
   keywords:
-    'Princess cruise deals, Princess Plus deals, Princess discounts 2024, Alaska cruise deals, Caribbean cruise deals, Princess promotions, MedallionClass deals, cruise specials',
+    'Princess cruise deals, Princess Plus deals, Princess discounts 2026, Alaska cruise deals, Caribbean cruise deals, Princess promotions, MedallionClass deals, cruise specials',
   openGraph: {
     title: 'Princess Cruises Deals - Exclusive Group Rates + Princess Plus Included',
     description:

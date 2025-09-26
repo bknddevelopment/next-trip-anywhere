@@ -9,7 +9,7 @@ import {
 } from '@/lib/data/royal-caribbean-ships'
 
 export const metadata: Metadata = {
-  title: 'Royal Caribbean Ships & Fleet Guide 2024 | All 27 Ships Reviewed',
+  title: 'Royal Caribbean Ships & Fleet Guide 2026 | All 27 Ships Reviewed',
   description:
     "Complete guide to Royal Caribbean's 27 ships including Icon of the Seas, Wonder of the Seas, and more. Compare ship classes, features, and itineraries. Expert booking assistance.",
   keywords:

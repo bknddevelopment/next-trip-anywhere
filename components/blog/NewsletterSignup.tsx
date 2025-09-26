@@ -12,9 +12,23 @@ export function NewsletterSignup() {
     setLoading(true)
 
     try {
-      // In production, this would connect to your email service
-      // For now, we'll simulate a successful signup
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source: 'blog-newsletter',
+          type: 'newsletter-signup',
+          message: 'Newsletter signup from blog',
+          timestamp: new Date().toISOString(),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe')
+      }
 
       toast.success('Thank you for subscribing to our newsletter!')
       setEmail('')
