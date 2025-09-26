@@ -3,11 +3,15 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CruiseHero } from '@/components/services/CruiseHero'
-import { ContactFormWithAnalytics } from '@/components/forms/ContactFormWithAnalytics'
+import ContactFormWithAnalytics from '@/components/forms/ContactFormWithAnalytics'
 import { travelInfoGuides } from '@/lib/data/travel-info-guides'
 import { generateTravelGuideSchemaGraph } from '@/lib/utils/travelGuideSchema'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
   const guide = travelInfoGuides.find((g) => g.slug === params.slug)
 
   if (!guide) {
@@ -77,7 +81,11 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
                     <span>📅 Last updated: {new Date(guide.lastUpdated).toLocaleDateString()}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span>📚 Type: {guide.guideType.charAt(0).toUpperCase() + guide.guideType.slice(1).replace('-', ' ')}</span>
+                    <span>
+                      📚 Type:{' '}
+                      {guide.guideType.charAt(0).toUpperCase() +
+                        guide.guideType.slice(1).replace('-', ' ')}
+                    </span>
                   </div>
                   {guide.featuredSnippet && (
                     <div className="w-full mt-4 p-4 bg-blue-50 border-l-4 border-blue-500">
@@ -98,9 +106,7 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
               {/* Main Sections */}
               {guide.content.sections.map((section, index) => (
                 <section key={index} className="bg-white rounded-lg shadow-sm p-8 mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                    {section.title}
-                  </h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">{section.title}</h2>
                   <div className="prose prose-lg max-w-none text-gray-700">
                     <p className="leading-relaxed mb-6">{section.content}</p>
 
@@ -110,7 +116,9 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
                         <ul className="space-y-2">
                           {section.tips.map((tip, tipIndex) => (
                             <li key={tipIndex} className="flex items-start">
-                              <span className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0">✓</span>
+                              <span className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0">
+                                ✓
+                              </span>
                               <span className="text-gray-700">{tip}</span>
                             </li>
                           ))}
@@ -171,9 +179,7 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
                         <dt className="text-lg font-semibold text-gray-900 mb-3">
                           {item.question}
                         </dt>
-                        <dd className="text-gray-700 leading-relaxed">
-                          {item.answer}
-                        </dd>
+                        <dd className="text-gray-700 leading-relaxed">{item.answer}</dd>
                       </div>
                     ))}
                   </dl>
@@ -183,9 +189,7 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
               {/* Call to Action */}
               <section className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg p-8 text-white">
                 <h2 className="text-2xl font-bold mb-4">Ready to Start Planning?</h2>
-                <p className="text-lg mb-6 text-blue-50">
-                  {guide.content.callToAction}
-                </p>
+                <p className="text-lg mb-6 text-blue-50">{guide.content.callToAction}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="tel:8338741019"
@@ -207,11 +211,10 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
             <aside className="lg:col-span-1 mt-8 lg:mt-0">
               {/* Contact Form */}
               <div className="bg-white rounded-lg shadow-sm p-6 mb-8 sticky top-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Get Expert Advice
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Get Expert Advice</h3>
                 <p className="text-gray-600 mb-6">
-                  Our travel experts can help you plan the perfect trip. Get personalized recommendations and exclusive deals.
+                  Our travel experts can help you plan the perfect trip. Get personalized
+                  recommendations and exclusive deals.
                 </p>
                 <ContactFormWithAnalytics />
               </div>
@@ -219,14 +222,13 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
               {/* Related Guides */}
               {guide.relatedGuides && guide.relatedGuides.length > 0 && (
                 <div className="bg-white rounded-lg shadow-sm p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Related Guides
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Related Guides</h3>
                   <ul className="space-y-3">
                     {guide.relatedGuides.map((relatedSlug, index) => {
-                      const relatedGuide = travelInfoGuides.find(g =>
-                        g.slug === relatedSlug.replace('/travel-guides/', '') ||
-                        `/travel-guides/${g.slug}` === relatedSlug
+                      const relatedGuide = travelInfoGuides.find(
+                        (g) =>
+                          g.slug === relatedSlug.replace('/travel-guides/', '') ||
+                          `/travel-guides/${g.slug}` === relatedSlug
                       )
 
                       if (relatedGuide) {
@@ -249,7 +251,11 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
                             href={relatedSlug}
                             className="text-blue-600 hover:text-blue-800 hover:underline"
                           >
-                            {relatedSlug.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            {relatedSlug
+                              .split('/')
+                              .pop()
+                              ?.replace(/-/g, ' ')
+                              .replace(/\b\w/g, (l) => l.toUpperCase())}
                           </Link>
                         </li>
                       )
@@ -260,17 +266,19 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
 
               {/* Quick Facts */}
               <div className="bg-blue-50 rounded-lg p-6 mt-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  ℹ️ Quick Facts
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">ℹ️ Quick Facts</h3>
                 <dl className="space-y-3 text-sm">
                   <div>
                     <dt className="font-semibold text-gray-700">Search Volume:</dt>
-                    <dd className="text-gray-600">{guide.searchVolume.toLocaleString()} monthly searches</dd>
+                    <dd className="text-gray-600">
+                      {guide.searchVolume.toLocaleString()} monthly searches
+                    </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-gray-700">Guide Type:</dt>
-                    <dd className="text-gray-600 capitalize">{guide.guideType.replace('-', ' ')}</dd>
+                    <dd className="text-gray-600 capitalize">
+                      {guide.guideType.replace('-', ' ')}
+                    </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-gray-700">Target Keywords:</dt>
@@ -278,7 +286,9 @@ export default function TravelGuidePage({ params }: { params: { slug: string } }
                   </div>
                   <div>
                     <dt className="font-semibold text-gray-700">Last Updated:</dt>
-                    <dd className="text-gray-600">{new Date(guide.lastUpdated).toLocaleDateString()}</dd>
+                    <dd className="text-gray-600">
+                      {new Date(guide.lastUpdated).toLocaleDateString()}
+                    </dd>
                   </div>
                 </dl>
               </div>
