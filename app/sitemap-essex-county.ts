@@ -25,7 +25,7 @@ export async function GET() {
   </url>`
 
   // City-specific pages (travel-from-city)
-  essexCountyCities.forEach(city => {
+  essexCountyCities.forEach((city) => {
     urls += `
   <url>
     <loc>${baseUrl}/travel-from-${city.id}</loc>
@@ -45,7 +45,7 @@ export async function GET() {
   })
 
   // Service hub pages
-  essexCountyServices.forEach(service => {
+  essexCountyServices.forEach((service) => {
     urls += `
   <url>
     <loc>${baseUrl}/services/${service.id}</loc>
@@ -56,8 +56,8 @@ export async function GET() {
   })
 
   // City-service combination pages
-  essexCountyCities.forEach(city => {
-    essexCountyServices.forEach(service => {
+  essexCountyCities.forEach((city) => {
+    essexCountyServices.forEach((service) => {
       // locations/essex-county/[city]/[service] pattern
       urls += `
   <url>

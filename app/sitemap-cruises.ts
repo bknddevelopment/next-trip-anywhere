@@ -32,7 +32,7 @@ export async function GET() {
     { slug: 'celebrity', priority: 0.9 },
   ]
 
-  highPriorityCruiseLines.forEach(line => {
+  highPriorityCruiseLines.forEach((line) => {
     urls += `
   <url>
     <loc>${baseUrl}/cruises/${line.slug}</loc>
@@ -52,7 +52,7 @@ export async function GET() {
   })
 
   // Dynamic cruise destinations
-  cruiseDestinations.forEach(cruise => {
+  cruiseDestinations.forEach((cruise) => {
     const priority = cruise.priority === 'HIGH' ? 0.95 : cruise.priority === 'MEDIUM' ? 0.85 : 0.75
     urls += `
   <url>
@@ -75,7 +75,7 @@ export async function GET() {
     { slug: 'hawaii', priority: 0.85, freq: 'weekly' },
   ]
 
-  generalPages.forEach(page => {
+  generalPages.forEach((page) => {
     urls += `
   <url>
     <loc>${baseUrl}/cruises/${page.slug}</loc>
