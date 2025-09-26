@@ -20,7 +20,7 @@ export function generateTouristDestinationSchema(data: {
     longitude: number
   }
   touristType?: string[]
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': ['TouristDestination', 'Place'],
@@ -30,11 +30,13 @@ export function generateTouristDestinationSchema(data: {
     url: data.url,
     image: data.images || [],
     touristType: data.touristType || ['Adventure', 'Beach', 'Cultural', 'Family'],
-    geo: data.geo ? {
-      '@type': 'GeoCoordinates',
-      latitude: data.geo.latitude,
-      longitude: data.geo.longitude,
-    } : undefined,
+    geo: data.geo
+      ? {
+          '@type': 'GeoCoordinates',
+          latitude: data.geo.latitude,
+          longitude: data.geo.longitude,
+        }
+      : undefined,
     isAccessibleForFree: false,
     publicAccess: true,
   }
@@ -52,7 +54,7 @@ export function generateEventSchema(data: {
     price: number
     currency: string
   }
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -72,13 +74,15 @@ export function generateEventSchema(data: {
       },
     },
     url: data.url,
-    offers: data.offers ? {
-      '@type': 'Offer',
-      price: data.offers.price,
-      priceCurrency: data.offers.currency,
-      availability: 'https://schema.org/InStock',
-      validFrom: new Date().toISOString(),
-    } : undefined,
+    offers: data.offers
+      ? {
+          '@type': 'Offer',
+          price: data.offers.price,
+          priceCurrency: data.offers.currency,
+          availability: 'https://schema.org/InStock',
+          validFrom: new Date().toISOString(),
+        }
+      : undefined,
     organizer: {
       '@type': 'Organization',
       name: 'Next Trip Anywhere',
@@ -102,7 +106,7 @@ export function generateProductSchema(data: {
     value: number
     count: number
   }
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -126,13 +130,15 @@ export function generateProductSchema(data: {
         name: 'Next Trip Anywhere',
       },
     },
-    aggregateRating: data.rating ? {
-      '@type': 'AggregateRating',
-      ratingValue: data.rating.value,
-      reviewCount: data.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    } : undefined,
+    aggregateRating: data.rating
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: data.rating.value,
+          reviewCount: data.rating.count,
+          bestRating: 5,
+          worstRating: 1,
+        }
+      : undefined,
   }
 }
 
@@ -144,7 +150,7 @@ export function generateTouristAttractionSchema(data: {
   location: string
   duration?: string
   price?: number
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
@@ -157,12 +163,14 @@ export function generateTouristAttractionSchema(data: {
       name: data.location,
     },
     tourDuration: data.duration,
-    offers: data.price ? {
-      '@type': 'Offer',
-      price: data.price,
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    } : undefined,
+    offers: data.price
+      ? {
+          '@type': 'Offer',
+          price: data.price,
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        }
+      : undefined,
     isAccessibleForFree: false,
   }
 }
@@ -173,7 +181,7 @@ export function generateWebApplicationSchema(data: {
   description: string
   url: string
   applicationCategory: string
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -207,7 +215,7 @@ export function generateHowToSchema(data: {
     text: string
   }>
   totalTime?: string
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -232,7 +240,7 @@ export function generateReviewSchema(data: {
   rating: number
   author: string
   datePublished: string
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Review',
@@ -268,7 +276,7 @@ export function generateCollectionPageSchema(data: {
     name: string
     url: string
   }>
-}): BaseSchema {
+}): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -290,16 +298,17 @@ export function generateCollectionPageSchema(data: {
 }
 
 // Create a comprehensive schema graph for any page
-export function generateSchemaGraph(schemas: BaseSchema[]): BaseSchema {
+export function generateSchemaGraph(schemas: any[]): any {
   // Add website and organization schemas
-  const baseSchemas: BaseSchema[] = [
+  const baseSchemas: any[] = [
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': 'https://nexttripanywhere.com/#website',
       url: 'https://nexttripanywhere.com',
       name: 'Next Trip Anywhere',
-      description: 'Award-winning travel agency specializing in cruises, flights, and vacation packages from Newark and all major US cities',
+      description:
+        'Award-winning travel agency specializing in cruises, flights, and vacation packages from Newark and all major US cities',
       potentialAction: {
         '@type': 'SearchAction',
         target: {

@@ -8,14 +8,20 @@ import React, { ComponentType, ReactElement } from 'react'
 
 // Loading component for lazy-loaded components
 const LoadingSpinner = (): ReactElement => {
-  return React.createElement('div', { className: 'flex items-center justify-center p-8' },
-    React.createElement('div', { className: 'h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent' })
+  return React.createElement(
+    'div',
+    { className: 'flex items-center justify-center p-8' },
+    React.createElement('div', {
+      className: 'h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent',
+    })
   )
 }
 
 // Error fallback component
 const ErrorFallback = ({ error }: { error?: Error }): ReactElement => {
-  return React.createElement('div', { className: 'rounded-lg border border-red-200 bg-red-50 p-4 text-red-800' },
+  return React.createElement(
+    'div',
+    { className: 'rounded-lg border border-red-200 bg-red-50 p-4 text-red-800' },
     React.createElement('p', { className: 'font-semibold' }, 'Failed to load component'),
     error && React.createElement('p', { className: 'mt-1 text-sm' }, error.message)
   )
@@ -27,15 +33,13 @@ const ErrorFallback = ({ error }: { error?: Error }): ReactElement => {
 export function createDynamicComponent<P = {}>(
   loader: () => Promise<{ default: ComponentType<P> }>,
   options?: {
-    loading?: ComponentType
+    loading?: () => React.ReactElement
     ssr?: boolean
-    suspense?: boolean
   }
 ): ComponentType<P> {
   return dynamic(loader, {
     loading: options?.loading || LoadingSpinner,
     ssr: options?.ssr ?? true,
-    suspense: options?.suspense ?? false,
   }) as ComponentType<P>
 }
 
@@ -46,91 +50,25 @@ export function createDynamicComponent<P = {}>(
 
 // Heavy components that should be lazy loaded
 export const DynamicComponents = {
-  // Forms - lazy load heavy form libraries
-  LeadCaptureForm: createDynamicComponent(
-    () => import('@/components/forms/LeadCaptureForm'),
-    { ssr: false }
-  ),
-
-  ContactForm: createDynamicComponent(
-    () => import('@/components/forms/ContactForm'),
-    { ssr: false }
-  ),
-
-  BookingForm: createDynamicComponent(
-    () => import('@/components/forms/BookingForm'),
-    { ssr: false }
-  ),
-
+  // Forms - lazy load heavy form libraries (commented out until components are created)
+  // LeadCaptureForm: createDynamicComponent(
+  //   () => import('@/components/forms/LeadCaptureForm'),
+  //   { ssr: false }
+  // ),
+  // ContactForm: createDynamicComponent(
+  //   () => import('@/components/forms/ContactForm'),
+  //   { ssr: false }
+  // ),
+  // BookingForm: createDynamicComponent(
+  //   () => import('@/components/forms/BookingForm'),
+  //   { ssr: false }
+  // ),
+  // All components commented out until they are created
   // Maps - always lazy load map components
-  LocationMap: createDynamicComponent(
-    () => import('@/components/maps/LocationMap'),
-    { ssr: false }
-  ),
-
-  InteractiveMap: createDynamicComponent(
-    () => import('@/components/maps/InteractiveMap'),
-    { ssr: false }
-  ),
-
-  // Charts and data visualization
-  PriceChart: createDynamicComponent(
-    () => import('@/components/charts/PriceChart'),
-    { ssr: false }
-  ),
-
-  AnalyticsDashboard: createDynamicComponent(
-    () => import('@/components/charts/AnalyticsDashboard'),
-    { ssr: false }
-  ),
-
-  // Heavy UI components
-  ImageGallery: createDynamicComponent(
-    () => import('@/components/ui/ImageGallery')
-  ),
-
-  VideoPlayer: createDynamicComponent(
-    () => import('@/components/ui/VideoPlayer'),
-    { ssr: false }
-  ),
-
-  Carousel: createDynamicComponent(
-    () => import('@/components/ui/Carousel')
-  ),
-
-  // Tools and calculators
-  PriceCalculator: createDynamicComponent(
-    () => import('@/components/tools/PriceCalculator'),
-    { ssr: false }
-  ),
-
-  CruiseComparison: createDynamicComponent(
-    () => import('@/components/tools/CruiseComparison'),
-    { ssr: false }
-  ),
-
-  FlightSearch: createDynamicComponent(
-    () => import('@/components/tools/FlightSearch'),
-    { ssr: false }
-  ),
-
-  // Page-specific components
-  CruiseDetails: createDynamicComponent(
-    () => import('@/components/cruises/CruiseDetails')
-  ),
-
-  PackageDetails: createDynamicComponent(
-    () => import('@/components/packages/PackageDetails')
-  ),
-
-  DestinationGuide: createDynamicComponent(
-    () => import('@/components/destinations/DestinationGuide')
-  ),
-
-  BlogComments: createDynamicComponent(
-    () => import('@/components/blog/BlogComments'),
-    { ssr: false }
-  ),
+  // LocationMap: createDynamicComponent(
+  //   () => import('@/components/maps/LocationMap'),
+  //   { ssr: false }
+  // ),
 }
 
 /**
@@ -146,6 +84,8 @@ export function getRouteComponents(pathname: string): ComponentType[] {
     return components
   }
 
+  // Component loading disabled until components are created
+  /*
   // Cruise pages
   if (pathname.startsWith('/cruises')) {
     components.push(DynamicComponents.CruiseDetails)
@@ -182,6 +122,7 @@ export function getRouteComponents(pathname: string): ComponentType[] {
   if (pathname.includes('flight')) {
     components.push(DynamicComponents.FlightSearch)
   }
+  */
 
   return components
 }
@@ -190,8 +131,12 @@ export function getRouteComponents(pathname: string): ComponentType[] {
  * Preload components for anticipated navigation
  */
 export function preloadComponents(components: string[]) {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
+  // Disabled until components are created
+  /*
   components.forEach((componentName) => {
     const component = DynamicComponents[componentName as keyof typeof DynamicComponents]
     if (component && typeof component === 'function') {
@@ -199,21 +144,28 @@ export function preloadComponents(components: string[]) {
       ;(component as any).preload?.()
     }
   })
+  */
 }
 
 /**
  * Route prefetching strategy
  */
 export function setupRoutePrefetch() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   // Prefetch components when links are hovered
   document.addEventListener('mouseover', (e) => {
     const link = (e.target as HTMLElement).closest('a')
-    if (!link) return
+    if (!link) {
+      return
+    }
 
     const href = link.getAttribute('href')
-    if (!href || !href.startsWith('/')) return
+    if (!href || !href.startsWith('/')) {
+      return
+    }
 
     // Preload components for the target route
     const components = getRouteComponents(href)
@@ -271,16 +223,19 @@ export function setupLazyLoading() {
  * Progressive enhancement for non-critical features
  */
 export function progressiveEnhancement() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   // Load non-critical features after page load
   window.addEventListener('load', () => {
     // Load analytics after 1 second
-    setTimeout(() => {
-      import('@/lib/analytics').then(({ initAnalytics }) => {
-        initAnalytics()
-      })
-    }, 1000)
+    // Disabled - initAnalytics doesn't exist
+    // setTimeout(() => {
+    //   import('@/lib/analytics').then(({ initAnalytics }) => {
+    //     initAnalytics()
+    //   })
+    // }, 1000)
 
     // Load service worker after 2 seconds
     setTimeout(() => {
@@ -303,5 +258,4 @@ export function progressiveEnhancement() {
 
 // Export utility types
 export type DynamicComponentKey = keyof typeof DynamicComponents
-export type DynamicComponentType<K extends DynamicComponentKey> =
-  typeof DynamicComponents[K]
+export type DynamicComponentType<K extends DynamicComponentKey> = (typeof DynamicComponents)[K]

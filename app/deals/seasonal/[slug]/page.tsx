@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
-import LocationHero from '@/components/locations/LocationHero'
+// Removed hero import - using inline hero section
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -18,8 +18,13 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const deal = seasonalDeals.find((d) => d.slug === params.slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const deal = seasonalDeals.find((d) => d.slug === slug)
 
   if (!deal) {
     return {
@@ -51,26 +56,36 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 const getSeasonIcon = (season: string) => {
-  switch(season) {
-    case 'winter': return <Snowflake className="w-5 h-5" />
-    case 'spring': return <Flower className="w-5 h-5" />
-    case 'summer': return <Sun className="w-5 h-5" />
-    case 'fall': return <Leaf className="w-5 h-5" />
-    default: return <Sun className="w-5 h-5" />
+  switch (season) {
+    case 'winter':
+      return <Snowflake className="w-5 h-5" />
+    case 'spring':
+      return <Flower className="w-5 h-5" />
+    case 'summer':
+      return <Sun className="w-5 h-5" />
+    case 'fall':
+      return <Leaf className="w-5 h-5" />
+    default:
+      return <Sun className="w-5 h-5" />
   }
 }
 
 const getPriorityColor = (priority: string) => {
-  switch(priority) {
-    case 'HIGH': return 'destructive'
-    case 'MEDIUM': return 'default'
-    case 'LOW': return 'secondary'
-    default: return 'secondary'
+  switch (priority) {
+    case 'HIGH':
+      return 'destructive'
+    case 'MEDIUM':
+      return 'default'
+    case 'LOW':
+      return 'secondary'
+    default:
+      return 'secondary'
   }
 }
 
-export default function SeasonalDealPage({ params }: { params: { slug: string } }) {
-  const deal = seasonalDeals.find((d) => d.slug === params.slug)
+export default async function SeasonalDealPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const deal = seasonalDeals.find((d) => d.slug === slug)
 
   if (!deal) {
     notFound()
@@ -86,11 +101,13 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <LocationHero
-        title={deal.content.hero.headline}
-        subtitle={deal.content.hero.subheadline}
-        backgroundImage="/images/hero/cruise-ship-ocean.jpg"
-      />
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 to-blue-700">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">{deal.content.hero.headline}</h1>
+          <p className="text-xl md:text-2xl mb-8 text-blue-100">{deal.content.hero.subheadline}</p>
+        </div>
+      </section>
 
       {/* Urgency Banner */}
       {deal.content.hero.urgencyMessage && (
@@ -102,7 +119,12 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
             </p>
             {deal.bookingDeadline && (
               <p className="text-sm mt-1">
-                Book by {new Date(deal.bookingDeadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                Book by{' '}
+                {new Date(deal.bookingDeadline).toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
               </p>
             )}
           </div>
@@ -122,14 +144,16 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
             </Badge>
             {deal.holidayType && (
               <Badge variant="default">
-                {deal.holidayType.split('-').map(word =>
-                  word.charAt(0).toUpperCase() + word.slice(1)
-                ).join(' ')}
+                {deal.holidayType
+                  .split('-')
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(' ')}
               </Badge>
             )}
             <Badge variant="outline" className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              Valid: {new Date(deal.validFrom).toLocaleDateString()} - {new Date(deal.validThrough).toLocaleDateString()}
+              Valid: {new Date(deal.validFrom).toLocaleDateString()} -{' '}
+              {new Date(deal.validThrough).toLocaleDateString()}
             </Badge>
           </div>
 
@@ -250,7 +274,9 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
                     <CardHeader>
                       <CardTitle className="text-lg">{tier.category}</CardTitle>
                       <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-bold text-primary">${tier.startingPrice}</span>
+                        <span className="text-3xl font-bold text-primary">
+                          ${tier.startingPrice}
+                        </span>
                         <span className="text-sm text-gray-600">per person</span>
                       </div>
                     </CardHeader>
@@ -400,7 +426,13 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
       </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={deal.faq} />
+      <FAQSection
+        faqs={deal.faq.map((item, index) => ({
+          id: `faq-${index}`,
+          question: item.question,
+          answer: item.answer,
+        }))}
+      />
 
       {/* Related Links */}
       <section className="py-12 bg-gray-50">
@@ -413,7 +445,11 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
                 href={link}
                 className="px-6 py-3 bg-white rounded-lg border hover:border-primary transition-colors text-sm font-medium"
               >
-                {link.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                {link
+                  .split('/')
+                  .pop()
+                  ?.replace(/-/g, ' ')
+                  .replace(/\b\w/g, (l) => l.toUpperCase())}
               </Link>
             ))}
           </div>
@@ -421,14 +457,7 @@ export default function SeasonalDealPage({ params }: { params: { slug: string } 
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Book Your Seasonal Escape Today!"
-        description={`Don't miss out on these limited-time ${deal.season} deals. Our travel experts are ready to help you plan the perfect getaway from Newark.`}
-        primaryButtonText="Call Now: 833-874-1019"
-        primaryButtonLink="tel:8338741019"
-        secondaryButtonText="Get a Quote"
-        secondaryButtonLink="/contact"
-      />
+      <CTASection />
     </>
   )
 }

@@ -1,7 +1,19 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Map, Download, Mail, Plus, X, Clock, Anchor, MapPin, Calendar, Share2, Info } from 'lucide-react'
+import {
+  Map,
+  Download,
+  Mail,
+  Plus,
+  X,
+  Clock,
+  Anchor,
+  MapPin,
+  Calendar,
+  Share2,
+  Info,
+} from 'lucide-react'
 
 interface Port {
   id: string
@@ -51,7 +63,7 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         description: 'Convenient departure from Bayonne, just 30 minutes from Newark',
         topAttractions: ['Statue of Liberty views', 'Manhattan skyline'],
         excursions: [],
-        coordinates: { lat: 40.667, lng: -74.145 }
+        coordinates: { lat: 40.667, lng: -74.145 },
       },
       {
         id: '2',
@@ -60,13 +72,27 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         arrivalTime: '8:00 AM',
         departureTime: '5:00 PM',
         dayNumber: 3,
-        description: 'Royal Caribbean\'s private island paradise',
+        description: "Royal Caribbean's private island paradise",
         topAttractions: ['Thrill Waterpark', 'Oasis Lagoon', 'Coco Beach Club'],
         excursions: [
-          { id: 'e1', name: 'Beach Day Pass', duration: 'All Day', price: 0, description: 'Enjoy free beach access', selected: false },
-          { id: 'e2', name: 'Thrill Waterpark', duration: 'All Day', price: 89, description: '13 waterslides and wave pool', selected: false }
+          {
+            id: 'e1',
+            name: 'Beach Day Pass',
+            duration: 'All Day',
+            price: 0,
+            description: 'Enjoy free beach access',
+            selected: false,
+          },
+          {
+            id: 'e2',
+            name: 'Thrill Waterpark',
+            duration: 'All Day',
+            price: 89,
+            description: '13 waterslides and wave pool',
+            selected: false,
+          },
         ],
-        coordinates: { lat: 25.815, lng: -77.951 }
+        coordinates: { lat: 25.815, lng: -77.951 },
       },
       {
         id: '3',
@@ -76,14 +102,28 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         departureTime: '6:00 PM',
         dayNumber: 4,
         description: 'Capital of the Bahamas with colonial charm',
-        topAttractions: ['Atlantis Resort', 'Queen\'s Staircase', 'Straw Market'],
+        topAttractions: ['Atlantis Resort', "Queen's Staircase", 'Straw Market'],
         excursions: [
-          { id: 'e3', name: 'Atlantis Beach Day', duration: '6 hours', price: 195, description: 'Access to beaches and aquarium', selected: false },
-          { id: 'e4', name: 'Swimming with Pigs', duration: '5 hours', price: 265, description: 'Famous swimming pigs excursion', selected: false }
+          {
+            id: 'e3',
+            name: 'Atlantis Beach Day',
+            duration: '6 hours',
+            price: 195,
+            description: 'Access to beaches and aquarium',
+            selected: false,
+          },
+          {
+            id: 'e4',
+            name: 'Swimming with Pigs',
+            duration: '5 hours',
+            price: 265,
+            description: 'Famous swimming pigs excursion',
+            selected: false,
+          },
         ],
-        coordinates: { lat: 25.047, lng: -77.355 }
-      }
-    ]
+        coordinates: { lat: 25.047, lng: -77.355 },
+      },
+    ],
   },
   'alaska-7': {
     cruiseLine: 'Norwegian Cruise Line',
@@ -101,7 +141,7 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         description: 'Fly from Newark to Seattle (5.5 hour flight)',
         topAttractions: ['Pike Place Market', 'Space Needle'],
         excursions: [],
-        coordinates: { lat: 47.606, lng: -122.332 }
+        coordinates: { lat: 47.606, lng: -122.332 },
       },
       {
         id: '2',
@@ -113,12 +153,26 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         description: 'Salmon capital of the world',
         topAttractions: ['Creek Street', 'Totem Poles', 'Misty Fjords'],
         excursions: [
-          { id: 'e5', name: 'Misty Fjords Seaplane', duration: '2 hours', price: 259, description: 'Scenic flightseeing tour', selected: false },
-          { id: 'e6', name: 'Alaska Lumberjack Show', duration: '1.5 hours', price: 45, description: 'Entertaining competition show', selected: false }
+          {
+            id: 'e5',
+            name: 'Misty Fjords Seaplane',
+            duration: '2 hours',
+            price: 259,
+            description: 'Scenic flightseeing tour',
+            selected: false,
+          },
+          {
+            id: 'e6',
+            name: 'Alaska Lumberjack Show',
+            duration: '1.5 hours',
+            price: 45,
+            description: 'Entertaining competition show',
+            selected: false,
+          },
         ],
-        coordinates: { lat: 55.342, lng: -131.646 }
-      }
-    ]
+        coordinates: { lat: 55.342, lng: -131.646 },
+      },
+    ],
   },
   'mediterranean-7': {
     cruiseLine: 'Celebrity Cruises',
@@ -136,7 +190,7 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         description: 'Fly from Newark to Barcelona (8 hour flight)',
         topAttractions: ['Sagrada Familia', 'Park Güell', 'Las Ramblas'],
         excursions: [],
-        coordinates: { lat: 41.385, lng: 2.173 }
+        coordinates: { lat: 41.385, lng: 2.173 },
       },
       {
         id: '2',
@@ -148,13 +202,27 @@ const sampleItineraries: Record<string, Partial<Itinerary>> = {
         description: 'Beautiful Balearic island',
         topAttractions: ['Cathedral of Palma', 'Bellver Castle', 'Beaches'],
         excursions: [
-          { id: 'e7', name: 'Caves of Drach', duration: '4 hours', price: 75, description: 'Underground lake and concert', selected: false },
-          { id: 'e8', name: 'Palma City Tour', duration: '3 hours', price: 55, description: 'Guided walking tour', selected: false }
+          {
+            id: 'e7',
+            name: 'Caves of Drach',
+            duration: '4 hours',
+            price: 75,
+            description: 'Underground lake and concert',
+            selected: false,
+          },
+          {
+            id: 'e8',
+            name: 'Palma City Tour',
+            duration: '3 hours',
+            price: 55,
+            description: 'Guided walking tour',
+            selected: false,
+          },
         ],
-        coordinates: { lat: 39.570, lng: 2.650 }
-      }
-    ]
-  }
+        coordinates: { lat: 39.57, lng: 2.65 },
+      },
+    ],
+  },
 }
 
 export default function ItineraryBuilder() {
@@ -193,7 +261,7 @@ export default function ItineraryBuilder() {
       dayNumber: ports.length + 2,
       description: '',
       topAttractions: [],
-      excursions: []
+      excursions: [],
     }
     setPorts([...ports, newPort])
   }
@@ -211,7 +279,7 @@ export default function ItineraryBuilder() {
   const toggleExcursion = (portIndex: number, excursionId: string) => {
     const updated = [...ports]
     const port = updated[portIndex]
-    const excursion = port.excursions.find(e => e.id === excursionId)
+    const excursion = port.excursions.find((e) => e.id === excursionId)
     if (excursion) {
       excursion.selected = !excursion.selected
     }
@@ -221,7 +289,7 @@ export default function ItineraryBuilder() {
   const calculateTotalExcursionCost = () => {
     return ports.reduce((total, port) => {
       const portTotal = port.excursions
-        .filter(e => e.selected)
+        .filter((e) => e.selected)
         .reduce((sum, e) => sum + e.price, 0)
       return total + portTotal
     }, 0)
@@ -235,7 +303,7 @@ export default function ItineraryBuilder() {
       departurePort,
       departureDate,
       duration,
-      ports
+      ports,
     }
     const encoded = btoa(JSON.stringify(data))
     const url = `${window.location.origin}/tools/itinerary-builder?data=${encoded.substring(0, 50)}...`
@@ -259,18 +327,27 @@ Cruise Details:
 - Duration: ${duration} nights
 
 Ports of Call:
-${ports.map((port, index) => `
+${ports
+  .map(
+    (port, index) => `
 Day ${port.dayNumber}: ${port.name}, ${port.country}
 - Arrival: ${port.arrivalTime}
 - Departure: ${port.departureTime}
 - Description: ${port.description}
 ${port.topAttractions.length > 0 ? `- Top Attractions: ${port.topAttractions.join(', ')}` : ''}
-${port.excursions.filter(e => e.selected).length > 0 ? `
+${
+  port.excursions.filter((e) => e.selected).length > 0
+    ? `
 Selected Excursions:
-${port.excursions.filter(e => e.selected).map(e =>
-  `  • ${e.name} - ${e.duration} - $${e.price}`
-).join('\n')}` : ''}
-`).join('\n')}
+${port.excursions
+  .filter((e) => e.selected)
+  .map((e) => `  • ${e.name} - ${e.duration} - $${e.price}`)
+  .join('\n')}`
+    : ''
+}
+`
+  )
+  .join('\n')}
 
 Total Excursion Cost: $${excursionCost}
 
@@ -297,7 +374,9 @@ Website: nexttripanywhere.com
   }
 
   const sendEmail = async () => {
-    if (!email) return
+    if (!email) {
+      return
+    }
 
     try {
       const itinerarySummary = `Cruise Itinerary:
@@ -305,13 +384,10 @@ Website: nexttripanywhere.com
 Cruise Line: ${cruiseLine}
 Ship: ${shipName}
 Duration: ${duration} nights
-Embarkation: ${embarkationPort}
+Embarkation: ${departurePort}
 
 Ports of Call:
-${ports.map((port, idx) => `Day ${idx + 1}: ${port.name} (${port.arrivalTime} - ${port.departureTime})`).join('\n')}
-
-Total Cost: $${totalCost}
-Notes: ${notes || 'None'}`
+${ports.map((port, idx) => `Day ${idx + 1}: ${port.name} (${port.arrivalTime} - ${port.departureTime})`).join('\n')}`
 
       const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
         method: 'POST',
@@ -349,7 +425,7 @@ Notes: ${notes || 'None'}`
         departureDate,
         duration,
         ports,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       }
       localStorage.setItem('cruiseItinerary', JSON.stringify(itineraryData))
     }
@@ -382,9 +458,7 @@ Notes: ${notes || 'None'}`
               <Map className="w-12 h-12 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Itinerary Builder
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Itinerary Builder</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Build your perfect cruise itinerary with interactive maps and excursion planning.
             Visualize your journey and share with travel companions.
@@ -441,9 +515,7 @@ Notes: ${notes || 'None'}`
 
                 {/* Ship Name */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Ship Name
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Ship Name</label>
                   <input
                     type="text"
                     value={shipName}
@@ -469,7 +541,9 @@ Notes: ${notes || 'None'}`
                     <option value="Manhattan Cruise Terminal">Manhattan Cruise Terminal</option>
                     <option value="Baltimore, MD">Baltimore, MD</option>
                     <option value="Boston, MA">Boston, MA</option>
-                    <option value="Fort Lauderdale, FL">Fort Lauderdale, FL (fly from Newark)</option>
+                    <option value="Fort Lauderdale, FL">
+                      Fort Lauderdale, FL (fly from Newark)
+                    </option>
                     <option value="Miami, FL">Miami, FL (fly from Newark)</option>
                   </select>
                 </div>
@@ -572,7 +646,9 @@ Notes: ${notes || 'None'}`
                         </div>
                         <div>
                           <span className="text-gray-600">Departure:</span>
-                          <span className="ml-2 font-medium">{departurePort || 'Not specified'}</span>
+                          <span className="ml-2 font-medium">
+                            {departurePort || 'Not specified'}
+                          </span>
                         </div>
                         <div>
                           <span className="text-gray-600">Date:</span>
@@ -594,12 +670,17 @@ Notes: ${notes || 'None'}`
                       <h3 className="font-semibold mb-3">Day-by-Day Schedule</h3>
                       <div className="space-y-2">
                         {ports.map((port, index) => (
-                          <div key={port.id} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                          <div
+                            key={port.id}
+                            className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg"
+                          >
                             <div className="bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-semibold">
                               {port.dayNumber}
                             </div>
                             <div className="flex-1">
-                              <p className="font-medium">{port.name}, {port.country}</p>
+                              <p className="font-medium">
+                                {port.name}, {port.country}
+                              </p>
                               <p className="text-sm text-gray-600">
                                 {port.arrivalTime} - {port.departureTime}
                               </p>
@@ -618,7 +699,8 @@ Notes: ${notes || 'None'}`
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h3 className="font-semibold text-lg">
-                              Day {port.dayNumber}: {port.name || 'Port Name'}, {port.country || 'Country'}
+                              Day {port.dayNumber}: {port.name || 'Port Name'},{' '}
+                              {port.country || 'Country'}
                             </h3>
                             <p className="text-sm text-gray-600">
                               <Clock className="inline w-4 h-4 mr-1" />
@@ -639,10 +721,15 @@ Notes: ${notes || 'None'}`
 
                         {port.topAttractions.length > 0 && (
                           <div className="mb-3">
-                            <p className="text-sm font-semibold text-gray-700 mb-1">Top Attractions:</p>
+                            <p className="text-sm font-semibold text-gray-700 mb-1">
+                              Top Attractions:
+                            </p>
                             <div className="flex flex-wrap gap-2">
                               {port.topAttractions.map((attraction, idx) => (
-                                <span key={idx} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                                <span
+                                  key={idx}
+                                  className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"
+                                >
                                   {attraction}
                                 </span>
                               ))}
@@ -652,10 +739,15 @@ Notes: ${notes || 'None'}`
 
                         {port.excursions.length > 0 && (
                           <div>
-                            <p className="text-sm font-semibold text-gray-700 mb-2">Available Excursions:</p>
+                            <p className="text-sm font-semibold text-gray-700 mb-2">
+                              Available Excursions:
+                            </p>
                             <div className="space-y-2">
                               {port.excursions.map((excursion) => (
-                                <label key={excursion.id} className="flex items-start gap-3 cursor-pointer p-2 hover:bg-gray-50 rounded">
+                                <label
+                                  key={excursion.id}
+                                  className="flex items-start gap-3 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                                >
                                   <input
                                     type="checkbox"
                                     checked={excursion.selected}
@@ -667,7 +759,9 @@ Notes: ${notes || 'None'}`
                                     <p className="text-sm text-gray-600">{excursion.description}</p>
                                     <p className="text-sm">
                                       <span className="text-gray-500">{excursion.duration}</span>
-                                      <span className="ml-3 font-semibold text-green-600">${excursion.price}</span>
+                                      <span className="ml-3 font-semibold text-green-600">
+                                        ${excursion.price}
+                                      </span>
                                     </p>
                                   </div>
                                 </label>
@@ -690,7 +784,9 @@ Notes: ${notes || 'None'}`
                       <div className="p-4 bg-green-50 rounded-lg">
                         <div className="flex justify-between items-center">
                           <span className="font-semibold">Total Excursion Cost:</span>
-                          <span className="text-xl font-bold text-green-600">${excursionTotal}</span>
+                          <span className="text-xl font-bold text-green-600">
+                            ${excursionTotal}
+                          </span>
                         </div>
                       </div>
                     )}
@@ -789,15 +885,18 @@ Notes: ${notes || 'None'}`
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>
                   <span className="font-semibold">Cape Liberty, Bayonne:</span>
-                  <br />30 min drive, Royal Caribbean hub
+                  <br />
+                  30 min drive, Royal Caribbean hub
                 </li>
                 <li>
                   <span className="font-semibold">Brooklyn Terminal:</span>
-                  <br />45 min drive, Princess & Cunard
+                  <br />
+                  45 min drive, Princess & Cunard
                 </li>
                 <li>
                   <span className="font-semibold">Manhattan Terminal:</span>
-                  <br />40 min drive, NCL & Carnival
+                  <br />
+                  40 min drive, NCL & Carnival
                 </li>
                 <li>
                   <span className="font-semibold">Baltimore:</span>

@@ -1,7 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { DollarSign, Download, Mail, PieChart, TrendingUp, AlertCircle, Info, Calculator, CreditCard } from 'lucide-react'
+import {
+  DollarSign,
+  Download,
+  Mail,
+  PieChart,
+  TrendingUp,
+  AlertCircle,
+  Info,
+  Calculator,
+  CreditCard,
+} from 'lucide-react'
 
 interface BudgetCategory {
   name: string
@@ -30,8 +40,8 @@ const defaultCategories = [
     tips: [
       'Book during Wave Season (Jan-Mar) for 20-30% savings',
       'Consider repositioning cruises for up to 50% off',
-      'Check for Essex County resident discounts'
-    ]
+      'Check for Essex County resident discounts',
+    ],
   },
   {
     name: 'Airfare',
@@ -40,8 +50,8 @@ const defaultCategories = [
     tips: [
       'Book flights 2-3 months in advance',
       'Use Newark Airport for best connections',
-      'Consider cruise line air packages for protection'
-    ]
+      'Consider cruise line air packages for protection',
+    ],
   },
   {
     name: 'Shore Excursions',
@@ -50,8 +60,8 @@ const defaultCategories = [
     tips: [
       'Book independently to save 30-50%',
       'Research free walking tours',
-      'Prioritize must-see experiences'
-    ]
+      'Prioritize must-see experiences',
+    ],
   },
   {
     name: 'Onboard Spending',
@@ -60,8 +70,8 @@ const defaultCategories = [
     tips: [
       'Set daily limits for discretionary spending',
       'Buy drink packages if you consume 5+ drinks/day',
-      'Take advantage of port day spa discounts'
-    ]
+      'Take advantage of port day spa discounts',
+    ],
   },
   {
     name: 'Dining & Specialty',
@@ -70,8 +80,8 @@ const defaultCategories = [
     tips: [
       'Lunch at specialty restaurants costs less',
       'Look for dining package deals',
-      'Main dining room is always free'
-    ]
+      'Main dining room is always free',
+    ],
   },
   {
     name: 'Gratuities',
@@ -80,8 +90,8 @@ const defaultCategories = [
     tips: [
       'Budget $15-17 per person per day',
       'Pre-pay to avoid surprise charges',
-      'Additional tips for exceptional service'
-    ]
+      'Additional tips for exceptional service',
+    ],
   },
   {
     name: 'Pre/Post Hotels',
@@ -90,8 +100,8 @@ const defaultCategories = [
     tips: [
       'Stay near Newark Airport for convenience',
       'Book cruise line hotels for guaranteed transfer',
-      'Consider arriving a day early'
-    ]
+      'Consider arriving a day early',
+    ],
   },
   {
     name: 'Miscellaneous',
@@ -100,9 +110,9 @@ const defaultCategories = [
     tips: [
       'Newark Airport parking: $18-39/day',
       'Travel insurance: 5-10% of trip cost',
-      'Factor in pet sitting if needed'
-    ]
-  }
+      'Factor in pet sitting if needed',
+    ],
+  },
 ]
 
 export default function BudgetPlanner() {
@@ -121,18 +131,18 @@ export default function BudgetPlanner() {
   const budgetMultipliers: Record<string, number> = {
     budget: 0.8,
     moderate: 1.0,
-    luxury: 1.5
+    luxury: 1.5,
   }
 
   const calculateBudget = () => {
     const multiplier = budgetMultipliers[budgetType]
-    const adjustedCategories = defaultCategories.map(cat => {
-      const planned = Math.round((totalBudget * cat.percentage / 100) * multiplier)
+    const adjustedCategories = defaultCategories.map((cat) => {
+      const planned = Math.round(((totalBudget * cat.percentage) / 100) * multiplier)
       return {
         ...cat,
         planned,
         actual: 0,
-        percentage: cat.percentage
+        percentage: cat.percentage,
       }
     })
 
@@ -140,14 +150,17 @@ export default function BudgetPlanner() {
     setShowBreakdown(true)
 
     // Save to localStorage
-    localStorage.setItem('cruiseBudget', JSON.stringify({
-      totalBudget,
-      travelers,
-      duration,
-      budgetType,
-      categories: adjustedCategories,
-      timestamp: new Date().toISOString()
-    }))
+    localStorage.setItem(
+      'cruiseBudget',
+      JSON.stringify({
+        totalBudget,
+        travelers,
+        duration,
+        budgetType,
+        categories: adjustedCategories,
+        timestamp: new Date().toISOString(),
+      })
+    )
   }
 
   const updateActual = (index: number, value: number) => {
@@ -163,7 +176,9 @@ export default function BudgetPlanner() {
   }
 
   const addCustomCategory = () => {
-    if (!customCategory || !customAmount) return
+    if (!customCategory || !customAmount) {
+      return
+    }
 
     const newCategory: BudgetCategory = {
       name: customCategory,
@@ -171,7 +186,7 @@ export default function BudgetPlanner() {
       actual: 0,
       percentage: 0,
       description: 'Custom expense category',
-      tips: []
+      tips: [],
     }
 
     setCategories([...categories, newCategory])
@@ -197,7 +212,7 @@ export default function BudgetPlanner() {
       totalActual,
       dailyBudget,
       emergencyFund,
-      remainingBudget
+      remainingBudget,
     }
   }
 
@@ -213,12 +228,16 @@ Trip Details:
 - Budget Type: ${budgetType.charAt(0).toUpperCase() + budgetType.slice(1)}
 
 Budget Breakdown:
-${categories.map(cat => `
+${categories
+  .map(
+    (cat) => `
 ${cat.name}:
 - Planned: $${cat.planned.toLocaleString()}
 - Actual: $${cat.actual.toLocaleString()}
 - ${cat.actual > cat.planned ? 'OVER' : 'Under'} Budget: $${Math.abs(cat.actual - cat.planned).toLocaleString()}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 Summary:
 - Total Planned: $${totals.totalPlanned.toLocaleString()}
@@ -255,20 +274,27 @@ Website: nexttripanywhere.com
   }
 
   const sendEmail = async () => {
-    if (!email) return
+    if (!email) {
+      return
+    }
 
     try {
+      const totals = getTotals()
       const budgetSummary = `Travel Budget Plan:
 
 Total Budget: $${totalBudget}
-Total Allocated: $${totalAllocated}
-Remaining: $${remaining}
+Total Planned: $${totals.totalPlanned}
+Total Spent: $${totals.totalActual}
+Remaining: $${totals.remainingBudget}
 
 Categories:
-${categories.map(cat => `- ${cat.name}: $${cat.amount} (${cat.percentage.toFixed(1)}%)`).join('\n')}
+${categories.map((cat) => `- ${cat.name}: Planned $${cat.planned}, Actual $${cat.actual}`).join('\n')}
 
 Budget Tips:
-${tips.join('\n- ')}`
+- Set daily spending limits
+- Track all expenses in real-time
+- Keep emergency fund separate
+- Review budget mid-cruise`
 
       const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
         method: 'POST',
@@ -320,7 +346,7 @@ ${tips.join('\n- ')}`
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      maximumFractionDigits: 0,
     }).format(amount)
   }
 
@@ -337,12 +363,10 @@ ${tips.join('\n- ')}`
               <DollarSign className="w-12 h-12 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Cruise Budget Planner
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Cruise Budget Planner</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Plan and track your entire cruise budget. Set spending limits, monitor expenses,
-            and avoid overspending on your vacation.
+            Plan and track your entire cruise budget. Set spending limits, monitor expenses, and
+            avoid overspending on your vacation.
           </p>
         </div>
 
@@ -473,8 +497,11 @@ ${tips.join('\n- ')}`
                   <div className="w-full bg-gray-200 rounded-full h-4">
                     <div
                       className={`h-4 rounded-full transition-all duration-300 ${
-                        budgetUsedPercentage > 100 ? 'bg-red-500' :
-                        budgetUsedPercentage > 80 ? 'bg-yellow-500' : 'bg-green-500'
+                        budgetUsedPercentage > 100
+                          ? 'bg-red-500'
+                          : budgetUsedPercentage > 80
+                            ? 'bg-yellow-500'
+                            : 'bg-green-500'
                       }`}
                       style={{ width: `${Math.min(budgetUsedPercentage, 100)}%` }}
                     />
@@ -549,13 +576,16 @@ ${tips.join('\n- ')}`
                         <div className="mt-3">
                           <div className="flex justify-between items-center">
                             <span className="text-sm text-gray-600">Status:</span>
-                            <span className={`text-sm font-semibold ${
-                              category.actual > category.planned ? 'text-red-600' : 'text-green-600'
-                            }`}>
+                            <span
+                              className={`text-sm font-semibold ${
+                                category.actual > category.planned
+                                  ? 'text-red-600'
+                                  : 'text-green-600'
+                              }`}
+                            >
                               {category.actual > category.planned
                                 ? `Over by ${formatCurrency(category.actual - category.planned)}`
-                                : `Under by ${formatCurrency(category.planned - category.actual)}`
-                              }
+                                : `Under by ${formatCurrency(category.planned - category.actual)}`}
                             </span>
                           </div>
                         </div>
@@ -621,9 +651,11 @@ ${tips.join('\n- ')}`
                     </div>
                     <div className="flex justify-between border-t pt-2">
                       <span className="text-gray-700 font-semibold">Remaining Budget:</span>
-                      <span className={`text-xl font-bold ${
-                        totals.remainingBudget < 0 ? 'text-red-600' : 'text-green-600'
-                      }`}>
+                      <span
+                        className={`text-xl font-bold ${
+                          totals.remainingBudget < 0 ? 'text-red-600' : 'text-green-600'
+                        }`}
+                      >
                         {formatCurrency(totals.remainingBudget)}
                       </span>
                     </div>

@@ -14,13 +14,13 @@ interface ChecklistItem {
 const baseItems: Record<string, string[]> = {
   documents: [
     'Passport (valid for 6+ months)',
-    'Driver\'s License',
+    "Driver's License",
     'Cruise Documents/Boarding Pass',
     'Travel Insurance Papers',
     'Credit Cards & Cash',
     'Emergency Contact List',
     'Prescription List',
-    'Vaccination Card'
+    'Vaccination Card',
   ],
   clothing: [
     'Casual Daywear',
@@ -32,7 +32,7 @@ const baseItems: Record<string, string[]> = {
     'Light Jacket/Sweater',
     'Comfortable Walking Shoes',
     'Dress Shoes',
-    'Sandals/Flip Flops'
+    'Sandals/Flip Flops',
   ],
   toiletries: [
     'Toothbrush & Toothpaste',
@@ -46,7 +46,7 @@ const baseItems: Record<string, string[]> = {
     'Medications',
     'First Aid Kit',
     'Hand Sanitizer',
-    'Face Masks'
+    'Face Masks',
   ],
   electronics: [
     'Phone & Charger',
@@ -56,7 +56,7 @@ const baseItems: Record<string, string[]> = {
     'Headphones/Earbuds',
     'E-Reader/Tablet',
     'Extension Cord (non-surge)',
-    'Waterproof Phone Case'
+    'Waterproof Phone Case',
   ],
   accessories: [
     'Sunglasses',
@@ -68,8 +68,8 @@ const baseItems: Record<string, string[]> = {
     'Zip-Lock Bags',
     'Laundry Bag',
     'Travel Umbrella',
-    'Binoculars'
-  ]
+    'Binoculars',
+  ],
 }
 
 const destinationSpecific: Record<string, string[]> = {
@@ -79,7 +79,7 @@ const destinationSpecific: Record<string, string[]> = {
     'Beach Towel',
     'Insect Repellent',
     'Light Rain Jacket',
-    'Water Shoes'
+    'Water Shoes',
   ],
   alaska: [
     'Warm Layers',
@@ -87,7 +87,7 @@ const destinationSpecific: Record<string, string[]> = {
     'Waterproof Boots',
     'Gloves & Warm Hat',
     'Binoculars for Wildlife',
-    'Thermal Underwear'
+    'Thermal Underwear',
   ],
   mediterranean: [
     'Modest Clothing for Churches',
@@ -95,7 +95,7 @@ const destinationSpecific: Record<string, string[]> = {
     'Light Scarf/Shawl',
     'Euros/Local Currency',
     'Outlet Adapter (Type C/F)',
-    'Phrasebook/Translation App'
+    'Phrasebook/Translation App',
   ],
   bahamas: [
     'Beach Games/Toys',
@@ -103,7 +103,7 @@ const destinationSpecific: Record<string, string[]> = {
     'Extra Swimsuits',
     'Aloe Vera Gel',
     'Beach Bag',
-    'Snacks for Excursions'
+    'Snacks for Excursions',
   ],
   norway: [
     'Heavy Coat',
@@ -111,8 +111,8 @@ const destinationSpecific: Record<string, string[]> = {
     'Fleece or Wool Layers',
     'Waterproof Gloves',
     'Neck Gaiter/Balaclava',
-    'Hand Warmers'
-  ]
+    'Hand Warmers',
+  ],
 }
 
 const activitySpecific: Record<string, string[]> = {
@@ -122,7 +122,7 @@ const activitySpecific: Record<string, string[]> = {
     'Evening Bag/Clutch',
     'Jewelry/Accessories',
     'Bow Tie/Necktie',
-    'Dress Socks'
+    'Dress Socks',
   ],
   'water-sports': [
     'Rash Guard',
@@ -130,7 +130,7 @@ const activitySpecific: Record<string, string[]> = {
     'Dry Bag',
     'GoPro/Action Camera',
     'Waterproof Watch',
-    'Quick-Dry Towel'
+    'Quick-Dry Towel',
   ],
   'shore-excursions': [
     'Comfortable Walking Shoes',
@@ -138,7 +138,7 @@ const activitySpecific: Record<string, string[]> = {
     'Portable Snacks',
     'Cash for Tips/Vendors',
     'Guidebook/Map',
-    'Portable Phone Charger'
+    'Portable Phone Charger',
   ],
   'spa-wellness': [
     'Workout Clothes',
@@ -146,16 +146,16 @@ const activitySpecific: Record<string, string[]> = {
     'Yoga Mat (travel)',
     'Massage Oil',
     'Face Masks',
-    'Nail Care Kit'
+    'Nail Care Kit',
   ],
-  'photography': [
+  photography: [
     'Extra Camera Batteries',
     'Lens Cleaning Kit',
     'Tripod',
     'Camera Bag',
     'SD Card Reader',
-    'Backup Storage Device'
-  ]
+    'Backup Storage Device',
+  ],
 }
 
 export default function PackingChecklistGenerator() {
@@ -177,40 +177,43 @@ export default function PackingChecklistGenerator() {
 
     // Add base items
     Object.entries(baseItems).forEach(([category, categoryItems]) => {
-      categoryItems.forEach(item => {
+      categoryItems.forEach((item) => {
         items.push({
           id: (id++).toString(),
           item,
           checked: false,
           category,
-          quantity: item.includes('Underwear') || item.includes('Socks') ? Math.ceil(duration * 1.5) : undefined
+          quantity:
+            item.includes('Underwear') || item.includes('Socks')
+              ? Math.ceil(duration * 1.5)
+              : undefined,
         })
       })
     })
 
     // Add destination specific items
     if (destinationSpecific[destination]) {
-      destinationSpecific[destination].forEach(item => {
+      destinationSpecific[destination].forEach((item) => {
         items.push({
           id: (id++).toString(),
           item,
           checked: false,
-          category: 'destination'
+          category: 'destination',
         })
       })
     }
 
     // Add activity specific items
-    activities.forEach(activity => {
+    activities.forEach((activity) => {
       if (activitySpecific[activity]) {
-        activitySpecific[activity].forEach(item => {
+        activitySpecific[activity].forEach((item) => {
           // Check if item already exists
-          if (!items.find(i => i.item === item)) {
+          if (!items.find((i) => i.item === item)) {
             items.push({
               id: (id++).toString(),
               item,
               checked: false,
-              category: 'activities'
+              category: 'activities',
             })
           }
         })
@@ -220,20 +223,20 @@ export default function PackingChecklistGenerator() {
     // Add seasonal items
     if (season === 'winter') {
       const winterItems = ['Heavy Coat', 'Warm Gloves', 'Scarf', 'Warm Hat']
-      winterItems.forEach(item => {
-        if (!items.find(i => i.item === item)) {
+      winterItems.forEach((item) => {
+        if (!items.find((i) => i.item === item)) {
           items.push({
             id: (id++).toString(),
             item,
             checked: false,
-            category: 'seasonal'
+            category: 'seasonal',
           })
         }
       })
     }
 
     // Add duration-based quantities
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.item.includes('Casual Daywear')) {
         item.quantity = Math.ceil(duration * 0.75)
       }
@@ -246,47 +249,48 @@ export default function PackingChecklistGenerator() {
     setShowChecklist(true)
 
     // Save to localStorage
-    localStorage.setItem('packingChecklist', JSON.stringify({
-      items,
-      destination,
-      duration,
-      season,
-      activities,
-      timestamp: new Date().toISOString()
-    }))
+    localStorage.setItem(
+      'packingChecklist',
+      JSON.stringify({
+        items,
+        destination,
+        duration,
+        season,
+        activities,
+        timestamp: new Date().toISOString(),
+      })
+    )
   }
 
   const toggleItem = (id: string) => {
-    setChecklist(prev =>
-      prev.map(item =>
-        item.id === id ? { ...item, checked: !item.checked } : item
-      )
+    setChecklist((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item))
     )
   }
 
   const addCustomItem = () => {
-    if (!customItem.trim()) return
+    if (!customItem.trim()) {
+      return
+    }
 
     const newItem: ChecklistItem = {
       id: Date.now().toString(),
       item: customItem,
       checked: false,
-      category: selectedCategory
+      category: selectedCategory,
     }
 
-    setChecklist(prev => [...prev, newItem])
+    setChecklist((prev) => [...prev, newItem])
     setCustomItem('')
   }
 
   const removeItem = (id: string) => {
-    setChecklist(prev => prev.filter(item => item.id !== id))
+    setChecklist((prev) => prev.filter((item) => item.id !== id))
   }
 
   const toggleActivity = (activity: string) => {
-    setActivities(prev =>
-      prev.includes(activity)
-        ? prev.filter(a => a !== activity)
-        : [...prev, activity]
+    setActivities((prev) =>
+      prev.includes(activity) ? prev.filter((a) => a !== activity) : [...prev, activity]
     )
   }
 
@@ -302,17 +306,29 @@ Duration: ${duration} nights
 Season: ${season.charAt(0).toUpperCase() + season.slice(1)}
 
 ${Object.entries(
-  checklist.reduce((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = []
-    acc[item.category].push(item)
-    return acc
-  }, {} as Record<string, ChecklistItem[]>)
-).map(([category, items]) => `
+  checklist.reduce(
+    (acc, item) => {
+      if (!acc[item.category]) {
+        acc[item.category] = []
+      }
+      acc[item.category].push(item)
+      return acc
+    },
+    {} as Record<string, ChecklistItem[]>
+  )
+)
+  .map(
+    ([category, items]) => `
 ${category.toUpperCase()}:
-${items.map(item =>
-  `${item.checked ? '☑' : '☐'} ${item.item}${item.quantity ? ` (${item.quantity})` : ''}`
-).join('\n')}
-`).join('\n')}
+${items
+  .map(
+    (item) =>
+      `${item.checked ? '☑' : '☐'} ${item.item}${item.quantity ? ` (${item.quantity})` : ''}`
+  )
+  .join('\n')}
+`
+  )
+  .join('\n')}
 
 Newark Airport Tips:
 - Arrive 3 hours early for international cruises
@@ -337,22 +353,20 @@ Website: nexttripanywhere.com
   }
 
   const sendEmail = async () => {
-    if (!email) return
+    if (!email) {
+      return
+    }
 
     try {
-      const allItems = Object.values(categories).flat()
-      const checkedCount = allItems.filter(item => item.checked).length
+      const checkedCount = checklist.filter((item) => item.checked).length
       const checklistSummary = `Packing Checklist for ${destination}:
 
-Trip Type: ${tripType.charAt(0).toUpperCase() + tripType.slice(1)}
 Destination: ${destination}
-Trip Length: ${tripLength} days
-Progress: ${checkedCount}/${allItems.length} items packed
+Trip Length: ${duration} days
+Progress: ${checkedCount}/${checklist.length} items packed
 
-${Object.entries(categories).map(([category, items]) => {
-        const categoryChecked = items.filter(item => item.checked).length
-        return `${category.charAt(0).toUpperCase() + category.slice(1)} (${categoryChecked}/${items.length}):\n${items.map(item => `${item.checked ? '✓' : '○'} ${item.name}${item.quantity > 1 ? ` (${item.quantity})` : ''}${item.notes ? ` - ${item.notes}` : ''}`).join('\n')}`
-      }).join('\n\n')}`
+Items:
+${checklist.map((item) => `${item.checked ? '✓' : '○'} ${item.item}${item.quantity ? ` (${item.quantity})` : ''}`).join('\n')}`
 
       const response = await fetch('https://nextripanywhere.app.n8n.cloud/webhook/contact-form', {
         method: 'POST',
@@ -388,7 +402,8 @@ ${Object.entries(categories).map(([category, items]) => {
       const savedDate = new Date(data.timestamp)
       const hoursSince = (Date.now() - savedDate.getTime()) / (1000 * 60 * 60)
 
-      if (hoursSince < 168) { // Within 7 days
+      if (hoursSince < 168) {
+        // Within 7 days
         setChecklist(data.items)
         setDestination(data.destination)
         setDuration(data.duration)
@@ -400,16 +415,21 @@ ${Object.entries(categories).map(([category, items]) => {
   }, [])
 
   // Filter checklist based on search
-  const filteredChecklist = checklist.filter(item =>
+  const filteredChecklist = checklist.filter((item) =>
     item.item.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   // Group checklist by category
-  const groupedChecklist = filteredChecklist.reduce((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = []
-    acc[item.category].push(item)
-    return acc
-  }, {} as Record<string, ChecklistItem[]>)
+  const groupedChecklist = filteredChecklist.reduce(
+    (acc, item) => {
+      if (!acc[item.category]) {
+        acc[item.category] = []
+      }
+      acc[item.category].push(item)
+      return acc
+    },
+    {} as Record<string, ChecklistItem[]>
+  )
 
   const categoryLabels: Record<string, string> = {
     documents: 'Travel Documents',
@@ -420,12 +440,13 @@ ${Object.entries(categories).map(([category, items]) => {
     destination: 'Destination Specific',
     activities: 'Activity Gear',
     seasonal: 'Seasonal Items',
-    personal: 'Personal Items'
+    personal: 'Personal Items',
   }
 
-  const progress = checklist.length > 0
-    ? Math.round((checklist.filter(item => item.checked).length / checklist.length) * 100)
-    : 0
+  const progress =
+    checklist.length > 0
+      ? Math.round((checklist.filter((item) => item.checked).length / checklist.length) * 100)
+      : 0
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4 sm:px-6 lg:px-8 print:bg-white">
@@ -437,9 +458,7 @@ ${Object.entries(categories).map(([category, items]) => {
               <CheckSquare className="w-12 h-12 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Packing Checklist Generator
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Packing Checklist Generator</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Create a personalized packing list for your cruise. Never forget essential items again!
             Includes Newark Airport specific tips for Essex County travelers.
@@ -517,7 +536,7 @@ ${Object.entries(categories).map(([category, items]) => {
                   Planned Activities (Select all that apply)
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {Object.keys(activitySpecific).map(activity => (
+                  {Object.keys(activitySpecific).map((activity) => (
                     <label key={activity} className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -525,9 +544,7 @@ ${Object.entries(categories).map(([category, items]) => {
                         onChange={() => toggleActivity(activity)}
                         className="w-5 h-5 text-green-600 rounded focus:ring-2 focus:ring-green-500"
                       />
-                      <span className="text-gray-700 capitalize">
-                        {activity.replace('-', ' ')}
-                      </span>
+                      <span className="text-gray-700 capitalize">{activity.replace('-', ' ')}</span>
                     </label>
                   ))}
                 </div>
@@ -579,17 +596,26 @@ ${Object.entries(categories).map(([category, items]) => {
                         {categoryLabels[category] || category}
                       </h3>
                       <div className="grid md:grid-cols-2 gap-2">
-                        {items.map(item => (
-                          <div key={item.id} className="flex items-center gap-2 p-2 hover:bg-gray-50 rounded">
+                        {items.map((item) => (
+                          <div
+                            key={item.id}
+                            className="flex items-center gap-2 p-2 hover:bg-gray-50 rounded"
+                          >
                             <input
                               type="checkbox"
                               checked={item.checked}
                               onChange={() => toggleItem(item.id)}
                               className="w-5 h-5 text-green-600 rounded focus:ring-2 focus:ring-green-500 print:accent-black"
                             />
-                            <span className={`flex-1 ${item.checked ? 'line-through text-gray-400' : 'text-gray-700'}`}>
+                            <span
+                              className={`flex-1 ${item.checked ? 'line-through text-gray-400' : 'text-gray-700'}`}
+                            >
                               {item.item}
-                              {item.quantity && <span className="text-sm text-gray-500 ml-2">({item.quantity})</span>}
+                              {item.quantity && (
+                                <span className="text-sm text-gray-500 ml-2">
+                                  ({item.quantity})
+                                </span>
+                              )}
                             </span>
                             <button
                               onClick={() => removeItem(item.id)}

@@ -20,7 +20,7 @@ export default function OptimizedBookingForm({ className = '' }: BookingFormProp
   const handleQuoteClick = () => {
     // Track conversion for analytics
     trackConversion({
-      type: 'form_redirect',
+      type: 'form_submit',
       value: 0,
       form_data: {
         action: 'n8n_booking_form_redirect',

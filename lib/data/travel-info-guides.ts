@@ -66,11 +66,19 @@ export const travelInfoGuides: TravelInfoGuide[] = [
     slug: 'cruise-packing-list',
     title: 'Ultimate Cruise Packing List: Everything You Need for Your 2025 Cruise',
     metaTitle: 'Cruise Packing List 2025 | Complete Guide & Checklist',
-    metaDescription: 'Complete cruise packing list with printable checklist. Learn what to pack for Caribbean, Alaska & European cruises from Newark ports.',
-    keywords: ['cruise packing list', 'what to pack for a cruise', 'cruise packing checklist', 'caribbean cruise packing', 'cruise essentials'],
+    metaDescription:
+      'Complete cruise packing list with printable checklist. Learn what to pack for Caribbean, Alaska & European cruises from Newark ports.',
+    keywords: [
+      'cruise packing list',
+      'what to pack for a cruise',
+      'cruise packing checklist',
+      'caribbean cruise packing',
+      'cruise essentials',
+    ],
     searchVolume: 8100,
     guideType: 'packing',
-    featuredSnippet: 'Essential cruise packing items: passport, medications, sunscreen, formal wear for dinner, swimwear, comfortable walking shoes, power strip, lanyard for key card, hand sanitizer, and a small day bag for excursions.',
+    featuredSnippet:
+      'Essential cruise packing items: passport, medications, sunscreen, formal wear for dinner, swimwear, comfortable walking shoes, power strip, lanyard for key card, hand sanitizer, and a small day bag for excursions.',
     content: {
       introduction: `Planning a cruise from the Newark area? Whether you're departing from Cape Liberty in Bayonne or flying out of Newark Liberty International Airport to meet your ship, having a complete packing list is essential for a stress-free vacation. As Essex County's premier travel agency with over 30 years of experience helping New Jersey residents cruise the world, we've created this comprehensive packing guide based on thousands of client experiences and feedback. This guide covers everything from essential documents to climate-specific clothing, ensuring you're perfectly prepared whether you're sailing to the Caribbean's tropical beaches, Alaska's glaciers, or the Mediterranean's historic ports. We'll also share insider tips specific to departures from the New York/New Jersey area, including what you can pick up last-minute at local stores and what you absolutely must pack from home.`,
       sections: [
@@ -82,9 +90,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Email yourself copies of important documents as backup',
             'Bring extra passport photos for any visa-on-arrival situations',
             'Register with the STEP program through the State Department for international cruises',
-            'Keep cruise line emergency contact numbers saved in your phone'
+            'Keep cruise line emergency contact numbers saved in your phone',
           ],
-          localNote: 'Essex County residents can get passport photos taken at the West Orange Post Office or any CVS location. For expedited passport services, visit the Newark Passport Agency on Broad Street with an appointment.'
+          localNote:
+            'Essex County residents can get passport photos taken at the West Orange Post Office or any CVS location. For expedited passport services, visit the Newark Passport Agency on Broad Street with an appointment.',
         },
         {
           title: 'Clothing Essentials for Every Cruise',
@@ -103,9 +112,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Sandals or flip-flops',
             'Sun hat or baseball cap',
             'Sleepwear and robe',
-            'Workout clothes if using gym'
+            'Workout clothes if using gym',
           ],
-          localNote: 'Last-minute clothing needs can be met at Jersey Gardens outlet mall (15 minutes from Cape Liberty) or Willowbrook Mall in Wayne. Both have a wide selection of cruise-appropriate attire at various price points.'
+          localNote:
+            'Last-minute clothing needs can be met at Jersey Gardens outlet mall (15 minutes from Cape Liberty) or Willowbrook Mall in Wayne. Both have a wide selection of cruise-appropriate attire at various price points.',
         },
         {
           title: 'Toiletries and Medications',
@@ -132,9 +142,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Bandages and antibiotic ointment',
             'Thermometer',
             'Nail clippers',
-            'Tweezers'
+            'Tweezers',
           ],
-          localNote: 'CVS and Walgreens throughout Essex County stock travel-sized toiletries. The CVS at Newark Airport is convenient for last-minute items but prices are 30-50% higher than regular stores.'
+          localNote:
+            'CVS and Walgreens throughout Essex County stock travel-sized toiletries. The CVS at Newark Airport is convenient for last-minute items but prices are 30-50% higher than regular stores.',
         },
         {
           title: 'Electronics and Entertainment',
@@ -152,14 +163,14 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Binoculars (for scenic cruising)',
             'Travel alarm clock',
             'Nightlight (cabins can be very dark)',
-            'White noise app or machine'
+            'White noise app or machine',
           ],
           tips: [
             'Download offline maps of port cities before departure',
             'Screenshot important information to access without internet',
             'Bring a lanyard for your phone to prevent dropping overboard',
-            'Pack electronics in carry-on to prevent damage or theft'
-          ]
+            'Pack electronics in carry-on to prevent damage or theft',
+          ],
         },
         {
           title: 'Cabin Organization and Comfort Items',
@@ -183,9 +194,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Zip-lock bags (various sizes)',
             'Rubber bands',
             'Safety pins',
-            'Stain stick'
+            'Stain stick',
           ],
-          localNote: 'The Container Store in Bridgewater has excellent cruise organization solutions, though Dollar Tree and Five Below offer budget-friendly alternatives for most items.'
+          localNote:
+            'The Container Store in Bridgewater has excellent cruise organization solutions, though Dollar Tree and Five Below offer budget-friendly alternatives for most items.',
         },
         {
           title: 'Beach and Pool Essentials',
@@ -205,14 +217,14 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Beach toys for kids',
             'Underwater camera',
             'Cooling towel',
-            'Lip balm with SPF'
+            'Lip balm with SPF',
           ],
           tips: [
             'Apply sunscreen 30 minutes before sun exposure',
             'Reapply every 2 hours and after swimming',
             'UV rays are strongest 10am-4pm even on cloudy days',
-            'Bring enough sunscreen - ship prices are triple retail'
-          ]
+            'Bring enough sunscreen - ship prices are triple retail',
+          ],
         },
         {
           title: 'Special Considerations by Destination',
@@ -222,10 +234,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Alaska: Waterproof jacket, layers, gloves, hat, hiking boots, binoculars',
             'Mediterranean: Modest clothing, comfortable walking shoes, daypack, scarf',
             'Northern Europe: Rain gear, warm layers, formal attire, comfortable shoes',
-            'Transatlantic: Entertainment, seasickness remedies, variety of clothing'
+            'Transatlantic: Entertainment, seasickness remedies, variety of clothing',
           ],
-          localNote: 'REI in Paramus offers excellent technical clothing for Alaska cruises. Their staff can advise on appropriate gear for specific excursions and seasons.'
-        }
+          localNote:
+            'REI in Paramus offers excellent technical clothing for Alaska cruises. Their staff can advise on appropriate gear for specific excursions and seasons.',
+        },
       ],
       localAdvantages: [
         'Cape Liberty Cruise Port is only 30 minutes from most Essex County locations',
@@ -234,51 +247,65 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Multiple passport photo and expediting services throughout Essex County',
         'Year-round cruise departures from Cape Liberty eliminate flight requirements',
         'TD Bank and Chase branches offer favorable foreign currency exchange',
-        'Easy access to cruise shuttle services from Newark Penn Station'
+        'Easy access to cruise shuttle services from Newark Penn Station',
       ],
-      callToAction: "Ready to book your cruise? Our Essex County travel experts can help you choose the perfect cruise and ensure you're fully prepared. Call 833-874-1019 today for personalized cruise planning assistance."
+      callToAction:
+        "Ready to book your cruise? Our Essex County travel experts can help you choose the perfect cruise and ensure you're fully prepared. Call 833-874-1019 today for personalized cruise planning assistance.",
     },
     faq: [
       {
-        answer: 'How many suitcases can I bring on a cruise?',
-        answer: 'Most cruise lines allow two checked bags per person with no weight limits, plus a carry-on. However, cabin storage is limited, so pack efficiently. Consider using soft-sided luggage that can collapse and store under the bed. Cape Liberty porters handle your checked bags, but bring a carry-on with essentials as bags may not arrive at your cabin for several hours after boarding.'
+        question: 'How many suitcases can I bring on a cruise?',
+        answer:
+          'Most cruise lines allow two checked bags per person with no weight limits, plus a carry-on. However, cabin storage is limited, so pack efficiently. Consider using soft-sided luggage that can collapse and store under the bed. Cape Liberty porters handle your checked bags, but bring a carry-on with essentials as bags may not arrive at your cabin for several hours after boarding.',
       },
       {
         question: "What can't you bring on a cruise ship?",
-        answer: "Prohibited items include surge protectors, extension cords with outlets, candles, incense, irons (steamers are usually allowed), illegal drugs, CBD products, weapons, ammunition, fireworks, drones on most lines, and alcohol (policies vary by cruise line). Cape Liberty security is similar to TSA but generally less restrictive. Check your specific cruise line's website for their complete prohibited items list."
+        answer:
+          "Prohibited items include surge protectors, extension cords with outlets, candles, incense, irons (steamers are usually allowed), illegal drugs, CBD products, weapons, ammunition, fireworks, drones on most lines, and alcohol (policies vary by cruise line). Cape Liberty security is similar to TSA but generally less restrictive. Check your specific cruise line's website for their complete prohibited items list.",
       },
       {
-        answer: 'Should I bring my own snorkeling gear on a cruise?',
-        answer: "If you plan to snorkel more than once, bringing your own gear is cost-effective and more hygienic. Rental costs average $30-50 per person per port. Your own gear also ensures proper fit and quality. Dick's Sporting Goods in Millburn and Sports Authority outlets carry complete sets. Pack gear in checked luggage as fins may exceed carry-on size limits."
+        question: 'Should I bring my own snorkeling gear on a cruise?',
+        answer:
+          "If you plan to snorkel more than once, bringing your own gear is cost-effective and more hygienic. Rental costs average $30-50 per person per port. Your own gear also ensures proper fit and quality. Dick's Sporting Goods in Millburn and Sports Authority outlets carry complete sets. Pack gear in checked luggage as fins may exceed carry-on size limits.",
       },
       {
-        answer: 'How much cash should I bring on a cruise?',
-        answer: 'Bring $50-100 per port day for taxis, tips, and small purchases, plus $2 per bag for porters at embarkation. Most cruise ship expenses charge to your onboard account, but cash is king in many Caribbean ports. Ships have ATMs but charge $5-10 per transaction. TD Bank and Chase customers can use partner ATMs in some ports to avoid fees.'
+        question: 'How much cash should I bring on a cruise?',
+        answer:
+          'Bring $50-100 per port day for taxis, tips, and small purchases, plus $2 per bag for porters at embarkation. Most cruise ship expenses charge to your onboard account, but cash is king in many Caribbean ports. Ships have ATMs but charge $5-10 per transaction. TD Bank and Chase customers can use partner ATMs in some ports to avoid fees.',
       },
       {
-        answer: 'Do I need different clothes for formal night on a cruise?',
-        answer: "Yes, most cruise lines have 1-2 formal nights per week requiring at minimum 'elegant casual' attire - think wedding guest attire. Men need dress pants, button-down shirt, and dress shoes; jackets are optional but recommended. Women should pack a cocktail dress or elegant pantsuit. Some lines like Norwegian have relaxed dress codes, while others like Cunard maintain strict formal requirements. You can rent formal wear onboard but it's expensive ($75-150)."
+        question: 'Do I need different clothes for formal night on a cruise?',
+        answer:
+          "Yes, most cruise lines have 1-2 formal nights per week requiring at minimum 'elegant casual' attire - think wedding guest attire. Men need dress pants, button-down shirt, and dress shoes; jackets are optional but recommended. Women should pack a cocktail dress or elegant pantsuit. Some lines like Norwegian have relaxed dress codes, while others like Cunard maintain strict formal requirements. You can rent formal wear onboard but it's expensive ($75-150).",
       },
       {
-        answer: 'What should I pack in my cruise carry-on bag?',
-        answer: "Pack essentials you'll need before your luggage arrives: medications, travel documents, valuables, swimsuit, sunscreen, change of clothes, phone charger, and toiletries. Include anything you'll need if your checked luggage is delayed. Cape Liberty allows you to board as early as 11 AM, but cabins aren't ready until 1-2 PM, so you might want pool attire to enjoy lunch and amenities while waiting."
-      }
+        question: 'What should I pack in my cruise carry-on bag?',
+        answer:
+          "Pack essentials you'll need before your luggage arrives: medications, travel documents, valuables, swimsuit, sunscreen, change of clothes, phone charger, and toiletries. Include anything you'll need if your checked luggage is delayed. Cape Liberty allows you to board as early as 11 AM, but cabins aren't ready until 1-2 PM, so you might want pool attire to enjoy lunch and amenities while waiting.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-dining-guide',
       '/travel-guides/cruise-cabin-selection',
       '/cruises/from-newark',
-      '/cruises/caribbean'
+      '/cruises/caribbean',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'first-time-cruiser-guide',
     title: 'First Time Cruiser Guide: Everything You Need to Know Before Your First Cruise',
     metaTitle: 'First Time Cruiser Guide 2025 | Tips from NJ Experts',
-    metaDescription: 'Complete first-time cruiser guide with insider tips. Learn cruise basics, what to expect, and how to maximize your cruise from Newark ports.',
-    keywords: ['first time cruise tips', 'cruise for beginners', 'how to cruise', 'first cruise advice', 'cruise basics'],
+    metaDescription:
+      'Complete first-time cruiser guide with insider tips. Learn cruise basics, what to expect, and how to maximize your cruise from Newark ports.',
+    keywords: [
+      'first time cruise tips',
+      'cruise for beginners',
+      'how to cruise',
+      'first cruise advice',
+      'cruise basics',
+    ],
     searchVolume: 3600,
     guideType: 'cruise-tips',
     content: {
@@ -292,9 +319,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Arrive at your departure port a day early to avoid missing the ship',
             'Purchase travel insurance - cruise lines are strict about refunds',
             'Download the cruise line app before boarding',
-            'Pack essentials in carry-on as luggage delivery takes hours'
+            'Pack essentials in carry-on as luggage delivery takes hours',
           ],
-          localNote: 'Essex County residents can easily reach Cape Liberty via NJ Transit to Newark Penn, then Uber/Lyft (about $40-50). Many local hotels offer park-and-cruise packages.'
+          localNote:
+            'Essex County residents can easily reach Cape Liberty via NJ Transit to Newark Penn, then Uber/Lyft (about $40-50). Many local hotels offer park-and-cruise packages.',
         },
         {
           title: 'Booking Your First Cruise',
@@ -309,8 +337,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Reserve shore excursions',
             'Book specialty dining',
             'Pre-purchase beverage packages',
-            'Arrange transportation to port'
-          ]
+            'Arrange transportation to port',
+          ],
         },
         {
           title: 'Embarkation Day Process',
@@ -321,9 +349,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Arrive at your boarding time, not opening time',
             'Pack swimsuit in carry-on to enjoy pools while waiting for luggage',
             'Take photos of luggage tags in case bags go missing',
-            'Bring snacks for embarkation day - food service may be limited initially'
+            'Bring snacks for embarkation day - food service may be limited initially',
           ],
-          localNote: 'Traffic to Cape Liberty can be heavy on sailing days. Leave extra time, especially if traveling through Newark or Jersey City during rush hour.'
+          localNote:
+            'Traffic to Cape Liberty can be heavy on sailing days. Leave extra time, especially if traveling through Newark or Jersey City during rush hour.',
         },
         {
           title: 'Life Onboard Your Cruise Ship',
@@ -337,8 +366,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Visit spa on port days for discounts',
             'Try something new - dance class, trivia, etc.',
             'Take advantage of formal photo opportunities',
-            'Participate in deck parties and themed nights'
-          ]
+            'Participate in deck parties and themed nights',
+          ],
         },
         {
           title: 'Navigating Port Days',
@@ -347,12 +376,13 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Research ports in advance - know what you want to see',
             'Book popular excursions before your cruise',
             'Bring small bills for tips and small purchases',
-            'Keep ship\'s contact information with you',
+            "Keep ship's contact information with you",
             'Take photos of the ship and dock area for easy return',
-            'Wear comfortable walking shoes - you\'ll walk more than expected',
-            'Stay hydrated - Caribbean heat affects NJ residents strongly'
+            "Wear comfortable walking shoes - you'll walk more than expected",
+            'Stay hydrated - Caribbean heat affects NJ residents strongly',
           ],
-          localNote: 'Many Essex County travel agencies offer pre-cruise consultations to help plan port activities. This local expertise is invaluable for first-timers.'
+          localNote:
+            'Many Essex County travel agencies offer pre-cruise consultations to help plan port activities. This local expertise is invaluable for first-timers.',
         },
         {
           title: 'Managing Money and Expenses',
@@ -366,9 +396,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Skip ship photos - take your own',
             'Avoid art auctions unless genuinely interested',
             'Limit casino spending with daily budgets',
-            'Buy liquor on islands, not ship (usually cheaper)'
-          ]
-        }
+            'Buy liquor on islands, not ship (usually cheaper)',
+          ],
+        },
       ],
       localAdvantages: [
         'Cape Liberty is just 30 minutes from most Essex County locations',
@@ -377,50 +407,64 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Local travel agents provide personalized service and exclusive perks',
         'Easy access to pre-cruise hotels with park-and-cruise packages',
         'Familiar departure city reduces first-cruise anxiety',
-        'Can drive yourself, avoiding airport hassles'
+        'Can drive yourself, avoiding airport hassles',
       ],
-      callToAction: "Ready to book your first cruise? Our Essex County cruise specialists will guide you through every step. Call 833-874-1019 for personalized first-timer assistance and exclusive perks you won't find online."
+      callToAction:
+        "Ready to book your first cruise? Our Essex County cruise specialists will guide you through every step. Call 833-874-1019 for personalized first-timer assistance and exclusive perks you won't find online.",
     },
     faq: [
       {
-        answer: 'Will I get seasick on my first cruise?',
-        answer: "Modern cruise ships have advanced stabilizers that significantly reduce motion. Only 5-10% of passengers experience seasickness, usually mild. Cape Liberty cruises immediately enter open ocean, so if you're susceptible, take preventive medication before boarding. Dramamine, Bonine, or prescription patches work well. Choose a mid-ship, lower deck cabin for least motion. If you feel queasy, go outside, focus on the horizon, and stay hydrated. Ships have medical centers with stronger medications if needed."
+        question: 'Will I get seasick on my first cruise?',
+        answer:
+          "Modern cruise ships have advanced stabilizers that significantly reduce motion. Only 5-10% of passengers experience seasickness, usually mild. Cape Liberty cruises immediately enter open ocean, so if you're susceptible, take preventive medication before boarding. Dramamine, Bonine, or prescription patches work well. Choose a mid-ship, lower deck cabin for least motion. If you feel queasy, go outside, focus on the horizon, and stay hydrated. Ships have medical centers with stronger medications if needed.",
       },
       {
-        answer: 'Is cruising safe for first-timers?',
-        answer: "Cruising is statistically safer than most land-based vacations. Ships have strict international safety regulations, mandatory drills, advanced navigation systems, medical facilities, security teams, and extensive CCTV coverage. Crime rates are lower than most U.S. cities. The biggest risks are usually overindulgence in food/alcohol and sunburn. Cape Liberty's proximity to Essex County means you're never far from home if needed. Modern ships can handle severe weather, often routing around storms days in advance."
+        question: 'Is cruising safe for first-timers?',
+        answer:
+          "Cruising is statistically safer than most land-based vacations. Ships have strict international safety regulations, mandatory drills, advanced navigation systems, medical facilities, security teams, and extensive CCTV coverage. Crime rates are lower than most U.S. cities. The biggest risks are usually overindulgence in food/alcohol and sunburn. Cape Liberty's proximity to Essex County means you're never far from home if needed. Modern ships can handle severe weather, often routing around storms days in advance.",
       },
       {
-        answer: 'What happens if I miss the ship at a port?',
-        answer: "If you're on a ship-sponsored excursion, the ship waits or the cruise line arranges your transport to the next port at their expense. If you're exploring independently and miss departure, you're responsible for catching up - this can cost thousands. Always return 30-60 minutes before all-aboard time. Keep the ship's agent contact information (provided at each port) and your passport with you. Many travel insurance policies cover missed departure costs. Newark travel agents recommend first-timers stick to ship excursions to avoid this stress."
+        question: 'What happens if I miss the ship at a port?',
+        answer:
+          "If you're on a ship-sponsored excursion, the ship waits or the cruise line arranges your transport to the next port at their expense. If you're exploring independently and miss departure, you're responsible for catching up - this can cost thousands. Always return 30-60 minutes before all-aboard time. Keep the ship's agent contact information (provided at each port) and your passport with you. Many travel insurance policies cover missed departure costs. Newark travel agents recommend first-timers stick to ship excursions to avoid this stress.",
       },
       {
-        answer: 'How formal is formal night on cruises?',
-        answer: "Formal night dress codes have relaxed significantly. Most lines now call them 'elegant' or 'smart casual' nights. For men, dress pants with a polo or button-down shirt suffice; jackets are optional. Women can wear sundresses, dressy pants, or cocktail dresses. Only luxury lines like Cunard maintain strict formal requirements. You won't be turned away from dining rooms for minor infractions. If you forget formal wear, skip the main dining room that night - the buffet and room service don't enforce dress codes. Some ships rent formal wear, though it's expensive."
+        question: 'How formal is formal night on cruises?',
+        answer:
+          "Formal night dress codes have relaxed significantly. Most lines now call them 'elegant' or 'smart casual' nights. For men, dress pants with a polo or button-down shirt suffice; jackets are optional. Women can wear sundresses, dressy pants, or cocktail dresses. Only luxury lines like Cunard maintain strict formal requirements. You won't be turned away from dining rooms for minor infractions. If you forget formal wear, skip the main dining room that night - the buffet and room service don't enforce dress codes. Some ships rent formal wear, though it's expensive.",
       },
       {
-        answer: 'Can I bring my own alcohol on a cruise?',
-        answer: "Policies vary by cruise line. Most allow one bottle of wine per adult at embarkation only. Royal Caribbean and Celebrity allow two bottles. Carnival allows one bottle of wine or champagne. Norwegian and MSC prohibit all alcohol. Any alcohol purchased in ports is confiscated and returned the last night. Attempting to smuggle alcohol risks confiscation and potential removal from the ship. Beverage packages often make more economic sense than trying to bring your own. Check your specific cruise line's current policy before packing."
-      }
+        question: 'Can I bring my own alcohol on a cruise?',
+        answer:
+          "Policies vary by cruise line. Most allow one bottle of wine per adult at embarkation only. Royal Caribbean and Celebrity allow two bottles. Carnival allows one bottle of wine or champagne. Norwegian and MSC prohibit all alcohol. Any alcohol purchased in ports is confiscated and returned the last night. Attempting to smuggle alcohol risks confiscation and potential removal from the ship. Beverage packages often make more economic sense than trying to bring your own. Check your specific cruise line's current policy before packing.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/cruise-packing-list',
       '/travel-guides/cruise-dining-guide',
       '/travel-guides/cruise-insurance-guide',
       '/cruises/from-newark',
-      '/cruises/caribbean'
+      '/cruises/caribbean',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'newark-airport-complete-guide',
     title: 'Newark Airport Complete Guide: EWR Tips for Essex County Travelers',
     metaTitle: 'Newark Airport Guide 2025 | EWR Tips & Transportation',
-    metaDescription: 'Complete Newark Liberty Airport guide with parking, terminals, transportation options, and insider tips for Essex County residents.',
-    keywords: ['Newark airport guide', 'EWR airport', 'Newark airport parking', 'Newark airport terminals', 'EWR transportation'],
+    metaDescription:
+      'Complete Newark Liberty Airport guide with parking, terminals, transportation options, and insider tips for Essex County residents.',
+    keywords: [
+      'Newark airport guide',
+      'EWR airport',
+      'Newark airport parking',
+      'Newark airport terminals',
+      'EWR transportation',
+    ],
     searchVolume: 14800,
     guideType: 'airport',
-    featuredSnippet: 'Newark Liberty International Airport (EWR) has three terminals: Terminal A (mostly United), Terminal B (United and international), and Terminal C (United hub). AirTrain connects all terminals and parking lots. Economy parking costs $18/day, daily parking $39/day.',
+    featuredSnippet:
+      'Newark Liberty International Airport (EWR) has three terminals: Terminal A (mostly United), Terminal B (United and international), and Terminal C (United hub). AirTrain connects all terminals and parking lots. Economy parking costs $18/day, daily parking $39/day.',
     content: {
       introduction: `Newark Liberty International Airport (EWR) serves as the primary gateway for Essex County residents traveling domestically and internationally. Located just minutes from downtown Newark and easily accessible from all Essex County municipalities, EWR handles over 46 million passengers annually, making it the second-busiest airport in the New York metropolitan area. As your local travel experts, we've compiled this comprehensive guide to help Essex County residents navigate Newark Airport efficiently, whether you're catching an early morning flight to Florida or an international departure to Europe. From the best parking strategies to terminal navigation and local transportation options, this guide covers everything you need for a smooth airport experience.`,
       sections: [
@@ -428,13 +472,14 @@ export const travelInfoGuides: TravelInfoGuide[] = [
           title: 'Newark Airport Terminal Guide',
           content: `Newark Airport consists of three terminals connected by the AirTrain monorail system. Terminal A, recently rebuilt and reopened in 2023, is a state-of-the-art facility primarily serving United Airlines domestic flights along with Air Canada, American, and JetBlue. The new Terminal A features local dining favorites including Jersey Mike's and Tony's Brick Oven, plus upgraded shopping and spacious gate areas with ample charging stations. Terminal B houses United Airlines domestic and international flights, along with international carriers like British Airways, Air India, and TAP Air Portugal. It's the smallest terminal but handles many international departures. Terminal C is United's massive hub with three concourses (C1, C2, C3) handling United's extensive domestic and international network. Most Essex County travelers flying United will depart from Terminal C. Each terminal has TSA PreCheck lanes, Clear expedited security, and United Club lounges (Terminal C has multiple). The AirTrain runs every 3 minutes during peak hours, connecting all terminals in about 8 minutes total. Allow 15-20 minutes for inter-terminal connections including walking time. International arrivals process through Global Entry kiosks if enrolled, significantly reducing customs wait times - essential for Essex County business travelers. Free WiFi is available throughout all terminals, though speeds vary. Terminal A offers the fastest connections with its new infrastructure.`,
           tips: [
-            'Download United app for Terminal C navigation - it\'s massive',
+            "Download United app for Terminal C navigation - it's massive",
             'Terminal A has the shortest security lines due to new efficiency measures',
-            'Use AirTrain for any terminal connection - walking isn\'t permitted',
+            "Use AirTrain for any terminal connection - walking isn't permitted",
             'International check-in cutoff is 60 minutes before departure',
-            'Domestic check-in cutoff is 45 minutes before departure'
+            'Domestic check-in cutoff is 45 minutes before departure',
           ],
-          localNote: 'Essex County residents can get Global Entry interviews at the Newark enrollment center located in Terminal B. Appointments book months ahead, but walk-ins are sometimes available early mornings.'
+          localNote:
+            'Essex County residents can get Global Entry interviews at the Newark enrollment center located in Terminal B. Appointments book months ahead, but walk-ins are sometimes available early mornings.',
         },
         {
           title: 'Parking Options and Strategies',
@@ -447,9 +492,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Check ParkWhiz app for competitive rates',
             'Keep parking ticket accessible - lost tickets incur maximum charges',
             'Join frequent parker programs for faster exit',
-            'Consider valet for trips under 3 days if time-sensitive'
+            'Consider valet for trips under 3 days if time-sensitive',
           ],
-          localNote: 'Livingston and West Orange residents can use the Livingston Uber/Lyft hub (Livingston Mall) for shared rides to EWR, reducing costs by 30-40%.'
+          localNote:
+            'Livingston and West Orange residents can use the Livingston Uber/Lyft hub (Livingston Mall) for shared rides to EWR, reducing costs by 30-40%.',
         },
         {
           title: 'Ground Transportation from Essex County',
@@ -459,9 +505,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'NJ Transit monthly pass holders get discounted AirTrain tickets',
             'Book car services 24 hours ahead for best rates',
             'Shared ride services work well for solo travelers',
-            'Factor in extra time November-March for weather delays'
+            'Factor in extra time November-March for weather delays',
           ],
-          localNote: 'Montclair State University and Seton Hall offer student airport shuttle services during breaks - check if traveling during academic holidays.'
+          localNote:
+            'Montclair State University and Seton Hall offer student airport shuttle services during breaks - check if traveling during academic holidays.',
         },
         {
           title: 'Security and Check-In Tips',
@@ -474,8 +521,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Prepare for security while in line - empty pockets, remove belts',
             'Use curbside check-in when available ($5 tip expected)',
             'Check airline apps for mobile passport control',
-            'Pack liquids in easily accessible clear bag'
-          ]
+            'Pack liquids in easily accessible clear bag',
+          ],
         },
         {
           title: 'Dining and Amenities',
@@ -485,9 +532,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'United Club one-day passes can be worth it for long layovers',
             'Bring empty water bottle to fill post-security',
             'Newark tap water is safe and fountains have bottle fillers',
-            'Duty-free liquor prices beat New Jersey minimums on premium brands'
+            'Duty-free liquor prices beat New Jersey minimums on premium brands',
           ],
-          localNote: "DeFazio's Pizza from Maplewood is reportedly coming to Terminal B in 2025, bringing authentic Essex County flavor to the airport."
+          localNote:
+            "DeFazio's Pizza from Maplewood is reportedly coming to Terminal B in 2025, bringing authentic Essex County flavor to the airport.",
         },
         {
           title: 'Flight Connections and Delays',
@@ -500,9 +548,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Know alternate flight options before traveling',
             'Keep airline customer service numbers handy',
             'Consider trip insurance for complex itineraries',
-            'Book morning flights to avoid afternoon weather delays'
-          ]
-        }
+            'Book morning flights to avoid afternoon weather delays',
+          ],
+        },
       ],
       localAdvantages: [
         'Located just minutes from all Essex County municipalities',
@@ -511,46 +559,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Local enrollment centers for TSA PreCheck and Global Entry',
         'Familiar airport for Essex County residents - no learning curve',
         'Multiple ground transportation options to suit any budget',
-        'Park-sleep-fly packages at nearby hotels'
+        'Park-sleep-fly packages at nearby hotels',
       ],
-      callToAction: 'Need help booking flights from Newark Airport? Our travel experts know EWR inside and out and can find the best flights and fares for your trip. Call 833-874-1019 for personalized assistance with your travel plans.'
+      callToAction:
+        'Need help booking flights from Newark Airport? Our travel experts know EWR inside and out and can find the best flights and fares for your trip. Call 833-874-1019 for personalized assistance with your travel plans.',
     },
     faq: [
       {
         question: "What's the best way to get to Newark Airport from Essex County?",
-        answer: 'It depends on your specific location and priorities. From towns with direct NJ Transit train service (Millburn, Summit, South Orange), the train plus AirTrain combo works well for solo travelers. Western Essex County residents (West Orange, Livingston, Roseland) often find driving to economy parking or using rideshare more convenient. For early morning or late night flights, driving or pre-booked car service ensures reliability. Budget-conscious travelers can use the #62 bus from Newark Penn Station.'
+        answer:
+          'It depends on your specific location and priorities. From towns with direct NJ Transit train service (Millburn, Summit, South Orange), the train plus AirTrain combo works well for solo travelers. Western Essex County residents (West Orange, Livingston, Roseland) often find driving to economy parking or using rideshare more convenient. For early morning or late night flights, driving or pre-booked car service ensures reliability. Budget-conscious travelers can use the #62 bus from Newark Penn Station.',
       },
       {
-        answer: 'How early should I arrive at Newark Airport?',
-        answer: 'For domestic flights, arrive 2 hours before scheduled departure, or 90 minutes with TSA PreCheck and no checked bags. For international flights, arrive 3 hours early to account for additional document checks and longer lines. During peak travel periods (summer, holidays), add 30 minutes. Terminal A generally has faster processing due to new technology. If checking bags with United at Terminal C during Monday morning or Friday evening rush, arrive earlier as Premier check-in lines get congested.'
+        question: 'How early should I arrive at Newark Airport?',
+        answer:
+          'For domestic flights, arrive 2 hours before scheduled departure, or 90 minutes with TSA PreCheck and no checked bags. For international flights, arrive 3 hours early to account for additional document checks and longer lines. During peak travel periods (summer, holidays), add 30 minutes. Terminal A generally has faster processing due to new technology. If checking bags with United at Terminal C during Monday morning or Friday evening rush, arrive earlier as Premier check-in lines get congested.',
       },
       {
-        answer: 'Is Newark Airport parking safe for long-term trips?',
-        answer: "Yes, Newark Airport parking is generally safe with regular security patrols and surveillance cameras. Economy Lot P6 has good security despite its distance from terminals. Use common sense: don't leave valuables visible, note your exact location, and lock your vehicle. Some Essex County residents prefer covered off-airport lots like PreFlight Parking for weather protection and slightly better rates. Airport parking has emergency call boxes throughout if you need assistance."
+        question: 'Is Newark Airport parking safe for long-term trips?',
+        answer:
+          "Yes, Newark Airport parking is generally safe with regular security patrols and surveillance cameras. Economy Lot P6 has good security despite its distance from terminals. Use common sense: don't leave valuables visible, note your exact location, and lock your vehicle. Some Essex County residents prefer covered off-airport lots like PreFlight Parking for weather protection and slightly better rates. Airport parking has emergency call boxes throughout if you need assistance.",
       },
       {
-        answer: 'What happens if my flight from Newark is cancelled?',
-        answer: "Airlines must rebook you on their next available flight at no charge. If significant delays occur (typically 3+ hours), airlines may provide meal vouchers and hotel accommodations, though policies vary. United, as Newark's primary carrier, has customer service centers in all terminals. Download airline apps for fastest rebooking. If stranded overnight, hotels on Route 1&9 offer distressed passenger rates - ask specifically for these rates. Travel insurance can cover additional expenses from cancellations."
+        question: 'What happens if my flight from Newark is cancelled?',
+        answer:
+          "Airlines must rebook you on their next available flight at no charge. If significant delays occur (typically 3+ hours), airlines may provide meal vouchers and hotel accommodations, though policies vary. United, as Newark's primary carrier, has customer service centers in all terminals. Download airline apps for fastest rebooking. If stranded overnight, hotels on Route 1&9 offer distressed passenger rates - ask specifically for these rates. Travel insurance can cover additional expenses from cancellations.",
       },
       {
-        answer: 'Can I use REAL ID instead of a passport at Newark Airport?',
-        answer: "For domestic flights, yes - REAL ID compliant driver's licenses work for TSA security. New Jersey began issuing REAL ID licenses in 2019. However, for any international travel, you need a valid passport. Starting May 7, 2025, REAL ID or passport will be required for all domestic flights. Essex County residents can get REAL ID at MVC locations in Newark, Wayne, or Randolph. Schedule appointments online as walk-in wait times can exceed 3 hours."
-      }
+        question: 'Can I use REAL ID instead of a passport at Newark Airport?',
+        answer:
+          "For domestic flights, yes - REAL ID compliant driver's licenses work for TSA security. New Jersey began issuing REAL ID licenses in 2019. However, for any international travel, you need a valid passport. Starting May 7, 2025, REAL ID or passport will be required for all domestic flights. Essex County residents can get REAL ID at MVC locations in Newark, Wayne, or Randolph. Schedule appointments online as walk-in wait times can exceed 3 hours.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/tsa-precheck-guide',
       '/travel-guides/passport-requirements',
       '/cruises/from-newark',
-      '/travel-guides/first-time-cruiser-guide'
+      '/travel-guides/first-time-cruiser-guide',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'tsa-precheck-guide',
     title: 'TSA PreCheck Complete Guide: Fast Track Airport Security for NJ Travelers',
     metaTitle: 'TSA PreCheck Guide 2025 | Essex County Enrollment Tips',
-    metaDescription: 'Complete TSA PreCheck guide with enrollment locations, benefits, and tips. Learn how Essex County residents can skip airport security lines.',
-    keywords: ['TSA PreCheck', 'TSA PreCheck enrollment', 'airport security fast pass', 'PreCheck application', 'trusted traveler program'],
+    metaDescription:
+      'Complete TSA PreCheck guide with enrollment locations, benefits, and tips. Learn how Essex County residents can skip airport security lines.',
+    keywords: [
+      'TSA PreCheck',
+      'TSA PreCheck enrollment',
+      'airport security fast pass',
+      'PreCheck application',
+      'trusted traveler program',
+    ],
     searchVolume: 2900,
     guideType: 'documentation',
     content: {
@@ -564,9 +625,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Update KTN when booking through third-party sites',
             'Screenshot your KTN for quick reference',
             'Check credit card benefits for fee reimbursement',
-            'Family members need individual memberships (except young children)'
+            'Family members need individual memberships (except young children)',
           ],
-          localNote: "Newark Airport's Terminal C has multiple PreCheck lanes due to high United Airlines traffic. During Monday morning rush, use the C3 security checkpoint for shortest PreCheck lines."
+          localNote:
+            "Newark Airport's Terminal C has multiple PreCheck lanes due to high United Airlines traffic. During Monday morning rush, use the C3 security checkpoint for shortest PreCheck lines.",
         },
         {
           title: 'Enrollment Process and Requirements',
@@ -579,9 +641,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Arrive 15 minutes early for appointment',
             'Save KTN immediately upon approval',
             'Add KTN to all airline profiles',
-            'Update existing reservations with KTN'
+            'Update existing reservations with KTN',
           ],
-          localNote: 'The Englewood enrollment center at 500 Frank W. Burr Blvd has easiest parking for Essex County residents. Avoid the Newark downtown location during business hours due to limited street parking.'
+          localNote:
+            'The Englewood enrollment center at 500 Frank W. Burr Blvd has easiest parking for Essex County residents. Avoid the Newark downtown location during business hours due to limited street parking.',
         },
         {
           title: 'Global Entry vs TSA PreCheck',
@@ -591,8 +654,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Check credit card benefits before paying',
             'Book Global Entry interviews immediately after conditional approval',
             'Consider enrollment on arrival if interview slots are scarce',
-            'Use Mobile Passport app while waiting for Global Entry'
-          ]
+            'Use Mobile Passport app while waiting for Global Entry',
+          ],
         },
         {
           title: 'Maximizing TSA PreCheck Benefits',
@@ -604,8 +667,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Check codeshare flight eligibility',
             'Arrive early despite PreCheck (assume standard screening)',
             'Request teen inclusion at checkpoint',
-            'Keep standard screening time buffer'
-          ]
+            'Keep standard screening time buffer',
+          ],
         },
         {
           title: 'Renewal and Maintenance',
@@ -616,10 +679,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Continue using PreCheck during renewal processing',
             'Request credit card reimbursement manually',
             'Save KTN in multiple locations',
-            'Keep enrollment confirmation emails'
+            'Keep enrollment confirmation emails',
           ],
-          localNote: 'Essex County enrollment centers process renewals faster than initial applications. The Parsippany location typically has shortest wait times for walk-in renewals.'
-        }
+          localNote:
+            'Essex County enrollment centers process renewals faster than initial applications. The Parsippany location typically has shortest wait times for walk-in renewals.',
+        },
       ],
       localAdvantages: [
         'Multiple enrollment centers within 20 minutes of Essex County',
@@ -628,46 +692,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Newark Airport enrollment center allows enrollment on arrival',
         'Local banks and credit unions offer cards with PreCheck reimbursement',
         'Shorter PreCheck lines at Newark versus NYC airports',
-        'Family-friendly benefits for Essex County travelers with children'
+        'Family-friendly benefits for Essex County travelers with children',
       ],
-      callToAction: 'Ready to skip airport security lines? Let our travel experts help you navigate TSA PreCheck enrollment and maximize your trusted traveler benefits. Call 833-874-1019 for personalized assistance.'
+      callToAction:
+        'Ready to skip airport security lines? Let our travel experts help you navigate TSA PreCheck enrollment and maximize your trusted traveler benefits. Call 833-874-1019 for personalized assistance.',
     },
     faq: [
       {
-        answer: 'Is TSA PreCheck worth it for occasional travelers?',
-        answer: 'Yes, even traveling just twice per year makes PreCheck worthwhile. At $78 for five years ($15.60 annually), saving 30-60 minutes per trip quickly justifies the cost. For Essex County families, the ability to bring children 12 and under through PreCheck lanes adds significant value. The reduced stress and convenience of keeping laptops and liquids packed is worth the modest fee alone.'
+        question: 'Is TSA PreCheck worth it for occasional travelers?',
+        answer:
+          'Yes, even traveling just twice per year makes PreCheck worthwhile. At $78 for five years ($15.60 annually), saving 30-60 minutes per trip quickly justifies the cost. For Essex County families, the ability to bring children 12 and under through PreCheck lanes adds significant value. The reduced stress and convenience of keeping laptops and liquids packed is worth the modest fee alone.',
       },
       {
-        answer: 'Can I use TSA PreCheck for international flights?',
-        answer: "TSA PreCheck works for the security screening portion of international flights departing from U.S. airports. You'll use PreCheck lanes at Newark Airport when flying to Europe, Caribbean, or anywhere internationally. However, PreCheck doesn't help with customs/immigration when returning to the U.S. - that requires Global Entry. For Essex County residents taking international trips, Global Entry at $100 provides better value."
+        question: 'Can I use TSA PreCheck for international flights?',
+        answer:
+          "TSA PreCheck works for the security screening portion of international flights departing from U.S. airports. You'll use PreCheck lanes at Newark Airport when flying to Europe, Caribbean, or anywhere internationally. However, PreCheck doesn't help with customs/immigration when returning to the U.S. - that requires Global Entry. For Essex County residents taking international trips, Global Entry at $100 provides better value.",
       },
       {
-        answer: 'What disqualifies you from TSA PreCheck?',
-        answer: "Certain criminal convictions permanently disqualify applicants, including espionage, treason, murder, and terrorism-related offenses. Temporary disqualifications (7-10 years) apply for crimes like robbery, assault, and drug distribution. Minor offenses like traffic violations don't affect eligibility. Financial crimes, including tax evasion over $10,000, may cause denial. Be honest on applications - lying is automatic disqualification."
+        question: 'What disqualifies you from TSA PreCheck?',
+        answer:
+          "Certain criminal convictions permanently disqualify applicants, including espionage, treason, murder, and terrorism-related offenses. Temporary disqualifications (7-10 years) apply for crimes like robbery, assault, and drug distribution. Minor offenses like traffic violations don't affect eligibility. Financial crimes, including tax evasion over $10,000, may cause denial. Be honest on applications - lying is automatic disqualification.",
       },
       {
-        answer: 'How long does TSA PreCheck approval take?',
-        answer: 'Most applicants receive approval within 3-5 business days of their enrollment appointment. Some receive approval immediately, while complex cases may take up to 60 days. Essex County residents with common names might experience longer processing due to additional identity verification. You can check application status online using the enrollment receipt. Conditional approval allows immediate use while final processing completes.'
+        question: 'How long does TSA PreCheck approval take?',
+        answer:
+          'Most applicants receive approval within 3-5 business days of their enrollment appointment. Some receive approval immediately, while complex cases may take up to 60 days. Essex County residents with common names might experience longer processing due to additional identity verification. You can check application status online using the enrollment receipt. Conditional approval allows immediate use while final processing completes.',
       },
       {
-        answer: 'Can visitors to the US get TSA PreCheck?',
-        answer: "TSA PreCheck is only available to U.S. citizens, U.S. nationals, and lawful permanent residents (green card holders). International visitors cannot enroll in TSA PreCheck directly. However, citizens of certain countries can enroll in their nation's trusted traveler programs that provide PreCheck benefits, including Canadian NEXUS and Mexico's Viajero Confiable. Business visitors should check if their country participates in reciprocal programs."
-      }
+        question: 'Can visitors to the US get TSA PreCheck?',
+        answer:
+          "TSA PreCheck is only available to U.S. citizens, U.S. nationals, and lawful permanent residents (green card holders). International visitors cannot enroll in TSA PreCheck directly. However, citizens of certain countries can enroll in their nation's trusted traveler programs that provide PreCheck benefits, including Canadian NEXUS and Mexico's Viajero Confiable. Business visitors should check if their country participates in reciprocal programs.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/newark-airport-complete-guide',
       '/travel-guides/passport-requirements',
       '/travel-guides/cruise-packing-list',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'passport-requirements-cruises',
     title: 'Passport Requirements for Cruises: Complete 2025 Guide',
     metaTitle: 'Cruise Passport Requirements 2025 | Do You Need One?',
-    metaDescription: 'Complete guide to passport requirements for cruises. Learn when you need a passport, alternatives for closed-loop cruises, and application tips.',
-    keywords: ['cruise passport requirements', 'do you need passport for cruise', 'closed-loop cruise documents', 'cruise documentation', 'passport for Caribbean cruise'],
+    metaDescription:
+      'Complete guide to passport requirements for cruises. Learn when you need a passport, alternatives for closed-loop cruises, and application tips.',
+    keywords: [
+      'cruise passport requirements',
+      'do you need passport for cruise',
+      'closed-loop cruise documents',
+      'cruise documentation',
+      'passport for Caribbean cruise',
+    ],
     searchVolume: 2400,
     guideType: 'documentation',
     content: {
@@ -681,9 +758,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Birth certificates must have raised seals',
             'Hospital birth certificates are never acceptable',
             'Each traveler needs their own documentation',
-            'Children need same documents as adults'
+            'Children need same documents as adults',
           ],
-          localNote: 'Essex County residents can get certified birth certificates at the Newark Health Department (110 William Street) with same-day service for $15 if you provide exact birth information.'
+          localNote:
+            'Essex County residents can get certified birth certificates at the Newark Health Department (110 William Street) with same-day service for $15 if you provide exact birth information.',
         },
         {
           title: 'When Passports Are Absolutely Required',
@@ -696,8 +774,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Most Asia/Pacific cruises',
             'Australia/New Zealand cruises',
             'Some South American ports',
-            'Back-to-back cruise combinations'
-          ]
+            'Back-to-back cruise combinations',
+          ],
         },
         {
           title: 'Passport Application Process for Essex County Residents',
@@ -706,10 +784,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Apply at least 3 months before travel',
             'Make appointments at suburban post offices',
             'Bring exact payment - facilities vary in accepted forms',
-            'Don\'t sign application until instructed by agent',
-            'Keep passport number and photocopy separate from passport'
+            "Don't sign application until instructed by agent",
+            'Keep passport number and photocopy separate from passport',
           ],
-          localNote: 'The Livingston Post Office has shortest wait times for passport applications. Book appointments 3-4 weeks ahead during winter for spring/summer cruise season.'
+          localNote:
+            'The Livingston Post Office has shortest wait times for passport applications. Book appointments 3-4 weeks ahead during winter for spring/summer cruise season.',
         },
         {
           title: 'Passport Cards vs Passport Books',
@@ -720,8 +799,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Cards cannot be used for any flights',
             'Books provide emergency flexibility',
             'Both can be obtained together initially',
-            'Books strongly recommended for cruises'
-          ]
+            'Books strongly recommended for cruises',
+          ],
         },
         {
           title: 'Special Situations and Family Considerations',
@@ -732,58 +811,72 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Verify requirements with cruise line directly',
             'Consider passports for infants',
             'Green card holders should bring passports',
-            'Document custody arrangements'
+            'Document custody arrangements',
           ],
-          localNote: "The Essex County Courthouse in Newark provides certified divorce and custody documents needed for children's passport applications. Order copies well in advance of passport appointments."
-        }
+          localNote:
+            "The Essex County Courthouse in Newark provides certified divorce and custody documents needed for children's passport applications. Order copies well in advance of passport appointments.",
+        },
       ],
       localAdvantages: [
         'Multiple passport acceptance facilities throughout Essex County',
         'Newark Passport Agency offers emergency same-day service',
-        'Cape Liberty\'s proximity allows closed-loop cruises without flying',
+        "Cape Liberty's proximity allows closed-loop cruises without flying",
         'Local libraries and post offices offer passport photo services',
         'County clerk offices provide required vital documents',
         'Travel agents familiar with documentation requirements',
-        'Easy access to New York consulates for foreign passports'
+        'Easy access to New York consulates for foreign passports',
       ],
-      callToAction: "Don\'t let documentation issues ruin your cruise vacation. Our travel experts can guide you through passport requirements and ensure you have everything needed for smooth sailing. Call 833-874-1019 for documentation assistance."
+      callToAction:
+        "Don't let documentation issues ruin your cruise vacation. Our travel experts can guide you through passport requirements and ensure you have everything needed for smooth sailing. Call 833-874-1019 for documentation assistance.",
     },
     faq: [
       {
-        answer: 'Can I use an expired passport on a closed-loop cruise?',
-        answer: "No, expired passports are never accepted for any cruise travel. While closed-loop cruises allow alternatives like birth certificates, if you choose to use a passport, it must be valid. Many countries require passports valid for 6 months beyond travel dates. Even if technically not required, cruise lines won't accept expired passports as identification. Renew your passport at least 9 months before expiration to avoid issues."
+        question: 'Can I use an expired passport on a closed-loop cruise?',
+        answer:
+          "No, expired passports are never accepted for any cruise travel. While closed-loop cruises allow alternatives like birth certificates, if you choose to use a passport, it must be valid. Many countries require passports valid for 6 months beyond travel dates. Even if technically not required, cruise lines won't accept expired passports as identification. Renew your passport at least 9 months before expiration to avoid issues.",
       },
       {
-        answer: 'Do babies need passports for cruises?',
-        answer: "Babies need the same documentation as adults - either a passport or birth certificate for closed-loop cruises. Hospital-issued birth certificates aren't acceptable; you need state-issued certificates with raised seals. Getting infant passports requires both parents present or notarized consent. Infant passports are only valid for 5 years versus 10 for adults. Many Essex County parents get infant passports immediately after birth for maximum flexibility."
+        question: 'Do babies need passports for cruises?',
+        answer:
+          "Babies need the same documentation as adults - either a passport or birth certificate for closed-loop cruises. Hospital-issued birth certificates aren't acceptable; you need state-issued certificates with raised seals. Getting infant passports requires both parents present or notarized consent. Infant passports are only valid for 5 years versus 10 for adults. Many Essex County parents get infant passports immediately after birth for maximum flexibility.",
       },
       {
-        answer: 'What if my passport expires during my cruise?',
-        answer: 'Many countries require passports valid for 6 months beyond entry date, though some Caribbean nations only require validity through your return date. Cruise lines typically enforce the strictest standard to avoid problems. If your passport expires within 6 months of your cruise end date, renew it before traveling. This is especially important for longer cruises or back-to-back sailings.'
+        question: 'What if my passport expires during my cruise?',
+        answer:
+          'Many countries require passports valid for 6 months beyond entry date, though some Caribbean nations only require validity through your return date. Cruise lines typically enforce the strictest standard to avoid problems. If your passport expires within 6 months of your cruise end date, renew it before traveling. This is especially important for longer cruises or back-to-back sailings.',
       },
       {
-        answer: 'Can I cruise with a passport renewal pending?',
-        answer: 'No, you cannot cruise while your passport is being renewed - the State Department has your old passport during processing. Apply for renewal at least 3 months before cruising, or use expedited service (2-3 weeks). In emergencies, the Newark Passport Agency can process renewals same-day with proof of immediate travel. Some Essex County residents keep expired passports as backup identification after receiving new ones.'
+        question: 'Can I cruise with a passport renewal pending?',
+        answer:
+          'No, you cannot cruise while your passport is being renewed - the State Department has your old passport during processing. Apply for renewal at least 3 months before cruising, or use expedited service (2-3 weeks). In emergencies, the Newark Passport Agency can process renewals same-day with proof of immediate travel. Some Essex County residents keep expired passports as backup identification after receiving new ones.',
       },
       {
-        answer: 'What happens if I lose my passport during a cruise?',
-        answer: "Report loss immediately to the ship's guest services and nearest U.S. embassy or consulate at your next port. They can issue emergency passports, though the process may take days and cost $145+. You might miss port stops while obtaining replacement documents. Keep photocopies of your passport separate from the original, and consider storing photos in your phone and cloud storage for faster replacement processing."
-      }
+        question: 'What happens if I lose my passport during a cruise?',
+        answer:
+          "Report loss immediately to the ship's guest services and nearest U.S. embassy or consulate at your next port. They can issue emergency passports, though the process may take days and cost $145+. You might miss port stops while obtaining replacement documents. Keep photocopies of your passport separate from the original, and consider storing photos in your phone and cloud storage for faster replacement processing.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-packing-list',
       '/travel-guides/newark-airport-complete-guide',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'what-to-wear-on-cruise',
     title: 'What to Wear on a Cruise: Complete 2025 Dress Code Guide',
     metaTitle: 'What to Wear on a Cruise | Dress Codes & Packing Guide',
-    metaDescription: 'Complete guide to cruise dress codes, what to wear for formal nights, casual days, and shore excursions. Expert tips for packing the right cruise wardrobe.',
-    keywords: ['what to wear on cruise', 'cruise dress code', 'formal night cruise', 'cruise attire', 'cruise clothing guide'],
+    metaDescription:
+      'Complete guide to cruise dress codes, what to wear for formal nights, casual days, and shore excursions. Expert tips for packing the right cruise wardrobe.',
+    keywords: [
+      'what to wear on cruise',
+      'cruise dress code',
+      'formal night cruise',
+      'cruise attire',
+      'cruise clothing guide',
+    ],
     searchVolume: 2100,
     guideType: 'packing',
     content: {
@@ -793,13 +886,14 @@ export const travelInfoGuides: TravelInfoGuide[] = [
           title: 'Understanding Cruise Dress Codes',
           content: `Modern cruise lines have evolved their dress codes significantly, moving away from rigid requirements toward 'suggested attire' that gives passengers more flexibility. However, understanding these guidelines remains essential for comfortable cruising. Daytime dress codes are universally relaxed across all cruise lines - resort casual reigns supreme. Think comfortable vacation wear: shorts, sundresses, t-shirts, polo shirts, and casual pants. Swimwear is perfect for pool decks but requires cover-ups when moving through indoor spaces or dining areas. Evening dress codes vary by cruise line and venue. Main dining rooms and specialty restaurants enforce dress guidelines after 6 PM, while buffets remain casual. Most mainstream lines (Royal Caribbean, Norwegian, Carnival sailing from Cape Liberty) have 2-3 dress code categories: Casual (smart casual), Smart Casual (formerly informal), and Formal (optional on many lines). Casual nights allow nice jeans, polo shirts, sundresses, and casual slacks - think restaurant-appropriate attire. Smart Casual ups the ante with dress pants, button-down shirts, blouses, skirts, and dresses. Formal nights suggest cocktail attire: suits or sport coats for men, cocktail dresses or elegant pantsuits for women. Norwegian Cruise Line pioneered 'Freestyle Cruising' with relaxed dress codes - you'll never be turned away from dinner, though some specialty restaurants maintain standards. Luxury lines like Regent and Silversea actually maintain stricter codes despite their 'country club casual' marketing. Disney Cruise Line offers optional formal nights with most passengers participating enthusiastically, especially families from Essex County celebrating special occasions.`,
           tips: [
-            'Check your specific cruise line\'s current dress code',
+            "Check your specific cruise line's current dress code",
             'Dress codes have relaxed post-pandemic',
             'Buffets never enforce dress codes',
             'Specialty restaurants may have stricter requirements',
-            'Room service has no dress requirements'
+            'Room service has no dress requirements',
           ],
-          localNote: 'Short Hills Mall and The Mall at Mill Creek offer personal styling services that can help Essex County cruisers build appropriate cruise wardrobes within any budget.'
+          localNote:
+            'Short Hills Mall and The Mall at Mill Creek offer personal styling services that can help Essex County cruisers build appropriate cruise wardrobes within any budget.',
         },
         {
           title: 'Formal Night Attire',
@@ -811,8 +905,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Accessories to elevate outfits',
             'Wraps for cold dining rooms',
             'Avoid overly casual items like shorts',
-            'Consider renting special occasion wear'
-          ]
+            'Consider renting special occasion wear',
+          ],
         },
         {
           title: 'Smart Casual and Casual Night Options',
@@ -822,9 +916,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Neutral colors coordinate easily',
             'Layers for temperature control',
             'Comfortable shoes for ship movement',
-            'Avoid athletic wear in dining rooms'
+            'Avoid athletic wear in dining rooms',
           ],
-          localNote: 'Target in West Orange and Old Navy in Livingston offer affordable smart casual options perfect for cruise wear without breaking the budget.'
+          localNote:
+            'Target in West Orange and Old Navy in Livingston offer affordable smart casual options perfect for cruise wear without breaking the budget.',
         },
         {
           title: 'Daytime and Pool Attire',
@@ -837,8 +932,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Sun protection accessories',
             'Water shoes for beaches',
             'Quick-dry fabrics',
-            'Reef-safe sunscreen'
-          ]
+            'Reef-safe sunscreen',
+          ],
         },
         {
           title: 'Destination-Specific Clothing',
@@ -848,10 +943,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Alaska: Waterproof layers, hiking boots',
             'Mediterranean: Modest options for religious sites',
             'Northern Europe: Layers plus city-appropriate attire',
-            'Research specific ports for requirements'
+            'Research specific ports for requirements',
           ],
-          localNote: 'Eastern Mountain Sports in Paramus provides expert advice on technical clothing for Alaska and Northern Europe cruises, with seasonal sales in February-March.'
-        }
+          localNote:
+            'Eastern Mountain Sports in Paramus provides expert advice on technical clothing for Alaska and Northern Europe cruises, with seasonal sales in February-March.',
+        },
       ],
       localAdvantages: [
         'Multiple shopping options from budget to luxury in Essex County',
@@ -860,46 +956,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Personal styling services at major malls',
         'Outlet shopping at Jersey Gardens for cruise wardrobe',
         'REI and outdoor stores for adventure cruise gear',
-        'Department stores offer cruise wardrobe consultations'
+        'Department stores offer cruise wardrobe consultations',
       ],
-      callToAction: 'Planning your cruise wardrobe? Our travel experts can provide specific dress code information for your cruise line and help you prepare perfectly. Call 833-874-1019 for personalized cruise planning assistance.'
+      callToAction:
+        'Planning your cruise wardrobe? Our travel experts can provide specific dress code information for your cruise line and help you prepare perfectly. Call 833-874-1019 for personalized cruise planning assistance.',
     },
     faq: [
       {
-        answer: 'Can you wear jeans on a cruise?',
-        answer: 'Yes, jeans are now acceptable on most cruise lines during casual and smart casual evenings. Dark, well-fitted jeans paired with a nice top or collared shirt work for most dining rooms. Avoid distressed, torn, or overly casual jeans. Luxury lines and formal nights still discourage jeans. During the day, jeans are always acceptable, though they may be uncomfortably warm in tropical destinations.'
+        question: 'Can you wear jeans on a cruise?',
+        answer:
+          'Yes, jeans are now acceptable on most cruise lines during casual and smart casual evenings. Dark, well-fitted jeans paired with a nice top or collared shirt work for most dining rooms. Avoid distressed, torn, or overly casual jeans. Luxury lines and formal nights still discourage jeans. During the day, jeans are always acceptable, though they may be uncomfortably warm in tropical destinations.',
       },
       {
-        answer: 'Do you have to dress up for dinner on a cruise?',
-        answer: "Main dining rooms require 'smart casual' attire after 6 PM - nicer than pool wear but not necessarily formal. Buffets and casual dining venues never require dressing up. You can always order room service if you prefer not to change. Most modern cruise lines have relaxed requirements significantly. Norwegian's 'Freestyle Cruising' means you're never turned away from dinner, though nicer attire is appreciated."
+        question: 'Do you have to dress up for dinner on a cruise?',
+        answer:
+          "Main dining rooms require 'smart casual' attire after 6 PM - nicer than pool wear but not necessarily formal. Buffets and casual dining venues never require dressing up. You can always order room service if you prefer not to change. Most modern cruise lines have relaxed requirements significantly. Norwegian's 'Freestyle Cruising' means you're never turned away from dinner, though nicer attire is appreciated.",
       },
       {
-        answer: 'How many formal outfits should I pack for a 7-day cruise?',
-        answer: '7-day cruises typically have 1-2 formal nights. Pack one versatile formal outfit that can be accessorized differently for variety. Men can wear the same suit with different shirts/ties. Women can transform one dress with different accessories. Remember formal nights are optional - the buffet remains open for those preferring casual dining. Consider your cabin storage when packing multiple formal options.'
+        question: 'How many formal outfits should I pack for a 7-day cruise?',
+        answer:
+          '7-day cruises typically have 1-2 formal nights. Pack one versatile formal outfit that can be accessorized differently for variety. Men can wear the same suit with different shirts/ties. Women can transform one dress with different accessories. Remember formal nights are optional - the buffet remains open for those preferring casual dining. Consider your cabin storage when packing multiple formal options.',
       },
       {
-        answer: 'What should you not wear on a cruise?',
-        answer: 'Avoid offensive graphics/slogans, excessively revealing clothing, and swimwear in indoor public areas. Most dining rooms prohibit tank tops, baseball caps, flip-flops, and athletic wear after 6 PM. Camouflage clothing is banned in many Caribbean countries. High heels struggle on moving ships - opt for wedges or block heels. Skip expensive jewelry that attracts thieves in ports.'
+        question: 'What should you not wear on a cruise?',
+        answer:
+          'Avoid offensive graphics/slogans, excessively revealing clothing, and swimwear in indoor public areas. Most dining rooms prohibit tank tops, baseball caps, flip-flops, and athletic wear after 6 PM. Camouflage clothing is banned in many Caribbean countries. High heels struggle on moving ships - opt for wedges or block heels. Skip expensive jewelry that attracts thieves in ports.',
       },
       {
-        answer: 'Do cruise ships provide formal wear rentals?',
-        answer: 'Some cruise lines offer formal wear rentals, but availability is limited and expensive. Cruise Formal Wear and similar services deliver rentals to your cabin, but must be reserved weeks in advance. Costs often exceed purchasing options at discount retailers. Essex County residents have better options: Rent the Runway in Secaucus or purchasing from Jersey Gardens outlets costs less than onboard rentals.'
-      }
+        question: 'Do cruise ships provide formal wear rentals?',
+        answer:
+          'Some cruise lines offer formal wear rentals, but availability is limited and expensive. Cruise Formal Wear and similar services deliver rentals to your cabin, but must be reserved weeks in advance. Costs often exceed purchasing options at discount retailers. Essex County residents have better options: Rent the Runway in Secaucus or purchasing from Jersey Gardens outlets costs less than onboard rentals.',
+      },
     ],
     relatedGuides: [
       '/travel-guides/cruise-packing-list',
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-dining-guide',
-      '/cruises/caribbean'
+      '/cruises/caribbean',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-ship-tips-tricks',
     title: 'Cruise Ship Tips and Tricks: Insider Secrets for Your Best Cruise',
     metaTitle: 'Cruise Ship Tips & Tricks 2025 | Insider Secrets Guide',
-    metaDescription: 'Discover insider cruise ship tips and tricks to maximize your vacation. Learn money-saving hacks, cabin secrets, and expert advice from cruise professionals.',
-    keywords: ['cruise ship tips', 'cruise tricks', 'cruise hacks', 'cruise insider tips', 'cruise secrets'],
+    metaDescription:
+      'Discover insider cruise ship tips and tricks to maximize your vacation. Learn money-saving hacks, cabin secrets, and expert advice from cruise professionals.',
+    keywords: [
+      'cruise ship tips',
+      'cruise tricks',
+      'cruise hacks',
+      'cruise insider tips',
+      'cruise secrets',
+    ],
     searchVolume: 1900,
     guideType: 'cruise-tips',
     content: {
@@ -913,9 +1022,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Use travel agents for exclusive perks',
             'Monitor prices until final payment',
             'Research cabin locations thoroughly',
-            'Find secret decks and quiet spaces'
+            'Find secret decks and quiet spaces',
           ],
-          localNote: 'Essex County AAA offices offer member-exclusive cruise rates with added benefits like onboard credit and free gratuities worth $200+ per cabin.'
+          localNote:
+            'Essex County AAA offices offer member-exclusive cruise rates with added benefits like onboard credit and free gratuities worth $200+ per cabin.',
         },
         {
           title: 'Embarkation Day Strategies',
@@ -927,8 +1037,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Book specialty restaurants',
             'Reserve entertainment shows',
             'Check spa discounts',
-            'Attend ship orientation tour'
-          ]
+            'Attend ship orientation tour',
+          ],
         },
         {
           title: 'Dining Hacks and Secrets',
@@ -938,8 +1048,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Combine buffet and dining room meals',
             'Find free specialty restaurant lunches',
             'Order room service night before',
-            'Build relationships with service staff'
-          ]
+            'Build relationships with service staff',
+          ],
         },
         {
           title: 'Cabin Comfort Maximizers',
@@ -950,9 +1060,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Non-surge power strip essential',
             'Create white noise solution',
             'Request extra supplies from steward',
-            'Find hidden USB ports'
+            'Find hidden USB ports',
           ],
-          localNote: 'Five Below stores throughout Essex County sell cruise organization supplies for fraction of Amazon prices. Stock up on magnets, organizers, and travel accessories before sailing.'
+          localNote:
+            'Five Below stores throughout Essex County sell cruise organization supplies for fraction of Amazon prices. Stock up on magnets, organizers, and travel accessories before sailing.',
         },
         {
           title: 'Money-Saving Strategies',
@@ -963,9 +1074,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Shop away from ports',
             'Research independent excursions',
             'Calculate beverage package value',
-            'Prepay gratuities'
-          ]
-        }
+            'Prepay gratuities',
+          ],
+        },
       ],
       localAdvantages: [
         'Cape Liberty proximity eliminates flight booking complications',
@@ -974,46 +1085,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'AAA membership provides exclusive cruise benefits',
         'Multiple pre-cruise shopping options for supplies',
         'Experience with Northeast departures and weather patterns',
-        'Knowledge of Cape Liberty specific procedures'
+        'Knowledge of Cape Liberty specific procedures',
       ],
-      callToAction: 'Want more insider cruise secrets? Our experienced agents know tricks specific to each cruise line and ship. Call 833-874-1019 for expert advice that will save you money and enhance your cruise experience.'
+      callToAction:
+        'Want more insider cruise secrets? Our experienced agents know tricks specific to each cruise line and ship. Call 833-874-1019 for expert advice that will save you money and enhance your cruise experience.',
     },
     faq: [
       {
-        answer: 'What is the best deck on a cruise ship?',
-        answer: "Mid-ship decks 6-8 typically offer the best combination of convenience and stability. You're centered between activities, experience less motion, and avoid noise from pools above and nightclubs below. Balcony cabins on these decks often cost more but provide better value. Avoid Deck 1 (crew noise), directly under pools/buffets (chair dragging), and top decks (more motion)."
+        question: 'What is the best deck on a cruise ship?',
+        answer:
+          "Mid-ship decks 6-8 typically offer the best combination of convenience and stability. You're centered between activities, experience less motion, and avoid noise from pools above and nightclubs below. Balcony cabins on these decks often cost more but provide better value. Avoid Deck 1 (crew noise), directly under pools/buffets (chair dragging), and top decks (more motion).",
       },
       {
-        answer: 'Should you pay for WiFi on a cruise?',
-        answer: 'Ship WiFi is expensive ($15-30 daily) and frustratingly slow. Only purchase if necessary for work or emergencies. Instead, use port WiFi at cafes or purchase local SIM cards. Many Essex County cruisers use Google Fi or T-Mobile international plans that work in ports. Download entertainment content before sailing and use ship WiFi only for essential communications.'
+        question: 'Should you pay for WiFi on a cruise?',
+        answer:
+          'Ship WiFi is expensive ($15-30 daily) and frustratingly slow. Only purchase if necessary for work or emergencies. Instead, use port WiFi at cafes or purchase local SIM cards. Many Essex County cruisers use Google Fi or T-Mobile international plans that work in ports. Download entertainment content before sailing and use ship WiFi only for essential communications.',
       },
       {
-        answer: 'How do you get free stuff on cruises?',
-        answer: 'Attend art auctions for free champagne (no purchase required). Visit shops during sales events for free samples. Spa tours include free samples and sometimes treatments. Casino players clubs offer free drinks while gambling. Loyalty programs provide increasing perks. Mention celebrations at booking for potential upgrades or amenities. Be friendly with crew - good relationships yield unexpected perks.'
+        question: 'How do you get free stuff on cruises?',
+        answer:
+          'Attend art auctions for free champagne (no purchase required). Visit shops during sales events for free samples. Spa tours include free samples and sometimes treatments. Casino players clubs offer free drinks while gambling. Loyalty programs provide increasing perks. Mention celebrations at booking for potential upgrades or amenities. Be friendly with crew - good relationships yield unexpected perks.',
       },
       {
-        answer: 'Is it better to board early or late?',
-        answer: 'Board at your designated time for optimal experience. Early boarding means longer waits but first access to reservations and limited spaces. Late boarding avoids crowds but risks missing popular bookings. The sweet spot is 1-2 PM - cabins are ready, initial crowds have dispersed, and restaurants/shows remain available. Never board in the last hour unless necessary.'
+        question: 'Is it better to board early or late?',
+        answer:
+          'Board at your designated time for optimal experience. Early boarding means longer waits but first access to reservations and limited spaces. Late boarding avoids crowds but risks missing popular bookings. The sweet spot is 1-2 PM - cabins are ready, initial crowds have dispersed, and restaurants/shows remain available. Never board in the last hour unless necessary.',
       },
       {
-        answer: 'What should you do first when boarding a cruise ship?',
-        answer: "Make specialty dining reservations immediately - popular venues sell out within hours. Then book spa treatments for port days when they're discounted. Reserve entertainment shows if required. After securing bookings, eat lunch at the buffet before crowds arrive, then explore the ship during the mandatory muster drill when you'll have captive time anyway."
-      }
+        question: 'What should you do first when boarding a cruise ship?',
+        answer:
+          "Make specialty dining reservations immediately - popular venues sell out within hours. Then book spa treatments for port days when they're discounted. Reserve entertainment shows if required. After securing bookings, eat lunch at the buffet before crowds arrive, then explore the ship during the mandatory muster drill when you'll have captive time anyway.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-dining-guide',
       '/travel-guides/cruise-packing-list',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-excursion-planning',
     title: 'Cruise Excursion Planning Guide: Shore Tours vs Independent Exploration',
     metaTitle: 'Cruise Excursion Planning 2025 | Book Tours vs DIY Guide',
-    metaDescription: 'Complete guide to planning cruise excursions. Compare ship tours vs independent exploration, save money, and maximize your time in port.',
-    keywords: ['cruise excursions', 'shore excursions', 'cruise port tours', 'independent cruise tours', 'cruise excursion planning'],
+    metaDescription:
+      'Complete guide to planning cruise excursions. Compare ship tours vs independent exploration, save money, and maximize your time in port.',
+    keywords: [
+      'cruise excursions',
+      'shore excursions',
+      'cruise port tours',
+      'independent cruise tours',
+      'cruise excursion planning',
+    ],
     searchVolume: 1700,
     guideType: 'planning',
     content: {
@@ -1027,9 +1151,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Simple activities work well independently',
             'Always return 90 minutes before all-aboard',
             'Research operators thoroughly',
-            'Check reviews from recent cruisers'
+            'Check reviews from recent cruisers',
           ],
-          localNote: 'Many Essex County travel agents can pre-arrange private excursions with trusted local operators, providing independent tour savings with additional security.'
+          localNote:
+            'Many Essex County travel agents can pre-arrange private excursions with trusted local operators, providing independent tour savings with additional security.',
         },
         {
           title: 'Researching and Planning Port Activities',
@@ -1042,8 +1167,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Understand dock locations',
             'Check transportation options',
             'Book popular tours early',
-            'Plan weather alternatives'
-          ]
+            'Plan weather alternatives',
+          ],
         },
         {
           title: 'Caribbean Port Strategies',
@@ -1053,9 +1178,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Jamaica: Consider ship tours for safety',
             'Grand Cayman: Book Stingray City early',
             'St. Thomas: Easy independent exploration',
-            'Nassau: Skip expensive Atlantis passes'
+            'Nassau: Skip expensive Atlantis passes',
           ],
-          localNote: "Essex County's Caribbean expatriate communities provide insider recommendations - check with West Indian associations in Newark and East Orange for authentic local experiences."
+          localNote:
+            "Essex County's Caribbean expatriate communities provide insider recommendations - check with West Indian associations in Newark and East Orange for authentic local experiences.",
         },
         {
           title: 'Alaska and Specialty Port Planning',
@@ -1066,8 +1192,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Bermuda: Get transportation passes',
             'Research dock distances',
             'Consider weather impacts',
-            'Book trains/flights early'
-          ]
+            'Book trains/flights early',
+          ],
         },
         {
           title: 'Safety and Practical Considerations',
@@ -1078,9 +1204,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Plan communication strategy',
             'Be realistic about fitness levels',
             'Bring small bills for tips',
-            'Notify banks of travel plans'
-          ]
-        }
+            'Notify banks of travel plans',
+          ],
+        },
       ],
       localAdvantages: [
         'Cape Liberty departures allow familiar Caribbean destinations',
@@ -1089,46 +1215,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Multiple currency exchange options before cruising',
         'Experience with international travel from Newark Airport',
         'Access to specialty gear stores for adventure excursions',
-        'Travel medicine clinics for destination-specific health prep'
+        'Travel medicine clinics for destination-specific health prep',
       ],
-      callToAction: 'Need help planning perfect shore excursions? Our travel experts know every port and can recommend the best tours for your interests and budget. Call 833-874-1019 for personalized excursion planning.'
+      callToAction:
+        'Need help planning perfect shore excursions? Our travel experts know every port and can recommend the best tours for your interests and budget. Call 833-874-1019 for personalized excursion planning.',
     },
     faq: [
       {
-        answer: 'How far in advance should I book cruise excursions?',
-        answer: "Popular excursions like swimming with dolphins, exclusive beach clubs, or small-group tours should be booked 60-90 days before sailing when ship bookings open. Standard tours remain available closer to sailing. Independent tours through Viator or local operators can be booked 2-4 weeks ahead. Some excursions offer last-minute discounts, but don't rely on availability for must-do activities."
+        question: 'How far in advance should I book cruise excursions?',
+        answer:
+          "Popular excursions like swimming with dolphins, exclusive beach clubs, or small-group tours should be booked 60-90 days before sailing when ship bookings open. Standard tours remain available closer to sailing. Independent tours through Viator or local operators can be booked 2-4 weeks ahead. Some excursions offer last-minute discounts, but don't rely on availability for must-do activities.",
       },
       {
-        answer: 'What happens if my independent tour is late returning to the ship?',
-        answer: "If you're on an independent excursion and miss the ship, you're responsible for catching up at the next port at your own expense. This can cost thousands of dollars for flights, hotels, and transportation. Always return 60-90 minutes before all-aboard time. Consider ship excursions for distant or complex tours where timing is tight. Travel insurance may cover some missed ship expenses depending on circumstances."
+        question: 'What happens if my independent tour is late returning to the ship?',
+        answer:
+          "If you're on an independent excursion and miss the ship, you're responsible for catching up at the next port at your own expense. This can cost thousands of dollars for flights, hotels, and transportation. Always return 60-90 minutes before all-aboard time. Consider ship excursions for distant or complex tours where timing is tight. Travel insurance may cover some missed ship expenses depending on circumstances.",
       },
       {
-        answer: 'Are cruise excursions worth the money?',
-        answer: "Ship excursions are worth it for complex logistics, unsafe areas, or can't-miss experiences where the ship waiting guarantee matters. Simple beach visits, shopping, or easy sightseeing rarely justify ship tour premiums. A $150 ship beach excursion might include $30 of actual value - transportation and beach chair. Research shows independent options average 40-60% cheaper for identical experiences."
+        question: 'Are cruise excursions worth the money?',
+        answer:
+          "Ship excursions are worth it for complex logistics, unsafe areas, or can't-miss experiences where the ship waiting guarantee matters. Simple beach visits, shopping, or easy sightseeing rarely justify ship tour premiums. A $150 ship beach excursion might include $30 of actual value - transportation and beach chair. Research shows independent options average 40-60% cheaper for identical experiences.",
       },
       {
-        answer: 'Can I leave the ship without booking an excursion?',
-        answer: 'Yes, you can explore independently at most ports without any tour. Simply walk off the ship (or take tenders where required) and explore. Many ports have attractions within walking distance or easy taxi rides. This works especially well in developed ports like Key West, St. Thomas, or Bermuda. Always carry ship identification and return well before all-aboard time.'
+        question: 'Can I leave the ship without booking an excursion?',
+        answer:
+          'Yes, you can explore independently at most ports without any tour. Simply walk off the ship (or take tenders where required) and explore. Many ports have attractions within walking distance or easy taxi rides. This works especially well in developed ports like Key West, St. Thomas, or Bermuda. Always carry ship identification and return well before all-aboard time.',
       },
       {
-        answer: 'Should I book excursions through the cruise line or third party?',
-        answer: 'Book through the cruise line when: timing is tight, logistics are complex, safety is questionable, or missing the experience would ruin your trip. Book independently when: ports are safe and developed, activities are simple, you have adequate time buffer, or significant savings justify minimal risk. Many experienced cruisers mix both strategies depending on specific ports.'
-      }
+        question: 'Should I book excursions through the cruise line or third party?',
+        answer:
+          'Book through the cruise line when: timing is tight, logistics are complex, safety is questionable, or missing the experience would ruin your trip. Book independently when: ports are safe and developed, activities are simple, you have adequate time buffer, or significant savings justify minimal risk. Many experienced cruisers mix both strategies depending on specific ports.',
+      },
     ],
     relatedGuides: [
       '/travel-guides/cruise-ship-tips-tricks',
       '/travel-guides/first-time-cruiser-guide',
       '/cruises/caribbean',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-insurance-guide',
     title: 'Cruise Insurance Complete Guide: What You Need & What to Skip',
     metaTitle: 'Cruise Insurance Guide 2025 | Coverage Tips & Best Policies',
-    metaDescription: 'Complete guide to cruise travel insurance. Learn what coverage you need, compare policies, and understand when cruise insurance is worth the cost.',
-    keywords: ['cruise insurance', 'cruise travel insurance', 'trip insurance', 'cruise coverage', 'travel insurance for cruises'],
+    metaDescription:
+      'Complete guide to cruise travel insurance. Learn what coverage you need, compare policies, and understand when cruise insurance is worth the cost.',
+    keywords: [
+      'cruise insurance',
+      'cruise travel insurance',
+      'trip insurance',
+      'cruise coverage',
+      'travel insurance for cruises',
+    ],
     searchVolume: 1600,
     guideType: 'insurance',
     content: {
@@ -1142,9 +1281,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Check existing insurance for overlap',
             'Buy within 21 days for pre-existing waivers',
             'Medical evacuation is most critical coverage',
-            'Cancel for any reason costs more but offers flexibility'
+            'Cancel for any reason costs more but offers flexibility',
           ],
-          localNote: 'Many Essex County employers offer travel insurance through corporate benefits. Check with HR before purchasing separate cruise coverage - you might already be covered.'
+          localNote:
+            'Many Essex County employers offer travel insurance through corporate benefits. Check with HR before purchasing separate cruise coverage - you might already be covered.',
         },
         {
           title: 'Cruise Line Insurance vs Third-Party Policies',
@@ -1155,8 +1295,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Verify flight and hotel coverage included',
             'Understand activity exclusions',
             'Compare coverage limits',
-            'Read cancellation penalty coverage'
-          ]
+            'Read cancellation penalty coverage',
+          ],
         },
         {
           title: 'When Cruise Insurance is Essential',
@@ -1166,9 +1306,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Protect expensive cruise investments',
             'Hurricane season requires coverage',
             'Pre-existing conditions need waivers',
-            'Complex itineraries increase risk'
+            'Complex itineraries increase risk',
           ],
-          localNote: "Newark Airport's weather delays make trip interruption insurance valuable for Essex County residents with tight cruise connections. Consider coverage even for domestic positioning flights."
+          localNote:
+            "Newark Airport's weather delays make trip interruption insurance valuable for Essex County residents with tight cruise connections. Consider coverage even for domestic positioning flights.",
         },
         {
           title: 'Coverage You May Already Have',
@@ -1179,8 +1320,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Understand health insurance international coverage',
             'Verify auto club membership benefits',
             'Investigate employer travel benefits',
-            'Document all existing coverage'
-          ]
+            'Document all existing coverage',
+          ],
         },
         {
           title: 'Smart Insurance Shopping Strategies',
@@ -1191,10 +1332,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Match coverage limits to needs',
             'Consider deductible impact',
             'Buy within waiver windows',
-            'Read full policy documents'
+            'Read full policy documents',
           ],
-          localNote: 'Local Essex County insurance agents often broker travel insurance with personalized service. Established relationships can expedite claims and provide advocacy during disputes.'
-        }
+          localNote:
+            'Local Essex County insurance agents often broker travel insurance with personalized service. Established relationships can expedite claims and provide advocacy during disputes.',
+        },
       ],
       localAdvantages: [
         'Multiple local insurance agents specializing in travel',
@@ -1203,46 +1345,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Access to insurance company headquarters in Newark',
         'Experience with weather-related Newark Airport delays',
         'Strong consumer protection laws in New Jersey',
-        'Local travel agencies offering group insurance rates'
+        'Local travel agencies offering group insurance rates',
       ],
-      callToAction: 'Confused about cruise insurance? Our travel experts can help you understand what coverage you need and find the best policies for your situation. Call 833-874-1019 for personalized insurance guidance.'
+      callToAction:
+        'Confused about cruise insurance? Our travel experts can help you understand what coverage you need and find the best policies for your situation. Call 833-874-1019 for personalized insurance guidance.',
     },
     faq: [
       {
-        answer: 'Is cruise insurance worth it?',
-        answer: 'Cruise insurance is worth it for international cruises, expensive trips, hurricane season travel, or if you have health conditions. The average cruise insurance costs 5-10% of trip cost. For a $5,000 cruise, $250-500 insurance protecting against medical emergencies costing $50,000+ makes sense. However, young healthy travelers on cheap domestic cruises might reasonably skip coverage.'
+        question: 'Is cruise insurance worth it?',
+        answer:
+          'Cruise insurance is worth it for international cruises, expensive trips, hurricane season travel, or if you have health conditions. The average cruise insurance costs 5-10% of trip cost. For a $5,000 cruise, $250-500 insurance protecting against medical emergencies costing $50,000+ makes sense. However, young healthy travelers on cheap domestic cruises might reasonably skip coverage.',
       },
       {
         question: 'When should I buy cruise travel insurance?',
-        answer: "Buy cruise insurance within 14-21 days of your initial cruise deposit to secure pre-existing condition waivers and 'cancel for any reason' options. These valuable coverages are time-sensitive and unavailable later. You can purchase basic insurance until final payment, but you lose important benefits. Set a reminder immediately when booking your cruise."
+        answer:
+          "Buy cruise insurance within 14-21 days of your initial cruise deposit to secure pre-existing condition waivers and 'cancel for any reason' options. These valuable coverages are time-sensitive and unavailable later. You can purchase basic insurance until final payment, but you lose important benefits. Set a reminder immediately when booking your cruise.",
       },
       {
-        answer: 'Does cruise insurance cover COVID-19?',
-        answer: "Most policies now cover COVID-19 like any other illness for trip cancellation, interruption, and medical care. However, 'fear of travel' or border closures may not be covered without 'cancel for any reason' coverage. Quarantine coverage varies by policy. Read policy documents carefully as COVID coverage evolved rapidly and differs between insurers."
+        question: 'Does cruise insurance cover COVID-19?',
+        answer:
+          "Most policies now cover COVID-19 like any other illness for trip cancellation, interruption, and medical care. However, 'fear of travel' or border closures may not be covered without 'cancel for any reason' coverage. Quarantine coverage varies by policy. Read policy documents carefully as COVID coverage evolved rapidly and differs between insurers.",
       },
       {
-        answer: 'What does cruise insurance not cover?',
-        answer: 'Standard exclusions include: cancelling because you changed your mind (without CFAR coverage), pre-existing conditions without waivers, high-risk activities like skydiving, mental health issues (some policies), business-related cancellations, war or terrorism (usually), government travel warnings issued after booking, and pregnancy complications (varies). Always read exclusions carefully before purchasing.'
+        question: 'What does cruise insurance not cover?',
+        answer:
+          'Standard exclusions include: cancelling because you changed your mind (without CFAR coverage), pre-existing conditions without waivers, high-risk activities like skydiving, mental health issues (some policies), business-related cancellations, war or terrorism (usually), government travel warnings issued after booking, and pregnancy complications (varies). Always read exclusions carefully before purchasing.',
       },
       {
-        answer: 'Can I buy cruise insurance after booking?',
-        answer: "Yes, but with limitations. You can purchase basic insurance up until final payment or sometimes departure. However, pre-existing condition waivers and 'cancel for any reason' coverage require purchase within 14-21 days of initial deposit. Waiting means accepting greater risk from pre-existing conditions and fewer cancellation options. Don't delay if you have any health concerns."
-      }
+        question: 'Can I buy cruise insurance after booking?',
+        answer:
+          "Yes, but with limitations. You can purchase basic insurance up until final payment or sometimes departure. However, pre-existing condition waivers and 'cancel for any reason' coverage require purchase within 14-21 days of initial deposit. Waiting means accepting greater risk from pre-existing conditions and fewer cancellation options. Don't delay if you have any health concerns.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-budgeting-guide',
       '/cruises/from-newark',
-      '/travel-guides/passport-requirements-cruises'
+      '/travel-guides/passport-requirements-cruises',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-dining-guide',
     title: 'Cruise Dining Guide: Restaurants, Buffets & Specialty Venues Explained',
     metaTitle: 'Cruise Dining Guide 2025 | All Restaurant Options Explained',
-    metaDescription: 'Complete guide to cruise ship dining including main restaurants, specialty venues, buffets, and room service. Learn dining strategies and etiquette.',
-    keywords: ['cruise dining', 'cruise restaurants', 'specialty dining cruise', 'cruise food', 'cruise buffet'],
+    metaDescription:
+      'Complete guide to cruise ship dining including main restaurants, specialty venues, buffets, and room service. Learn dining strategies and etiquette.',
+    keywords: [
+      'cruise dining',
+      'cruise restaurants',
+      'specialty dining cruise',
+      'cruise food',
+      'cruise buffet',
+    ],
     searchVolume: 1500,
     guideType: 'cruise-tips',
     content: {
@@ -1256,9 +1411,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Request off-menu items - kitchens often accommodate',
             'Build relationships with waitstaff for better service',
             'Try breakfast/lunch for peaceful dining',
-            'Make special dietary requests early'
+            'Make special dietary requests early',
           ],
-          localNote: "Essex County's diverse population means cruise lines from Cape Liberty excel at dietary accommodations. Norwegian and Royal Caribbean have dedicated kosher and halal preparation areas."
+          localNote:
+            "Essex County's diverse population means cruise lines from Cape Liberty excel at dietary accommodations. Norwegian and Royal Caribbean have dedicated kosher and halal preparation areas.",
         },
         {
           title: 'Specialty Restaurant Strategy',
@@ -1268,9 +1424,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Consider dining packages for value',
             'Check lunch pricing on port days',
             'Verify beverage package coverage',
-            'Reserve chef\'s table experiences early',
-            'Try cooking classes for unique experiences'
-          ]
+            "Reserve chef's table experiences early",
+            'Try cooking classes for unique experiences',
+          ],
         },
         {
           title: 'Buffet Navigation and Strategy',
@@ -1281,9 +1437,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Use made-to-order stations',
             'Practice strict hygiene',
             'Find special dietary sections',
-            'Attend theme night events'
+            'Attend theme night events',
           ],
-          localNote: "Cape Liberty cruise buffets often feature regional favorites like Taylor Ham and bagels, acknowledging New Jersey's food culture."
+          localNote:
+            "Cape Liberty cruise buffets often feature regional favorites like Taylor Ham and bagels, acknowledging New Jersey's food culture.",
         },
         {
           title: 'Room Service and Alternative Venues',
@@ -1294,8 +1451,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Check suite dining privileges',
             'Locate alternative quick venues',
             'Find late-night options',
-            'Verify beverage package coverage'
-          ]
+            'Verify beverage package coverage',
+          ],
         },
         {
           title: 'Dining Etiquette and Tips',
@@ -1305,9 +1462,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Maintain proper table manners',
             'Tip exceptional service with cash',
             'Communicate dietary needs clearly',
-            'Request table changes if needed'
-          ]
-        }
+            'Request table changes if needed',
+          ],
+        },
       ],
       localAdvantages: [
         'Cape Liberty ships stock regional food favorites',
@@ -1316,46 +1473,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Italian specialties reflect local demographics',
         'Bagels and pizza meet NY/NJ standards',
         'Coffee quality improving due to discriminating clientele',
-        'Specialty restaurants rival NYC dining scene'
+        'Specialty restaurants rival NYC dining scene',
       ],
-      callToAction: 'Want insider dining tips for your specific cruise? Our experts know the best restaurants and hidden gems on every ship. Call 833-874-1019 for personalized dining recommendations and reservation assistance.'
+      callToAction:
+        'Want insider dining tips for your specific cruise? Our experts know the best restaurants and hidden gems on every ship. Call 833-874-1019 for personalized dining recommendations and reservation assistance.',
     },
     faq: [
       {
-        answer: 'Is cruise food really good?',
-        answer: "Modern cruise food quality has improved dramatically, especially in specialty restaurants. Main dining rooms offer solid 3-star hotel quality cuisine with occasional excellence. Specialty restaurants rival good land restaurants. Buffets vary wildly - some items excel while others disappoint. Luxury lines like Regent and Silversea provide consistently excellent cuisine. Manage expectations appropriately: it's mass catering for thousands, not intimate fine dining."
+        question: 'Is cruise food really good?',
+        answer:
+          "Modern cruise food quality has improved dramatically, especially in specialty restaurants. Main dining rooms offer solid 3-star hotel quality cuisine with occasional excellence. Specialty restaurants rival good land restaurants. Buffets vary wildly - some items excel while others disappoint. Luxury lines like Regent and Silversea provide consistently excellent cuisine. Manage expectations appropriately: it's mass catering for thousands, not intimate fine dining.",
       },
       {
-        answer: 'Can I eat as much as I want on a cruise?',
-        answer: 'Yes, main dining rooms, buffets, and most casual venues allow unlimited eating at no extra charge. Order multiple appetizers, entrees, and desserts in dining rooms without judgment. Specialty restaurants charge per person regardless of consumption. The only limits are your appetite and self-control. Many cruisers gain 5-10 pounds per week - pace yourself accordingly.'
+        question: 'Can I eat as much as I want on a cruise?',
+        answer:
+          'Yes, main dining rooms, buffets, and most casual venues allow unlimited eating at no extra charge. Order multiple appetizers, entrees, and desserts in dining rooms without judgment. Specialty restaurants charge per person regardless of consumption. The only limits are your appetite and self-control. Many cruisers gain 5-10 pounds per week - pace yourself accordingly.',
       },
       {
-        answer: 'Do I have to pay extra for food on cruises?',
-        answer: "Basic dining is included: main dining rooms, buffets, poolside grills, pizza, and some cafes. Specialty restaurants cost $15-75 per person. Room service often has delivery charges. Specialty coffee, ice cream (some lines), and certain snacks cost extra. Beverage packages don't cover food. Research your specific cruise line as policies vary significantly."
+        question: 'Do I have to pay extra for food on cruises?',
+        answer:
+          "Basic dining is included: main dining rooms, buffets, poolside grills, pizza, and some cafes. Specialty restaurants cost $15-75 per person. Room service often has delivery charges. Specialty coffee, ice cream (some lines), and certain snacks cost extra. Beverage packages don't cover food. Research your specific cruise line as policies vary significantly.",
       },
       {
-        answer: 'How do I make dining reservations on a cruise?',
-        answer: "Book specialty restaurants online 60-90 days before sailing when reservations open, or immediately upon boarding. Main dining room times (for My Time dining) reserve through apps or guest services daily. Show reservations for ships with entertainment dining also book through apps. Popular venues and times disappear quickly - don't procrastinate. Dining packages often include priority reservations."
+        question: 'How do I make dining reservations on a cruise?',
+        answer:
+          "Book specialty restaurants online 60-90 days before sailing when reservations open, or immediately upon boarding. Main dining room times (for My Time dining) reserve through apps or guest services daily. Show reservations for ships with entertainment dining also book through apps. Popular venues and times disappear quickly - don't procrastinate. Dining packages often include priority reservations.",
       },
       {
-        answer: 'Can cruise ships accommodate food allergies?',
-        answer: 'Yes, cruise lines excel at accommodating allergies with advance notice. Notify them when booking, then confirm with guest services upon boarding. Head waiters and chefs meet with affected passengers to discuss needs. Buffets label allergens. Crew members can verify ingredients. Severe allergies may require eating only in main dining rooms where kitchen controls preparation. Bring emergency medications regardless.'
-      }
+        question: 'Can cruise ships accommodate food allergies?',
+        answer:
+          'Yes, cruise lines excel at accommodating allergies with advance notice. Notify them when booking, then confirm with guest services upon boarding. Head waiters and chefs meet with affected passengers to discuss needs. Buffets label allergens. Crew members can verify ingredients. Severe allergies may require eating only in main dining rooms where kitchen controls preparation. Bring emergency medications regardless.',
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-ship-tips-tricks',
       '/travel-guides/what-to-wear-on-cruise',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-cabin-selection',
     title: 'Cruise Cabin Selection Guide: Choose the Perfect Stateroom',
     metaTitle: 'Cruise Cabin Selection Guide 2025 | Best Rooms & Locations',
-    metaDescription: 'Complete guide to choosing the perfect cruise cabin. Compare cabin types, locations, and sizes to find your ideal stateroom at the best price.',
-    keywords: ['cruise cabin selection', 'best cruise cabin', 'cruise stateroom guide', 'cabin location cruise', 'balcony vs interior cabin'],
+    metaDescription:
+      'Complete guide to choosing the perfect cruise cabin. Compare cabin types, locations, and sizes to find your ideal stateroom at the best price.',
+    keywords: [
+      'cruise cabin selection',
+      'best cruise cabin',
+      'cruise stateroom guide',
+      'cabin location cruise',
+      'balcony vs interior cabin',
+    ],
     searchVolume: 1400,
     guideType: 'planning',
     content: {
@@ -1369,9 +1539,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Oceanview provides light without balcony cost',
             'Balconies enhance sea days significantly',
             'Suites include valuable perks beyond space',
-            'Check deck plans for obstructions'
+            'Check deck plans for obstructions',
           ],
-          localNote: 'Cape Liberty departures to Bermuda particularly benefit from balconies, as ships dock for multiple days allowing extended cabin enjoyment.'
+          localNote:
+            'Cape Liberty departures to Bermuda particularly benefit from balconies, as ships dock for multiple days allowing extended cabin enjoyment.',
         },
         {
           title: 'Location Strategy: Deck and Position',
@@ -1382,8 +1553,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Balance elevator proximity',
             'Consider forward vs aft preferences',
             'Research docking patterns',
-            'Check deck-specific amenities'
-          ]
+            'Check deck-specific amenities',
+          ],
         },
         {
           title: 'Cabin Size and Configuration',
@@ -1393,9 +1564,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Consider bathroom comfort',
             'Family cabins need appropriate configurations',
             'Accessible cabins offer more space',
-            'Watch cabin tour videos before booking'
+            'Watch cabin tour videos before booking',
           ],
-          localNote: 'Montclair and Summit families often book connecting cabins for multi-generational cruises, providing togetherness with privacy.'
+          localNote:
+            'Montclair and Summit families often book connecting cabins for multi-generational cruises, providing togetherness with privacy.',
         },
         {
           title: 'Hidden Gems and Cabins to Avoid',
@@ -1406,8 +1578,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Avoid guaranteed cabin risks',
             'Check for connecting cabin noise',
             'Research specific cabin reviews',
-            'Identify problematic locations'
-          ]
+            'Identify problematic locations',
+          ],
         },
         {
           title: 'Booking Strategies and Timing',
@@ -1418,9 +1590,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Consider last-minute for flexibility',
             'Ask about group rates',
             'Stack eligible discounts',
-            'Use casino offers strategically'
-          ]
-        }
+            'Use casino offers strategically',
+          ],
+        },
       ],
       localAdvantages: [
         'Cape Liberty departures allow cabin inspection before sailing',
@@ -1429,46 +1601,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Proximity to port enables last-minute cabin upgrade opportunities',
         'Experience with Northeast weather helps cabin selection',
         'Multi-generational family cruising expertise',
-        'Access to cruise line representatives in Manhattan'
+        'Access to cruise line representatives in Manhattan',
       ],
-      callToAction: 'Need help choosing the perfect cruise cabin? Our experts know every ship and can find your ideal stateroom at the best price. Call 833-874-1019 for personalized cabin selection assistance.'
+      callToAction:
+        'Need help choosing the perfect cruise cabin? Our experts know every ship and can find your ideal stateroom at the best price. Call 833-874-1019 for personalized cabin selection assistance.',
     },
     faq: [
       {
-        answer: 'Is a balcony cabin worth the extra cost?',
-        answer: "Balcony cabins are worth it for cruises with multiple sea days, scenic cruising (Alaska, Norway), or if you enjoy private outdoor space. The 50-80% premium over interior cabins seems high, but the enhanced experience justifies cost for many. However, port-intensive Caribbean cruises where you're rarely in the cabin make balconies less valuable. Consider your specific itinerary and cabin usage patterns."
+        question: 'Is a balcony cabin worth the extra cost?',
+        answer:
+          "Balcony cabins are worth it for cruises with multiple sea days, scenic cruising (Alaska, Norway), or if you enjoy private outdoor space. The 50-80% premium over interior cabins seems high, but the enhanced experience justifies cost for many. However, port-intensive Caribbean cruises where you're rarely in the cabin make balconies less valuable. Consider your specific itinerary and cabin usage patterns.",
       },
       {
         question: "What's the best cabin location on a cruise ship?",
-        answer: "Mid-ship cabins on middle decks (typically decks 6-8) offer the best combination of stability, convenience, and quiet. You'll experience less motion, have easy access to venues, and avoid noise from pools above and entertainment below. Avoid cabins at ship extremes (very forward or aft) if prone to seasickness. The 'perfect' location varies by ship design and personal preferences."
+        answer:
+          "Mid-ship cabins on middle decks (typically decks 6-8) offer the best combination of stability, convenience, and quiet. You'll experience less motion, have easy access to venues, and avoid noise from pools above and entertainment below. Avoid cabins at ship extremes (very forward or aft) if prone to seasickness. The 'perfect' location varies by ship design and personal preferences.",
       },
       {
         question: 'Should I book a guaranteed cabin to save money?',
-        answer: "Guaranteed cabins save 10-20% but risk poor locations like noisy areas, obstructed views, or extreme forward/aft positions. They work for flexible travelers prioritizing price over location. Avoid guarantees for special occasions, first cruises, or if you have specific needs. The savings rarely justify potential problems. Book guarantees only if you'd accept the worst possible cabin in that category."
+        answer:
+          "Guaranteed cabins save 10-20% but risk poor locations like noisy areas, obstructed views, or extreme forward/aft positions. They work for flexible travelers prioritizing price over location. Avoid guarantees for special occasions, first cruises, or if you have specific needs. The savings rarely justify potential problems. Book guarantees only if you'd accept the worst possible cabin in that category.",
       },
       {
         question: 'How many people can fit in a cruise cabin?',
-        answer: "Standard cabins accommodate 2-4 passengers using pullman beds or sofa beds for third/fourth guests. Family cabins sleep 5-6. Suites can accommodate 4-8 depending on configuration. However, 'can fit' differs from 'comfortable.' Four adults in a standard cabin with one bathroom creates challenging conditions. Families with young children manage better than adults sharing tight quarters. Book multiple cabins or family suites for comfort."
+        answer:
+          "Standard cabins accommodate 2-4 passengers using pullman beds or sofa beds for third/fourth guests. Family cabins sleep 5-6. Suites can accommodate 4-8 depending on configuration. However, 'can fit' differs from 'comfortable.' Four adults in a standard cabin with one bathroom creates challenging conditions. Families with young children manage better than adults sharing tight quarters. Book multiple cabins or family suites for comfort.",
       },
       {
         question: 'When should I book my cruise cabin for the best price?',
-        answer: 'Book 12-18 months ahead for best selection, then monitor prices. Wave Season (January-March) offers strong promotions. Last-minute deals (30-60 days out) provide exceptional value for flexible travelers. Pricing is dynamic - the same cabin fluctuates thousands of dollars. Use price tracking tools and be ready to rebook when prices drop. Final payment date is your last chance to cancel without penalty.'
-      }
+        answer:
+          'Book 12-18 months ahead for best selection, then monitor prices. Wave Season (January-March) offers strong promotions. Last-minute deals (30-60 days out) provide exceptional value for flexible travelers. Pricing is dynamic - the same cabin fluctuates thousands of dollars. Use price tracking tools and be ready to rebook when prices drop. Final payment date is your last chance to cancel without penalty.',
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-budgeting-guide',
       '/travel-guides/cruise-ship-tips-tricks',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-seasickness-prevention',
     title: 'Cruise Seasickness Prevention: Complete Guide to Avoiding Motion Sickness',
     metaTitle: 'Cruise Seasickness Prevention 2025 | Remedies & Tips',
-    metaDescription: 'Complete guide to preventing and treating seasickness on cruises. Learn proven remedies, medications, and strategies to enjoy smooth sailing.',
-    keywords: ['cruise seasickness', 'motion sickness cruise', 'seasickness prevention', 'cruise nausea remedies', 'seasickness medicine'],
+    metaDescription:
+      'Complete guide to preventing and treating seasickness on cruises. Learn proven remedies, medications, and strategies to enjoy smooth sailing.',
+    keywords: [
+      'cruise seasickness',
+      'motion sickness cruise',
+      'seasickness prevention',
+      'cruise nausea remedies',
+      'seasickness medicine',
+    ],
     searchVolume: 1300,
     guideType: 'cruise-tips',
     content: {
@@ -1482,9 +1667,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Book mid-ship, lower deck cabins',
             'Research typical conditions for your route',
             'Understand weather routing protections',
-            'Consider protected water itineraries'
+            'Consider protected water itineraries',
           ],
-          localNote: 'Cape Liberty departures immediately enter the Atlantic, which can be rougher than Caribbean ports. Consider motion remedies before boarding, not after symptoms start.'
+          localNote:
+            'Cape Liberty departures immediately enter the Atlantic, which can be rougher than Caribbean ports. Consider motion remedies before boarding, not after symptoms start.',
         },
         {
           title: 'Medication Options and Timing',
@@ -1495,8 +1681,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Understand dosing schedules',
             'Consider drowsiness effects',
             'Bring prescription if severely susceptible',
-            'Include natural alternatives'
-          ]
+            'Include natural alternatives',
+          ],
         },
         {
           title: 'Non-Medical Prevention Strategies',
@@ -1507,9 +1693,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Get fresh air immediately if queasy',
             'Eat bland foods frequently',
             'Lie down in cabin center',
-            'Avoid reading during motion'
+            'Avoid reading during motion',
           ],
-          localNote: 'Newark area health food stores stock various ginger products perfect for cruise preparation. Whole Foods in Montclair has extensive selection of natural remedies.'
+          localNote:
+            'Newark area health food stores stock various ginger products perfect for cruise preparation. Whole Foods in Montclair has extensive selection of natural remedies.',
         },
         {
           title: 'Onboard Resources and Remedies',
@@ -1520,8 +1707,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Request special meals if needed',
             'Pack medications from home',
             'Utilize crew knowledge',
-            'Understand ship\'s stabilizer systems'
-          ]
+            "Understand ship's stabilizer systems",
+          ],
         },
         {
           title: 'Recovery and Long-Term Strategies',
@@ -1532,9 +1719,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Maintain hydration and nutrition',
             'Sleep through worst periods',
             'Choose future cruises strategically',
-            'Build tolerance gradually'
-          ]
-        }
+            'Build tolerance gradually',
+          ],
+        },
       ],
       localAdvantages: [
         'Multiple pharmacies near Cape Liberty for last-minute medications',
@@ -1543,46 +1730,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Short drive to port allows medication before boarding',
         'Experience with Atlantic roughness from Cape Liberty',
         'Local cruise groups share specific ship experiences',
-        'Access to travel medicine specialists in Manhattan'
+        'Access to travel medicine specialists in Manhattan',
       ],
-      callToAction: 'Worried about seasickness? Our travel experts can recommend the most stable ships and smoothest itineraries for your cruise. Call 833-874-1019 for personalized cruise planning that minimizes motion concerns.'
+      callToAction:
+        'Worried about seasickness? Our travel experts can recommend the most stable ships and smoothest itineraries for your cruise. Call 833-874-1019 for personalized cruise planning that minimizes motion concerns.',
     },
     faq: [
       {
-        answer: 'How common is seasickness on modern cruise ships?',
-        answer: "Less than 10% of passengers experience significant seasickness on modern cruise ships. Large vessels with advanced stabilizers barely move in normal conditions. Most who feel queasy experience mild symptoms that resolve within 24-48 hours. Ships actively avoid rough weather, making severe seasickness rare. Don't let fear prevent you from cruising - the vast majority of passengers never have problems."
+        question: 'How common is seasickness on modern cruise ships?',
+        answer:
+          "Less than 10% of passengers experience significant seasickness on modern cruise ships. Large vessels with advanced stabilizers barely move in normal conditions. Most who feel queasy experience mild symptoms that resolve within 24-48 hours. Ships actively avoid rough weather, making severe seasickness rare. Don't let fear prevent you from cruising - the vast majority of passengers never have problems.",
       },
       {
         question: "What's the best seasickness medication for cruises?",
-        answer: 'Meclizine (Bonine/Dramamine Less Drowsy) works best for most people - effective with less drowsiness than original Dramamine. Start taking it the night before boarding. Scopolamine patches provide strongest protection but require prescriptions and have side effects. Ginger supplements offer natural alternatives. Many cruisers combine methods for best results. Consult your doctor for personalized recommendations based on your health history.'
+        answer:
+          'Meclizine (Bonine/Dramamine Less Drowsy) works best for most people - effective with less drowsiness than original Dramamine. Start taking it the night before boarding. Scopolamine patches provide strongest protection but require prescriptions and have side effects. Ginger supplements offer natural alternatives. Many cruisers combine methods for best results. Consult your doctor for personalized recommendations based on your health history.',
       },
       {
-        answer: 'Where should I stay on the ship to avoid seasickness?',
-        answer: 'Book a cabin mid-ship on a lower deck (but above waterline) for minimal motion. Decks 4-7 midship typically offer the most stability. Avoid forward or aft cabins that experience more pitching. Balcony cabins help some people by providing horizon views and fresh air. Interior cabins can worsen symptoms for those needing visual references. Consider upgrading location over category for comfort.'
+        question: 'Where should I stay on the ship to avoid seasickness?',
+        answer:
+          'Book a cabin mid-ship on a lower deck (but above waterline) for minimal motion. Decks 4-7 midship typically offer the most stability. Avoid forward or aft cabins that experience more pitching. Balcony cabins help some people by providing horizon views and fresh air. Interior cabins can worsen symptoms for those needing visual references. Consider upgrading location over category for comfort.',
       },
       {
-        answer: 'Can I prevent seasickness without medication?',
-        answer: 'Yes, many people prevent seasickness using non-medical methods. Sea-Bands (acupressure wristbands), ginger supplements, green apples, staying hydrated, getting fresh air, and focusing on the horizon all help. Choose larger ships with better stabilization. Select calm weather seasons and protected water itineraries. Combine multiple strategies for best results. These methods work well for mild susceptibility.'
+        question: 'Can I prevent seasickness without medication?',
+        answer:
+          'Yes, many people prevent seasickness using non-medical methods. Sea-Bands (acupressure wristbands), ginger supplements, green apples, staying hydrated, getting fresh air, and focusing on the horizon all help. Choose larger ships with better stabilization. Select calm weather seasons and protected water itineraries. Combine multiple strategies for best results. These methods work well for mild susceptibility.',
       },
       {
-        answer: 'What should I do if I get seasick on the cruise?',
-        answer: "Immediately get fresh air and focus on the horizon. Use acupressure points or Sea-Bands. Eat bland foods (crackers, green apples) and stay hydrated with ginger ale or water. Lie down in your cabin if severely affected. Visit the medical center for prescription medication if over-the-counter remedies fail. Most people adapt within 24-48 hours. Don't give up - symptoms will improve as you develop sea legs."
-      }
+        question: 'What should I do if I get seasick on the cruise?',
+        answer:
+          "Immediately get fresh air and focus on the horizon. Use acupressure points or Sea-Bands. Eat bland foods (crackers, green apples) and stay hydrated with ginger ale or water. Lie down in your cabin if severely affected. Visit the medical center for prescription medication if over-the-counter remedies fail. Most people adapt within 24-48 hours. Don't give up - symptoms will improve as you develop sea legs.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-cabin-selection',
       '/travel-guides/cruise-ship-tips-tricks',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-wifi-connectivity',
     title: 'Cruise WiFi and Internet Guide: Staying Connected at Sea',
     metaTitle: 'Cruise WiFi Guide 2025 | Internet Packages & Connectivity',
-    metaDescription: 'Complete guide to cruise ship WiFi and internet. Compare packages, speeds, costs, and alternatives for staying connected during your cruise.',
-    keywords: ['cruise wifi', 'cruise internet', 'ship wifi packages', 'cruise connectivity', 'internet at sea'],
+    metaDescription:
+      'Complete guide to cruise ship WiFi and internet. Compare packages, speeds, costs, and alternatives for staying connected during your cruise.',
+    keywords: [
+      'cruise wifi',
+      'cruise internet',
+      'ship wifi packages',
+      'cruise connectivity',
+      'internet at sea',
+    ],
     searchVolume: 1200,
     guideType: 'cruise-tips',
     content: {
@@ -1596,9 +1796,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Video calls will be choppy',
             'Downloads take much longer than home',
             'Port days offer better speeds',
-            'Newer ships have better systems'
+            'Newer ships have better systems',
           ],
-          localNote: "Essex County tech workers accustomed to gigabit fiber speeds should drastically lower expectations. Ship 'high-speed' internet equals 2005-era DSL at best."
+          localNote:
+            "Essex County tech workers accustomed to gigabit fiber speeds should drastically lower expectations. Ship 'high-speed' internet equals 2005-era DSL at best.",
         },
         {
           title: 'WiFi Package Options and Pricing',
@@ -1609,8 +1810,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Calculate unlimited vs data value',
             'Purchase pre-cruise for discounts',
             'Consider bundle packages',
-            'Understand access limitations'
-          ]
+            'Understand access limitations',
+          ],
         },
         {
           title: 'Money-Saving Connectivity Strategies',
@@ -1621,9 +1822,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Use data-efficient messaging',
             'Download content pre-cruise',
             'Share packages when possible',
-            'Turn off automatic updates'
+            'Turn off automatic updates',
           ],
-          localNote: 'Newark Liberty Airport has free WiFi for last-minute downloads before flying to distant cruise ports. Arrive early and load devices with content.'
+          localNote:
+            'Newark Liberty Airport has free WiFi for last-minute downloads before flying to distant cruise ports. Arrive early and load devices with content.',
         },
         {
           title: 'Optimizing Your Ship Internet Experience',
@@ -1634,8 +1836,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Disable automatic updates',
             'Turn off cloud backups',
             'Use data-saving browsers',
-            'Adjust activity expectations'
-          ]
+            'Adjust activity expectations',
+          ],
         },
         {
           title: 'Alternatives to Staying Connected',
@@ -1646,10 +1848,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Download necessities beforehand',
             'Embrace ship activities',
             'Use emergency contact methods',
-            'Create analog memories'
+            'Create analog memories',
           ],
-          localNote: "Many Montclair and Summit families use cruises for intentional 'digital detox' vacations, strengthening family connections without screen distractions."
-        }
+          localNote:
+            "Many Montclair and Summit families use cruises for intentional 'digital detox' vacations, strengthening family connections without screen distractions.",
+        },
       ],
       localAdvantages: [
         'Tech-savvy population understands connectivity limitations',
@@ -1658,46 +1861,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Coffee shops for last-minute content downloads',
         'Experience managing remote work expectations',
         'Strong WiFi at Cape Liberty for final updates',
-        'Local tech support for device optimization'
+        'Local tech support for device optimization',
       ],
-      callToAction: 'Need help choosing the right connectivity options for your cruise? Our travel experts can explain WiFi packages and alternatives for your specific needs. Call 833-874-1019 for personalized assistance.'
+      callToAction:
+        'Need help choosing the right connectivity options for your cruise? Our travel experts can explain WiFi packages and alternatives for your specific needs. Call 833-874-1019 for personalized assistance.',
     },
     faq: [
       {
-        answer: 'How much does cruise ship WiFi cost?',
-        answer: 'Cruise WiFi typically costs $10-40 per day depending on package level. Social media only packages run $10-15/day. Full internet access costs $20-30/day. Premium packages with streaming capability (though rarely functional) cost $30-40/day. Multi-device and family packages offer better per-device value. Pre-cruise purchase saves 10-30%. Some luxury lines include basic WiFi. Bundles with drinks and gratuities might provide overall savings.'
+        question: 'How much does cruise ship WiFi cost?',
+        answer:
+          'Cruise WiFi typically costs $10-40 per day depending on package level. Social media only packages run $10-15/day. Full internet access costs $20-30/day. Premium packages with streaming capability (though rarely functional) cost $30-40/day. Multi-device and family packages offer better per-device value. Pre-cruise purchase saves 10-30%. Some luxury lines include basic WiFi. Bundles with drinks and gratuities might provide overall savings.',
       },
       {
-        answer: 'Is cruise ship internet fast enough for work?',
-        answer: "Cruise internet barely suffices for basic work tasks. Email and document editing work with patience. Video calls are frustrating with delays and freezing. Large file transfers take forever. VPNs often don't work or severely slow connections. If you must work, schedule important calls for port days using land WiFi. Manage expectations - you can stay connected but not productively work like at home."
+        question: 'Is cruise ship internet fast enough for work?',
+        answer:
+          "Cruise internet barely suffices for basic work tasks. Email and document editing work with patience. Video calls are frustrating with delays and freezing. Large file transfers take forever. VPNs often don't work or severely slow connections. If you must work, schedule important calls for port days using land WiFi. Manage expectations - you can stay connected but not productively work like at home.",
       },
       {
-        answer: 'Can I use my cell phone on a cruise?',
-        answer: 'Yes, but carefully to avoid massive charges. Ships have cellular towers charging $5-20/minute for calls and $0.50-1.00 per text. Data costs $20-25/MB - accidentally streaming one video could cost hundreds. Use airplane mode at sea. In ports, regular international roaming applies. Some carriers offer cruise ship packages. Always clarify costs with your carrier before sailing.'
+        question: 'Can I use my cell phone on a cruise?',
+        answer:
+          'Yes, but carefully to avoid massive charges. Ships have cellular towers charging $5-20/minute for calls and $0.50-1.00 per text. Data costs $20-25/MB - accidentally streaming one video could cost hundreds. Use airplane mode at sea. In ports, regular international roaming applies. Some carriers offer cruise ship packages. Always clarify costs with your carrier before sailing.',
       },
       {
         question: "What's the best way to stay connected on a cruise?",
-        answer: 'Combine strategies for best results: buy minimal ship WiFi package for sea days, use port WiFi whenever possible, enable international roaming for ports only, download content before boarding, and use data-efficient messaging apps. This hybrid approach balances cost and connectivity. Many cruisers find social media packages sufficient when combined with port WiFi for heavier usage.'
+        answer:
+          'Combine strategies for best results: buy minimal ship WiFi package for sea days, use port WiFi whenever possible, enable international roaming for ports only, download content before boarding, and use data-efficient messaging apps. This hybrid approach balances cost and connectivity. Many cruisers find social media packages sufficient when combined with port WiFi for heavier usage.',
       },
       {
-        answer: 'Do I really need internet on my cruise?',
-        answer: "Most cruisers don't truly need internet beyond emergency contact ability. Ships offer abundant entertainment and activities. Many passengers report enjoying disconnection from digital life. Consider buying minimal package for check-ins rather than constant connection. Use the cruise as an opportunity for digital detox. You might discover vacation is better without constant connectivity."
-      }
+        question: 'Do I really need internet on my cruise?',
+        answer:
+          "Most cruisers don't truly need internet beyond emergency contact ability. Ships offer abundant entertainment and activities. Many passengers report enjoying disconnection from digital life. Consider buying minimal package for check-ins rather than constant connection. Use the cruise as an opportunity for digital detox. You might discover vacation is better without constant connectivity.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/cruise-ship-tips-tricks',
       '/travel-guides/cruise-budgeting-guide',
       '/travel-guides/first-time-cruiser-guide',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'cruise-budgeting-guide',
     title: 'Cruise Budgeting Guide: Real Costs and Money-Saving Tips',
     metaTitle: 'Cruise Budget Guide 2025 | Hidden Costs & Savings Tips',
-    metaDescription: 'Complete cruise budgeting guide revealing all costs beyond the fare. Learn to budget accurately and discover money-saving strategies.',
-    keywords: ['cruise budget', 'cruise costs', 'cruise expenses', 'cruise money tips', 'how much does cruise cost'],
+    metaDescription:
+      'Complete cruise budgeting guide revealing all costs beyond the fare. Learn to budget accurately and discover money-saving strategies.',
+    keywords: [
+      'cruise budget',
+      'cruise costs',
+      'cruise expenses',
+      'cruise money tips',
+      'how much does cruise cost',
+    ],
     searchVolume: 1100,
     guideType: 'planning',
     content: {
@@ -1710,10 +1926,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Budget 100% above base fare for realistic total',
             'Account for all mandatory charges',
             'Track onboard spending daily',
-            'Understand what\'s truly included',
-            'Prepare for hidden costs'
+            "Understand what's truly included",
+            'Prepare for hidden costs',
           ],
-          localNote: 'Essex County financial planners recommend separate cruise savings accounts, automatically depositing estimated daily costs for accurate budgeting.'
+          localNote:
+            'Essex County financial planners recommend separate cruise savings accounts, automatically depositing estimated daily costs for accurate budgeting.',
         },
         {
           title: 'Pre-Cruise Budget Optimization',
@@ -1724,8 +1941,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Calculate total cabin value',
             'Pre-purchase packages online',
             'Research independent excursions',
-            'Compare total costs, not base fare'
-          ]
+            'Compare total costs, not base fare',
+          ],
         },
         {
           title: 'Onboard Spending Strategies',
@@ -1735,9 +1952,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Calculate beverage package value honestly',
             'Maximize specialty dining value',
             'Control casino spending strictly',
-            'Time spa services strategically'
+            'Time spa services strategically',
           ],
-          localNote: 'Many Millburn and Short Hills residents prepay onboard accounts with set amounts, avoiding overspending temptation with credit card access.'
+          localNote:
+            'Many Millburn and Short Hills residents prepay onboard accounts with set amounts, avoiding overspending temptation with credit card access.',
         },
         {
           title: 'Hidden Savings Opportunities',
@@ -1748,8 +1966,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Time drinks during discounts',
             'Book group activities',
             'Optimize onboard credit usage',
-            'Avoid unnecessary purchases'
-          ]
+            'Avoid unnecessary purchases',
+          ],
         },
         {
           title: 'Post-Cruise Financial Management',
@@ -1759,9 +1977,9 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Monitor credit card statements',
             'File insurance claims promptly',
             'Evaluate future cruise offers carefully',
-            'Understand tax implications'
-          ]
-        }
+            'Understand tax implications',
+          ],
+        },
       ],
       localAdvantages: [
         'Local credit unions offer cruise-specific savings accounts',
@@ -1770,46 +1988,59 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Multiple shopping options for pre-cruise provisioning',
         'Financial planning services familiar with vacation budgeting',
         'Group cruise clubs for collective discounts',
-        'No airfare needed for many itineraries'
+        'No airfare needed for many itineraries',
       ],
-      callToAction: 'Want to cruise without breaking your budget? Our travel experts can help you understand true costs and find the best deals. Call 833-874-1019 for honest cruise budgeting advice.'
+      callToAction:
+        'Want to cruise without breaking your budget? Our travel experts can help you understand true costs and find the best deals. Call 833-874-1019 for honest cruise budgeting advice.',
     },
     faq: [
       {
-        answer: 'How much does a cruise really cost per person?',
-        answer: 'A typical 7-day Caribbean cruise truly costs $1,500-2,500 per person including all expenses. The base fare ($700-1,200) plus gratuities ($100), beverages ($300-500), excursions ($300-600), specialty dining ($100-200), and miscellaneous expenses ($200-400) add up quickly. Budget-conscious cruisers might spend $1,200 total while luxury seekers easily exceed $3,000. Plan on 75-100% above the advertised fare for realistic budgeting.'
+        question: 'How much does a cruise really cost per person?',
+        answer:
+          'A typical 7-day Caribbean cruise truly costs $1,500-2,500 per person including all expenses. The base fare ($700-1,200) plus gratuities ($100), beverages ($300-500), excursions ($300-600), specialty dining ($100-200), and miscellaneous expenses ($200-400) add up quickly. Budget-conscious cruisers might spend $1,200 total while luxury seekers easily exceed $3,000. Plan on 75-100% above the advertised fare for realistic budgeting.',
       },
       {
         question: "What's the best way to save money on a cruise?",
-        answer: 'Book during Wave Season with a travel agent for maximum promotions and perks. Pre-purchase packages online for 10-30% savings. Skip beverage packages unless you drink heavily. Book independent excursions saving 40-60%. Eat primarily in included venues. Avoid casino, bingo, art auctions, and ship shops. Bring allowed wine/beverages. Use port WiFi instead of ship packages. These strategies can save $500-1,000 per person without sacrificing enjoyment.'
+        answer:
+          'Book during Wave Season with a travel agent for maximum promotions and perks. Pre-purchase packages online for 10-30% savings. Skip beverage packages unless you drink heavily. Book independent excursions saving 40-60%. Eat primarily in included venues. Avoid casino, bingo, art auctions, and ship shops. Bring allowed wine/beverages. Use port WiFi instead of ship packages. These strategies can save $500-1,000 per person without sacrificing enjoyment.',
       },
       {
-        answer: 'Are drink packages worth it on cruises?',
-        answer: 'Drink packages only provide value for heavy drinkers consuming 5-6+ alcoholic beverages daily. At $60-80 per day plus gratuity, you need significant consumption to break even. Most moderate drinkers save money buying individually. Consider your actual habits: if you enjoy wine with dinner and an afternoon cocktail, paying individually costs less. Soda packages work for families with kids drinking multiple sodas daily.'
+        question: 'Are drink packages worth it on cruises?',
+        answer:
+          'Drink packages only provide value for heavy drinkers consuming 5-6+ alcoholic beverages daily. At $60-80 per day plus gratuity, you need significant consumption to break even. Most moderate drinkers save money buying individually. Consider your actual habits: if you enjoy wine with dinner and an afternoon cocktail, paying individually costs less. Soda packages work for families with kids drinking multiple sodas daily.',
       },
       {
-        answer: 'Should I prepay gratuities?',
-        answer: 'Yes, prepaying gratuities helps budget and ensures crew receives tips regardless of your onboard account status. Prepaying locks in current rates - gratuities increase annually. You can still adjust onboard for exceptional or poor service. Prepaying also reduces your end-of-cruise bill, avoiding sticker shock. Some travel agents include prepaid gratuities as booking perks, making this decision easy.'
+        question: 'Should I prepay gratuities?',
+        answer:
+          'Yes, prepaying gratuities helps budget and ensures crew receives tips regardless of your onboard account status. Prepaying locks in current rates - gratuities increase annually. You can still adjust onboard for exceptional or poor service. Prepaying also reduces your end-of-cruise bill, avoiding sticker shock. Some travel agents include prepaid gratuities as booking perks, making this decision easy.',
       },
       {
-        answer: 'How much cash should I bring on a cruise?',
-        answer: "Bring $50-100 cash per port day for taxis, tips, and small purchases, plus $100-200 for embarkation/disembarkation tips and emergencies. Ships operate cashless, but ports often prefer cash. Small bills work best - many vendors can't make change for large denominations. ATMs on ships charge high fees. Credit cards work for larger port purchases but notify your bank of travel plans to prevent freezing."
-      }
+        question: 'How much cash should I bring on a cruise?',
+        answer:
+          "Bring $50-100 cash per port day for taxis, tips, and small purchases, plus $100-200 for embarkation/disembarkation tips and emergencies. Ships operate cashless, but ports often prefer cash. Small bills work best - many vendors can't make change for large denominations. ATMs on ships charge high fees. Credit cards work for larger port purchases but notify your bank of travel plans to prevent freezing.",
+      },
     ],
     relatedGuides: [
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-insurance-guide',
       '/travel-guides/cruise-dining-guide',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
+    lastUpdated: '2025-01-23',
   },
   {
     slug: 'group-cruise-planning',
     title: 'Group Cruise Planning Guide: Organizing Multi-Family and Event Cruises',
     metaTitle: 'Group Cruise Planning 2025 | Multi-Family & Event Guide',
-    metaDescription: 'Complete guide to planning group cruises for families, reunions, and celebrations. Learn coordination strategies, group benefits, and planning tips.',
-    keywords: ['group cruise planning', 'family cruise', 'group cruise rates', 'cruise reunion', 'multi-family cruise'],
+    metaDescription:
+      'Complete guide to planning group cruises for families, reunions, and celebrations. Learn coordination strategies, group benefits, and planning tips.',
+    keywords: [
+      'group cruise planning',
+      'family cruise',
+      'group cruise rates',
+      'cruise reunion',
+      'multi-family cruise',
+    ],
     searchVolume: 900,
     guideType: 'planning',
     content: {
@@ -1823,9 +2054,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Use travel agents for coordination',
             'Lock rates early with minimal deposits',
             'Negotiate perks based on group size',
-            'Understand free cabin allocation'
+            'Understand free cabin allocation',
           ],
-          localNote: 'Several Essex County travel agencies specialize in group cruises, offering local meeting spaces for planning sessions and handling complex multi-family logistics.'
+          localNote:
+            'Several Essex County travel agencies specialize in group cruises, offering local meeting spaces for planning sessions and handling complex multi-family logistics.',
         },
         {
           title: 'Initial Planning and Communication',
@@ -1836,8 +2068,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Survey group preferences early',
             'Set financial expectations clearly',
             'Choose ship matching group needs',
-            'Create communication channels'
-          ]
+            'Create communication channels',
+          ],
         },
         {
           title: 'Managing Diverse Group Needs',
@@ -1847,9 +2079,10 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Plan anchor events, free time between',
             'Book multiple excursion options',
             'Accept varying participation',
-            'Arrange strategic cabin placement'
+            'Arrange strategic cabin placement',
           ],
-          localNote: "Essex County's diverse communities mean group cruises often include varied cultural backgrounds. Ships from Cape Liberty accommodate dietary restrictions from kosher to halal to vegan."
+          localNote:
+            "Essex County's diverse communities mean group cruises often include varied cultural backgrounds. Ships from Cape Liberty accommodate dietary restrictions from kosher to halal to vegan.",
         },
         {
           title: 'Financial Management and Protection',
@@ -1860,8 +2093,8 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Set firm payment deadlines',
             'Require individual travel insurance',
             'Distribute benefits fairly',
-            'Avoid group expense accounts'
-          ]
+            'Avoid group expense accounts',
+          ],
         },
         {
           title: 'Onboard Coordination Strategies',
@@ -1871,10 +2104,11 @@ export const travelInfoGuides: TravelInfoGuide[] = [
             'Book group events pre-cruise',
             'Establish day-one connections',
             'Balance planned and free time',
-            'Address conflicts quickly'
+            'Address conflicts quickly',
           ],
-          localNote: 'Essex County families often include NYC-style direct communication. Ship environment requires more diplomacy - assign someone as designated peacemaker.'
-        }
+          localNote:
+            'Essex County families often include NYC-style direct communication. Ship environment requires more diplomacy - assign someone as designated peacemaker.',
+        },
       ],
       localAdvantages: [
         'Multiple travel agencies specializing in group cruises',
@@ -1883,38 +2117,44 @@ export const travelInfoGuides: TravelInfoGuide[] = [
         'Experience with multi-generational travel',
         'Local meeting spaces for planning sessions',
         'Strong community networks for group formation',
-        'No flight coordination needed for many cruises'
+        'No flight coordination needed for many cruises',
       ],
-      callToAction: 'Planning a group cruise? Our specialists handle all coordination details, maximizing group benefits while minimizing stress. Call 833-874-1019 for expert group cruise planning assistance.'
+      callToAction:
+        'Planning a group cruise? Our specialists handle all coordination details, maximizing group benefits while minimizing stress. Call 833-874-1019 for expert group cruise planning assistance.',
     },
     faq: [
       {
-        answer: 'How many people do you need for group cruise rates?',
-        answer: "Most cruise lines offer group rates starting at 8 cabins (approximately 16 passengers). Benefits increase with size: 8-15 cabins receive basic perks like onboard credit, 16+ cabins earn a free cabin, 25+ cabins get additional free cabins and amenities. Some lines offer 'semi-group' rates for 5-7 cabins. Family groups booking together should always inquire about group benefits regardless of size."
+        question: 'How many people do you need for group cruise rates?',
+        answer:
+          "Most cruise lines offer group rates starting at 8 cabins (approximately 16 passengers). Benefits increase with size: 8-15 cabins receive basic perks like onboard credit, 16+ cabins earn a free cabin, 25+ cabins get additional free cabins and amenities. Some lines offer 'semi-group' rates for 5-7 cabins. Family groups booking together should always inquire about group benefits regardless of size.",
       },
       {
-        answer: 'Who should organize a group cruise?',
-        answer: 'The ideal organizer is detail-oriented, diplomatic, and has time for coordination - not necessarily who suggested the cruise. Consider co-organizers dividing responsibilities: one handling cruise line coordination, another managing group communication. Use experienced travel agents for complex logistics. Never let financial responsibility fall on one person. Organizers should receive consideration (free cabin or reduced rate) for their significant effort.'
+        question: 'Who should organize a group cruise?',
+        answer:
+          'The ideal organizer is detail-oriented, diplomatic, and has time for coordination - not necessarily who suggested the cruise. Consider co-organizers dividing responsibilities: one handling cruise line coordination, another managing group communication. Use experienced travel agents for complex logistics. Never let financial responsibility fall on one person. Organizers should receive consideration (free cabin or reduced rate) for their significant effort.',
       },
       {
-        answer: 'How far in advance should you plan a group cruise?',
-        answer: 'Start planning 12-18 months ahead for best selection and rates. This provides time for participants to save money, request vacation days, and obtain passports. Holiday cruises, Alaska summer, and special events need more lead time. Last-minute group bookings are possible but limit options. Groups can hold space with minimal deposits, adjusting numbers closer to sailing. Earlier planning always yields better results.'
+        question: 'How far in advance should you plan a group cruise?',
+        answer:
+          'Start planning 12-18 months ahead for best selection and rates. This provides time for participants to save money, request vacation days, and obtain passports. Holiday cruises, Alaska summer, and special events need more lead time. Last-minute group bookings are possible but limit options. Groups can hold space with minimal deposits, adjusting numbers closer to sailing. Earlier planning always yields better results.',
       },
       {
-        answer: 'What if someone cancels from the group?',
-        answer: "Establish cancellation policies upfront. Individual cancellations shouldn't affect group benefits unless dropping below minimum cabin requirements. Cancelled cabins can often be resold to waitlisted members or reduced to single occupancy. Travel insurance is crucial for each participant. Some groups create cancellation funds where everyone contributes small amounts covering penalties. Never have organizers personally guarantee others' bookings."
+        question: 'What if someone cancels from the group?',
+        answer:
+          "Establish cancellation policies upfront. Individual cancellations shouldn't affect group benefits unless dropping below minimum cabin requirements. Cancelled cabins can often be resold to waitlisted members or reduced to single occupancy. Travel insurance is crucial for each participant. Some groups create cancellation funds where everyone contributes small amounts covering penalties. Never have organizers personally guarantee others' bookings.",
       },
       {
-        answer: 'Should group cruises stay together for everything?',
-        answer: 'No - forcing constant togetherness creates stress and resentment. Plan 3-4 anchor events everyone attends, then allow freedom between. Different ages, interests, and energy levels need accommodation. Provide information for various activities letting people choose participation. The best group cruises feel like reunions with options, not regiment schedules. Success means everyone had their version of a perfect vacation.'
-      }
+        question: 'Should group cruises stay together for everything?',
+        answer:
+          'No - forcing constant togetherness creates stress and resentment. Plan 3-4 anchor events everyone attends, then allow freedom between. Different ages, interests, and energy levels need accommodation. Provide information for various activities letting people choose participation. The best group cruises feel like reunions with options, not regiment schedules. Success means everyone had their version of a perfect vacation.',
+      },
     ],
     relatedGuides: [
       '/travel-guides/cruise-budgeting-guide',
       '/travel-guides/first-time-cruiser-guide',
       '/travel-guides/cruise-dining-guide',
-      '/cruises/from-newark'
+      '/cruises/from-newark',
     ],
-    lastUpdated: '2025-01-23'
-  }
-];
+    lastUpdated: '2025-01-23',
+  },
+]

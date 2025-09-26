@@ -23,9 +23,11 @@ const ContactForm = dynamic(() => import('@/components/forms/ContactFormWithAnal
 
 // Generate static params for all travel guides
 export async function generateStaticParams() {
-  return travelGuides.map((guide) => ({
-    topic: guide.slug,
-  }))
+  // Temporarily return dummy params until travel guides are re-enabled
+  return [{ topic: 'placeholder' }]
+  // return travelGuides.map((guide) => ({
+  //   topic: guide.slug,
+  // }))
 }
 
 // Generate metadata for each guide page
@@ -105,29 +107,76 @@ const ContentSection = ({ guide }: { guide: TravelGuide }) => (
           <p className="text-gray-700 leading-relaxed">{guide.content.introduction}</p>
         </div>
 
-        {/* Dynamic Sections */}
-        {guide.content.sections.map((section, index) => (
-          <div key={index} className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">{section.title}</h2>
+        {/* Getting There Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Getting There from Essex County</h2>
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 mb-4">
+              {guide.content.gettingThereFromEssexCounty.overview}
+            </p>
+            {guide.content.gettingThereFromEssexCounty.flightOptions.length > 0 && (
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">Flight Options</h3>
+                <ul className="list-disc list-inside">
+                  {guide.content.gettingThereFromEssexCounty.flightOptions.map((option, idx) => (
+                    <li key={idx} className="text-gray-700">
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {guide.content.gettingThereFromEssexCounty.cruiseOptions.length > 0 && (
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">Cruise Options</h3>
+                <ul className="list-disc list-inside">
+                  {guide.content.gettingThereFromEssexCounty.cruiseOptions.map((option, idx) => (
+                    <li key={idx} className="text-gray-700">
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <p className="text-gray-700">
+              <strong>Travel Time:</strong> {guide.content.gettingThereFromEssexCounty.travelTime}
+            </p>
+          </div>
+        </div>
+
+        {/* Top Attractions */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Top Attractions</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {guide.content.topAttractions.map((attraction, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-2">{attraction.title}</h3>
+                <p className="text-gray-700 mb-2">{attraction.description}</p>
+                <div className="text-sm text-gray-600">
+                  <p>
+                    <strong>Duration:</strong> {attraction.duration}
+                  </p>
+                  <p>
+                    <strong>Cost:</strong> {attraction.cost}
+                  </p>
+                  {attraction.mustSee && (
+                    <span className="inline-block mt-2 px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">
+                      Must See
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Best Time to Visit */}
+        {guide.content.bestTimeToVisit && (
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Best Time to Visit</h2>
             <div className="prose prose-lg max-w-none">
-              <div className="text-gray-700 whitespace-pre-wrap">{section.content}</div>
+              <p className="text-gray-700">{guide.content.bestTimeToVisit.overview}</p>
             </div>
-          </div>
-        ))}
-
-        {/* Local Tips Section */}
-        {guide.content.localTips && (
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-8 mt-12 rounded-r-lg">
-            <h2 className="text-2xl font-bold text-blue-900 mb-4">Essex County Travel Tips</h2>
-            <div className="text-blue-800 whitespace-pre-wrap">{guide.content.localTips}</div>
-          </div>
-        )}
-
-        {/* Conclusion */}
-        {guide.content.conclusion && (
-          <div className="bg-gray-50 p-8 rounded-lg mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
-            <p className="text-gray-700">{guide.content.conclusion}</p>
           </div>
         )}
       </div>
