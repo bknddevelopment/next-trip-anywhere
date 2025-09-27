@@ -1,7 +1,11 @@
 import { Metadata } from 'next'
-import dynamic from 'next/dynamic'
+import dynamicImport from 'next/dynamic'
 import Script from 'next/script'
 import Link from 'next/link'
+
+// Force static generation
+export const dynamic = 'force-static'
+
 import {
   allInclusiveResorts,
   resortRegions,
@@ -19,7 +23,7 @@ import OptimizedBookingForm from '@/components/forms/OptimizedBookingForm'
 import ResortListingClient from './ResortListingClient'
 
 // Lazy load heavy components
-const BudgetCalculator = dynamic(() => import('@/components/resorts/BudgetCalculator'), {
+const BudgetCalculator = dynamicImport(() => import('@/components/resorts/BudgetCalculator'), {
   loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
 })
 

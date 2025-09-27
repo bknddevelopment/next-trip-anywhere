@@ -23,14 +23,14 @@ interface MetaTagConfig {
  */
 export function generateOptimizedMetaTags(config: MetaTagConfig): Metadata {
   // Ensure title is within 60 characters
-  const optimizedTitle = config.title.length > 60
-    ? config.title.substring(0, 57) + '...'
-    : config.title
+  const optimizedTitle =
+    config.title.length > 60 ? config.title.substring(0, 57) + '...' : config.title
 
   // Ensure description is within 160 characters
-  const optimizedDescription = config.description.length > 160
-    ? config.description.substring(0, 157) + '...'
-    : config.description
+  const optimizedDescription =
+    config.description.length > 160
+      ? config.description.substring(0, 157) + '...'
+      : config.description
 
   // Add local SEO keywords if enabled
   const keywords = config.includeLocalSEO
@@ -62,14 +62,16 @@ export function generateOptimizedMetaTags(config: MetaTagConfig): Metadata {
       siteName: 'Next Trip Anywhere',
       type: config.section === 'blog' ? 'article' : 'website',
       locale: 'en_US',
-      images: config.ogImage ? [
-        {
-          url: config.ogImage,
-          width: 1200,
-          height: 630,
-          alt: optimizedTitle,
-        }
-      ] : undefined,
+      images: config.ogImage
+        ? [
+            {
+              url: config.ogImage,
+              width: 1200,
+              height: 630,
+              alt: optimizedTitle,
+            },
+          ]
+        : undefined,
       publishedTime: config.publishedTime,
       modifiedTime: config.modifiedTime,
       authors: config.author ? [config.author] : undefined,
@@ -120,16 +122,14 @@ export const titlePatterns = {
   package: (type: string) =>
     `${type} Vacation Packages from NJ | All-Inclusive | Next Trip Anywhere`,
 
-  guide: (topic: string) =>
-    `${topic} Guide 2025 | Expert Travel Tips | Next Trip Anywhere`,
+  guide: (topic: string) => `${topic} Guide 2025 | Expert Travel Tips | Next Trip Anywhere`,
 
   essex: (city: string, service?: string) =>
     service
       ? `${service} in ${city}, Essex County | Next Trip Anywhere`
       : `Travel from ${city}, Essex County | Services & Deals`,
 
-  blog: (title: string) =>
-    `${title} | Next Trip Anywhere Travel Blog`,
+  blog: (title: string) => `${title} | Next Trip Anywhere Travel Blog`,
 
   comparison: (item1: string, item2: string) =>
     `${item1} vs ${item2}: Complete Comparison 2025 | Next Trip Anywhere`,
@@ -180,12 +180,17 @@ export function validateMetaTags(meta: Metadata): {
 
   // Check title length
   if (meta.title) {
-    const title = typeof meta.title === 'string' ? meta.title : meta.title.default
-    if (title && title.length > 60) {
-      issues.push(`Title too long (${title.length} chars, max 60)`)
-    }
-    if (title && title.length < 30) {
-      issues.push(`Title too short (${title.length} chars, min 30)`)
+    const title =
+      typeof meta.title === 'string'
+        ? meta.title
+        : (meta.title as any).default || (meta.title as any).template || ''
+    if (title && typeof title === 'string') {
+      if (title.length > 60) {
+        issues.push(`Title too long (${title.length} chars, max 60)`)
+      }
+      if (title.length < 30) {
+        issues.push(`Title too short (${title.length} chars, min 30)`)
+      }
     }
   } else {
     issues.push('Missing title tag')
@@ -215,12 +220,15 @@ export function validateMetaTags(meta: Metadata): {
   if (!meta.openGraph?.description) {
     issues.push('Missing Open Graph description')
   }
-  if (!meta.openGraph?.images || meta.openGraph.images.length === 0) {
+  if (
+    !meta.openGraph?.images ||
+    (Array.isArray(meta.openGraph.images) && meta.openGraph.images.length === 0)
+  ) {
     issues.push('Missing Open Graph image')
   }
 
   // Check Twitter Card
-  if (!meta.twitter?.card) {
+  if (meta.twitter && !(meta.twitter as any).card) {
     issues.push('Missing Twitter Card type')
   }
 

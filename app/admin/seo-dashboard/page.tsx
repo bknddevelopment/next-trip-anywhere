@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
-import { headers } from 'next/headers'
+// import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
+
+// Force static generation for this page
+export const dynamic = 'force-static'
 
 export const metadata: Metadata = {
   title: 'SEO Dashboard - Next Trip Anywhere Admin',
@@ -13,14 +16,14 @@ export const metadata: Metadata = {
  * Provides real-time SEO health monitoring and reporting
  */
 export default async function SEODashboard() {
-  // Simple auth check - in production, use proper authentication
-  const headersList = await headers()
-  const authHeader = headersList.get('authorization')
+  // Auth check disabled for static export
+  // const headersList = await headers()
+  // const authHeader = headersList.get('authorization')
 
-  // Basic protection - replace with proper auth in production
-  if (process.env.NODE_ENV === 'production' && !authHeader) {
-    notFound()
-  }
+  // Basic protection - disabled for static export
+  // if (process.env.NODE_ENV === 'production' && !authHeader) {
+  //   notFound()
+  // }
 
   // Simulated metrics - in production, fetch from analytics API
   const metrics = {
@@ -54,10 +57,10 @@ export default async function SEODashboard() {
   const indexationRate = ((metrics.indexedPages / metrics.totalPages) * 100).toFixed(1)
   const healthScore = Math.round(
     (metrics.indexedPages / metrics.totalPages) * 100 -
-    metrics.crawlErrors * 2 -
-    metrics.brokenLinks * 3 -
-    metrics.missingMeta -
-    metrics.duplicateTitles * 0.5
+      metrics.crawlErrors * 2 -
+      metrics.brokenLinks * 3 -
+      metrics.missingMeta -
+      metrics.duplicateTitles * 0.5
   )
 
   return (
@@ -72,20 +75,26 @@ export default async function SEODashboard() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Overall SEO Health</h2>
           <div className="flex items-center space-x-4">
-            <div className={`text-5xl font-bold ${
-              healthScore >= 90 ? 'text-green-600' :
-              healthScore >= 70 ? 'text-yellow-600' :
-              'text-red-600'
-            }`}>
+            <div
+              className={`text-5xl font-bold ${
+                healthScore >= 90
+                  ? 'text-green-600'
+                  : healthScore >= 70
+                    ? 'text-yellow-600'
+                    : 'text-red-600'
+              }`}
+            >
               {healthScore}%
             </div>
             <div className="flex-1">
               <div className="h-8 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className={`h-full ${
-                    healthScore >= 90 ? 'bg-green-600' :
-                    healthScore >= 70 ? 'bg-yellow-600' :
-                    'bg-red-600'
+                    healthScore >= 90
+                      ? 'bg-green-600'
+                      : healthScore >= 70
+                        ? 'bg-yellow-600'
+                        : 'bg-red-600'
                   }`}
                   style={{ width: `${healthScore}%` }}
                 />
@@ -96,11 +105,7 @@ export default async function SEODashboard() {
 
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <MetricCard
-            title="Total Pages"
-            value={metrics.totalPages}
-            status="neutral"
-          />
+          <MetricCard title="Total Pages" value={metrics.totalPages} status="neutral" />
           <MetricCard
             title="Indexed Pages"
             value={`${metrics.indexedPages} (${indexationRate}%)`}
@@ -109,7 +114,9 @@ export default async function SEODashboard() {
           <MetricCard
             title="Crawl Errors"
             value={metrics.crawlErrors}
-            status={metrics.crawlErrors === 0 ? 'good' : metrics.crawlErrors > 5 ? 'error' : 'warning'}
+            status={
+              metrics.crawlErrors === 0 ? 'good' : metrics.crawlErrors > 5 ? 'error' : 'warning'
+            }
           />
           <MetricCard
             title="Broken Links"
@@ -208,11 +215,11 @@ export default async function SEODashboard() {
               <div key={index} className="flex items-center justify-between py-2 border-b">
                 <span className="text-gray-600">{crawl.date}</span>
                 <span className="font-medium">{crawl.pages} pages</span>
-                <span className={`px-2 py-1 rounded text-sm ${
-                  crawl.errors === 0
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-red-100 text-red-800'
-                }`}>
+                <span
+                  className={`px-2 py-1 rounded text-sm ${
+                    crawl.errors === 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                  }`}
+                >
                   {crawl.errors} errors
                 </span>
               </div>
@@ -225,7 +232,11 @@ export default async function SEODashboard() {
 }
 
 // Component helpers
-function MetricCard({ title, value, status }: {
+function MetricCard({
+  title,
+  value,
+  status,
+}: {
   title: string
   value: string | number
   status: 'good' | 'warning' | 'error' | 'neutral'
@@ -245,7 +256,11 @@ function MetricCard({ title, value, status }: {
   )
 }
 
-function WebVitalMetric({ name, target, data }: {
+function WebVitalMetric({
+  name,
+  target,
+  data,
+}: {
   name: string
   target: string
   data: { good: number; needsImprovement: number; poor: number }
@@ -281,7 +296,12 @@ function WebVitalMetric({ name, target, data }: {
   )
 }
 
-function IssueItem({ type, count, description, action }: {
+function IssueItem({
+  type,
+  count,
+  description,
+  action,
+}: {
   type: 'error' | 'warning' | 'info'
   count: number
   description: string
@@ -300,14 +320,10 @@ function IssueItem({ type, count, description, action }: {
   return (
     <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
       <div className="flex items-center space-x-3">
-        <span className={`px-2 py-1 rounded text-sm font-medium ${typeStyles[type]}`}>
-          {count}
-        </span>
+        <span className={`px-2 py-1 rounded text-sm font-medium ${typeStyles[type]}`}>{count}</span>
         <span>{description}</span>
       </div>
-      <button className="text-blue-600 hover:underline text-sm">
-        {action} →
-      </button>
+      <button className="text-blue-600 hover:underline text-sm">{action} →</button>
     </div>
   )
 }

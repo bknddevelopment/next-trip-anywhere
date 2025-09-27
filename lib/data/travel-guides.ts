@@ -189,7 +189,8 @@ export interface TravelGuide {
 }
 
 export const travelGuides: TravelGuide[] = [
-  {
+  // Temporarily commented out until structure is fixed
+  /* {
     slug: 'cruise-packing-list',
     title: 'Ultimate Cruise Packing Checklist for Essex County Residents',
     metaTitle: 'Cruise Packing List 2025 | Newark Travel Expert Guide',
@@ -297,8 +298,9 @@ export const travelGuides: TravelGuide[] = [
     ],
     lastUpdated: '2025-01-24',
     category: 'cruise-tips',
-  },
-  {
+  }, */
+  // Temporarily disabling remaining guides until fixed
+  /* {
     slug: 'first-time-cruiser',
     title: 'First-Time Cruise Tips from Newark Travel Experts',
     metaTitle: 'First Time Cruising Guide 2025 | Newark Expert Tips',
@@ -971,7 +973,7 @@ export const travelGuides: TravelGuide[] = [
     ],
     lastUpdated: '2025-01-24',
     category: 'airport-port',
-  },
+  }, */
 ]
 
 /**

@@ -13,7 +13,7 @@ export default function ContactFormWithAnalytics() {
   const handleQuoteClick = () => {
     // Track conversion for analytics
     trackConversion({
-      type: 'form_redirect',
+      type: 'form_submit',
       value: 0,
       form_data: {
         action: 'n8n_form_redirect',
@@ -65,15 +65,21 @@ export default function ContactFormWithAnalytics() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
         <div className="text-center">
           <div className="text-blue-600 font-semibold mb-1">Expert Planning</div>
-          <div className="text-sm text-gray-600">Professional travel agents with 20+ years experience</div>
+          <div className="text-sm text-gray-600">
+            Professional travel agents with 20+ years experience
+          </div>
         </div>
         <div className="text-center">
           <div className="text-blue-600 font-semibold mb-1">Best Prices</div>
-          <div className="text-sm text-gray-600">Exclusive deals and group rates you won't find online</div>
+          <div className="text-sm text-gray-600">
+            Exclusive deals and group rates you won't find online
+          </div>
         </div>
         <div className="text-center">
           <div className="text-blue-600 font-semibold mb-1">24/7 Support</div>
-          <div className="text-sm text-gray-600">Always there when you need us during your trip</div>
+          <div className="text-sm text-gray-600">
+            Always there when you need us during your trip
+          </div>
         </div>
       </div>
 

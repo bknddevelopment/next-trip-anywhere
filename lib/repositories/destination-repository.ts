@@ -12,7 +12,7 @@ import type {
   DestinationSearchParams,
   DestinationsListResponse,
 } from '@/types/destination'
-import { DESTINATIONS } from '@/lib/data/destinations'
+import { DESTINATION_GUIDES as DESTINATIONS } from '@/lib/data/destinations'
 
 /**
  * Repository class for destination data operations

@@ -3,7 +3,7 @@
  * Tracks Core Web Vitals, bundle sizes, and page performance
  */
 
-import { getCLS, getFID, getLCP, getFCP, getTTFB } from 'web-vitals'
+import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals'
 
 export interface PerformanceMetrics {
   // Core Web Vitals
@@ -32,7 +32,7 @@ export interface PerformanceMetrics {
 
 export interface PerformanceBudget {
   lcp: number
-  fid: number
+  inp: number // Changed from fid to inp (Interaction to Next Paint)
   cls: number
   fcp: number
   ttfb: number
@@ -43,7 +43,7 @@ export interface PerformanceBudget {
 // Performance budgets for 500+ page site
 export const PERFORMANCE_BUDGETS: PerformanceBudget = {
   lcp: 2500, // 2.5s
-  fid: 100, // 100ms
+  inp: 200, // 200ms (INP replaced FID)
   cls: 0.1, // 0.1
   fcp: 1500, // 1.5s
   ttfb: 600, // 600ms
@@ -65,27 +65,27 @@ class PerformanceMonitor {
 
   private initWebVitals() {
     // Core Web Vitals
-    getCLS((metric) => {
+    onCLS((metric) => {
       this.metrics.cls = metric.value
       this.checkBudget('cls', metric.value)
     })
 
-    getFID((metric) => {
-      this.metrics.fid = metric.value
-      this.checkBudget('fid', metric.value)
+    onINP((metric) => {
+      this.metrics.inp = metric.value
+      this.checkBudget('inp', metric.value)
     })
 
-    getLCP((metric) => {
+    onLCP((metric) => {
       this.metrics.lcp = metric.value
       this.checkBudget('lcp', metric.value)
     })
 
-    getFCP((metric) => {
+    onFCP((metric) => {
       this.metrics.fcp = metric.value
       this.checkBudget('fcp', metric.value)
     })
 
-    getTTFB((metric) => {
+    onTTFB((metric) => {
       this.metrics.ttfb = metric.value
       this.checkBudget('ttfb', metric.value)
     })
@@ -147,22 +147,11 @@ class PerformanceMonitor {
 
     // Track resource by type
     if (entry.name.includes('.js') || entry.name.includes('.mjs')) {
-      this.metrics.scriptLoadTime = Math.max(
-        this.metrics.scriptLoadTime || 0,
-        duration
-      )
+      this.metrics.scriptLoadTime = Math.max(this.metrics.scriptLoadTime || 0, duration)
     } else if (entry.name.includes('.css')) {
-      this.metrics.cssLoadTime = Math.max(
-        this.metrics.cssLoadTime || 0,
-        duration
-      )
-    } else if (
-      entry.name.match(/\.(jpg|jpeg|png|webp|avif|svg|gif)/i)
-    ) {
-      this.metrics.imageLoadTime = Math.max(
-        this.metrics.imageLoadTime || 0,
-        duration
-      )
+      this.metrics.cssLoadTime = Math.max(this.metrics.cssLoadTime || 0, duration)
+    } else if (entry.name.match(/\.(jpg|jpeg|png|webp|avif|svg|gif)/i)) {
+      this.metrics.imageLoadTime = Math.max(this.metrics.imageLoadTime || 0, duration)
     }
 
     // Track total resource size
@@ -193,14 +182,10 @@ class PerformanceMonitor {
     }
   }
 
-  private reportBudgetViolation(
-    metric: string,
-    actual: number,
-    budget: number
-  ) {
+  private reportBudgetViolation(metric: string, actual: number, budget: number) {
     // Report to analytics
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      (window as any).gtag('event', 'performance_budget_exceeded', {
+      ;(window as any).gtag('event', 'performance_budget_exceeded', {
         metric,
         actual,
         budget,
@@ -219,7 +204,7 @@ class PerformanceMonitor {
 
     // Send to analytics
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      (window as any).gtag('event', 'performance_metrics', {
+      ;(window as any).gtag('event', 'performance_metrics', {
         ...metrics,
         page: window.location.pathname,
       })
@@ -229,7 +214,7 @@ class PerformanceMonitor {
   }
 
   public cleanup() {
-    this.observers.forEach(observer => observer.disconnect())
+    this.observers.forEach((observer) => observer.disconnect())
     this.observers = []
   }
 }
@@ -245,10 +230,7 @@ export function getPerformanceMonitor(): PerformanceMonitor {
 }
 
 // Utility functions for manual performance tracking
-export function measurePerformance<T>(
-  name: string,
-  fn: () => T
-): T {
+export function measurePerformance<T>(name: string, fn: () => T): T {
   const start = performance.now()
   const result = fn()
   const duration = performance.now() - start
@@ -258,10 +240,7 @@ export function measurePerformance<T>(
   return result
 }
 
-export async function measureAsyncPerformance<T>(
-  name: string,
-  fn: () => Promise<T>
-): Promise<T> {
+export async function measureAsyncPerformance<T>(name: string, fn: () => Promise<T>): Promise<T> {
   const start = performance.now()
   const result = await fn()
   const duration = performance.now() - start
@@ -338,9 +317,7 @@ export function trackBundleSize() {
   if (typeof window !== 'undefined' && 'performance' in window) {
     const resources = performance.getEntriesByType('resource')
 
-    const bundles = resources.filter(
-      (r) => r.name.includes('.js') || r.name.includes('.css')
-    )
+    const bundles = resources.filter((r) => r.name.includes('.js') || r.name.includes('.css'))
 
     const totalSize = bundles.reduce(
       (sum, r) => sum + ((r as PerformanceResourceTiming).transferSize || 0),
@@ -349,17 +326,11 @@ export function trackBundleSize() {
 
     const jsSize = bundles
       .filter((r) => r.name.includes('.js'))
-      .reduce(
-        (sum, r) => sum + ((r as PerformanceResourceTiming).transferSize || 0),
-        0
-      )
+      .reduce((sum, r) => sum + ((r as PerformanceResourceTiming).transferSize || 0), 0)
 
     const cssSize = bundles
       .filter((r) => r.name.includes('.css'))
-      .reduce(
-        (sum, r) => sum + ((r as PerformanceResourceTiming).transferSize || 0),
-        0
-      )
+      .reduce((sum, r) => sum + ((r as PerformanceResourceTiming).transferSize || 0), 0)
 
     return {
       total: totalSize,

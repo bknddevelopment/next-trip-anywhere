@@ -109,7 +109,7 @@ export function filterResorts(resorts: Resort[], filters: ResortFilters): Resort
 
   // Filter by minimum rating
   if (filters.rating !== null && filters.rating !== undefined) {
-    filtered = filtered.filter((resort) => resort.rating >= filters.rating)
+    filtered = filtered.filter((resort) => resort.rating >= filters.rating!)
   }
 
   // Filter by amenities
@@ -121,7 +121,7 @@ export function filterResorts(resorts: Resort[], filters: ResortFilters): Resort
 
   // Filter by max flight time
   if (filters.flightTime !== null && filters.flightTime !== undefined) {
-    filtered = filtered.filter((resort) => resort.flightTime <= filters.flightTime)
+    filtered = filtered.filter((resort) => resort.flightTime <= filters.flightTime!)
   }
 
   // Filter by beachfront

@@ -2,17 +2,21 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CruiseHero } from '@/components/services/CruiseHero'
+import CruiseHero from '@/components/services/CruiseHero'
 import ContactFormWithAnalytics from '@/components/forms/ContactFormWithAnalytics'
 import { travelInfoGuides } from '@/lib/data/travel-info-guides'
 import { generateTravelGuideSchemaGraph } from '@/lib/utils/travelGuideSchema'
 
+// Force static generation
+export const dynamic = 'force-static'
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const guide = travelInfoGuides.find((g) => g.slug === params.slug)
+  const { slug } = await params
+  const guide = travelInfoGuides.find((g) => g.slug === slug)
 
   if (!guide) {
     return {
@@ -49,8 +53,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function TravelGuidePage({ params }: { params: { slug: string } }) {
-  const guide = travelInfoGuides.find((g) => g.slug === params.slug)
+export default async function TravelGuidePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const guide = travelInfoGuides.find((g) => g.slug === slug)
 
   if (!guide) {
     notFound()

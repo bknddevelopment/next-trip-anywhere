@@ -456,7 +456,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const seasonalDealPages = seasonalDeals.map((deal) => ({
     url: `${baseUrl}/deals/seasonal/${deal.slug}`,
-    lastModified: new Date(deal.lastUpdated),
+    lastModified: deal.lastUpdated,
     changeFrequency: 'weekly' as const,
     priority: deal.priority === 'HIGH' ? 0.9 : deal.priority === 'MEDIUM' ? 0.85 : 0.8,
   }))
@@ -479,7 +479,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Phase 2 Travel Info Guides (15 comprehensive how-to guides)
   const travelInfoGuidePages = travelInfoGuides.map((guide) => ({
     url: `${baseUrl}/travel-guides/${guide.slug}`,
-    lastModified: new Date(guide.lastUpdated),
+    lastModified: guide.lastUpdated,
     changeFrequency: 'monthly' as const,
     priority: guide.searchVolume > 5000 ? 0.9 : guide.searchVolume > 2000 ? 0.85 : 0.8,
   }))
