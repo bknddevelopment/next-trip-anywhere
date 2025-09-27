@@ -34,14 +34,8 @@ export default function ExitIntentPopup({
       }
     }
 
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (!hasTriggered) {
-        setHasTriggered(true)
-        setIsVisible(true)
-        e.preventDefault()
-        e.returnValue = ''
-      }
-    }
+    // Removed beforeunload handler as it interferes with external links
+    // The exit intent should only trigger on mouse leave, not on navigation
 
     // Also trigger after user spends time on site (fallback)
     const timeoutTimer = setTimeout(() => {
@@ -52,11 +46,10 @@ export default function ExitIntentPopup({
     }, 45000) // 45 seconds
 
     document.addEventListener('mouseleave', handleMouseLeave)
-    window.addEventListener('beforeunload', handleBeforeUnload)
+    // Removed beforeunload listener to prevent interference with external links
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave)
-      window.removeEventListener('beforeunload', handleBeforeUnload)
       clearTimeout(exitTimer)
       clearTimeout(timeoutTimer)
     }
