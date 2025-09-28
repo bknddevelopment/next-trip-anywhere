@@ -40,7 +40,7 @@ export default defineConfig({
       },
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['node_modules', 'dist', '.next', 'out', 'docs'],
+    exclude: ['node_modules', 'dist', '.next', 'out', 'docs', 'e2e/**/*'],
     testTimeout: 10000,
     hookTimeout: 10000,
   },

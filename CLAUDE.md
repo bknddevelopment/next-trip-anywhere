@@ -71,7 +71,7 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
    - `lib/data/blog-posts.ts` - Blog content with SEO metadata
    - **`lib/data/cruises.ts`** - Cruise destinations with search volume & priority (Phase 1 - Complete)
    - **`lib/data/vacation-packages.ts`** - Vacation packages with local targeting (Phase 1 - Complete)
-   - **`lib/data/travel-guides.ts`** - Travel guide content for SEO optimization (Phase 1 - Complete)
+   - **`lib/data/travel-guides.ts`** - Travel guide content for SEO optimization (Phase 1 - Complete, includes 7,839-word insurance guide)
    - **`lib/data/destinations.ts`** - Popular destinations (Phase 2 - Upcoming)
 
 ### Critical Files & Patterns
@@ -83,7 +83,7 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
 - `app/destinations/[slug]/page.tsx` - Dynamic destination pages
 - **`app/cruises/[destination]/page.tsx`** - Dynamic cruise destination pages (Phase 1 - Complete)
 - **`app/packages/[type]/page.tsx`** - Dynamic vacation package pages (Phase 1 - Complete)
-- **Travel Guide pages to be implemented** - 15 comprehensive guides planned for Phase 2
+- **`app/guides/[topic]/page.tsx`** - Dynamic travel guide pages including insurance guide (7,839 words)
 
 #### SEO & Metadata Generation
 
@@ -93,6 +93,7 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
 - **`lib/utils/packageSchema.ts`** - Vacation package schema generation
 - **`lib/utils/portSchema.ts`** - Port and departure location schema
 - **`lib/utils/guideSchema.ts`** - Travel guide schema templates
+- **`lib/utils/insuranceGuideSchema.ts`** - Insurance guide schema with Article, FAQPage, HowTo, Product schemas
 - **`lib/utils/baseSchema.ts`** - Base schema components for reuse
 - `config/seo.ts` - Default SEO configuration
 
@@ -102,6 +103,15 @@ nexttripanywhere.com (custom domain) → GitHub Pages → docs/ (static build)
 - Location pages import from shared data files for consistency
 - All pages include structured data (JSON-LD) for local business schema
 - **Cruise/Package pages use lazy loading for non-critical components**
+
+#### Interactive Guide Components
+
+- **`components/guides/InsuranceComparisonTable.tsx`** - Interactive table comparing 10 insurance providers
+  - Props: providers array with coverage details, ratings, pricing
+  - Features: Expandable rows, feature filtering, mobile-responsive
+- **`components/guides/FAQAccordion.tsx`** - Accessible FAQ accordion component
+  - Props: items array with question/answer pairs
+  - Features: Expand/collapse all, keyboard navigation, ARIA compliant
 
 ### Deployment Pipeline
 
@@ -205,6 +215,40 @@ npm run build
 // 2. Packages automatically available at /packages/luxury-resorts
 ```
 
+#### Adding New Travel Guides (Including Insurance-Style Guides)
+
+```typescript
+// 1. Add to lib/data/travel-guides.ts
+{
+  slug: 'travel-insurance-guide',
+  title: 'Complete Cruise Travel Insurance Guide 2025',
+  metaTitle: 'Cruise Travel Insurance Guide 2025 | Expert Advice',
+  metaDescription: '160 chars max with primary keywords',
+  keywords: ['cruise travel insurance 2025', 'travel medical insurance'],
+  searchVolume: 40000, // Monthly searches
+  priority: 'HIGH', // Based on search volume
+  content: {
+    introduction: 'Opening paragraph with local hook',
+    sections: [ // Flexible sections for non-destination guides
+      {
+        title: 'Section Title',
+        content: 'Detailed content (aim for 7,000+ words total)'
+      }
+    ],
+    localTips: 'Essex County specific advice',
+    conclusion: 'Strong CTA with phone number'
+  },
+  faq: [ // 10-15 Q&A pairs for comprehensive coverage
+    { question: 'Q', answer: 'A' }
+  ],
+  lastUpdated: '2025-01-27'
+}
+
+// 2. For interactive components, create in components/guides/
+// 3. Import components dynamically in app/guides/[topic]/page.tsx
+// 4. Page automatically available at /guides/travel-insurance-guide
+```
+
 #### Content Requirements
 
 - **Word Count**: Minimum 1,500 words per page
@@ -255,10 +299,19 @@ The site heavily focuses on **Essex County, NJ** local SEO with comprehensive co
   - 20 cruise destination pages
   - 19 cruise line and port pages
   - 5 vacation package category pages
-- **Total Pages**: 264+ dynamically generated pages
-- **Phase 2 Planning**: 15 travel guide pages in development
+- **Travel Insurance Guide**: Comprehensive 7,839-word guide targeting 40,000+ monthly searches
+- **Total Pages**: 595 dynamically generated pages
+- **Phase 2 & 3 Expansions**: Additional travel guides and destination deep-dives
 
 ### Recent Major Changes
+
+- **Travel Insurance Guide (January 2025)**:
+  - ✅ Implemented comprehensive 7,839-word cruise travel insurance guide
+  - ✅ Created interactive InsuranceComparisonTable component for provider comparisons
+  - ✅ Built accessible FAQAccordion component with expand/collapse functionality
+  - ✅ Added multi-schema markup (Article, FAQPage, HowTo, Product, Service)
+  - ✅ Targeting "cruise travel insurance 2025" keyword (40,000+ searches/month)
+  - ✅ Integrated lazy loading for optimal performance
 
 - **Phase 1 SEO Expansion (Completed January 2025)**:
   - ✅ Added 20 dynamic cruise destination pages with comprehensive schema markup
@@ -366,9 +419,9 @@ The site auto-deploys on push to main via `.github/workflows/deploy.yml`:
 3. Fixes image paths via `scripts/fix-image-paths.js`
 4. Deploys from `docs/` folder
 
-### Build Considerations for 264+ Pages
+### Build Considerations for 595 Pages
 
-With the Phase 1 expansion completed, the build now generates 264+ static pages:
+With the insurance guide and Phase 1-3 expansions, the build now generates 595 static pages:
 
 - **Build Time**: ~3-5 minutes for full static export
 - **Memory Usage**: May require increased Node memory for builds

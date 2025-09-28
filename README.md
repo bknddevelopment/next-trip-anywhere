@@ -36,7 +36,7 @@
 
 ## 🎯 Overview
 
-Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, serving travelers nationwide from all major US cities coast to coast. With 264+ SEO-optimized pages and comprehensive schema markup, the platform achieved a 20% organic traffic increase in Phase 1 of its expansion.
+Next Trip Anywhere is a modern, high-performance travel agency platform built with Next.js 15. It provides a seamless booking experience for flights, cruises, and vacation packages, serving travelers nationwide from all major US cities coast to coast. With 595 SEO-optimized pages including comprehensive travel guides and schema markup, the platform continues to expand its organic reach with high-value content targeting competitive travel keywords.
 
 ### 🎨 Key Highlights
 
@@ -56,7 +56,8 @@ Next Trip Anywhere is a modern, high-performance travel agency platform built wi
 - **Flight Booking**: Search and compare flights from major carriers
 - **Cruise Packages**: 44 dedicated cruise pages including Caribbean, Mediterranean, Alaska, with 20 destination pages and 19 cruise line hubs
 - **Vacation Packages**: All-inclusive resorts, family packages, adults-only escapes, and budget beach vacations
-- **Local Focus**: 264+ pages optimized for Essex County, NJ residents with local departure options
+- **Travel Guides**: Comprehensive guides including 7,839-word cruise travel insurance guide with interactive comparison tools
+- **Local Focus**: 595 pages optimized for Essex County, NJ residents with local departure options
 - **Nationwide Coverage**: Specialized deals from all major US cities including NYC, LA, Chicago, Miami, Seattle, Denver, Atlanta, and more
 
 ### 💻 Technical Features
@@ -215,7 +216,7 @@ npm run deploy       # Deploy to GitHub Pages
 
 ## 📈 SEO & Content Strategy
 
-### Phase 1 Expansion (260+ Pages)
+### SEO Expansion (595 Pages)
 
 The site includes a comprehensive SEO expansion targeting high-volume travel keywords:
 
@@ -223,6 +224,7 @@ The site includes a comprehensive SEO expansion targeting high-volume travel key
 
 - **Cruise Destinations** (40+ pages): Caribbean, Bahamas, Alaska, Mediterranean cruises from Cape Liberty/Newark
 - **Vacation Packages** (20+ pages): All-inclusive, family, adults-only, budget packages from Newark Airport
+- **Travel Guides**: Comprehensive guides including cruise travel insurance (40,000+ searches/month), packing lists, planning guides
 - **Essex County Local** (220+ pages): Individual pages for 22 municipalities with 10+ services each
 - **Cruise Line Hubs**: Royal Caribbean, Carnival, Norwegian, Princess, Celebrity (1.5M+ combined searches/month)
 

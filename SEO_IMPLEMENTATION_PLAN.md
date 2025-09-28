@@ -122,22 +122,22 @@ Expand from 220+ Essex County pages to 500+ total pages by adding cruise and vac
 | `/packages/costa-rica-adventure`    | Costa Rica Adventure Packages from Newark Liberty      | costa rica packages from newark     | 20  | 1,100         |
 | `/packages/mexico-all-inclusive`    | Mexico All-Inclusive Resorts: Fly from Newark          | mexico all inclusive from newark    | 25  | 2,200         |
 
-### 📅 Week 3: Travel Guide Pages (DEFERRED TO PHASE 2)
+### 📅 Week 3: Travel Guide Pages (PHASE 2 - IN PROGRESS)
 
-**Status: Structure complete, content creation scheduled for Phase 2**
+**Status: Structure complete, high-priority guides being deployed**
 
-| URL                                  | Title                                                       | Primary Keyword                   | KD  | Search Volume |
-| ------------------------------------ | ----------------------------------------------------------- | --------------------------------- | --- | ------------- |
-| `/guides/caribbean-travel-guide`     | Caribbean Travel Guide for Essex County Residents           | caribbean travel guide nj         | 10  | 390           |
-| `/guides/cruise-packing-list`        | Ultimate Cruise Packing List: Tips from NJ Experts          | cruise packing list               | 15  | 8,100         |
-| `/guides/best-time-cruise-caribbean` | Best Time to Cruise Caribbean from New Jersey               | best time caribbean cruise        | 20  | 2,900         |
-| `/guides/first-time-cruiser`         | First Time Cruise Tips: Essex County Beginner's Guide       | first time cruise tips            | 25  | 3,600         |
-| `/guides/passport-requirements-nj`   | Passport Requirements for NJ Travelers: 2025 Guide          | passport requirements nj          | 30  | 1,900         |
-| `/guides/travel-insurance-guide`     | Travel Insurance for Essex County Residents: Complete Guide | travel insurance nj               | 35  | 2,400         |
-| `/guides/airport-parking-newark`     | Newark Airport Parking Guide: Save on EWR Parking           | newark airport parking guide      | 25  | 14,800        |
-| `/guides/tsa-precheck-newark`        | TSA PreCheck at Newark Airport: How to Apply in NJ          | tsa precheck newark               | 20  | 2,900         |
-| `/guides/caribbean-hurricane-season` | Caribbean Hurricane Season: When to Travel from NJ          | caribbean hurricane season travel | 15  | 1,600         |
-| `/guides/cruise-shore-excursions`    | Best Cruise Shore Excursions: Book from Essex County        | cruise shore excursions           | 30  | 4,400         |
+| URL                                  | Title                                                 | Primary Keyword                   | KD  | Search Volume | Status                |
+| ------------------------------------ | ----------------------------------------------------- | --------------------------------- | --- | ------------- | --------------------- |
+| `/guides/travel-insurance-guide`     | Complete Cruise Travel Insurance Guide 2025           | cruise travel insurance 2025      | 35  | 40,000+       | ✅ LIVE (7,839 words) |
+| `/guides/caribbean-travel-guide`     | Caribbean Travel Guide for Essex County Residents     | caribbean travel guide nj         | 10  | 390           | 🔄 In Progress        |
+| `/guides/cruise-packing-list`        | Ultimate Cruise Packing List: Tips from NJ Experts    | cruise packing list               | 15  | 8,100         | 📅 Scheduled          |
+| `/guides/best-time-cruise-caribbean` | Best Time to Cruise Caribbean from New Jersey         | best time caribbean cruise        | 20  | 2,900         | 📅 Scheduled          |
+| `/guides/first-time-cruiser`         | First Time Cruise Tips: Essex County Beginner's Guide | first time cruise tips            | 25  | 3,600         | 📅 Scheduled          |
+| `/guides/passport-requirements-nj`   | Passport Requirements for NJ Travelers: 2025 Guide    | passport requirements nj          | 30  | 1,900         | 📅 Scheduled          |
+| `/guides/airport-parking-newark`     | Newark Airport Parking Guide: Save on EWR Parking     | newark airport parking guide      | 25  | 14,800        |
+| `/guides/tsa-precheck-newark`        | TSA PreCheck at Newark Airport: How to Apply in NJ    | tsa precheck newark               | 20  | 2,900         |
+| `/guides/caribbean-hurricane-season` | Caribbean Hurricane Season: When to Travel from NJ    | caribbean hurricane season travel | 15  | 1,600         |
+| `/guides/cruise-shore-excursions`    | Best Cruise Shore Excursions: Book from Essex County  | cruise shore excursions           | 30  | 4,400         |
 
 ### Week 4: Local Service Integration
 
