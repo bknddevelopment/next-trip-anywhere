@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test - Next Trip Anywhere</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background: linear-gradient(to right, #ff6b35, #f7931e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .btn-secondary {
+            background: linear-gradient(to right, #4CAF50, #45a049);
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Next Trip Anywhere - Button Functionality Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Simple Anchor Links</h2>
+        <p>These are standard HTML anchor tags with target="_blank"</p>
+
+        <a href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn">
+            Get Quote (app.n8n.cloud)
+        </a>
+
+        <a href="https://n8n.nexttripanywhere.com/form/8e062c4b-08d0-4b48-9e33-09ae4c2e7098"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-secondary">
+            Get Quote (n8n.nexttripanywhere.com)
+        </a>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: JavaScript window.open()</h2>
+        <p>These buttons use JavaScript to open the form</p>
+
+        <button class="btn" onclick="window.open('https://nextripanywhere.app.n8n.cloud/form/travel-quote-form', '_blank')">
+            Get Quote via JS (app.n8n.cloud)
+        </button>
+
+        <button class="btn btn-secondary" onclick="window.open('https://n8n.nexttripanywhere.com/form/8e062c4b-08d0-4b48-9e33-09ae4c2e7098', '_blank')">
+            Get Quote via JS (n8n.nexttripanywhere.com)
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Advanced JavaScript Handler</h2>
+        <p>These buttons use event listeners with fallback</p>
+
+        <button id="advanced-btn-1" class="btn">
+            Get Quote Advanced 1
+        </button>
+
+        <button id="advanced-btn-2" class="btn btn-secondary">
+            Get Quote Advanced 2
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Status</h2>
+        <div id="status" class="status">
+            Click any button above to test functionality
+        </div>
+    </div>
+
+    <script>
+        // Track button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn') || e.target.tagName === 'BUTTON') {
+                document.getElementById('status').innerHTML =
+                    '<span class="success">✓</span> Button clicked: ' + e.target.textContent +
+                    '<br>Time: ' + new Date().toLocaleTimeString();
+            }
+        });
+
+        // Advanced button handlers
+        document.getElementById('advanced-btn-1').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const url = 'https://nextripanywhere.app.n8n.cloud/form/travel-quote-form';
+            const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                // Fallback if popup blocked
+                window.location.href = url;
+            }
+        });
+
+        document.getElementById('advanced-btn-2').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const url = 'https://n8n.nexttripanywhere.com/form/8e062c4b-08d0-4b48-9e33-09ae4c2e7098';
+            const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                // Fallback if popup blocked
+                window.location.href = url;
+            }
+        });
+
+        // Test for any blocking scripts
+        window.addEventListener('beforeunload', function(e) {
+            console.log('beforeunload event fired');
+            // Do NOT prevent default - let navigation happen
+        });
+
+        // Log any errors
+        window.addEventListener('error', function(e) {
+            document.getElementById('status').innerHTML +=
+                '<br><span class="error">✗</span> Error: ' + e.message;
+        });
+    </script>
+</body>
+</html>

@@ -296,6 +296,85 @@ function Button({ text, onClick, variant = 'primary' }: ButtonProps) {
 }
 ```
 
+### Interactive Guide Components
+
+#### InsuranceComparisonTable Component
+
+**Purpose**: Interactive comparison table for cruise travel insurance providers
+
+**Location**: `components/guides/InsuranceComparisonTable.tsx`
+
+**Features**:
+
+- Compare 10 major insurance providers
+- Expandable rows for detailed information
+- Mobile-responsive design with horizontal scrolling
+- Visual indicators for coverage levels
+- Pros/cons display for each provider
+
+**Props**:
+
+```typescript
+interface InsuranceProvider {
+  name: string
+  rating: number
+  medicalCoverage: string
+  evacuationCoverage: string
+  tripCancellation: string
+  cfar: boolean // Cancel For Any Reason
+  preExisting: boolean
+  priceRange: string
+  pros: string[]
+  cons: string[]
+  bestFor: string
+}
+```
+
+**Usage**:
+
+```tsx
+<InsuranceComparisonTable />
+// Component handles its own data internally
+```
+
+#### FAQAccordion Component
+
+**Purpose**: Accessible accordion component for FAQ sections
+
+**Location**: `components/guides/FAQAccordion.tsx`
+
+**Features**:
+
+- Expand/collapse individual questions
+- Expand all/collapse all functionality
+- Keyboard navigation support (Enter/Space)
+- ARIA-compliant for screen readers
+- Smooth animations
+
+**Props**:
+
+```typescript
+interface FAQAccordionProps {
+  items: Array<{
+    question: string
+    answer: string
+  }>
+}
+```
+
+**Usage**:
+
+```tsx
+<FAQAccordion items={faqData} />
+```
+
+**Accessibility Features**:
+
+- Proper ARIA labels and roles
+- Keyboard navigation support
+- Screen reader announcements
+- Focus management
+
 ## 🔄 Data Flow
 
 ### How Data Moves Through the App
@@ -438,6 +517,60 @@ const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
 - **Initial JS**: < 100KB
 - **Initial CSS**: < 20KB
 - **Total Page Weight**: < 500KB
+
+## 📋 Schema Generation for SEO
+
+### Insurance Guide Schema Utilities
+
+**Location**: `lib/utils/insuranceGuideSchema.ts`
+
+**Purpose**: Generate comprehensive structured data for cruise travel insurance guide pages
+
+**Schema Types Generated**:
+
+1. **Article Schema** - Main content structure with 7,839 word count
+2. **FAQPage Schema** - Structured FAQ data for rich snippets
+3. **HowTo Schema** - Step-by-step insurance purchasing guide
+4. **Product Schema** - Insurance product comparisons
+5. **Service Schema** - Travel agency service offerings
+6. **LocalBusiness Schema** - Local business information
+7. **BreadcrumbList Schema** - Navigation hierarchy
+
+**Key Functions**:
+
+```typescript
+// Generate complete schema graph
+generateInsuranceGuideSchemaGraph(data: InsuranceGuideData)
+
+// Generate insurance comparison schema
+generateInsuranceComparisonSchema(providers: InsuranceProvider[])
+
+// Generate insurance review schema
+generateInsuranceReviewSchema(reviews: ReviewData[])
+```
+
+**Benefits**:
+
+- Eligible for rich snippets in search results
+- Enhanced visibility for FAQ sections
+- Product comparison carousel eligibility
+- Local business knowledge panel
+- Improved click-through rates
+
+**Implementation**:
+
+```tsx
+// In page component
+const schemaGraph = generateInsuranceGuideSchemaGraph(guideData)
+
+<Script
+  id="insurance-guide-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(schemaGraph)
+  }}
+/>
+```
 
 ## 🔒 Security Considerations
 
