@@ -10,6 +10,7 @@ import { travelInfoGuides } from '@/lib/data/travel-info-guides'
 import { seasonalDeals } from '@/lib/data/seasonal-deals'
 import { getGuidesForSitemap } from '@/lib/data/destinations-deep-dive'
 import { disneyRoomGuides } from '@/lib/data/disney-room-guides'
+import { getCruiseNeighborhoodsForSitemap } from '@/lib/data/cruise-neighborhoods'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -194,6 +195,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
     priority: room.priority === 'HIGH' ? 0.85 : room.priority === 'MEDIUM' ? 0.75 : 0.7,
   }))
+
+  // Generate Cruise neighborhood guide pages
+  const cruiseNeighborhoodPages = getCruiseNeighborhoodsForSitemap().map((neighborhood) => ({
+    ...neighborhood,
+    url: `${baseUrl}${neighborhood.url}`,
+  }))
+
+  // Cruise neighborhoods hub page
+  const cruiseNeighborhoodsHub = {
+    url: `${baseUrl}/guides/cruise-neighborhoods`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }
 
   // Legacy destination pages
   const legacyDestinations = [
@@ -501,6 +516,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }
 
+  // Cruise Neighborhood Guide Pages (Phase 3 - 50 pages)
+  const cruiseNeighborhoodHub = {
+    url: `${baseUrl}/guides/cruise-neighborhoods`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }
+
   // Total pages for verification (used in build logs)
   // Essex County implementation includes:
   // - 20 city pages
@@ -520,6 +543,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     blogMainPage,
     ...blogPostPages,
     ...disneyRoomPages,
+    cruiseNeighborhoodsHub,
+    ...cruiseNeighborhoodPages,
     ...legacyDestinationPages,
     ...seoDestinationPages,
     ...deepDiveDestinationPages,
@@ -536,6 +561,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     seasonalHubPage,
     ...seasonalDealPages,
     toolsPage,
+    cruiseNeighborhoodHub,
+    ...cruiseNeighborhoodPages,
     ...companyPages,
     ...legalPages,
   ]
