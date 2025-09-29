@@ -9,6 +9,7 @@ import { travelGuides } from '@/lib/data/travel-guides'
 import { travelInfoGuides } from '@/lib/data/travel-info-guides'
 import { seasonalDeals } from '@/lib/data/seasonal-deals'
 import { getGuidesForSitemap } from '@/lib/data/destinations-deep-dive'
+import { disneyRoomGuides } from '@/lib/data/disney-room-guides'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -184,6 +185,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.updatedAt || post.publishedAt || currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.65,
+  }))
+
+  // Generate Disney room guide pages
+  const disneyRoomPages = disneyRoomGuides.map((room) => ({
+    url: `${baseUrl}/guides/disney-rooms/${room.slug}`,
+    lastModified: room.lastUpdated || currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: room.priority === 'HIGH' ? 0.85 : room.priority === 'MEDIUM' ? 0.75 : 0.7,
   }))
 
   // Legacy destination pages
@@ -510,6 +519,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...travelFromServicePages,
     blogMainPage,
     ...blogPostPages,
+    ...disneyRoomPages,
     ...legacyDestinationPages,
     ...seoDestinationPages,
     ...deepDiveDestinationPages,
