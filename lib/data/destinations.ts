@@ -178,7 +178,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 15, max: 25 },
         winter: { min: 3, max: 7 },
       },
-      // bestMonths: [4, 5, 6, 9, 10], // TODO: Convert to rainyMonths
+      rainyMonths: ['November', 'December', 'January'],
       humidity: 'moderate',
     },
     travelRequirements: {
@@ -271,7 +271,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 22, max: 29 },
         winter: { min: 10, max: 15 },
       },
-      // bestMonths: [5, 6, 9, 10], // TODO: Convert to rainyMonths
+      rainyMonths: ['December', 'January', 'February'],
       humidity: 'moderate',
     },
     travelRequirements: {
@@ -360,7 +360,6 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         winter: { min: 2, max: 10 },
       },
       rainyMonths: ['June', 'September'],
-      // bestMonths: [3, 4, 5, 10, 11], // TODO: Convert to rainyMonths
       humidity: 'high',
     },
     travelRequirements: {
@@ -446,7 +445,6 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         winter: { min: 24, max: 31 },
       },
       rainyMonths: ['November to March'],
-      // bestMonths: [4, 5, 6, 7, 8, 9], // TODO: Convert to rainyMonths
       humidity: 'high',
     },
     travelRequirements: {
@@ -534,7 +532,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 20, max: 29 },
         winter: { min: -3, max: 4 },
       },
-      // bestMonths: [4, 5, 9, 10, 11], // TODO: Convert to rainyMonths
+      rainyMonths: ['March', 'April', 'July', 'August'],
       humidity: 'moderate',
     },
     travelRequirements: {
@@ -618,7 +616,6 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         winter: { min: 20, max: 28 },
       },
       rainyMonths: ['June to October'],
-      // bestMonths: [12, 1, 2, 3, 4], // TODO: Convert to rainyMonths
       humidity: 'high',
     },
     travelRequirements: {
@@ -700,7 +697,6 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         winter: { min: 23, max: 28 },
       },
       rainyMonths: ['June to November'],
-      // bestMonths: [12, 1, 2, 3, 4], // TODO: Convert to rainyMonths
       humidity: 'high',
     },
     travelRequirements: {
@@ -786,7 +782,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 23, max: 30 },
         winter: { min: 18, max: 25 },
       },
-      // bestMonths: [5, 6, 7, 8, 9], // TODO: Convert to rainyMonths
+      rainyMonths: ['December', 'January', 'February', 'March'],
       humidity: 'high',
     },
     travelRequirements: {
@@ -869,7 +865,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 16, max: 26 },
         winter: { min: 7, max: 18 },
       },
-      // bestMonths: [10, 11, 12, 1, 2, 3], // TODO: Convert to rainyMonths
+      rainyMonths: ['May', 'June', 'July', 'August'],
       humidity: 'moderate',
     },
     travelRequirements: {
@@ -952,7 +948,7 @@ export const DESTINATION_GUIDES: DestinationGuide[] = [
         summer: { min: 18, max: 26 },
         winter: { min: 8, max: 17 },
       },
-      // bestMonths: [9, 10, 11, 3, 4, 5], // TODO: Convert to rainyMonths
+      rainyMonths: ['December', 'January', 'February', 'June'],
       humidity: 'moderate',
     },
     travelRequirements: {
