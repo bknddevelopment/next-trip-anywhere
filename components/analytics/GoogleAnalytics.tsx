@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 // Global declarations are already in ErrorBoundary.tsx
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-ZE7DN3B7G9'
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-V30V2B5DMD'
 
 /**
  * Google Analytics 4 component with enhanced e-commerce and conversion tracking
