@@ -71,8 +71,9 @@ export default function NewsletterSignup({
   }
 
   const handleSignupClick = () => {
-    // Redirect to n8n form
-    window.location.href = 'https://nextripanywhere.app.n8n.cloud/form/travel-quote-form'
+    // Redirect to Google Forms
+    window.location.href =
+      'https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform'
   }
 
   const getVariantStyles = () => {

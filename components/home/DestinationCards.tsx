@@ -190,7 +190,7 @@ export default function DestinationCards() {
                       <p className="text-xs text-gray-500">Best rates guaranteed</p>
                     </div>
                     <a
-                      href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
@@ -206,7 +206,7 @@ export default function DestinationCards() {
 
         <div className="text-center mt-12 animate-fade-in">
           <a
-            href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"

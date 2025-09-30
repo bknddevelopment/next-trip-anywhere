@@ -61,8 +61,11 @@ export default function ExitIntentPopup({
   }
 
   const handleGetQuote = () => {
-    // Redirect to n8n form
-    window.open('https://nextripanywhere.app.n8n.cloud/form/travel-quote-form', '_blank')
+    // Redirect to Google Forms
+    window.open(
+      'https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform',
+      '_blank'
+    )
     handleClose()
   }
 

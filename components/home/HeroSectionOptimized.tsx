@@ -47,7 +47,7 @@ const DEFAULT_FALLBACK =
 // Memoized button components to prevent re-renders
 const PlanningButton = memo(() => (
   <a
-    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 will-change-transform"
@@ -59,7 +59,7 @@ PlanningButton.displayName = 'PlanningButton'
 
 const SurpriseButton = memo(() => (
   <a
-    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 transition-all duration-300 items-center justify-center space-x-2 will-change-transform"

@@ -101,7 +101,7 @@ export default function CTASection() {
                   <span className="font-medium">info@nexttripanywhere.com</span>
                 </a>
                 <a
-                  href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-gray-700 hover:text-primary-500 transition-colors"
@@ -152,7 +152,7 @@ export default function CTASection() {
                 <div className="relative">
                   <div className={`absolute inset-0 ${secondaryCtaColor} rounded-lg blur-sm`}></div>
                   <a
-                    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`relative block w-full ${secondaryCtaColor} text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center`}

@@ -11,7 +11,7 @@ interface BookingFormProps {
 }
 
 /**
- * Booking CTA with redirect to n8n form
+ * Booking CTA with redirect to Google Forms
  * Replaces the old multi-step form with a simple button redirect
  */
 export default function OptimizedBookingForm({ className = '' }: BookingFormProps) {
@@ -23,7 +23,7 @@ export default function OptimizedBookingForm({ className = '' }: BookingFormProp
       type: 'form_submit',
       value: 0,
       form_data: {
-        action: 'n8n_booking_form_redirect',
+        action: 'google_forms_booking_form_redirect',
       },
     })
 

@@ -32,7 +32,7 @@ export default function CTALink({
   icon = 'arrow',
   fullWidth = false,
   className = '',
-  href = 'https://n8n.nexttripanywhere.com/form/8e062c4b-08d0-4b48-9e33-09ae4c2e7098',
+  href = 'https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform',
   target = '_blank',
   rel = 'noopener noreferrer',
   ...props

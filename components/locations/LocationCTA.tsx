@@ -70,7 +70,7 @@ export default function LocationCTA({
               </motion.a>
 
               <motion.a
-                href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

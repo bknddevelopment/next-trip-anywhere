@@ -273,7 +273,7 @@ export default function Header() {
              * Features gradient background and sparkle icon
              */}
             <a
-              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
@@ -288,7 +288,7 @@ export default function Header() {
              * Main conversion button with prominent styling
              */}
             <a
-              href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
@@ -381,7 +381,7 @@ export default function Header() {
                 </a>
                 {/* Primary CTA button */}
                 <a
-                  href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center"

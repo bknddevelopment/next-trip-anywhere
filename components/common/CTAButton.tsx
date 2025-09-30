@@ -3,7 +3,7 @@
  * @module components/common/CTAButton
  *
  * This component provides a consistent CTA button that integrates with
- * the existing n8n form system used throughout the site.
+ * the Google Forms system used throughout the site.
  */
 
 'use client'
@@ -37,14 +37,14 @@ export default function CTAButton({
   onClick,
   ...props
 }: CTAButtonProps) {
-  // Handle CTA click - opens n8n form
+  // Handle CTA click - opens Google Forms
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
       onClick(e)
     } else {
-      // Default behavior - open n8n form
+      // Default behavior - open Google Forms
       window.open(
-        'https://n8n.nexttripanywhere.com/form/8e062c4b-08d0-4b48-9e33-09ae4c2e7098',
+        'https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform',
         '_blank'
       )
     }

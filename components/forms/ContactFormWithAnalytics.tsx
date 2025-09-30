@@ -5,7 +5,7 @@ import { useInteractionAnalytics } from '@/hooks/useAnalytics'
 import { trackConversion } from '@/lib/analytics'
 
 /**
- * Contact CTA with redirect to n8n form
+ * Contact CTA with redirect to Google Forms
  */
 export default function ContactFormWithAnalytics() {
   const { trackPhoneCall, trackEmailClick } = useInteractionAnalytics()
@@ -16,7 +16,7 @@ export default function ContactFormWithAnalytics() {
       type: 'form_submit',
       value: 0,
       form_data: {
-        action: 'n8n_form_redirect',
+        action: 'google_forms_form_redirect',
       },
     })
 

@@ -134,7 +134,7 @@ export default function PackageDeals() {
                     <p className="text-sm text-gray-600">Get personalized quote</p>
                   </div>
                   <motion.a
-                    href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
@@ -161,7 +161,7 @@ export default function PackageDeals() {
             destination!
           </p>
           <motion.a
-            href="https://nextripanywhere.app.n8n.cloud/form/travel-quote-form"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
