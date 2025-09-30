@@ -261,38 +261,7 @@ export function generateEssexCountyLocalBusinessSchema() {
       worstRating: 1,
       ratingCount: 3247,
     },
-    review: [
-      {
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Sarah M. from Newark',
-        },
-        datePublished: '2025-01-10',
-        reviewBody:
-          'Exceptional service! They helped us plan our dream vacation to Hawaii and saved us over $2000 compared to online prices. The Newark office staff is incredibly knowledgeable.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: 5,
-          bestRating: 5,
-        },
-      },
-      {
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Michael T. from Montclair',
-        },
-        datePublished: '2025-01-08',
-        reviewBody:
-          'Best travel agency in Essex County! They handled our complex European tour flawlessly. Great local service.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: 5,
-          bestRating: 5,
-        },
-      },
-    ],
+    // Individual reviews removed - only use verified customer reviews
     potentialAction: [
       {
         '@type': 'ReserveAction',

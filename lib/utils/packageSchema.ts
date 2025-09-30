@@ -596,57 +596,10 @@ export function generatePackageBreadcrumbSchema(pkg: VacationPackage): Breadcrum
 }
 
 // Generate Review schema for testimonials
+// NOTE: Individual reviews removed - only use verified customer reviews
 export function generatePackageReviewSchema(pkg: VacationPackage): Review[] {
-  // Mock reviews for demonstration - replace with actual reviews when available
-  const reviews: Review[] = [
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Sarah M. from Montclair',
-      },
-      datePublished: '2024-11-15',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      reviewBody:
-        'Absolutely amazing experience! Next Trip Anywhere made our vacation planning so easy. The resort was perfect and the price was unbeatable.',
-    },
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'John D. from Newark',
-      },
-      datePublished: '2024-10-28',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: 5,
-        bestRating: 5,
-      },
-      reviewBody:
-        'Professional service from start to finish. They handled everything and saved us hundreds of dollars compared to booking ourselves.',
-    },
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Maria L. from West Orange',
-      },
-      datePublished: '2024-09-12',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: 4,
-        bestRating: 5,
-      },
-      reviewBody:
-        'Great service and wonderful vacation package. The only reason for 4 stars is I wished there were more dining options at the resort.',
-    },
-  ]
-
-  return reviews
+  // Return empty array - add real verified reviews when available
+  return []
 }
 
 // Generate complete schema graph for package pages

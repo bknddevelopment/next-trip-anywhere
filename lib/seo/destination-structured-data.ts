@@ -227,21 +227,7 @@ function generatePackageStructuredData(pkg: TravelPackage, destination: Destinat
       bestRating: 5,
       worstRating: 1,
     },
-    review: [
-      {
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Travel Expert',
-        },
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: 5,
-          bestRating: 5,
-        },
-        reviewBody: `Excellent ${destination.name} package with great value and comprehensive inclusions.`,
-      },
-    ],
+    // Individual reviews removed - only use verified customer reviews
     category: 'Travel Package',
     isRelatedTo: [
       {

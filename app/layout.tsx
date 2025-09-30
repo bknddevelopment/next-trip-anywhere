@@ -348,36 +348,7 @@ const jsonLdOrganization = {
     bestRating: '5',
     worstRating: '1',
   },
-  review: [
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Sarah Johnson',
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-      },
-      reviewBody:
-        'Exceptional service! They saved us hundreds on our European vacation and handled everything perfectly.',
-      datePublished: '2024-01-10',
-    },
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Michael Chen',
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-      },
-      reviewBody:
-        'Best travel agency ever! Their cruise deals are unbeatable and customer service is outstanding.',
-      datePublished: '2024-01-08',
-    },
-  ],
+  // Reviews removed - only use verified customer reviews
   award: [
     'Best Travel Agency 2024',
     'Top Customer Service Award',

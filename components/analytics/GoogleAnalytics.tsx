@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 // Global declarations are already in ErrorBoundary.tsx
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-ZE7DN3B7G9'
 
 /**
  * Google Analytics 4 component with enhanced e-commerce and conversion tracking
@@ -22,7 +22,7 @@ export default function GoogleAnalytics() {
     }
 
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
-    
+
     // Track page view
     window.gtag!('config', GA_MEASUREMENT_ID, {
       page_path: url,
@@ -33,18 +33,23 @@ export default function GoogleAnalytics() {
     // Track Core Web Vitals
     if ('web-vital' in window) {
       const vitals = ['CLS', 'FID', 'FCP', 'LCP', 'TTFB', 'INP']
-      vitals.forEach(vital => {
+      vitals.forEach((vital) => {
         window.gtag!('event', 'web_vitals', {
           event_category: 'Web Vitals',
           event_label: vital,
-          value: Math.round(vital === 'CLS' ? ((window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number) * 1000 : (window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number),
+          value: Math.round(
+            vital === 'CLS'
+              ? ((window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number) *
+                  1000
+              : ((window as unknown as Record<string, unknown>)[`web-vital-${vital}`] as number)
+          ),
           non_interaction: true,
         })
       })
     }
   }, [pathname, searchParams])
 
-  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+  if (!GA_MEASUREMENT_ID) {
     console.warn('Google Analytics ID not configured')
     return null
   }
@@ -148,7 +153,7 @@ export function trackEcommerce(
   window.gtag!('event', eventType, {
     currency: currency,
     value: value || items.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0),
-    items: items.map(item => ({
+    items: items.map((item) => ({
       item_id: item.id,
       item_name: item.name,
       item_category: item.category || 'Travel',
@@ -187,7 +192,7 @@ export function initScrollTracking() {
     if (scrollPercent > maxScroll) {
       maxScroll = scrollPercent
 
-      thresholds.forEach(threshold => {
+      thresholds.forEach((threshold) => {
         if (scrollPercent >= threshold && !tracked.has(threshold)) {
           tracked.add(threshold)
           trackEvent('scroll_depth', 'Engagement', `${threshold}%`, threshold)
@@ -216,7 +221,7 @@ export function initEngagementTracking() {
     if (isActive) {
       totalTime += Date.now() - startTime
     }
-    
+
     const seconds = Math.round(totalTime / 1000)
     trackEvent('engagement_time', 'Engagement', 'Total Time', seconds)
   }

@@ -308,27 +308,7 @@ export function generateInsuranceGuideSchemaGraph(data: InsuranceGuideData) {
       bestRating: '5',
       worstRating: '1',
     },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Sarah M.',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Montclair',
-            addressRegion: 'NJ',
-          },
-        },
-        reviewBody:
-          'The insurance advice saved us $75,000 when my husband needed medical evacuation from our Caribbean cruise. Essential guidance for any cruiser!',
-      },
-    ],
+    // Individual reviews removed - only use verified customer reviews
   }
 
   // 5. Service Schema for insurance consulting
