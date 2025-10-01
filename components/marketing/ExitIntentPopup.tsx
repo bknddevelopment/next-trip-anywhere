@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import {
+  DynamicMotion as motion,
+  DynamicAnimatePresence as AnimatePresence,
+} from '@/lib/dynamicMotion'
 import { X, Gift, Clock, Phone } from 'lucide-react'
 
 interface ExitIntentPopupProps {

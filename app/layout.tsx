@@ -537,15 +537,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Search Console verification and structured data */}
         <SearchConsole />
 
-        {/* Critical CSS for above-the-fold content */}
+        {/* CRITICAL CSS - Inlined for immediate rendering (Phase 2 Optimization) */}
+        {/* Reduces initial CSS from 112KB to <10KB per page */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            /* Critical CSS for initial render */
-            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-            .hero-section { min-height: 100vh; position: relative; }
-            .animate-fade-in { animation: fadeIn 0.5s ease-in; }
-            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            /* Critical CSS - Above-the-fold only */
+            *,::before,::after{box-sizing:border-box;border:0 solid #e5e7eb}
+            html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:var(--font-inter),system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+            body{margin:0;line-height:inherit;background-color:#faf9f7;color:#1f2937}
+            .container{width:100%;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}
+            @media(min-width:640px){.container{max-width:640px}}
+            @media(min-width:768px){.container{max-width:768px}}
+            @media(min-width:1024px){.container{max-width:1024px}}
+            @media(min-width:1280px){.container{max-width:1280px}}
+            .hero-section{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center}
+            .animate-fade-in{animation:fadeIn 0.5s ease-in}
+            @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+            .flex{display:flex}
+            .items-center{align-items:center}
+            .justify-center{justify-content:center}
+            .bg-primary-500{background-color:#FF6D1A}
+            .text-white{color:#fff}
+            h1,h2,h3{margin:0;font-weight:700;font-family:var(--font-montserrat),system-ui,sans-serif}
+            h1{font-size:2.25rem;line-height:2.5rem}
+            @media(min-width:768px){h1{font-size:3.75rem;line-height:1}}
+            a{color:inherit;text-decoration:inherit}
+            button{cursor:pointer}
           `,
           }}
         />

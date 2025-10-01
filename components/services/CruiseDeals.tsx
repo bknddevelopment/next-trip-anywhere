@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import Image from 'next/image'
 import { Calendar, MapPin, Gift } from 'lucide-react'
 

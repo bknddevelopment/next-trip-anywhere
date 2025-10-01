@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Mail, Gift, Download, CheckCircle, X } from 'lucide-react'
 
 interface NewsletterSignupProps {

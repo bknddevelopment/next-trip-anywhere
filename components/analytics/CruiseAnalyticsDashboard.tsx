@@ -6,7 +6,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import {
   TrendingUp,
   TrendingDown,

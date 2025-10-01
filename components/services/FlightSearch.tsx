@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Search, MapPin, Calendar, Users } from 'lucide-react'
 
 export default function FlightSearch() {

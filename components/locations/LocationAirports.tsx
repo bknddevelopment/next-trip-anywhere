@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Plane, Clock, Car, Train } from 'lucide-react'
 
 interface LocationData {

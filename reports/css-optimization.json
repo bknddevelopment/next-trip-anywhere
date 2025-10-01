@@ -1,0 +1,44 @@
+{
+  "critical": [
+    {
+      "path": "lib/critical-css/homepage.css",
+      "size": "43.91"
+    },
+    {
+      "path": "lib/critical-css/cruise.css",
+      "size": "36.15"
+    },
+    {
+      "path": "lib/critical-css/package.css",
+      "size": "36.10"
+    },
+    {
+      "path": "lib/critical-css/guide.css",
+      "size": "39.00"
+    }
+  ],
+  "routes": [
+    {
+      "route": "cruises",
+      "path": "public/css/cruises.css",
+      "size": "72.74"
+    },
+    {
+      "route": "packages",
+      "path": "public/css/packages.css",
+      "size": "68.24"
+    },
+    {
+      "route": "guides",
+      "path": "public/css/guides.css",
+      "size": "71.52"
+    },
+    {
+      "route": "locations",
+      "path": "public/css/locations.css",
+      "size": "69.75"
+    }
+  ],
+  "totalBefore": 109095,
+  "totalAfter": 447907.83999999997
+}

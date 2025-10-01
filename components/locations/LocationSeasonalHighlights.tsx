@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Calendar, MapPin, Snowflake, Sun, Leaf, Flower } from 'lucide-react'
 
 interface SeasonalHighlight {
@@ -18,17 +18,20 @@ const seasonIcons = {
   Spring: Flower,
   Summer: Sun,
   Fall: Leaf,
-  Winter: Snowflake
+  Winter: Snowflake,
 }
 
 const seasonColors = {
   Spring: 'from-green-400 to-green-600',
   Summer: 'from-yellow-400 to-orange-500',
   Fall: 'from-orange-400 to-red-500',
-  Winter: 'from-blue-400 to-blue-600'
+  Winter: 'from-blue-400 to-blue-600',
 }
 
-export default function LocationSeasonalHighlights({ highlights, city }: LocationSeasonalHighlightsProps) {
+export default function LocationSeasonalHighlights({
+  highlights,
+  city,
+}: LocationSeasonalHighlightsProps) {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-warm-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,9 +52,12 @@ export default function LocationSeasonalHighlights({ highlights, city }: Locatio
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {highlights.map((highlight, index) => {
-            const IconComponent = seasonIcons[highlight.season as keyof typeof seasonIcons] || Calendar
-            const colorClass = seasonColors[highlight.season as keyof typeof seasonColors] || 'from-gray-400 to-gray-600'
-            
+            const IconComponent =
+              seasonIcons[highlight.season as keyof typeof seasonIcons] || Calendar
+            const colorClass =
+              seasonColors[highlight.season as keyof typeof seasonColors] ||
+              'from-gray-400 to-gray-600'
+
             return (
               <motion.div
                 key={highlight.season}
@@ -109,11 +115,11 @@ export default function LocationSeasonalHighlights({ highlights, city }: Locatio
           className="mt-12 text-center"
         >
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-navy mb-4">
-              Year-Round Travel Expertise
-            </h3>
+            <h3 className="text-2xl font-bold text-navy mb-4">Year-Round Travel Expertise</h3>
             <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
-              Our {city} travel specialists understand seasonal trends, weather patterns, and the best times to visit destinations worldwide. We'll help you find the perfect trip at the perfect time.
+              Our {city} travel specialists understand seasonal trends, weather patterns, and the
+              best times to visit destinations worldwide. We'll help you find the perfect trip at
+              the perfect time.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white rounded-lg px-4 py-2 shadow-sm">

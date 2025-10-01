@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import {
+  DynamicMotion as motion,
+  DynamicAnimatePresence as AnimatePresence,
+} from '@/lib/dynamicMotion'
 import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react'
 
 const navigation = [

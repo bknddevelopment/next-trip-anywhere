@@ -17,9 +17,38 @@ import {
 } from '@/lib/data/vacation-packages'
 import { generatePackageSchemaGraph } from '@/lib/utils/packageSchema'
 
-// Lazy load non-critical components
+// Lazy load ALL non-critical components for optimal performance
 const ContactForm = dynamic(() => import('@/components/forms/ContactFormWithAnalytics'), {
-  loading: () => <div className="h-96 bg-gray-50 animate-pulse" />,
+  loading: () => <div className="h-96 bg-gray-50 animate-pulse rounded-lg" />,
+})
+
+// Lazy load below-fold sections
+const FAQSection = dynamic(() => import('./components/FAQSection'), {
+  loading: () => <div className="py-16 bg-gray-50 animate-pulse" />,
+})
+
+const PricingSection = dynamic(() => import('./components/PricingSection'), {
+  loading: () => (
+    <div className="py-16 bg-blue-900 animate-pulse">
+      <div className="container mx-auto px-4">
+        <div className="h-64 bg-white/10 rounded-lg"></div>
+      </div>
+    </div>
+  ),
+})
+
+const RelatedPackages = dynamic(() => import('./components/RelatedPackages'), {
+  loading: () => (
+    <div className="py-16 bg-gray-50 animate-pulse">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="h-64 bg-white rounded-lg"></div>
+          <div className="h-64 bg-white rounded-lg"></div>
+          <div className="h-64 bg-white rounded-lg"></div>
+        </div>
+      </div>
+    </div>
+  ),
 })
 
 // Generate static params for all vacation packages
@@ -233,101 +262,14 @@ const ContentSection = ({ pkg }: { pkg: VacationPackage }) => (
   </section>
 )
 
-// FAQ Section
-const FAQSection = ({ pkg }: { pkg: VacationPackage }) => {
-  if (!pkg.faq || pkg.faq.length === 0) {
-    return null
-  }
-
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {pkg.faq.map((item, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.question}</h3>
-                <p className="text-gray-800 leading-relaxed">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// Pricing section
-const PricingSection = ({ pkg }: { pkg: VacationPackage }) => {
-  if (!pkg.content.startingPrice) {
-    return null
-  }
-
-  return (
-    <section className="py-16 bg-blue-900 text-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Package Pricing</h2>
-          <div className="bg-white/10 backdrop-blur rounded-lg p-8">
-            <p className="text-2xl mb-2">Starting from</p>
-            <p className="text-5xl font-bold mb-4">${pkg.content.startingPrice}</p>
-            <p className="text-xl mb-6">per person</p>
-            {pkg.content.savingsAmount && (
-              <p className="text-2xl text-yellow-300 font-semibold mb-4">
-                Save up to ${pkg.content.savingsAmount}!
-              </p>
-            )}
-            {pkg.content.averageDuration && (
-              <p className="text-lg mb-4">Average Duration: {pkg.content.averageDuration}</p>
-            )}
-            {pkg.content.bestTimeToVisit && (
-              <p className="text-lg">{pkg.content.bestTimeToVisit}</p>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// Related packages section
-const RelatedPackages = ({ currentSlug }: { currentSlug: string }) => {
-  const relatedPackages = vacationPackages.filter((pkg) => pkg.slug !== currentSlug).slice(0, 3)
-
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Explore More Vacation Options</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {relatedPackages.map((pkg) => (
-            <Link
-              key={pkg.slug}
-              href={`/packages/${pkg.slug}`}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6"
-            >
-              <div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-2">
-                {pkg.packageType.replace('-', ' ')}
-              </div>
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">{pkg.title}</h3>
-              <p className="text-gray-700 mb-4 line-clamp-3">
-                {pkg.content.description.substring(0, 150)}...
-              </p>
-              <div className="flex items-center justify-between">
-                {pkg.content.startingPrice && (
-                  <span className="text-green-600 font-semibold">
-                    From ${pkg.content.startingPrice}
-                  </span>
-                )}
-                <span className="text-blue-600 hover:text-blue-800 font-medium">Learn More →</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+// Loading skeleton for below-fold content
+const LoadingSkeleton = () => (
+  <div className="animate-pulse bg-gray-100 rounded-lg p-8">
+    <div className="h-8 bg-gray-300 rounded w-3/4 mb-4"></div>
+    <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+    <div className="h-4 bg-gray-300 rounded w-5/6"></div>
+  </div>
+)
 
 // Main page component
 export default async function VacationPackagePage({
@@ -384,17 +326,25 @@ export default async function VacationPackagePage({
         {/* Hero Section */}
         <HeroSection pkg={pkg} />
 
-        {/* Main Content */}
+        {/* Main Content - Critical, render immediately */}
         <ContentSection pkg={pkg} />
 
-        {/* Pricing Section */}
-        <PricingSection pkg={pkg} />
+        {/* Below-fold content - Lazy load with Suspense for better code splitting */}
 
-        {/* FAQ Section */}
-        <FAQSection pkg={pkg} />
+        {/* Pricing Section - Lazy loaded */}
+        <Suspense fallback={<LoadingSkeleton />}>
+          <PricingSection pkg={pkg} />
+        </Suspense>
 
-        {/* Related Packages */}
-        <RelatedPackages currentSlug={pkg.slug} />
+        {/* FAQ Section - Lazy loaded */}
+        <Suspense fallback={<LoadingSkeleton />}>
+          <FAQSection pkg={pkg} />
+        </Suspense>
+
+        {/* Related Packages - Lazy loaded */}
+        <Suspense fallback={<LoadingSkeleton />}>
+          <RelatedPackages currentSlug={pkg.slug} />
+        </Suspense>
 
         {/* Contact Form Section */}
         <section className="py-16">

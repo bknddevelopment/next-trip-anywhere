@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Plane, TrendingDown, Shield, Clock } from 'lucide-react'
 
 export default function FlightHero() {

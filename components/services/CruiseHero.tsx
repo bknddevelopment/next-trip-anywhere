@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Ship, Anchor, Globe, Utensils } from 'lucide-react'
 
 export default function CruiseHero() {

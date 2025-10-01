@@ -37,7 +37,6 @@ const OtherServices = dynamic(
   () => import('@/components/essex-county/OtherServices').then((mod) => mod.default),
   {
     loading: () => <OtherServicesSkeleton />,
-    ssr: false, // Client-side only for below-fold content
   }
 )
 
@@ -45,15 +44,12 @@ const ContactSection = dynamic(
   () => import('@/components/essex-county/ContactSection').then((mod) => mod.default),
   {
     loading: () => <ContactSectionSkeleton />,
-    ssr: false,
   }
 )
 
 const PerformanceMonitor = dynamic(
   () => import('@/components/performance/PerformanceMonitor').then((mod) => mod.default),
-  {
-    ssr: false,
-  }
+  {}
 )
 
 // Skeleton components for better perceived performance

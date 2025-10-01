@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Search, Anchor, Calendar, Users, Globe, Ship } from 'lucide-react'
 
 export default function CruiseSearch() {

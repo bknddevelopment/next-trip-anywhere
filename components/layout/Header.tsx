@@ -34,7 +34,10 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import OptimizedImage from '@/components/ui/OptimizedImage'
-import { motion, AnimatePresence } from 'framer-motion'
+import {
+  DynamicMotion as motion,
+  DynamicAnimatePresence as AnimatePresence,
+} from '@/lib/dynamicMotion'
 import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react'
 import { siteConfig } from '@/config/site'
 

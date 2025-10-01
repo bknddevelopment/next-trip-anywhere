@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Check } from 'lucide-react'
 
 export interface Step {
@@ -15,7 +15,11 @@ interface ProgressIndicatorProps {
   className?: string
 }
 
-export default function ProgressIndicator({ steps, currentStep, className = '' }: ProgressIndicatorProps) {
+export default function ProgressIndicator({
+  steps,
+  currentStep,
+  className = '',
+}: ProgressIndicatorProps) {
   return (
     <div className={`w-full ${className}`}>
       <div className="flex items-center justify-between mb-4">
@@ -24,7 +28,7 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
           const isCompleted = stepNumber < currentStep
           const isCurrent = stepNumber === currentStep
           const isUpcoming = stepNumber > currentStep
-          
+
           return (
             <div key={step.id} className="flex items-center flex-1">
               {/* Step Circle */}
@@ -34,11 +38,12 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
                   animate={{ scale: 1 }}
                   className={`
                     w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm
-                    ${isCompleted 
-                      ? 'bg-green-500 text-white' 
-                      : isCurrent 
-                      ? 'bg-primary-500 text-white ring-4 ring-primary-100' 
-                      : 'bg-gray-200 text-gray-500'
+                    ${
+                      isCompleted
+                        ? 'bg-green-500 text-white'
+                        : isCurrent
+                          ? 'bg-primary-500 text-white ring-4 ring-primary-100'
+                          : 'bg-gray-200 text-gray-500'
                     }
                   `}
                 >
@@ -54,7 +59,7 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
                     stepNumber
                   )}
                 </motion.div>
-                
+
                 {isCurrent && (
                   <motion.div
                     className="absolute -inset-2 rounded-full border-2 border-primary-300"
@@ -63,10 +68,12 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
                   />
                 )}
               </div>
-              
+
               {/* Step Content */}
               <div className="ml-3 flex-1">
-                <p className={`text-sm font-medium ${isCurrent ? 'text-primary-600' : isCompleted ? 'text-green-600' : 'text-gray-500'}`}>
+                <p
+                  className={`text-sm font-medium ${isCurrent ? 'text-primary-600' : isCompleted ? 'text-green-600' : 'text-gray-500'}`}
+                >
                   {step.title}
                 </p>
                 {step.description && (
@@ -75,7 +82,7 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
                   </p>
                 )}
               </div>
-              
+
               {/* Connector Line */}
               {index < steps.length - 1 && (
                 <div className="mx-4 flex-1 h-0.5 bg-gray-200 relative">
@@ -91,7 +98,7 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
           )
         })}
       </div>
-      
+
       {/* Progress Bar */}
       <div className="w-full bg-gray-200 rounded-full h-2">
         <motion.div
@@ -101,7 +108,7 @@ export default function ProgressIndicator({ steps, currentStep, className = '' }
           transition={{ duration: 0.5 }}
         />
       </div>
-      
+
       {/* Step Counter */}
       <div className="text-center mt-3">
         <span className="text-sm text-gray-600">

@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import {
+  DynamicMotion as motion,
+  DynamicAnimatePresence as AnimatePresence,
+} from '@/lib/dynamicMotion'
 import { Star, Quote, ChevronLeft, ChevronRight, MapPin, Calendar } from 'lucide-react'
 import Image from 'next/image'
 
@@ -31,54 +34,57 @@ interface TestimonialsSectionProps {
 }
 
 export default function TestimonialsSection({
-  title = "What Our Travelers Are Saying",
-  subtitle = "Real reviews from real travelers who trusted us with their dream vacations",
+  title = 'What Our Travelers Are Saying',
+  subtitle = 'Real reviews from real travelers who trusted us with their dream vacations',
   testimonials,
   autoplay = true,
   autoplayDelay = 5000,
   showNavigation = true,
   showStats = true,
-  className = ''
+  className = '',
 }: TestimonialsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     if (autoplay && testimonials.length > 1) {
       const interval = setInterval(() => {
-        setCurrentIndex(prev => (prev + 1) % testimonials.length)
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length)
       }, autoplayDelay)
-      
+
       return () => clearInterval(interval)
     }
   }, [autoplay, autoplayDelay, testimonials.length])
 
   const nextTestimonial = () => {
-    setCurrentIndex(prev => (prev + 1) % testimonials.length)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
   }
 
   const prevTestimonial = () => {
-    setCurrentIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-5 h-5 ${
-          i < rating 
-            ? 'text-yellow-400 fill-current' 
-            : 'text-gray-300'
-        }`}
+        className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
       />
     ))
   }
 
   const stats = {
-    averageRating: testimonials.length > 0 ? (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1) : '0.0',
+    averageRating:
+      testimonials.length > 0
+        ? (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1)
+        : '0.0',
     totalReviews: testimonials.length,
-    averageSavings: testimonials.length > 0 && testimonials.filter(t => t.savings).length > 0 
-      ? Math.round(testimonials.reduce((sum, t) => sum + (t.savings || 0), 0) / testimonials.filter(t => t.savings).length)
-      : 0
+    averageSavings:
+      testimonials.length > 0 && testimonials.filter((t) => t.savings).length > 0
+        ? Math.round(
+            testimonials.reduce((sum, t) => sum + (t.savings || 0), 0) /
+              testimonials.filter((t) => t.savings).length
+          )
+        : 0,
   }
 
   if (!testimonials.length) {
@@ -101,20 +107,20 @@ export default function TestimonialsSection({
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="flex items-center justify-center space-x-3">
-                <div className="flex space-x-1">
-                  {renderStars(5)}
-                </div>
+                <div className="flex space-x-1">{renderStars(5)}</div>
                 <div>
                   <div className="text-2xl font-bold text-gray-900">{stats.averageRating}</div>
                   <div className="text-sm text-gray-600">Average Rating</div>
                 </div>
               </div>
-              
+
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">{stats.totalReviews.toLocaleString()}+</div>
+                <div className="text-3xl font-bold text-blue-600">
+                  {stats.totalReviews.toLocaleString()}+
+                </div>
                 <div className="text-sm text-gray-600">Happy Travelers</div>
               </div>
-              
+
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">${stats.averageSavings}+</div>
                 <div className="text-sm text-gray-600">Average Savings</div>
@@ -178,7 +184,11 @@ export default function TestimonialsSection({
                   {currentTestimonial.verified && (
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </div>
                   )}
@@ -222,7 +232,7 @@ export default function TestimonialsSection({
               >
                 <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-primary-600" />
               </button>
-              
+
               <button
                 onClick={nextTestimonial}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 group"
@@ -257,21 +267,33 @@ export default function TestimonialsSection({
           <div className="inline-flex items-center space-x-4 text-sm text-gray-600 bg-white rounded-full px-6 py-3 shadow-lg">
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
               <span>Verified Reviews</span>
             </div>
             <div className="w-px h-4 bg-gray-300" />
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
               </svg>
               <span>Licensed & Bonded</span>
             </div>
             <div className="w-px h-4 bg-gray-300" />
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
               </svg>
               <span>15+ Years Experience</span>
             </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Phone, Mail, MessageCircle, Clock } from 'lucide-react'
 
 interface LocationCTAProps {

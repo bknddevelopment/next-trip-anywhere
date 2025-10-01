@@ -1,7 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+import {
+  DynamicChevronDown as ChevronDown,
+  DynamicChevronUp as ChevronUp,
+  DynamicHelpCircle as HelpCircle,
+} from '@/lib/dynamicIcons'
 
 interface FAQItem {
   question: string
@@ -14,6 +18,7 @@ interface FAQAccordionProps {
 
 export default function FAQAccordion({ items }: FAQAccordionProps) {
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set())
+  const [visibleCount, setVisibleCount] = useState(5) // Initially show 5 FAQs
 
   const toggleItem = (index: number) => {
     const newExpanded = new Set(expandedItems)
@@ -56,9 +61,9 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
         </div>
       </div>
 
-      {/* FAQ Items */}
+      {/* FAQ Items - Progressive rendering */}
       <div className="space-y-4">
-        {items.map((item, index) => {
+        {items.slice(0, visibleCount).map((item, index) => {
           const isExpanded = expandedItems.has(index)
 
           return (
@@ -106,6 +111,19 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
           )
         })}
       </div>
+
+      {/* Show More Button */}
+      {items.length > visibleCount && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setVisibleCount(items.length)}
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            aria-label={`Show ${items.length - visibleCount} more questions`}
+          >
+            Show {items.length - visibleCount} More Questions
+          </button>
+        </div>
+      )}
 
       {/* CTA at the bottom */}
       <div className="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-center">

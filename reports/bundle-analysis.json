@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-10-01T17:24:16.620Z",
+  "summary": {
+    "javascript": {
+      "totalSize": 0,
+      "totalGzipSize": 0,
+      "chunkCount": 0,
+      "compressionRatio": null
+    },
+    "css": {
+      "totalSize": 0,
+      "totalGzipSize": 0,
+      "fileCount": 0,
+      "compressionRatio": null
+    }
+  },
+  "budgets": {
+    "totalJS": 512000,
+    "perChunkJS": 102400,
+    "frameworkJS": 153600,
+    "commonsJS": 102400,
+    "totalCSS": 51200,
+    "perChunkCSS": 30720,
+    "chunksPerPage": 6,
+    "initialLoadJS": 409600
+  },
+  "budgetStatus": {
+    "jsTotal": "PASS",
+    "cssTotal": "PASS",
+    "warnings": [],
+    "passes": [
+      {
+        "type": "JS_TOTAL_SIZE",
+        "message": "Total JS size (0 Bytes) is within budget (500 KB)"
+      },
+      {
+        "type": "CSS_TOTAL_SIZE",
+        "message": "Total CSS size (0 Bytes) is within budget (50 KB)"
+      }
+    ]
+  },
+  "javascript": {
+    "byCategory": {},
+    "chunks": []
+  },
+  "css": {
+    "chunks": []
+  }
+}

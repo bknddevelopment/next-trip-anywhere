@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Heart, Users, Sparkles, Palmtree, Mountain, Building } from 'lucide-react'
 
 const categories = [

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Phone, MessageCircle, Mail, ArrowRight } from 'lucide-react'
 import { useABTest, AB_EVENTS } from '@/lib/ab-testing'
 

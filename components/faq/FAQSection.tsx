@@ -1,8 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, HelpCircle } from 'lucide-react'
+import {
+  DynamicMotion as motion,
+  DynamicAnimatePresence as AnimatePresence,
+} from '@/lib/dynamicMotion'
+import {
+  DynamicChevronDown as ChevronDown,
+  DynamicHelpCircle as HelpCircle,
+} from '@/lib/dynamicIcons'
 
 export interface FAQItem {
   id: string

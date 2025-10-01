@@ -1,7 +1,13 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronDown, ChevronUp, Check, X, Info } from 'lucide-react'
+import {
+  DynamicChevronDown as ChevronDown,
+  DynamicChevronUp as ChevronUp,
+  DynamicCheck as Check,
+  DynamicX as X,
+  DynamicInfo as Info,
+} from '@/lib/dynamicIcons'
 
 interface InsuranceProvider {
   name: string
@@ -190,6 +196,7 @@ export default function InsuranceComparisonTable() {
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'medical'>('rating')
   const [filterCFAR, setFilterCFAR] = useState(false)
   const [filterPreExisting, setFilterPreExisting] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(5) // Initially show only 5 providers
 
   const sortedProviders = [...providers]
     .filter((p) => !filterCFAR || p.cfar)
@@ -290,7 +297,7 @@ export default function InsuranceComparisonTable() {
             </tr>
           </thead>
           <tbody>
-            {sortedProviders.map((provider, index) => (
+            {sortedProviders.slice(0, visibleCount).map((provider, index) => (
               <React.Fragment key={provider.name}>
                 <tr
                   className={`border-b hover:bg-blue-50 transition-colors ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
@@ -409,6 +416,18 @@ export default function InsuranceComparisonTable() {
           </tbody>
         </table>
       </div>
+
+      {/* Show More Button */}
+      {sortedProviders.length > visibleCount && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setVisibleCount(sortedProviders.length)}
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Show All {sortedProviders.length} Providers
+          </button>
+        </div>
+      )}
 
       {/* Key Insights */}
       <div className="mt-6 bg-blue-50 border-l-4 border-blue-600 p-4 rounded-lg">

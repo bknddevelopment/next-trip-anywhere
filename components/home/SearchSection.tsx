@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { Plane, Ship, Package, Hotel, Search, ArrowRight } from 'lucide-react'
 
 const searchTabs = [

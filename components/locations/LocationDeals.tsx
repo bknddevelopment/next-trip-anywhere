@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { DynamicMotion as motion } from '@/lib/dynamicMotion'
 import { TrendingDown, Calendar, MapPin } from 'lucide-react'
 
 interface LocationData {

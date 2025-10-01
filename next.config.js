@@ -102,24 +102,52 @@ const nextConfig = {
       )
     }
 
-    // Optimize chunks
+    // Enable parallel processing for faster builds
+    if (!dev) {
+      config.parallelism = 4
+    }
+
+    // Optimize chunks for production builds
     if (!dev && !isServer) {
       config.optimization = {
         ...config.optimization,
         splitChunks: {
           chunks: 'all',
+          // Target: Keep chunks under 50KB for better loading performance
+          maxSize: 51200, // 50KB in bytes
+          minSize: 20000, // 20KB minimum
           cacheGroups: {
+            // Disable default groups to have full control
             default: false,
             vendors: false,
-            // Framework chunk
+
+            // Framework chunk: React, React-DOM and core dependencies
+            // Priority: 40 (highest) - loads first, cached aggressively
+            // Target: ~100-120KB (React + React-DOM)
             framework: {
               name: 'framework',
               chunks: 'all',
               test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
               priority: 40,
               enforce: true,
+              reuseExistingChunk: true,
             },
-            // Library chunk
+
+            // Next.js specific code
+            // Priority: 39 - loads with framework
+            // Target: ~50-70KB
+            nextjs: {
+              name: 'nextjs',
+              chunks: 'all',
+              test: /[\\/]node_modules[\\/]next[\\/]/,
+              priority: 39,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+
+            // Large third-party libraries (>160KB)
+            // Priority: 35 - isolated to prevent bloating other chunks
+            // Strategy: Split by hash for better caching
             lib: {
               test(module) {
                 return module.size() > 160000 && /node_modules[\\/]/.test(module.identifier())
@@ -127,35 +155,105 @@ const nextConfig = {
               name(module) {
                 const hash = require('crypto').createHash('sha1')
                 hash.update(module.identifier())
-                return hash.digest('hex').substring(0, 8)
+                return 'lib-' + hash.digest('hex').substring(0, 8)
               },
-              priority: 30,
+              priority: 35,
               minChunks: 1,
               reuseExistingChunk: true,
+              maxSize: 244000, // ~240KB max per lib chunk
             },
-            // Commons chunk
+
+            // UI/Animation libraries: framer-motion, lucide-react
+            // Priority: 32 - separate for better code splitting
+            // Target: ~40-60KB per chunk
+            ui: {
+              name: 'ui',
+              test: /[\\/]node_modules[\\/](framer-motion|lucide-react|clsx|tailwind-merge)[\\/]/,
+              chunks: 'all',
+              priority: 32,
+              reuseExistingChunk: true,
+              maxSize: 61440, // 60KB
+            },
+
+            // Form & validation libraries
+            // Priority: 31 - used across multiple pages
+            // Target: ~30-40KB
+            forms: {
+              name: 'forms',
+              test: /[\\/]node_modules[\\/](react-hook-form|@hookform|zod)[\\/]/,
+              chunks: 'all',
+              priority: 31,
+              reuseExistingChunk: true,
+              maxSize: 51200, // 50KB
+            },
+
+            // React Query & data fetching
+            // Priority: 30 - async loading optimization
+            query: {
+              name: 'query',
+              test: /[\\/]node_modules[\\/](@tanstack[\\/]react-query)[\\/]/,
+              chunks: 'all',
+              priority: 30,
+              reuseExistingChunk: true,
+            },
+
+            // Other vendor code from node_modules
+            // Priority: 25 - general third-party code
+            // Target: ~50-80KB per chunk
+            vendor: {
+              name: 'vendor',
+              test: /[\\/]node_modules[\\/]/,
+              chunks: 'all',
+              priority: 25,
+              minChunks: 1,
+              reuseExistingChunk: true,
+              maxSize: 81920, // 80KB
+            },
+
+            // Commons chunk: Code shared across 2+ pages
+            // Priority: 20 - shared application code
+            // GOAL: Reduce from 272KB to 80-100KB by aggressive splitting
             commons: {
               name: 'commons',
               minChunks: 2,
               priority: 20,
-            },
-            // Shared chunk
-            shared: {
-              name(module, chunks) {
-                return 'shared'
-              },
-              priority: 10,
-              minChunks: 2,
               reuseExistingChunk: true,
+              maxSize: 102400, // 100KB maximum - enforced!
+            },
+
+            // Shared utilities and helpers
+            // Priority: 15 - app-specific shared code
+            shared: {
+              name: 'shared',
+              minChunks: 2,
+              priority: 15,
+              reuseExistingChunk: true,
+              maxSize: 51200, // 50KB
             },
           },
-          maxAsyncRequests: 25,
-          maxInitialRequests: 25,
+          // Limit number of parallel requests for better performance
+          // Reduced from 25 to balance splitting vs HTTP requests
+          maxAsyncRequests: 20,
+          maxInitialRequests: 20,
         },
+        // Separate runtime chunk for better long-term caching
         runtimeChunk: {
           name: 'runtime',
         },
         minimize: true,
+        // Use deterministic module IDs for better caching
+        moduleIds: 'deterministic',
+        // Use deterministic chunk IDs
+        chunkIds: 'deterministic',
+      }
+
+      // Additional performance optimizations
+      config.performance = {
+        ...config.performance,
+        // Set performance budgets
+        maxEntrypointSize: 512000, // 500KB warning threshold
+        maxAssetSize: 512000, // 500KB per asset
+        hints: 'warning',
       }
     }
 
