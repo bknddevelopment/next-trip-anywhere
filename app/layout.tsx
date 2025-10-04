@@ -31,22 +31,14 @@
 
 import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
-import { Suspense } from 'react'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
-import PerformanceMonitor from '@/components/PerformanceMonitor'
-import CoreWebVitalsMonitor from '@/components/CoreWebVitalsMonitor'
 import ErrorBoundary from '@/components/ErrorBoundary'
-import PerformanceInit from '@/components/common/PerformanceInit'
-import ResourceHints from '@/components/common/ResourceHints'
 import { initFontOptimizations } from '@/lib/fontOptimization'
-import GoogleTagManager from '@/components/analytics/GoogleTagManager'
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
-import CookieConsent from '@/components/analytics/CookieConsent'
 import SearchConsole from '@/components/analytics/SearchConsole'
+import { ClientOnlyComponents } from '@/components/ClientComponents'
 
 /**
  * Inter font configuration - Primary font for body text
@@ -585,22 +577,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${inter.variable} ${montserrat.variable} font-sans antialiased min-h-screen bg-warm-50`}
       >
-        {/* Progressive Web App service worker registration */}
-        <ServiceWorkerRegistration />
-
-        {/* Performance monitoring for Core Web Vitals */}
-        <PerformanceMonitor />
-        <CoreWebVitalsMonitor />
-        <PerformanceInit />
-
-        {/* Resource hints for optimal loading */}
-        <ResourceHints />
-
-        {/* Analytics and Tracking */}
-        <GoogleTagManager />
-        <Suspense fallback={null}>
-          <GoogleAnalytics />
-        </Suspense>
+        {/* Load all non-critical analytics, monitoring, and PWA features client-side only */}
+        {/* This reduces initial bundle size and improves Core Web Vitals */}
+        <ClientOnlyComponents />
 
         {/* Error boundary to catch and handle runtime errors */}
         <ErrorBoundary>
@@ -632,9 +611,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           }}
         />
-
-        {/* GDPR Cookie Consent */}
-        <CookieConsent />
       </body>
     </html>
   )

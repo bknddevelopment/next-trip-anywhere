@@ -2,15 +2,15 @@
   "critical": [
     {
       "path": "lib/critical-css/homepage.css",
-      "size": "43.91"
+      "size": "43.90"
     },
     {
       "path": "lib/critical-css/cruise.css",
-      "size": "36.15"
+      "size": "36.14"
     },
     {
       "path": "lib/critical-css/package.css",
-      "size": "36.10"
+      "size": "36.09"
     },
     {
       "path": "lib/critical-css/guide.css",
@@ -40,5 +40,5 @@
     }
   ],
   "totalBefore": 109095,
-  "totalAfter": 448112.63999999996
+  "totalAfter": 448081.92
 }

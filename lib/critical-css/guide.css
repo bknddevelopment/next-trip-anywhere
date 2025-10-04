@@ -206,7 +206,6 @@ input::placeholder {
 button {
   cursor: pointer;
 }
-iframe,
 img,
 svg {
   display: block;

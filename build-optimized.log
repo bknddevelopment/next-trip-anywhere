@@ -1,0 +1,4 @@
+
+> next-trip-anywhere@2.0.0 build
+> npm run build:css && next build && npm run build:postprocess
+
