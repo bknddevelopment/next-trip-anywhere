@@ -984,6 +984,124 @@ export const cruiseDestinations: CruiseDestination[] = [
     ],
     lastUpdated: '2025-09-25',
   },
+  {
+    slug: 'new-years-eve-caribbean',
+    title: "New Year's Eve Caribbean Cruises from Newark 2025-2026",
+    metaTitle: "New Year's Eve Cruises 2025-2026 | Caribbean NYE from Newark NJ",
+    metaDescription:
+      "Ring in 2026 on a Caribbean cruise from Newark! New Year's Eve cruises from Cape Liberty with champagne toasts, fireworks & tropical celebrations. Book your NYE escape!",
+    keywords: [
+      'new years eve cruises 2025',
+      'new years eve cruise from newark',
+      'nye caribbean cruise 2026',
+      'new years cruise cape liberty',
+      'caribbean new years cruise nj',
+      'new years eve cruise deals',
+      'holiday cruises from newark',
+      'december 2025 cruises newark',
+    ],
+    searchVolume: 150000,
+    difficulty: 28,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: "Ring in 2026 on a Caribbean New Year's Eve Cruise from Newark",
+        subheadline: 'Champagne Toasts, Tropical Fireworks & Midnight Celebrations at Sea',
+      },
+      description:
+        "Celebrate the arrival of 2026 in spectacular style with a New Year's Eve cruise from Cape Liberty, departing December 2025. Leave winter behind and welcome the new year under Caribbean stars with champagne toasts, gourmet midnight feasts, dazzling fireworks displays over turquoise waters, and unforgettable celebrations on luxurious cruise ships. Essex County residents can skip the crowded Times Square scene and instead enjoy tropical paradise, world-class entertainment, and once-in-a-lifetime NYE parties - all departing just minutes from home. Whether you're seeking family-friendly celebrations, romantic getaways, or adults-only parties, New Year's Eve cruises offer the perfect blend of relaxation and revelry as you sail into the new year.",
+      highlights: [
+        'Midnight champagne toast and balloon drop at sea',
+        "Gourmet New Year's Eve gala dinners",
+        'Multiple party venues - casual to black-tie',
+        'Live entertainment and DJ dance parties',
+        'Tropical destinations: Bahamas, St. Barts, Turks & Caicos',
+        'Fireworks displays over Caribbean waters',
+        'No driving home after celebrations',
+        "Wake up to New Year's Day in paradise",
+      ],
+      portInfo: {
+        name: 'Cape Liberty Cruise Port',
+        address: '14 Port Terminal Blvd, Bayonne, NJ 07002',
+        distance: 'Only 15 minutes from Newark - easy access for Essex County residents',
+        parkingInfo:
+          'Secure parking $23-25/day. Book online for discounts. Consider pre-cruise hotel packages with parking included.',
+        directions:
+          'From Essex County: Take I-280 E to NJ Turnpike. Exit 14A to Route 440 S. Follow signs to Cape Liberty. Allow extra time for holiday traffic. Arrive 2-3 hours before departure.',
+      },
+      popularCruiseLines: [
+        'Royal Caribbean - Odyssey of the Seas (7-night Perfect Day Bahamas departing Dec 28, 2025)',
+        'Virgin Voyages - Adults-only NYE parties with Scarlet Lady and Valiant Lady from Miami (easy connections from Newark Airport)',
+        'Celebrity Cruises - Premium celebrations with complimentary champagne at midnight',
+        'Norwegian Cruise Line - Freestyle celebrations with multiple party venues',
+        'MSC Cruises - European-style NYE with themed costume parties and confetti cannons',
+      ],
+      bestTimeToVisit: 'December 26-30, 2025 departures to be at sea for NYE',
+      averageDuration: '7-8 nights',
+      startingPrice: 1456,
+      localTips: [
+        'Book NOW - NYE cruises sell out 6-9 months in advance',
+        'Request dining times for 2nd seating (8:30pm) to enjoy leisurely NYE dinner',
+        'Pack formal wear - most ships have black-tie optional NYE galas',
+        "Reserve specialty restaurants for New Year's Eve dinner early",
+        "Book spa treatments for New Year's Day (discounted on sea days)",
+        'Arrive at Cape Liberty a day early to avoid December 28th traffic',
+        'Download cruise line app for onboard countdown party schedules',
+        "Bring noisemakers and party hats (or buy onboard for ship's theme)",
+      ],
+    },
+    faq: [
+      {
+        question: "What happens on New Year's Eve on a cruise ship?",
+        answer:
+          'Ships host multiple celebration venues from formal gala dinners to casual deck parties. Expect live bands, DJs, champagne toasts at midnight, balloon drops, confetti cannons, and fireworks displays. Many ships feature themed parties like 1920s Gatsby, masquerade balls, or white parties. All celebrations are included in your cruise fare with complimentary champagne at midnight. You can party-hop between venues or enjoy intimate celebrations in specialty lounges.',
+      },
+      {
+        question: "How much do New Year's Eve cruises cost from Cape Liberty?",
+        answer:
+          "NYE cruises from Cape Liberty range from $1,456 per person for inside cabins on 7-night Bahamas sailings to $3,500+ for balcony suites on premium lines. Prices are 30-50% higher than non-holiday weeks. Book 6-9 months in advance for best rates. Essex County advantage: No airfare costs since you're departing locally, saving $400-800 per person compared to fly-cruise packages.",
+      },
+      {
+        question: "Where do New Year's Eve cruises from Newark go?",
+        answer:
+          "Popular NYE itineraries include 7-night Perfect Day Bahamas (visiting Nassau, CocoCay, and Freeport), Eastern Caribbean routes to St. Thomas and St. Maarten, and luxury sailings to St. Barts, Turks & Caicos, and Barbados. Most departures are December 26-30, ensuring you're at sea or in a tropical port for New Year's Eve celebrations. Some Caribbean islands like St. Barts and Barbados host spectacular beach fireworks displays visible from your ship.",
+      },
+      {
+        question: "Are New Year's Eve cruises family-friendly?",
+        answer:
+          'Absolutely! Most cruise lines offer family-friendly NYE celebrations with kid-appropriate countdown parties (early evening for younger children), teen-only dance parties, family-friendly comedy shows, and complimentary sparkling cider for kids at midnight. Royal Caribbean and Norwegian excel at multi-generational celebrations. For adults-only NYE, consider Virgin Voyages departing from Miami (easy Newark Airport connections) or book adults-only specialty venues on family ships.',
+      },
+      {
+        question: "Is there a dress code for New Year's Eve on cruises?",
+        answer:
+          "Most ships designate New Year's Eve as a formal or black-tie optional night. Main dining rooms and gala events expect cocktail dresses, suits, or tuxedos. However, casual venues like buffets and deck parties have no dress code. Pack versatile outfits: formal wear for dinner and midnight gala, then comfortable party clothes for late-night dancing. Sequins, sparkles, and festive attire are always encouraged!",
+      },
+      {
+        question: "When should I book a New Year's Eve cruise from Cape Liberty?",
+        answer:
+          "Book NOW for 2025-2026 departures - NYE cruises sell out 6-9 months ahead, especially affordable inside and oceanview cabins. Premium balcony and suite inventory moves fastest. Wave season (January-March) sometimes offers perks like onboard credits or free upgrades, but availability shrinks rapidly. Essex County residents have an advantage booking early since you don't need to coordinate flights, just secure your cabin and parking.",
+      },
+      {
+        question: "Can I see fireworks on a New Year's Eve cruise?",
+        answer:
+          "Yes! Ships typically host their own onboard fireworks displays at midnight (regulations permitting). If you're docked at Caribbean ports like St. Barts, Barbados, Turks & Caicos, or Nassau, you'll witness spectacular beach and harbor fireworks from your ship. Balcony cabins offer private viewing, or head to open decks for 360-degree views. Some sailings position the ship specifically for optimal fireworks viewing from multiple Caribbean islands simultaneously.",
+      },
+      {
+        question: "What's included in New Year's Eve cruise pricing?",
+        answer:
+          'Your cruise fare includes all NYE festivities: gala dinners, champagne toasts, balloon drops, entertainment, DJ parties, and most activities. Premium extras like specialty dining, premium alcohol, shore excursions, spa treatments, and gratuities are additional. Some lines offer beverage packages (highly recommended for NYE). Virgin Voyages includes most beverages, tips, and WiFi in base fares. Celebrity often bundles perks during NYE sailings like drink packages or onboard credits.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/from-newark',
+      '/cruises/caribbean',
+      '/cruises/bahamas',
+      '/packages/all-inclusive-caribbean',
+      '/services/cruise-transfers',
+      '/locations/essex-county',
+    ],
+    lastUpdated: '2025-10-04',
+  },
 ]
 
 // Helper functions for data access

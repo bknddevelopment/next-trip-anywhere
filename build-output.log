@@ -1,0 +1,41 @@
+
+> next-trip-anywhere@2.0.0 build
+> npm run build:css && next build && npm run build:postprocess
+
+
+> next-trip-anywhere@2.0.0 build:css
+> echo '🎨 CSS Optimization enabled via PostCSS'
+
+🎨 CSS Optimization enabled via PostCSS
+   ▲ Next.js 15.5.3
+   - Environments: .env.production
+   - Experiments (use with caution):
+     ✓ optimizeCss
+     ✓ scrollRestoration
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./lib/data/travel-guides.ts
+Error:   [31mx[0m Expected ',', got 's'
+      ,-[[36;1;4m/Users/charwinvanryckdegroot/Github/next-trip-anywhere-1/lib/data/travel-guides.ts[0m:1453:1]
+ [2m1450[0m |         {
+ [2m1451[0m |           title: "Kuromon Ichiba Market - \"Osaka's Kitchen\"",
+ [2m1452[0m |           description:
+ [2m1453[0m |             'This 190-year-old covered market stretches 580 meters with 150 shops selling the freshest seafood, produce, meats, and street food in Osaka. Watch tuna auctions at dawn, eat fresh sushi and sashimi at counter seats, sample seasonal fruits (Japanese strawberries in spring are extraordinary), and experience authentic Japanese market culture. Unlike Tokyo's Tsukiji (now relocated), Kuromon remains a working market serving locals, not just tourists. Essex County tip: Arrive before 10am for best selection and authentic atmosphere before tour groups.',
+      : [35;1m                                                                                                                                                                                                                                                                                                                                                                                ^[0m
+ [2m1454[0m |           mustSee: true,
+ [2m1455[0m |           duration: '2-3 hours for exploring and eating',
+ [2m1456[0m |           cost: 'Free entry, budget ¥2,000-4,000 ($15-30) per person for tastings',
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/data/travel-guides.ts
+./app/guides/[topic]/page.tsx
+
+
+> Build failed because of webpack errors
