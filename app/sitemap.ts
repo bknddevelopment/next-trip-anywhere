@@ -122,12 +122,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Essex County hub page
+  // Essex County hub pages
   const essexCountyHub = {
     url: `${baseUrl}/essex-county`,
     lastModified: currentDate,
     changeFrequency: 'weekly' as const,
     priority: 0.9,
+  }
+
+  // Essex County Travel Agency landing page (Phase 4)
+  const essexCountyTravelAgency = {
+    url: `${baseUrl}/essex-county-travel-agency`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.95, // High priority for "travel agency essex county nj" keyword
   }
 
   // Essex County city-specific pages (travel-from-city)
@@ -384,6 +392,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority: 0.9, // 74K searches
     },
+  ]
+
+  // Phase 5 High-Value Port/Cruise Landing Pages
+  const phase5CruisePages = [
+    {
+      url: `${baseUrl}/cruises/cape-liberty-port`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 1,300 searches/month "cape liberty cruise"
+    },
+    {
+      url: `${baseUrl}/cruises/royal-caribbean-nj`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 1,900 searches/month "royal caribbean cruises from new jersey"
+    },
+    {
+      url: `${baseUrl}/cruises/3-day-cruises`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9, // 1,000 searches/month "3 day cruise from nyc"
+    },
+    {
+      url: `${baseUrl}/cruises/last-minute-deals`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 0.95, // 720 searches/month "last minute cruise deals newark"
+    },
+  ]
+
+  const cruiseHubPages2025 = [
     {
       url: `${baseUrl}/cruises/2025`,
       lastModified: currentDate,
@@ -536,6 +575,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...corePages,
     ...nationalLocationPages,
     essexCountyHub,
+    essexCountyTravelAgency,
     ...essexCityPages,
     ...essexServiceHubPages,
     ...essexCityServicePages,
@@ -555,6 +595,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...dynamicCruisePages,
     ...packagePages,
     ...cruiseHubPages,
+    ...cruiseHubPages2025,
+    ...phase5CruisePages,
     guidesHubPage,
     ...travelGuidePages,
     ...travelInfoGuidePages,

@@ -138,13 +138,14 @@ export const metadata: Metadata = {
     canonical: 'https://nexttripanywhere.com',
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-    other: {
-      'msvalidate.01': 'your-bing-verification-code',
-      'facebook-domain-verification': 'your-facebook-verification-code',
-    },
+    google: '9de1b0284bbffacf', // Verified via google9de1b0284bbffacf.html
+    // Add other verification codes as needed:
+    // yandex: 'your-yandex-verification-code',
+    // yahoo: 'your-yahoo-verification-code',
+    // other: {
+    //   'msvalidate.01': 'your-bing-verification-code',
+    //   'facebook-domain-verification': 'your-facebook-verification-code',
+    // },
   },
   authors: [{ name: 'Next Trip Anywhere' }],
   creator: 'Next Trip Anywhere',
@@ -333,20 +334,10 @@ const jsonLdOrganization = {
   priceRange: '$$',
   paymentAccepted: ['Cash', 'Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer'],
   currenciesAccepted: 'USD',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '3,247',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  // Reviews removed - only use verified customer reviews
-  award: [
-    'Best Travel Agency 2024',
-    'Top Customer Service Award',
-    'Exclusive Airline Partnership Award',
-    'Travel Industry Excellence Award',
-  ],
+  // aggregateRating removed until real customer reviews are collected
+  // Google penalizes fake review counts - only add when you have verified reviews
+  // awards removed until legitimate industry awards are earned
+  // Only add verified awards with documentation (ASTA, Cruise Lines awards, etc.)
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Travel Services Catalog',

@@ -23,12 +23,20 @@ const TrustedAgencySection = dynamic(() => import('@/components/home/TrustedAgen
   loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
 })
 
+const LegitTrustBadges = dynamic(() => import('@/components/home/LegitTrustBadges'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />,
+})
+
+const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />,
+})
+
 export const metadata: Metadata = {
-  title: 'Book Cheap Flights & Cruises | Save 40% Today | Next Trip Anywhere',
+  title: 'Travel Agency | Flights, Cruises & Vacations | Next Trip Anywhere',
   description:
-    '🔥 LIMITED TIME: Save up to 40% on flights, cruises & vacations. Free booking + 24/7 support. Royal Caribbean from $299. Call 833-874-1019 or book online instantly.',
+    'Expert travel planning nationwide. Flights, cruises & vacation packages from all US cities. 15+ years experience. Direct cruise line partnerships. 24/7 support. Call 833-874-1019.',
   keywords:
-    'nationwide travel agency, cheap flights from all US cities, cruise deals, vacation packages, travel deals, best travel agency, discount cruises, all-inclusive vacations, flight deals, travel agent near me, coast to coast travel',
+    'travel agency, nationwide travel services, cruise deals, vacation packages, flight booking, all-inclusive resorts, travel planning, professional travel agent, cruise specialists, vacation experts',
   openGraph: {
     title: 'Next Trip Anywhere - Nationwide Travel Agency',
     description:
@@ -251,6 +259,16 @@ export default function HomePage() {
 
       <Suspense fallback={<div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />}>
         <WhyChooseUs />
+      </Suspense>
+
+      {/* Phase 6: Legitimate Trust Badges */}
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-64 rounded-lg m-4" />}>
+        <LegitTrustBadges />
+      </Suspense>
+
+      {/* Phase 6: Customer Testimonials (placeholder for real reviews) */}
+      <Suspense fallback={<div className="animate-pulse bg-gray-200 h-96 rounded-lg m-4" />}>
+        <TestimonialsSection />
       </Suspense>
 
       {/* Enhanced Visual SEO Content Section */}
