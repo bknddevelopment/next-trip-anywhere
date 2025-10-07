@@ -27,9 +27,14 @@ const categories: { value: BlogCategory | 'all'; label: string }[] = [
 ]
 
 export default function BlogPage() {
-  // In a real app, you'd implement pagination and filtering
-  const featuredPost = blogPosts[0]
-  const recentPosts = blogPosts.slice(1)
+  // Sort posts by date (newest first)
+  const sortedPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  )
+
+  const featuredPost = sortedPosts[0] // Most recent post as featured
+  const recentPosts = sortedPosts.slice(1, 7) // Next 6 posts
+  const olderPosts = sortedPosts.slice(7) // Rest of posts
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -49,7 +54,7 @@ export default function BlogPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="bg-white border-b">
+      <section className="bg-white border-b sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
@@ -64,40 +69,44 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Featured Post */}
-          {featuredPost && <BlogPostCard post={featuredPost} featured={true} />}
+      {/* Featured Post - Full Width */}
+      {featuredPost && (
+        <section className="container mx-auto px-4 py-12">
+          <div className="mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Latest Article</h2>
+            <p className="text-gray-600">Our newest travel insights and expert advice</p>
+          </div>
+          <BlogPostCard post={featuredPost} featured={true} />
+        </section>
+      )}
 
-          {/* Recent Posts */}
+      {/* Recent Posts Grid */}
+      <section className="container mx-auto px-4 py-12 bg-white">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Recent Articles</h2>
+          <p className="text-gray-600">Stay updated with the latest travel trends and tips</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post) => (
             <BlogPostCard key={post.id} post={post} />
           ))}
         </div>
-
-        {/* Pagination */}
-        <div className="flex justify-center mt-12">
-          <nav className="flex gap-2">
-            <button
-              className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50"
-              disabled
-            >
-              Previous
-            </button>
-            <button className="px-4 py-2 bg-primary text-white rounded-lg">1</button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-              2
-            </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-              3
-            </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-              Next
-            </button>
-          </nav>
-        </div>
       </section>
+
+      {/* Older Posts */}
+      {olderPosts.length > 0 && (
+        <section className="container mx-auto px-4 py-12">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">More Articles</h2>
+            <p className="text-gray-600">Explore our complete travel guide library</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {olderPosts.map((post) => (
+              <BlogPostCard key={post.id} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Popular Tags */}
       <section className="bg-white py-12">
