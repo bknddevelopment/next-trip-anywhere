@@ -85,28 +85,28 @@ StatCard.displayName = 'StatCard'
 
 function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-warm-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-navy mb-4">
-            Why Choose <span className="text-gradient">Next Trip Anywhere</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-500 mb-4 font-display">
+            Why Choose Next Trip Anywhere
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             We&apos;re not just another travel agency. We&apos;re your trusted partner in creating
             unforgettable memories.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Features Grid - Improved Spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <FeatureCard key={feature.title} feature={feature} index={index} />
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-12 text-white animate-fade-in">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Stats Section - Professional Navy Gradient */}
+        <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-12 md:p-16 text-white shadow-2xl animate-fade-in">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {stats.map((stat, index) => (
               <StatCard key={stat.label} stat={stat} index={index} />
             ))}

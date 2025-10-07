@@ -55,22 +55,22 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
-      {/* Trust Badges */}
-      <div className="bg-navy-600 py-6">
+    <footer className="bg-primary-500 text-white">
+      {/* Professional Trust Bar - Matches Header Design */}
+      <div className="bg-primary-600/50 py-6 border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center items-center gap-8 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-sm font-medium">
             <div className="flex items-center space-x-2">
               <Shield className="w-5 h-5 text-accent-400" />
               <span>100% Secure Booking</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CreditCard className="w-5 h-5 text-accent-400" />
-              <span>Exclusive Travel Deals</span>
+              <Award className="w-5 h-5 text-accent-400" />
+              <span>ASTA Certified Since 2010</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Award className="w-5 h-5 text-accent-400" />
-              <span>ASTA Member Since 2010</span>
+              <Phone className="w-5 h-5 text-accent-400" />
+              <span>24/7 Expert Support</span>
             </div>
           </div>
         </div>
@@ -181,37 +181,37 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="mt-12 pt-8 border-t border-gray-700">
+        {/* Newsletter Section - Professional Design */}
+        <div className="mt-12 pt-8 border-t border-white/20">
           <div className="max-w-md mx-auto text-center lg:text-left lg:max-w-none lg:flex lg:items-center lg:justify-between">
             <div className="mb-4 lg:mb-0">
-              <h3 className="text-xl font-semibold mb-2">Get Exclusive Deals</h3>
-              <p className="text-gray-300">
-                Subscribe to our newsletter for travel tips and special offers
+              <h3 className="text-2xl font-bold mb-2 font-display">Get Exclusive Travel Deals</h3>
+              <p className="text-gray-200">
+                Join 50,000+ travelers receiving insider offers and expert tips
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:mx-0">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-gray-600 focus:border-accent-400 focus:outline-none text-white placeholder:text-gray-400"
+                className="flex-1 px-5 py-3 rounded-lg bg-white/10 border border-white/30 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-400/50 text-white placeholder:text-gray-300 transition-all"
               />
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-center"
+                className="inline-block px-8 py-3 bg-accent-500 hover:bg-accent-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center"
               >
-                Get Started
+                Subscribe
               </a>
             </div>
           </div>
         </div>
 
-        {/* Social Links & Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-4 mb-4 md:mb-0">
+        {/* Social Links & Copyright - Professional Polish */}
+        <div className="mt-8 pt-8 border-t border-white/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex space-x-3 mb-4 md:mb-0">
               {socialLinks.map((social) => {
                 const Icon = social.icon
                 return (
@@ -220,17 +220,21 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-white/10 rounded-full hover:bg-accent-500 transition-colors"
+                    className="p-3 bg-white/10 rounded-full hover:bg-accent-500 hover:scale-110 transition-all duration-300"
                     aria-label={social.name}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-5 h-5" />
                   </a>
                 )
               })}
             </div>
-            <div className="text-center md:text-right text-sm text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Next Trip Anywhere. All rights reserved.</p>
-              <p className="mt-1">ASTA Member | CLIA Certified | BBB Accredited</p>
+            <div className="text-center md:text-right">
+              <p className="text-sm text-gray-200">
+                &copy; {new Date().getFullYear()} Next Trip Anywhere. All rights reserved.
+              </p>
+              <p className="mt-1 text-xs text-gray-300">
+                ASTA Member • CLIA Certified • BBB Accredited
+              </p>
             </div>
           </div>
         </div>

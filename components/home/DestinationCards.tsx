@@ -106,13 +106,17 @@ export default function DestinationCards() {
   }, [])
 
   return (
-    <section className="py-20 bg-warm-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl font-bold text-navy mb-4">
-            Popular <span className="text-gradient">Destinations</span>
+    <section className="py-24 bg-gradient-to-b from-warm-50 to-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full mb-4 animate-slide-up">
+            <MapPin className="w-4 h-4" />
+            <span className="text-sm font-semibold">Handpicked Destinations</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-primary-500 mb-4 font-display animate-slide-up delay-100">
+            Popular Destinations
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Handpicked destinations with exclusive deals for travelers nationwide
           </p>
         </div>
@@ -152,7 +156,7 @@ export default function DestinationCards() {
                     </>
                   )}
                   {destination.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                       Featured Deal
                     </div>
                   )}
@@ -166,8 +170,8 @@ export default function DestinationCards() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-navy mb-2 flex items-center">
-                    <MapPin className="w-5 h-5 mr-2 text-primary-500" />
+                  <h3 className="text-xl font-bold text-primary-500 mb-2 flex items-center">
+                    <MapPin className="w-5 h-5 mr-2 text-secondary-500" />
                     {destination.name}
                   </h3>
 
@@ -186,14 +190,14 @@ export default function DestinationCards() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-lg font-semibold text-primary-500">Get Quote</p>
+                      <p className="text-lg font-semibold text-secondary-500">Get Quote</p>
                       <p className="text-xs text-gray-500">Best rates guaranteed</p>
                     </div>
                     <a
                       href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                      className="bg-accent-500 hover:bg-accent-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-accent-500/30 transition-all duration-300"
                     >
                       Inquire Now
                     </a>
@@ -204,12 +208,12 @@ export default function DestinationCards() {
           ))}
         </div>
 
-        <div className="text-center mt-12 animate-fade-in">
+        <div className="text-center mt-16 animate-fade-in">
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSe5Wy5yxW42FXTyFDsBPK7A0eqqcP_XKYCf-PHhd9vmlfvVWQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-10 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:shadow-accent-500/40 transition-all duration-300 text-lg"
           >
             Explore All Destinations
           </a>

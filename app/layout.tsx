@@ -30,7 +30,7 @@
  */
 
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import Header from '@/components/layout/Header'
@@ -92,6 +92,29 @@ const montserrat = Montserrat({
   display: 'swap',
   preload: true,
   fallback: ['Georgia', 'Times New Roman', 'serif'],
+})
+
+/**
+ * Playfair Display font configuration - Premium serif for hero headlines
+ *
+ * @description
+ * Playfair Display is an elegant high-contrast serif font used by luxury travel brands.
+ * Perfect for hero sections and featured content to add sophistication.
+ *
+ * Weight usage:
+ * - 400: Regular elegance
+ * - 700: Bold impact for hero headlines
+ * - 900: Extra bold for special emphasis
+ *
+ * @see https://fonts.google.com/specimen/Playfair+Display
+ */
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400', '700', '900'],
+  display: 'swap',
+  preload: true,
+  fallback: ['Georgia', 'Garamond', 'serif'],
 })
 
 /**
@@ -566,7 +589,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body
-        className={`${inter.variable} ${montserrat.variable} font-sans antialiased min-h-screen bg-warm-50`}
+        className={`${inter.variable} ${montserrat.variable} ${playfair.variable} font-sans antialiased min-h-screen bg-warm-50`}
       >
         {/* Load all non-critical analytics, monitoring, and PWA features client-side only */}
         {/* This reduces initial bundle size and improves Core Web Vitals */}

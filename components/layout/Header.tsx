@@ -173,8 +173,8 @@ export default function Header() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' // Scrolled state
-          : 'bg-white/80 backdrop-blur-sm py-4' // Initial state
+          ? 'bg-primary-500 backdrop-blur-md shadow-2xl py-3' // Scrolled: Professional navy
+          : 'bg-primary-500/95 backdrop-blur-sm py-4 shadow-lg' // Initial: Semi-transparent navy
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,7 +212,7 @@ export default function Header() {
               >
                 {item.dropdown ? (
                   // Dropdown trigger button
-                  <button className="flex items-center space-x-1 text-navy hover:text-primary-500 transition-colors font-medium">
+                  <button className="flex items-center space-x-1 text-white hover:text-accent-300 transition-colors font-medium">
                     <span>{item.name}</span>
                     <ChevronDown className="w-4 h-4" />
                   </button>
@@ -220,7 +220,7 @@ export default function Header() {
                   // Simple link for non-dropdown items
                   <Link
                     href={item.href}
-                    className="text-navy hover:text-primary-500 transition-colors font-medium"
+                    className="text-white hover:text-accent-300 transition-colors font-medium"
                   >
                     {item.name}
                   </Link>
@@ -264,7 +264,7 @@ export default function Header() {
             {/* Phone Number - Clickable for direct calling */}
             <a
               href="tel:1-833-874-1019"
-              className="flex items-center space-x-2 text-navy hover:text-primary-500 transition-colors"
+              className="flex items-center space-x-2 text-white hover:text-accent-300 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-semibold">1-833-874-1019</span>
@@ -311,9 +311,9 @@ export default function Header() {
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-navy" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-navy" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
@@ -340,7 +340,7 @@ export default function Header() {
                     {item.dropdown ? (
                       // Expandable section for dropdown items
                       <div>
-                        <button className="w-full flex items-center justify-between py-2 text-left text-navy hover:text-primary-500 transition-colors font-medium">
+                        <button className="w-full flex items-center justify-between py-2 text-left text-white hover:text-accent-300 transition-colors font-medium">
                           <span>{item.name}</span>
                           <ChevronDown className="w-4 h-4" />
                         </button>
@@ -362,7 +362,7 @@ export default function Header() {
                       // Simple link for non-dropdown items
                       <Link
                         href={item.href}
-                        className="block py-2 text-navy hover:text-primary-500 transition-colors font-medium"
+                        className="block py-2 text-white hover:text-accent-300 transition-colors font-medium"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -377,7 +377,7 @@ export default function Header() {
                 {/* Phone number button */}
                 <a
                   href="tel:1-833-874-1019"
-                  className="flex items-center justify-center space-x-2 w-full bg-gray-100 text-navy py-3 rounded-lg hover:bg-gray-200 transition-colors"
+                  className="flex items-center justify-center space-x-2 w-full bg-white/10 text-white py-3 rounded-lg hover:bg-white/20 transition-colors backdrop-blur-sm"
                 >
                   <Phone className="w-4 h-4" />
                   <span className="font-semibold">1-833-874-1019</span>
