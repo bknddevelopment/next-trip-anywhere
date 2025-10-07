@@ -342,7 +342,7 @@ const jsonLdOrganization = {
     },
     {
       '@type': 'ContactPoint',
-      email: 'groups@nexttripanywhere.com',
+      email: 'info@nexttripanywhere.com',
       contactType: 'reservations',
       areaServed: 'US',
     },
