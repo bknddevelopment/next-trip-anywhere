@@ -288,6 +288,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Phase 7: Cruise line deep-dive pages (131,900 monthly searches)
+  const phase7CruiseLinePages = [
+    {
+      url: `${baseUrl}/cruises/carnival-cruise-line`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 49,500 searches - "carnival cruise line"
+    },
+    {
+      url: `${baseUrl}/cruises/royal-caribbean-ships`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 33,100 searches - "royal caribbean ships"
+    },
+    {
+      url: `${baseUrl}/cruises/norwegian-cruise-line`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 27,100 searches - "norwegian cruise line"
+    },
+    {
+      url: `${baseUrl}/cruises/princess-cruises`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95, // 22,200 searches - "princess cruises"
+    },
+  ]
+
   // Dynamic cruise destination pages from data file
   const dynamicCruisePages = cruiseDestinations.map((cruise) => ({
     url: `${baseUrl}/cruises/${cruise.slug}`,
@@ -590,6 +618,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...deepDiveDestinationPages,
     ...toolPages,
     ...cruiseLinePages,
+    ...phase7CruiseLinePages,
     ...cruiseLineSubPages,
     ...cruiseDestinationPages,
     ...dynamicCruisePages,

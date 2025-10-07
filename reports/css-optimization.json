@@ -2,43 +2,43 @@
   "critical": [
     {
       "path": "lib/critical-css/homepage.css",
-      "size": "45.06"
+      "size": "9.33"
     },
     {
       "path": "lib/critical-css/cruise.css",
-      "size": "38.42"
+      "size": "9.33"
     },
     {
       "path": "lib/critical-css/package.css",
-      "size": "37.14"
+      "size": "9.33"
     },
     {
       "path": "lib/critical-css/guide.css",
-      "size": "40.04"
+      "size": "9.33"
     }
   ],
   "routes": [
     {
       "route": "cruises",
       "path": "public/css/cruises.css",
-      "size": "75.07"
+      "size": "9.11"
     },
     {
       "route": "packages",
       "path": "public/css/packages.css",
-      "size": "70.37"
+      "size": "9.11"
     },
     {
       "route": "guides",
       "path": "public/css/guides.css",
-      "size": "73.65"
+      "size": "9.11"
     },
     {
       "route": "locations",
       "path": "public/css/locations.css",
-      "size": "71.88"
+      "size": "9.11"
     }
   ],
-  "totalBefore": 111492,
-  "totalAfter": 462469.12
+  "totalBefore": 113515,
+  "totalAfter": 75530.24
 }
