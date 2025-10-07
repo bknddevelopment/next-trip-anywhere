@@ -1445,6 +1445,232 @@ export const cruiseDestinations: CruiseDestination[] = [
     ],
     lastUpdated: '2025-01-10',
   },
+
+  // ============================================================
+  // PHASE 2 EXPANSION: Additional Cruise Lines & Port Pages
+  // ============================================================
+
+  {
+    slug: 'holland-america',
+    title: 'Holland America Line - Premium Alaska & Europe Cruises',
+    metaTitle: 'Holland America Cruises 2025 | Alaska & Europe Cruise Experts',
+    metaDescription:
+      'Book Holland America Line cruises. Premium mid-size ships specializing in Alaska, Europe & world voyages. Newark area HAL cruise specialists.',
+    keywords: [
+      'holland america cruises',
+      'holland america line',
+      'holland america alaska',
+      'hal cruises',
+      'holland america 2025',
+    ],
+    searchVolume: 18100,
+    difficulty: 43,
+    priority: 'MEDIUM',
+    content: {
+      hero: {
+        headline: 'Holland America Line - Premium Mid-Size Elegance',
+        subheadline: 'Alaska Specialists & European Experts Since 1873',
+      },
+      description:
+        'Discover the refined elegance of Holland America Line, where 150+ years of maritime expertise meets modern luxury. Specializing in Alaska and European itineraries, HAL offers Essex County travelers mid-size ships (1,200-2,650 guests) with exceptional service, enriching onboard programs, and longer port stays for deeper destination immersion. From the glaciers of Alaska to the canals of Amsterdam, from Panama Canal transits to exotic world voyages, Holland America delivers sophisticated travel experiences for discerning cruisers seeking culture, cuisine, and comfort without the crowds of mega-ships.',
+      highlights: [
+        'Mid-size ships (1,200-2,650 guests) - more intimate than mega-ships',
+        '#1 rated Alaska cruise line by Condé Nast Traveler',
+        'Longer port stays & overnight stays in key cities',
+        "America's Test Kitchen partnership for culinary excellence",
+        'BBC Earth programming & enrichment lectures',
+        'Lincoln Center Stage classical music performances',
+        "Explorer's Lounge for panoramic views",
+        'Exceptional service with high crew-to-guest ratio',
+      ],
+      localTips: [
+        'Alaska cruises (May-Sept): Fly Newark to Seattle or Vancouver for 7-day Inside Passage sailings',
+        'Europe cruises: Newark to Amsterdam connections available, many itineraries embark/disembark Amsterdam',
+        'Book Pinnacle-class ships (Koningsdam, Nieuw Statendam) for newest amenities',
+        'Have Mariners rewards? Loyalty perks include onboard credits and priority bookings',
+      ],
+    },
+    faq: [
+      {
+        question: 'What makes Holland America different from other cruise lines?',
+        answer:
+          "HAL focuses on destination immersion with longer port stays, enrichment programs (BBC Earth, culinary arts, music), mid-size ships for easier navigation, and exceptional service. It's ideal for travelers seeking culture and refinement over waterslides and casinos.",
+      },
+      {
+        question: 'Is Holland America good for Alaska cruises?',
+        answer:
+          "Absolutely - HAL is consistently rated #1 for Alaska cruising. Their expertise includes exclusive glacier viewing, Denali add-ons, and onboard naturalists. Plus, they've been sailing Alaska longer than any other premium line.",
+      },
+      {
+        question: 'What age group cruises Holland America?',
+        answer:
+          "While all ages are welcome, HAL attracts mostly 50+ travelers seeking sophistication and enrichment. Families cruise during summer Alaska and holidays, but it's not as kid-focused as Carnival or Royal Caribbean.",
+      },
+    ],
+    internalLinks: [
+      '/cruises/alaska',
+      '/cruises/european',
+      '/cruises/river-cruises',
+      '/destinations/alaska-cruise-guide',
+      '/packages/europe-tours',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'from-galveston',
+    title: 'Cruises from Galveston Texas - Year-Round Caribbean Departures',
+    metaTitle: 'Cruises from Galveston 2025 | Texas Cruise Port Deals from NJ',
+    metaDescription:
+      'Book cruises from Galveston, TX. Year-round Caribbean sailings. Royal Caribbean, Carnival, Disney. Newark travelers fly to Houston. Texas cruise experts.',
+    keywords: [
+      'cruises from galveston',
+      'galveston cruises',
+      'cruises out of galveston',
+      'galveston cruise terminal',
+      'texas cruises',
+      'galveston cruise port',
+    ],
+    searchVolume: 51100,
+    difficulty: 44,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'Cruises from Galveston, Texas - Your Gulf Coast Gateway',
+        subheadline: 'Year-Round Caribbean & Mexico Sailings',
+      },
+      description:
+        'Embark on your Caribbean adventure from Galveston, Texas - the fourth-busiest cruise port in North America and the premier Gulf Coast departure point. Essex County travelers enjoy convenient connections through Houston airports (IAH or HBY), avoiding Miami and Fort Lauderdale crowds. With year-round sailings from Royal Caribbean, Carnival, and Disney Cruise Line, Galveston offers 4-7 night Western Caribbean and Mexico itineraries perfect for beach lovers seeking Cozumel, Costa Maya, and stunning Cayman Islands. The historic island city itself makes a great pre-cruise destination with beaches, Victorian architecture, and fresh Gulf seafood.',
+      highlights: [
+        'Year-round departures - no seasonal gaps',
+        'Royal Caribbean, Carnival & Disney Cruise Line',
+        '4-7 night Western Caribbean & Mexico itineraries',
+        'Fly Newark to Houston (IAH) - 4 hours, then 45-min drive',
+        'Popular ports: Cozumel, Costa Maya, Grand Cayman, Roatán',
+        'Less crowded than Florida cruise terminals',
+        'Historic Galveston Island makes great pre-cruise stop',
+        'Warm-weather cruising year-round',
+      ],
+      portInfo: {
+        name: 'Port of Galveston',
+        address: 'Galveston Cruise Terminal, Galveston, TX 77550',
+        distance: '45 minutes from Houston IAH Airport',
+        parkingInfo: 'Covered parking $85-$100/week, outdoor $70-$85/week. Reserve in advance.',
+        directions:
+          'From Houston: Take I-45 South directly to Galveston Island. Follow signs to cruise terminals. GPS: Pier 10 or Pier 28 depending on cruise line.',
+      },
+      localTips: [
+        'Fly Newark (EWR) to Houston (IAH) - United direct flights available, 4 hours',
+        'Book 1-night pre-cruise hotel in Galveston - embarkation day is stress-free',
+        'Galveston has excellent seafood restaurants on historic Strand district',
+        'Weather: Mild winters (60s-70s), hot summers (80s-90s), occasional hurricanes Aug-Oct',
+        'Parking: Pre-book parking online for guaranteed spots and lower rates',
+      ],
+    },
+    faq: [
+      {
+        question: 'Which cruise lines sail from Galveston?',
+        answer:
+          'Royal Caribbean (Allure, Harmony, Liberty of the Seas), Carnival (Breeze, Jubilee, Vista), and Disney Cruise Line (Disney Magic) all offer year-round sailings from Galveston with Western Caribbean and Mexico itineraries.',
+      },
+      {
+        question: 'How do I get to Galveston cruise port from Newark?',
+        answer:
+          'Fly Newark (EWR) to Houston (IAH) - about 4 hours. Then drive or shuttle 45 minutes to Galveston. We can arrange complete packages including flights, hotel, and port transfers.',
+      },
+      {
+        question: 'What destinations can I visit from Galveston cruises?',
+        answer:
+          'Western Caribbean and Mexico ports including Cozumel, Costa Maya, Grand Cayman, Roatán (Honduras), Belize, Progreso, and Jamaica. Most cruises are 5-7 nights with 2-3 port stops.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/royal-caribbean',
+      '/cruises/carnival',
+      '/cruises/disney',
+      '/cruises/caribbean',
+      '/destinations/cozumel-mexico',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'from-new-york',
+    title: 'Cruises from New York City - Manhattan & Brooklyn Cruise Terminal',
+    metaTitle: 'Cruises from New York 2025 | NYC Cruise Port - Drive from NJ',
+    metaDescription:
+      'Book cruises from New York Manhattan. Drive from Newark/Essex County. Bermuda, Caribbean, Canada/New England. NYC cruise terminal experts.',
+    keywords: [
+      'cruises from new york',
+      'cruises from nyc',
+      'manhattan cruise terminal',
+      'new york cruise port',
+      'cruises leaving from new york',
+      'brooklyn cruise terminal',
+    ],
+    searchVolume: 22200,
+    difficulty: 43,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'Cruises from New York City - Your Local Departure Port',
+        subheadline: 'Drive from Essex County - No Flying Required!',
+      },
+      description:
+        'Set sail from your own backyard! Essex County residents enjoy the ultimate convenience of cruises departing from Manhattan and Brooklyn - just a 20-40 minute drive from Newark with no flights, no airports, and no hassle. The Manhattan Cruise Terminal on the West Side and Brooklyn Cruise Terminal in Red Hook offer seasonal sailings (April-November) to Bermuda, Caribbean, Canada/New England, and even transatlantic to Europe. Norwegian Cruise Line, Celebrity, Carnival, and Princess operate regularly from NYC, making it effortless for New Jersey travelers to embark on world-class voyages without leaving the tri-state area.',
+      highlights: [
+        'Drive from Newark - 20-40 minutes, no flying required!',
+        'Manhattan Cruise Terminal (West Side) & Brooklyn Terminal (Red Hook)',
+        'Seasonal sailings April-November',
+        'Popular routes: Bermuda (7-day), Caribbean, Canada/New England',
+        'Norwegian, Celebrity, Carnival, Princess cruise lines',
+        'Park at terminal or use ride-share/taxi',
+        'Explore NYC before/after cruise',
+        'Perfect for first-time cruisers',
+      ],
+      portInfo: {
+        name: 'Manhattan Cruise Terminal',
+        address: '711 12th Avenue, New York, NY 10019',
+        distance: '25 minutes from Newark via Holland Tunnel',
+        parkingInfo:
+          'Limited terminal parking $40/day. Better: Park at Newark Airport long-term ($20/day) and Uber to terminal ($40).',
+        directions:
+          'From Newark: Take NJ Turnpike to Holland Tunnel. Exit tunnel, head north on West Side Highway to 55th St. Terminal on right at Pier 88/90/92.',
+      },
+      localTips: [
+        'Essex County residents can drive - no flights needed! Holland Tunnel to Manhattan is fastest',
+        'Parking option: Park at Newark Airport long-term lot, Uber/Lyft to Manhattan terminal',
+        'Bermuda cruises (7-day) are most popular - warm weather, no passport required for US citizens',
+        'Canada/New England fall foliage cruises (Sept-Oct) are spectacular',
+        'Book spring/fall for best weather - summer can be hot and humid',
+      ],
+    },
+    faq: [
+      {
+        question: 'Can I really drive to NYC cruise terminals from New Jersey?',
+        answer:
+          'Yes! Manhattan Cruise Terminal is 25 minutes from Newark via Holland Tunnel. Brooklyn Cruise Terminal is 30 minutes via Verrazano Bridge. No flying required - just drive and board!',
+      },
+      {
+        question: 'Where should I park for NYC cruises?',
+        answer:
+          'Terminal parking is limited and expensive ($40/day). Better options: Park at Newark Airport long-term ($20/day) and Uber ($40), or use ride-share directly to terminal. Some cruise  packages include hotel parking.',
+      },
+      {
+        question: 'What cruises leave from New York?',
+        answer:
+          'Seasonal (April-November): 7-day Bermuda roundtrips, 7-14 day Caribbean, 7-10 day Canada/New England fall foliage, and transatlantic repositioning cruises to Europe. Norwegian, Celebrity, Carnival, and Princess are primary operators.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/from-newark',
+      '/cruises/caribbean',
+      '/destinations/bermuda-from-ny',
+      '/cruises/norwegian',
+      '/cruises/celebrity',
+    ],
+    lastUpdated: '2025-01-10',
+  },
 ]
 
 // Helper functions for data access
