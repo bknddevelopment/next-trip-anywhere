@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
+import { Phone, Mail, Clock, MessageCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Next Trip Anywhere Travel Agency',
@@ -53,35 +53,6 @@ export default function ContactPage() {
                     <p className="text-gray-700">Support: support@nexttripanywhere.com</p>
                     <p className="text-gray-700">Groups: groups@nexttripanywhere.com</p>
                     <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-accent-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-navy mb-1">Office Locations</h3>
-                    <p className="text-gray-700 font-medium">New York (Headquarters)</p>
-                    <p className="text-gray-600 text-sm mb-2">
-                      123 Travel Plaza, Suite 500
-                      <br />
-                      New York, NY 10001
-                    </p>
-
-                    <p className="text-gray-700 font-medium">Miami</p>
-                    <p className="text-gray-600 text-sm mb-2">
-                      456 Ocean Drive, Suite 200
-                      <br />
-                      Miami, FL 33139
-                    </p>
-
-                    <p className="text-gray-700 font-medium">Boston</p>
-                    <p className="text-gray-600 text-sm">
-                      789 Commonwealth Ave
-                      <br />
-                      Boston, MA 02215
-                    </p>
                   </div>
                 </div>
 
@@ -218,18 +189,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-warm-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-navy text-center mb-8">Visit Our Offices</h2>
-            <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-              <p className="text-gray-600">Interactive Map Placeholder</p>
             </div>
           </div>
         </div>

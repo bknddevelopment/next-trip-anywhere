@@ -261,7 +261,6 @@ const jsonLdOrganization = {
   slogan: 'Your trusted travel experts nationwide',
   telephone: '+1-833-874-1019',
   email: 'info@nexttripanywhere.com',
-  faxNumber: '+1-833-874-1020',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'US',
