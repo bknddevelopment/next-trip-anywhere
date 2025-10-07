@@ -1102,6 +1102,349 @@ export const cruiseDestinations: CruiseDestination[] = [
     ],
     lastUpdated: '2025-10-04',
   },
+
+  // ============================================================
+  // PHASE 1 EXPANSION: High-Volume Missing Keywords
+  // ============================================================
+
+  {
+    slug: 'viking',
+    title: 'Viking Ocean & River Cruises from Newark',
+    metaTitle: 'Viking Cruises 2025 | River & Ocean Cruises from New Jersey',
+    metaDescription:
+      'Book Viking river and ocean cruises. Award-winning small-ship experience with cultural immersion. Newark area travel agency specializing in Viking voyages.',
+    keywords: [
+      'viking cruises',
+      'viking ocean cruises',
+      'viking river cruises',
+      'viking cruise deals',
+      'viking cruises 2025',
+      'viking cruise packages',
+    ],
+    searchVolume: 165000,
+    difficulty: 66,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'Award-Winning Viking Cruises - Culture & Discovery',
+        subheadline: 'Intimate Ships, Enriching Experiences, Exceptional Value',
+      },
+      description:
+        "Experience the world with Viking Cruises, the thinking person's cruise. From European river voyages along the Rhine and Danube to ocean expeditions across all seven continents, Viking offers Essex County travelers an unmatched combination of cultural immersion, destination-focused itineraries, and small-ship elegance. With no casinos, kids' clubs, or gimmicks, Viking cruises are designed for discerning adults seeking meaningful travel experiences. Every voyage includes shore excursions in every port, onboard enrichment programs, and all meals with complimentary wine and beer at lunch and dinner.",
+      highlights: [
+        'Small ships (190-930 guests) for intimate experiences',
+        'Destination-focused itineraries across 7 continents',
+        'Included shore excursions in every port',
+        'All meals with wine & beer included',
+        'Cultural enrichment programs & expert lecturers',
+        'No nickel-and-diming - most amenities included',
+        'Award-winning customer service',
+        'Adults-only environment (18+)',
+      ],
+      localTips: [
+        'Newark-area travelers can fly from EWR to connect with Viking cruises worldwide',
+        'Popular embarkation points include Amsterdam, Barcelona, Venice, and Miami',
+        'We coordinate your entire journey including flights, hotel stays, and transfers',
+        "Viking's all-inclusive pricing makes budgeting simple - no surprise charges",
+      ],
+    },
+    faq: [
+      {
+        question: 'What makes Viking Cruises different?',
+        answer:
+          'Viking focuses on cultural enrichment rather than entertainment. Ships are smaller, itineraries are destination-focused with included excursions, and the atmosphere is sophisticated yet relaxed. No casinos, no kids, no upselling.',
+      },
+      {
+        question: 'Are Viking river cruises worth the price?',
+        answer:
+          'Absolutely. When you factor in included excursions ($100+ per port), wine/beer with meals, Wi-Fi, and gratuities, Viking offers exceptional value. Plus, their European river routes visit cities larger ships cannot reach.',
+      },
+      {
+        question: 'Can I book Viking cruises from Newark?',
+        answer:
+          'Yes! We arrange your entire journey including flights from Newark Airport, pre/post hotel stays, and transfers to the ship. Most Viking cruises embark from European or coastal U.S. cities.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/river-cruises',
+      '/cruises/european',
+      '/cruises/mediterranean',
+      '/cruises/alaska',
+      '/packages/all-inclusive-caribbean',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'oceania',
+    title: 'Oceania Cruises - Upscale Culinary Voyages',
+    metaTitle: 'Oceania Cruises 2025 | Luxury Small-Ship Cruises from NJ',
+    metaDescription:
+      'Book Oceania Cruises - upscale small-ship voyages with gourmet dining. New Jersey travel experts specializing in Oceania Riviera, Marina & Vista sailings.',
+    keywords: [
+      'oceania cruises',
+      'oceania cruise deals',
+      'oceania cruises 2025',
+      'luxury small ship cruises',
+      'oceania riviera',
+      'oceania marina',
+    ],
+    searchVolume: 90500,
+    difficulty: 55,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'Oceania Cruises - Gourmet Dining at Sea',
+        subheadline: 'Boutique Ships, Extraordinary Cuisines, Endless Discoveries',
+      },
+      description:
+        'Discover the world in comfort and style with Oceania Cruises, where culinary excellence meets destination immersion. Featuring mid-size ships (684-1,250 guests), Oceania offers Essex County travelers the perfect balance between intimacy and amenities. With multiple gourmet restaurants, country club casual atmosphere, and longer port stays, Oceania appeals to sophisticated travelers who appreciate fine dining and in-depth cultural experiences. All Oceania cruises include specialty dining, exceptional service, and destination-rich itineraries spanning the globe.',
+      highlights: [
+        'Finest cuisine at sea by master chef Jacques Pépin',
+        'Mid-size ships with boutique hotel ambiance',
+        'Longer port stays & overnight stays in key cities',
+        'Included specialty restaurants (no upcharges)',
+        '6 open-seating restaurants on every ship',
+        'Country club casual dress code',
+        'High staff-to-guest ratio',
+        'Destinations across all 7 continents',
+      ],
+      localTips: [
+        'Newark Airport offers convenient connections to Oceania embarkation ports worldwide',
+        'Popular departure cities include Miami, Barcelona, Venice, and Athens',
+        'We recommend arriving a day early for international departures',
+        'Our Oceania specialists can arrange pre-cruise hotel packages and transfers',
+      ],
+    },
+    faq: [
+      {
+        question: 'How does Oceania compare to Viking and other cruise lines?',
+        answer:
+          'Oceania offers more onboard amenities than Viking (pools, casino, entertainment) while maintaining a refined, upscale atmosphere. The culinary experience is unmatched, with menus by Jacques Pépin and all specialty dining included.',
+      },
+      {
+        question: 'What is included in an Oceania cruise?',
+        answer:
+          'All specialty restaurant dining, soft drinks and bottled water, shuttle service in ports, and fitness classes are included. Shore excursions, alcoholic beverages, Wi-Fi, and gratuities are extra (though often included in promotions).',
+      },
+      {
+        question: 'Are Oceania ships adults-only?',
+        answer:
+          'No, children are welcome, but the sophisticated atmosphere naturally attracts mostly adult travelers. There are no dedicated kids facilities or programs.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/mediterranean',
+      '/cruises/caribbean',
+      '/packages/all-inclusive-caribbean',
+      '/cruises/alaska',
+      '/destinations/europe-luxury-tours',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'disney',
+    title: 'Disney Cruise Line - Magical Family Vacations at Sea',
+    metaTitle: 'Disney Cruises 2025 | Disney Cruise Line from Newark NJ',
+    metaDescription:
+      'Book Disney Cruise Line vacations. Family-friendly voyages with character experiences, Broadway shows & kids clubs. Essex County Disney cruise experts.',
+    keywords: [
+      'disney cruises',
+      'disney cruise line',
+      'disney cruise 2025',
+      'disney cruise deals',
+      'disney fantasy cruise',
+      'disney wish cruise',
+    ],
+    searchVolume: 40500,
+    difficulty: 69,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'Disney Cruise Line - Where Dreams Set Sail',
+        subheadline: 'Magical Family Adventures with World-Class Service',
+      },
+      description:
+        "Set sail on a magical journey with Disney Cruise Line, where enchantment awaits families from Essex County and beyond. From character meet-and-greets and Broadway-caliber shows to exceptional kids' clubs and adult-exclusive areas, Disney cruises deliver legendary service and entertainment for all ages. With five stunning ships visiting the Caribbean, Bahamas, Alaska, Europe, and exotic destinations worldwide, every Disney cruise combines premium amenities with the magic only Disney can deliver. Rotational dining, included kids' activities, and immersive themed experiences make Disney Cruise Line the gold standard for family vacations at sea.",
+      highlights: [
+        'Character experiences & meet-and-greets throughout the voyage',
+        "Award-winning kids' clubs (ages 3 months - 17 years)",
+        'Broadway-style Disney shows every night',
+        'Rotational dining with character dining experiences',
+        'Adults-only pools, restaurants & lounge areas',
+        'Private island: Disney Castaway Cay',
+        'All soft drinks, ice cream & room service included',
+        'Exceptional crew-to-guest ratio',
+      ],
+      localTips: [
+        'Many Disney cruises depart from nearby ports: New York, Cape Liberty (Bayonne), Port Canaveral (Orlando)',
+        'Newark families can drive to NY/NJ departures or fly from EWR to Orlando for Caribbean sailings',
+        'Book 12-18 months ahead for best cabin selection, especially for holiday sailings',
+        'We offer exclusive Disney cruise booking perks and onboard credit',
+      ],
+    },
+    faq: [
+      {
+        question: 'Are Disney cruises worth the higher price?',
+        answer:
+          "For families, absolutely. When you factor in included kids' clubs (free childcare!), character experiences, Broadway shows, rotational dining, soft drinks, and Disney's legendary service, the value is exceptional. No other cruise line offers this level of family programming.",
+      },
+      {
+        question: 'Which Disney ship is best for families?',
+        answer:
+          'Disney Wish (newest, 2022) and Disney Fantasy offer the most space and newest amenities. Disney Dream is excellent for Caribbean sailings. All ships have fantastic kids programs, so choose based on itinerary and budget.',
+      },
+      {
+        question: 'Can adults enjoy Disney cruises without kids?',
+        answer:
+          'Definitely! Adults-only areas include pools, restaurants, lounges, and the Senses Spa. Many couples cruise Disney for the exceptional service, rotational dining, and Broadway entertainment.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/bahamas',
+      '/cruises/caribbean',
+      '/cruises/alaska',
+      '/packages/family-resorts-from-newark',
+      '/destinations/orlando-family-vacations',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'river-cruises',
+    title: 'River Cruises 2025 - European & American River Voyages',
+    metaTitle: 'River Cruises 2025 | European & USA River Cruise Deals from NJ',
+    metaDescription:
+      'Book river cruises on the Rhine, Danube, Mississippi & more. Small-ship cultural immersion. Newark area river cruise specialists with exclusive deals.',
+    keywords: [
+      'river cruises',
+      'european river cruises',
+      'rhine river cruise',
+      'danube river cruise',
+      'mississippi river cruise',
+      'river cruise deals',
+    ],
+    searchVolume: 27100,
+    difficulty: 93,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'River Cruises - Intimate Journeys Through the Heart of Regions',
+        subheadline: 'European Rivers, American Waterways & Exotic Asian Routes',
+      },
+      description:
+        "Experience destinations from the inside out with intimate river cruises that dock in the heart of cities large ships cannot reach. From the romantic castles of the Rhine to the cultural treasures along the Danube, from Mississippi paddle wheelers to the temples of Southeast Asia's Mekong, river cruising offers Essex County travelers unparalleled access to destinations and cultures. Small ships (100-190 guests) create a boutique hotel atmosphere with personalized service, regional cuisines, and expert local guides. Most river cruises include excursions, gratuities, and beverages, making them exceptional value for culturally curious travelers.",
+      highlights: [
+        'Dock in city centers - walk off ship to explore',
+        'Small ships (100-190 guests) for intimate experiences',
+        'Mostly included excursions & gratuities',
+        'Unpacking once while visiting 7-10+ destinations',
+        'Regional cuisine & local wines included',
+        'Expert enrichment programs & lectures',
+        'European rivers: Rhine, Danube, Seine, Rhône, Douro',
+        'American classics: Mississippi, Columbia, Snake Rivers',
+      ],
+      localTips: [
+        'Most European river cruises require flights from Newark to Amsterdam, Budapest, or other gateway cities',
+        'Book airfare through us for coordinated timing and better pricing',
+        'Peak season (May-October) books out 12+ months ahead - plan early!',
+        'Shoulder season (April, November) offers fewer crowds and better value',
+      ],
+    },
+    faq: [
+      {
+        question: 'How do river cruises differ from ocean cruises?',
+        answer:
+          'River ships are smaller (100-190 vs 2,000+ guests), dock in city centers, and focus on cultural immersion rather than onboard entertainment. Almost everything is included (excursions, tips, drinks), and you unpack once while visiting many destinations.',
+      },
+      {
+        question: 'What is the best river cruise for first-timers?',
+        answer:
+          'The Rhine or Danube in Europe offer classic experiences with stunning castles, charming villages, and well-developed infrastructure. For U.S. cruises, the Mississippi on American Queen Voyages combines nostalgia with Southern hospitality.',
+      },
+      {
+        question: 'Are river cruises good value?',
+        answer:
+          'Yes, when you factor in included shore excursions ($100+ per port), all meals with wine/beer, gratuities, and Wi-Fi. The per-day cost is comparable to quality ocean cruises but with far more inclusions.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/viking',
+      '/cruises/european',
+      '/packages/europe-tours',
+      '/destinations/europe-river-cruise-guide',
+      '/guides/river-cruise-planning',
+    ],
+    lastUpdated: '2025-01-10',
+  },
+
+  {
+    slug: 'all-inclusive',
+    title: 'All-Inclusive Cruises - Premium Packages with Everything Included',
+    metaTitle: 'All-Inclusive Cruises 2025 | Drinks, Wi-Fi, Tips & More Included',
+    metaDescription:
+      'Book all-inclusive cruise packages with drinks, Wi-Fi, gratuities & shore excursions included. Newark area specialists in premium cruise packages.',
+    keywords: [
+      'all inclusive cruises',
+      'all inclusive cruise packages',
+      'cruises with everything included',
+      'premium cruise packages',
+      'luxury all inclusive cruises',
+    ],
+    searchVolume: 18100,
+    difficulty: 74,
+    priority: 'HIGH',
+    content: {
+      hero: {
+        headline: 'All-Inclusive Cruises - True Worry-Free Vacations',
+        subheadline: 'Drinks, Dining, Wi-Fi, Tips & Excursions All Included',
+      },
+      description:
+        'Say goodbye to surprise charges and hello to genuine all-inclusive cruise vacations where nearly everything is covered in your upfront price. From premium beverage packages and specialty dining to gratuities, Wi-Fi, and even shore excursions, these comprehensive packages let Essex County travelers budget with confidence and relax completely. Cruise lines like Regent Seven Seas, Oceania, and Virgin Voyages offer varying levels of all-inclusive luxury, while mainstream lines like Royal Caribbean and Norwegian offer premium packages that bundle amenities for significant savings compared to paying separately.',
+      highlights: [
+        'All specialty dining included (no extra charges)',
+        'Premium beverage packages (top-shelf liquor included)',
+        'Pre-paid gratuities for crew',
+        'Unlimited Wi-Fi on most packages',
+        'Shore excursions in every port (on ultra-luxury)',
+        'Room service & in-cabin dining',
+        'Fitness classes & wellness programs',
+        'Transparent pricing - no bill shock',
+      ],
+      localTips: [
+        'For true all-inclusive value, compare total cost versus ala carte pricing',
+        'Royal Caribbean Beverage Package ($90/day) + Wi-Fi ($30/day) + tips ($16/day) + dining ($50/night) = $186/day extras',
+        'An all-inclusive package at $220/day total often includes far more value',
+        'We help calculate which option saves you the most money',
+      ],
+    },
+    faq: [
+      {
+        question: 'Which cruise lines are truly all-inclusive?',
+        answer:
+          'Regent Seven Seas, Seabourn, and Silversea are ultra-luxury all-inclusive (everything included). Oceania, Celebrity, and Virgin Voyages offer "almost all-inclusive" with most amenities included. Mainstream lines sell all-inclusive packages that bundle beverages, Wi-Fi, gratuities, and dining.',
+      },
+      {
+        question: 'Are all-inclusive cruises worth the higher cost?',
+        answer:
+          'Absolutely, if you plan to use the amenities. For travelers who drink alcohol, dine at specialty restaurants, use Wi-Fi daily, and take excursions, all-inclusive packages offer 30-50% savings versus paying separately. Plus, the peace of mind is priceless.',
+      },
+      {
+        question: 'What is still NOT included on all-inclusive cruises?',
+        answer:
+          'Even on ultra-luxury lines, spa treatments, casino, premium shore excursions (private tours), and shopping are extra. Most packages also exclude premium wines above a certain price point.',
+      },
+    ],
+    internalLinks: [
+      '/cruises/oceania',
+      '/cruises/viking',
+      '/packages/luxury-resort-packages',
+      '/cruises/caribbean',
+      '/cruises/mediterranean',
+    ],
+    lastUpdated: '2025-01-10',
+  },
 ]
 
 // Helper functions for data access

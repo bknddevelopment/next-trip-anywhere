@@ -6,7 +6,7 @@
     },
     {
       "path": "lib/critical-css/cruise.css",
-      "size": "39.22"
+      "size": "40.25"
     },
     {
       "path": "lib/critical-css/package.css",
@@ -21,7 +21,7 @@
     {
       "route": "cruises",
       "path": "public/css/cruises.css",
-      "size": "79.34"
+      "size": "79.35"
     },
     {
       "route": "packages",
@@ -40,5 +40,5 @@
     }
   ],
   "totalBefore": 120868,
-  "totalAfter": 486574.08
+  "totalAfter": 487639.04
 }
