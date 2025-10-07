@@ -49,9 +49,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy mb-1">Email</h3>
-                    <p className="text-gray-700">General: info@nexttripanywhere.com</p>
-                    <p className="text-gray-700">Support: support@nexttripanywhere.com</p>
-                    <p className="text-gray-700">Groups: groups@nexttripanywhere.com</p>
+                    <p className="text-gray-700">info@nexttripanywhere.com</p>
                     <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
                   </div>
                 </div>
