@@ -537,6 +537,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Promotional deals pages (limited-time offers)
+  const promotionalDealPages = [
+    {
+      url: `${baseUrl}/deals/early-booking-2027-2028`,
+      lastModified: currentDate,
+      changeFrequency: 'daily' as const,
+      priority: 1.0, // Highest priority - active promotion
+    },
+  ]
+
   // Seasonal deals hub and individual seasonal pages
   const seasonalHubPage = {
     url: `${baseUrl}/deals/seasonal`,
@@ -626,6 +636,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cruiseHubPages,
     ...cruiseHubPages2025,
     ...phase5CruisePages,
+    ...promotionalDealPages,
     guidesHubPage,
     ...travelGuidePages,
     ...travelInfoGuidePages,
