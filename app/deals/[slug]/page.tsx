@@ -16,9 +16,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const deal = getDealBySlug(params.slug);
+  const { slug } = await params;
+  const deal = getDealBySlug(slug);
 
   if (!deal) {
     return {
@@ -50,8 +51,9 @@ export async function generateMetadata({
   };
 }
 
-export default function DealPage({ params }: { params: { slug: string } }) {
-  const deal = getDealBySlug(params.slug);
+export default async function DealPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const deal = getDealBySlug(slug);
 
   if (!deal || !deal.active) {
     notFound();
