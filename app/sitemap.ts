@@ -11,6 +11,7 @@ import { seasonalDeals } from '@/lib/data/seasonal-deals'
 import { getGuidesForSitemap } from '@/lib/data/destinations-deep-dive'
 import { disneyRoomGuides } from '@/lib/data/disney-room-guides'
 import { getCruiseNeighborhoodsForSitemap } from '@/lib/data/cruise-neighborhoods'
+import { getActiveDeals } from '@/lib/data/featured-deals'
 
 // Force static generation for sitemap
 export const dynamic = 'force-static'
@@ -562,6 +563,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: deal.priority === 'HIGH' ? 0.9 : deal.priority === 'MEDIUM' ? 0.85 : 0.8,
   }))
 
+  // Featured deal pages (promotional/limited-time offers)
+  const featuredDealPages = getActiveDeals().map((deal) => ({
+    url: `${baseUrl}/deals/${deal.slug}`,
+    lastModified: deal.lastUpdated,
+    changeFrequency: 'daily' as const,
+    priority: deal.priority === 'HIGH' ? 0.95 : deal.priority === 'MEDIUM' ? 0.9 : 0.85,
+  }))
+
   // Travel guides hub and individual guide pages
   const guidesHubPage = {
     url: `${baseUrl}/guides`,
@@ -637,6 +646,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cruiseHubPages2025,
     ...phase5CruisePages,
     ...promotionalDealPages,
+    ...featuredDealPages,
     guidesHubPage,
     ...travelGuidePages,
     ...travelInfoGuidePages,
